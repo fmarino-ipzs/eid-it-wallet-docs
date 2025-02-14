@@ -6,7 +6,7 @@ servers:
   - url: https://authentic-source.example.it
     description: Authentic Source API
 paths:
-  /v0.9.0/AttributeClaims/{vct}:
+  /v0.9.0/AttributeClaims/{attribute_type}:
     post:
       tags:
         - e-services PDND
@@ -290,6 +290,8 @@ components:
                 nationality:
                   description:  Nationality.
                   type: array
+                  items:
+                    type: string
                   example: 'IT'
                 personal_administrative_number:
                   description:  ID ANPR.

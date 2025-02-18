@@ -446,6 +446,11 @@ If the checks defined above are successful the Wallet Instance proceeds with the
   HTTP/1.1 204 No Content
 
 
+Re-Issuance Flow
+----------------
+
+Security Considerations
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Deferred Flow
 -------------

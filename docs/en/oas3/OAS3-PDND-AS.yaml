@@ -267,6 +267,10 @@ components:
               description: UNIX timestamp representing the JWT first validity time.
               type: string
               example: '1736846688'
+            lead_time:
+              description: The estimated amount of time (in seconds) required before making the request of the attribute claims again.
+              type: integer
+              example: '864000'
             claims:
               description: List of Credential Claims.
               type: object
@@ -302,7 +306,7 @@ components:
                   type: string
                   example: 'TINIT-XXXXXXXXXXXXXXXX'
               required: [given_name, family_name, birth_date, birth_place, nationality]               
-          required: [iss, aud, exp, iat, jti, claims]
+          required: [iss, aud, exp, iat, jti]
     CredentialClaimsRequest:
       required:
         - unique_id

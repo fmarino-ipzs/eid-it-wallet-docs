@@ -204,6 +204,7 @@ paths:
                     type: string
                     description: The error code
                     enum: [temporarily_unavailable]
+                    enum: [temporarily_unavailable]
                   error_description:
                     type: string
                     description: >-

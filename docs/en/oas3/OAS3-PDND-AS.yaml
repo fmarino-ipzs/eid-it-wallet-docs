@@ -9,8 +9,8 @@ paths:
   /v0.9.0/AttributeClaims/{attribute_type}:
     post:
       tags:
-        - e-services PDND
-      summary: Get Attribute claims
+        - e-Services PDND
+      summary: Get Attribute Claims
       description: >-
         This service provides the Credential Issuer with all attribute claims necessary for the issuance of a Digital Credential
       operationId: attributeClaims
@@ -28,7 +28,7 @@ paths:
             JWT token obtained from <a target="blank"
             href="https://docs.pagopa.it/interoperabilita-1/manuale-operativo/guida-alladesione">PDND
             Interoperabilità.</a><br/><br/><a target="blank"
-            href="https://jwt.io/#debugger-io?token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImI4MzlmNGM3LTFlNWQtNGE4YS05ZmM2LTcyZDNiN2YwOTFlYyIsInR5cCI6ImF0K2p3dCJ9.eyJpc3MiOiJpbnRlcm9wLnBhZ29wYS5pdCIsInN1YiI6IjgyOTE0YjNmLTYwYjItNDUyOS1iNGQ2LTNkNGU2N2YwYTkzMyIsImF1ZCI6Imh0dHBzOi8vZXJvZ2F0b3JlLmV4YW1wbGUvZW50ZS1leGFtcGxlL3YxIiwiZXhwIjoxNzMzMDQyMTUwLCJuYmYiOjE3MzMwNDE5NDUsImlhdCI6MTczMzA0MTkyMCwianRpIjoiYzRmNWQ3ZTItYjdjOC00MGY2LTliNmEtZGM5YTRmNWFlYjU3IiwiY2xpZW50X2lkIjoiODI5MTRiM2YtNjBiMi00NTI5LWI0ZDYtM2Q0ZTY3ZjBhOTMzIiwicHVycG9zZUlkIjoiZDJiOWE2NTMtYzQ5Ny00NWM2LWI4ZjEtNWJkZjEyNGM5ZDNhIiwiZGlnZXN0Ijp7ImFsZyI6IlNIQTI1NiIsInZhbHVlIjoiOTkwOGQ5NGI4ZmViMjY4YzAzNzEwNmQ3Yzg5ZTcwNjBjMmNjMWY2YjJiNGViY2I4MDViZmVlNTNhNTM5MzA3YiJ9fQ.9e3dwxSa5fSTPolA2NG7kpa0IEpNY0rM9Wc6cczsKwRlv1fEpKKtjcxnUyRG8fqo5Ajbun_39AqMUqOqCIcCVg">EXAMPLE
+            href="https://jwt.io/#debugger-io?token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImI4MzlmNGM3LTFlNWQtNGE4YS05ZmM2LTcyZDNiN2YwOTFlYyIsInR5cCI6ImF0K2p3dCJ9.eyJpc3MiOiJodHRwczovL2ludGVyb3AucGFnb3BhLml0Iiwic3ViIjoiODI5MTRiM2YtNjBiMi00NTI5LWI0ZDYtM2Q0ZTY3ZjBhOTMzIiwiYXVkIjoiaHR0cHM6Ly9hdXRoZW50aWMtc291cmNlLmV4YW1wbGUuaXQiLCJleHAiOjE3MzMwNDIxNTAsIm5iZiI6MTczMzA0MTk0NSwiaWF0IjoxNzMzMDQxOTIwLCJqdGkiOiJjNGY1ZDdlMi1iN2M4LTQwZjYtOWI2YS1kYzlhNGY1YWViNTciLCJjbGllbnRfaWQiOiI4MjkxNGIzZi02MGIyLTQ1MjktYjRkNi0zZDRlNjdmMGE5MzMiLCJwdXJwb3NlSWQiOiJkMmI5YTY1My1jNDk3LTQ1YzYtYjhmMS01YmRmMTI0YzlkM2EiLCJkaWdlc3QiOnsiYWxnIjoiU0hBMjU2IiwidmFsdWUiOiI5Yzc4OTRhMGE1YTkxMDU4MGI5NjdmMzg0Y2RmYmExN2IxYWI2Zjg2NjcwZTViMGRmMThhMGM0NTNiNWViMjE1In19.wthFbkKrTtfgVqLdSFtSYjz2oRPzPhoQw7a3nSMmqi2q0nD0Z7QJ6keRMQSiKl9FOrjvVsVgqN2_S2W_3FxSQg">EXAMPLE
             ON JWT.IO</a>
           required: true
           schema:
@@ -36,7 +36,7 @@ paths:
             format: Signed JWT
             example: >-
               DPoP
-              eyJhbGciOiJFUzI1NiIsImtpZCI6ImI4MzlmNGM3LTFlNWQtNGE4YS05ZmM2LTcyZDNiN2YwOTFlYyIsInR5cCI6ImF0K2p3dCJ9.eyJpc3MiOiJpbnRlcm9wLnBhZ29wYS5pdCIsInN1YiI6IjgyOTE0YjNmLTYwYjItNDUyOS1iNGQ2LTNkNGU2N2YwYTkzMyIsImF1ZCI6Imh0dHBzOi8vZXJvZ2F0b3JlLmV4YW1wbGUvZW50ZS1leGFtcGxlL3YxIiwiZXhwIjoxNzMzMDQyMTUwLCJuYmYiOjE3MzMwNDE5NDUsImlhdCI6MTczMzA0MTkyMCwianRpIjoiYzRmNWQ3ZTItYjdjOC00MGY2LTliNmEtZGM5YTRmNWFlYjU3IiwiY2xpZW50X2lkIjoiODI5MTRiM2YtNjBiMi00NTI5LWI0ZDYtM2Q0ZTY3ZjBhOTMzIiwicHVycG9zZUlkIjoiZDJiOWE2NTMtYzQ5Ny00NWM2LWI4ZjEtNWJkZjEyNGM5ZDNhIiwiZGlnZXN0Ijp7ImFsZyI6IlNIQTI1NiIsInZhbHVlIjoiOTkwOGQ5NGI4ZmViMjY4YzAzNzEwNmQ3Yzg5ZTcwNjBjMmNjMWY2YjJiNGViY2I4MDViZmVlNTNhNTM5MzA3YiJ9fQ.9e3dwxSa5fSTPolA2NG7kpa0IEpNY0rM9Wc6cczsKwRlv1fEpKKtjcxnUyRG8fqo5Ajbun_39AqMUqOqCIcCVg
+              eyJhbGciOiJFUzI1NiIsImtpZCI6ImI4MzlmNGM3LTFlNWQtNGE4YS05ZmM2LTcyZDNiN2YwOTFlYyIsInR5cCI6ImF0K2p3dCJ9.eyJpc3MiOiJodHRwczovL2ludGVyb3AucGFnb3BhLml0Iiwic3ViIjoiODI5MTRiM2YtNjBiMi00NTI5LWI0ZDYtM2Q0ZTY3ZjBhOTMzIiwiYXVkIjoiaHR0cHM6Ly9hdXRoZW50aWMtc291cmNlLmV4YW1wbGUuaXQiLCJleHAiOjE3MzMwNDIxNTAsIm5iZiI6MTczMzA0MTk0NSwiaWF0IjoxNzMzMDQxOTIwLCJqdGkiOiJjNGY1ZDdlMi1iN2M4LTQwZjYtOWI2YS1kYzlhNGY1YWViNTciLCJjbGllbnRfaWQiOiI4MjkxNGIzZi02MGIyLTQ1MjktYjRkNi0zZDRlNjdmMGE5MzMiLCJwdXJwb3NlSWQiOiJkMmI5YTY1My1jNDk3LTQ1YzYtYjhmMS01YmRmMTI0YzlkM2EiLCJkaWdlc3QiOnsiYWxnIjoiU0hBMjU2IiwidmFsdWUiOiI5Yzc4OTRhMGE1YTkxMDU4MGI5NjdmMzg0Y2RmYmExN2IxYWI2Zjg2NjcwZTViMGRmMThhMGM0NTNiNWViMjE1In19.wthFbkKrTtfgVqLdSFtSYjz2oRPzPhoQw7a3nSMmqi2q0nD0Z7QJ6keRMQSiKl9FOrjvVsVgqN2_S2W_3FxSQg
         - name: DPoP
           in: header
           description: >-
@@ -45,29 +45,29 @@ paths:
             href="https://datatracker.ietf.org/doc/html/rfc9449.html">RFC
             9449</a>.<br/><br/>
 
-            <a target="blank" href="https://jwt.io/#debugger-io?token=eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwia2V5X29wcyI6WyJzaWduIl0sImtpZCI6ImRGVTNNRDI4REpfamZzZmloUHZpMm8tQ3RqTEVVejNwT0lWMEJkTk1mZjgiLCJjcnYiOiJQLTI1NiIsIngiOiJodXlYSVFOdjkwMm9Mc3BYNF96b25DOTRHNnlFbG42bHNkbS0xd003MzJvIiwieSI6Ikk5UERFYXdXSHFhRkRHeDFaa05rLTJQVjZXZHBjYUgzQWZPYkJTTGloZ3cifX0.eyJqdGkiOiItQndDM0VTYzZhY2MybFRjIiwiaHRtIjoiUE9TVCIsImF0aCI6ImM1MmMzZTU4MmNjYTRhZTgyYTRhYWRjODA3MTIwZGZmODRlNmIzYjA5MTg3NjMwMmYxY2QyN2I0ODRmNmE1YjgiLCJodHUiOiJodHRwczovL3NlcnZlci5leGFtcGxlLmNvbS90b2tlbiIsImlhdCI6MTc2MjI2MjYxNn0.C--7xxs9hbF6eA6HM9gGvQ1FtlseiJ9hYFAsMnAsu-JtlzNXJXoAvrVOVkeYtkQ6beXveOern56_rLDoR4gmiw">EXAMPLE
+            <a target="blank" href="https://jwt.io/#debugger-io?token=eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwia2V5X29wcyI6WyJzaWduIl0sImtpZCI6IjM5ZmE5NjBiLTc3M2YtNDllZi04YTBlLWU3NzNlOWI5N2FlOCIsImNydiI6IlAtMjU2IiwieCI6Imh1eVhJUU52OTAyb0xzcFg0X3pvbkM5NEc2eUVsbjZsc2RtLTF3TTczMm8iLCJ5IjoiSTlQREVhd1dIcWFGREd4MVprTmstMlBWNldkcGNhSDNBZk9iQlNMaWhndyJ9fQ.eyJqdGkiOiIyYzc2ZmNhMy1jYjRlLTQzMTItOGI2ZS05NzQ5NDYyZjQyMGQiLCJodG0iOiJQT1NUIiwiYXRoIjoiQkd6SUxmUVBnaTNEVjZPUjNSNGZSOFVyREUzUEJ5c1RsUkphSGhLTkx1dyIsImh0dSI6Imh0dHBzOi8vYXV0aGVudGljLXNvdXJjZS5leGFtcGxlLml0IiwiaWF0IjoxNzYyMjYyNjE2fQ.gCZIfiuu8knBNNAqPsVuZKdIsvGUauNb0ZO_FxqfWDRbvIsM_eimfNgPfkXzHfPeyluxJjpvf5e5q7v27gmGJQ">EXAMPLE
             ON JWT.IO</a>
           required: true
           schema:
             type: string
             format: JWT
             example: >-
-              eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwia2V5X29wcyI6WyJzaWduIl0sImtpZCI6ImRGVTNNRDI4REpfamZzZmloUHZpMm8tQ3RqTEVVejNwT0lWMEJkTk1mZjgiLCJjcnYiOiJQLTI1NiIsIngiOiJodXlYSVFOdjkwMm9Mc3BYNF96b25DOTRHNnlFbG42bHNkbS0xd003MzJvIiwieSI6Ikk5UERFYXdXSHFhRkRHeDFaa05rLTJQVjZXZHBjYUgzQWZPYkJTTGloZ3cifX0.eyJqdGkiOiItQndDM0VTYzZhY2MybFRjIiwiaHRtIjoiUE9TVCIsImF0aCI6ImEyMWQxMzUzZGYwZTExOTQ4ODE1NDAwZGU2MjUxYzUwNjlhYTFhNjBjMDg5YWViYTQ2MTI1Y2JlNjhmNzQ1ZmYiLCJodHUiOiJodHRwczovL3NlcnZlci5leGFtcGxlLmNvbS90b2tlbiIsImlhdCI6MTc2MjI2MjYxNn0.bVf2E4qvHTNGAGXPNcOLrgI_QcXmx0k8Ays6d6gPuT6X1Pbwzz_ltYBxiT28O8ab2-ulk9Rg8TIHOG_H5ZCCSA
+              eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwia2V5X29wcyI6WyJzaWduIl0sImtpZCI6IjM5ZmE5NjBiLTc3M2YtNDllZi04YTBlLWU3NzNlOWI5N2FlOCIsImNydiI6IlAtMjU2IiwieCI6Imh1eVhJUU52OTAyb0xzcFg0X3pvbkM5NEc2eUVsbjZsc2RtLTF3TTczMm8iLCJ5IjoiSTlQREVhd1dIcWFGREd4MVprTmstMlBWNldkcGNhSDNBZk9iQlNMaWhndyJ9fQ.eyJqdGkiOiIyYzc2ZmNhMy1jYjRlLTQzMTItOGI2ZS05NzQ5NDYyZjQyMGQiLCJodG0iOiJQT1NUIiwiYXRoIjoiQkd6SUxmUVBnaTNEVjZPUjNSNGZSOFVyREUzUEJ5c1RsUkphSGhLTkx1dyIsImh0dSI6Imh0dHBzOi8vYXV0aGVudGljLXNvdXJjZS5leGFtcGxlLml0IiwiaWF0IjoxNzYyMjYyNjE2fQ.gCZIfiuu8knBNNAqPsVuZKdIsvGUauNb0ZO_FxqfWDRbvIsM_eimfNgPfkXzHfPeyluxJjpvf5e5q7v27gmGJQ
         - name: Agid-JWT-Signature
           in: header
           description: >-
             JWT containing the signature of the message headers whose integrity
             needs to be guaranteed, to comply with the INTEGRITY_REST_02
-            security pattern. <a target="blank"
-            href="https://italia.github.io/eudi-wallet-it-docs/versione-corrente/en/e-service-pdnd.html">e-Service PDND</a>. <br/><br/>
+            security pattern (see <a target="blank"
+            href="https://italia.github.io/eudi-wallet-it-docs/versione-corrente/en/e-service-pdnd.html">e-Service PDND</a>). <br/><br/>
 
-            <a target="blank" href="https://jwt.io/#debugger-io?token=eyJhbGciOiJFUzI1NiIsImtpZCI6IjA5NzlmN2NhYjllZWZlMGMyYjQ0ZTY5MjUwN2Y3OWY3IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJpbnRlcm9wLnBhZ29wYS5pdCIsInN1YiI6IjgyOTE0YjNmLTYwYjItNDUyOS1iNGQ2LTNkNGU2N2YwYTkzMyIsImF1ZCI6Imh0dHBzOi8vZXJvZ2F0b3JlLmV4YW1wbGUvZW50ZS1leGFtcGxlL3YxIiwiZXhwIjoxNzgzMDQyMTUwLCJuYmYiOjE3MzMwNDE5NDUsImlhdCI6MTczMzA0MTkyMCwianRpIjoiYzRmNWQ3ZTItYjdjOC00MGY2LTliNmEtZGM5YTRmNWFlYjU3IiwiZGlnZXN0Ijp7ImFsZyI6IlNIQTI1NiIsInZhbHVlIjoiOTkwOGQ5NGI4ZmViMjY4YzAzNzEwNmQ3Yzg5ZTcwNjBjMmNjMWY2YjJiNGViY2I4MDViZmVlNTNhNTM5MzA3YiJ9fQ.vKPFFX8W4INWVDMSvgpsBd-FUnVhB40DQtfJxUgNQIMzs_D7k314fVyMygsnMnh2ulgZx0v5uR4w4A72-DcOQA">EXAMPLE
+            <a target="blank" href="https://jwt.io/#debugger-io?token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImQ0YzNiMmExLTk4NzYtNTQzMi0xMGZlLWRjYmE5ODc2NTQzMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI4MjkxNGIzZi02MGIyLTQ1MjktYjRkNi0zZDRlNjdmMGE5MzMiLCJzdWIiOiI4MjkxNGIzZi02MGIyLTQ1MjktYjRkNi0zZDRlNjdmMGE5MzMiLCJhdWQiOiJodHRwczovL2F1dGhlbnRpYy1zb3VyY2UuZXhhbXBsZS5pdCIsImlhdCI6MTczMzM5Nzg0MCwibmJmIjoxNzMzNDAxNjI4LCJleHAiOjE3MzM0MDE0NDAsImp0aSI6ImQzZjdiMmM5LTI3NGEtNDJiNy04ZjhkLTJlOWQ4YjE3MzRiMCIsInNpZ25lZF9oZWFkZXJzIjpbeyJkaWdlc3QiOiJTSEEtMjU2PTcyZTE4YmRkZGYxM2M5MTFiNGRkNTYyZWUyMTk3OWE1YzlmMjM1YzNhMDFiZDE0MjZlODU3ZDhjMWEyODJmNDEifSx7ImNvbnRlbnQtdHlwZSI6ImFwcGxpY2F0aW9uL2pzb24ifV19.tG5-P96CCA6N1IYC-xk4GumoVkA3NFolpbBn2vQ2e9vpWQ8f5Sm2l4-1VrXfKTx-CUVz_puiwqkBhulrNKj2fA">EXAMPLE
             ON JWT.IO</a>
           required: true
           schema:
             type: string
             format: JWT
-            example: eyJhbGciOiJFUzI1NiIsImtpZCI6IjA5NzlmN2NhYjllZWZlMGMyYjQ0ZTY5MjUwN2Y3OWY3IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJpbnRlcm9wLnBhZ29wYS5pdCIsInN1YiI6IjgyOTE0YjNmLTYwYjItNDUyOS1iNGQ2LTNkNGU2N2YwYTkzMyIsImF1ZCI6Imh0dHBzOi8vZXJvZ2F0b3JlLmV4YW1wbGUvZW50ZS1leGFtcGxlL3YxIiwiZXhwIjoxNzgzMDQyMTUwLCJuYmYiOjE3MzMwNDE5NDUsImlhdCI6MTczMzA0MTkyMCwianRpIjoiYzRmNWQ3ZTItYjdjOC00MGY2LTliNmEtZGM5YTRmNWFlYjU3IiwiZGlnZXN0Ijp7ImFsZyI6IlNIQTI1NiIsInZhbHVlIjoiOTkwOGQ5NGI4ZmViMjY4YzAzNzEwNmQ3Yzg5ZTcwNjBjMmNjMWY2YjJiNGViY2I4MDViZmVlNTNhNTM5MzA3YiJ9fQ.vKPFFX8W4INWVDMSvgpsBd-FUnVhB40DQtfJxUgNQIMzs_D7k314fVyMygsnMnh2ulgZx0v5uR4w4A72-DcOQA
+            example: eyJhbGciOiJFUzI1NiIsImtpZCI6ImQ0YzNiMmExLTk4NzYtNTQzMi0xMGZlLWRjYmE5ODc2NTQzMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI4MjkxNGIzZi02MGIyLTQ1MjktYjRkNi0zZDRlNjdmMGE5MzMiLCJzdWIiOiI4MjkxNGIzZi02MGIyLTQ1MjktYjRkNi0zZDRlNjdmMGE5MzMiLCJhdWQiOiJodHRwczovL2F1dGhlbnRpYy1zb3VyY2UuZXhhbXBsZS5pdCIsImlhdCI6MTczMzM5Nzg0MCwibmJmIjoxNzMzNDAxNjI4LCJleHAiOjE3MzM0MDE0NDAsImp0aSI6ImQzZjdiMmM5LTI3NGEtNDJiNy04ZjhkLTJlOWQ4YjE3MzRiMCIsInNpZ25lZF9oZWFkZXJzIjpbeyJkaWdlc3QiOiJTSEEtMjU2PTcyZTE4YmRkZGYxM2M5MTFiNGRkNTYyZWUyMTk3OWE1YzlmMjM1YzNhMDFiZDE0MjZlODU3ZDhjMWEyODJmNDEifSx7ImNvbnRlbnQtdHlwZSI6ImFwcGxpY2F0aW9uL2pzb24ifV19.tG5-P96CCA6N1IYC-xk4GumoVkA3NFolpbBn2vQ2e9vpWQ8f5Sm2l4-1VrXfKTx-CUVz_puiwqkBhulrNKj2fA
         - name: Digest
           in: header
           description: >-
@@ -78,7 +78,7 @@ paths:
           required: true
           schema:
             type: string
-            example: SHA-256=b626aa33e25d46086dd5c12b631be51caeece92689912408e96dc4a430f3fa67
+            example: SHA-256=72e18bdddf13c911b4dd562ee21979a5c9f235c3a01bd1426e857d8c1a282f41
         - name: Agid-JWT-TrackingEvidence
           in: header
           description: >-
@@ -86,13 +86,13 @@ paths:
             <a target="blank"
             href="https://italia.github.io/eudi-wallet-it-docs/versione-corrente/en/e-service-pdnd.html">e-Service PDND</a>. <br/><br/>
 
-            <a target="blank" href="https://jwt.io/#debugger-io?token=eyJhbGciOiJFUzI1NiIsImtpZCI6IjhlOGRlNGJmZTFlNWVhNzkwM2E1ODE2ZmNlNzNjZDQ4IiwidHlwIjoiSldUIn0.eyJpc3MiOiJpbnRlcm9wLnBhZ29wYS5pdCIsImF1ZCI6Imh0dHBzOi8vZXJvZ2F0b3JlLmV4YW1wbGUvZW50ZS1leGFtcGxlL3YxIiwiZXhwIjoxNzgzMDQyMTUwLCJuYmYiOjE3MzMwNDE5NDUsImlhdCI6MTczMzA0MTkyMCwianRpIjoiYzRmNWQ3ZTItYjdjOC00MGY2LTliNmEtZGM5YTRmNWFlYjU3IiwiY2xpZW50X2lkIjoiODI5MTRiM2YtNjBiMi00NTI5LWI0ZDYtM2Q0ZTY3ZjBhOTMzIiwicHVycG9zZUlkIjoiZDJiOWE2NTMtYzQ5Ny00NWM2LWI4ZjEtNWJkZjEyNGM5ZDNhIiwiZG5vbmNlIjoiNjUyODQyNDIxMzY4NSIsInVzZXJJRCI6ImE4YjdjNmQ1LWU0ZjMtZzJoMS1pOWowLWtsbW5vcHFyc3R1diJ9.vHispWBZeWk0UYwUSMAxpioC4giifbctyC3sgiqNxNHt_ypxIr6FZkKlTrLc02WivSm3ApbZ0ABi1RgtcUthYQ">EXAMPLE
+            <a target="blank" href="https://jwt.io/#debugger-io?token=eyJhbGciOiJFUzI1NiIsImtpZCI6ImQ0YzNiMmExLTk4NzYtNTQzMi0xMGZlLWRjYmE5ODc2NTQzMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI4MjkxNGIzZi02MGIyLTQ1MjktYjRkNi0zZDRlNjdmMGE5MzMiLCJhdWQiOiJodHRwczovL2F1dGhlbnRpYy1zb3VyY2UuZXhhbXBsZS5pdCIsImV4cCI6MTczMzA1MjYwMCwibmJmIjoxNzMzMDM2NDUwLCJpYXQiOjE3MzMwMzY0MDAsImp0aSI6ImE0YjVjNmQ3LWU4ZjktYWJjZC1lZjEyLTM0NTY3ODkwMTIzNCIsImRub25jZSI6NjUyODQyNDIxMzY4NSwicHVycG9zZUlkIjoiYjJjM2Q0ZTUtZjZnNy1oOGk5LWowazEtbG1ubzEyMzQ1Njc4IiwidXNlcklEIjoiYThiN2M2ZDUtZTRmMy1nMmgxLWk5ajAta2xtbm9wcXJzdHV2IiwibG9hIjoic3Vic3RhbnRpYWwifQ.y42yfMeW2H9h0b0j0BODUml8yF20stY9q3BwoVU5BB90afBj852Q0QlInncdhjXhUjLS1V76cGBxkutDNvxRNA">EXAMPLE
             ON JWT.IO</a>
           required: false
           schema:
             type: string
             format: JWT
-            example: eyJhbGciOiJFUzI1NiIsImtpZCI6IjhlOGRlNGJmZTFlNWVhNzkwM2E1ODE2ZmNlNzNjZDQ4IiwidHlwIjoiSldUIn0.eyJpc3MiOiJpbnRlcm9wLnBhZ29wYS5pdCIsImF1ZCI6Imh0dHBzOi8vZXJvZ2F0b3JlLmV4YW1wbGUvZW50ZS1leGFtcGxlL3YxIiwiZXhwIjoxNzgzMDQyMTUwLCJuYmYiOjE3MzMwNDE5NDUsImlhdCI6MTczMzA0MTkyMCwianRpIjoiYzRmNWQ3ZTItYjdjOC00MGY2LTliNmEtZGM5YTRmNWFlYjU3IiwiY2xpZW50X2lkIjoiODI5MTRiM2YtNjBiMi00NTI5LWI0ZDYtM2Q0ZTY3ZjBhOTMzIiwicHVycG9zZUlkIjoiZDJiOWE2NTMtYzQ5Ny00NWM2LWI4ZjEtNWJkZjEyNGM5ZDNhIiwiZG5vbmNlIjoiNjUyODQyNDIxMzY4NSIsInVzZXJJRCI6ImE4YjdjNmQ1LWU0ZjMtZzJoMS1pOWowLWtsbW5vcHFyc3R1diJ9.vHispWBZeWk0UYwUSMAxpioC4giifbctyC3sgiqNxNHt_ypxIr6FZkKlTrLc02WivSm3ApbZ0ABi1RgtcUthYQ
+            example: eyJhbGciOiJFUzI1NiIsImtpZCI6ImQ0YzNiMmExLTk4NzYtNTQzMi0xMGZlLWRjYmE5ODc2NTQzMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI4MjkxNGIzZi02MGIyLTQ1MjktYjRkNi0zZDRlNjdmMGE5MzMiLCJhdWQiOiJodHRwczovL2F1dGhlbnRpYy1zb3VyY2UuZXhhbXBsZS5pdCIsImV4cCI6MTczMzA1MjYwMCwibmJmIjoxNzMzMDM2NDUwLCJpYXQiOjE3MzMwMzY0MDAsImp0aSI6ImE0YjVjNmQ3LWU4ZjktYWJjZC1lZjEyLTM0NTY3ODkwMTIzNCIsImRub25jZSI6NjUyODQyNDIxMzY4NSwicHVycG9zZUlkIjoiYjJjM2Q0ZTUtZjZnNy1oOGk5LWowazEtbG1ubzEyMzQ1Njc4IiwidXNlcklEIjoiYThiN2M2ZDUtZTRmMy1nMmgxLWk5ajAta2xtbm9wcXJzdHV2IiwibG9hIjoic3Vic3RhbnRpYWwifQ.y42yfMeW2H9h0b0j0BODUml8yF20stY9q3BwoVU5BB90afBj852Q0QlInncdhjXhUjLS1V76cGBxkutDNvxRNA
       requestBody:
         content:
           application/json:
@@ -101,52 +101,41 @@ paths:
         required: true
       responses:
         '200':
-          description: 200 OK
+          description: OK
           content:
             application/jwt:
               schema:
                 $ref: '#/components/schemas/CredentialClaimsResponse'
-              example: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6ImE4ZDEzYzQ1ZWYyZTI4MzBmN2M0NGJkNDk0MWNjYSJ9.eyJpc3MiOiJodHRwczovL3ByZC5hcGkuZ2F0ZXdheS5pcHpzLml0L3QvaXR3YWxsZXQuYXBpL3V0aWxpdHktd2FsbGV0LzEuMC4wL3YxL25vdGlmeVN0YXR1c0NyZWRlbnRpYWxzIiwibmJmIjoxNzM2ODQ2Njg4LCJleHAiOjE3MzY4NDY5MjgsImlhdCI6MTczNjg0NjY4OCwiYXVkIjoiMzE2NzAwOTItZWVjMC00Zjk1LTg4ZGEtZTFjN2NlNWU0NTA1IiwianRpIjoiYzhiZDhhMmYtZTk5MC00NGZhLTkwMTMtMWIzNTNiZmM1YTBkIn0.ExthZCx8LHMlTTtBm9qA8Y3FhlKvTl-_sWXq35e_vTRMmKukrLhBhNa-C1xfli8g_JBixYhsBzUWhE0ING_kIQ'
+              example: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjRlNTAzYjU0LWNiZDUtNDZkOC1iNzhhLTAxMTY5OTEyMmYzMCJ9.eyJpc3MiOiJodHRwczovL2F1dGhlbnRpYy1zb3VyY2UuZXhhbXBsZS5pdCIsIm5iZiI6MTczNjg0NjY4OCwiZXhwIjoxNzM2ODQ2OTI4LCJpYXQiOjE3MzY4NDY2ODgsImF1ZCI6IjgyOTE0YjNmLTYwYjItNDUyOS1iNGQ2LTNkNGU2N2YwYTkzMyIsImp0aSI6ImM4YmQ4YTJmLWU5OTAtNDRmYS05MDEzLTFiMzUzYmZjNWEwZCJ9.4BgoaKyVOupA67tXLQeIK8QNEiYkB646_35HndTkWxS9xypF7FJqyqV24z6EJirSgn5BlT2ZrgqeDURSjJuPUg'
         '400':
           description: Bad Request
           content:
             application/json:
               schema:
-                oneOf:
-                  - type: object
-                    properties:
-                      error:
-                        type: string
-                        description: invalid_request
-                      error_description:
-                        type: string
-                        description: >-
-                          The request cannot be fulfilled because it is missing
-                          required parameters, contains invalid parameters, or
-                          is otherwise malformed.
-                    required:
-                      - error
-                  - type: object
-                    properties:
-                      error:
-                        type: string
-                        description: invalid_dpop_proof
-                      error_description:
-                        type: string
-                        description: >-
-                          The request cannot be fulfilled because it contains an
-                          invalid dpop proof.
-                    required:
-                      - error
+                - type: object
+                  properties:
+                    error:
+                      type: string
+                      description: The error code
+                      enum: [invalid_request, invalid_dpop_proof]
+                    error_description:
+                      type: string
+                      description: Text in human-readable form providing further details to clarify the nature of the error encountered
+                      example: >-
+                        The request cannot be fulfilled because it is missing
+                        required parameters, contains invalid parameters, or
+                        is otherwise malformed.
+                  required:
+                    - error
               examples:
-                invalid request:
+                invalid_request:
                   value:
                     error: invalid_request
                     error_description: >-
                       The request cannot be fulfilled because it is missing
                       required parameters, contains invalid parameters, or is
                       otherwise malformed
-                invalid dpop proof:
+                invalid_dpop_proof:
                   value:
                     error: invalid_dpop_proof
                     error_description: >-
@@ -159,6 +148,8 @@ paths:
               description: The request cannot be fulfilled because the Voucher is expired, revoked or otherwise malformed. See <a target="blank" href="https://datatracker.ietf.org/doc/html/rfc6750.html#section-3">RFC6750</a> and <a target="blank" href="https://datatracker.ietf.org/doc/html/rfc9449.html#section-7.1-11">RFC9449</a> for details.
               schema:
                 type: string
+                example: >-
+                  Bearer error="invalid_token", error_description="The access token expired"
         '404':
           description: Claims not found
           content:
@@ -169,7 +160,7 @@ paths:
                   error:
                     type: string
                     description: The error code
-                    example: not_found
+                    enum: [not_found]
                   error_description:
                     type: string
                     description: >-
@@ -189,17 +180,19 @@ paths:
                 properties:
                   error:
                     type: string
-                    description: server_error
+                    description: The error code
+                    enum: [server_error]
                   error_description:
                     type: string
                     description: >-
-                      The request cannot be fulfilled because the e-Service Endpoint encountered an internal problem.
+                      Text in human-readable form providing further details to
+                      clarify the nature of the error encountered
                 required:
                   - error
               example:
-                error: invalid_request
+                error: server_error
                 error_description: >-
-                  TThe request cannot be fulfilled because the e-Service Endpoint encountered an internal problem.
+                  The request cannot be fulfilled because the e-Service Endpoint encountered an internal problem
         '503':
           description: Service Unavailable
           content:
@@ -210,6 +203,8 @@ paths:
                   error:
                     type: string
                     description: The error code
+                    enum: [temporarily_unavailable]
+                    enum: [temporarily_unavailable]
                   error_description:
                     type: string
                     description: >-
@@ -246,7 +241,7 @@ components:
             iss:
               description: The identifier of the e-Service.
               type: string
-              example: 'https://pre.api.gateway.ipzs.it/t/itwallet.api/utility-wallet/1.0.0/v1/revokeAll'
+              example: 'https://authentic-source.example.it'
             aud:
               description: The identifier of the Consumer.
               type: string

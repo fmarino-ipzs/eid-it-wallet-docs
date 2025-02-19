@@ -1536,15 +1536,14 @@ Upon receipt of the notification (by the Wallet Instance and/or by the PID/(Q)EA
 
 The Wallet Instance MUST present to the Deferred Endpoint an Access Token that is valid for the issuance of the Digital Credential previously requested at the Credential Endpoint.
 
-
-If the lead_time parameter is less than the expiration time of the Access Token, the Wallet Instance can simply use this value. Otherwise,  the Wallet Instance MAY obtain a new Access Token following the Refresh Token flow (see Section :ref:`Refresh Token Flow <Refresh Token Flow>` for more details). If the Refresh Token flow fails, the Wallet Instance needs to submit a new authentication request.
+If the ``lead_time`` parameter value results as less than the expiration time set for the Access Token, the Wallet Instance SHOULD use the Access Token. Otherwise,  the Wallet Instance MAY obtain a new Access Token following the Refresh Token flow (see Section :ref:`Refresh Token Flow <Refresh Token Flow>` for more details). If the Refresh Token flow fails, the Wallet Instance needs to submit a new authentication request.
 
 The Deferred Credential Request MUST be an HTTP POST request. It MUST be sent using the ``application/json`` media type.
 The following parameter is used in the Deferred Credential Request:
 
-  - ``transaction_id``: REQUIRED. String identifying a Deferred Issuance transaction
+  - ``transaction_id``: REQUIRED. String identifying a Deferred Issuance transaction.
 
-The Credential Issuer MUST invalidate the transaction_id after the Credential for which it was meant has been obtained by the Wallet Instance.
+The Credential Issuer MUST invalidate the ``transaction_id`` after the Credential for which it was meant has been obtained by the Wallet Instance.
 The following is a non-normative example of a Deferred Credential Request:
 
 .. code::

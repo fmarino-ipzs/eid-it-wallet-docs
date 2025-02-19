@@ -88,7 +88,7 @@ paths:
 
             <a target="blank" href="https://jwt.io/#debugger-io?token=eyJhbGciOiJFUzI1NiIsImtpZCI6IjhlOGRlNGJmZTFlNWVhNzkwM2E1ODE2ZmNlNzNjZDQ4IiwidHlwIjoiSldUIn0.eyJpc3MiOiJpbnRlcm9wLnBhZ29wYS5pdCIsImF1ZCI6Imh0dHBzOi8vZXJvZ2F0b3JlLmV4YW1wbGUvZW50ZS1leGFtcGxlL3YxIiwiZXhwIjoxNzgzMDQyMTUwLCJuYmYiOjE3MzMwNDE5NDUsImlhdCI6MTczMzA0MTkyMCwianRpIjoiYzRmNWQ3ZTItYjdjOC00MGY2LTliNmEtZGM5YTRmNWFlYjU3IiwiY2xpZW50X2lkIjoiODI5MTRiM2YtNjBiMi00NTI5LWI0ZDYtM2Q0ZTY3ZjBhOTMzIiwicHVycG9zZUlkIjoiZDJiOWE2NTMtYzQ5Ny00NWM2LWI4ZjEtNWJkZjEyNGM5ZDNhIiwiZG5vbmNlIjoiNjUyODQyNDIxMzY4NSIsInVzZXJJRCI6ImE4YjdjNmQ1LWU0ZjMtZzJoMS1pOWowLWtsbW5vcHFyc3R1diJ9.vHispWBZeWk0UYwUSMAxpioC4giifbctyC3sgiqNxNHt_ypxIr6FZkKlTrLc02WivSm3ApbZ0ABi1RgtcUthYQ">EXAMPLE
             ON JWT.IO</a>
-          required: true
+          required: false
           schema:
             type: string
             format: JWT

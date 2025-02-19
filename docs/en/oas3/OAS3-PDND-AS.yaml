@@ -111,7 +111,7 @@ paths:
           content:
             application/json:
               schema:
-                - type: object
+                  type: object
                   properties:
                     error:
                       type: string
@@ -202,7 +202,6 @@ paths:
                   error:
                     type: string
                     description: The error code
-                    enum: [temporarily_unavailable]
                     enum: [temporarily_unavailable]
                   error_description:
                     type: string

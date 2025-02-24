@@ -267,38 +267,13 @@ components:
             claims:
               description: List of Credential Claims.
               type: object
-              properties:
-                given_name:
-                  description:  Current First Name.
-                  type: string
-                  example: 'Mario'
-                family_name:
-                  description:  Current Family Name.
-                  type: string
-                  example: 'Rossi'
-                birth_date:
-                  description:  Place of Birth.
-                  type: string
-                  example: 'Roma'
-                birth_place:
-                  description:  Date of Birth.
-                  type: string
-                  example: '1980-01-10'
-                nationality:
-                  description:  Nationality.
-                  type: array
-                  items:
-                    type: string
-                  example: 'IT'
-                personal_administrative_number:
-                  description:  ID ANPR.
-                  type: string
-                  example: 'XX00000XX'
-                tax_id_code:
-                  description:  Tax Identification Number.
-                  type: string
-                  example: 'TINIT-XXXXXXXXXXXXXXXX'
-              required: [given_name, family_name, birth_date, birth_place, nationality]               
+              example: '"given_name": "Mario", 
+                        "family_name": "Rossi",
+                        "birth_date": "1980-01-10",
+                        "birth_place": "Roma",
+                        "nationality": "IT",
+                        "personal_administrative_number": "XX00000XX",
+                        "tax_id_code": "TINIT-XXXXXXXXXXXXXXXX"'             
           required: [iss, aud, exp, iat, jti]
     CredentialClaimsRequest:
       required:

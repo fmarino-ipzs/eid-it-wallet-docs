@@ -51,16 +51,6 @@ Released versions can be navigated by adding the tag in the webpath leaded by a 
  - [https://italia.github.io/eudi-wallet-it-docs/v0.5.0/en/](https://italia.github.io/eudi-wallet-it-docs/v0.5.0/en/)
  - [https://italia.github.io/eudi-wallet-it-docs/v0.4.1/en/](https://italia.github.io/eudi-wallet-it-docs/v0.4.1/en/)
 
-
-## Documentation
-
-This repository is structured to be compliant with 
-[Docs Italia](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html).
-This is why the content of the relevant folders will be compiled and rendered inside such platform.
-`Docs Italia` is designed to support documents, localized in different languages and for this
-reason it is the reference platform for displaying this standard.
-
-
 ## Build
 
 HTML

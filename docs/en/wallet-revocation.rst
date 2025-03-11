@@ -2,9 +2,9 @@
 
 
 Wallet Instance Revocation
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section describes the involved entities and modalities to request a Wallet Instance revocation in the IT-Wallet system.
+This section describes the involved entities and modalities to request a Wallet Instance revocation.
 
 The Wallet Provider MUST ensure the security and reliability of Wallet Instances, keeping them updated and compliant with security requirements. When, for technical security reasons (e.g., relating to the compromise of cryptographic material) the security of the Wallet Instance is compromised, the Wallet Provider MUST revoke the Wallet Instance. 
 
@@ -26,8 +26,8 @@ As shown in :numref:`fig_Wallet_Instance_Revoc_Entities`, other actors MAY trigg
 .. note::
    Detailed flows for **PID Provider, Legal Authorities,** and **Supervisory Body** will be covered in future versions of the technical specification.
 
-Revocation Request from the User
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wallet Instance Revocation Request 
+...................................
 
 Users MAY request the Wallet Instance revocation by:
 
@@ -37,19 +37,41 @@ Users MAY request the Wallet Instance revocation by:
 In both cases, by using the Wallet Provider portal:
 
 - Users MUST authenticate with at least a second-factor authentication mechanism, or have an active session that meets this requirement. 
-- The Wallet Provider MUST allow Users to view the state of all their Wallet Instances and ask for their revocation.
+- The Wallet Provider MUST allow Users to view the state of their Wallet Instance and also ask for revocation, sending a Wallet Instance Revocation Request to the `wallet-instance-revocation endpoint`_ of the Wallet Provider Backend. The Wallet Provider determines the relevant Wallet Instance using the authenticated User's identifier (via an active session). Thus, the request body only needs to include the revocation status (e.g., "REVOKED").
+
+Below is a non-normative example of a Wallet Instance Revocation Request.
+
+.. code-block:: http
+
+    POST /wallet-revocation HTTP/1.1
+    Host: wallet-provider.example.org
+    Content-Type: application/json
+
+    {
+      "status": "REVOKED"
+    }
+
+Wallet Instance Revocation Response
+...................................
+Upon a successful revocation, the Wallet Provider MUST return a confirmation response.
+Below is a non-normative example of a Wallet Instance Revocation Response.
+
+
+.. code-block:: http
+
+   HTTP/1.1 204 No Content
+
 
 Revocation Check Mechanisms
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+...................................
 
 The verification of the Wallet Instance validity MUST be performed:
 
-- **During Digital Credential issuance or presentation phase** by the Credential Issuers and Relying Parties, respectively. Only Wallet Instances in Operational or Valid state have valid Wallet Attestations. Thus, the verification of the validity of a Wallet Instance is indirectly performed by Credential Issuers and Relying Parties by checking the presence of valid Wallet Attestation (i.e. not expired and signed by a trusted Wallet Provider). 
+- **During Digital Credential issuance or presentation phase** by the Credential Issuers and Relying Parties, respectively. Only Wallet Instances in Operational or Valid state have valid Wallet Attestations. Thus, the verification of the validity of a Wallet Instance is indirectly performed by Credential Issuers and Relying Parties by checking the presence of a valid Wallet Attestation (i.e. not expired and signed by a trusted Wallet Provider). 
 
 - **During the validity period of the Digital Credential**  by the Credential Issuers. Indeed, if the Wallet Instance is revoked, the PID hosted within it MUST be revoked. Any other Digital Credential obtained through the presentation of the PID MUST therefore be revoked too. In the current version of the specification, Credential Issuers are directly notified of a Wallet Instance revocation by the Wallet Provider using a PDND e-service.
 
 
 .. note::
    With the introduction of the **Wallet Trust Evidence (WTE)**, this section will be updated accordingly.
-
 

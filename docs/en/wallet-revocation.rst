@@ -37,13 +37,13 @@ Users MAY request the Wallet Instance revocation by:
 In both cases, by using the Wallet Provider portal:
 
 - Users MUST authenticate with at least a second-factor authentication mechanism, or have an active session that meets this requirement. 
-- The Wallet Provider MUST allow Users to view the state of their Wallet Instance and also ask for revocation, sending a Wallet Instance Revocation Request to the `wallet-instance-revocation endpoint`_ of the Wallet Provider Backend. The Wallet Provider determines the relevant Wallet Instance using the authenticated User's identifier (via an active session). Thus, the request body only needs to include the revocation status (e.g., "REVOKED").
+- The Wallet Provider MUST allow Users to view the state of their Wallet Instances and ask for revocation, sending a Wallet Instance Revocation Request to the `Wallet Instance Management endpoint`_ of the Wallet Provider Backend. 
 
 Below is a non-normative example of a Wallet Instance Revocation Request.
 
 .. code-block:: http
 
-    POST /wallet-revocation HTTP/1.1
+    PATCH /wallet-instances/{id} HTTP/1.1
     Host: wallet-provider.example.org
     Content-Type: application/json
 

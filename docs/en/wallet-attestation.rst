@@ -4,15 +4,6 @@
 
 Wallet Attestation Issuance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Wallet Attestation contains information regarding the security level of the device hosting the Wallet Instance.
-It primarily certifies the **authenticity**, **integrity**, **security**, **privacy**, and **trustworthiness** of a particular Wallet Instance.
-
-.. figure:: ../../images/static_view_wallet_instance_attestation.svg
-   :name: Wallet Solution Schema
-   :alt: The image illustrates the containment of Wallet Provider and Wallet Instances within the Wallet Solution, managed by the Wallet Provider.
-   :target: https://www.plantuml.com/plantuml/uml/VP8nJyCm48Lt_ugdTexOCw22OCY0GAeGOsMSerWuliY-fEg_9mrEPTAqw-VtNLxEtaJHGRh6AMs40rRlaS8AEgAB533H3-qS2Tu2zxPEWSF8TcrYv-mJzTOGNfzVnXXJ0wKCDorxydAUjMNNYMMVpug9OTrR7i22LlaesXlADPiOraToZWyBsgCsF-JhtFhyGyZJgNlbXVR1oX5R2YSoUdQYEzrQO1seLcfUeGXs_ot5_VzqYM6lQlRXMz6hsTccIbGHhGu2_hhfP1tBwHuZqdOUH6WuEmrKIeqtNonvXhq4ThY3Dc9xBNJv_rSwQeyfawhcZsTPIpKLKuFYSa_JyOPytJNk5m00
-
-
 This section describes how the Wallet Provider issues a Wallet Attestation.
 
 .. figure:: ../../images/wallet_instance_acquisition.svg
@@ -29,7 +20,7 @@ This section describes how the Wallet Provider issues a Wallet Attestation.
   3. Verify the Wallet Provider's federation membership and retrieve its metadata.
 
 
-**Steps 4-6 (Nonce Retrieval)**: The Wallet Instance solicits a one-time "challenge" from the `nonce endpoint`_ of the Wallet Provider Backend. This "challenge" takes the form of a ``nonce``, which is required to be unpredictable and serves as the main defense against replay attacks. 
+**Steps 4-6 (Nonce Retrieval)**: The Wallet Instance solicits a one-time "challenge" from the `Nonce endpoint`_ of the Wallet Provider Backend. This "challenge" takes the form of a ``nonce``, which is required to be unpredictable and serves as the main defense against replay attacks. 
 The ``nonce`` MUST be produced in a manner that ensures its single-use within a predetermined time frame.
 
 Below is a non-normative example of a Nonce Request.
@@ -76,7 +67,7 @@ Below is a non-normative example of the ``client_data`` JSON object.
 **Steps 11-12 (Wallet Attestation Issuance Request)**: The Wallet Instance:
 
   * Constructs the Wallet Attestation Request in the form of a JWT. This JWT includes the ``integrity_assertion``, ``hardware_signature``, ``challenge``, ``hardware_key_tag``, ``cnf`` and other configuration related parameters (see :ref:`Table of the Wallet Attestation Request Body <table_wallet_attestation_request_claim>`) and is signed using the private key of the initially generated ephemeral key pair.
-  * Submits the Wallet Attestation Request to the `wallet-attestation-issuance endpoint`_ of the Wallet Provider Backend.
+  * Submits the Wallet Attestation Request to the `Wallet Attestation Issuance endpoint`_ of the Wallet Provider Backend.
 
 Below is a non-normative example of the Wallet Attestation Request JWT without encoding and signature applied:
 
@@ -127,7 +118,7 @@ Below is a non-normative example of the Wallet Attestation Request JWT without e
   }
 
 
-The Wallet Instance MUST send the signed Wallet Attestation Request JWT as an ``assertion`` parameter in the body of an HTTP request to the Wallet Provider's `wallet-attestation-issuance endpoint`_.
+The Wallet Instance MUST send the signed Wallet Attestation Request JWT as an ``assertion`` parameter in the body of an HTTP request to the Wallet Provider's `Wallet Attestation Issuance endpoint`_.
 
 Below is a non-normative example of a Wallet Attestation Issuance Request.
 

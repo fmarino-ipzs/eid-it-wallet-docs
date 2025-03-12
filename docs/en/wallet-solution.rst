@@ -238,9 +238,9 @@ Wallet Instance Initialization and Registration
 
 .. note::
 
-    **Federation Check**: The Wallet Instance needs to check if the Wallet Provider is part of the Federation, obtaining its protocol-specific Metadata. A non-normative example of a response from the `federation endpoint`_ with the **Entity Configuration** and the **Metadata** of the Wallet Provider is represented within the `federation endpoint`_ section.
+    **Federation Check**: The Wallet Instance needs to check if the Wallet Provider is part of the Federation, obtaining its protocol-specific Metadata. A non-normative example of a response from the `Federation endpoint`_ with the **Entity Configuration** and the **Metadata** of the Wallet Provider is represented within the `Federation endpoint`_ section.
 
-**Steps 3-5 (Nonce Retrival)**: The Wallet Instance requests a one-time ``challenge``  from the `nonce endpoint`_ of the Wallet Provider Backend. This "challenge" known as a ``nonce``, MUST be unpredictable to serve as the main defense against replay attacks. 
+**Steps 3-5 (Nonce Retrival)**: The Wallet Instance requests a one-time ``challenge``  from the `Nonce endpoint`_ of the Wallet Provider Backend. This "challenge" known as a ``nonce``, MUST be unpredictable to serve as the main defense against replay attacks. 
 
 Below is a non-normative example of a Nonce Request.
 
@@ -294,7 +294,7 @@ Below is a non-normative example of a Nonce Response.
 * Incorporates information pertaining to the device's security.
 * Uses an OEM private key to sign the Key Attestation, therefore verifiable with the related OEM certificate, confirming that the Cryptographic Hardware Keys are securely managed by the operating system.
 
-**Step 9 (Wallet Instance Registration Request)**: The Wallet Instance sends a request to the `wallet-instance-registration endpoint`_ of the Wallet Provider Backend to register the Wallet Instance, identified by the Cryptographic Hardware Key public key. 
+**Step 9 (Wallet Instance Registration Request)**: The Wallet Instance sends a request to the `Wallet Instance Management endpoint`_ of the Wallet Provider Backend to register the Wallet Instance, identified by the Cryptographic Hardware Key public key. 
 The request body includes the following parameters: the ``challenge``, Key Attestation (``key_attestation``), and Cryptographic Hardware Key Tag (``hardware_key_tag``).
 
 Below is a non-normative example of a Wallet Instance Registration Request.
@@ -511,13 +511,12 @@ This is a protected OAuth 2.0 endpoint that allows the Wallet Instance to reques
 Nonce Request
 .............
 
-
 The request for a nonce MUST be an HTTP GET request sent to the Wallet Provider’s Nonce Endpoint.
 
 Nonce Response
 ..............
 
-Upon a successful request, the Wallet Provider MUST return an HTTP response with a 200 OK status code. The response MUST be in application/json format, including the nonce.
+Upon a successful request, the Wallet Provider MUST return an HTTP response with a 200 OK status code. The response MUST be in `application/json` format, including the ``nonce``.
 
 
 If any errors occur during the nonce generation, the Wallet Provider MUST return an error response as defined in :rfc:`6749#section-5.2`. The response MUST use *application/json* as the content type and MUST include the following parameters:
@@ -543,13 +542,14 @@ The following table lists HTTP Status Codes and related error codes that MUST be
 
 
 
-Wallet Instance Registration Endpoint
+Wallet Instance Management Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is a Restful API endpoint provided by the Wallet Provider, allowing the Wallet Instance to register itself with the Wallet Provider backend by sending a Wallet Instance Registration Request.
+This is a RESTful API endpoint provided by the Wallet Provider that enables Wallet Instance management, including registration, status retrieval, revocation upon request (e.g., by the User), and deletion. 
+The following sections describe the registration and revocation requests, along with their corresponding responses, handled by this endpoint, which are required for core `Wallet Instance Functionalities`_.
 
 Wallet Instance Registration Request
 .............................................
-In order to register the Wallet Instance, the request to the Wallet Provider MUST use the HTTP POST method. The parameters MUST be encoded using the `application/json` format and included in the message body. The following parameters (claims) MUST be provided:
+To register a Wallet Instance, the request to the Wallet Provider MUST use the HTTP POST method with ``Content-Type`` set to `application/json`. The request body MUST contain the following parameters (or claims):
 
 
 .. _table_http_request_claim:
@@ -561,7 +561,7 @@ In order to register the Wallet Instance, the request to the Wallet Provider MUS
       - **Description**
       - **Reference**
     * - **challenge**
-      - MUST be set to the challenge obtained from the Wallet Provider through the ``nonce`` endpoint.
+      - MUST be set to the challenge obtained from the Wallet Provider through the ``Nonce`` endpoint.
       - `OAuth 2.0 Nonce Endpoint`_
     * - **key_attestation**
       - It MUST be a ``base64url`` encoded Key Attestation obtained from the **Device Integrity Service**.
@@ -572,7 +572,7 @@ In order to register the Wallet Instance, the request to the Wallet Provider MUS
 
 Wallet Instance Registration Response
 .............................................
-If the Wallet Instance Registration Request is successfully validated, the Wallet Provider provides an HTTP Response with a 204 (No Content) status code.
+If a Wallet Instance Registration Request is successfully validated, the Wallet Provider provides an HTTP Response with a 204 (No Content) status code.
 
 
 If any errors occur during the Wallet Instance registration, the Wallet Provider MUST return an error response as defined in :rfc:`7231`, with additional details available in :rfc:`7807`. The response MUST use the content type set to *application/json* and MUST include the following parameters:
@@ -627,10 +627,68 @@ The following table lists HTTP Status Codes and related error codes that MUST be
      - Service unavailable. Please try again later.
 
 
+Wallet Instance Revocation Request
+.............................................
+
+To revoke an active Wallet Instance, a revocation request MUST be sent using the HTTP PATCH method with ``Content-Type`` set to `application/json`. The request body MUST contain a ``status`` parameter set to "REVOKED".
+
+Wallet Instance Revocation Response
+.............................................
+If a Wallet Instance Revocation Request is successfully processed, the Wallet Provider provides an HTTP Response with a 204 (No Content) status code.
+
+
+If any errors occur during the Wallet Instance Revocation, the Wallet Provider MUST return an error response as defined in :rfc:`7231`, with additional details available in :rfc:`7807`. The response MUST use the ``Content-Type`` set to `application/json` and MUST include the following parameters:
+
+  - *error*. The error code.
+  - *error_description*. Text in human-readable form providing further details to clarify the nature of the error encountered.
+
+Below is a non-normative example of an error response:
+
+.. code:: http
+
+   HTTP/1.1 400 Bad Request
+   Content-Type: application/json
+   Cache-Control: no-store
+
+.. code:: json
+
+   {
+     "error": "bad_request",
+     "error_description": "The request is missing status parameter."
+   }
+
+The following table lists HTTP Status Codes and related error codes that MUST be supported for the error response, unless otherwise specified:
+
+.. list-table::
+   :widths: 20 20 50
+   :header-rows: 1
+
+   * - **HTTP Status Code**
+     - **Error Code**
+     - **Description**
+   * - ``400 Bad Request`` 
+     - ``bad_request``
+     - The request is malformed, missing required parameters, or includes invalid and unknown parameters.
+   * - ``401 Unauthorized`` 
+     - ``unauthorized``
+     - The request lacks valid authentication credentials.
+   * - ``403 Forbidden`` 
+     - ``invalid_request``
+     - The user does not have permission to revoke this Wallet Instance.
+   * - ``422 Unprocessable Content`` [OPTIONAL]
+     - ``validation_error``
+     - The request does not adhere to the required format.
+   * - ``500 Internal Server Error`` 
+     - ``server_error``
+     - An internal server error occurred while processing the request.
+   * - ``503 Service Unavailable`` 
+     - ``temporarily_unavailable``
+     - Service unavailable. Please try again later.
+
 
 Wallet Attestation Issuance Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is a Restful API endpoint provided by the Wallet Provider that enables the Wallet Instance to obtain a Wallet Attestation, by sending a Wallet Attestation Issuance Request.
+This is a RESTful API endpoint provided by the Wallet Provider that enables the Wallet Instance to obtain a Wallet Attestation, by sending a Wallet Attestation Issuance Request.
 
 Wallet Attestation Issuance Request
 .............................................
@@ -793,64 +851,6 @@ The body of the Wallet Attestation JWT MUST contain the following parameters:
 
 
 
-Wallet Instance Revocation Endpoint
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is a Restful API endpoint provided by the Wallet Provider, allowing the User to revoke a Wallet Instance by sending a Wallet Instance Revocation Request.
-
-
-Wallet Instance Revocation Request
-.............................................
-
-To revoke an active Wallet Instance, a revocation request MUST be sent using the HTTP POST method with ``Content-Type`` set to `application/json`. The request body MUST contain an ``status`` parameter whose value is set to "REVOKED".
-
-Wallet Instance Revocation Response
-.............................................
-If the Wallet Instance Revocation Request is successfully completed, the Wallet Provider provides an HTTP Response with a 204 (No Content) status code.
-
-
-If any errors occur during the Wallet Instance Revocation, the Wallet Provider MUST return an error response as defined in :rfc:`7231`, with additional details available in :rfc:`7807`. The response MUST use the ``Content-Type`` set to `application/json` and MUST include the following parameters:
-
-  - *error*. The error code.
-  - *error_description*. Text in human-readable form providing further details to clarify the nature of the error encountered.
-
-Below is a non-normative example of an error response:
-
-.. code:: http
-
-   HTTP/1.1 400 Bad Request
-   Content-Type: application/json
-   Cache-Control: no-store
-
-.. code:: json
-
-   {
-     "error": "bad_request",
-     "error_description": "The request is missing status parameter."
-   }
-
-The following table lists HTTP Status Codes and related error codes that MUST be supported for the error response, unless otherwise specified:
-
-.. list-table::
-   :widths: 20 20 50
-   :header-rows: 1
-
-   * - **HTTP Status Code**
-     - **Error Code**
-     - **Description**
-   * - ``400 Bad Request`` 
-     - ``bad_request``
-     - The request is malformed, missing required parameters, or includes invalid and unknown parameters.
-   * - ``422 Unprocessable Content`` [OPTIONAL]
-     - ``validation_error``
-     - The request does not adhere to the required format.
-   * - ``500 Internal Server Error`` 
-     - ``server_error``
-     - An internal server error occurred while processing the request.
-   * - ``503 Service Unavailable`` 
-     - ``temporarily_unavailable``
-     - Service unavailable. Please try again later.
-
-
 External references
 --------------------------
 
@@ -867,12 +867,11 @@ External references
 .. _Trusty: https://source.android.com/docs/security/features/trusty
 .. _Secure Enclave: https://support.apple.com/en-gb/guide/security/sec59b0b31ff/web
 .. _Wallet Provider metadata: wallet-solution.html#wallet-provider-metadata
-.. _wallet-instance-registration endpoint: wallet-solution.html#wallet-instance-registration-endpoint
-.. _nonce endpoint: wallet-solution.html#nonce-endpoint
-.. _wallet-attestation-issuance endpoint: wallet-solution.html#wallet-attestation-issuance-endpoint
-.. _federation endpoint: wallet-solution.html#federation-endpoint
-.. _wallet-instance-revocation endpoint: wallet-solution.html#wallet-instance-revocation-endpoint
-
+.. _Nonce endpoint: wallet-solution.html#nonce-endpoint
+.. _Wallet Attestation Issuance endpoint: wallet-solution.html#wallet-attestation-issuance-endpoint
+.. _Federation endpoint: wallet-solution.html#federation-endpoint
+.. _Wallet Instance Management endpoint: wallet-solution.html#wallet-instance-management-endpoint
+.. _Wallet Instance Functionalities: wallet-solution.html#wallet-instance-functionalities
 
 
 

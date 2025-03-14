@@ -43,6 +43,9 @@ This specification is based on the following set of requirements:
     * - R4
       - The e-Services MUST be implemented in REST, thus SOAP protocol MUST NOT be used.
       - Technical
+    * - R5
+      - The Consumer should present a particular proof of possesion key to the Provider.
+      - Security
 
 `PDND`_ and `MODI`_ define several security patterns designed to enhance specific security properties in interactions between Participants. This specification adopts the following applicable security patterns:
 
@@ -52,14 +55,14 @@ This specification is based on the following set of requirements:
 
     * - **Security Pattern**
       - **Compliant With**
-    * - **[REST_JWS_2021_POP]** JWS POP Voucher Issuing Profile (*Annex 3 - Standards and technical details used for Voucher Authorization* [`PDND`_]): REQUIRED. It adds a proof of possession on the Voucher. The Consumer using the Voucher to access an e-service MUST demonstrate the proof of possession of the private key whose public is attested on the Voucher.
-      - R2, R4
+    * - **[REST_JWS_2021_POP]** JWS POP Voucher Issuing Profile (*Annex 3 - Standards and technical details used for Voucher Authorization* [`PDND`_]): REQUIRED if **[AUDIT_REST_02]** is not implemented. It adds a proof of possession on the Voucher. The Consumer using the Voucher to access an e-service MUST demonstrate the proof of possession of the private key whose public is attested on the Voucher.
+      - R2, R4, R5
     * - **[ID_AUTH_CHANNEL_01]** Direct Trust Transport-Level Security (*Annex 2 - Security Patterns* [`MODI`_]): REQUIRED. It protects the communication between the Consumer and the Provider by ensuring confidentiality, integrity, identification of the Provider, and mitigation against replay attack and spoofing.
       - R1, R2
     * - **[INTEGRITY_REST_02]** REST Payload Integrity in PDND (*Annex 2 - Security Patterns* [`MODI`_]): CONDITIONAL. It ensures the integrity of the payload of the REST Consumer request, within the PDND Infrastructure. It is REQUIRED whenever the request carries a payload.
       - R2, R4
-    * - **[AUDIT_REST_02]** Submission of audit data within the REST request with correlation (*Annex 2 - Security Patterns* [`MODI`_]): OPTIONAL. The Provider MAY request additional data tracked in the Consumer's domain, with a correlation between such data and the authentication method. In that case, this pattern MUST be used.
-      - R3, R4
+    * - **[AUDIT_REST_02]** Submission of audit data within the REST request with correlation (*Annex 2 - Security Patterns* [`MODI`_]): REQUIRED if **[REST_JWS_2021_POP]** is not implemented. The Provider MAY request additional data tracked in the Consumer's domain, with a correlation between such data and the authentication method. In that case, this pattern MUST be used.
+      - R3, R4, R5
 
 
 In addition, this specification defines and applies a custom security pattern:

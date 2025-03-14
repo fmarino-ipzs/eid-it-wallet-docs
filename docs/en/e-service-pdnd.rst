@@ -44,7 +44,7 @@ This specification is based on the following set of requirements:
       - The e-Services MUST be implemented in REST, thus SOAP protocol MUST NOT be used.
       - Technical
     * - R5
-      - The Consumer should present a particular proof of possesion key to the Provider.
+      - The Producer SHALL ensure, with a high degree of certainty, the verification of the Consumer's identity.
       - Security
 
 `PDND`_ and `MODI`_ define several security patterns designed to enhance specific security properties in interactions between Participants. This specification adopts the following applicable security patterns:

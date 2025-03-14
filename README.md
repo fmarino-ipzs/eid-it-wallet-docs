@@ -26,30 +26,30 @@ This repository hosts the sphinx project tree of IT-Wallet Technical Specificati
 
 Preview of the lates editor's copy build, corresponding to the branch `versione-corrente` can be navigated using the following link:
 
- - [Editor's Copy](https://italia.github.io/eudi-wallet-it-docs/versione-corrente/en/)
+ - [Editor's Copy](https://italia.github.io/eid-wallet-it-docs/versione-corrente/en/)
 
 ### Preview of a branch
 
 Preview of other branches can be navigated by adding the branch name in the webpath, as follows:
 
- - https://italia.github.io/eudi-wallet-it-docs/$branch-name/en
+ - https://italia.github.io/eid-wallet-it-docs/$branch-name/en
 
 ### Preview of released versions
 
 Released versions can be navigated by adding the tag in the webpath leaded by a _v_, as follows:
 
- - [https://italia.github.io/eudi-wallet-it-docs/v0.9.3/en/](https://italia.github.io/eudi-wallet-it-docs/v0.9.3/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.9.2/en/](https://italia.github.io/eudi-wallet-it-docs/v0.9.2/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.9.1/en/](https://italia.github.io/eudi-wallet-it-docs/v0.9.1/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.9.0/en/](https://italia.github.io/eudi-wallet-it-docs/v0.9.0/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.8.2/en/](https://italia.github.io/eudi-wallet-it-docs/v0.8.2/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.8.1/en/](https://italia.github.io/eudi-wallet-it-docs/v0.8.1/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.8.0/en/](https://italia.github.io/eudi-wallet-it-docs/v0.8.0/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.7.1/en/](https://italia.github.io/eudi-wallet-it-docs/v0.7.1/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.7.0/en/](https://italia.github.io/eudi-wallet-it-docs/v0.7.0/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.6.0/en/](https://italia.github.io/eudi-wallet-it-docs/v0.6.0/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.5.0/en/](https://italia.github.io/eudi-wallet-it-docs/v0.5.0/en/)
- - [https://italia.github.io/eudi-wallet-it-docs/v0.4.1/en/](https://italia.github.io/eudi-wallet-it-docs/v0.4.1/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.9.3/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.3/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.9.2/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.2/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.9.1/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.1/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.9.0/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.0/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.8.2/en/](https://italia.github.io/eid-wallet-it-docs/v0.8.2/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.8.1/en/](https://italia.github.io/eid-wallet-it-docs/v0.8.1/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.8.0/en/](https://italia.github.io/eid-wallet-it-docs/v0.8.0/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.7.1/en/](https://italia.github.io/eid-wallet-it-docs/v0.7.1/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.7.0/en/](https://italia.github.io/eid-wallet-it-docs/v0.7.0/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.6.0/en/](https://italia.github.io/eid-wallet-it-docs/v0.6.0/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.5.0/en/](https://italia.github.io/eid-wallet-it-docs/v0.5.0/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/v0.4.1/en/](https://italia.github.io/eid-wallet-it-docs/v0.4.1/en/)
 
 ## Build
 

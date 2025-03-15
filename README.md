@@ -1,4 +1,4 @@
-# EUDI IT-Wallet Technical Specifications
+# IT-Wallet Technical Specifications
 
 [![GitHub release](https://img.shields.io/github/release/italia/eid-it-wallet-docs.svg?style=plastic)](https://github.com/italia/eid-it-wallet-docs/releases)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)

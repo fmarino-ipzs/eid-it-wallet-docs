@@ -516,9 +516,9 @@ The request for a nonce MUST be an HTTP GET request sent to the Wallet Providerâ
 Nonce Response
 ..............
 Upon a successful request, the Wallet Provider MUST return an HTTP response with a 200 OK status code. The response MUST be in `application/json` format, including the ``nonce``.
-If any errors occur during the the nonce generation, an error response MUST be returned. Refer to `Error Handeling for Nonce Generation`_ for details on error codes and descriptions.
+If any errors occur during the the nonce generation, an error response MUST be returned. Refer to `Error Handling for Nonce Generation`_ for details on error codes and descriptions.
 
-Error Handeling for Nonce Generation
+Error Handling for Nonce Generation
 .......................................
 
 If any errors occur during the nonce generation, the Wallet Provider MUST return an error response as defined in :rfc:`6749#section-5.2`. The response MUST use *application/json* as the content type and MUST include the following parameters:
@@ -656,7 +656,7 @@ Below is a non-normative example of an error response:
      "error_description": "The request is missing status parameter."
    }
 
-Error Handeling for Wallet Instance Management 
+Error Handling for Wallet Instance Management 
 ..................................................
 To ensure robustness and security, the Wallet Provider MUST handle errors consistently across all Wallet Instance Management requests, including Registration, Retrieval, and Revocation.
 
@@ -923,8 +923,9 @@ The body of the Wallet Attestation JWT MUST contain the following parameters:
       - Array of JSON Strings containing the values of the Client Identifier schemes that the Wallet supports.
       - `OpenID4VP`_
 
-Error Handeling for Wallet Attestation Issuance 
+Error Handling for Wallet Attestation Issuance 
 ..................................................
+
 If any errors occur during the Wallet Attestation Request Verification, the Wallet Provider MUST return an error response as defined in :rfc:`7231` (additional details available in :rfc:`7807`). The response MUST use the content type set to *application/json* and MUST include the following parameters:
 
   - *error*. The error code.
@@ -997,9 +998,9 @@ External references
 .. _Federation endpoint: wallet-solution.html#federation-endpoint
 .. _Wallet Instance Management endpoint: wallet-solution.html#wallet-instance-management-endpoint
 .. _Wallet Instance Functionalities: wallet-solution.html#wallet-instance-functionalities
-.. _Error Handling for Wallet Instance Management: wallet-solution.html#error-handeling-for-wallet-instance-management 
-.. _Error Handling for Wallet Attestation Issuance: wallet-solution.html#error-handeling-for-wallet-attestation-issuance
-.. _Error Handling for Nonce Generation: wallet-solution.html#error-handeling-for-nonce-generation
+.. _Error Handling for Wallet Instance Management: wallet-solution.html#error-handling-for-wallet-instance-management 
+.. _Error Handling for Wallet Attestation Issuance: wallet-solution.html#error-handling-for-wallet-attestation-issuance
+.. _Error Handling for Nonce Generation: wallet-solution.html#error-handling-for-nonce-generation
 
 
 

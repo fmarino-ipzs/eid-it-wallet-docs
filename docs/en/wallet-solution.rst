@@ -506,7 +506,7 @@ Below is a non-normative example of the Entity Configuration.
 
 Nonce Endpoint 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is a protected OAuth 2.0 endpoint that allows the Wallet Instance to request a cryptographic nonce from the Wallet Provider. The nonce serves as an unpredictable, single-use challenge to ensure freshness and prevent replay attacks.
+This is a RESTful API endpoint that allows the Wallet Instance to request a cryptographic nonce from the Wallet Provider. The nonce serves as an unpredictable, single-use challenge to ensure freshness and prevent replay attacks.
 
 Nonce Request
 .............
@@ -515,9 +515,11 @@ The request for a nonce MUST be an HTTP GET request sent to the Wallet Provider�
 
 Nonce Response
 ..............
-
 Upon a successful request, the Wallet Provider MUST return an HTTP response with a 200 OK status code. The response MUST be in `application/json` format, including the ``nonce``.
+If any errors occur during the the nonce generation, an error response MUST be returned. Refer to `Error Handeling for Nonce Generation`_ for details on error codes and descriptions.
 
+Error Handeling for Nonce Generation
+.......................................
 
 If any errors occur during the nonce generation, the Wallet Provider MUST return an error response as defined in :rfc:`6749#section-5.2`. The response MUST use *application/json* as the content type and MUST include the following parameters:
 
@@ -541,11 +543,10 @@ The following table lists HTTP Status Codes and related error codes that MUST be
      - Service unavailable. Please try again later.
 
 
-
 Wallet Instance Management Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This is a RESTful API endpoint provided by the Wallet Provider that enables Wallet Instance management, including registration, status retrieval, revocation upon request (e.g., by the User), and deletion. 
-The following sections describe the registration and revocation requests, along with their corresponding responses, handled by this endpoint, which are required for core `Wallet Instance Functionalities`_.
+The following sections describe the registration, status retrieval and revocation requests, along with their corresponding responses, handled by this endpoint, which are required for core `Wallet Instance Functionalities`_.
 
 Wallet Instance Registration Request
 .............................................
@@ -562,7 +563,7 @@ To register a Wallet Instance, the request to the Wallet Provider MUST use the H
       - **Reference**
     * - **challenge**
       - MUST be set to the challenge obtained from the Wallet Provider through the ``Nonce`` endpoint.
-      - `OAuth 2.0 Nonce Endpoint`_
+      - 
     * - **key_attestation**
       - It MUST be a ``base64url`` encoded Key Attestation obtained from the **Device Integrity Service**.
       -
@@ -574,11 +575,7 @@ Wallet Instance Registration Response
 .............................................
 If a Wallet Instance Registration Request is successfully validated, the Wallet Provider provides an HTTP Response with a 204 (No Content) status code.
 
-
-If any errors occur during the Wallet Instance registration, the Wallet Provider MUST return an error response as defined in :rfc:`7231`, with additional details available in :rfc:`7807`. The response MUST use the content type set to *application/json* and MUST include the following parameters:
-
-  - *error*. The error code.
-  - *error_description*. Text in human-readable form providing further details to clarify the nature of the error encountered.
+If any errors occur during the Wallet Instance registration, an error response MUST be returned. Refer to `Error Handling for Wallet Instance Management`_ for details on error codes and descriptions.
 
 Below is a non-normative example of an error response:
 
@@ -595,36 +592,39 @@ Below is a non-normative example of an error response:
      "error_description": "The provided challenge is invalid, expired, or already used."
    }
 
-The following table lists HTTP Status Codes and related error codes that MUST be supported for the error response, unless otherwise specified:
 
-.. list-table::
-   :widths: 20 20 50
-   :header-rows: 1
+Wallet Instance Retrieval Request
+.............................................
 
-   * - **HTTP Status Code**
-     - **Error Code**
-     - **Description**
-   * - ``400 Bad Request`` 
-     - ``bad_request``
-     - The request is malformed, missing required parameters, or includes invalid and unknown parameters.
-   * - ``403 Forbidden`` 
-     - ``integrity_check_error``
-     - The device does not meet the Wallet Provider’s minimum security requirements.
-   * - ``403 Forbidden`` 
-     - ``invalid_request``
-     - The provided challenge is invalid, expired, or already used.
-   * - ``403 Forbidden`` 
-     - ``invalid_request``
-     - The signature of the Key Attestation is invalid.
-   * - ``422 Unprocessable Content`` [OPTIONAL]
-     - ``validation_error``
-     - The request does not adhere to the required format.
-   * - ``500 Internal Server Error`` 
-     - ``server_error``
-     - An internal server error occurred while processing the request.
-   * - ``503 Service Unavailable`` 
-     - ``temporarily_unavailable``
-     - Service unavailable. Please try again later.
+To retrieve all Wallet Instances associated with a User, a request MUST be sent using the HTTP GET method to the Wallet Provider with ``Content-Type`` set to `application/json`. 
+ 
+.. note:: 
+    For retrieving a specific Wallet Instance, the request MUST include the Wallet Instance ID as a path parameter.
+
+
+Wallet Instance Retrieval Response
+.............................................
+
+If a Wallet Instance Retrival Request is successfully processed, the Wallet Provider MUST return an HTTP Response with a 200 (OK) status code. 
+The response body MUST be in JSON format and include the relevant Wallet Instance information, such as its unique ID, status, and issuance date. 
+When retrieving all Wallet Instances, the response MUST return an array containing the details of all associated instances.
+
+If any errors occur during the retrieval process, an error response MUST be returned. Refer to `Error Handling for Wallet Instance Management`_ for details on error codes and descriptions.
+
+Below is a non-normative example of an error response:
+
+.. code:: http
+
+   HTTP/1.1 403 Forbidden
+   Content-Type: application/json
+   Cache-Control: no-store
+
+.. code:: json
+
+   {
+     "error": "forbidden",
+     "error_description": "User is not authorized to retrieve Wallet Instances."
+   }
 
 
 Wallet Instance Revocation Request
@@ -632,15 +632,14 @@ Wallet Instance Revocation Request
 
 To revoke an active Wallet Instance, a revocation request MUST be sent using the HTTP PATCH method with ``Content-Type`` set to `application/json`. The request body MUST contain a ``status`` parameter set to "REVOKED".
 
+.. note:: 
+  While PATCH is the recommended method, the revocation request MAY also be sent using the POST method, depending on implementation preferences.
+
 Wallet Instance Revocation Response
 .............................................
 If a Wallet Instance Revocation Request is successfully processed, the Wallet Provider provides an HTTP Response with a 204 (No Content) status code.
 
-
-If any errors occur during the Wallet Instance Revocation, the Wallet Provider MUST return an error response as defined in :rfc:`7231`, with additional details available in :rfc:`7807`. The response MUST use the ``Content-Type`` set to `application/json` and MUST include the following parameters:
-
-  - *error*. The error code.
-  - *error_description*. Text in human-readable form providing further details to clarify the nature of the error encountered.
+If any errors occur during the Wallet Instance Revocation, an error response MUST be returned. Refer to `Error Handling for Wallet Instance Management`_ for details on error codes and descriptions.
 
 Below is a non-normative example of an error response:
 
@@ -657,34 +656,94 @@ Below is a non-normative example of an error response:
      "error_description": "The request is missing status parameter."
    }
 
-The following table lists HTTP Status Codes and related error codes that MUST be supported for the error response, unless otherwise specified:
+Error Handeling for Wallet Instance Management 
+..................................................
+To ensure robustness and security, the Wallet Provider MUST handle errors consistently across all Wallet Instance Management requests, including Registration, Retrieval, and Revocation.
 
-.. list-table::
+In case of an error, the Wallet Provider MUST return an error response as defined in :rfc:`7231`, with additional details available in :rfc:`7807`. The response MUST use the ``Content-Type`` set to `application/json` and MUST include the following parameters:
+
+  - *error*. The error code.
+  - *error_description*. Text in human-readable form providing further details to clarify the nature of the error encountered.
+
+The following sections categorize errors into **common errors**, which apply to all requests, and **request-specific errors**, which are relevant to particular operations.
+
+Common Error Responses
+'''''''''''''''''''''''''''''''''''''''
+The following errors apply to all Wallet Instance Management operations (Registration, Retrieval, and Revocation), and MUST be supported for the error response, unless otherwise specified:
+
+.. list-table:: Common Error Responses
    :widths: 20 20 50
    :header-rows: 1
 
    * - **HTTP Status Code**
      - **Error Code**
      - **Description**
-   * - ``400 Bad Request`` 
+   * - ``400 Bad Request``
      - ``bad_request``
      - The request is malformed, missing required parameters, or includes invalid and unknown parameters.
-   * - ``401 Unauthorized`` 
-     - ``unauthorized``
-     - The request lacks valid authentication credentials.
-   * - ``403 Forbidden`` 
-     - ``invalid_request``
-     - The user does not have permission to revoke this Wallet Instance.
    * - ``422 Unprocessable Content`` [OPTIONAL]
      - ``validation_error``
      - The request does not adhere to the required format.
-   * - ``500 Internal Server Error`` 
+   * - ``500 Internal Server Error``
      - ``server_error``
-     - An internal server error occurred while processing the request.
-   * - ``503 Service Unavailable`` 
+     - An internal error occurred while processing the request.
+   * - ``503 Service Unavailable``
      - ``temporarily_unavailable``
-     - Service unavailable. Please try again later.
+     - The service is unavailable. Please try again later.
 
+Request-Specific Error Responses
+'''''''''''''''''''''''''''''''''''''''
+The following errors MUST be supported for error responses related to **Wallet Instance Registration**:
+
+.. list-table:: Wallet Instance Registration Error Responses
+   :widths: 20 20 50
+   :header-rows: 1
+
+   * - **HTTP Status Code**
+     - **Error Code**
+     - **Description**
+   * - ``403 Forbidden``
+     - ``integrity_check_error``
+     - The device does not meet the Wallet Provider’s minimum security requirements.
+   * - ``403 Forbidden``
+     - ``invalid_request``
+     - The provided challenge is invalid, expired, or already used.
+   * - ``403 Forbidden``
+     - ``invalid_request``
+     - The signature of the Key Attestation is invalid.
+
+
+The following errors MUST be supported for error responses related to **Wallet Instance Retrieval**:
+
+.. list-table:: Wallet Instance Retrieval Error Responses
+   :widths: 20 20 50
+   :header-rows: 1
+
+   * - **HTTP Status Code**
+     - **Error Code**
+     - **Description**
+   * - ``403 Forbidden``
+     - ``forbidden``
+     - The user does not have permission to retrieve this Wallet Instance.
+   * - ``401 Unauthorized``
+     - ``unauthorized``
+     - The request lacks valid authentication credentials.
+  
+The following errors MUST be supported for error responses related to **Wallet Instance Revocation**:
+
+.. list-table:: Wallet Instance Revocation Error Responses
+   :widths: 20 20 50
+   :header-rows: 1
+
+   * - **HTTP Status Code**
+     - **Error Code**
+     - **Description**
+   * - ``403 Forbidden``
+     - ``invalid_request``
+     - The user does not have permission to revoke this Wallet Instance.
+   * - ``401 Unauthorized``
+     - ``unauthorized``
+     - The request lacks valid authentication credentials.
 
 Wallet Attestation Issuance Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -773,8 +832,23 @@ The body of the Wallet Attestation Request JWT MUST contain the following parame
 
 Wallet Attestation Issuance Response
 .............................................
-If the Wallet Attestation issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a 200 (OK) status code. The response includes the Wallet Attestation, signed by the Wallet Provider, containing the header and body parameters (see :ref:`Table of the Wallet Attestation <table_wallet_attestation_claim>` below).
+If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a 200 (OK) status code. The response includes the Wallet Attestation, signed by the Wallet Provider, containing the header and body parameters (see :ref:`Table of the Wallet Attestation <table_wallet_attestation_claim>` below).
 
+If any errors occur during the Wallet Attestation Issuance, an error response MUST be returned. Refer to `Error Handling for Wallet Attestation Issuance`_ for details on error codes and descriptions.
+Below is a non-normative example of an error response:
+
+.. code:: http
+
+   HTTP/1.1 403 Forbidden
+   Content-Type: application/json
+   Cache-Control: no-store
+
+.. code:: json
+
+   {
+     "error": "integrity_check_error",
+     "error_description": "The device does not meet the Wallet Provider’s minimum security requirements."
+   }
 
 .. _table_wallet_attestation_claim:
 
@@ -849,7 +923,58 @@ The body of the Wallet Attestation JWT MUST contain the following parameters:
       - Array of JSON Strings containing the values of the Client Identifier schemes that the Wallet supports.
       - `OpenID4VP`_
 
+Error Handeling for Wallet Attestation Issuance 
+..................................................
+If any errors occur during the Wallet Attestation Request Verification, the Wallet Provider MUST return an error response as defined in :rfc:`7231` (additional details available in :rfc:`7807`). The response MUST use the content type set to *application/json* and MUST include the following parameters:
 
+  - *error*. The error code.
+  - *error_description*. Text in human-readable form providing further details to clarify the nature of the error encountered.
+
+The following table lists HTTP Status Codes and related error codes that MUST be supported for the error response, unless otherwise specified:
+
+.. list-table::
+   :widths: 30 20 50
+   :header-rows: 1
+
+   * - **HTTP Status Code**
+     - **Error Code**
+     - **Description**
+   * - ``400 Bad Request`` 
+     - ``bad_request``
+     - The request is malformed, missing required parameters (e.g., header parameters or integrity assertion), or includes invalid and unknown parameters.
+   * - ``403 Forbidden`` 
+     - ``invalid_request``
+     - The wallet instance was revoked.
+   * - ``403 Forbidden`` 
+     - ``integrity_check_error``
+     - The device does not meet the Wallet Provider’s minimum security requirements.
+   * - ``403 Forbidden`` 
+     - ``invalid_request``
+     - The signature of the Wallet Attestation Request is invalid or does not match the associated public key (JWK).
+   * - ``403 Forbidden`` 
+     - ``invalid_request``
+     - The integrity assertion validation failed; the integrity assertion is tampered with or improperly signed.
+   * - ``403 Forbidden`` 
+     - ``invalid_request``
+     - The provided challenge is invalid, expired, or already used.
+   * - ``403 Forbidden`` 
+     - ``invalid_request``
+     - The Proof of Possession (``hardware_signature``) is invalid.
+   * - ``403 Forbidden`` 
+     - ``invalid_request``
+     - The ``iss`` parameter does not match the Wallet Provider’s expected URL identifier.
+   * - ``404 Not Found`` 
+     - ``not_found``
+     - The Wallet Instance was not found.
+   * - ``422 Unprocessable Content`` [OPTIONAL]
+     - ``validation_error``
+     - The request does not adhere to the required format.
+   * - ``500 Internal Server Error`` 
+     - ``server_error``
+     - An internal server error occurred while processing the request.
+   * - ``503 Service Unavailable`` 
+     - ``temporarily_unavailable``
+     - Service unavailable. Please try again later.
 
 External references
 --------------------------
@@ -872,7 +997,9 @@ External references
 .. _Federation endpoint: wallet-solution.html#federation-endpoint
 .. _Wallet Instance Management endpoint: wallet-solution.html#wallet-instance-management-endpoint
 .. _Wallet Instance Functionalities: wallet-solution.html#wallet-instance-functionalities
-
+.. _Error Handling for Wallet Instance Management: wallet-solution.html#error-handeling-for-wallet-instance-management 
+.. _Error Handling for Wallet Attestation Issuance: wallet-solution.html#error-handeling-for-wallet-attestation-issuance
+.. _Error Handling for Nonce Generation: wallet-solution.html#error-handeling-for-nonce-generation
 
 
 

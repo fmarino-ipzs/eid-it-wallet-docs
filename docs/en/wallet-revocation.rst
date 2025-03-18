@@ -37,19 +37,50 @@ Users MAY request the Wallet Instance revocation by:
 In both cases, by using the Wallet Provider portal:
 
 - Users MUST authenticate with at least a second-factor authentication mechanism, or have an active session that meets this requirement. 
-- The Wallet Provider MUST allow Users to view the state of their Wallet Instances and ask for revocation, sending a Wallet Instance Revocation Request to the `Wallet Instance Management endpoint`_ of the Wallet Provider Backend. 
+- The Wallet Provider MUST allow Users to view the state of their Wallet Instances associated with their authenticated session and ask for revocation, sending a Wallet Instance Retrieval or Revocation Request, as applicable, to the `Wallet Instance Management endpoint`_ of the Wallet Provider Backend. 
 
+Below is a non-normative example of a Wallet Instances Retrieval Request.
+
+.. code:: http
+
+   GET /wallet-instances HTTP/1.1
+   Host: walletprovider.example.com
+
+Upon a successful retrieval, the Wallet Provider MUST return a confirmation response, with the status of all Wallet Instances associated with the User.
+Below is a non-normative example of a Wallet Instances Retrieval Response.
+
+.. code:: http
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Cache-Control: no-store
+
+   [
+     {
+       "id": "f7b2a8d9",
+       "status": "ACTIVE",
+       "issued_at": "2024-03-12T10:00:00Z"
+     },
+     {
+       "id": "g8b235c4",
+       "status": "REVOKED",
+       "issued_at": "2024-02-28T15:30:00Z"
+     }
+   ]
+   
+Once the User identifies the Wallet Instance to be revoked, a Wallet Instance Revocation Request can be sent to the endpoint, including the Wallet Instance ID as a path parameter.
 Below is a non-normative example of a Wallet Instance Revocation Request.
 
 .. code-block:: http
 
-    PATCH /wallet-instances/{id} HTTP/1.1
+    PATCH /wallet-instances/{f7b2a8d9} HTTP/1.1
     Host: wallet-provider.example.org
     Content-Type: application/json
 
     {
       "status": "REVOKED"
     }
+
 
 Wallet Instance Revocation Response
 ...................................

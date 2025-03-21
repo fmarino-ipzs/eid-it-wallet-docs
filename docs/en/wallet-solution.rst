@@ -554,7 +554,7 @@ To register a Wallet Instance, the request to the Wallet Provider MUST use the H
 
 
 .. _table_http_request_claim:
-.. list-table:: Wallet Instance registration http request claims
+.. list-table:: 
     :widths: 20 60 20
     :header-rows: 1
 
@@ -671,7 +671,7 @@ Common Error Responses
 '''''''''''''''''''''''''''''''''''''''
 The following errors apply to all Wallet Instance Management operations (Registration, Retrieval, and Revocation), and MUST be supported for the error response, unless otherwise specified:
 
-.. list-table:: Common Error Responses
+.. list-table:: 
    :widths: 20 20 50
    :header-rows: 1
 
@@ -695,7 +695,7 @@ Request-Specific Error Responses
 '''''''''''''''''''''''''''''''''''''''
 The following errors MUST be supported for error responses related to **Wallet Instance Registration**:
 
-.. list-table:: Wallet Instance Registration Error Responses
+.. list-table:: 
    :widths: 20 20 50
    :header-rows: 1
 
@@ -715,7 +715,7 @@ The following errors MUST be supported for error responses related to **Wallet I
 
 The following errors MUST be supported for error responses related to **Wallet Instance Retrieval**:
 
-.. list-table:: Wallet Instance Retrieval Error Responses
+.. list-table:: 
    :widths: 20 20 50
    :header-rows: 1
 
@@ -731,7 +731,7 @@ The following errors MUST be supported for error responses related to **Wallet I
   
 The following errors MUST be supported for error responses related to **Wallet Instance Revocation**:
 
-.. list-table:: Wallet Instance Revocation Error Responses
+.. list-table:: 
    :widths: 20 20 50
    :header-rows: 1
 

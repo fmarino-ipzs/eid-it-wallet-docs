@@ -240,7 +240,7 @@ Wallet Instance Initialization and Registration
 
     **Federation Check**: The Wallet Instance needs to check if the Wallet Provider is part of the Federation, obtaining its protocol-specific Metadata. A non-normative example of a response from the `Federation endpoint`_ with the **Entity Configuration** and the **Metadata** of the Wallet Provider is represented within the `Federation endpoint`_ section.
 
-**Steps 3-5 (Nonce Retrival)**: The Wallet Instance requests a one-time ``challenge``  from the `Nonce endpoint`_ of the Wallet Provider Backend. This "challenge" known as a ``nonce``, MUST be unpredictable to serve as the main defense against replay attacks. 
+**Steps 3-5 (Nonce Retrieval)**: The Wallet Instance requests a one-time ``challenge``  from the `Nonce endpoint`_ of the Wallet Provider Backend. This "challenge" known as a ``nonce``, MUST be unpredictable to serve as the main defense against replay attacks. 
 
 Below is a non-normative example of a Nonce Request.
 
@@ -295,7 +295,7 @@ Below is a non-normative example of a Nonce Response.
 * Uses an OEM private key to sign the Key Attestation, therefore verifiable with the related OEM certificate, confirming that the Cryptographic Hardware Keys are securely managed by the operating system.
 
 **Step 9 (Wallet Instance Registration Request)**: The Wallet Instance sends a request to the `Wallet Instance Management endpoint`_ of the Wallet Provider Backend to register the Wallet Instance, identified by the Cryptographic Hardware Key public key. 
-The request body includes the following parameters: the ``challenge``, Key Attestation (``key_attestation``), and Cryptographic Hardware Key Tag (``hardware_key_tag``).
+The request body includes the following claims: the ``challenge``, Key Attestation (``key_attestation``), and Cryptographic Hardware Key Tag (``hardware_key_tag``).
 
 Below is a non-normative example of a Wallet Instance Registration Request.
 
@@ -349,7 +349,7 @@ Below is a non-normative example of  a Wallet Instance Registration Response.
 Wallet Provider Endpoints
 ------------------------------------
 
-The Wallet Provider, responsible for delivering a Wallet Solution, MUST expose endpoints to support trust establishment and essential Wallet Instance functionalities. This includes a trust endpoint—the Federation Endpoint—that MUST adhere to the OpenID Federation specification to reliably establish the Wallet Provider’s identity within the ecosystem. In addition, endpoints for Wallet Instance registration, attestation issuance, and revocation are also mandatory, although their specific implementation details are left to the Wallet Provider’s discretion.
+The Wallet Provider, responsible for delivering a Wallet Solution, MUST expose endpoints to support trust establishment and essential Wallet Instance functionalities. This includes a trust endpoint—the Federation Endpoint—that MUST adhere to the OpenID Federation specification to reliably establish the Wallet Provider’s identity within the ecosystem. In addition, endpoints for Wallet Instance registration, nonce generation (required for registration), attestation issuance, and revocation are also mandatory, although their specific implementation details are left to the Wallet Provider’s discretion.
 
 Federation Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -550,11 +550,11 @@ The following sections describe the registration, status retrieval and revocatio
 
 Wallet Instance Registration Request
 .............................................
-To register a Wallet Instance, the request to the Wallet Provider MUST use the HTTP POST method with ``Content-Type`` set to `application/json`. The request body MUST contain the following parameters (or claims):
+To register a Wallet Instance, the request to the Wallet Provider MUST use the HTTP POST method with ``Content-Type`` set to `application/json`. The request body MUST contain the following claims:
 
 
 .. _table_http_request_claim:
-.. list-table:: Wallet Instance registration http request parameters
+.. list-table:: Wallet Instance registration http request claims
     :widths: 20 60 20
     :header-rows: 1
 
@@ -562,7 +562,7 @@ To register a Wallet Instance, the request to the Wallet Provider MUST use the H
       - **Description**
       - **Reference**
     * - **challenge**
-      - MUST be set to the challenge obtained from the Wallet Provider through the ``Nonce`` endpoint.
+      - MUST be set to the value obtained from the Wallet Provider through the ``Nonce`` endpoint.
       - 
     * - **key_attestation**
       - It MUST be a ``base64url`` encoded Key Attestation obtained from the **Device Integrity Service**.
@@ -605,7 +605,7 @@ To retrieve all Wallet Instances associated with a User, a request MUST be sent 
 Wallet Instance Retrieval Response
 .............................................
 
-If a Wallet Instance Retrival Request is successfully processed, the Wallet Provider MUST return an HTTP Response with a 200 (OK) status code. 
+If a Wallet Instance Retrieval Request is successfully processed, the Wallet Provider MUST return an HTTP Response with a 200 (OK) status code. 
 The response body MUST be in JSON format and include the relevant Wallet Instance information, such as its unique ID, status, and issuance date. 
 When retrieving all Wallet Instances, the response MUST return an array containing the details of all associated instances.
 
@@ -777,7 +777,7 @@ The JOSE header of the Wallet Attestation Request JWT MUST contain the following
       -  It MUST be set to ``var+jwt``
       -
 
-The body of the Wallet Attestation Request JWT MUST contain the following parameters:
+The body of the Wallet Attestation Request JWT MUST contain the following claims:
 
 .. list-table::
     :widths: 20 60 20
@@ -787,7 +787,7 @@ The body of the Wallet Attestation Request JWT MUST contain the following parame
       - **Description**
       - **Reference**
     * - **iss**
-      - Identifier of the Wallet Provider concatenated with the thumbprint of the JWK in the ``cnf`` parameter.
+      - Identifier of the Wallet Provider concatenated with the thumbprint of the JWK in the ``cnf`` claim.
       - :rfc:`9126` and :rfc:`7519`.
     * - **aud**
       - It MUST be set to the identifier of the Wallet Provider.
@@ -799,7 +799,7 @@ The body of the Wallet Attestation Request JWT MUST contain the following parame
       - REQUIRED. UNIX Timestamp with the time of JWT issuance.
       - :rfc:`9126` and :rfc:`7519`.
     * - **challenge**
-      - Challenge data obtained from the ``nonce`` endpoint
+      - Challenge data obtained from the ``nonce`` endpoint.
       -
     * - **hardware_signature**
       - The signature of ``client_data`` obtained using Cryptographic Hardware Key base64 encoded.
@@ -808,7 +808,7 @@ The body of the Wallet Attestation Request JWT MUST contain the following parame
       - The integrity assertion obtained from the **Device Integrity Service** with the holder binding of ``client_data``.
       -
     * - **hardware_key_tag**
-      - Unique identifier of the **Cryptographic Hardware Keys**
+      - Unique identifier of the **Cryptographic Hardware Keys**.
       -
     * - **cnf**
       - JSON object, containing the public part of an asymmetric key pair owned by the Wallet Instance.
@@ -832,7 +832,7 @@ The body of the Wallet Attestation Request JWT MUST contain the following parame
 
 Wallet Attestation Issuance Response
 .............................................
-If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a 200 (OK) status code. The response includes the Wallet Attestation, signed by the Wallet Provider, containing the header and body parameters (see :ref:`Table of the Wallet Attestation <table_wallet_attestation_claim>` below).
+If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a 200 (OK) status code. The response includes the Wallet Attestation, signed by the Wallet Provider, containing the header and body claims (see :ref:`Table of the Wallet Attestation <table_wallet_attestation_claim>` below).
 
 If any errors occur during the Wallet Attestation Issuance, an error response MUST be returned. Refer to `Error Handling for Wallet Attestation Issuance`_ for details on error codes and descriptions.
 Below is a non-normative example of an error response:
@@ -877,7 +877,7 @@ The JOSE header of the Wallet Attestation JWT MUST contain the following paramet
       - Sequence of Entity Statements that composes the Trust Chain related to the Relying Party.
       - `OID-FED`_ Section 4.3 *Trust Chain Header Parameter*.
 
-The body of the Wallet Attestation JWT MUST contain the following parameters:
+The body of the Wallet Attestation JWT MUST contain the following claims:
 
 .. list-table::
     :widths: 20 60 20
@@ -926,7 +926,7 @@ The body of the Wallet Attestation JWT MUST contain the following parameters:
 Error Handling for Wallet Attestation Issuance 
 ..................................................
 
-If any errors occur during the Wallet Attestation Request Verification, the Wallet Provider MUST return an error response as defined in :rfc:`7231` (additional details available in :rfc:`7807`). The response MUST use the content type set to *application/json* and MUST include the following parameters:
+If any errors occur during the Wallet Attestation Request verification, the Wallet Provider MUST return an error response as defined in :rfc:`7231` (additional details available in :rfc:`7807`). The response MUST use the content type set to *application/json* and MUST include the following parameters:
 
   - *error*. The error code.
   - *error_description*. Text in human-readable form providing further details to clarify the nature of the error encountered.

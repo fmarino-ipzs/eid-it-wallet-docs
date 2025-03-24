@@ -743,7 +743,7 @@ The following errors MUST be supported for error responses related to **Wallet I
      - The user does not have permission to revoke this Wallet Instance.
    * - ``401 Unauthorized``
      - ``unauthorized``
-     - The request lacks valid authentication credentials.
+     - The request cannot be authenticated or authorized.
 
 Wallet Attestation Issuance Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

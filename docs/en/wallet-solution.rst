@@ -315,9 +315,7 @@ Below is a non-normative example of a Wallet Instance Registration Request.
   As seen in the previous steps, the Device Integrity Service (DIS) creates a Key Attestation linked to the provided "challenge" and the public key of the Wallet Hardware. This process eliminates the need to send the Wallet Hardware public key directly, as it is already included in the key attestation. The ``hardware_key_tag`` serves as a reference or identifier for the corresponding Cryptographic Hardware key stored by the Wallet Provider. Therefore, the Wallet Provider can associate the received ``hardware_key_tag`` with the appropriate Cryptographic Hardware key in its storage.
 
 .. warning::
-  During the registration phase of the Wallet Instance with the Wallet Provider it is also necessary to associate it with a specific user
-  uniquely identifiable by the Wallet Provider. This association is at the discretion of the Wallet Provider and will not be addressed
-  within these guidelines as each Wallet Provider may or may not have a user identification system already implemented.
+  During the registration phase of the Wallet Instance with the Wallet Provider it is also necessary to associate the Wallet Instace with a specific User, authenticating the User with the Wallet Provider. The authentication mechanism is at the discretion of the Wallet Provider and it will not be addressed within these guidelines, as each Wallet Provider may have its User authentication systems already implemented.
 
 
 **Steps 10-12 (Wallet Instance Registration Response)**: The Wallet Provider validates the ``challenge`` and ``key_attestation`` signature, therefore:

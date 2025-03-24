@@ -21,7 +21,7 @@ By supporting the mobile app, the Wallet Provider ensures the security and relia
 as it is responsible for issuing the Wallet Attestation,
 which is a cryptographic proof about the authenticity and integrity of the Wallet Instance.
 
-Requirements
+Wallet Solution Requirements
 -----------------------------
 
 This section lists the requirements that are to be met by Wallet Providers, Wallet Solutions, and their Wallet Instances.

@@ -704,7 +704,7 @@ The following errors MUST be supported for error responses related to **Wallet I
      - **Description**
    * - ``403 Forbidden``
      - ``integrity_check_error``
-     - The device does not meet the Wallet Provider’s minimum security requirements.
+     - The device does not meet the Wallet Provider's minimum security requirements.
    * - ``403 Forbidden``
      - ``invalid_request``
      - The provided challenge is invalid, expired, or already used.

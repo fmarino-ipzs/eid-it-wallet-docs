@@ -27,7 +27,7 @@ Requirements
 This section lists the requirements that are to be met by Wallet Providers, Wallet Solutions, and their Wallet Instances.
 
  - The Wallet Provider MUST expose a set of endpoints, exclusively available to its Wallet Solution instances, supporting the core functionalities of the Wallet Instances.
- - The Wallet Instance MUST periodically reestablish trust with its Wallet Provider, obtaining a Wallet Attestation.
+ - The Wallet Instance MUST periodically reestablish trust with its Wallet Provider, obtaining a fresh Wallet Attestation.
  - The Wallet Instance MUST establish trust with other participants of the Wallet ecosystem, such as Credential Issers and Relying Parties, presenting a Wallet Attestation.
  - The Wallet Solutions MUST adhere to the specifications set by this document for obtaining Personal Identification (PID) and (Q)EAAs.
  - The Wallet Instance MUST be compatible and functional on both Android and iOS operating systems and available on the Play Store and App Store, respectively.

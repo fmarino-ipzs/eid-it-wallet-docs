@@ -326,7 +326,7 @@ Below is a non-normative example of a Wallet Instance Registration Request.
   4. If these checks are passed, it MUST register the Wallet Instance, keeping the Cryptographic Hardware Key Tag and all useful information related to the device.
   5. It SHOULD associate the Wallet Instance with a specific User uniquely identified within the Wallet Provider's systems. This will be useful for the lifecycle of the Wallet Instance and for a future revocation.
 
-Upon successful registration of the Wallet Instance, the Wallet Provider MUST respond with a confirmation of success.
+Upon successful registration of the Wallet Instance, the Wallet Provider responds with a confirmation of success.
 Below is a non-normative example of  a Wallet Instance Registration Response.
 
 .. code-block:: http

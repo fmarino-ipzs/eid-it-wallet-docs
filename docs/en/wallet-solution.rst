@@ -56,7 +56,7 @@ The requirements for the Wallet Attestation are defined below:
 - The Wallet Attestation MUST be short-lived and MUST have an expiration time, after which it MUST no longer be considered valid.
 - The Wallet Attestation MUST NOT be issued by the Wallet Provider if the authenticity, integrity, and genuineness are not guaranteed. In this case, the Wallet Instance MUST be revoked.
 - Each Wallet Instance SHOULD be able to request multiple attestations with different ephemeral public keys associated with them. This requirement provides a privacy-preserving measure, as the public key MAY be used as a tracking tool during the presentation phase (see also the point listed below).
-- The Wallet Attestation MUST NOT contain any information that can be used to directly identify the User.
+- The Wallet Attestation MUST NOT contain information about the User in control of the Wallet Instance.
 - The Wallet Instance MUST secure a Wallet Attestation as a prerequisite for transitioning to the Operational state, as defined by `ARF`_.
 
 WSCD Requirements

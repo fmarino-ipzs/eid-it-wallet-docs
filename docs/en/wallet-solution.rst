@@ -349,7 +349,7 @@ Below is a non-normative example of  a Wallet Instance Registration Response.
 Wallet Provider Endpoints
 ------------------------------------
 
-The Wallet Provider, responsible for delivering a Wallet Solution, MUST expose endpoints to support trust establishment and essential Wallet Instance functionalities. This includes a trust endpoint—the Federation Endpoint—that MUST adhere to the OpenID Federation specification to reliably establish the Wallet Provider’s identity within the ecosystem. In addition, endpoints for Wallet Instance registration, nonce generation (required for registration), attestation issuance, and revocation are also mandatory, although their specific implementation details are left to the Wallet Provider’s discretion.
+The Wallet Provider, responsible for delivering a Wallet Solution, MUST expose endpoints to support trust establishment and essential Wallet Instance functionalities. This includes a trust endpoint - the Federation Endpoint - that MUST adhere to the OpenID Federation 1.0 specification to reliably establish the Wallet Provider’s identity within the ecosystem. In addition, endpoints for Wallet Instance registration, nonce generation (required for registration), attestation issuance, and revocation are also mandatory, although their specific implementation details are left to the Wallet Provider’s discretion.
 
 Federation Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

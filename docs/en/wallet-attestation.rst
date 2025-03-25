@@ -208,7 +208,6 @@ Below is a non-normative example of a Wallet Attestation Issuance Response.
     eyJhbGciOiJFUzI1NiIsInR5cCI6IndhbGx ...
 
 
-
 .. _Wallet Attestation Request: wallet-attestation-issuance.html#format-of-the-wallet-attestation-request
 .. _RFC 7523 section 4: https://www.rfc-editor.org/rfc/rfc7523.html#section-4
 .. _RFC 8414 section 2: https://www.rfc-editor.org/rfc/rfc8414.html#section-2
@@ -218,5 +217,8 @@ Below is a non-normative example of a Wallet Attestation Issuance Response.
 .. _ARF: https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
 .. _Play Integrity API Errors: https://developer.android.com/google/play/integrity/error-codes
 .. _TEE Client API Errors: https://globalplatform.org/wp-content/uploads/2010/07/TEE_Client_API_Specification-V1.0.pdf
+.. _Nonce endpoint: wallet-solution.html#nonce-endpoint
+.. _Wallet Attestation Issuance endpoint: wallet-solution.html#wallet-attestation-issuance-endpoint
+.. _Wallet Instance Management endpoint: wallet-solution.html#wallet-instance-management-endpoint
 
 

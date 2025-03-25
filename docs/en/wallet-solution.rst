@@ -999,5 +999,3 @@ External references
 .. _Error Handling for Wallet Attestation Issuance: wallet-solution.html#error-handling-for-wallet-attestation-issuance
 .. _Error Handling for Nonce Generation: wallet-solution.html#error-handling-for-nonce-generation
 
-
-

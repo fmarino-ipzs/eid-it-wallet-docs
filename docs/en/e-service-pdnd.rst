@@ -47,7 +47,7 @@ This specification is based on the following set of requirements:
       - The Producer SHALL ensure, with a high degree of certainty, the verification of the Consumer's identity.
       - Security
 
-`PDND`_ and `MODI`_ define several security patterns designed to enhance specific security properties in interactions between Participants. This specification adopts the following applicable security patterns:
+`PDND`_ and `MODI`_ define several security patterns designed to enhance specific security properties in interactions between Participants. This specification adopts the following applicable security patterns for the interaction between Participants:
 
 .. list-table::
     :widths: 80 20
@@ -64,6 +64,9 @@ This specification is based on the following set of requirements:
     * - **[AUDIT_REST_02]** Submission of audit data within the REST request with correlation (*Annex 2 - Security Patterns* [`MODI`_]): REQUIRED if **[REST_JWS_2021_POP]** is not implemented. The Provider MAY request additional data tracked in the Consumer's domain, with a correlation between such data and the authentication method. In that case, this pattern MUST be used.
       - R3, R4, R5
 
+.. note::
+
+    In these specifications, the ``REST_JWS_2021_POP`` security pattern is implemented by default in accordance with :rfc:`9449`. If DPoP is not supported by the PDND Infrastructure, the proof of possession is attested by the ``TrackingEvidence`` JWT (as detailed below). However, while the ``TrackingEvidence`` is defined in ``AUDIT_REST_02`` to provide additional tracked data, in this context, it acts as proof of possession of the Voucher. Such implementation choices will be referred to as ``POP_DPoP`` and ``POP_TPoP``, respectively.
 
 In addition, this specification defines and applies a custom security pattern:
 
@@ -95,6 +98,14 @@ The following security patterns defined in `PDND`_ and `MODI`_ MUST NOT be used 
         - **[ID_AUTH_SOAP_01]** Direct Trust based on X.509 certificate with SOAP (*Annex 2 - Security Patterns* [`MODI`_]).
         - **[ID_AUTH_SOAP_02]** Direct Trust based on X.509 certificate with SOAP and token/message uniqueness (*Annex 2 - Security Patterns* [`MODI`_]).
         - **[INTEGRITY_SOAP_01]** SOAP Payload Integrity (*Annex 2 - Security Patterns* [`MODI`_]).
+
+    - The following pattern does not guarantee proof of possession of the Voucher, thus not complying with **R5**:
+
+        - **[REST_JWS_2021_Bearer]** JWS Bearer Voucher Issuing Profile (*Annex 3 - Standards and technical details used for Voucher Authorization* [`PDND`_]).
+
+.. note::
+
+    In case of ``POP_TPoP`` implementation, the Voucher is issued as a Bearer token. However, since it is accompanied by a proof of possession, it still complies with the ``REST_JWS_2021_POP`` security pattern rather than ``REST_JWS_2021_Bearer``.
 
 .. _sec_VoucherIssuance:
 
@@ -180,9 +191,13 @@ PDND Voucher for e-Services Flow
 
 .. note::
 
-    Steps 1-2 are required only when complying with the ``AUDIT_REST_02`` security pattern.
+    Steps 1-2 are required only when complying with the ``AUDIT_REST_02`` security pattern or the ``POP_TPoP`` implementation.
 
 **Step 3 (DPoP Key Pair and Proof)**: The Consumer MUST create a new key pair for the DPoP and a fresh DPoP proof JWT following the instruction provided in the Section 4 of :rfc:`9449` for the token request to the PDND Authorization Server.
+
+.. note::
+
+    Step 3 is required only when complying with the ``POP_DPoP`` implementation.
 
 **Step 4 (Voucher Request)**: The Consumer creates a Voucher Request and sends it to the PDND Authorization Server.
 
@@ -236,7 +251,7 @@ PDND Voucher for e-Services Flow
 
 .. note::
 
-    The ``digest`` claim in the ``client_assertion`` payload is required only when complying with the ``AUDIT_REST_02`` security pattern.
+    The ``digest`` claim in the ``client_assertion`` payload is required only when complying with the ``AUDIT_REST_02`` security pattern or the ``POP_TPoP`` implementation.
 
 Upon the receipt of the Voucher Request, the PDND Authorization Server MUST perform the following checks on the Voucher Request body parameters:
 
@@ -323,7 +338,7 @@ The PDND Authorization Server MUST also validate the ``client_assertion`` JWT as
 
 .. note::
 
-    The ``digest`` claim in the ``access_token`` payload is required only when complying with the ``AUDIT_REST_02`` security pattern. If present, it corresponds to the value of the ``digest`` claim contained in the ``client_assertion``.
+    The ``digest`` claim in the ``access_token`` payload is required only when complying with the ``AUDIT_REST_02`` security pattern or the ``POP_TPoP`` implementation. If present, it corresponds to the value of the ``digest`` claim contained in the ``client_assertion``.
 
 .. _sec_VoucherIssuance_InteroperabilityAPI:
 
@@ -482,7 +497,7 @@ The Voucher Request MUST include the following HTTP header parameters (unless ot
       - **Description**
       - **Reference**
     * - **DPoP**
-      - DPoP proof JWT, to comply with the ``REST_JWS_2021_POP`` security pattern. It is mandatory only if the requested Voucher is for e-Service (i.e., not for Interoperability API).
+      - DPoP proof JWT, to comply with the ``REST_JWS_2021_POP`` security pattern. It is mandatory only if the requested Voucher is for e-Service (i.e., not for Interoperability API) and follows the ``POP_DPoP`` implementation.
       - [:rfc:`9449`], [`PDND`_]
 
 The Voucher Request MUST include the following body parameters:
@@ -560,7 +575,7 @@ The ``client_assertion`` JWT MUST include the following payload claims (unless o
       - The identifier of the purpose registered in the PDND Platform, associated with the intended e-Service. It is mandatory only if the requested Voucher is for e-Service (i.e., not for Interoperability API).
       - [`MODI`_], [`PDND`_]
     * - **digest**
-      - JSON object containing the digest of the ``TrackingEvidence`` JWT. It is mandatory only if the requested Voucher is for e-Service (i.e., not for Interoperability API), and when complying with ``AUDIT_REST_02``. If present, it MUST contain the following claims:
+      - JSON object containing the digest of the ``TrackingEvidence`` JWT. It is mandatory only if the requested Voucher is for e-Service (i.e., not for Interoperability API), and when complying with ``AUDIT_REST_02`` or the ``POP_TPoP`` implementation. If present, it MUST contain the following claims:
 
         - **alg**: JSON string representing the hashing algorithm;
         - **value**: JSON string representing the value of the digest.
@@ -586,8 +601,8 @@ The Voucher Response MUST include the following body parameters:
     * - **token_type**
       - It MUST be set to:
       
-        - ``DPoP`` in case of Voucher for e-Service;
-        - ``Bearer`` in case of Voucher for Interoperability API.
+        - ``DPoP`` in case of Voucher for e-Service following the ``POP_DPoP`` implementation;
+        - ``Bearer`` in case of Voucher for Interoperability API, or Voucher for e-Service following the ``POP_TPoP`` implementation.
       - [:rfc:`6749`], [:rfc:`9449`]
     * - **expires_in**
       - Number that represents the lifetime of the access token in seconds as a positive integer.
@@ -649,10 +664,10 @@ The ``access_token`` JWT MUST include the following payload claims (unless other
       - MUST correspond to the value of the ``purposeId`` claim contained in the Voucher Request. It is mandatory only if the requested Voucher is for e-Service (i.e., not for Interoperability API).
       - [`MODI`_], [`PDND`_]
     * - **digest**
-      - MUST correspond to the value of the ``digest`` object contained in the Voucher Request. It is mandatory only when complying with ``AUDIT_REST_02``.
+      - MUST correspond to the value of the ``digest`` object contained in the Voucher Request. It is mandatory only when complying with ``AUDIT_REST_02`` or the ``POP_TPoP`` implementation.
       - [`MODI`_]
     * - **cnf**
-      - It MUST contain a **jkt** claim being JWK SHA-256 Thumbprint Confirmation Method. The value of the *jkt* member MUST be the base64url encoding (as defined in [:rfc:`7515`]) of the JWK SHA-256 Thumbprint of the DPoP public key (in JWK format) to which the Access Token is bound.
+      - It MUST contain a **jkt** claim being JWK SHA-256 Thumbprint Confirmation Method. The value of the *jkt* member MUST be the base64url encoding (as defined in [:rfc:`7515`]) of the JWK SHA-256 Thumbprint of the DPoP public key (in JWK format) to which the Access Token is bound. It is mandatory only when complying with the ``POP_DPoP`` implementation.
       - [:rfc:`9449`. Section 6.1] and [:rfc:`7638`].
 
 If any errors occur during the validation of the Voucher Request, the PDND Authorization Server Endpoint MUST return an error response as defined in :rfc:`6749#section-5.2`. The response MUST use ``application/json`` as the content type and MUST include the following parameters:
@@ -1047,6 +1062,10 @@ e-Service Usage Flow
 
 **Step 2 (DPoP Proof for e-Service Endpoint)**: The Consumer MUST create a fresh DPoP Proof JWT following the instruction provided in the Section 4 of [:rfc:`9449`] for the token presentation to the e-Service Endpoint.
 
+.. note::
+
+    Step 2 is required only when complying with the ``POP_DPoP`` implementation.
+
 **Step 3 (e-Service Request):** The Consumer sends an e-Service Request to the Provider, including the Voucher.
 
 .. code-block:: http
@@ -1069,6 +1088,10 @@ e-Service Usage Flow
 
 The Provider MUST validate the DPoP proof [:rfc:`9449`].
 
+.. note::
+
+    DPoP proof validation is required only when complying with the ``POP_DPoP`` implementation.
+
 The Provider MUST validate the Voucher as follows:
 
     Header:
@@ -1085,7 +1108,7 @@ The Provider MUST validate the Voucher as follows:
         - The ``iss`` claim MUST identify the domain of the PDND Authorization Server.
         - The ``sub`` claim MUST correspond to the ``client_id`` claim.
         - The ``aud`` claim MUST match the intended e-Service.
-        - The ``cnf.jkt`` claim MUST correspond to the SHA-256 Thumbprint of the DPoP public key in the ``jwk`` claim in the DPoP proof.
+        - In case of ``POP_DPoP`` implementation, the ``cnf.jkt`` claim MUST correspond to the SHA-256 Thumbprint of the DPoP public key in the ``jwk`` claim in the DPoP proof.
 
 .. note:: 
 
@@ -1111,7 +1134,7 @@ In addition, the Provider MUST ensure that the hash of the ``TrackingEvidence`` 
 
 .. note:: 
 
-    The validation of the ``TrackingEvidence`` JWT is required only when complying with the ``AUDIT_REST_02`` security pattern.
+    The validation of the ``TrackingEvidence`` JWT is required only when complying with the ``AUDIT_REST_02`` security pattern or the ``POP_TPoP`` implementation.
 
 The Provider MUST validate the ``Signature`` JWT as follows:
 
@@ -1214,7 +1237,7 @@ The e-Service Request MUST include the following HTTP header parameters (unless 
       - Voucher released by the PDND Authorization Server.
       - [:rfc:`9449`], [`MODI`_], [`PDND`_]
     * - **DPoP**
-      - DPoP proof JWT, to comply with the ``REST_JWS_2021_POP`` security pattern.
+      - DPoP proof JWT, to comply with the ``REST_JWS_2021_POP`` security pattern. Is is mandatory only when following the ``POP_DPoP`` implementation.
       - [:rfc:`9449`], [`PDND`_]
     * - **Agid-JWT-Signature**
       - JWT containing the signature of the message headers whose integrity needs to be guaranteed, to comply with the ``INTEGRITY_REST_02`` security pattern.
@@ -1223,7 +1246,7 @@ The e-Service Request MUST include the following HTTP header parameters (unless 
       - Digest of the message payload, to comply with the ``INTEGRITY_REST_02`` security pattern. According to :rfc:`3230`, the format MUST be the following: ``<digest-algorithm>=<encoded digest output>``.
       - [:rfc:`3230`], [`MODI`_]
     * - **Agid-JWT-TrackingEvidence**
-      - JWT containing the data tracker in the Consumer's domain. It is mandatory only when complying with ``AUDIT_REST_02``.
+      - JWT containing the data tracker in the Consumer's domain. It is mandatory only when complying with ``AUDIT_REST_02`` or the ``POP_TPoP`` implementation.
       - [`MODI`_]
 
 The ``Signature`` JWT, contained in the ``Agid-JWT-Signature`` HTTP header, MUST include the following JOSE header parameters:
@@ -1335,7 +1358,7 @@ If present, the ``TrackingEvidence`` JWT, contained in the ``Agid-JWT-TrackingEv
       - It MUST be a random string composed by integer numbers and with a length of 13 digits.
       - [`MODI`_]
 
-The ``TrackingEvidence`` payload MUST also contains the tracked data agreed upon with the Provider.
+When complying with the ``AUDIT_REST_02`` security pattern, the ``TrackingEvidence`` payload MUST also contain the tracked data agreed upon with the Provider.
 
 .. _sec_Usage_Endpoint_eService_Response:
 

@@ -110,3 +110,5 @@ The verification of the Wallet Instance validity MUST be performed:
 .. note::
    With the introduction of the **Wallet Trust Evidence (WTE)**, this section will be updated accordingly.
 
+.. _Wallet Instance Management endpoint: wallet-solution.html#wallet-instance-management-endpoint
+

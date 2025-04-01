@@ -2,7 +2,7 @@
 .. _Entity_Configuration_Credential_Issuer:
 
 Entity Configuration of PID/(Q)EAA Providers
---------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The PID/(Q)EAA Providers, as Federation Entity, are required to adhere to the guidelines outlined in Section :ref:`Configuration of the Federation`. Specifically, they MUST provide a well-known endpoint that hosts their Entity Configuration.
 The Entity Configuration of PID/(Q)EAA Providers MUST contain the parameters defined in the Sections :ref:`Entity Configuration Leaves and Intermediates` and :ref:`Entity Configurations Common Parameters`. 

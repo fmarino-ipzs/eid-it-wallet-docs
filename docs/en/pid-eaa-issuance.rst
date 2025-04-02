@@ -640,7 +640,7 @@ The Credential Offer made by PID/(Q)EAA Issuer consists of a single URI query pa
     - It MUST contain ``authorization_code`` object with the following parameters:
 
         - **issuer_state**: REQUIRED. Opaque string created by the PID/(Q)EAA Issuer used to bind the subsequent Authorization Request with the PID/(Q)EAA Issuer. The Wallet MUST include it in the subsequent Authorization Request.
-        - **authorization_server**: CONDITIONAL. String identifying the Authorization Server to use. The value MUST match with one of the values mapped in the ``authorization_servers`` array of the PID/(Q)EAA Issuer metadata. It MUST NOT be used if ``authorization_servers`` is absent or has no multiple entries.
+        - **authorization_server**: REQUIRED when the PID/(Q)EAA Issuer uses more than one authorization server in its Issuer Solution. String identifying the Authorization Server to use. The value MUST match with one of the values mapped in the ``authorization_servers`` array of the PID/(Q)EAA Issuer metadata. It MUST NOT be used if ``authorization_servers`` is absent or it has no multiple entries.
     - Section 4.1.1 of [`OpenID4VCI`_].
 
 
@@ -1038,19 +1038,19 @@ The token request contains the following claims:
       - REQUIRED. It MUST be set to ``authorization_code`` or ``refresh_token``.
       - [:rfc:`6749`].
     * - **code**
-      - CONDITIONAL. REQUIRED only if the grant type is ``authorization_code``. Authorization code returned in the Authentication Response.
+      -  REQUIRED only if the grant type is ``authorization_code``. Authorization code returned in the Authentication Response. It MUST NOT be present if grant type is ``refresh_token``.
       - [:rfc:`6749`].
     * - **redirect_uri**
-      - CONDITIONAL. REQUIRED only if the grant type is ``authorization_code``. It MUST be set as in the Request Object :ref:`Table of the JWT Request parameters <table_jwt_request>`.
+      - REQUIRED only if the grant type is ``authorization_code``. It MUST be set as in the Request Object :ref:`Table of the JWT Request parameters <table_jwt_request>`. It MUST NOT be present if grant type is ``refresh_token``.
       - [:rfc:`67491`].
     * - **code_verifier**
-      - CONDITIONAL. REQUIRED only if the grant type is ``authorization_code``. Verification code of the **code_challenge**.
-      - `Proof Key for Code Exchange by OAuth Public Clients <https://datatracker.ietf.org/doc/html/rfc7636>`_.
+      - REQUIRED only if the grant type is ``authorization_code``. Verification code of the **code_challenge**.
+      - `Proof Key for Code Exchange by OAuth Public Clients <https://datatracker.ietf.org/doc/html/rfc7636>`_. It MUST NOT be present if grant type is ``refresh_token``.
     * - **refresh_token**
-      - CONDITIONAL. REQUIRED only if the grant type is ``refresh_token``. The Refresh Token previously issued to the Wallet Instance.
+      - REQUIRED only if the grant type is ``refresh_token``. The Refresh Token previously issued to the Wallet Instance. It MUST NOT be present if grant type is ``authorization_code``.
       - [:rfc:`6749`].
     * - **scope**
-      - CONDITIONAL. OPTIONAL only if the grant type is ``refresh_token``. The requested scope MUST NOT include any scope not originally granted by the User, and if omitted is treated as equal to the scope originally granted by the User.
+      - OPTIONAL only if the grant type is ``refresh_token``. The requested scope MUST NOT include any scope not originally granted by the User, and if omitted is treated as equal to the scope originally granted by the User. It MUST NOT be present if grant type is ``authorization_code``.
       - [:rfc:`6749`].
 
 
@@ -1369,7 +1369,7 @@ The Credential endpoint MUST accept and validate the *DPoP proof* sent in the DP
       - **jwt**: the JWT used as proof of possession.
     - [`OpenID4VCI`_].
   * - **transaction_id**
-    - CONDITIONAL. REQUIRED only in case of deferred flow. String identifying a deferred issuance transaction.
+    - REQUIRED only in case of deferred flow. String identifying a deferred issuance transaction. It MUST NOT be present in immediate flow
     - Section 9.1 of [`OpenID4VCI`_].
 
 
@@ -1429,18 +1429,18 @@ The Credential Response contains the following parameters:
     - **Description**
     - **Reference**
   * - **credentials**
-    - CONDITIONAL. REQUIRED if ``lead_time`` and ``transaction_id`` are not present. It contains the following parameters:
+    - REQUIRED if ``lead_time`` and ``transaction_id`` are not present, otherwise it MUST NOT be present. It contains the following parameters:
 
           - **credential**: REQUIRED. String containing one issued PID/(Q)EAA. If the requested format identifier is ``dc+sd-jwt`` then the ``credential`` parameter MUST NOT be re-encoded. If the requested format identifier is ``mso_mdoc`` then the ``credential`` parameter MUST be a base64url-encoded representation of the CBOR-encoded IssuerSigned structure, as defined in [ISO 18013-5]. This structure SHOULD contain all Namespaces and IssuerSignedItems that are included in the AuthorizedNamespaces of the MobileSecurityObject.
     - Section 8.3, Annex A2.4 and Annex A3.4 of [`OpenID4VCI`_].
   * - **lead_time**
-    - CONDITIONAL. REQUIRED if ``credentials`` is not present. The amount of time (in seconds) required before making a Deferred Credential Request.
+    - REQUIRED if ``credentials`` is not present, otherwise it MUST NOT be present. The amount of time (in seconds) required before making a Deferred Credential Request.
     - This Specification.
   * - **notification_id**
     - OPTIONAL. String identifying an issued Credential that the Wallet includes in the Notification Request as defined in Section :ref:`Notification Request`. It MUST NOT be present if the ``credentials`` parameter is not present.
     - Section 8.3 of [`OpenID4VCI`_].
   * - **transaction_id**
-    - CONDITIONAL. REQUIRED if ``credentials`` is not present. String identifying a deferred issuance transaction that the Wallet includes in the subsequent Credential Request as defined in Section :ref:`Deferred Endpoint`. It MUST be invalidated after the User obtains the Credential.
+    - REQUIRED if ``credentials`` is not present, otherwise it MUST NOT be present. String identifying a deferred issuance transaction that the Wallet includes in the subsequent Credential Request as defined in Section :ref:`Deferred Endpoint`. It MUST be invalidated after the User obtains the Credential.
     - Section 8.3 of [`OpenID4VCI`_].
 
 In case of the Credential Request does not contain a valid Access Token, the Credential Endpoint returns an error response such as defined in Section 3 of [:rfc:`6750`].

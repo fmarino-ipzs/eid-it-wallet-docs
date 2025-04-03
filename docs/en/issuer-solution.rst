@@ -122,16 +122,16 @@ This component MUST:
    - Provide the Authentic Source with cryptographic evidence of User authentication, when required by the Authentic Source.
 
 .. note::
-   In case of public Authentic Sources, a Credential Issuer MUST use PDND ccording to the rules defined in Section :ref:`e-Service PDND <e-service-pdnd>` and in Section :ref:`Status Update by Authentic Sources <Status Update by Authentic Sources>`. See also Section :ref:`Authentic Source Catalogue <authentic_source_catalogue>` for additional details.
+   In case of public Authentic Sources, a Credential Issuer MUST use PDND according to the rules defined in Section :ref:`e-Service PDND <e-service-pdnd>` and in Section :ref:`Status Update by Authentic Sources <Status Update by Authentic Sources>`. See also Section :ref:`Authentic Source Catalogue <authentic_source_catalogue>` for additional details.
 
 Credential Lifecycle Management
 -------------------------------
 
 This trust-related component MUST handle the entire lifecycle of issued Digital Credentials, including:
 
-   - Credential Status Management: Maintaining and updating the validity status of Digital Credentials
-   - Revocation Processes: Implementing mechanisms for revoking or suspend Digital Credentials when necessary, according to Section :ref:`Digital Credential Lifecycle`.
-   - Renewal Workflows: Managing the renewal of Digital Credentials according to the mechanisms defined in Section :ref:`pid_eaa_issuance.rst`.
+   - **Credential Status Management**: Maintaining and updating the validity status of Digital Credentials
+   - **Revocation Processes**: Implementing mechanisms to revoke or suspend Digital Credentials when necessary, according to Section :ref:`Digital Credential Lifecycle`.
+   - **Renewal Workflows**: Managing the renewal of Digital Credentials according to the mechanisms defined in Section :ref:`pid_eaa_issuance.rst`.
 
 Trust & Security Component
 --------------------------

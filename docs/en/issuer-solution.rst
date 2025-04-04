@@ -9,14 +9,14 @@ An Issuer, as an Organizational Entity participating in the IT-Wallet ecosystem,
 
 Logical architecture is composed of the following elements:
 
-   - **Trust Anchor**: It represents the root of trust for the entire IT-Wallet Federation and allows Issuers to federate in the ecosystem. The Trust Anchor has PKI capabilities and issues Registration Certificates during the Issuer onboarding process.
+   - **Trust Anchor**: It represents the root of trust for the entire IT-Wallet Federation and allows Issuers to federate in the ecosystem. The Trust Anchor has PKI capabilities and issues Digital Certificates during the Issuer onboarding process.
    - **Digital Credential Issuer Solution**: Organizational Entity that provides the services and components required for issuing Digital Credentials to Users through their Wallet Instances. This solution includes:
       
       - **Frontend Component**: Provides additional services through a Web User interface, allowing users to view, verify, manage, and request Digital Credentials.
       
       - **Credential Issuer Component**: Creates and issues Digital Credentials to Wallet Instances following the Issuance Flow as defined in Section :ref:`pid_eaa_issuance.rst`.
       
-      - **Authorization Server**: Handles authentication and authorization flows as specified in OAuth 2.0, managing access tokens and authorization codes required during the credential issuance process.
+      - **Authorization Server**: Handles authentication and authorization flows as specified in OAuth 2.0, managing access tokens, refresh tokens and authorization codes required during the credential issuance process.
       
       - **Relying Party Component**: Authenticates users either with National eID systems (for PID issuance) using OIDC, or SAML protocols, or with PID (for (Q)EAA issuance) using `OpenID4VP`_ protocol (see Section :ref:`Remote Flow` for technical details).
       

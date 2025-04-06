@@ -107,7 +107,7 @@ When the User authentication is required, the Credential Issuer MUST provide a R
 - For (Q)EAA issuance: It MUST authenticate Users by requesting presentation of a valid PID from their Wallet Instance. This component acts as a web Relying Party Instance by sending a presentation request to the Wallet Instance, according to [`OpenID4VP`_].
 
 
-Authentic Source Integration
+PDND e-Services
 ----------------------------
 
 This component MUST: 
@@ -156,7 +156,7 @@ The Digital Credential Issuer Solution supports several interaction patterns bet
 
 4. **Relying Party Component to National eID/Wallet Instance**: Authentication interactions that verify the User's identity either through national eID systems (for PID issuance) or by verifying the User's PID (for (Q)EAA issuance).
 
-5. **Authentic Source Integration to Authentic Sources**: Backend API calls to retrieve verified User data from Authentic Sources.
+5. **PDND e-Services to Authentic Sources**: Backend API calls to retrieve verified User data from Authentic Sources.
 
 The implementation of these flows and interaction patterns MUST adhere to the security considerations outlined in Section :ref:`pid_eaa_issuance.rst`, including proper handling of tokens, proofs, and cryptographic materials.
 

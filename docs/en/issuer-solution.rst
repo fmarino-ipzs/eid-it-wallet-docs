@@ -33,12 +33,12 @@ The Digital Credential Issuer Solution MUST:
    10. Register the Relying Party Component (if required) within the national eIDAS ecosystem (for PID issuance) and IT-Wallet ecosystem (for (Q)EAA issuance).
    11. For PID issuance, authenticate Users with LoA High using national Digital Identity Providers.
    12. For (Q)EAA issuance requiring authentication, verify a valid PID from the User's Wallet Instance via `OpenID4VP`_.
-   13. Implement proper procedures for the entire credential lifecycle as detailed in Section :ref:`Digital Credential Lifecycle`.
+   13. Implement proper procedures for the entire Digital Credential lifecycle as detailed in Section :ref:`Digital Credential Lifecycle`.
 
    For the Frontend Component (if implemented):
 
    14. Authenticate Users with a Level of Assurance (LoA) at least equal to that used to obtain the Digital Credential being issued or managed.
-   15. Provide appropriate security measures to protect User data and credential information.
+   15. Provide appropriate security measures to protect User data and Digital Credential information.
 
 .. _issuer-components:
 
@@ -50,8 +50,8 @@ Frontend Component
 
 The Frontend Component, if provided by the Issuer, MUST provide a web-based User interface for Digital Credential management, offering functionality to:
 
-   - Display and verify issued credentials and their status.
-   - Manage credential lifecycle (e.g., revocation).
+   - Display and verify issued Digital Credentials and their status.
+   - Manage Digital Credential lifecycle (e.g., revocation).
    - Initiate issuance through Credential Offers.
    - Provide User support and documentation.
 
@@ -63,10 +63,10 @@ Credential Issuer Component
 Following the `OpenID4VCI`_ specification and the implementation profile in Section :ref:`pid_eaa_issuance.rst`, this component MUST:
 
    - Issue Digital Credentials to Wallet Instances.
-   - Process credential requests.
+   - Process Digital Credential requests.
    - Obtain User data from Authentic Sources.
-   - Generate properly formatted and signed credentials in supported formats (SD-JWT-VC, mDoc-CBOR). See Section :ref:`pid_eaa_data_model.rst` for more details.
-   - Implement the credential issuance protocols and flows.
+   - Generate properly formatted and signed Digital Credentials in supported formats (SD-JWT-VC, mDoc-CBOR). See Section :ref:`pid_eaa_data_model.rst` for more details.
+   - Implement the Digital Credential issuance protocols and flows.
 
 Authorization Server
 --------------------
@@ -92,7 +92,7 @@ This component MUST establish secure connections with Authentic Sources to:
 
    - Retrieve verified User data.
    - Properly authenticate and authorize connections.
-   - Format data according to credential schemas.
+   - Format data according to Digital Credential schemas.
    - Provide cryptographic evidence of User authentication when required.
 
 .. note::
@@ -123,7 +123,7 @@ Interaction Patterns
 
 The Digital Credential Issuer Solution supports these interaction patterns:
 
-   1. **User to Frontend**: Web-based interactions for credential management.
+   1. **User to Frontend**: Web-based interactions for Digital Credential management.
    2. **Frontend to Credential Issuer**: Converts user requests into OpenID4VCI protocol messages.
    3. **Wallet Instance to Credential Issuer**: Direct protocol-based interactions following the issuance flow.
    4. **Relying Party to Identity Providers**: Authentication interactions with national eID systems or PID verification.
@@ -146,7 +146,7 @@ The `/.well-known/openid-federation` endpoint serves the Entity Configuration do
 Credential Issuer Component Endpoints
 -------------------------------------
 
-These endpoints implement the protocols described in Section :ref:`Low-Level Issuance Flow` for credential issuance operations.
+These endpoints implement the protocols described in Section :ref:`Low-Level Issuance Flow` for Digital Credential issuance operations.
 
 
 

@@ -174,7 +174,8 @@ The Erasure Request MUST be a GET request to the Erasure Endpoint. The Wallet In
 Below is a non-normative example of an Erasure Request where a deep link is passed as the value of the ``redirect_uri`` query fragment.
 
 .. code::
-	GET /erasure-endpoint HTTP/1.1
+	
+  GET /erasure-endpoint HTTP/1.1
   Host: relying-party.example.org
   User-Agent: MyWallet-Instance
 

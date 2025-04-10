@@ -183,7 +183,7 @@ Below is a non-normative example of an Erasure Request where a deep link is pass
 
 Erasure Response
 ~~~~~~~~~~~~~~~~~~~~~~
-If the deletion of all attributes bound to the User have been successful Erasure Response MUST return a 204 HTTP status code.
+If the deletion of all attributes bound to the User have been successful, the Erasure Response MUST return a 204 HTTP status code.
 
 If instead the attributes deletion procedure fails due any circumstances, the Relying Party MUST return an error response with ``application/json`` as the content type and MUST include the following parameters:
 

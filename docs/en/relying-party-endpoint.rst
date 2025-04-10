@@ -175,9 +175,8 @@ Below is a non-normative example of an Erasure Request where a deep link is pass
 
 .. code::
 	
-  GET /erasure-endpoint?wallet-instance://erasure_response HTTP/1.1
+  GET /erasure-endpoint?callback_url=https://wallet-instance/erasure_response HTTP/1.1
   Host: relying-party.example.org
-  User-Agent: MyWallet-Instance
 
 Erasure Response
 ~~~~~~~~~~~~~~~~~~~~~~

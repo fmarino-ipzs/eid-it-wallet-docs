@@ -201,10 +201,11 @@ A Wallet Provider instead is responsible for:
 Wallet Instance Functionalities
 -------------------------------
 A Wallet Instance, MUST support the following functionalities:
-- Wallet Registration (detailed in :ref:`Wallet Instance Initialization and Registration`), 
-- Wallet Attestation Issuance (detailed in :ref:`Wallet Attestation Issuance`),
-- Wallet Revocation (detailed in :ref:`Wallet Instance Revocation`) and 
-- Deletion of presented attributes (detailed in :ref:`Attibutes Deletion Flow`). 
+
+  - Wallet Registration (detailed in :ref:`Wallet Instance Initialization and Registration`), 
+  - Wallet Attestation Issuance (detailed in :ref:`Wallet Attestation Issuance`),
+  - Wallet Revocation (detailed in :ref:`Wallet Instance Revocation`) and 
+  - Deletion of presented attributes (detailed in :ref:`Attributes Deletion Flow`). 
 
 Each functionality is described in detail in the following sections.
 
@@ -225,7 +226,7 @@ Attributes Deletion Flow
 
 This Wallet Instance functionality allow the User to obtain from the Instance itself a list of all Relying Parties towards which attributes that can uniquely identify Users (e.g., the Codice Fiscale claim of the PID) have been presented. Subsequently the User is free to request deletion of all attributes presented to a Relying Party of its choice. Below the high level flow regarding this interaction is presented.   
 
-.. figure:: ../../images/images/user's_data_deletion_flow.svg
+.. figure:: ../../images/user's_data_deletion_flow.svg
     :figwidth: 100%
     :align: center
     :target: https://www.plantuml.com/plantuml/svg/RLBDZjD03BxdAQozS67t0Nf0ksABn0KX5iI5YvCuxOZfE8mzBNrxx2bfcBAtTFpv-_7NHr7CMWwnmwASog6dtE6WdE7kcr2-0nGeOezTpx_1dzu8FDCn3DJDjXg6C6DIkFkECPB2nsICQQ2wYFCCBSe9u6b7II_Cs54QmQWl_5yedaFQmMVRERURsunICi4sZHp-hXFDsg8-q4WPDN1ou7n5JePSfQ16Wljtxd1Zde_yam1LS-YB4emKgN9C9Gt-WJ6O7t2uR_ds1bxsV88OH86dndaWWHyf99XPX4ISYQVbU4-BpAsD5rCT57HFxHr0sUWo_IeaTRpwusbrBQi_JxjfIKnu-zwUAaa75GBtYtGToSn9oA-JM0duIDcdzXlWgwdUD0pSAuOaFg-kbeQMmyEK-U2JYZYGueYAvld_Y8RmSbotMsEujLUL8-_yml-ABidMZd3Z1qR_9h_7Az0cgdVnjaAlYTiQi9XWqZ2WadY6skX3HKwHJp2mJPDnmyc05L4BtgD0J_OYPHX8P2enjdJZGtk1QcDr_knzqrgrX--v65xvQkIwLSDxNAfvcsOBNak__Jj_OWtJ-KBrQ5xA8Vu1
@@ -612,7 +613,7 @@ Wallet Attestation Issuance Request
 
 Further details on the Wallet Attestation Issuance Request are provided in the :ref:`Mobile Application Key Binding Request` section.
 
-The ``typ`` header of the Integrity Request JWT assumes the value ``war+jwt``.
+The ``typ`` header of the Integrity Request JWT assumes the value ``wp-war+jwt``.
 
 .. _wallet_attestation_issuance_response:
 
@@ -965,8 +966,7 @@ Below is a non-normative example of the mdoc Wallet Attestation in CBOR diagnost
           "random": h'9D3774BD59…A4F76A',
           "elementIdentifier": "aal",
           "elementValue":"https://trust-list.eu/aal/high"
-          } >>),
-          24(<<
+          } >>)
         ]
   },
     "issuerAuth": [

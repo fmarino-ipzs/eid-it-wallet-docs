@@ -126,7 +126,7 @@ Below a non-normative example of a URL related to a Credential Offer that can be
 
 .. code-block::
 
-  openid-credential-offer://?credential_offer%3D%7B%22credential_issuer%22%3A%22https%3A%2F%2Feaa-provider.example.org%22%2C%22credential_configuration_ids%22%3A%5B%22EuropeanDisabilityCard%22%5D%2C%22grants%22%3A%7B%22authorization_code%22%3A%7B%22issuer_state%22%3A%22oaKazRN8I0IbtZ0C7JuMn5%22%7D%7D%7D
+  openid-credential-offer://?credential_offer%3D%7B%22credential_issuer%22%3A%22https%3A%2F%2Feaa-provider.example.org%22%2C%22credential_configuration_ids%22%3A%5B%22dc_sd_jwt_EuropeanDisabilityCard%22%5D%2C%22grants%22%3A%7B%22authorization_code%22%3A%7B%22issuer_state%22%3A%22oaKazRN8I0IbtZ0C7JuMn5%22%7D%7D%7D
 
 
 The following diagram shows the *Issuance flow*.
@@ -759,7 +759,7 @@ The ``request`` JWT payload contained in the HTTP POST message is given with the
       - Array of JSON Objects. Each JSON Object MUST include the following claims:
 
             - **type**: it MUST be set to ``openid_credential``,
-            - **credential_configuration_id**: JSON String. String specifying a unique identifier of the Credential in a specifi format that MUST be mapped in the `credential_configurations_supported` metadata claim of the Credential Issuer. For example, in the case of the PID, it may be set to ``PersonIdentificationData``, in the case of mobile driving licence in SD-JWT VC format ``dc_sd_jwt_mDL`` and ``mso_mdoc_mDL`` in case of mobile driving license in mdoc format.
+            - **credential_configuration_id**: JSON String. String specifying a unique identifier of the Credential in a specific format that MUST be mapped in the `credential_configurations_supported` metadata claim of the Credential Issuer. For example, in the case of the PID, it may be set to ``dc_sd_jwt_PersonIdentificationData`` for PID in SD-JWT VC format, in the case of mobile driving licence in SD-JWT VC format ``dc_sd_jwt_mDL`` and ``mso_mdoc_mDL`` in case of mobile driving license in mdoc format.
       - See [RAR :rfc:`9396`] and [`OpenID4VCI`_].
     * - **redirect_uri**
       -  Redirection URI to which the response is intended to be sent. It MUST be an universal or app link registered with the local operating system, so this latter will provide the response to the Wallet Instance.

@@ -107,7 +107,7 @@
                 }
             ],
             "credential_configurations_supported": {
-                "EuropeanDisabilityCard": {
+                "dc_sd_jwt_EuropeanDisabilityCard": {
                     "format": "dc+sd-jwt",
                     "scope": "EuropeanDisabilityCard",
                     "cryptographic_binding_methods_supported": [

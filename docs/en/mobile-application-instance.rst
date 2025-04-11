@@ -88,7 +88,7 @@ Upon successful initialization of the Mobile Application Instance, the Applicati
 
 .. note::
 
-  The Application Provider might associate the Mobile Application Instance (through the ``hardware_key_tag`` identifier) with a specific User or Device. This uniquely identifis the User/Device within the Mobile Application Provider's systems and can be used for future revocations in the lifecycle of the Mobile Application Instance.
+  The Application Provider might associate the Mobile Application Instance (through the ``hardware_key_tag`` identifier) with a specific User or Device. This uniquely identifies the User/Device within the Application Provider's systems and can be used for future revocations in the lifecycle of the Mobile Application Instance.
 
 **Steps 13-14**: The Mobile Application Instance has been initialized.
 

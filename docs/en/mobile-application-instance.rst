@@ -86,6 +86,10 @@ If any errors occur in the Key Attestation API process, such as device integrity
 
 Upon successful initialization of the Mobile Application Instance, the Application Provider responds with a confirmation of success (:ref:`Mobile Application Instance Initialization Response`).
 
+.. note::
+
+  The Application Provider might associate the Mobile Application Instance (through the ``hardware_key_tag`` identifier) with a specific User or Device. This uniquely identifis the User/Device within the Mobile Application Provider's systems and can be used for future revocations in the lifecycle of the Mobile Application Instance.
+
 **Steps 13-14**: The Mobile Application Instance has been initialized.
 
 .. note:: **Threat Model**: while the initialization endpoint does not necessitate authenticating the client, it is safeguarded through the use of `key_attestation`. Proper validation of this attestation permits the initialization of authentic and unaltered app instances. Any other claims submitted will not undergo validation, leading the endpoint to respond with an error. Additionally, the inclusion of a nonce helps prevent replay attacks. The authenticity of both the nonce and the ``hardware_key_tag`` is ensured by the signature found within the ``key_attestation``.

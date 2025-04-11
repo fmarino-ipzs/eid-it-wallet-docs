@@ -205,7 +205,7 @@ A Wallet Instance, MUST support the following functionalities:
   - Wallet Registration (detailed in :ref:`Wallet Instance Initialization and Registration`), 
   - Wallet Attestation Issuance (detailed in :ref:`Wallet Attestation Issuance`),
   - Wallet Revocation (detailed in :ref:`Wallet Instance Revocation`) and 
-  - Deletion of presented attributes (detailed in :ref:`Attributes Deletion Flow`). 
+  - Deletion of presented attributes (detailed in :ref:`User's Attributes Deletion`). 
 
 Each functionality is described in detail in the following sections.
 
@@ -218,45 +218,49 @@ Wallet Instance Initialization and Registration
 
 This process allows the User who has just installed the Wallet Instance application to register the Wallet Instance with the Wallet Provider backend. During this process, the Wallet Instance application will request a security and integrity assertion from the OS manufacturer, which also binds a long-lived key pair stored in a proper secure storage within the device itself. This assertion will be validated by the Wallet Provider, and if the validation is successful, the Wallet Provider will authenticate the Wallet Instance. For details see :ref:`Mobile Application Instance Initialization`.
 
+.. note::
+
+  The Wallet Provider SHOULD associate the Wallet Instance (through the ``hardware_key_tag`` identifier) with a specific User uniquely identified within the Wallet Provider's systems. This will be useful for the lifecycle of the Wallet Instance and for a future revocation. For details see 
+
 .. include:: wallet-attestation.rst
 .. include:: wallet-revocation.rst
 
-Attributes Deletion Flow
+User's Attributes Deletion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This Wallet Instance functionality allow the User to obtain from the Instance itself a list of all Relying Parties towards which attributes that can uniquely identify Users (e.g., the Codice Fiscale claim of the PID) have been presented. Subsequently the User is free to request deletion of all attributes presented to a Relying Party of its choice. Below the high level flow regarding this interaction is presented.   
+This Wallet Instance functionality allows the User to obtain from the Instance itself a list of all Relying Parties towards which attributes that can uniquely identify Users (e.g., the Codice Fiscale claim of the PID) have been presented. Subsequently the User is free to request deletion of all attributes presented to a Relying Party of its choice. Below the high level flow regarding this interaction is presented.   
 
 .. figure:: ../../images/user's_data_deletion_flow.svg
     :figwidth: 100%
     :align: center
-    :target: https://www.plantuml.com/plantuml/svg/RLBDZjD03BxdAQozS67t0Nf0ksABn0KX5iI5YvCuxOZfE8mzBNrxx2bDcBAtTFpv-_7NHr7CMWwnmwASog6dtE6WdE7kcr2-0nGeOezTpx_1dzu8FDCn3DJDjXg6C6DIkFkECPB2nsICQQ2wYFCCBSe9u6b7II_Cs54QmQWl_5yedaFQmMVRERURsunICi4sZHp-hXFDsg8-q4WPDN1ouBmW9qEkKb0ZmVqxTxWnpqV-IO2gEVH52KQAL3ccaWR_m1ZC3pZSjtnx0ozxFa4Cei1JupoGm8yK4imiGYBEnDFrU4zNcLiRBwOwAEYUsZk0ij5b-bL8wdZrnzFgMbP_ddRJafZmzhqzLP8EAWJkhz9r93Cd8RzEOYNW8sMVsc-0hwPwqp1mhnYIrBcxMXkw71wcp0UVLCI154TKDC__HpI4b-EwtHh3hRsg77dd5_v7T4ssT8GRFp3wD_azNe4sKRsBjnMw96vhm6A2ISE0Ib8pUACF5Jb5Fi70Dat63IS3LaGjU8y2FTcBb64WaQd4sDAD3-q5getL-RFtJMlL7hxdOdZbnSYoLSClSPjY2owTt_wRFx66wNnXUZGhvH3_0000
+    :target: https://www.plantuml.com/plantuml/png/RLBDZjD03BxdAQozS67t0Nf0ksABn0KX5iI5YvCuxOZfE8mzBNrxx2bDcBAtTFpv-_7NHr7CMWwnmwASog6dtE6WdE7kcr2-0nGeOezTpx_1dzu8FDCn3DJDjXg6C6DIkFkECPB2nsICQQ2wYFCCBSe9u6b7II_Cs54QmQWl_5yedaFQmMVRERURsunICi4sZHp-hXFDsg8-q4WPDN1ouBmW9qSkKb0ZmVqxTxWnpqV-IO2gEVH52KQAL3ccaWR_m1ZC3pZSjtnx0ozxFa4Cei1JupoGm8yK4imiGYBEnDFrU4zNcLiRBwOwAEYUsZk0ij5b-bL8wdZrnzFgMbP_ddRJafZmzhqzLH93EWJkhz9r93Cd8RzEOYNW8sMVsc-0hwPwqp1mhnYIrBcxMXkw71wcp0UVLCI154TKDC__HpI4b-EwtHh3hRsg77dd5_vNT4csT8GRFp3wD_azNe4sKRsBjnMw96vhm6A2ISE0Ib8pUACF5Jb5Fi70Dat63IS3BWZOeq1FzY9b64XaAZ6sTED3Uu5gOtN-x7tJMhM7xxaONdcHMRPg-2LkKsp1fVFRV_CdrZ2TBqoFPgKSuXy0
 
-    Sequence Diagram for Deletion of User's Attribtes
+    Sequence Diagram for Deletion of User's Attributes
 
-**Step 1** The User requests the deletion of attributes invoking the Wallet Instance’s deletion function.
+**Step 1:** The User requests the deletion of attributes invoking the Wallet Instance’s attribute deletion function.
 
-**Step 2** The Wallet Instance collects all transaction data and shows the User the list of Relying Parties with which it has had interactions throughout the Wallet Instance lifecycle and are in possession of User's attributes. The Wallet Instance SHOULD filter the transaction logs so that only the Relying Parties which have had access to attributes uniquely identifying the User (e.g., the "Codice Fiscale") are shown.
+**Step 2:** The Wallet Instance collects all transaction data and shows the User the list of Relying Parties with which it has had interactions throughout the Wallet Instance lifecycle and are in possession of User's attributes. The Wallet Instance SHOULD filter the transaction logs so that only the Relying Parties which have had access to attributes uniquely identifying the User (e.g., the "Codice Fiscale") are shown.
 
-**Step 3** The User selects the target Relying Party for attributes erasure.
+**Step 3:** The User selects the target Relying Party for attributes deletion.
 
-**Steps 4 - 5** The Wallet Instance obtains the Relying Party Entity Configuration at the Federation ./well-known/ endpoint. The URL or the Erasure Endpoint can be found inside the ``metadata.erasure_endpoint`` claim.
+**Steps 4 - 5:** The Wallet Instance obtains the Relying Party Entity Configuration at the Federation ./well-known/ endpoint. The URL or the Erasure Endpoint can be found inside the ``metadata.erasure_endpoint`` claim.
 
-**Step 6** The Wallet Instance logs the Erasure Request’s relevant information. These logs MUST include at least:
+**Step 6:** The Wallet Instance logs the Erasure Request’s relevant information. These logs MUST include at least:
   * the date of request,
   * the Relying Party to which the request was made, 
   * the attributes requested to be removed.
 
-**Steps 7 - 8** The Wallet Instance redirects the User to the Erasure Endpoint. It MUST also ensure that a call back mechanism, to allow the User-Agent notify the Wallet Instance (and thus the User) after the Erasure Response, is present. This may be done e.g., by using an embedded User-Agent and inserting a ``redirect_uri`` in the form of a deep link scheme in the Erasure Request. Details on the Erasure Request can be found in :ref:`Erasure Request`.
+**Steps 7 - 8:** The Wallet Instance redirects the User to the Erasure Endpoint. It MUST also ensure that a callback mechanism to allow the User-Agent to notify the Wallet Instance (and thus the User) after the Erasure Response is present. This may be done e.g., by using an embedded User-Agent and inserting a ``redirect_uri`` in the form of a deep link scheme in the Erasure Request. Details on the Erasure Request can be found in :ref:`Erasure Request`.
 
 .. note::
   
-  The Relying Party web page will authenticate the User with an appropriate level of assurance using any method such as SPID/CIE or the PID presentation. The specific mechanism used for authentication is left to the Relying Party. Upon having authenticated the User, the Relying Party MAY prompt the User to perform additional steps needed for the deletion of attributes, e.g., it might require the User to confirm the deletion operation.
+  The Relying Party web page will authenticate the User with an appropriate level of assurance using any method such as SPID/CIE or the PID presentation. The specific mechanism used for authentication is left to the Relying Party. Upon authenticating the User, the Relying Party MAY prompt the User to perform additional steps needed for the deletion of attributes, e.g., it might require the User to confirm the deletion operation.
 
-**Step 9** Upon successful authentication of the User the Relying Party MUST delete all attributes bound to the User in its possession. 
+**Step 9:** Upon successful authentication of the User the Relying Party MUST delete all attributes bound to the User in its possession. 
 
-**Step 10** The RP returns the Erasure Response in the form of an HTTP Response to the User-Agent and includes the ``redirect_uri`` if provided in the Erasure Request. Details on the Erasure Response can be found in :ref:`Erasure Response`.
+**Step 10:** The Relying Party returns the Erasure Response in the form of an HTTP Response to the User-Agent and includes the ``redirect_uri`` if provided in the Erasure Request. Details on the Erasure Response can be found in :ref:`Erasure Response`.
 
-**Steps 11 - 12**  The User-Agent uses the implemented method to return the Erasure Response to the Wallet Instance. Finally, the User is notified via the Wallet Instance regarding the Erasure Response outcome.
+**Steps 11 - 12:**  The User-Agent uses the implemented method to return the Erasure Response to the Wallet Instance. Finally, the User is notified via the Wallet Instance regarding the Erasure Response outcome.
 
 Wallet Provider Endpoints
 ------------------------------------
@@ -460,10 +464,6 @@ Wallet Instance Registration Response
 .............................................
 
 If a Wallet Instance Registration Request is successfully validated, the Wallet Provider provides an HTTP Response with status code 204 (No Content). For detatails see :ref:`Mobile Application Instance Initialization Response`.
-
-.. note::
-
-  The Wallet Provider SHOULD associate the Wallet Instance (through the ``hardware_key_tag`` identifier) with a specific User uniquely identified within the Wallet Provider's systems. This will be useful for the lifecycle of the Wallet Instance and for a future revocation.
 
 Wallet Instance Retrieval Request
 .............................................

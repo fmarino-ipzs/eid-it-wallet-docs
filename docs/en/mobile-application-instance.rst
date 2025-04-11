@@ -315,7 +315,7 @@ In particular, the Key Binding Request JWT includes the following HTTP header pa
       - The type of the JWT, which can assume different values depending on the context.
       -
 
-The Key Binding Request JWT includes the following body parameters:
+The Key Binding Request JWT includes the following body claims:
 
 .. list-table::
     :widths: 20 60 20
@@ -376,7 +376,7 @@ Below is a non-normative example of a Key Binding Request JWT.
           "x": "8FJtI-yr3pjyRKGMnz4WmdnQD_uJSq4R95Nj98b44",
           "y": "MKZnSB39vFJhYgS3k7jXE4r3-CoGFQwZtPBIRqpNlrg"
         }
-      },
+      }
     }
 
 

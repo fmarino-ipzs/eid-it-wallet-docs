@@ -45,11 +45,11 @@ The *openid_credential_verifier* metadata MUST contain the following parameters.
   * - **jwks**
     - JSON Web Key Set document, passed by value, containing the protocol specific keys for the Relying Party. See `JARM`_ Section 3, `OID-FED`_ Draft 41 Section 5.2.1 and `JWK`_.
   * - **erasure_endpoint**
-    - [CONDITIONAL.] JSON String that represents the URI to which the Wallet Instance can request deletion of Users’ attributes. This URL MUST use the *https* scheme. This endpoint MUST be present whenever the Relying Parties requests attributes that can uniquely identify Users such as the Codice Fiscale claim of the PID.
+    - [CONDITIONAL] JSON String that represents the URI to which the Wallet Instance can request deletion of Users’ attributes. This URL MUST use the *https* scheme. This endpoint MUST be present whenever the Relying Parties requested attributes that can uniquely identify Users such as the tax_id_code claim of the PID.
 
 
 .. note::
-    The parameter **response_uris** is introduced in this specification. 
+    The parameters **response_uris** and **erasure_endpoint** are introduced in this specification. 
 
 Example of a Relying Party Entity Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

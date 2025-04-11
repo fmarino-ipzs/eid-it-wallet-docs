@@ -18,8 +18,8 @@ This section lists the requirements that Wallet Providers, Wallet Solutions, and
 - The Wallet Instance MUST establish trust with other participants of the Wallet ecosystem, such as Credential Issers and Relying Parties, presenting a Wallet Attestation.
 - The Wallet Instance MUST be compatible and functional on both Android and iOS operating systems and available on the Play Store and App Store, respectively.
 - The Wallet Instance MUST provide a mechanism to verify the User's actual possession and full control of their personal device.
-- The Wallet Instance MUST be able to present the an up-to-date list of relying parties with which the User has established a connection and, where applicable, all data exchanged;
-- The Wallet Instance MUST be able to allow users to request the erasure of personal attributes by a Relying Party pursuant to Article 17 of Regulation (EU) 2016/679, and to log each Erasure Request made.
+- The Wallet Instance MUST provide Users with an up-to-date list of Relying Parties with which the User has established a connection and, where applicable, all data exchanged;
+- The Wallet Instance MUST provide Users with a mechanism to request the erasure of personal attributes by a Relying Party pursuant to Article 17 of Regulation (EU) 2016/679, and to log each Erasure Request made.
 
 Wallet Attestation Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -232,7 +232,7 @@ This process allows the User who has just installed the Wallet Instance applicat
 User's Attributes Deletion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This Wallet Instance functionality allows the User to obtain from the Instance itself a list of all Relying Parties towards which attributes that can uniquely identify Users (e.g., the Codice Fiscale claim of the PID) have been presented. Subsequently the User is free to request deletion of all attributes presented to a Relying Party of its choice. Below the high level flow regarding this interaction is presented.   
+This Wallet Instance functionality allows Users to obtain a list of all Relying Parties towards which attributes that can uniquely identify Users (e.g., the tax_id_code claim of the PID) have been presented. Subsequently Users may request deletion of all attributes presented to a Relying Party of their choice. Below the high level flow regarding this interaction is presented.   
 
 .. figure:: ../../images/user's_data_deletion_flow.svg
     :figwidth: 100%
@@ -243,18 +243,18 @@ This Wallet Instance functionality allows the User to obtain from the Instance i
 
 **Step 1:** The User requests the deletion of attributes invoking the Wallet Instance’s attribute deletion function.
 
-**Step 2:** The Wallet Instance collects all transaction data and shows the User the list of Relying Parties with which it has had interactions throughout the Wallet Instance lifecycle and are in possession of User's attributes. The Wallet Instance SHOULD filter the transaction logs so that only the Relying Parties which have had access to attributes uniquely identifying the User (e.g., the "Codice Fiscale") are shown.
+**Step 2:** The Wallet Instance collects all transaction data and shows the User the list of Relying Parties with which it has had interactions throughout the Wallet Instance lifecycle and are in possession of User's attributes. The Wallet Instance SHOULD filter the transaction logs so that only the Relying Parties which have had access to attributes uniquely identifying the User are shown.
 
 **Step 3:** The User selects the target Relying Party for attributes deletion.
 
-**Steps 4 - 5:** The Wallet Instance obtains the Relying Party Entity Configuration at the Federation ./well-known/ endpoint. The URL or the Erasure Endpoint can be found inside the ``metadata.erasure_endpoint`` claim.
+**Steps 4 - 5:** The Wallet Instance obtains the Relying Party Entity Configuration at the Federation ./well-known/ endpoint. The URL or the Erasure Endpoint (``erasure_endpoint``) can be found inside the metadata parameter.
 
 **Step 6:** The Wallet Instance logs the Erasure Request’s relevant information. These logs MUST include at least:
   * the date of request,
   * the Relying Party to which the request was made, 
   * the attributes requested to be removed.
 
-**Steps 7 - 8:** The Wallet Instance redirects the User to the Erasure Endpoint. It MUST also ensure that a callback mechanism to allow the User-Agent to notify the Wallet Instance (and thus the User) after the Erasure Response is present. This may be done e.g., by using an embedded User-Agent and inserting a ``redirect_uri`` in the form of a deep link scheme in the Erasure Request. Details on the Erasure Request can be found in :ref:`Erasure Request`.
+**Steps 7 - 8:** The Wallet Instance redirects the User to the Erasure Endpoint. It MUST also ensure that a callback mechanism to allow the User-Agent to notify the Wallet Instance (and thus the User) after the Erasure Response is present. Details on the Erasure Request can be found in :ref:`Erasure Request`.
 
 .. note::
   
@@ -262,7 +262,7 @@ This Wallet Instance functionality allows the User to obtain from the Instance i
 
 **Step 9:** Upon successful authentication of the User the Relying Party MUST delete all attributes bound to the User in its possession. 
 
-**Step 10:** The Relying Party returns the Erasure Response in the form of an HTTP Response to the User-Agent and includes the ``redirect_uri`` if provided in the Erasure Request. Details on the Erasure Response can be found in :ref:`Erasure Response`.
+**Step 10:** The Relying Party returns the Erasure Response in the form of an HTTP Response to the User-Agent and includes the callback URL if provided in the Erasure Request. Details on the Erasure Response can be found in :ref:`Erasure Response`.
 
 **Steps 11 - 12:**  The User-Agent uses the implemented method to return the Erasure Response to the Wallet Instance. Finally, the User is notified via the Wallet Instance regarding the Erasure Response outcome.
 

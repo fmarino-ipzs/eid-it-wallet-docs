@@ -163,7 +163,7 @@ Below is a non-normative example of the ``client_data`` JSON object.
   2. Generates the :ref:`Relying Party Key Binding Request` in the form of a JWT. This JWT includes ``key_attestation``, ``hardware_signature``, ``nonce``, ``hardware_key_tag``, and ``cnf`` (representing ``key_pub``); it is signed using ``key_priv``.
   3. Sends the signed :ref:`Relying Party Key Binding Request` JWT as an ``assertion`` parameter in the body of an HTTP request to the :ref:`Relying Party Key Binding Endpoint`.
 
-**Step 12:** The :ref:`Relying Party Key Binding Endpoint` evaluates the Key Binding Request and performs the following checks:
+**Step 12:** The Relying Party Backend evaluates the Key Binding Request and performs the following checks:
 
   1. The request includes all required HTTP header parameters as defined in :ref:`Relying Party Key Binding Request`.
   2. The signature of the Key Binding Request is valid and verifiable using the provided ``jwk``.
@@ -174,17 +174,17 @@ Below is a non-normative example of the ``client_data`` JSON object.
   7. The device in use is free of known security flaws and meets the minimum security requirements defined by the Relying Party.
   8. The URL in the ``iss`` parameter matches the Relying Party's URL identifier.
 
-**Step 13:** If the checks are successful, the :ref:`Relying Party Key Binding Endpoint` responds with a confirmation of success (:ref:`Relying Party Key Binding Response`).
+**Step 13:** If the checks are successful, the Relying Party Backend responds with a confirmation of success (:ref:`Relying Party Key Binding Response`).
 
 **Step 14:** The Mobile Relying Party Instance generates a Certificate Signing Request (CSR, ``csr``) using ``key_pub`` and ``key_priv``.
 
 **Step 15:** The Mobile Relying Party Instance sends the CSR to the :ref:`Relying Party Access Certificate Endpoint` of the Relying Party Backend, as part of the :ref:`Relying Party Access Certificate Request`.
 
-**Steps 16-17:** The :ref:`Relying Party Access Certificate Endpoint` checks that the public key in the CSR corresponds to a Relying Party Instance that has been previously validated, i.e., that it matches the one bound to the Cryptographic Hardware Keys through ``hardware_signature``. If this check is successful, the Relying Party Backend sends the CSR to the Relying Party Instance Access Certificate Authority.
+**Steps 16-17:** The Relying Party Backend checks that the public key in the CSR corresponds to a Relying Party Instance that has been previously validated, i.e., that it matches the one bound to the Cryptographic Hardware Keys through ``hardware_signature``. If this check is successful, the Relying Party Backend sends the CSR to the Relying Party Instance Access Certificate Authority.
 
 **Steps 18-19:** The Relying Party Instance Access Certificate Authority signs the CSR, obtaining a valid Access Certificate (``access_certificate``) which it sends back to the Relying Party Backend.
 
-**Steps 20-21:** The :ref:`Relying Party Access Certificate Endpoint` sends the Access Certificate (as part of the :ref:`Relying Party Access Certificate Response`) to the Mobile Relying Party Instance, which stores it for future authentication towards Wallet Instances.
+**Steps 20-21:** The Relying Party Backend sends the Access Certificate (as part of the :ref:`Relying Party Access Certificate Response`) to the Mobile Relying Party Instance, which stores it for future authentication towards Wallet Instances.
 
 
 Mobile Relying Party Instance Access Certificate Reissuance

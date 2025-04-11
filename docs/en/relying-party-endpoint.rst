@@ -47,7 +47,7 @@ The ``typ`` header of the Integrity Request JWT assumes the value ``rp-kb+jwt``.
 Relying Party Key Binding Response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Upon a successful request, the Application Provider provides an HTTP Response with a ``204 No Content`` status code.
+Upon a successful request, the Relying Party Backend provides an HTTP Response with a ``204 No Content`` status code.
 
 Below is a non-normative example of a Key Binding Request Response.
 
@@ -69,7 +69,7 @@ Relying Party Access Certificate Request
 
 The Access Certificate Request uses the HTTP POST method with ``Content-Type`` set to ``application/json``.
 
-The request includes the following body parameters:
+The request includes the following body parameter:
 
 .. list-table::
     :widths: 20 60 20
@@ -171,9 +171,9 @@ Erasure Request
 
 The Erasure Request MUST be a GET request to the Erasure Endpoint. The Wallet Instance MUST also support a call back mechanism which enables the User-Agent to notify the Wallet Instance (and thus the User) once the Erasure Response is returned.
 
-Below is a non-normative example of an Erasure Request where a deep link is passed as the value of the ``redirect_uri`` query fragment.
+Below is a non-normative example of an Erasure Request where the call back URL is passed as a query parameter.
 
-.. code::
+.. code-block:: http
 	
   GET /erasure-endpoint?callback_url=https://wallet-instance/erasure_response HTTP/1.1
   Host: relying-party.example.org

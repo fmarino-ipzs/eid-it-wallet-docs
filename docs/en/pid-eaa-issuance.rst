@@ -479,7 +479,7 @@ An Access Token obtained as a result of a Refresh Token flow MUST be limited to:
   - the Notification endpoint, to notify the deletion of a Digital Credential to the Credential Issuer;
   - the Credential endpoint, to refresh a Digital Credential that is already present in the Wallet Instance (also called Digital Credential re-issuance, see section :ref:`Re-Issuance Flow <Re-Issuance Flow>`). 
 
-To mitigate the impact of a stolen Refresh Token, the Refresh Tokens MUST be DPoP. These aspects are detailed and discussed in section :ref:`Security Considerations <Security Considerations>`.
+To mitigate the impact of a stolen Refresh Token, the Refresh Tokens MUST be DPoP. These aspects are detailed and discussed in Section :ref:`Security Considerations <sec_pei_security_considerations_1>`.
 
 Figure below shows how to obtain a new DPoP Access Token and a new DPoP Refresh Token to the Token Endpoint.
 
@@ -535,6 +535,7 @@ A non-normative example of a successful response is shown below.
 
 If the Refresh Token is expired or invalid, the PID/(Q)EAA Provider MUST issue an error, using the error type member set to ``invalid_grant``. Therefore, to obtain the Digital Credential an issuance flow authenticating the User is required, as defined in Section :ref:`Low-Level Issuance Flow <Low-Level Issuance Flow>`. 
 
+.. _sec_pei_security_considerations_1: 
 
 Security Considerations
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -602,6 +603,7 @@ The following diagram describes the Digital Credential re-issuance flow.
   
   If instead, either the Digital Credential status is set to ``UPDATE``(using OAuth Status List revocation) or ``credential_status_detail.state`` set to ``UPDATE`` (using OAuth Status List revocation) the the ``credential_status_detail.state`` is set to ``UPDATE``, only the Credential metadata parameters have changed. In this case, the Wallet Instance SHOULD store the new Digital Credential without requiring explicit user authorization and consent.
 
+.. _sec_pei_security_considerations_2: 
 
 Security Considerations
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -896,6 +898,7 @@ Authorization endpoint
 The authorization endpoint is used to interact with the PID/(Q)EAA Issuer and obtain an authorization grant.
 The authorization server MUST first verify the identity of the User that own the credential.
 
+.. _sec_pei_authorization_request:
 
 Authorization Request
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -922,6 +925,8 @@ The mandatory parameters in the HTTP authentication request are specified in the
 .. note::
 
   In the case of PID issuance, the Wallet Instance MAY include the **idphinting** parameter as a URL encoded string. This parameter specifies the Identity Provider where the User wishes to authenticate.. See `AARC-G061 - A specification for IdP hinting. <https://aarc-community.org/guidelines/aarc-g061/>`_ for more details. 
+
+.. _sec_pei_authorization_response:
 
 Authorization Response
 ^^^^^^^^^^^^^^^^^^^^^^^

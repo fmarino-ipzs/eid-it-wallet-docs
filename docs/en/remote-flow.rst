@@ -270,6 +270,7 @@ The details of each step shown in the previous picture are described below.
 
 **Steps 31-32**: The user-agent is redirected to the redirect URI to continue the navigation with the protected resource made available to the User.
 
+.. _sec_rf_authorization_request:
 
 Authorization Request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -463,6 +464,7 @@ The following is an example of an error response from ``request_uri`` endpoint:
 
 Upon receiving an error response, the Wallet Instance SHOULD inform the User of the error condition in an appropriate manner. The Wallet Instance SHOULD log the error and MAY attempt to recover from certain errors if feasible. For example, if the error is ``server_error``, the Wallet Instance SHOULD prompt the User to re-enter or scan a new QR code, if applicable.
 
+.. _sec_rf_authorization_response:
 
 Authorization Response 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

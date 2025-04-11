@@ -30,6 +30,8 @@ As shown in :numref:`fig_Wallet_Instance_Revoc_Entities`, other actors MAY trigg
   - The flow for Authorized Entities (e.g., Supervisory Bodies) is out of scope of this specification, it will be managed by each Wallet Provider.
 
 
+.. _sec_wr_wallet_instance_revocation_request:
+
 Wallet Instance Revocation Request 
 ...................................
 
@@ -85,6 +87,8 @@ Below is a non-normative example of a Wallet Instance Revocation Request.
       "status": "REVOKED"
     }
 
+
+.. _sec_wr_wallet_instance_revocation_response:
 
 Wallet Instance Revocation Response
 ...................................

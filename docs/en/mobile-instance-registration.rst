@@ -23,7 +23,7 @@ Since the initialization flows are analogous for a Wallet or Mobile Relying Part
 
     **Federation Check**: The Mobile Application Instance needs to check if the Application Provider is part of the Federation, obtaining its protocol-specific Metadata. Non-normative examples of a response from the :ref:`Federation endpoint` with the **Entity Configuration** and the **Metadata** of the Application Provider are presented within the :ref:`Wallet Provider Entity Configuration` and :ref:`Entity Configuration of Relying Parties` sections.
 
-**Steps 3-5 (Nonce Retrieval)**: The Mobile Application Instance requests a one-time ``nonce`` from the :ref:`Nonce endpoint` of the Application Provider Backend. This ``nonce`` MUST be unpredictable to serve as the main defense against replay attacks. 
+**Steps 3-5 (Nonce Retrieval)**: The Mobile Application Instance requests a one-time ``nonce`` from the **Nonce Endpoint** of the Application Provider Backend (see :ref:`sec_ws_nonce_endpoint` or :ref:`sec_rpi_nonce_endpoint` ). This ``nonce`` MUST be unpredictable to serve as the main defense against replay attacks. 
 
 Upon a successful request, the Application Provider Backend generates and returns the ``nonce`` value to the Mobile Application Instance. The Application Provider Backend MUST ensure that it is single-use and valid only within a specific time frame. 
 

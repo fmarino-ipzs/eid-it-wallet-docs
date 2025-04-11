@@ -44,6 +44,8 @@ In this section, state machines are presented to explain the Mobile Relying Part
 
 As shown in :numref:`fig_RelyingParty_Instance_Mobile_Lifecycle`, the Mobile Relying Party Instance has four distinct states: **Installed**, **Unverified**, **Verified**, and **Uninstalled**. Each state represents a specific functional status and determines the actions that can be performed.
 
+.. _sec_rpi_transition_to_installed:
+
 Transition to Installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 

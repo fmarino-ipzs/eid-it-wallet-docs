@@ -104,6 +104,8 @@ Each state represents a specific functional status and determines the actions th
 
   The Wallet Provider MUST ensure the security and reliability of the Wallet Instances. To achieve this, the Wallet Provider MUST periodically check the Wallet Instances security and compliance status. 
 
+.. _sec_ws_transition_to_installed:
+
 Transition to Installed
 ....................................
 The state machine begins with the Wallet Instance installation (**WI INST**) transition, where Users download and install a Wallet Instance provided by the Wallet Provider using the
@@ -396,7 +398,7 @@ Below is a non-normative example of the Entity Configuration for a Wallet PRovid
 
 .. _sec_ws_nonce_endpoint:
 
-Nonce Endpoint 
+Wallet Solution Nonce Endpoint 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This is a RESTful API endpoint that allows the Wallet Instance to request a cryptographic nonce from the Wallet Provider. The nonce serves as an unpredictable, single-use challenge to ensure freshness and prevent replay attacks.
 
@@ -457,6 +459,7 @@ Below is a non-normative example of an error response:
      "error_description": "User is not authorized to retrieve Wallet Instances."
    }
 
+.. _sec_ws_wallet_instance_revocation_request:
 
 Wallet Instance Revocation Request
 .............................................
@@ -466,6 +469,9 @@ To revoke an active Wallet Instance, a revocation request MUST be sent using the
 .. note:: 
   
   While PATCH is the recommended method, the revocation request MAY also be sent using the POST method, depending on implementation preferences.
+
+
+.. _sec_ws_wallet_instance_revocation_response:
 
 Wallet Instance Revocation Response
 .............................................

@@ -66,6 +66,7 @@ Below the table with the summary of the Federation Entity roles, mapped on the c
      - Leaf
      - 
 
+.. _sec_t_general_properties:
 
 General Properties
 ------------------

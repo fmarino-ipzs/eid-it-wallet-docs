@@ -18,8 +18,8 @@ The following diagram depicts the Issuer Solution High Level Architecture.
 
 .. _sec_is_Requirements:
 
-Requirements
-============
+Issuer Solution Requirements
+==============================
 
 The Digital Credential Issuer Solution MUST:
 
@@ -99,6 +99,8 @@ This component MUST establish secure connections with Authentic Sources to:
 
 .. note::
    For public Authentic Sources, a Credential Issuer MUST use PDND according to rules in Sections :ref:`e-Service PDND <e-service-pdnd>`, :ref:`Status Update by Authentic Sources <Status Update by Authentic Sources>`, and :ref:`Authentic Source Catalogue <authentic_source_catalogue>`.
+
+.. _sec_is_credential_lifecyle_management:
 
 Credential Lifecycle Management
 -------------------------------

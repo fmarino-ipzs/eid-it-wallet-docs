@@ -98,6 +98,8 @@ the conditions leading to its suspension are resolved, or it changes in **Revoke
   * Use case driven, based on the validity status of the attributes contained in the (Q)EAA. In this case, an Authentic Source MUST notify the Credential Issuer of any changes in the state of the attributes attested by the (Q)EAA. 
   * Explicitly requested by the User. 
 
+.. _sec_cr_credential_lifecyle_management:
+
 Credential Lifecycle Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 While :numref:`fig_DigitalCredential_States` shows the different states a Digital Credential may acquire during its lifecycle, 

@@ -710,7 +710,7 @@ The **unprotected header** MUST contain the following parameters, unless otherwi
       - **Reference**
     * - **4**
       - *(tstr, OPTIONAL)*. Unique identifier of the Issuer JWK. Required when the Issuer of mdoc uses OpenID Federation. 
-      - :ref:`trust.rst`
+      - :ref:`sec_trust_model`
     * - **33**
       - *(array)*. X.509 certificate chain about the Issuer. Required for X.509 certificate-based authentication.
       - :rfc:`9360`

@@ -1299,16 +1299,22 @@ The **DPoP JWT** MUST contain the following JOSE header parameters and claims.
     - [:rfc:`9449`. Section 6.1] and [:rfc:`7638`].
 
 
-Nonce endpoint
+.. _sec_pei_nonce_endpoint:
+
+Nonce Endpoint
 --------------
 
 The Nonce Endpoint provides a ``c_nonce`` value useful to create a proof of possession of key material for the request to the Credential Endpoint, as defined in Section 7 of `OpenID4VCI`_.
+
+.. _sec_pei_nonce_request:
 
 Nonce Request
 ^^^^^^^^^^^^^^^^^^^
 
 The request for a nonce MUST be an HTTP POST without a body addressed to the PID/(Q)EAA Issuer Nonce Endpoint mapped in the Credential Issuer Metadata.
 
+
+.. _sec_pei_nonce_response:
 
 Nonce Response
 ^^^^^^^^^^^^^^^^^^^

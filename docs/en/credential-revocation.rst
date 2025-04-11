@@ -280,6 +280,7 @@ The Status Assertions have the following features:
 
 The following sections describe how the Digital Credential validation mechanism works through its key phases. 
 
+.. _sec_sa_cred_iss_handling:
 
 Credential Issuers Handling Credential Status 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -783,8 +784,8 @@ Status List Token
        "ttl": 43200
      }
  
- .. _sec_cred_iss_handling:
- 
+.. _sec_sl_cred_iss_handling:
+
 Credential Issuers Handling Credential Status 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
@@ -859,11 +860,11 @@ HTTP Status Lists Response
  
  Upon receiving a Digital Credential, a Relying Party MUST first perform the validation of the Digital Credential itself (e.g., checking for expected attributes, valid signature and expiration time). If this validation is not successful, the Digital Credential MUST be rejected. If the validation was successful, the Relying Party MUST perform the following validation steps to evaluate the status of the Digital Credential:
  
-   - Check for the existence of a ``status`` claim, check for the existence of a ``status_list`` claim within the ``status`` claim and validate that the content of ``status_list`` adheres to the rules defined in Section :ref:`sec_cred_iss_handling`.
+   - Check for the existence of a ``status`` claim, check for the existence of a ``status_list`` claim within the ``status`` claim and validate that the content of ``status_list`` adheres to the rules defined in Section :ref:`sec_sl_cred_iss_handling`.
    - Resolve the Status List Token from the provided URI.
    - Validate the Status List Token:
  
-     - Validate the Status List Token's signature by following the rules defined in section 7.2 of [:rfc:`7519`]. This step requires the resolution of a public key as described in :ref:`trust.rst`.
+     - Validate the Status List Token's signature by following the rules defined in section 7.2 of [:rfc:`7519`]. This step requires the resolution of a public key as described in :ref:`sec_trust_model`.
      - Check for the existence of the required claims as defined in Section :ref:`sec_status_list_token`.
    
    - All existing claims in the Status List Token MUST be checked according to :ref:`sec_status_list_token`.

@@ -17,7 +17,7 @@ To leverage the PDND, entities MUST formally be subscribed becoming **Participan
 
 Access to an e-Service requires Consumers to obtain a specific Access Token, known within the PDND infrastructure as a Voucher.
 
-.. _sec_Requirements:
+.. _sec_pdnd_Requirements:
 
 Requirements and Security Patterns
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

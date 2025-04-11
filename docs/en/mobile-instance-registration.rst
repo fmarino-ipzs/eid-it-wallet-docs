@@ -80,6 +80,8 @@ Upon successful initialization of the Mobile Application Instance, the Applicati
 
 .. note:: **Threat Model**: while the initialization endpoint does not necessitate authenticating the client, it is safeguarded through the use of `key_attestation`. Proper validation of this attestation permits the initialization of authentic and unaltered app instances. Any other claims submitted will not undergo validation, leading the endpoint to respond with an error. Additionally, the inclusion of a nonce helps prevent replay attacks. The authenticity of both the nonce and the ``hardware_key_tag`` is ensured by the signature found within the ``key_attestation``.
 
+.. _sec_mir_nonce_request:
+
 Nonce Request
 ...............
 
@@ -91,6 +93,8 @@ Below is a non-normative example of a Nonce Request.
 
     GET /nonce HTTP/1.1
     Host: application-provider.example.com
+
+.. _sec_mir_nonce_response:
 
 Nonce Response
 ................
@@ -140,6 +144,10 @@ The following table lists HTTP Status Codes and related error codes that are sup
       - ``temporarily_unavailable``
       - The request cannot be fulfilled because the Nonce Endpoint is temporarily unavailable (e.g., due to maintenance or overload).
 
+
+
+.. _sec_mir_init_request:
+
 Mobile Application Instance Initialization Request
 ............................................................
 
@@ -177,6 +185,7 @@ Below is a non-normative example of a Mobile Application Instance Initialization
       "hardware_key_tag": "WQhyDymFKsP95iFqpzdEDWW4l7aVna2Fn4JCeWHYtbU="
     }
 
+.. _sec_mir_init_response:
 
 Mobile Application Instance Initialization Response
 ................................................................

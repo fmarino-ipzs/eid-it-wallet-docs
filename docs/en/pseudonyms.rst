@@ -28,6 +28,8 @@ General Properties
 - Reversibility (optional, depending on the system's requirements).
 - Non-linkability to the real identity (without additional information).
 
+.. _sec_p_Requirements:
+
 Requirements
 ------------
 - IT-Wallet MUST be able to generate or assign unique pseudonyms.
@@ -35,6 +37,7 @@ Requirements
 - The system SHOULD maintain a secure mapping between pseudonyms and real identities (if reversibility is required).
 - The pseudonym generation process SHOULD be resistant to guessing attacks.
 
+.. _sec_ps_implementation_considerations:
 
 Implementation Considerations
 -----------------------------

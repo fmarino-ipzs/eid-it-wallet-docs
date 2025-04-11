@@ -36,7 +36,7 @@ The requirements for the Wallet Attestation are defined below:
 - The Wallet Attestation MUST NOT be issued by the Wallet Provider if the authenticity, integrity, and genuineness of the Wallet Instance requesting it cannot be guaranteed.
 - Each Wallet Instance SHOULD be able to request multiple Wallet Attestations using different cryptographic public keys associated with them.
 - The Wallet Attestation MUST NOT contain information about the User in control of the Wallet Instance.
-- The Wallet Instance MUST secure a Wallet Attestation as a prerequisite for transitioning to the Operational state, as defined by :ref:`ARF`.
+- The Wallet Instance MUST secure a Wallet Attestation as a prerequisite for transitioning to the Operational state, as defined by `EIDAS-ARF`_.
 
 .. figure:: ../../images/static_view_wallet_instance_attestation.svg
     :figwidth: 100%
@@ -163,6 +163,8 @@ new (Q)EAAs (**(Q)EAA ISS/PRE**), and present the PID (**PID PRE**). Please refe
   Instance of the same Wallet Solution from the same Wallet Provider, the PID in the previous Wallet Instance MUST be revoked and the Wallet Instance became
   **Operational**.
 
+.. _sec_ws_transition_to_uninstalled:
+
 Transition to Uninstalled
 ....................................
 
@@ -229,7 +231,7 @@ An HTTP GET request to the Federation endpoint allows the retrieval of the Walle
 
 The returned Entity Configuration of the Wallet Provider MUST contain the attributes described in the sections below.
 
-The Wallet Provider Entity Configuration is a signed JWT containing the public keys and supported algorithms of the Wallet Provider. It is structured in accordance with the `OID-FED`_ and the :ref:`Trust Model` outlined in this specification.
+The Wallet Provider Entity Configuration is a signed JWT containing the public keys and supported algorithms of the Wallet Provider. It is structured in accordance with the `OID-FED`_ and the :ref:`sec_trust_model` outlined in this specification.
 
 Wallet Provider Entity Configuration JWT Header
 ...................................................
@@ -392,11 +394,13 @@ Below is a non-normative example of the Entity Configuration for a Wallet PRovid
   "exp": 1709290159
   }
 
+.. _sec_ws_nonce_endpoint:
+
 Nonce Endpoint 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This is a RESTful API endpoint that allows the Wallet Instance to request a cryptographic nonce from the Wallet Provider. The nonce serves as an unpredictable, single-use challenge to ensure freshness and prevent replay attacks.
 
-See :ref:`Nonce Request` and :ref:`Nonce Response` for details on the Nonce Request and Nonce Response.
+See :ref:`sec_pei_nonce_request` and :ref:`sec_pei_nonce_response` for details on the Nonce Request and Nonce Response.
 
 Wallet Instance Management Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -592,6 +596,8 @@ The JOSE header of the Wallet Attestation Request JWT MUST contain the following
 
 The body of the Wallet Attestation Request JWT MUST contain the following claims:
 
+.. _tbl_wallet_attestation_request_claim:
+
 .. list-table::
     :widths: 20 60 20
     :header-rows: 1
@@ -632,7 +638,7 @@ The body of the Wallet Attestation Request JWT MUST contain the following claims
 Wallet Attestation Issuance Response
 .............................................
 
-If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a status code of ``200 OK`` and Content-Type ``application/json``. The returned JSON Object MUST possess the ``wallet_attestations`` parameter whose value is an array of JSON Objects (see :ref:`Wallet Attestation Issuance`) containing the Wallet Attestations in JWT, SD-JWT and mdoc format signed by the Wallet Provider. The JWT formatted Wallet Attestation is to be used for the Issuance phase, as an OAuth Client Attestation, and will be sent to the Credential Issuer as discussed in :ref:`pid_eaa_issuance.rst`. The SD-JWT and mdoc formatted Wallet Attestation will instead be used during presentation respectively in the remote (:ref:`remote_flow.rst`) and proximity (:ref:`proximity_flow_sec_main`) flows.
+If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a status code of ``200 OK`` and Content-Type ``application/json``. The returned JSON Object MUST possess the ``wallet_attestations`` parameter whose value is an array of JSON Objects (see :ref:`Wallet Attestation Issuance`) containing the Wallet Attestations in JWT, SD-JWT and mdoc format signed by the Wallet Provider. The JWT formatted Wallet Attestation is to be used for the Issuance phase, as an OAuth Client Attestation, and will be sent to the Credential Issuer as discussed in :ref:`pid_eaa_issuance.rst`. The SD-JWT and mdoc formatted Wallet Attestation will instead be used during presentation respectively in the remote (:ref:`remote_flow.rst`) and proximity (:ref:`proximity_flow.rst`) flows.
 
 
 The JSON Object returned in the response has the following claim:

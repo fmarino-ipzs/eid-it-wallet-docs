@@ -1,6 +1,6 @@
 .. include:: ../common/common_definitions.rst
 
-.. _remote-flow.rst:
+.. _remote_flow.rst:
 
 Remote Flow
 ===========
@@ -370,7 +370,7 @@ The JWT header parameters are described below:
   * - **Name**
     - **Description**
   * - **alg**
-    - Algorithm used to sign the JWT, according to [:rfc:`7516#section-4.1.1`]. It MUST be one of the supported algorithms in Section *Cryptographic Algorithms* and MUST NOT be set to ``none`` or to a symmetric algorithm (MAC) identifier.
+    - Algorithm used to sign the JWT, according to [:rfc:`7516#section-4.1.1`]. It MUST be one of the supported algorithms in Section `Cryptographic Algorithms <algorithms.html>`_ and MUST NOT be set to ``none`` or to a symmetric algorithm (MAC) identifier.
   * - **typ**
     - Media Type of the JWT, as defined in [:rfc:`7519`] and [:rfc:`9101`]. It SHOULD be set to the value ``oauth-authz-req+jwt``.
   * - **kid**
@@ -516,7 +516,7 @@ When an SD-JWT is presented, its KB-JWT MUST contain the following parameters in
   * - **typ**
     - REQUIRED. MUST be ``kb+jwt``, which explicitly types the Key Binding JWT as recommended in Section 3.11 of [RFC8725].
   * - **alg**
-    - REQUIRED. Signature Algorithm using one of the specified in the section Cryptographic Algorithms. 
+    - REQUIRED. Signature Algorithm using one of the specified in the Section `Cryptographic Algorithms <algorithms.html>`_. 
 
 
 When an SD-JWT is presented, the KB-JWT signature MUST be verified by the same public key included in the SD-JWT within the `cnf` parameter. The KB-JWT MUST contain the following parameters in the JWT payload:

@@ -22,7 +22,7 @@ This section describes how the Wallet Provider issues a Wallet Attestation.
   3. Verify the Wallet Provider's federation membership and retrieve its metadata.
 
 
-**Steps 4-6 (Nonce Retrieval)**: The Wallet Instance solicits a ``nonce`` from the :ref:`Nonce endpoint` of the Wallet Provider Backend. This ``nonce`` is required to be unpredictable and serves as the main defense against replay attacks. 
+**Steps 4-6 (Nonce Retrieval)**: The Wallet Instance solicits a ``nonce`` from the :ref:`sec_ws_nonce_endpoint` of the Wallet Provider Backend. This ``nonce`` is required to be unpredictable and serves as the main defense against replay attacks. 
 The ``nonce`` MUST be produced in a manner that ensures its single-use within a predetermined time frame.
 
 Below is a non-normative example of a Nonce Request.
@@ -68,7 +68,7 @@ Below is a non-normative example of the ``client_data`` JSON object.
 
 **Steps 11-12 (Wallet Attestation Issuance Request)**: The Wallet Instance:
 
-* Constructs the Wallet Attestation Request in the form of a JWT. This JWT includes the ``key_attestation``, ``hardware_signature``, ``nonce``, ``hardware_key_tag``, ``cnf`` and other configuration related parameters (see :ref:`Table of the Wallet Attestation Request Body <table_wallet_attestation_request_claim>`) and is signed using the private key of the initially generated ephemeral key pair.
+* Constructs the Wallet Attestation Request in the form of a JWT. This JWT includes the ``key_attestation``, ``hardware_signature``, ``nonce``, ``hardware_key_tag``, ``cnf`` and other configuration related parameters (see :ref:`Table of the Wallet Attestation Request Body <tbl_wallet_attestation_request_claim>`) and is signed using the private key of the initially generated ephemeral key pair.
 * Submits the Wallet Attestation Request to the :ref:`Wallet Attestation Issuance endpoint` of the Wallet Provider Backend.
 
 Below is a non-normative example of the Wallet Attestation Request JWT without encoding and signature applied:

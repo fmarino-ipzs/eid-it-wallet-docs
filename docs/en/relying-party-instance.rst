@@ -85,6 +85,7 @@ The expiration of the Access Certificate (**CERT EXP** transition) leads to the 
 
 While in this state, the Relying Party Instance can still request the presentation of Digital Credentials to Wallet Instances during the grace period. However, as the Certificate is expired, a specific disclaimer MUST be displayed to the User of the Wallet Instance during the presentation flow; for this reason, this operation is represented by the label **PID/(Q)EAA PRE***. This is required to support offline presentation flows. After the grace period has passed, the Relying Party Instance MUST NOT longer request presentations and will be de-registered.
 
+.. _sec_rpi_transition_to_uninstalled:
 
 Transition to Uninstalled
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,7 +111,7 @@ Mobile Relying Party Instance Registration
 
 This process allows for the registration of a Relying Party Instance with the Relying Party Backend, and the issuance of an Access Certificate that will be used for authentication purposes towards Wallet Instances during presentation flows. The process consists of two subphases:
 
-1. **Initialization**: The Relying Party Instance requests a security and integrity assertion from the OS manufacturer, which also binds a long-lived key pair stored in a proper secure storage within the device itself; the assertion is then validated by the Relying Party Backend. Further details are provided in the :ref:`mobile-instance-app-initialization-and-registration.rst` section.
+1. **Initialization**: The Relying Party Instance requests a security and integrity assertion from the OS manufacturer, which also binds a long-lived key pair stored in a proper secure storage within the device itself; the assertion is then validated by the Relying Party Backend. Further details are provided in Section :ref:`mobile-instance-app-initialization-and-registration.rst`.
 2. **Access Certificate Issuance**: The Relying Party Instance requests an Access Certificate from the Relying Party Backend. Before interacting with the Relying Party Instance Access Certificate Authority for the issuance of the Access Certificate, the Relying Party Backend validates the Relying Party Instance's integrity and security by leveraging the long-lived, attested keys generated in the previous subphase. The flow is displayed in :numref:`fig_RelyingParty_Instance_Mobile_Registration_AccessCertificateIssuance`, while a step-by-step description is provided below.
 
 .. note::
@@ -132,11 +133,11 @@ This process allows for the registration of a Relying Party Instance with the Re
   1. Verifies the existence of Cryptographic Hardware Keys. If none exist, the Relying Party Instance re-initialization is required.
   2. Generates an asymmetric key pair for the Access Certificate (``key_pub``, ``key_priv``).
 
-**Steps 3-5:** The Mobile Relying Party Instance requests a ``nonce`` from the :ref:`Relying Party Nonce Endpoint` of the Relying Party Backend. This ``nonce`` MUST be unpredictable to serve as the main defense against replay attacks.
+**Steps 3-5:** The Mobile Relying Party Instance requests a ``nonce`` from the :ref:`sec_rpi_nonce_endpoint` of the Relying Party Backend. This ``nonce`` MUST be unpredictable to serve as the main defense against replay attacks.
 
-Upon a successful request, the :ref:`Relying Party Nonce Endpoint` generates and returns the ``nonce`` to the Mobile Relying Party Instance. The :ref:`Relying Party Nonce Endpoint` MUST ensure that it is single-use and valid only within a specific time frame.
+Upon a successful request, the :ref:`sec_rpi_nonce_endpoint` generates and returns the ``nonce`` to the Mobile Relying Party Instance. The :ref:`sec_rpi_nonce_endpoint` MUST ensure that it is single-use and valid only within a specific time frame.
 
-Non-normative examples of the Nonce Request and Response can be found in the :ref:`Nonce Request` and :ref:`Nonce Request` sections, respectively.
+Non-normative examples of the Nonce Request and Response can be found in the :ref:`sec_mir_nonce_request` and :ref:`sec_mir_nonce_response` sections, respectively.
 
 **Step 6:** The Mobile Relying Party Instance:
 

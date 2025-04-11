@@ -13,13 +13,14 @@ Relying Party Federation Endpoint
 
 .. include:: relying-party-entity-configuration.rst
 
+.. _sec_rpi_nonce_endpoint:
 
 Relying Party Nonce Endpoint
 ----------------------------------
 
 The Relying Party Nonce Endpoint allows the Relying Party Instance to request a cryptographic ``nonce`` from the Relying Party Backend. The ``nonce`` serves as an unpredictable, single-use challenge to ensure freshness and prevent replay attacks.
 
-Further details on the Nonce Request and Response are provided in the :ref:`Nonce Request` and :ref:`Nonce Response` sections, respectively.
+Further details on the Nonce Request and Response are provided in the :ref:`sec_mir_nonce_request` and :ref:`sec_mir_nonce_response` sections, respectively.
 
 
 Relying Party Instance Initialization Endpoint
@@ -27,7 +28,7 @@ Relying Party Instance Initialization Endpoint
 
 The Relying Party Instance Initialization Endpoint allows for the initialization of Relying Party Instances, consisting in the registration of a pair of long-lived, securely stored Cryptographic Hardware Keys.
 
-Further details on the Relying Party Instance Initialization Request and Response are provided in the :ref:`Mobile Application Instance Registration Request` and :ref:`Mobile Application Instance Registration Response` sections, respectively.
+Further details on the Relying Party Instance Initialization Request and Response are provided in the :ref:`sec_mir_init_request` and :ref:`sec_mir_init_response` sections, respectively.
 
 
 Relying Party Integrity Validation Endpoint
@@ -82,7 +83,7 @@ The Integrity Validation Request includes the following body parameters:
       - UNIX timestamp representing the JWT issuance time.
       - [:rfc:`9126`], [:rfc:`7519`].
     * - **nonce**
-      - The ``nonce`` obtained from the :ref:`Nonce Endpoint`.
+      - The ``nonce`` obtained from the :ref:`sec_rpi_nonce_endpoint`.
       -
     * - **hardware_signature**
       - The signature of ``client_data`` obtained using the Cryptographic Hardware Key, encoded in the ``base64url`` format.

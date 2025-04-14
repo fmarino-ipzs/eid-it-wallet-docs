@@ -65,7 +65,7 @@ ODT
 sudo apt install pandoc
 sphinx-build -b singlehtml docs/en/  html/
 cd html
-pandoc -o eidas-it-wallet-docs.odt index.html
+pandoc -o eid-it-wallet-docs.odt index.html
 ````
 
 ## Versioning

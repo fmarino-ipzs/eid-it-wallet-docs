@@ -34,12 +34,11 @@ The high-level flow begins with the User who wants to obtain a PID and starts hi
 
     1. **PID Provider Discovery and Trust**: the Wallet Instance discovers the trusted PID Provider using the Digital Credential Catalogue and Federation Services, establishing the trust to the PID Provider according to the Trust Model and obtaining its metadata that discloses the formats of the PID, the algorithms supported, and any other parameter required for interoperability needs.
     2. **PID Request**: using the Authorization Code Flow defined in [`OpenID4VCI`_] the Wallet Instance requests the PID to the PID Provider.
-    3. **Wallet Provider Discovery and Trust**: The PID Provider checks the authenticity and validity of the Wallet Instance, establishing the trust to the Wallet Provider and obtaining Wallet metadata with the parameters required for interoperability needs, according to the Trust Model.
+    3. **Wallet Provider Discovery and Trust**: the PID Provider checks the authenticity and validity of the Wallet Instance, establishing the trust to the Wallet Provider and obtaining Wallet metadata with the parameters required for interoperability needs, according to the Trust Model.
     4. **User Authentication**: the PID Provider authenticates the User with CieID LoA High (L3), acting as an Identity and Access Management Proxy to the National eID system.
-    5. **Fetch of PID data from National Public Registry**: The PID Provider obtains the required PID data from National Public Registry (ANPR) which acts as Authentic Source.
+    5. **Fetch of PID data from National Public Registry**: the PID Provider obtains the required PID data from National Public Registry (ANPR) which acts as Authentic Source.
     6. **PID Issuance**: the PID Provider releases a PID bound to the key material held by the requesting Wallet Instance.
 
-In the following sections the steps from 1 to 5 are further expanded into more technical details.
 
 High-Level (Q)EAA flow
 ----------------------
@@ -58,12 +57,11 @@ The :numref:`fig_High-Level-Flow-ITWallet-QEAA-Issuance` shows a general archite
     (Q)EAA Issuance - General architecture and high level flow
 
 Similarly to the PID high-level flow, the above diagram depicts a (Q)EAA high-level flow starting from the User who wants to obtain a (Q)EAA (step 0). Below the description of the most relevant operations involved in the (Q)EAA issuance:
-
-    1. **(Q)EAA Provider Discovery and Trust**: the Wallet Instance obtains the list of the trusted (Q)EAA Provider using the Digital Credential Catalogue and Federation API (e.g.: using the Subordinate Listing Endpoint of the Trust Anchor and its Intermediates), then inspects the metadata looking for the Digital Credential capabilities of each (Q)EAA Provider.
+    1. **(Q)EAA Provider Discovery and Trust**: the Wallet Instance obtains the list of the trusted (Q)EAA Providers using the Digital Credential Catalogue and Federation API (e.g.: using the Subordinate Listing Endpoint of the Trust Anchor and its Intermediates), then inspects the metadata looking for the Digital Credential capabilities of each (Q)EAA Provider.
     2. **(Q)EAA Request**: using the Authorization Code Flow, defined in [`OpenID4VCI`_], the Wallet Instance requests a (Q)EAA to the (Q)EAA Provider.
-    3. **Wallet Provider Discovery and Trust**: The (Q)EAA Provider verifies the authenticity and validity of the Wallet Instance. During this step the (Q)EAA Provider establishes trust with the Wallet Provider and retrieves Wallet metadata containing the necessary parameters for interoperability, as defined by the Trust Model.
+    3. **Wallet Provider Discovery and Trust**: the (Q)EAA Provider verifies the authenticity and validity of the Wallet Instance. During this step the (Q)EAA Provider establishes trust with the Wallet Provider and retrieves Wallet metadata containing the necessary parameters for interoperability, as defined by the Trust Model.
     4. **User Authentication**: the (Q)EAA Provider, acting as a Relying Party Instance, authenticates the User evaluating the presentation of the PID.
-    5. **Obtaining Attributes**: The (Q)EAA Provider fetches User attributes from the relevant Authentic Source.
+    5. **Obtaining Attributes**: the (Q)EAA Provider fetches User attributes from the relevant Authentic Source.
     6. **(Q)EAA Issuance**: the (Q)EAA Provider releases a (Q)EAA bound to the key material held by the requesting Wallet Instance.
 
 
@@ -165,6 +163,8 @@ In case of Issuer Initiated flow, in addition to the Federation Check defined ab
   * MUST use the ``OAuth-Client-Attestation`` and ``OAuth-Client-Attestation-PoP`` parameters according to OAuth 2.0 Attestation-based Client Authentication [`OAUTH-ATTESTATION-CLIENT-AUTH`_], since in this flow the Pushed Authorization Endpoint is a protected endpoint.
   * specifies the types of the requested credentials using the ``authorization_details`` [RAR :rfc:`9396`] parameter and or scope parameter.
 
+.. _par_request_reqs:
+
 The PID/(Q)EAA Provider performs the following checks upon the receipt of the PAR request:
 
     1. It MUST validate the signature of the Request Object using the algorithm specified in the ``alg`` header parameter (:rfc:`9126`, :rfc:`9101`) and the public key retrieved from the Wallet Attestation (``cnf.jwk``) referenced in the Request Object, using the ``kid`` JWT header parameter.
@@ -239,6 +239,7 @@ The PID/(Q)EAA Provider returns the issued ``request_uri`` to the Wallet Instanc
 .. literalinclude:: ../../examples/par-response.json
   :language: JSON
 
+.. _iss_authz_request_reqs:
 
 **Steps 4-5 (Authorization Request)**: The Wallet Instance sends an authorization request to the PID/(Q)EAA Provider Authorization Endpoint. Since parts of this Authorization Request content, e.g., the ``code_challenge`` parameter value, are unique to a particular Authorization Request, the Wallet Instance MUST use a ``request_uri`` value once (:rfc:`9126`); The PID/(Q)EAA Provider performs the following checks upon the receipt of the Authorization Request:
 
@@ -277,7 +278,10 @@ The PID/(Q)EAA Provider returns the issued ``request_uri`` to the Wallet Instanc
 
 **Steps 8-9 (DPoP Proof for Token Endpoint)**: The Wallet Instance MUST create a new key pair for the DPoP and a fresh DPoP Proof JWT following the instruction provided in the Section 4 of (:rfc:`9449`) for the token request to the PID/(Q)EAA Provider. The DPoP Proof JWT is signed using the private key for DPoP created by Wallet Instance for this scope. DPoP binds the Access Token, and optionally the Refresh Token, to a certain Wallet Instance (:rfc:`9449`) and mitigates the misuse of leaked or stolen tokens at the Credential Endpoint.
 
+.. _iss_token_request_reqs:
+
 **Step 10 (Token Request):** The Wallet Instance sends a token request to the PID/(Q)EAA Provider Token Endpoint with a *DPoP Proof JWT* and the parameters: ``code``, ``code_verifier``, and OAuth 2.0 Attestation based Client Authentication (``OAuth-Client-Attestation`` and ``OAuth-Client-Attestation-PoP``). 
+
 The ``OAuth-Client-Attestation`` is signed using the private key bound to the Wallet Instance. The related public key that is attested by the Wallet Provider is provided within the Wallet Attestation (``cnf.jwk`` claim). The PID/(Q)EAA Provider performs the following checks on the Token Request:
 
    1. It MUST ensure that the Authorization ``code`` is issued to the authenticated Wallet Instance (:rfc:`6749`) and was not replied.
@@ -353,6 +357,8 @@ Below is a non-normative example of a Nonce Response:
 
 
 **Steps 14-15 (DPoP Proof for Credential Endpoint)**: The Wallet Instance for requesting the Digital Credential creates a proof of possession with ``c_nonce`` obtained in **Step 13** and using the private key used for the DPoP, signing a DPoP Proof JWT according to (:rfc:`9449`) Section 4. The ``jwk`` value in the ``proof`` parameter MUST be equal to the public key referenced in the DPoP.
+
+.. _iss_cred_request_reqs:
 
 **Step 16 (Credential Request)**: The Wallet Instance sends a request for the Digital Credential to the PID/(Q)EAA Credential endpoint. This request MUST include the Access Token, DPoP Proof JWT, credential type, proof (which demonstrates possession of the key). The proof parameter MUST be an object that contains evidence of possession of the cryptographic key material to which the issued PID/(Q)EAA Digital Credential will be bound. To verify the proof, the PID/(Q)EAA Provider conducts the following checks at the Credential endpoint:
 
@@ -925,6 +931,7 @@ The mandatory parameters in the HTTP authentication request are specified in the
       - It MUST be set to the same value as obtained by PAR Response. See :ref:`Table of the HTTP PAR Response parameters <table_http_response_claim>`.
       - [:rfc:`9126`].
 
+.. _sec_pei_authorization_response:
 
 Authorization Response
 ^^^^^^^^^^^^^^^^^^^^^^^

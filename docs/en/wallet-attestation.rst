@@ -25,7 +25,7 @@ This section describes how the Wallet Provider issues a Wallet Attestation.
 
 The ``nonce`` MUST be produced in a manner that ensures its single-use within a predetermined time frame.
 
-Upon a successful request, the Wallet Provider generates and returns the nonce value to the Wallet Instance. 
+Upon a successful request, the Wallet Provider generates and returns the nonce value to the Wallet Instance.
 
 **Step 7**: The Wallet Instance performs the following actions:
 

@@ -137,7 +137,7 @@
                             "locale": "en-US"
                         }
                     ],
-                    "vct": "https://eaa-provider.example.org/v1.0/disabilitycard",
+                    "vct": "https://trust-registry.eid-wallet.example.it/v1.0/EuropeanDisabilityCard",
                     "claims": [
                         {
                             "path": ["document_number"],
@@ -288,7 +288,7 @@
                             "locale": "en-US"
                         }
                     ],
-                    "vct": "https://eaa-provider.example.org/v1.0/mDL",
+                    "vct": "https://trust-registry.eid-wallet.example.it/v1.0/mDL",
                     "claims": [
                         {
                             "path": ["given_name"],

@@ -786,10 +786,10 @@ Status List Token
        "ttl": 43200
      }
  
+ 
 .. _sec_sl_cred_iss_handling:
 
 Credential Issuers Handling Credential Status 
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  Credential Issuers, once a Digital Credential has been generated, MUST:

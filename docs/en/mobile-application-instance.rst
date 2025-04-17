@@ -303,6 +303,9 @@ Below is a non-normative example of a Key Binding Request.
 
 In particular, the Key Binding Request JWT includes the following HTTP header parameters:
 
+
+.. _tbl_key_binding_request_claim:
+
 .. list-table::
     :widths: 20 60 20
     :header-rows: 1
@@ -388,7 +391,7 @@ Below is a non-normative example of a Key Binding Request JWT.
 Mobile Application Key Binding Response
 ----------------------------------------------------
 
-The Key Binding Response strictly depends on the context of the request; further details are provided in the :ref:`Relying Party Integrity Validation Response` and :ref:`Wallet Attestation Issuance Response` sections.
+The Key Binding Response strictly depends on the context of the request; further details are provided in the :ref:`Relying Party Key Binding Response` and :ref:`Wallet Attestation Issuance Response` sections.
 
 
 Mobile Application Key Binding Error Response

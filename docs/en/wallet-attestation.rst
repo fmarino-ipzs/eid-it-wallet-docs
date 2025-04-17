@@ -51,7 +51,7 @@ Below is a non-normative example of the ``client_data`` JSON object.
 
 **Steps 11-12 (Wallet Attestation Issuance Request)**: The Wallet Instance:
 
-* Constructs the Wallet Attestation Request in the form of a JWT. This JWT includes the ``key_attestation``, ``hardware_signature``, ``nonce``, ``hardware_key_tag``, ``cnf`` and other configuration related parameters (see :ref:`Table of the Wallet Attestation Request Body <tbl_wallet_attestation_request_claim>`) and is signed using the private key of the initially generated ephemeral key pair.
+* Constructs the Wallet Attestation Request in the form of a JWT. This JWT includes the ``key_attestation``, ``hardware_signature``, ``nonce``, ``hardware_key_tag``, ``cnf`` and other configuration related parameters (see :ref:`Table of the Wallet Attestation Request Body <tbl_key_binding_request_claim>`) and is signed using the private key of the initially generated ephemeral key pair.
 * Submits the Wallet Attestation Request to the :ref:`Wallet Attestation Issuance endpoint` of the Wallet Provider Backend.
 
 The Wallet Instance MUST send the signed Wallet Attestation Request JWT as an ``assertion`` parameter in the body of an HTTP request to the Wallet Provider's :ref:`Wallet Attestation Issuance endpoint`.

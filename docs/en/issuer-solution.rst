@@ -145,7 +145,7 @@ Federation Endpoints
 
 The `/.well-known/openid-federation` endpoint serves the Entity Configuration document per Section :ref:`Entity Configuration of PID/(Q)EAA Providers`, establishing trust relationships within the IT-Wallet Federation.
 
-.. include:: pid-eaa-entity-configuration.rst
+.. include:: pid-eaa-entity-configuration.inc
 
 Credential Issuer Component Endpoints
 -------------------------------------

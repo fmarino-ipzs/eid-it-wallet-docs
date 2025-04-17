@@ -11,7 +11,7 @@ The Relying Party MUST expose a trust endpoint adhering to the OpenID Federation
 Relying Party Federation Endpoint
 -----------------------------------
 
-.. include:: relying-party-entity-configuration.rst
+.. include:: relying-party-entity-configuration.inc
 
 .. _sec_rpi_nonce_endpoint:
 

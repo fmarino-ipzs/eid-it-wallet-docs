@@ -45,6 +45,6 @@ This section lists the requirements to be met by Relying Parties and Relying Par
 - The Mobile Relying Party Instances MUST be compatible and functional on both Android and iOS operating systems and available on the Play Store and App Store, respectively.
 - The Mobile Relying Party Instances MUST handle both online and offline presentation scenarios, with appropriate security measures and user notifications.
 
-.. include:: relying-party-instance.rst
+.. include:: relying-party-instance.inc
 
-.. include:: relying-party-endpoint.rst
+.. include:: relying-party-endpoint.inc

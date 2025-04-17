@@ -6,7 +6,7 @@ Wallet Instance Revocation
 
 This section describes the involved entities and modalities to request a Wallet Instance revocation.
 
-The Wallet Provider MUST ensure the security and reliability of Wallet Instances, keeping them updated and compliant with security requirements. When, for technical security reasons (e.g., relating to the compromise of cryptographic material) the security of the Wallet Instance is compromised, the Wallet Provider MUST revoke the Wallet Instance. 
+The Wallet Provider MUST ensure the security and reliability of Wallet Instances, keeping them updated and compliant with security requirements. When, for technical security reasons (e.g., relating to the compromise of cryptographic material) the security of the Wallet Instance is compromised, the Wallet Provider MUST revoke the Wallet Instance.
 
 As shown in :numref:`fig_Wallet_Instance_Revoc_Entities`, other actors MAY trigger the Wallet Instance revocation process:
 
@@ -29,10 +29,10 @@ As shown in :numref:`fig_Wallet_Instance_Revoc_Entities`, other actors MAY trigg
   - The endpoint used by the PID Provider is detailed in the Wallet Provider Catalogue of e-Service PDND Catalogue (see Section :ref:`wp-catalogue` for technical details).
   - The flow for Authorized Entities (e.g., Supervisory Bodies) is out of scope of this specification, it will be managed by each Wallet Provider.
 
-
 .. _sec_wr_wallet_instance_revocation_request:
 
 Wallet Instance Revocation Request 
+
 ...................................
 
 Users MAY request the Wallet Instance revocation by:
@@ -42,8 +42,8 @@ Users MAY request the Wallet Instance revocation by:
 
 In both cases, by using the Wallet Provider portal:
 
-- Users MUST authenticate with at least a second-factor authentication mechanism, or have an active session that meets this requirement. 
-- The Wallet Provider MUST allow Users to view the state of their Wallet Instances associated with their authenticated session and ask for revocation, sending a Wallet Instance Retrieval or Revocation Request, as applicable, to the :ref:`Wallet Instance Management endpoint` of the Wallet Provider Backend. 
+- Users MUST authenticate with at least a second-factor authentication mechanism, or have an active session that meets this requirement.
+- The Wallet Provider MUST allow Users to view the state of their Wallet Instances associated with their authenticated session and ask for revocation, sending a Wallet Instance Retrieval or Revocation Request, as applicable, to the :ref:`Wallet Instance Management endpoint` of the Wallet Provider Backend.
 
 Below is a non-normative example of a Wallet Instances Retrieval Request.
 
@@ -73,7 +73,7 @@ Below is a non-normative example of a Wallet Instances Retrieval Response.
        "issued_at": "2024-02-28T15:30:00Z"
      }
    ]
-   
+
 Once the User identifies the Wallet Instance to be revoked, a Wallet Instance Revocation Request can be sent to the endpoint, including the Wallet Instance ID as a path parameter.
 Below is a non-normative example of a Wallet Instance Revocation Request.
 

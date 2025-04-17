@@ -1,9 +1,7 @@
 # IT-Wallet Technical Specifications
 
-[![GitHub release](https://img.shields.io/github/release/italia/eid-it-wallet-docs.svg?style=plastic)](https://github.com/italia/eid-it-wallet-docs/releases)
+[![GitHub release](https://img.shields.io/github/release/italia/eid-wallet-it-docs.svg?style=plastic)](https://github.com/italia/eid-wallet-it-docs/releases)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)
-[![Docs Italia](https://docs.italia.it/media/static/projects/badges/passing.svg)](https://docs.italia.it/italia/eid-it-wallet-docs/it/master/index.html)
-[![Documentation](https://img.shields.io/badge/Documentation-Docs%20Italia-blue.svg)](https://docs.italia.it/italia/eid-it-wallet-docs/)
 
 ---
 
@@ -38,6 +36,7 @@ Preview of other branches can be navigated by adding the branch name in the webp
 
 Released versions can be navigated by adding the tag in the webpath leaded by a _v_, as follows:
 
+ - [https://italia.github.io/eid-wallet-it-docs/v1.0.0/en/](https://italia.github.io/eid-wallet-it-docs/v1.0.0/en/)
  - [https://italia.github.io/eid-wallet-it-docs/v0.9.3/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.3/en/)
  - [https://italia.github.io/eid-wallet-it-docs/v0.9.2/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.2/en/)
  - [https://italia.github.io/eid-wallet-it-docs/v0.9.1/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.1/en/)

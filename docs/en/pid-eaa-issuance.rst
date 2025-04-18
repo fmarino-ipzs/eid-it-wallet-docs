@@ -613,8 +613,8 @@ The following diagram describes the Digital Credential re-issuance flow.
 
 .. _sec_pei_security_considerations_2: 
 
-Security Considerations
-^^^^^^^^^^^^^^^^^^^^^^^
+Re-Issuance Flow: Security Considerations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To ensure the integrity and security of the re-issuance process, the following security considerations apply.
 

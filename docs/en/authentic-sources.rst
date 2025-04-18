@@ -3,9 +3,9 @@
 Authentic Sources
 +++++++++++++++++++
 
-Authentic Sources provide Users attributes to the Credential Issuers enabling them in the issuance of the Digital Credentials. During the Issuance Flow, Credential Issuers request from Authentic Sources the attributes required to provide the requested Credential. Authentic Sources MAY also provide a Credential Offer related to their Credential Issuers as defined in Section :ref:`Credential Offer Endpoint <Credential Offer Endpoint>`.
+Authentic Sources provide Users attributes to the Credential Issuers enabling them in the issuance of the Digital Credentials. During the Issuance Flow, Credential Issuers request from Authentic Sources the attributes required to provide the requested Credential. Authentic Sources MAY also provide a Credential Offer related to their Credential Issuers as defined in Section :ref:`pid-eaa-issuance:Credential Offer Endpoint`.
 
-Public Authentic Sources MUST interact with Credential Issuers via PDND according to the rules defined in Section :ref:`e-Service PDND <e-service-pdnd>` and in Section :ref:`Status Update by Authentic Sources <Status Update by Authentic Sources>`. See also Section :ref:`Authentic Source Catalogue <authentic_source_catalogue>` for additional details.
+Public Authentic Sources MUST interact with Credential Issuers via PDND according to the rules defined in Section :ref:`e-Service PDND <e-service-pdnd>` and in Section :ref:`credential-revocation:Status Update by Authentic Sources`. See also Section :ref:`authentic-source:Authentic Source Catalogue` for additional details.
 
 Authentic Sources MUST:
 
@@ -16,5 +16,3 @@ Authentic Sources MUST:
 
     - cooperate with their Credential Issuers so that the attributes attested in a Digital Credential are always kept up to date. Public Authentic Sources MUST use PDND to notify their Credential Issuers of any update regarding attributes that have changed or are no longer valid.
 
-.. include:: e-service-pdnd.inc
-.. include:: e-service-pdnd-catalogue.inc

@@ -148,7 +148,7 @@ html_theme_options = {
     # This option can be used with docs-italia-theme to customise how the versions "badge" is shown:
     # 'False': default (alabaster) badge | 'True': custom (italia) badge
     # 'custom_versions_badge': True,
-    'collapse_navigation': True,
+    #'collapse_navigation': True,
     "show_theme_credit": False,
     "source_url": 'https://github.com/italia/eudi-wallet-it-docs',
     "source_icon": "github",
@@ -319,3 +319,5 @@ numfig = True
 
 # to turn smartquotes off and be able to use  
 smartquotes = False
+
+autosectionlabel_prefix_document= True

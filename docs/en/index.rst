@@ -19,13 +19,16 @@ Index of content
    wallet-solution.rst
    issuer-solution.rst
    relying-party-solution.rst
+   mobile-application-instance.rst
+   authentic-sources.rst
+   e-service-pdnd.rst
    pid-eaa-data-model.rst
-   registry-catalogue.rst
    pid-eaa-issuance.rst
    pid-eaa-presentation.rst
    credential-revocation.rst
-   authentic-sources.rst
    backup-restore.rst
+   registry-catalogue.rst
+   e-service-pdnd-catalogue.rst
    algorithms.rst
    security-privacy-considerations.rst
    log-retention-policy.rst

@@ -284,8 +284,8 @@ The following sections describe how the Digital Credential validation mechanism 
 
 .. _sec_sa_cred_iss_handling:
 
-Credential Issuers Handling Credential Status
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Handling Credential Status with OAuth Status Assertion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Credential Issuers, once a Digital Credential has been generated and successfully issued, MUST:
 
@@ -789,8 +789,8 @@ Status List Token
  
 .. _sec_sl_cred_iss_handling:
 
-Credential Issuers Handling Credential Status 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Handling Credential Status with Status List Token
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  Credential Issuers, once a Digital Credential has been generated, MUST:
 

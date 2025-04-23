@@ -218,7 +218,7 @@ The QR code page is presented to the User who selects IT-Wallet System Authentic
 
 Relying Parties SHOULD implement the QR code page (cross-device) provided in the Official Resources. In any case:
 
-- the page MUST include the Visual Identity elements of the IT-Wallet System, including the logo;
+- the page MUST include the Visual Identity elements of the IT-Wallet System, including the Logo;
 - the page MUST display the QR code along with a clear and concise message instructing the User to scan it using their Wallet Instance;
 - the page MUST indicate the validity period of the QR code with a short and clear message;
 - the page MUST include a Call To Action allowing the User to generate a new QR code in case of timeout;
@@ -239,7 +239,7 @@ The waiting page is shown after the QR code has been scanned and prompts the Use
 
 Relying Parties SHOULD implement the waiting page (cross-device) provided in the Official Resources. In any case:
 
-- the page MUST include visual identity elements of the IT-Wallet System, including the logo and an icon or graphical element that reinforces the page message;
+- the page MUST include visual identity elements of the IT-Wallet System, including the Logo and an icon or graphical element that reinforces the page message;
 - the page MUST include a clear and concise message instructing the User to continue the process on their Wallet Instance.
 
 **Thank you page**
@@ -248,7 +248,7 @@ The thank you page is displayed after the User completes the Authentication proc
 
 Relying Parties SHOULD implement the thank you page provided in the Official  Resources. In any case:
 
-- the page MUST include the visual identity elements of the IT-Wallet System, including the logo and an icon or graphical element that reinforces the page message;
+- the page MUST include the visual identity elements of the IT-Wallet System, including the Logo and an icon or graphical element that reinforces the page message;
 - the page MUST provide a clear and concise message confirming that the authentication process was successfully completed;
 - the page MUST include a Call To Action prompting the User to proceed to the Touchpoint authenticated area.
 
@@ -258,7 +258,7 @@ The error page is displayed when an issue occurs during the Authentication proce
 
 Relying Parties SHOULD implement the error page provided in the Official Resources. In any case:
 
-- the page MUST include the visual identity elements of the IT-Wallet System, including the logo and an icon or graphical element that conveys the type of error;
+- the page MUST include the visual identity elements of the IT-Wallet System, including the Logo and an icon or graphical element that conveys the type of error;
 - the page MUST include a clear and concise message explaining the nature of the error, the error code, and a simple description;
 - the page MUST include one or more Call To Action guiding the User toward the appropriate next step (e.g., retry, contact support, etc.).
 

@@ -378,7 +378,7 @@ Below are the requirements and main best practices for error management, specifi
 Below is a non-exhaustive list of the main error cases, with reference to the actor responsible for their management, for each phase of the User Experience.
 
 Activation of the Wallet Instance Errors
-*******************************************************
+=========================================
 
 .. list-table::
    :header-rows: 1
@@ -395,7 +395,7 @@ Activation of the Wallet Instance Errors
      - National Identity Provider
 
 Issuance of Electronic Attestations of Attributes Errors
-****************************************************************
+=========================================================
 
 .. list-table::
    :header-rows: 1
@@ -410,7 +410,7 @@ Issuance of Electronic Attestations of Attributes Errors
      - Authentic Source
 
 Presentation of Electronic Attestations Errors
-**********************************************************
+===============================================
 
 .. list-table::
    :header-rows: 1
@@ -423,7 +423,7 @@ Presentation of Electronic Attestations Errors
      - Wallet Provider, Relying Party
 
 Management of Electronic Attestations Errors
-**********************************************************
+=============================================
 
 .. list-table::
    :header-rows: 1
@@ -436,7 +436,7 @@ Management of Electronic Attestations Errors
      - PID Provider
 
 Deactivation of the Wallet Instance Errors
-***************************************************
+===========================================
 
 .. list-table::
    :header-rows: 1
@@ -446,7 +446,7 @@ Deactivation of the Wallet Instance Errors
    * - The service for deactivating the Wallet Instance is unavailable (e.g. technical errors)
      - Wallet Provider
 
-In addition to error management, all Primary Actors MUST also deal with negative feedback resulting from the User’s decision to abandon or cancel a flow (e.g. Activation, Acquisition, Presentation, etc.). In such cases, feedback MUST be provided to confirm the User’s choice, and it MAY include a Call to Action to continue.
+In addition to error management, all Primary Actors MUST also deal with negative feedback resulting from the User’s decision to abandon or cancel a flow (e.g. activation, acquisition, presentation, etc.). In such cases, feedback MUST be provided to confirm the User’s choice, and it MAY include a Call to Action to continue.
 
 User Assistance
 ********************************

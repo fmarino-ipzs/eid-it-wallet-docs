@@ -9,7 +9,7 @@ The IT-Wallet System provides Users with a simpler, faster, and more secure way 
    :width: 100%
 
 
-The following sections focus on the usage and post-usage phases. They define the functional requirements supporting the User Experience for the Activation, Acquisition, Presentation, Management, and Deactivation phases, along with interaction requirements related to error management, assistance requests, and feedback collection.
+The following sections focus on the usage and post-usage phases. They define the functional requirements supporting the User Experience for the activation, acquisition, presentation, management, and deactivation phases, along with interaction requirements related to error management, assistance requests, and feedback collection.
 
 The Official Resources include recommendations on the required User-Wallet Instance interactions and design best practices that promote consistency across different Wallet Solutions in terms of how functionalities are accessed and used.
 
@@ -78,7 +78,7 @@ The Electronic Attestations obtained within the Wallet Instance SHOULD be displa
 
 - the Electronic Attestation MUST be displayed correctly across all devices, ensuring a consistent experience on screens of varying sizes;
 - the name of the Electronic Attestation MUST be clearly visible and always displayed in both the Detail View and the Preview View;
-- the Electronic Attestation, both in the Preview View and the Detailed View, MUST display its status if different from valid and MAY display it if valid. The Preview View MAY also include additional attributes to enhance the User Experience and management; for example, it MAY display the name or logo of the Electronic Attestation of Attributes Provider or the PID Provider;
+- the Electronic Attestation, both in the Preview View and the Detailed View, MUST display its status if different from valid and MAY display it if valid. The Preview View MAY also include additional Attributes to enhance the User Experience and management; for example, it MAY display the name or logo of the Electronic Attestation of Attributes Provider or the PID Provider;
 - the layout of elements in the Preview View of the Electronic Attestation MUST be optimized for scalability and usability, especially when multiple Electronic Attestations are displayed on the same screen;
 - the Electronic Attestation MAY adopt a card format, in line with approaches already used by other Wallets in the market, to mirror the appearance of a corresponding physical document. When applicable, the digital nature of the document MAY be indicated, such as by labeling it as a "digital version" in the layout;
 - the Electronic Attestation MUST display the same information in the Detail View as shown in the Preview View and MAY include additional details;
@@ -160,7 +160,7 @@ In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee 
 - The User clicks the Engagement Button provided on the Touchpoint of the Relying Party while accessing the service from a different device than the one where the Wallet Instance is installed;
 - the User accesses the desired Wallet Instance from the device where it is installed, using the unlock method previously set;
 - the User scans the QR Code provided by the Relying Party using their Wallet Instance;
-- the User reviews the requested PID and/or EAA data, the name of the requesting Relying Party, and any related policy. The User decides whether to present any non-mandatory personal data (Selective Disclosure). The User provides consent to proceed or cancels the operation.
+- the User reviews the requested PID and/or EAA data, the name of the requesting Relying Party, and any related policy. The User decides whether to present any non-mandatory PID and/or EAA data (Selective Disclosure). The User provides consent to proceed or cancels the operation.
 - the User authorizes the operation using the unlock method previously set;
 - the User receives confirmation of the successful presentation within the Wallet Instance;
 - the User returns to the Relying Party's Touchpoint and views confirmation of the completed presentation.

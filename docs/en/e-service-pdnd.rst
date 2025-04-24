@@ -138,7 +138,6 @@ PDND Voucher for e-Services Flow
 """"""""""""""""""""""""""""""""
 
 .. _fig_VoucherIssuance_eService_Flow:
-
 .. figure:: ../../images/Low-Level-Flow-AuthenticSource-Voucher-Issuance-eService.svg
     :figwidth: 100%
     :align: center
@@ -336,7 +335,6 @@ Voucher for Interoperability API Flow
 """""""""""""""""""""""""""""""""""""""
 
 .. _fig_VoucherIssuance_InteroperabilityAPI_Flow:
-
 .. figure:: ../../images/Low-Level-Flow-AuthenticSource-Voucher-Issuance-InteroperabilityAPI.svg
   :figwidth: 100%
   :align: center
@@ -699,7 +697,6 @@ PDND Authorization Server Keys
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. _fig_KeyRetrieval_PDND_Flow:
-
 .. figure:: ../../images/Low-Level-Flow-AuthenticSource-KeyRetrieval-PDND.svg
   :figwidth: 100%
   :align: center

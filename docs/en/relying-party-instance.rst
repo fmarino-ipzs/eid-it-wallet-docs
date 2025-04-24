@@ -32,7 +32,6 @@ Mobile Relying Party Instance Lifecycle
 In this section, state machines are presented to explain the Mobile Relying Party Instance states, as well as their transitions and relations.
 
 .. _fig_RelyingParty_Instance_Mobile_Lifecycle:
-
 .. figure:: ../../images/RelyingParty_Instance_Mobile_Lifecycle.svg
     :figwidth: 100%
     :align: center
@@ -116,7 +115,6 @@ This process allows for the registration of a Relying Party Instance with the Re
   Access Certificates MAY be issued as short-lived (typically valid within 24 hours) or long-lived.
 
 .. _fig_RelyingParty_Instance_Mobile_Registration_AccessCertificateIssuance:
-
 .. figure:: ../../images/RelyingParty_Instance_Mobile_Registration_AccessCertificateIssuance.svg
     :figwidth: 100%
     :align: center

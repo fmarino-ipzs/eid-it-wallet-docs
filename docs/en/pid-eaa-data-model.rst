@@ -68,7 +68,6 @@ PID/(Q)EAA SD-JWT Parameters
 The JOSE header contains the following mandatory parameters:
 
 .. _table_pid_jose_header:
-
 .. list-table::
   :widths: 20 60 20
   :header-rows: 1

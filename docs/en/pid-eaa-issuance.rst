@@ -107,7 +107,6 @@ The entire Issuance flow can be divided into two sub-flows:
 The following diagram shows the *User request flow*.
 
 .. _fig_Low-Level-Flow-ITWallet-PID-QEAA-User-Request:
-
 .. figure:: ../../images/Low-Level-Flow-ITWallet-PID-QEAA-User-Request.svg
     :figwidth: 100%
     :align: center
@@ -664,7 +663,6 @@ The HTTP POST method MUST use the parameters in the message body encoded in ``ap
 
 The Pushed Authorization Endpoint is protected with OAuth 2.0 Attestation-based Client Authentication [`OAUTH-ATTESTATION-CLIENT-AUTH`_], therefore
 the request to the PID/(Q)EAA authorization endpoint MUST use the following HTTP Headers parameters:
-
 
 .. _table_http_request_headers_claim:
 .. list-table:: http request header parameters

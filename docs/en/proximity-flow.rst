@@ -191,7 +191,6 @@ The messages in the mdoc Response MUST be encoded using CBOR and MUST be encrypt
 Each mdoc Response MUST be compliant with the following structure, and MUST include the following components, unless otherwise specified:
 
 .. _table-mdoc-attributes:
-
 .. list-table::
    :widths: 25 75
    :header-rows: 1
@@ -215,7 +214,6 @@ Each mdoc Response MUST be compliant with the following structure, and MUST incl
 Each document in **documents** MUST be compliant with the following structure, and it MUST include the following components, unless otherwise specified:
 
 .. _table-mdoc-documents-attributes:
-
 .. list-table::
    :widths: 30 70
    :header-rows: 1

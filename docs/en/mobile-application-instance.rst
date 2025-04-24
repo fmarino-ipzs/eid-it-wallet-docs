@@ -15,7 +15,6 @@ The Initialization flow enables the Mobile Application Instance to register a lo
 The flow is displayed in :ref:`fig_MobileApplication_Instance_Initialization_Flow`, while a step-by-step description is provided below.
 
 .. _fig_MobileApplication_Instance_Initialization_Flow:
-
 .. figure:: ../../images/application_instance_initialization.svg
     :figwidth: 100%
     :align: center

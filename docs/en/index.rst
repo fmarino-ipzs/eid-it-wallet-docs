@@ -20,7 +20,6 @@ Index of content
    issuer-solution.rst
    relying-party-solution.rst
    authentic-sources.rst
-   e-service-pdnd.rst
    pid-eaa-data-model.rst
    pid-eaa-issuance.rst
    pid-eaa-presentation.rst
@@ -28,6 +27,7 @@ Index of content
    backup-restore.rst
    registry-catalogue.rst
    e-service-pdnd-catalogue.rst
+   e-service-pdnd.rst
    mobile-application-instance.rst
    algorithms.rst
    security-privacy-considerations.rst

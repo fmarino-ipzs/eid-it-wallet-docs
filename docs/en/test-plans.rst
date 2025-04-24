@@ -1,9 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
-.. _test-plans.rst:
 
 Test Plans
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==========
 
 The purpose of the test plans is to support implementers, auditors, and conformance test environments in validating the behavior of the Wallet Solutions, Relying Parties and Credential Issuers under various operational and security scenarios.
 
@@ -894,7 +893,7 @@ This section provides the set of test cases for verifying conformance of a Crede
 
 
 Remote Credential Presentation Test Matrix
-...........................................
+..........................................
 
 This section defines the test cases about the remote presentation flow.
 

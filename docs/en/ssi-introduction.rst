@@ -1,6 +1,5 @@
 .. include:: ../common/common_definitions.rst
 
-.. _ssi-introduction.rst:
 
 The Digital Identity Wallet Paradigm
 ++++++++++++++++++++++++++++++++++++
@@ -12,22 +11,23 @@ The main difference between this new approach and the traditional IAM infrastruc
 
 Digital Identity Wallet Architectures are significant in the field of digital identity governance. This new digital identity paradigm is designed for Users - be they citizens, Public Administrations, or private organizations- who want to access services using their national authentication systems.
 
-The main roles in the Digital Identity Wallet ecosystem  are listed as follow:
+The main roles in the Digital Identity Wallet ecosystem are listed as follow:
 
  - Issuers: parties who issue Digital Credentials for Users;
  - Verifiers: parties who request Digital Credentials from the User for Authentication and authorization purposes;
  - Holders: individuals who own a Wallet Instance and have control over the Digital Credentials they can request, acquire, store, and present to Verifiers;
  - Verifiable Data Registries: authorities that publish certificates, attestations, metadata, and schemes needed for allowing the trust establishment between the parties.
 
-..  figure: ../../images/GL-Three-party-model.svg
-    :alt: three-party model architecture
-    :width: 100%
-    *Evolution of IAM Model*
+.. figure:: ../../images/GL-Three-party-model.svg
+  :alt: three-party model architecture
+  :width: 100%
+  
+  *Evolution of IAM Model*
 
 In this model, the credential issuer (e.g., an educational institution) provides Digital Credentials to the User, who can store them in their Wallet Instance.
 The Wallet Instance is typically provided as a mobile application on the User's smartphone.
 
-Other key elements that characterize this new Digital Identity Wallet paradigm  include:
+Other key elements that characterize this new Digital Identity Wallet paradigm include:
 
  - **Confidentiality and control**: Wallets enable individuals to maintain control over the information they share. They can choose what attributes or credentials to present, to whom, and for what purpose, in line with the Self-Sovereign Identity (SSI) approach;
  - **Security**: Wallets leverage cryptographic mechanism to ensure the integrity and security of identity information. It avoids the risk of identity theft, fraud, and unauthorized access since the data remains under the individual's control;

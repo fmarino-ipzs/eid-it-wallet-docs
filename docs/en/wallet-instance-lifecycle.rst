@@ -2,7 +2,7 @@
 
 
 Wallet Instance Lifecycle
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 
 The Wallet Provider is in charge of the implementation and provision of Wallet Instances also handling their entire lifecycle.
 
@@ -28,8 +28,6 @@ Each state represents a specific functional status and determines the actions th
 .. note::
 
   The Wallet Provider MUST ensure the security and reliability of the Wallet Instances. To achieve this, the Wallet Provider MUST periodically check the Wallet Instances security and compliance status.
-
-.. _sec_ws_transition_to_installed:
 
 Transition to Installed
 """""""""""""""""""""""""
@@ -91,8 +89,6 @@ new (Q)EAAs (**(Q)EAA ISS/PRE**), and present the PID (**PID PRE**). Please refe
   Users can have only one Wallet Instance in **Valid** state for the same Wallet Solution. Thus, when a User installs and obtains a PID on a new Wallet
   Instance of the same Wallet Solution from the same Wallet Provider, the PID in the previous Wallet Instance MUST be revoked and the Wallet Instance became
   **Operational**.
-
-.. _sec_ws_transition_to_uninstalled:
 
 Transition to Uninstalled
 """""""""""""""""""""""""""

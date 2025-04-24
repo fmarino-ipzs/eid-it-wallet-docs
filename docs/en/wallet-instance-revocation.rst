@@ -1,8 +1,8 @@
-
+.. include:: ../common/common_definitions.rst
 
 
 Wallet Instance Revocation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==========================
 
 This section describes the involved entities and modalities to request a Wallet Instance revocation.
 
@@ -26,13 +26,13 @@ As shown in :numref:`fig_Wallet_Instance_Revoc_Entities`, other actors MAY trigg
 .. note::
 
   - The flow for the Wallet Instance Revocation triggered by the User is detailed below.
-  - The endpoint used by the PID Provider is detailed in the Wallet Provider Catalogue of e-Service PDND Catalogue (see Section :ref:`wp-catalogue` for technical details).
+  - The endpoint used by the PID Provider is detailed in the Wallet Provider Catalogue of e-Service PDND Catalogue (see Section :ref:`e-service-pdnd-catalogue:Wallet Provider Catalogue` for technical details).
   - The flow for Authorized Entities (e.g., Supervisory Bodies) is out of scope of this specification, it will be managed by each Wallet Provider.
 
 
 
-Wallet Instance Revocation Request 
-""""""""""""""""""""""""""""""""""""
+Wallet Instance Revocation Request
+""""""""""""""""""""""""""""""""""
 
 Users MAY request the Wallet Instance revocation by:
 
@@ -90,7 +90,7 @@ Below is a non-normative example of a Wallet Instance Revocation Request.
 
 
 Wallet Instance Revocation Response
-"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""
 
 Upon a successful revocation, the Wallet Provider MUST return a confirmation response.
 Below is a non-normative example of a Wallet Instance Revocation Response.
@@ -102,7 +102,7 @@ Below is a non-normative example of a Wallet Instance Revocation Response.
 
 
 Revocation Check Mechanisms
-...................................
+...........................
 
 The verification of the Wallet Instance validity MUST be performed:
 

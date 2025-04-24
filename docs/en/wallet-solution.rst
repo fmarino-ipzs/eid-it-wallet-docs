@@ -1,6 +1,5 @@
 .. include:: ../common/common_definitions.rst
 
-.. _wallet-solution.rst:
 
 Wallet Solution
 ================

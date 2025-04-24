@@ -1,7 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
+
 Wallet Instance Functionalities
--------------------------------
+===============================
 
 A Wallet Instance, MUST support the following functionalities:
 
@@ -16,13 +17,12 @@ Each functionality is described in detail in the following sections.
 
   The details provided below are non-normative and are intended to clarify the functionalities of the Wallet Instance Registration. The actual implementation may vary based on the specific use case and requirements of the Wallet Provider.
 
-
 .. toctree::
-   :maxdepth: 3
+  :maxdepth: 3
 
-   wallet-instance-registration.rst
-   wallet-attestation-issuance.rst
-   wallet-instance-revocation.rst
-   user-attribute-deletion.rst
+  wallet-instance-registration.rst
+  wallet-attestation-issuance.rst
+  wallet-instance-revocation.rst
+  user-attribute-deletion.rst
 
 

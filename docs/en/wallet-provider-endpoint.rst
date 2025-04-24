@@ -1,26 +1,27 @@
 .. include:: ../common/common_definitions.rst
 
+
 Wallet Provider Endpoints
-------------------------------------
+-------------------------
 
 The Wallet Provider, responsible for delivering a Wallet Solution, MUST expose the endpoints to support trust establishment and essential Wallet Instance functionalities. These include the ``/.well-known/openid-federation`` Federation Endpoint which MUST adhere to the OpenID Federation 1.0 specification to reliably establish trust with the Wallet Provider's as well as, endpoints for Wallet Instance registration, nonce generation (required for registration), attestation issuance, and revocation. Aside from the Federation endpoint, the implementation details of the others are left to the Wallet Provider's discretion.
 
 Federation Endpoint
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 The ``/.well-known/openid-federation`` endpoint serves as the discovery mechanism for trust establishment by retrieving the Wallet Provider Entity Configuration.
 
 Wallet Provider Entity Configuration
-"""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""
 
 An HTTP GET request to the Federation endpoint allows the retrieval of the Wallet Provider Entity Configuration.
 
 The returned Entity Configuration of the Wallet Provider MUST contain the attributes described in the sections below.
 
-The Wallet Provider Entity Configuration is a signed JWT containing the public keys and supported algorithms of the Wallet Provider. It is structured in accordance with the `OID-FED`_ and the :ref:`sec_trust_model` outlined in this specification.
+The Wallet Provider Entity Configuration is a signed JWT containing the public keys and supported algorithms of the Wallet Provider. It is structured in accordance with the `OID-FED`_ and the :ref:`trust:The Infrastructure of Trust` outlined in this specification.
 
 Wallet Provider Entity Configuration JWT Header
-"""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 .. list-table::
     :widths: 20 60 20
@@ -30,7 +31,7 @@ Wallet Provider Entity Configuration JWT Header
       - **Value**
       - **Reference**
     * - alg
-      - Algorithm used to verify the token signature. It MUST be one of the possible values indicated in :ref:`supported_algs` (e.g., ES256).
+      - Algorithm used to verify the token signature. It MUST be one of the possible values indicated in :ref:`algorithms:Cryptographic Algorithms` (e.g., ES256).
       - `OID-FED`_.
     * - kid
       - Thumbprint of the public key used for the signature.
@@ -40,7 +41,7 @@ Wallet Provider Entity Configuration JWT Header
       - `OID-FED`_.
 
 Wallet Provider Entity Configuration JWT Payload
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. list-table::
     :widths: 20 60 20

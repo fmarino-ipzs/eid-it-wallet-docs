@@ -1,9 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
 
-
 User's Attributes Deletion
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==========================
 
 This Wallet Instance functionality allows Users to obtain a list of all Relying Parties towards which attributes that can uniquely identify Users (e.g., the tax_id_code claim of the PID) have been presented. Subsequently Users may request deletion of all attributes presented to a Relying Party of their choice. Below the high level flow regarding this interaction is presented.
 
@@ -37,4 +36,4 @@ This Wallet Instance functionality allows Users to obtain a list of all Relying 
 
 **Step 10:** The Relying Party returns the Erasure Response in the form of an HTTP Response to the User-Agent and includes the callback URL if provided in the Erasure Request. Details on the Erasure Response can be found in :ref:`relying-party-endpoint:Erasure Response`.
 
-**Steps 11 - 12:**  The User-Agent uses the implemented method to return the Erasure Response to the Wallet Instance. Finally, the User is notified via the Wallet Instance regarding the Erasure Response outcome.
+**Steps 11 - 12:** The User-Agent uses the implemented method to return the Erasure Response to the Wallet Instance. Finally, the User is notified via the Wallet Instance regarding the Erasure Response outcome.

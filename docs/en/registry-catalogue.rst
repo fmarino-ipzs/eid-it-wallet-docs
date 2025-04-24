@@ -1,8 +1,6 @@
 .. include:: ../common/common_definitions.rst
 
 
-.. _registry_catalogue.rst:
-
 Digital Credentials Catalogue
 +++++++++++++++++++++++++++++++++++++++++++
 
@@ -151,7 +149,7 @@ Digital Credentials Catalogue contents is secured in a JWS that contains the fol
      - REQUIRED. It MUST be set to ``JOSE``.
      - [:rfc:`7515` Section 4.1.9].
    * - **alg**
-     - REQUIRED. A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <supported_algs>` and MUST NOT be set to ``none`` or with a symmetric algorithm (MAC) identifier.
+     - REQUIRED. A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <algorithms:Cryptographic Algorithms>` and MUST NOT be set to ``none`` or with a symmetric algorithm (MAC) identifier.
      - [:rfc:`7515` Section 4.1.1].
    * - **kid**
      - REQUIRED. Unique identifier of the public key.

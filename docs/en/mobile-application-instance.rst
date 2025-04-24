@@ -1,4 +1,5 @@
-.. _mobile-instance.rst:
+.. include:: ../common/common_definitions.rst
+
 
 Mobile Application Instance
 +++++++++++++++++++++++++++++

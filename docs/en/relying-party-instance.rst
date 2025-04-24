@@ -1,7 +1,6 @@
 .. include:: ../common/common_definitions.rst
 
 
-
 Relying Party Instance
 =========================
 
@@ -113,7 +112,7 @@ Mobile Relying Party Instance Registration
 
 This process allows for the registration of a Relying Party Instance with the Relying Party Backend, and the issuance of an Access Certificate that will be used for authentication purposes towards Wallet Instances during presentation flows. The process consists of two subphases:
 
-1. **Initialization**: The Relying Party Instance requests a security and integrity assertion from the OS manufacturer, which also binds a long-lived key pair stored in a proper secure storage within the device itself; the assertion is then validated by the Relying Party Backend. Further details are provided in Section :ref:`mobile-instance.rst`.
+1. **Initialization**: The Relying Party Instance requests a security and integrity assertion from the OS manufacturer, which also binds a long-lived key pair stored in a proper secure storage within the device itself; the assertion is then validated by the Relying Party Backend. Further details are provided in Section :ref:`mobile-application-instance:Mobile Application Instance`.
 2. **Access Certificate Issuance**: The Relying Party Instance requests an Access Certificate from the Relying Party Backend. Before interacting with the Relying Party Instance Access Certificate Authority for the issuance of the Access Certificate, the Relying Party Backend validates the Relying Party Instance's integrity and security by leveraging the long-lived, attested keys generated in the previous subphase. The flow is displayed in :numref:`fig_RelyingParty_Instance_Mobile_Registration_AccessCertificateIssuance`, while a step-by-step description is provided below.
 
 .. note::

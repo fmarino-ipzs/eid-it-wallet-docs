@@ -1,9 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
-.. _pid-eaa-presentation.rst:
 
 PID/(Q)EAA Presentation
-++++++++++++++++++++++++
+=======================
 
 This section describes how a Relying Party Instance requests to a Wallet Instance the presentation of the PID/EAAs.
 
@@ -15,7 +14,7 @@ In this section the following flows are described:
 
 
 .. toctree::
-   :maxdepth: 3
+  :maxdepth: 3
 
-   remote-flow.rst
-   proximity-flow.rst
+  remote-flow.rst
+  proximity-flow.rst

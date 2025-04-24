@@ -1,7 +1,6 @@
 .. include:: ../common/common_definitions.rst
 
 
-
 Remote Flow
 ===========
 

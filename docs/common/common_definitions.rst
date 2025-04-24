@@ -58,3 +58,5 @@
 .. _ETSI TS 119 461: https://www.etsi.org/deliver/etsi_ts/119400_119499/119461/01.01.01_60/ts_119461v010101p.pdf
 .. _RFC5280: https://datatracker.ietf.org/doc/html/rfc5280
 .. _ISO18013-5: https://www.iso.org/standard/69084.html
+.. _ARF: https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
+.. _RFC 2898: http://tools.ietf.org/html/rfc2898.html

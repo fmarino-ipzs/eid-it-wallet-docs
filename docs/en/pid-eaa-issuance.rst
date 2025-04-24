@@ -1,6 +1,5 @@
 .. include:: ../common/common_definitions.rst
 
-.. _pid_eaa_issuance.rst:
 
 PID/(Q)EAA Issuance
 +++++++++++++++++++
@@ -1077,7 +1076,7 @@ The JOSE header of a **DPoP JWT** MUST contain at least the following parameters
       - It MUST be equal to ``dpop+jwt``.
       - [:rfc:`7515`] and [:rfc:`8725`. Section 3.11].
     * - **alg**
-      - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <supported_algs>` and MUST NOT be set to ``none`` or with a symmetric algorithm (MAC) identifier.
+      - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <algorithms:Cryptographic Algorithms>` and MUST NOT be set to ``none`` or with a symmetric algorithm (MAC) identifier.
       - [:rfc:`7515`].
     * - **jwk**
       - It represents the public key chosen by the Wallet Instance, in JSON Web Key (JWK) [:rfc:`7517`] format that the Access Token MUST be bound to, as defined in [:rfc:`7515`] Section 4.1.3. It MUST NOT contain a private key.
@@ -1207,7 +1206,7 @@ The **DPoP JWT** contains the following JOSE header parameters and claims.
       - REQUIRED. It MUST be equal to ``at+jwt``.
       - [:rfc:`7515`].
     * - **alg**
-      - REQUIRED. A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <supported_algs>` and MUST NOT be set to ``none`` or with a symmetric algorithm (MAC) identifier.
+      - REQUIRED. A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <algorithms:Cryptographic Algorithms>` and MUST NOT be set to ``none`` or with a symmetric algorithm (MAC) identifier.
       - [:rfc:`7515`].
     * - **kid**
       - REQUIRED. Unique identifier of the ``jwk`` used by the PID/(Q)EAA Provider to sign the Access Token.
@@ -1264,7 +1263,7 @@ The **DPoP JWT** MUST contain the following JOSE header parameters and claims.
       - It MUST be equal to ``rt+jwt``.
       - [:rfc:`7515`].
     * - **alg**
-      - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <supported_algs>` and MUST NOT be set to ``none`` or with a symmetric algorithm (MAC) identifier.
+      - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <algorithms:Cryptographic Algorithms>` and MUST NOT be set to ``none`` or with a symmetric algorithm (MAC) identifier.
       - [:rfc:`7515`].
     * - **kid**
       -  Unique identifier of the ``jwk`` used by the PID/(Q)EAA Provider to sign the Access Token.
@@ -1397,7 +1396,7 @@ The JWT proof type MUST contain the following parameters for the JOSE header and
     - **Description**
     - **Reference**
   * - **alg**
-    - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <supported_algs>` and MUST NOT be set to ``none`` or to a symmetric algorithm (MAC) identifier.
+    - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <algorithms:Cryptographic Algorithms>` and MUST NOT be set to ``none`` or to a symmetric algorithm (MAC) identifier.
     - [`OpenID4VCI`_], [:rfc:`7515`], [:rfc:`7517`].
   * -  **typ**
     - It MUST be set to `openid4vci-proof+jwt`.

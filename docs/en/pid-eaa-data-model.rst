@@ -1,7 +1,6 @@
 
 .. include:: ../common/common_definitions.rst
 
-.. _pid_eaa_data_model.rst:
 
 PID/(Q)EAA Data Model
 +++++++++++++++++++++
@@ -33,7 +32,7 @@ The PID/(Q)EAA is issued in the form of a Digital Credential. The Digital Creden
 
 SD-JWT MUST be signed using the Issuer's private key. SD-JWT MUST be provided along with a Type Metadata related to the issued Digital Credential according to Sections 6 and 6.3 of [`SD-JWT-VC`_]. The payload MUST contain the **_sd_alg** claim described in Section 4.1.1 `SD-JWT`_ and other claims specified in this section.
 
-The claim **_sd_alg** indicates the hash algorithm used by the Issuer to generate the digests as described in Section 4.1.1 of `SD-JWT`_. **_sd_alg**  MUST be set to one of the specified algorithms in Section :ref:`Cryptographic Algorithms <supported_algs>`.
+The claim **_sd_alg** indicates the hash algorithm used by the Issuer to generate the digests as described in Section 4.1.1 of `SD-JWT`_. **_sd_alg**  MUST be set to one of the specified algorithms in Section :ref:`Cryptographic Algorithms <algorithms:Cryptographic Algorithms>`.
 
 Claims that are not selectively disclosable MUST be included in the SD-JWT as they are.  The digests of the disclosures, along with any decoy if present,  MUST be contained in the  **_sd** array, as specified in Section 4.2.4.1 of `SD-JWT`_.
 
@@ -712,7 +711,7 @@ The **unprotected header** MUST contain the following parameters, unless otherwi
       - **Reference**
     * - **4**
       - *(tstr, OPTIONAL)*. Unique identifier of the Issuer JWK. Required when the Issuer of mdoc uses OpenID Federation.
-      - :ref:`sec_trust_model`
+      - :ref:`trust:The Infrastructure of Trust`
     * - **33**
       - *(array)*. X.509 certificate chain about the Issuer. Required for X.509 certificate-based authentication.
       - :rfc:`9360`

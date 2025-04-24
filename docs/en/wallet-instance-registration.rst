@@ -1,7 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
+
 Wallet Instance Initialization and Registration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+===============================================
 
 This process allows the User who has just installed the Wallet Instance application to register the Wallet Instance with the Wallet Provider backend. During this process, the Wallet Instance application will request a security and integrity assertion from the OS manufacturer, which also binds a long-lived key pair stored in a proper secure storage within the device itself. This assertion will be validated by the Wallet Provider, and if the validation is successful, the Wallet Provider will authenticate the Wallet Instance. For details see :ref:`mobile-application-instance:Mobile Application Instance Initialization`.
 

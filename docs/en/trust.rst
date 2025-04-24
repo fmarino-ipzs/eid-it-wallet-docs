@@ -1,22 +1,21 @@
 .. include:: ../common/common_definitions.rst
 .. include:: ../common/symbols.rst
 
-.. _sec_trust_model:
 
 The Infrastructure of Trust
-+++++++++++++++++++++++++++
+===========================
 
 This section outlines the implementation of the Trust Model in an infrastructure that complies with OpenID Federation 1.0 `OID-FED`_. This infrastructure involves a RESTful API for distributing metadata, metadata policies, trust marks, cryptographic public keys and X.509 certificates, and the revocation status of the participants, also called Federation Entities.
 
 The Infrastructure of trust facilitates the application of a trust assessment mechanism among the parties defined in the `EIDAS-ARF`_.
 
-..  figure:: ../../images/trust-roles.svg
-    :alt: federation portrait
-    :width: 100%
+.. figure:: ../../images/trust-roles.svg
+  :alt: federation portrait
+  :width: 100%
 
-    The roles within the Federation, where the Trust Anchor oversees its subordinates,
-    which include one or more Intermediates and Leaves. In this
-    representation, both the Trust Anchor and the Intermediates assume the role of Registration Authority.
+  The roles within the Federation, where the Trust Anchor oversees its subordinates,
+  which include one or more Intermediates and Leaves. In this
+  representation, both the Trust Anchor and the Intermediates assume the role of Registration Authority.
 
 Federation Roles
 ------------------
@@ -25,9 +24,9 @@ All the participants are Federation Entities that MUST be registered by a Regist
 except for Wallet Instances which are End-User's personal devices authenticated by their Wallet Provider.
 
 .. note::
-    The Wallet Instance, as a personal device, is deemed reliable through a verifiable attestation issued and signed by a trusted third party.
+  The Wallet Instance, as a personal device, is deemed reliable through a verifiable attestation issued and signed by a trusted third party.
 
-    This is called *Wallet Attestation* and is documented in the dedicated :ref:`wallet-attestation-issuance:Wallet Attestation Issuance`.
+  This is called *Wallet Attestation* and is documented in the dedicated :ref:`wallet-attestation-issuance:Wallet Attestation Issuance`.
 
 Below the table with the summary of the Federation Entity roles, mapped on the corresponding EUDI Wallet roles, as defined in the `EIDAS-ARF`_.
 

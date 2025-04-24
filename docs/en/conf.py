@@ -160,7 +160,7 @@ html_theme_options = {
 # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
 #  on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
-#  if not on_rtd:  # only import and set the theme if we're building docs locally
+#  if not on_rtd: # only import and set the theme if we're building docs locally
     #  html_theme_path = [docs_italia_theme.get_html_theme_path()]
     #  html_theme = 'docs_italia_theme'
     #  pass

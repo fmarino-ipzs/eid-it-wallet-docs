@@ -1,7 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
+
 Wallet Instance
-------------------------------
+===============
 
 The Wallet Instance establishes a strong and reliable mechanism for the User to engage in various digital transactions in a secure and privacy-preserving manner.
 
@@ -12,7 +13,7 @@ serve to authenticate the Wallet Instance itself, ensuring its reliability when 
 
 
 .. toctree::
-   :maxdepth: 3
+  :maxdepth: 3
 
-   wallet-instance-lifecycle.rst
-   wallet-instance-functionalities.rst
+  wallet-instance-lifecycle.rst
+  wallet-instance-functionalities.rst

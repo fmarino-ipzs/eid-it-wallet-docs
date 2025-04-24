@@ -377,7 +377,7 @@ The **Status Assertion Request object** MUST be a JWT that MUST contain the para
     - It MUST be set to ``status-assertion-request+jwt``.
     - :rfc:`7516#section-4.1.1`.
   * - **alg**
-    - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms listed in the Section `Cryptographic Algorithms <algorithms.html>`_ and MUST NOT be set to ``none`` or any symmetric algorithm (MAC) identifier.
+    - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms listed in the Section :ref:`algorithms:Cryptographic Algorithms` and MUST NOT be set to ``none`` or any symmetric algorithm (MAC) identifier.
     - :rfc:`7516#section-4.1.1`.
 
 
@@ -680,7 +680,7 @@ Status List Token
     - **Description**
     - **Reference**
   * - **alg**
-    - REQUIRED. A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`Cryptographic Algorithms <algorithms:Cryptographic Algorithms>` and MUST NOT be set to ``none`` or to a symmetric algorithm (MAC) identifier.
+    - REQUIRED. A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms in Section :ref:`algorithms:Cryptographic Algorithms` and MUST NOT be set to ``none`` or to a symmetric algorithm (MAC) identifier.
     - [:rfc:`7515`], [:rfc:`7517`].
   * - **typ**
     - REQUIRED. It MUST be set to ``statuslist+jwt``.

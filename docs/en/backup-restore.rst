@@ -86,7 +86,7 @@ The JOSE header of the backup JWT MUST contain the following REQUIRED parameters
     - **Description**
     - **Reference**
   * - **alg**
-    - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms listed in the Section `Cryptographic Algorithms <algorithms.html>`_ and MUST NOT be set to ``none`` or any symmetric algorithm (MAC) identifier.
+    - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms listed in the Section :ref:`algorithms:Cryptographic Algorithms` and MUST NOT be set to ``none`` or any symmetric algorithm (MAC) identifier.
     - :rfc:`7516#section-4.1.1`.
   * - **typ**
     - It MUST be set to ``wallet-unit-credentials-backup+jwt``

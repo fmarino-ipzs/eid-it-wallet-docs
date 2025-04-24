@@ -396,7 +396,7 @@ giving the references of the metadata protocol for each of these.
 .. note::
   Wallet Provider metadata is defined in the section below.
 
-  `Wallet Solution section <wallet-solution.html>`_.
+  :ref:`wallet-solution:Wallet Solution`.
 
 
 .. note::

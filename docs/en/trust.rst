@@ -18,7 +18,7 @@ The Infrastructure of trust facilitates the application of a trust assessment me
   representation, both the Trust Anchor and the Intermediates assume the role of Registration Authority.
 
 Federation Roles
-------------------
+----------------
 
 All the participants are Federation Entities that MUST be registered by a Registration Body,
 except for Wallet Instances which are End-User's personal devices authenticated by their Wallet Provider.
@@ -328,7 +328,7 @@ The Trust Anchor Entity Configuration, in addition to the common parameters list
 
 
 Entity Configuration Leaves and Intermediates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In addition to the previously defined claims, the Entity Configuration of the Leaves and of the Intermediate Entities uses the following parameters:
 
@@ -410,7 +410,7 @@ giving the references of the metadata protocol for each of these.
 
 
 Metadata of federation_entity Leaves
--------------------------------------
+------------------------------------
 
 The *federation_entity* metadata for Leaves MUST contain the following claims.
 
@@ -436,7 +436,7 @@ The *federation_entity* metadata for Leaves MUST contain the following claims.
 
 
 Subordinate Statements
------------------------
+----------------------
 
 Trust Anchors and Intermediates publish Subordinate Statements related to their immediate Subordinates.
 The Subordinate Statement MAY contain a metadata policy and the Trust Marks related to a Subordinate.
@@ -513,7 +513,6 @@ Subordinate Statement
 ^^^^^^^^^^^^^^^^^^^^^
 
 The Subordinate Statement issued by Trust Anchors and Intermediates contains the following attributes:
-
 
 .. list-table::
    :widths: 20 60 20
@@ -626,7 +625,7 @@ In the process depicted in the sequence diagram below, the Wallet Instance uses 
   As shown in the figure, internet connection is required to update the Trust Chain about an RP and check its revocation status.
 
 Evaluating Trust with Wallets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Wallet Provider issues the Wallet Attestation, certifying the operational status of its Wallet Instances and including one of their public keys.
 
@@ -636,7 +635,7 @@ The Wallet Instance provides its Wallet Attestation within the signed request du
 
 
 Trust Chain
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^
 
 The Trust Chain is a sequence of verified statements that validates a participant's compliance with the Federation. It has an expiration date time, beyond which it MUST be renewed to obtain the fresh and updated metadata. The expiration date of the Trust Chain is determined by the earliest expiration timestamp among all the expiration timestamp contained in the statements. No Entity can force the expiration date of the Trust Chain to be higher than the one configured by the Trust Anchor.
 
@@ -674,7 +673,7 @@ There are events where keys are unavailable to verify the entire trust chain:
  - **Credential Issuer Becomes Inactive**: If a Credential Issuer becomes inactive, its **related** Entity Configuration and Federation Historical Entity Endpoint MUST be kept available.
 
 Offline Trust Attestation Mechanisms
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The offline flows do not allow for real-time evaluation of an Entity's status, such as its revocation. At the same time, using short-lived Trust Chains enables the attainment of trust attestations compatible with the required revocation administrative protocols (e.g., a revocation must be propagated in less than 24 hours, thus the Trust Chain must not be valid for more than that period).
 

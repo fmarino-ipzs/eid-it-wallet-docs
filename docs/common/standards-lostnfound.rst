@@ -1,7 +1,8 @@
 .. include:: ../common/common_definitions.rst
+  
 
 Infrastructure of Trust
------------------------
+=======================
 
 .. list-table::
     :widths: 25 75
@@ -19,7 +20,7 @@ Infrastructure of Trust
       - ISO Compliant Mobile Vehicle Registration Certificates, Logical Data Structure
 
 Digital Credential Data Format Proposals for Future Milestones
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------------------------
 
 .. list-table::
     :widths: 25 75

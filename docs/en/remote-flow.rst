@@ -62,23 +62,23 @@ The details of each step shown in the previous picture are described below.
 
   Below is represented a non-normative example of a QR Code issued by the Relying Party.
 
-  .. figure:: ../../images/verifier_qr_code.svg
-      :figwidth: 50%
-      :align: center
+.. figure:: ../../images/verifier_qr_code.svg
+  :figwidth: 50%
+  :align: center
 
 
   Below is represented a non-normative example of the QR Code raw payload:
 
-  .. code-block:: text
+.. code-block:: text
 
   https://wallet-solution.example.org/authorization?client_id=https%3A%2F%2Frelying-party.example.org&request_uri=https%3A%2F%2Frelying-party.example.org&request_uri_method=post
 
 .. note::
   The *error correction level* chosen for the QR Code MUST be Q (Quartily - up to 25%), since it offers a good balance between error correction capability and data density/space. This level of quality and error correction allows the QR Code to remain readable even if it is damaged or partially obscured.
 
-  Conversely, in the **Same Device Flow**, the Relying Party uses an HTTP response redirect (with status code set to 302) or an html page with an href button, containing the URL providing the same information as in the Cross-Device Flow. Below is a non-normative example:
+Conversely, in the **Same Device Flow**, the Relying Party uses an HTTP response redirect (with status code set to 302) or an html page with an href button, containing the URL providing the same information as in the Cross-Device Flow. Below is a non-normative example:
 
-  .. code-block:: http
+.. code-block:: http
 
   HTTP/1.1 302 Found
   Location: https://wallet-solution.digital-strategy.europa.eu?client_id=https%3A%2F%2Frelying-party.example.org%2Fcb&request_uri=https%3A%2F%2Frelying-party.example.org%2Frequest_uri&request_uri_method=post
@@ -91,116 +91,116 @@ The details of each step shown in the previous picture are described below.
   - If it is provided and is equal to ``post``, the Wallet Instance SHOULD provide its metadata to the Relying Party. The Relying Party updates the Request Object according with the Wallet technical capabilities.
 
     The following is a non-normative example of an HTTP request made by the Wallet Instance to the Relying Party.
-
-  .. code-block:: http
-
-    POST /request HTTP/1.1
-    Host: client.example.org
-    Content-Type: application/x-www-form-urlencoded
-    Accept: application/oauth-authz-req+jwt
-
-    wallet_metadata=%7B%22authorization_endpoint%22%3A%20%22eudiw%3A%22%2C%20%22response_types_supported%22%3A%20%5B%22vp_token%22%5D%2C%20%22response_modes_supported%22%3A%20%5B%22form_post.jwt%22%5D%2C%20%22vp_formats_supported%22%3A%20%7B%22dc%2Bsd-jwt%22%3A%20%7B%22sd-jwt_alg_values%22%3A%20%5B%22ES256%22%2C%20%22ES384%22%5D%7D%7D%2C%20%22request_object_signing_alg_values_supported%22%3A%20%5B%22ES256%22%5D%7D%2C&wallet_nonce=%22qPmxiNFCR3QTm19POc8u%22
-
-  Where the body of the request prior to being encoded in `application/x-www-form-urlencoded` by the Wallet corresponds to:
-
-  .. code:: json
-
-    {
-      "wallet_metadata": {
-        "authorization_endpoint": "https://wallet-solution.digital-strategy.europa.eu/authorization",
-        "response_types_supported": [
-          "vp_token"
-        ],
-        "response_modes_supported": [
-          "form_post.jwt"
-        ],
-        "vp_formats_supported": {
-          "dc+sd-jwt": {
-              "sd-jwt_alg_values": [
-                "ES256",
-                "ES384"
-              ]
-          }
+    
+    .. code-block:: http
+    
+      POST /request HTTP/1.1
+      Host: client.example.org
+      Content-Type: application/x-www-form-urlencoded
+      Accept: application/oauth-authz-req+jwt
+    
+      wallet_metadata=%7B%22authorization_endpoint%22%3A%20%22eudiw%3A%22%2C%20%22response_types_supported%22%3A%20%5B%22vp_token%22%5D%2C%20%22response_modes_supported%22%3A%20%5B%22form_post.jwt%22%5D%2C%20%22vp_formats_supported%22%3A%20%7B%22dc%2Bsd-jwt%22%3A%20%7B%22sd-jwt_alg_values%22%3A%20%5B%22ES256%22%2C%20%22ES384%22%5D%7D%7D%2C%20%22request_object_signing_alg_values_supported%22%3A%20%5B%22ES256%22%5D%7D%2C&wallet_nonce=%22qPmxiNFCR3QTm19POc8u%22
+    
+    Where the body of the request prior to being encoded in `application/x-www-form-urlencoded` by the Wallet corresponds to:
+    
+    .. code:: json
+    
+      {
+        "wallet_metadata": {
+          "authorization_endpoint": "https://wallet-solution.digital-strategy.europa.eu/authorization",
+          "response_types_supported": [
+            "vp_token"
+          ],
+          "response_modes_supported": [
+            "form_post.jwt"
+          ],
+          "vp_formats_supported": {
+            "dc+sd-jwt": {
+                "sd-jwt_alg_values": [
+                  "ES256",
+                  "ES384"
+                ]
+            }
+          },
+          "request_object_signing_alg_values_supported": [
+            "ES256"
+          ],
+          "client_id_schemes_supported": ["https"],
         },
-        "request_object_signing_alg_values_supported": [
-          "ES256"
-        ],
-        "client_id_schemes_supported": ["https"],
-      },
-      "wallet_nonce": "qPmxiNFCR3QTm19POc8u"
-    }
+        "wallet_nonce": "qPmxiNFCR3QTm19POc8u"
+      }
 
-- When the Wallet Instance capabilities discovery is not supported by Relying Party, the Wallet Instance requests the signed Request Object using the HTTP method GET.
+  - When the Wallet Instance capabilities discovery is not supported by Relying Party, the Wallet Instance requests the signed Request Object using the HTTP method GET.
 
 **Step 14 (Request URI Response)**: The Relying Party issues the Request Object signing it using one of its cryptographic private keys, where their public parts have been published within its Entity Configuration (`metadata.openid_credential_verifier.jwks`). The Wallet Instance obtains the signed Request Object.
 
-Below is a non-normative example of the Redirect URI Response:
-
-.. code-block:: http
-
-  HTTP/1.1 200 OK
-  Content-Type: application/oauth-authz-req+jwt
-
-  eyJhbGciOiJFUzI1NiIs...9t2LQ
-
-A non-normative example of a Request Object in the form of decoded header and payload is shown below:
-
-.. code-block:: json
-
-  {
-    "alg": "ES256",
-    "typ": "oauth-authz-req+jwt",
-    "kid": "9tjiCaivhWLVUJ3AxwGGz_9",
-    "trust_chain": [
-      "MIICajCCAdOgAwIBAgIC...awz",
-      "MIICajCCAdOgAwIBAgIC...2w3",
-      "MIICajCCAdOgAwIBAgIC...sf2"
-    ]
-  }
-
-.. code-block:: json
-
-  {
-    "client_id": "https://relying-party.example.org",
-    "response_mode": "direct_post.jwt",
-    "response_type": "vp_token",
-    "dcql_query": {
-      "credentials": [
-        {
-          "id": "personal id data",
-          "format": "dc+sd-jwt",
-          "meta": {
-            "vct_values": [ "https://trust-registry.eid-wallet.example.it/credentials/v1.0/personidentificationdata" ]
-          },
-          "claims": [
-            {"path": ["given_name"]},
-            {"path": ["family_name"]},
-            {"path": ["personal_administrative_number"]}
-          ]
-        },
-        {
-          "id": "wallet attestation",
-          "format": "dc+sd-jwt",
-          "meta": {
-            "vct_values": ["https://itwallet.registry.example.it/WalletAttestation"]
-          },
-          "claims": [
-            {"path": ["wallet_link"]},
-            {"path": ["wallet_name"]}
-          ]
-        }
+  Below is a non-normative example of the Redirect URI Response:
+  
+  .. code-block:: http
+  
+    HTTP/1.1 200 OK
+    Content-Type: application/oauth-authz-req+jwt
+  
+    eyJhbGciOiJFUzI1NiIs...9t2LQ
+  
+  A non-normative example of a Request Object in the form of decoded header and payload is shown below:
+  
+  .. code-block:: json
+  
+    {
+      "alg": "ES256",
+      "typ": "oauth-authz-req+jwt",
+      "kid": "9tjiCaivhWLVUJ3AxwGGz_9",
+      "trust_chain": [
+        "MIICajCCAdOgAwIBAgIC...awz",
+        "MIICajCCAdOgAwIBAgIC...2w3",
+        "MIICajCCAdOgAwIBAgIC...sf2"
       ]
-    },
-    "response_uri": "https://relying-party.example.org/response_uri",
-    "nonce": "2c128e4d-fc91-4cd3-86b8-18bdea0988cb",
-    "wallet_nonce": "qPmxiNFCR3QTm19POc8u",
-    "state": "3be39b69-6ac1-41aa-921b-3e6c07ddcb03",
-    "iss": "https://relying-party.example.org",
-    "iat": 1672418465,
-    "exp": 1672422065,
-    "request_uri_method": "post"
-  }
-
+    }
+  
+  .. code-block:: json
+  
+    {
+      "client_id": "https://relying-party.example.org",
+      "response_mode": "direct_post.jwt",
+      "response_type": "vp_token",
+      "dcql_query": {
+        "credentials": [
+          {
+            "id": "personal id data",
+            "format": "dc+sd-jwt",
+            "meta": {
+              "vct_values": [ "https://trust-registry.eid-wallet.example.it/credentials/v1.0/personidentificationdata" ]
+            },
+            "claims": [
+              {"path": ["given_name"]},
+              {"path": ["family_name"]},
+              {"path": ["personal_administrative_number"]}
+            ]
+          },
+          {
+            "id": "wallet attestation",
+            "format": "dc+sd-jwt",
+            "meta": {
+              "vct_values": ["https://itwallet.registry.example.it/WalletAttestation"]
+            },
+            "claims": [
+              {"path": ["wallet_link"]},
+              {"path": ["wallet_name"]}
+            ]
+          }
+        ]
+      },
+      "response_uri": "https://relying-party.example.org/response_uri",
+      "nonce": "2c128e4d-fc91-4cd3-86b8-18bdea0988cb",
+      "wallet_nonce": "qPmxiNFCR3QTm19POc8u",
+      "state": "3be39b69-6ac1-41aa-921b-3e6c07ddcb03",
+      "iss": "https://relying-party.example.org",
+      "iat": 1672418465,
+      "exp": 1672422065,
+      "request_uri_method": "post"
+    }
+  
 **Steps 15-17 (WI Checks)**: The Wallet Instance verifies the Request Object, which is in the form of a signed JWT. It then processes the Relying Party metadata and applies the relevant policies to determine which Digital Credentials and User data the Relying Party is authorized to request.
 
 **Steps 18-19 (User Consent)**: The Wallet Instance requests the User's consent to disclose the requested Credentials by showing the Relying Party's identity and the requested attributes. The User authorizes and consents the presentation of the Credentials by selecting/deselecting the personal data to release.
@@ -210,24 +210,24 @@ A non-normative example of a Request Object in the form of decoded header and pa
   Below is a non-normative example of the Authorization Response:
 
   .. code-block:: http
-
-    POST /response_uri HTTP/1.1
-    HOST: relying-party.example.org
-    Content-Type: application/x-www-form-urlencoded
-
-    response=eyJhbGciOiJFUzI1NiIs...9t2LQ
-
+  
+      POST /response_uri HTTP/1.1
+      HOST: relying-party.example.org
+      Content-Type: application/x-www-form-urlencoded
+  
+      response=eyJhbGciOiJFUzI1NiIs...9t2LQ
+  
   Below is a non-normative example of the decrypted payload of the JWT contained in the ``response``, before base64url encoding. The ``vp_token`` parameter value corresponds to the format used when the DCQL query language is used in the presentation request.
-
+  
   .. code-block:: json
-
-    {
-      "state": "3be39b69-6ac1-41aa-921b-3e6c07ddcb03",
-      "vp_token": {
-        "personal id data": "eyJhbGciOiJFUzI1NiIs...PT0iXX0",
-        "wallet attestation": "eyJhbGciOiJFUzI1NiIs...NTi0XG"
+  
+      {
+        "state": "3be39b69-6ac1-41aa-921b-3e6c07ddcb03",
+        "vp_token": {
+          "personal id data": "eyJhbGciOiJFUzI1NiIs...PT0iXX0",
+          "wallet attestation": "eyJhbGciOiJFUzI1NiIs...NTi0XG"
+        }
       }
-    }
 
 **Steps 21-25 (RP Checks)**: The Relying Party verifies the Authorization Response, extracts the Wallet Attestation to establish trust with the Wallet Solution. It then extracts the Digital Credentials and attests trust with the Credentials Issuer and the Wallet Instance's proof of possession of the presented Digital Credentials. Finally, the Relying Party verifies the revocation status of the presented Digital Credentials as described in :ref:`credential-revocation:Digital Credential Revocation and Suspension`. If all previous verifications yelded positive result, the Relying Party updates the User session.
 
@@ -237,7 +237,7 @@ A non-normative example of a Request Object in the form of decoded header and pa
 
   The following is a non-normative example of the response in the Same Device Flow.
 
-  .. code-block:: http
+.. code-block:: http
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -252,20 +252,20 @@ A non-normative example of a Request Object in the form of decoded header and pa
 
   .. code-block:: http
 
-    GET /session-state?id=3be39b69-6ac1-41aa-921b-3e6c07ddcb03 HTTP/1.1
-    HOST: relying-party.example.org
+      GET /session-state?id=3be39b69-6ac1-41aa-921b-3e6c07ddcb03 HTTP/1.1
+      HOST: relying-party.example.org
 
   When the Wallet Instance has provided the presentation to the Relying Party's **response_uri** endpoint and the User authentication is successful. The Relying Party updates the session cookie allowing the user-agent to access to the protected resource. A redirect URL is provided carrying the location where the user-agent is intended to navigate.
   The following is a non-normative example of the response with the ``redirect_uri`` from the Relying Party to the user-agent.
-
+  
   .. code-block:: http
-
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-
-    {
-      "redirect_uri": "https://relying-party.example.org/cb?response_code=091535f699ea575c7937fa5f0f454aee"
-    }
+  
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+  
+      {
+        "redirect_uri": "https://relying-party.example.org/cb?response_code=091535f699ea575c7937fa5f0f454aee"
+      }
 
 **Steps 31-32**: The user-agent is redirected to the redirect URI to continue the navigation with the protected resource made available to the User.
 

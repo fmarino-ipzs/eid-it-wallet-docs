@@ -145,8 +145,10 @@ Entities Involved
 While the Credential Issuer MUST directly manage the validity status of Digital Credentials it has issued, other actors MAY trigger the Digital Credential revocation/suspension process:
 
   - Users, through:
+  
     - Their Wallet Instance
     - Web service provided by the Issuer
+  
   - The Authentic Source when Credential attributes are updated or change validity status
   - The Wallet Provider when revoking a Wallet Instance
   - The Identity Provider if the Digital Identity used for PID issuance is stolen or compromised
@@ -460,9 +462,9 @@ In the following table are listed HTTP Status Codes that MUST be supported:
 
 The HTTP response MUST:
 
-- include a JSON object with a member named `status_assertion_responses`. It MUST be an array of strings, where each represents a *Status Assertion Response object*. Each element MUST contain a signed JWT, encoded as a series of base64url-encoded values (some of which may be the empty string) separated by period ('.') characters. The *Status Assertion Response object* MUST contain a Status Assertion Response and Status Assertion Error in analogy with Sections 8 and 9 of `OAUTH-STATUS-ASSERTION`_ for more details.
+- Include a JSON object with a member named `status_assertion_responses`. It MUST be an array of strings, where each represents a *Status Assertion Response object*. Each element MUST contain a signed JWT, encoded as a series of base64url-encoded values (some of which may be the empty string) separated by period ('.') characters. The *Status Assertion Response object* MUST contain a Status Assertion Response and Status Assertion Error in analogy with Sections 8 and 9 of `OAUTH-STATUS-ASSERTION`_ for more details.
 
-- be encoded in ``application/json`` format.
+- Be encoded in ``application/json`` format.
 
 A non-normative example of a HTTP Status Assertion Response is given below.
 
@@ -672,7 +674,7 @@ Status List Token
 
  The Status List Token is available at the Status List Endpoint and contains the following parameters.
 
- .. list-table::
+.. list-table::
   :widths: 20 60 20
   :header-rows: 1
 
@@ -692,7 +694,7 @@ Status List Token
     - REQUIRED. X.509 public key certificate or certificate chain corresponding to the key used to sign the Status List Token
     - :rfc:`5280`
 
- .. list-table::
+.. list-table::
   :widths: 20 60 20
   :header-rows: 1
 
@@ -718,9 +720,9 @@ Status List Token
 .. note::
   It is RECOMMENDED that the Credential Issuer sets the ``exp`` claim so that the Status List Token is short-lived. Typically, this involves the ``exp`` claim not to exeed the ``iat`` claim by more than 24 hours.
 
- A JSON-encoded Status List has the following structure:
+A JSON-encoded Status List has the following structure:
 
- .. list-table::
+.. list-table::
   :widths: 20 60 20
   :header-rows: 1
 
@@ -737,7 +739,7 @@ Status List Token
     - OPTIONAL. JSON String that contains a URI to retrieve the Status List Aggregation for this type of Digital Credential or Issuer.
     - `TOKEN-STATUS-LIST`_
 
- The following is an example of Status List Token before applying signature and encoding:
+The following is an example of Status List Token before applying signature and encoding:
 
 .. code::
 
@@ -769,7 +771,7 @@ Handling Credential Status with Status List Token
 
  The value of the claim ``status_list`` MUST be itself a JSON Object with the following parameters
 
- .. list-table::
+.. list-table::
   :widths: 20 60 20
   :header-rows: 1
 
@@ -831,7 +833,7 @@ HTTP Status Lists Response
 
   eyJhbGciOiJFUzI1NiIsImtpZCI6IjEyIiwidHlwIjoic3RhdHVzbGlzdCtqd3QifQ.eyJleHAiOjIyOTE3MjAxNzAsImlhdCI6MTY4NjkyMDE3MCwiaXNzIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInN0YXR1c19saXN0Ijp7ImJpdHMiOjEsImxzdCI6ImVOcmJ1UmdBQWhjQlhRIn0sInN1YiI6Imh0dHBzOi8vZXhhbXBsZS5jb20vc3RhdHVzbGlzdHMvMSIsInR0bCI6NDMyMDB9.SSdg3AnTHsyRtCHziLy-QnXg-YRldMEXkdEgDXgE_ZvIvjM0eULQlzEbLBLfCeGhlqKJSReC-m85K79CTjJDzg
 
- Upon receiving a Digital Credential, a Relying Party MUST first perform the validation of the Digital Credential itself (e.g., checking for expected attributes, valid signature and expiration time). If this validation is not successful, the Digital Credential MUST be rejected. If the validation was successful, the Relying Party MUST perform the following validation steps to evaluate the status of the Digital Credential:
+Upon receiving a Digital Credential, a Relying Party MUST first perform the validation of the Digital Credential itself (e.g., checking for expected attributes, valid signature and expiration time). If this validation is not successful, the Digital Credential MUST be rejected. If the validation was successful, the Relying Party MUST perform the following validation steps to evaluate the status of the Digital Credential:
  
   - Check for the existence of a ``status`` claim, check for the existence of a ``status_list`` claim within the ``status`` claim and validate that the content of ``status_list`` adheres to the rules defined in Section :ref:`credential-revocation:Handling Credential Status with Status List Token`.
   - Resolve the Status List Token from the provided URI.
@@ -858,18 +860,18 @@ HTTP Status Lists Response
 
  In case any error occurs when the Status Token Endpoint generates the response, following HTTP Status Codes MUST be supported:
 
- .. list-table::
-    :widths: 20 80
-    :header-rows: 1
+.. list-table::
+  :widths: 20 80
+  :header-rows: 1
 
-    * - **Status Code**
-      - **Description**
-    * - *500 Internal Server Error* [REQUIRED]
-      - The Status List Provider encountered an internal problem.
-    * - *503 Service Unavailable* [REQUIRED]
-      - The Status List Provider is temporary unavailable.
-    * - *504 Gateway Timeout* [OPTIONAL]
-      - The Status List Provider cannot fulfill the request within the defined time interval.
+  * - **Status Code**
+    - **Description**
+  * - *500 Internal Server Error* [REQUIRED]
+    - The Status List Provider encountered an internal problem.
+  * - *503 Service Unavailable* [REQUIRED]
+    - The Status List Provider is temporary unavailable.
+  * - *504 Gateway Timeout* [OPTIONAL]
+    - The Status List Provider cannot fulfill the request within the defined time interval.
 
 
 

@@ -646,9 +646,9 @@ Wallet Attestation mdoc
 
 This description further specializes the guidelines given in ref:`pid-eaa-data-model:MDOC-CBOR Credential Format` to represent the Wallet Attestation in mdoc format. The latter MUST:
 
-- have the domestic namespace ``org.iso.18013.5.1.it``;
-- have **docType** set to ``org.iso.18013.5.1.it.WalletAttestation``; and
-- have **issuerAuth** as described in :ref:`pid-eaa-data-model:Mobile security Object`.
+- Have the domestic namespace ``org.iso.18013.5.1.it``;
+- Have **docType** set to ``org.iso.18013.5.1.it.WalletAttestation``; and
+- Have **issuerAuth** as described in :ref:`pid-eaa-data-model:Mobile security Object`.
 
 The ``nameSpaces`` for the domestic nameSpace Json Objects are defined as follows:
 

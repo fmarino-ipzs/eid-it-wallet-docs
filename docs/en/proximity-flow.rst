@@ -263,19 +263,19 @@ Session Termination
 
 The session MUST be terminated if at least one of the following conditions occur:
 
-- after a time-out of no activity of receiving or sending session establishment or session data messages occurs. The time-out for no activity implemented by the Wallet Instance and the Relying Party Instance SHOULD be no less than 300 seconds;
-- when the Wallet Instance does not accept any more requests;
-- when the Relying Party Instance does not send any further requests.
+- After a time-out of no activity of receiving or sending session establishment or session data messages occurs. The time-out for no activity implemented by the Wallet Instance and the Relying Party Instance SHOULD be no less than 300 seconds;
+- When the Wallet Instance does not accept any more requests;
+- When the Relying Party Instance does not send any further requests.
 
 If the Wallet Instance and the Relying Party Instance does not send or receive any further requests, the session termination MUST be initiated as follows:
 
-- send the status code for session termination, or
-- dispatch the "End" command as outlined in [`ISO18013-5`_ #8.3.3.1.1.5].
+- Send the status code for session termination, or
+- Dispatch the "End" command as outlined in [`ISO18013-5`_ #8.3.3.1.1.5].
 
 When a session is terminated, the Wallet Instance and the Relying Party Instance MUST perform at least the following actions:
 
-- destruction of session keys and related ephemeral key material;
-- closure of the communication channel used for data retrieval.
+- Destruction of session keys and related ephemeral key material;
+- Closure of the communication channel used for data retrieval.
 
 .. note::
   See :ref:`pid-eaa-data-model:mdoc-CBOR Credential Format` for the meaning of CBOR type acronyms.

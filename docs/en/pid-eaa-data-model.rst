@@ -161,7 +161,7 @@ The JWT payload contains the following claims. Some of these claims can be discl
 
 If the ``status`` parameter is set to ``status_list``, it is a JSON Object containing the following sub-parameters:
 
- .. list-table::
+.. list-table::
    :widths: 20 60 20
    :header-rows: 1
 

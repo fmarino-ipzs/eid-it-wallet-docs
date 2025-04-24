@@ -1,6 +1,6 @@
 .. _brand-identity:
 
-IT-Wallet System Brand Identity
+Brand Identity
 ###############################
 
 The IT-Wallet Brand Identity defines the system's personality and it’s expressed through a set of standardized elements, including its naming and Visual Identity. It strengthens and promotes the Trust Model at the basis of the entire ecosystem,  that is to say the framework that legitimizes the Actors' participation in the IT-Wallet System and ensures the security and integrity of its processes.

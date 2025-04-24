@@ -1,6 +1,6 @@
 .. include:: ../common/common_definitions.rst
 
-.. included file, so we start with '-' title level
+.. "included" file, so we start with '-' title level
 
 Relying Party Endpoints
 -----------------------

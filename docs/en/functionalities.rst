@@ -25,7 +25,7 @@ Below are the functional and the User Experience requirements that the Wallet Pr
 - the User sets an unlock PIN for their Wallet Instance if one has not been previously set in the app. In addition to the PIN, the User can decide to use their own unlock mechanism used within the device and managed at the operating system level (e.g., biometric authentication) as an alternative to the PIN. The User uses the unlock method whenever an authorization is required to ensure security and protect their information;
 - the User reviews all relevant information regarding the activation process and service usage. Additionally, the User reads any policy from the Provider and PID Provider and/or the service's terms and conditions. The User gives their consent to proceed or declines to cancel the operation;
 - the User selects an Authentication option from those available;
-- the User completes the Authentication flow with the National Identity Provider’s service;
+- the User completes the Authentication flow with the National Identity Provider's service;
 - the User receives confirmation of the Authentication process outcome. If successful, the User views a preview of their PID. The User confirms the previewed information to proceed with Wallet Instance activation, or cancels the operation;
 - the User authorizes the operation using the unlock method previously set;
 - the User receives confirmation of the successful activation of the Wallet Instance.
@@ -41,7 +41,7 @@ Issuance of Electronic Attestations of Attributes
 
 Once activation is complete, the User MAY obtain one or more Electronic Attestations of Attributes within their Wallet Instance.
 
-Depending on the User’s specific needs, the type of Electronic Attestation of Attributes, and the offerings available from the Wallet Provider, the Electronic Attestation of Attributes Provider, and the Authentic Source, the request of Electronic Attestations of Attributes can occur in two ways:
+Depending on the User's specific needs, the type of Electronic Attestation of Attributes, and the offerings available from the Wallet Provider, the Electronic Attestation of Attributes Provider, and the Authentic Source, the request of Electronic Attestations of Attributes can occur in two ways:
 
 - **From the Wallet Instance Catalog**: the User explores the list of Electronic Attestations of Attributes provided by the Wallet Solution, selects the one of interest, and initiates the request process, concluding with the issuance of the Electronic Attestation of Attributes in the Wallet Instance.
 
@@ -65,7 +65,7 @@ In the event of communication issues between the systems of the Electronic Attes
 - upon reaching the final step of the process, the User visualizes a message prompting them to wait until the Electronic Attestation of Attributes can be issued.
 - The User is informed by the Electronic Attestation of Attributes Provider once the Electronic Attestation of Attributes becomes available.
 
-If the User encounters incorrect data in an already obtained or in-progress Electronic Attestation of Attributes, the Wallet Provider SHOULD guarantee the User appropriate assistance via their Wallet Instance.  For more information, please refer to the `User Assistance`_ section.
+If the User encounters incorrect data in an already obtained or in-progress Electronic Attestation of Attributes, the Wallet Provider SHOULD guarantee the User appropriate assistance via their Wallet Instance.  For more information, please refer to the :ref:`functionalities:User Assistance` section.
 
 In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the `Error Management`_ section.
 
@@ -175,7 +175,7 @@ Authentication is a specific use case of remote presentation that allows the Use
 
 The Authentication process can be carried out using both the same-device and cross-device modes described above. For the User Experience functional requirements that MUST be addressed, please refer to the functional requirements for `remote presentation`_ in same-device and cross-device modes.
 
-From a User Experience perspective, the Authentication process differs from the Presentation process only in how it is initiated, which is through a dedicated :ref:`Authentication Button`.
+From a User Experience perspective, the Authentication process differs from the Presentation process only in how it is initiated, which is through a dedicated :ref:`brand-identity:Authentication Button`.
 
 To ensure a consistent and seamless Authentication process across all Relying Parties, each Relying Party MUST follow the visual and User Experience requirements outlined below and SHOULD use the open-source assets available in the Official Resources.
 
@@ -189,7 +189,7 @@ Relying Parties MUST implement and provide the following pages as part of the Au
 - **thank you page**: confirms the successful Authentication;
 - **error page**: displays error messages related to the Authentication process.
 
-Each of these pages MUST include the following recurring elements, in line with the Visual Identity of the Relying Party’s Touchpoint:
+Each of these pages MUST include the following recurring elements, in line with the Visual Identity of the Relying Party's Touchpoint:
 
 - a **header and/or subheader** allowing Users to navigate back to the previous page.
 - a **footer** including the privacy policy, legal notice, and accessibility statement, where required by current regulations.
@@ -200,7 +200,7 @@ Specific requirements for each individual page are detailed below.
 
 To enable authentication via the IT-Wallet System, the Relying Party MAY replace its existing Discovery Page with the version provided in the Official Resources.
 
-Alternatively, the Relying Party MAY maintain its own Discovery Page but MUST integrate the Authentication Button as specified in the :ref:`Authentication Button` section.
+Alternatively, the Relying Party MAY maintain its own Discovery Page but MUST integrate the Authentication Button as specified in the :ref:`brand-identity:Authentication Button` section.
 
 In all cases:
 
@@ -211,7 +211,7 @@ The page SHOULD provide essential supporting information to help the User make a
 
 If the User accesses the Discovery Page from a different Touchpoint than the one where the Wallet Instance is activated (cross-device), selecting IT-Wallet System Authentication MUST redirect the User to the QR code page.
 
-If the User accesses the Discovery Page from the same Touchpoint where the Wallet Instance is activated (same-device), the selection MUST trigger the opening of the User’s Wallet Instance.
+If the User accesses the Discovery Page from the same Touchpoint where the Wallet Instance is activated (same-device), the selection MUST trigger the opening of the User's Wallet Instance.
 
 **QR code page (cross-device only)**
 
@@ -245,7 +245,7 @@ Relying Parties SHOULD implement the waiting page (cross-device) provided in the
 
 **Thank you page**
 
-The thank you page is displayed after the User completes the Authentication process via their Wallet Instance. Its purpose is to prompt the User to proceed to the authenticated area of the Relying Party’s Touchpoint.
+The thank you page is displayed after the User completes the Authentication process via their Wallet Instance. Its purpose is to prompt the User to proceed to the authenticated area of the Relying Party's Touchpoint.
 
 Relying Parties SHOULD implement the thank you page provided in the Official  Resources. In any case:
 
@@ -292,7 +292,7 @@ Revocation of Electronic Attestations
 
 Revocation is the procedure that turns an Electronic Attestation from a valid state to an invalid state. Revocation can occur in either an active or passive mode:
 
-- **Active revocation**: This refers to the revocation of an Electronic Attestation at the User’s request. This process affects only the Electronic Attestation and not its corresponding physical document, if one exists. Below is an illustrative list of scenarios in which the Wallet Provider MUST give the User the ability to request the revocation of an Electronic Attestation:
+- **Active revocation**: This refers to the revocation of an Electronic Attestation at the User's request. This process affects only the Electronic Attestation and not its corresponding physical document, if one exists. Below is an illustrative list of scenarios in which the Wallet Provider MUST give the User the ability to request the revocation of an Electronic Attestation:
 
 	- The User decides they no longer wish to use a specific Electronic Attestation;
 	- The User decides to deactivate their Wallet Instance, thereby revoking all previously obtained Electronic Attestations;
@@ -343,7 +343,7 @@ The Wallet Provider MUST guarantee the User the ability to voluntarily deactivat
 
 - The Wallet Instance itself;
 - A Touchpoint (e.g., a website) provided by the Wallet Provider;
-- The device’s app store, by uninstalling the Wallet Instance.
+- The device's app store, by uninstalling the Wallet Instance.
 
 Below are the functional and User Experience requirements that the Wallet Provider MUST guarantee via their Wallet Solution:
 
@@ -374,7 +374,7 @@ Below are the requirements and main best practices for error management, specifi
 - **The actor responsible** for the error: Wallet Provider, PID Provider, Electronic Attestations of Attributes Provider, Authentic Source;
 - **The way the error is displayed**: message on the page, banner, toast message, and so on;
 - **Suggested actions for the User** to resolve the error: suggestion to wait, request to try again, referral to FAQs and/or customer care, etc.;
-- **The method for error management**: opening an assistance request through the Wallet Instance, linking to other detailed channels, and so on. For further details, please refer to the :ref:`User Assistance` section.
+- **The method for error management**: opening an assistance request through the Wallet Instance, linking to other detailed channels, and so on. For further details, please refer to the :ref:`functionalities:User Assistance` section.
 
 Below is a non-exhaustive list of the main error cases, with reference to the actor responsible for their management, for each phase of the User Experience.
 
@@ -420,7 +420,7 @@ Presentation of Electronic Attestations Errors
      - Actor in charge
    * - The User does not hold the required Attributes contained in one or more Electronic Attestations within their Wallet Instance to access a specific service
      - Wallet Provider
-   * - The Wallet Provider's services or the Relying Party’s services are unresponsive (e.g. technical errors or lack of connection)
+   * - The Wallet Provider's services or the Relying Party's services are unresponsive (e.g. technical errors or lack of connection)
      - Wallet Provider, Relying Party
 
 Management of Electronic Attestations Errors
@@ -447,7 +447,7 @@ Deactivation of the Wallet Instance Errors
    * - The service for deactivating the Wallet Instance is unavailable (e.g. technical errors)
      - Wallet Provider
 
-In addition to error management, all Primary Actors MUST also deal with negative feedback resulting from the User’s decision to abandon or cancel a flow (e.g. Activation, Acquisition, Presentation, etc.). In such cases, feedback MUST be provided to confirm the User’s choice, and it MAY include a Call to Action to continue.
+In addition to error management, all Primary Actors MUST also deal with negative feedback resulting from the User's decision to abandon or cancel a flow (e.g. Activation, Acquisition, Presentation, etc.). In such cases, feedback MUST be provided to confirm the User's choice, and it MAY include a Call to Action to continue.
 
 User Assistance
 ********************************

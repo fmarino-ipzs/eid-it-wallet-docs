@@ -1,6 +1,6 @@
 .. include:: ../common/common_definitions.rst
 
-.. _relying-party-endpoint:
+
 
 Relying Party Endpoints
 =========================
@@ -11,7 +11,7 @@ The Relying Party MUST expose a trust endpoint adhering to the OpenID Federation
 Relying Party Federation Endpoint
 -----------------------------------
 
-.. include:: relying-party-entity-configuration.inc
+.. include:: relying-party-entity-configuration.rst
 
 .. _sec_rpi_nonce_endpoint:
 
@@ -20,7 +20,7 @@ Relying Party Nonce Endpoint
 
 The Relying Party Nonce Endpoint allows the Relying Party Instance to request a cryptographic ``nonce`` from the Relying Party Backend. The ``nonce`` serves as an unpredictable, single-use challenge to ensure freshness and prevent replay attacks.
 
-Further details on the Nonce Request and Response are provided in the :ref:`sec_mir_nonce_request` and :ref:`sec_mir_nonce_response` Sections, respectively.
+Further details on the Nonce Request and Response are provided in the :ref:`mobile-application-instance:Mobile Application Nonce Request` and :ref:`mobile-application-instance:Mobile Application Nonce Request` Sections, respectively.
 
 Relying Party Instance Initialization Endpoint
 ---------------------------------------------------
@@ -32,13 +32,13 @@ Further details on the Relying Party Instance Initialization Request and Respons
 Relying Party Key Binding Endpoint
 ----------------------------------------------
 
-The Relying Party Key Binding Endpoint enables Relying Party Instances to bind the newly created pair of keys, which will be associated with an Access Certificate, to the Relying Party Instance, by relying on a proof of possession of the Cryptographic Hardware Keys generated during the :ref:`Mobile Application Instance Initialization` phase. Before completing the process, the Relying Party Backend also needs to verify the integrity of the Relying Party Instance.
+The Relying Party Key Binding Endpoint enables Relying Party Instances to bind the newly created pair of keys, which will be associated with an Access Certificate, to the Relying Party Instance, by relying on a proof of possession of the Cryptographic Hardware Keys generated during the :ref:`mobile-application-instance:Mobile Application Instance Initialization` phase. Before completing the process, the Relying Party Backend also needs to verify the integrity of the Relying Party Instance.
 
 
 Relying Party Key Binding Request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Further details on the Relying Party Key Binding Request are provided in the :ref:`Mobile Application Key Binding Request` section.
+Further details on the Relying Party Key Binding Request are provided in the :ref:`mobile-application-instance:Mobile Application Key Binding Request` section.
 
 
 The ``typ`` header of the Integrity Request JWT assumes the value ``rp-kb+jwt``.
@@ -55,7 +55,7 @@ Below is a non-normative example of a Key Binding Request Response.
 
     HTTP/1.1 204 No content
 
-If any errors occur during the process, an error response is returned. Further details on the error response are provided in the :ref:`Mobile Application Key Binding Error Response` section.
+If any errors occur during the process, an error response is returned. Further details on the error response are provided in the :ref:`mobile-application-instance:Mobile Application Key Binding Error Response` section.
 
 
 Relying Party Access Certificate Endpoint
@@ -164,7 +164,7 @@ The following table lists HTTP Status Codes and related error codes that MUST be
 Relying Party Erasure Endpoint
 ----------------------------------------------
 
-The Erasure Endpoint, which is described in :ref:`Metadata for openid_credential_verifier`, allows Wallet Instances to request deletion of attributes presented to the Relying Party. It MUST be authenticated, i.e., the Relying Party MUST request User authentication before proceeding with the attribute deletion.
+The Erasure Endpoint, which is described in :ref:`relying-party-entity-configuration:Metadata for openid_credential_verifier`, allows Wallet Instances to request deletion of attributes presented to the Relying Party. It MUST be authenticated, i.e., the Relying Party MUST request User authentication before proceeding with the attribute deletion.
 
 Erasure Request
 ~~~~~~~~~~~~~~~~~~~~~~

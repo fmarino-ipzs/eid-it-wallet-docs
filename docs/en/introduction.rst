@@ -24,7 +24,7 @@ The first one is to provide a clear and structured set of recommendations, resou
 The document, by distinguishing between mandatory regulatory aspects and good design practices, aims to provide to public entities and private entities interested in taking part in the IT-Wallet System what is necessary to:
 
  - facilitate the understanding and adoption of the Service Model, increasing the number of potential services and usage opportunities for the User;
- - adopt the IT-Wallet System’s Visual Identity in order to enhance its reliability and recognizability for the User;
+ - adopt the IT-Wallet System's Visual Identity in order to enhance its reliability and recognizability for the User;
  - ensure design consistency across macro-functionalities and single interactions between the User and the service Touchpoints;
  - maintain an adequate level of quality, promoting the principles of usability, accessibility and inclusivity.
 

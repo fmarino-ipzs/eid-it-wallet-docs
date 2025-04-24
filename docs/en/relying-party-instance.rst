@@ -1,6 +1,6 @@
 .. include:: ../common/common_definitions.rst
 
-.. _relying-party-instance:
+
 
 Relying Party Instance
 =========================
@@ -44,7 +44,7 @@ In this section, state machines are presented to explain the Mobile Relying Part
 
 As shown in :numref:`fig_RelyingParty_Instance_Mobile_Lifecycle`, the Mobile Relying Party Instance has four distinct states: **Installed**, **Unverified**, **Verified**, and **Uninstalled**. Each state represents a specific functional status and determines the actions that can be performed.
 
-.. _sec_rpi_transition_to_installed:
+
 
 Transition to Installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -87,7 +87,7 @@ The expiration of the Access Certificate (**CERT EXP** transition) leads to the 
 
 While in this state, the Relying Party Instance can still request the presentation of Digital Credentials to Wallet Instances during the grace period. However, as the Certificate is expired, a specific disclaimer MUST be displayed to the User of the Wallet Instance during the presentation flow; for this reason, this operation is represented by the label **PID/(Q)EAA PRE***. This is required to support offline presentation flows. After the grace period has passed, the Relying Party Instance MUST NOT longer request presentations and will be de-registered.
 
-.. _sec_rpi_transition_to_uninstalled:
+
 
 Transition to Uninstalled
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,11 +135,11 @@ This process allows for the registration of a Relying Party Instance with the Re
   1. Verifies the existence of Cryptographic Hardware Keys. If none exist, the Relying Party Instance re-initialization is required.
   2. Generates an asymmetric key pair for the Access Certificate (``key_pub``, ``key_priv``).
 
-**Steps 3-5:** The Mobile Relying Party Instance requests a ``nonce`` from the :ref:`sec_rpi_nonce_endpoint` of the Relying Party Backend. This ``nonce`` MUST be unpredictable to serve as the main defense against replay attacks.
+**Steps 3-5:** The Mobile Relying Party Instance requests a ``nonce`` from the :ref:`relying-party-endpoint:Relying Party Nonce Endpoint` of the Relying Party Backend. This ``nonce`` MUST be unpredictable to serve as the main defense against replay attacks.
 
-Upon a successful request, the :ref:`sec_rpi_nonce_endpoint` generates and returns the ``nonce`` to the Mobile Relying Party Instance. The :ref:`sec_rpi_nonce_endpoint` MUST ensure that it is single-use and valid only within a specific time frame.
+Upon a successful request, the :ref:`relying-party-endpoint:Relying Party Nonce Endpoint` generates and returns the ``nonce`` to the Mobile Relying Party Instance. The :ref:`relying-party-endpoint:Relying Party Nonce Endpoint` MUST ensure that it is single-use and valid only within a specific time frame.
 
-Non-normative examples of the Nonce Request and Response can be found in the :ref:`sec_mir_nonce_request` and :ref:`sec_mir_nonce_response` sections, respectively.
+Non-normative examples of the Nonce Request and Response can be found in the :ref:`mobile-application-instance:Mobile Application Nonce Request` and :ref:`mobile-application-instance:Mobile Application Nonce Response` sections, respectively.
 
 **Step 6:** The Mobile Relying Party Instance:
 
@@ -163,12 +163,12 @@ Below is a non-normative example of the ``client_data`` JSON object.
 **Steps 9-11:** The Mobile Relying Party Instance:
 
   1. Generates an ``hardware_signature`` value by signing the ``client_data_hash`` with the Hardware Cryptographic private key, serving as a proof of possession for the Cryptographic Hardware Keys.
-  2. Generates the :ref:`Relying Party Key Binding Request` in the form of a JWT. This JWT includes ``key_attestation``, ``hardware_signature``, ``nonce``, ``hardware_key_tag``, and ``cnf`` (representing ``key_pub``); it is signed using ``key_priv``.
-  3. Sends the signed :ref:`Relying Party Key Binding Request` JWT as an ``assertion`` parameter in the body of an HTTP request to the :ref:`Relying Party Key Binding Endpoint`.
+  2. Generates the :ref:`relying-party-endpoint:Relying Party Key Binding Request` in the form of a JWT. This JWT includes ``key_attestation``, ``hardware_signature``, ``nonce``, ``hardware_key_tag``, and ``cnf`` (representing ``key_pub``); it is signed using ``key_priv``.
+  3. Sends the signed :ref:`relying-party-endpoint:Relying Party Key Binding Request` JWT as an ``assertion`` parameter in the body of an HTTP request to the :ref:`relying-party-endpoint:Relying Party Key Binding Endpoint`.
 
 **Step 12:** The Relying Party Backend evaluates the Key Binding Request and performs the following checks:
 
-  1. The request includes all required HTTP header parameters as defined in :ref:`Relying Party Key Binding Request`.
+  1. The request includes all required HTTP header parameters as defined in :ref:`relying-party-endpoint:Relying Party Key Binding Request`.
   2. The signature of the Key Binding Request is valid and verifiable using the provided ``jwk``.
   3. The ``nonce`` value has been generated by the Relying Party Backend and not previously used.
   4. The Relying Party Instance has valid Cryptographic Hardware Keys registered.
@@ -177,23 +177,23 @@ Below is a non-normative example of the ``client_data`` JSON object.
   7. The device in use is free of known security flaws and meets the minimum security requirements defined by the Relying Party.
   8. The URL in the ``iss`` parameter matches the Relying Party's URL identifier.
 
-**Step 13:** If the checks are successful, the Relying Party Backend responds with a confirmation of success (:ref:`Relying Party Key Binding Response`).
+**Step 13:** If the checks are successful, the Relying Party Backend responds with a confirmation of success (:ref:`relying-party-endpoint:Relying Party Key Binding Response`).
 
 **Step 14:** The Mobile Relying Party Instance generates a Certificate Signing Request (CSR, ``csr``) using ``key_pub`` and ``key_priv``.
 
-**Step 15:** The Mobile Relying Party Instance sends the CSR to the :ref:`Relying Party Access Certificate Endpoint` of the Relying Party Backend, as part of the :ref:`Relying Party Access Certificate Request`.
+**Step 15:** The Mobile Relying Party Instance sends the CSR to the :ref:`relying-party-endpoint:Relying Party Access Certificate Endpoint` of the Relying Party Backend, as part of the :ref:`relying-party-endpoint:Relying Party Access Certificate Request`.
 
 **Steps 16-17:** The Relying Party Backend checks that the public key in the CSR corresponds to a Relying Party Instance that has been previously validated, i.e., that it matches the one bound to the Cryptographic Hardware Keys through ``hardware_signature``. If this check is successful, the Relying Party Backend sends the CSR to the Relying Party Instance Access Certificate Authority.
 
 **Steps 18-19:** The Relying Party Instance Access Certificate Authority signs the CSR, obtaining a valid Access Certificate (``access_certificate``) which it sends back to the Relying Party Backend.
 
-**Steps 20-21:** The Relying Party Backend sends the Access Certificate (as part of the :ref:`Relying Party Access Certificate Response`) to the Mobile Relying Party Instance, which stores it for future authentication towards Wallet Instances.
+**Steps 20-21:** The Relying Party Backend sends the Access Certificate (as part of the :ref:`relying-party-endpoint:Relying Party Access Certificate Response`) to the Mobile Relying Party Instance, which stores it for future authentication towards Wallet Instances.
 
 
 Mobile Relying Party Instance Access Certificate Reissuance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The issuance of a new Access Certificate follows the same flow described in the :ref:`Mobile Relying Party Instance Registration` section for **Access Certificate Issuance**. Those certificates MAY be issued as short-lived (typically valid within 24 hours) or long-lived.
+The issuance of a new Access Certificate follows the same flow described in the :ref:`relying-party-instance:Mobile Relying Party Instance Registration` section for **Access Certificate Issuance**. Those certificates MAY be issued as short-lived (typically valid within 24 hours) or long-lived.
 
 
 Mobile Relying Party Instance Revocation
@@ -203,13 +203,13 @@ Relying Parties MUST periodically verify the Relying Party Instance's authentici
 When security issues are detected, Relying Parties MUST revoke the Relying Party Instance, revoking its X.509 Access Certificate (in case of long-lived certificates), and in any case, Relying Parties MUST NOT allow the re-issue of certificates.
 As a result, Mobile Relying Party Instance revocation MUST be tied to X.509 Access Certificates validity.
 
-Long-lived X.509 Certificates follows the requirements about their lifecycle, defined in :ref:`The Infrastructure of Trust`.
+Long-lived X.509 Certificates follows the requirements about their lifecycle, defined in :ref:`trust:The Infrastructure of Trust`.
 
 
 Web Relying Party Instance
 --------------------------------
 
-Web Instances operates server-side security controls that safely store secrets and cryptographic keys in a controlled environment. Web Instances MUST be registered with the Trust Anchor or Intermediary Entities, according to :ref:`The Infrastructure of Trust`.
+Web Instances operates server-side security controls that safely store secrets and cryptographic keys in a controlled environment. Web Instances MUST be registered with the Trust Anchor or Intermediary Entities, according to :ref:`trust:The Infrastructure of Trust`.
 
 
 Web Relying Party Instance Functionalities

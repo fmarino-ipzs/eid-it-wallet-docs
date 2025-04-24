@@ -27,7 +27,7 @@ except for Wallet Instances which are End-User's personal devices authenticated 
 .. note::
     The Wallet Instance, as a personal device, is deemed reliable through a verifiable attestation issued and signed by a trusted third party.
 
-    This is called *Wallet Attestation* and is documented in the dedicated :ref:`Section <wallet-attestation.rst>`.
+    This is called *Wallet Attestation* and is documented in the dedicated :ref:`wallet-attestation-issuance:Wallet Attestation Issuance`.
 
 Below the table with the summary of the Federation Entity roles, mapped on the corresponding EUDI Wallet roles, as defined in the `EIDAS-ARF`_.
 

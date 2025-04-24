@@ -445,7 +445,7 @@ In the IT-Wallet specification, the **redirect_uri** is registered and validated
 In order to be sure that the **redirect_uri** is received from a legit Wallet and not from the attacker, the Verifier response endpoint upon the recipient of a valid
 authorization response creates a fresh cryptographic value that is linked to the authorization response and attaches it to the **redirect_uri** that is sent to the Wallet.
 When the Verifier receives the redirect, it can extract the response code and check with its response endpoint whether the response code was associated with this Authorization
-Response. (See :ref:`Redirect URI Section <Redirect URI>`).
+Response. (See :ref:`remote-flow:Redirect URI`).
 
 SPR-P-70
 ~~~~~~~~

@@ -7,11 +7,11 @@ Relying Party Solution
 
 A Relying Party, as an organizational entity relying upon IT-Wallet, provides technical Solutions (Relying Party Solution) that could combine software, hardware, services, settings, and configurations, including Relying Party Instances for User authentication and Digital Credential verification.
 
-In order to implement and provide technical solutions, a Relying Party could take advantage of services provided by an Intermediary Entity. A Relying Party Intermediary is an Organization Entity that may act on behalf of the Relying Party offering services to it, making the Relying Party able to connect to Wallet Instance and authenticate Users and verify User’s Digital Credentials.
+In order to implement and provide technical solutions, a Relying Party could take advantage of services provided by an Intermediary Entity. A Relying Party Intermediary is an Organization Entity that may act on behalf of the Relying Party offering services to it, making the Relying Party able to connect to Wallet Instance and authenticate Users and verify User's Digital Credentials.
 
 A Relying Party provides at least one of the following components:
 
-   - **Relying Party Backend**: It handles Relying Party Instances registration and the relative Certificate management. It obtains X.509 Certificate according to the :ref:`The Infrastructure of Trust`. It SHOULD also provide a X.509 Certificate to its Relying Party Instances. It also may implement additional web services and business logic for its own purposes and use cases.
+   - **Relying Party Backend**: It handles Relying Party Instances registration and the relative Certificate management. It obtains X.509 Certificate according to the :ref:`trust:The Infrastructure of Trust`. It SHOULD also provide a X.509 Certificate to its Relying Party Instances. It also may implement additional web services and business logic for its own purposes and use cases.
    - **Relying Party Instance**: It is a frontend provided to Users in order to access Relying Party Services, and it may be provided as:
 
       - **Web Client**.
@@ -45,6 +45,9 @@ This section lists the requirements to be met by Relying Parties and Relying Par
 - The Mobile Relying Party Instances MUST be compatible and functional on both Android and iOS operating systems and available on the Play Store and App Store, respectively.
 - The Mobile Relying Party Instances MUST handle both online and offline presentation scenarios, with appropriate security measures and user notifications.
 
-.. include:: relying-party-instance.inc
 
-.. include:: relying-party-endpoint.inc
+.. toctree::
+   :maxdepth: 3
+
+   relying-party-instance.rst
+   relying-party-endpoint.rst

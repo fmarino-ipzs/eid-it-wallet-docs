@@ -321,3 +321,4 @@ numfig = True
 smartquotes = False
 
 autosectionlabel_prefix_document= True
+#suppress_warnings = ['autosectionlabel.*']

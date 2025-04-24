@@ -1,6 +1,6 @@
 .. include:: ../common/common_definitions.rst
 
-.. _proximity_flow.rst:
+
 
 Proximity Flow
 ==============
@@ -35,7 +35,7 @@ Relying Party and Wallet Instances registered in the IT-Wallet ecosystem MUST su
 - *Device Engagement* based on QR Code.
 - *RP Instance Authentication* following the mechanisms defined in the `ISO18013-5`_ for the *reader authentication*.
 - *Device Retrieval* mechanism based on Bluetooth Low Energy (BLE) for the communication sub-phase. *Server Retrieval* mechanism MUST NOT be supported.
-- Domestic *Document Type* and *Namespaces* defined in this technical specification in addition to those already defined in the `ISO18013-5`_ for the mDL (see :ref:`mdoc-CBOR Credential Format` for more details).
+- Domestic *Document Type* and *Namespaces* defined in this technical specification in addition to those already defined in the `ISO18013-5`_ for the mDL (see :ref:`pid-eaa-data-model:mdoc-CBOR Credential Format` for more details).
 - *Wallet Instance validation* through the Wallet Attestation.
 
 
@@ -168,7 +168,7 @@ Each mdoc Request MUST be compliant with the following structure, and MUST inclu
 
        - **itemsRequest**. CBOR-encoded `ItemsRequest` structure, formatted as:
 
-         - **docType** *(tstr)*. The type of document requested. See :ref:`mdoc-CBOR Credential Format`.
+         - **docType** *(tstr)*. The type of document requested. See :ref:`pid-eaa-data-model:mdoc-CBOR Credential Format`.
 
          - **nameSpaces** *(map)*. A map of namespace identifiers to requested *DataElements*.
 
@@ -229,7 +229,7 @@ Each document in **documents** MUST be compliant with the following structure, a
      - *(tstr)*. Document type identifier. For example, for an mDL, the value MUST be ``org.iso.18013.5.1.mDL``.
 
    * - **issuerSigned**
-     - *(bstr)*. Contains the `IssuerNameSpaces` structure, which includes data elements signed by the Issuer, and the `issuerAuth` structure, which ensures their authenticity and integrity using the Mobile Security Object (MSO). See :ref:`mdoc-CBOR Credential Format`.
+     - *(bstr)*. Contains the `IssuerNameSpaces` structure, which includes data elements signed by the Issuer, and the `issuerAuth` structure, which ensures their authenticity and integrity using the Mobile Security Object (MSO). See :ref:`pid-eaa-data-model:mdoc-CBOR Credential Format`.
 
    * - **deviceSigned**
      - *(bstr)*. Contains the `DeviceNameSpaces` structure (data elements signed by the Wallet Instance), and the `deviceAuth` structure, which includes the authentication data signed by the Wallet Instance. See the table below for details.
@@ -281,5 +281,5 @@ When a session is terminated, the Wallet Instance and the Relying Party Instance
 
 .. note::
 
-   See :ref:`mdoc-CBOR Credential Format` for the meaning of CBOR type acronyms.
+   See :ref:`pid-eaa-data-model:mdoc-CBOR Credential Format` for the meaning of CBOR type acronyms.
 

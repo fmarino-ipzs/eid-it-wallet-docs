@@ -107,7 +107,7 @@ Below is the description of acronyms and definitions which are useful for furthe
      - The degree of confidence in the vetting process used to establish the identity of the User and the degree of confidence that the User who presents the credential is the same User to whom the Digital Credential was issued.
      -
    * - Metadata
-     - Digital artifact that contains all the required information about an Organizational Entity, e.g., protocol related endpoints and the Organizational Entity’s cryptographic public keys (for the complete list check requirement “Metadata Content”).
+     - Digital artifact that contains all the required information about an Organizational Entity, e.g., protocol related endpoints and the Organizational Entity's cryptographic public keys (for the complete list check requirement “Metadata Content”).
      -
    * - National Accreditation Bodies (NAB)
      - A body that performs accreditation with authority derived from a Member State under Regulation (EC) No 765/2008.
@@ -221,7 +221,7 @@ Below is the description of acronyms and definitions which are useful for furthe
      - Request sent to a Certificate Authority (CA) that contains the public key and identifying information of the entity requesting a digital certificate.
      -
    * - Metadata
-     - Digital artifact that contains all the required information about an Organizational Entity, e.g., protocol related endpoints and the Organizational Entity’s cryptographic public keys (for the complete list check requirement "Metadata Content").
+     - Digital artifact that contains all the required information about an Organizational Entity, e.g., protocol related endpoints and the Organizational Entity's cryptographic public keys (for the complete list check requirement "Metadata Content").
      -
    * - Policy Language
      - A formal language used to define security, privacy, and identity management policies that govern interactions and transactions within a Trust Framework. This language allows for the clear and unambiguous expression of rules and conditions, facilitating the automation of processes and interoperability among different systems and organizations.
@@ -313,7 +313,7 @@ Below are the main defined terms and definitions related to User Experience aspe
      - Extended display mode of the Digital Credentials, showing all the Attributes included.
      -
    * - Discovery Page
-     - It’s the page of the Touchpoint of the Relying Party where the User lands to access their authenticated area, and it has the goal to show the User all the Authentication methods available.
+     - It's the page of the Touchpoint of the Relying Party where the User lands to access their authenticated area, and it has the goal to show the User all the Authentication methods available.
      -
    * - Engagement Button
      - Interactive element of the Interface that allows the User to trigger a process (e.g. to Authenticate, to request the issuance of a Digital Credential, etc.).

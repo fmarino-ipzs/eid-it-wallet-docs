@@ -42,7 +42,7 @@ Credential Transition to Issued
 ------------------------------------
 For the state machine to start, the Wallet Instance MUST be in either the **Operational** or **Valid** state, enabling Digital Credentials to be issued to it.
 The state machine begins with the **Issued** state, when an issuance process is triggered and, as a result, a Digital Credential is issued to the
-Wallet Instance (**PID/(Q)EAA ISS**). Please refer to :ref:`PID/(Q)EAA Issuance`.
+Wallet Instance (**PID/(Q)EAA ISS**). Please refer to :ref:`pid-eaa-issuance:PID/(Q)EAA Issuance`.
 
 Credential Transition to Valid
 ------------------------------------
@@ -131,7 +131,7 @@ Digital Credential Revocation and Suspension
 
 This section describes the flows to request a Digital Credential status update (i.e. revocation or suspension), involved entities, and validation mechanisms for Digital Credentials in the IT-Wallet system.
 
-As highlighted in Section :ref:`Digital Credential Lifecycle <Digital Credential Lifecycle>`, a Digital Credential's lifecycle is affected by:
+As highlighted in Section :ref:`credential-revocation:Digital Credential Lifecycle`, a Digital Credential's lifecycle is affected by:
 
   - The lifecycle of its storing Wallet Instance
   - The validity of Attributes managed by Authentic Sources
@@ -186,7 +186,7 @@ Status Update related to the User
 
 Users MAY change their Digital Credential validity status by:
 
-  1. Deleting the Digital Credential from their Wallet Instance: the Wallet Instance MUST use the Notification Endpoint provided by the Issuer as described in Section :ref:`Status Update by Wallet Instance <Status Update by Wallet Instance>`.
+  1. Deleting the Digital Credential from their Wallet Instance: the Wallet Instance MUST use the Notification Endpoint provided by the Issuer as described in Section :ref:`credential-revocation:Status Update by Wallet Instance`.
   2. Using the Issuer's web portal:
 
     a. Users MAY access a secure area with at least the same Level of Assurance used during the issuance phase.
@@ -200,7 +200,7 @@ Users MAY change their Digital Credential validity status by:
   If the User activates another Wallet Instance from the same Wallet Provider and using the same Wallet Solution and obtains a new PID, the previous PID MUST be revoked, and the previous Wallet Instance MUST transition to operational status.
 
 In case of the death of the User, Issuers and Wallet Provider MUST ensure that Digital Credentials and Wallet Instances owned by the User are revoked.
-The User's death triggers a change in the validity status of the User's identification attributes contained in the public registry (ANPR). The User's death MUST produce the PID revocation. Therefore, the Authentic Source of the PID (ANPR) MUST notify the PID Provider that the User's attributes are no longer valid due to the death of the User. The Authentic Source and the PID Provider MUST use the mechanisms provided in the Section :ref:`Status Update by Authentic Sources <Status Update by Authentic Sources>`.
+The User's death triggers a change in the validity status of the User's identification attributes contained in the public registry (ANPR). The User's death MUST produce the PID revocation. Therefore, the Authentic Source of the PID (ANPR) MUST notify the PID Provider that the User's attributes are no longer valid due to the death of the User. The Authentic Source and the PID Provider MUST use the mechanisms provided in the Section :ref:`credential-revocation:Status Update by Authentic Sources`.
 
 .. note::
   Future versions of this technical specification will define how the information to (Q)EAA Issuers and Wallet Providers are propagated, according to national regulation. Moreover, automated procedures for Credential revocation due to illegal activities will be defined in future specifications.
@@ -209,7 +209,7 @@ The User's death triggers a change in the validity status of the User's identifi
 Status Update by Wallet Instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When the User deletes a Digital Credential from the Wallet Instance, the Wallet Instance MUST notify this event to the Credential Issuer and the Credential Issuer MUST revoke the Digital Credential. To notify this event, the Wallet Instance MUST use the *Notification Endpoint* described in Section :ref:`Notification Endpoint <Notification endpoint>` using the parameter ``event`` set with the value ``credential_deleted``.
+When the User deletes a Digital Credential from the Wallet Instance, the Wallet Instance MUST notify this event to the Credential Issuer and the Credential Issuer MUST revoke the Digital Credential. To notify this event, the Wallet Instance MUST use the *Notification Endpoint* described in Section :ref:`pid-eaa-issuance:Notification Endpoint` using the parameter ``event`` set with the value ``credential_deleted``.
 
 When the revoked Credential is the PID, the Credential Issuer MUST send a notification of this event to the User within 24 hours.
 For any other Credential different from the PID, the Credential Issuer SHOULD send a notification of this event to the User. The notification to the User might be implemented in several ways, such as using a User's email address, telephone number, or any other verified and secure communication channel, and MUST include all the information about the Credential revocation status. The method used for the notification to the User is out of scope of the current technical implementation profile. When the revocation occurs, the Credential Issuer MUST update the status of the Digital Credential accordingly. When the Notification Response sent by the Credential Issuer is succesfully received by the Wallet Instance, the Wallet Instance MUST delete the Digital Credential.
@@ -218,7 +218,7 @@ For any other Credential different from the PID, the Credential Issuer SHOULD se
 Status Update by Wallet Providers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In addition to what already defined in :ref:`Digital Credential Lifecycle <Digital Credential Lifecycle>`, the Credential Issuer MUST provide a web service (Wallet Instance Revocation endpoint) defined using PDND, as specified in the Section :ref:`e-Service PDND Catalogue <e-Service PDND Catalogue>`.
+In addition to what already defined in :ref:`credential-revocation:Digital Credential Lifecycle`, the Credential Issuer MUST provide a web service (Wallet Instance Revocation endpoint) defined using PDND, as specified in the Section :ref:`e-service-pdnd-catalogue:e-Service PDND Catalogue`.
 The Wallet Provider that for any reason revokes a Wallet Instance MUST send a notification to Issuers using this endpoint.
 
 Status Update by Authentic Sources
@@ -226,7 +226,7 @@ Status Update by Authentic Sources
 
 Authentic Sources manage attributes separately from Digital Credentials, which verify authenticity like physical documents. Losing a physical document doesn't mean losing the privileges it represents; it just means the User can't prove them. However, if a User loses privileges due to a serious infraction, the Authentic Source will revoke the related attributes. In such cases, when a User's attributes are updated, Authentic Sources MUST notify Credential Issuers to update the validity status of any Digital Credential containing those attributes.
 
-Credential Issuers MUST provide a web service available via PDND for Credential update notification and validity status as defined in Section :ref:`e-Service PDND Catalogue <e-Service PDND Catalogue>`. For the protocol flow, please refer to the Section :ref:`e-Service PDND <e-Service PDND>`.
+Credential Issuers MUST provide a web service available via PDND for Credential update notification and validity status as defined in Section :ref:`e-service-pdnd-catalogue:e-Service PDND Catalogue`. For the protocol flow, please refer to the Section :ref:`e-service-pdnd:e-Service PDND`.
 Authentic Sources MUST use this notification service in the following cases:
 
   - The value of one or more Attributes contained in the Authentic Source's database has changed.
@@ -317,12 +317,12 @@ A Wallet Instance MUST check periodically the validity status of the Digital Cre
   - The request MUST contain the base64url encoded hash value of the Digital Credential, for which the Status Assertion is requested, and enveloped in a signed Status Assertion Request object.
   - The Status Assertion Request object MUST be signed with the private key corresponding to the confirmation claim assigned by the Issuer and contained within the Digital Credential.
 
-The Status Assertion HTTP request can be sent to a single Credential Issuer regarding multiple Digital Credentials, and MUST contain a JSON object with the member `status_assertion_requests` as described in Section :ref:`HTTP Status Assertion Request <HTTP Status Assertion Request>`.
+The Status Assertion HTTP request can be sent to a single Credential Issuer regarding multiple Digital Credentials, and MUST contain a JSON object with the member `status_assertion_requests` as described in Section :ref:`credential-revocation:HTTP Status Assertion Request`.
 
 The Credential Issuer that receives the Status Assertion Request object MUST:
 
-  - validate that the Wallet Instance making the request is authorized to request Status Assertions. If errors occur during this check, the Credential Issuer MUST provide a Status Assertion Error Response according to Section :ref:`HTTP Status Assertion Response <HTTP Status Assertion Response>`;
-  - verify the compliance of all elements in the `status_assertion_requests` object using the confirmation method contained within the Digital Credential where the Status Assertion Request object is referred to. In case of errors, a Status Assertion Error Response MUST be provided (see Section :ref:`HTTP Status Assertion Response <HTTP Status Assertion Response>`);
+  - validate that the Wallet Instance making the request is authorized to request Status Assertions. If errors occur during this check, the Credential Issuer MUST provide a Status Assertion Error Response according to Section :ref:`credential-revocation:HTTP Status Assertion Response`;
+  - verify the compliance of all elements in the `status_assertion_requests` object using the confirmation method contained within the Digital Credential where the Status Assertion Request object is referred to. In case of errors, a Status Assertion Error Response MUST be provided (see Section :ref:`credential-revocation:HTTP Status Assertion Response`);
   - verify that it is the legitimate Issuer of the Digital Credential to which each Status Assertion Request object refers;
   - check the validity status for the requested Credentials;
   - creates the corresponding Status Assertion.
@@ -340,7 +340,7 @@ The Wallet Instance MUST:
 .. note::
   Status Assertion Errors JSON Object MAY have the *alg header parameter* set to *none*. If the Credential Issuer signs the Status Assertion Errors the Wallet Instance MUST validate the signature. Moreover, Status Assertion Errors MUST not be presented to Verifiers.
 
-Technical details about the HTTP Status Assertion Response is provided in the Section :ref:`HTTP Status Assertion Response <HTTP Status Assertion Response>`.
+Technical details about the HTTP Status Assertion Response is provided in the Section :ref:`credential-revocation:HTTP Status Assertion Response`.
 
 
 HTTP Status Assertion Request
@@ -633,7 +633,7 @@ Relying Party Checking Credential Status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 During the presentation flow, if a Status Assertion related to a Digital Credential is available, the Wallet Instance MUST include it along with the related Digital Credential in the ``vp_token`` JSON Array.
-The Verifier who wants to rely on the mechanism provided by Status Assertion MUST extract the Status Assertion from the ``vp_token`` Array, and, in addition to the checks required in the Presentation Flow described in the Section :ref:`Remote Flow <Remote Flow>`, the Verifier MUST check the presence of ``status.status_assertion`` claim in the Digital Credential. If true, the Verifiers MUST:
+The Verifier who wants to rely on the mechanism provided by Status Assertion MUST extract the Status Assertion from the ``vp_token`` Array, and, in addition to the checks required in the Presentation Flow described in the Section :ref:`remote-flow:Remote Flow`, the Verifier MUST check the presence of ``status.status_assertion`` claim in the Digital Credential. If true, the Verifiers MUST:
 
   - validate the signature of the Status Assertion;
   - decode the Status Assertion provided in the presentation, by matching the JWS Header parameter typ set to ``status-assertion+jwt`` and looking for the ``credential_hash`` value that matches with the hash of the Digital Credential's Issuer signed part using the hashing algorithm configured in ``status.status_assertion.credential_hash_alg``;

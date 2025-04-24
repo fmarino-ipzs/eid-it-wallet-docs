@@ -350,7 +350,7 @@ The test plan is based on the mandatory requirements (MUST statements) extracted
      - No Credential is stored without explicit User approval.
    * - WS-042
      - Credential Presentation
-     - The Wallet MUST verify the Verifier’s Presentation Request before responding.
+     - The Wallet MUST verify the Verifier's Presentation Request before responding.
      - Invalid or malformed requests are rejected.
    * - WS-043
      - Security

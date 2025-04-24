@@ -3,7 +3,7 @@
 IT-Wallet System Brand Identity
 ###############################
 
-The IT-Wallet Brand Identity defines the system's personality and it’s expressed through a set of standardized elements, including its naming and Visual Identity. It strengthens and promotes the Trust Model at the basis of the entire ecosystem,  that is to say the framework that legitimizes the Actors' participation in the IT-Wallet System and ensures the security and integrity of its processes.
+The IT-Wallet Brand Identity defines the system's personality and it's expressed through a set of standardized elements, including its naming and Visual Identity. It strengthens and promotes the Trust Model at the basis of the entire ecosystem,  that is to say the framework that legitimizes the Actors' participation in the IT-Wallet System and ensures the security and integrity of its processes.
 
 It is important to strengthen the User awareness and trust in the ecosystem by integrating coherent graphical elements into the Technical Solutions and across the various Touchpoints.
 
@@ -54,7 +54,7 @@ The following requirements apply to its use in both physical and digital context
 
 - The Logo MUST NOT be placed on backgrounds that compromise its visibility or legibility. Adequate contrast between the Logo and the background MUST be ensured, in line with the Official Resources;
 
-- The Logo MAY be displayed alongside other actors’ logos, trademarks, or symbols, in accordance with the coexistence specifications regarding proportions and visibility, as defined in the Official Resources.
+- The Logo MAY be displayed alongside other actors' logos, trademarks, or symbols, in accordance with the coexistence specifications regarding proportions and visibility, as defined in the Official Resources.
 
 
 Trust Mark
@@ -77,7 +77,7 @@ The following requirements apply to its use in both physical and digital context
 
 - The Trust Mark MUST NOT be placed on backgrounds that compromise its visibility or legibility. Adequate contrast between the Trust Mark and the background MUST be ensured, in line with the Official Resources;
 
-- The Trust Mark MAY be displayed alongside other actors’ logos, trademarks, or symbols, in accordance with the coexistence specifications regarding proportions and visibility, as defined in the Official Resources.
+- The Trust Mark MAY be displayed alongside other actors' logos, trademarks, or symbols, in accordance with the coexistence specifications regarding proportions and visibility, as defined in the Official Resources.
 
 
 Components
@@ -107,7 +107,7 @@ The integration of the Authentication Button within the Discovery Page may vary 
     :alt: examples of Discovery Page layouts: grid, tab, and list
     :width: 100%
 
-For further details on the use of the Authentication Button, please refer to the :ref:`Authentication`  section.
+For further details on the use of the Authentication Button, please refer to the :ref:`functionalities:Authentication`  section.
 
 The Authentication Button has the following requirements:
 

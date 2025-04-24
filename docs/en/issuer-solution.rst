@@ -35,7 +35,7 @@ The Digital Credential Issuer Solution MUST:
    10. Register the Relying Party Component within the CIEid Digital Identity Federation ecosystem (for PID issuance) and, if required, within the IT-Wallet ecosystem (for (Q)EAA issuance).
    11. For PID issuance, authenticate Users with LoA High using national Digital Identity Providers.
    12. For (Q)EAA issuance requiring authentication, verify a valid PID from the User's Wallet Instance via `OpenID4VP`_.
-   13. Implement proper procedures for the entire Digital Credential lifecycle as detailed in Section :ref:`Digital Credential Lifecycle`.
+   13. Implement proper procedures for the entire Digital Credential lifecycle as detailed in Section :ref:`credential-revocation:Digital Credential Lifecycle`.
 
    For the Frontend Component (if implemented):
 
@@ -62,12 +62,12 @@ Issuers MAY provide additional services to the User through the Frontend Compone
 Credential Issuer Component
 ---------------------------
 
-Following the `OpenID4VCI`_ specification and the implementation profile in Section :ref:`pid_eaa_issuance.rst`, this component MUST:
+Following the `OpenID4VCI`_ specification and the implementation profile in Section :ref:`pid-eaa-issuance:PID/(Q)EAA Issuance`, this component MUST:
 
    - Issue Digital Credentials to Wallet Instances.
    - Process Digital Credential requests.
    - Obtain User data from Authentic Sources.
-   - Generate properly formatted and signed Digital Credentials in supported formats (SD-JWT-VC, mDoc-CBOR). See Section :ref:`pid_eaa_data_model.rst` for more details.
+   - Generate properly formatted and signed Digital Credentials in supported formats (SD-JWT-VC, mDoc-CBOR). See Section :ref:`pid-eaa-data-model:PID/(Q)EAA Data Model` for more details.
    - Implement the Digital Credential issuance protocols and flows.
 
 Authorization Server
@@ -98,7 +98,7 @@ This component MUST establish secure connections with Authentic Sources to:
    - Provide cryptographic evidence of User authentication when required.
 
 .. note::
-   For public Authentic Sources, a Credential Issuer MUST use PDND according to rules in Sections :ref:`e-Service PDND <e-service-pdnd>`, :ref:`Status Update by Authentic Sources <Status Update by Authentic Sources>`, and :ref:`e-service-pdnd-catalogue:Authentic Source Catalogue`.
+   For public Authentic Sources, a Credential Issuer MUST use PDND according to rules in Sections :ref:`e-service-pdnd:e-Service PDND`, :ref:`credential-revocation:Status Update by Authentic Sources`, and :ref:`e-service-pdnd-catalogue:Authentic Source Catalogue`.
 
 .. _sec_is_credential_lifecyle_management:
 
@@ -108,8 +108,8 @@ Credential Lifecycle Management
 This component MUST handle:
 
    - Status management (maintaining and updating validity).
-   - Revocation processes (implementing mechanisms to revoke or suspend Digital Credentials), according to Section :ref:`Digital Credential Lifecycle`.
-   - Renewal workflows (managing Digital Credential renewal processes), according to the mechanisms defined in Section :ref:`pid_eaa_issuance.rst`.
+   - Revocation processes (implementing mechanisms to revoke or suspend Digital Credentials), according to Section :ref:`credential-revocation:Digital Credential Lifecycle`.
+   - Renewal workflows (managing Digital Credential renewal processes), according to the mechanisms defined in Section :ref:`pid-eaa-issuance:PID/(Q)EAA Issuance`.
 
 
 Trust & Security Component
@@ -133,7 +133,7 @@ The Digital Credential Issuer Solution supports these interaction patterns:
    4. **Relying Party to Identity Providers**: Authentication interactions with national eID systems or PID verification.
    5. **API Interface to Authentic Sources**: Secure API calls to retrieve verified User data.
 
-All interactions must follow the security considerations in Section :ref:`pid_eaa_issuance.rst`, including proper handling of tokens, proofs, and cryptographic materials.
+All interactions must follow the security considerations in Section :ref:`pid-eaa-issuance:PID/(Q)EAA Issuance`, including proper handling of tokens, proofs, and cryptographic materials.
 
 .. _issuer-endpoints:
 
@@ -143,14 +143,14 @@ Exposed Endpoints
 Federation Endpoints
 --------------------
 
-The `/.well-known/openid-federation` endpoint serves the Entity Configuration document per Section :ref:`Entity Configuration of PID/(Q)EAA Providers`, establishing trust relationships within the IT-Wallet Federation.
+The `/.well-known/openid-federation` endpoint serves the Entity Configuration document per Section :ref:`pid-eaa-entity-configuration:Entity Configuration of PID/(Q)EAA Providers`, establishing trust relationships within the IT-Wallet Federation.
 
-.. include:: pid-eaa-entity-configuration.inc
+.. include:: pid-eaa-entity-configuration.rst
 
 Credential Issuer Component Endpoints
 -------------------------------------
 
-These endpoints implement the protocols described in Section :ref:`Low-Level Issuance Flow` for Digital Credential issuance operations.
+These endpoints implement the protocols described in Section :ref:`pid-eaa-issuance:Low-Level Issuance Flow` for Digital Credential issuance operations.
 
 
 

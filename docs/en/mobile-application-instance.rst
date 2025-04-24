@@ -32,11 +32,11 @@ The flow is displayed in :ref:`fig_MobileApplication_Instance_Initialization_Flo
 
 .. note::
 
-    **Federation Check**: The Mobile Application Instance needs to check if the Application Provider is part of the Federation, obtaining its protocol-specific Metadata. Non-normative examples of a response from the :ref:`Federation endpoint` with the **Entity Configuration** and the **Metadata** of the Application Provider are presented within the :ref:`Wallet Provider Entity Configuration` and :ref:`Entity Configuration of Relying Parties` sections.
+    **Federation Check**: The Mobile Application Instance needs to check if the Application Provider is part of the Federation, obtaining its protocol-specific Metadata. Non-normative examples of a response from the :ref:`wallet-provider-endpoint:Federation endpoint` with the **Entity Configuration** and the **Metadata** of the Application Provider are presented within the :ref:`wallet-provider-endpoint:Wallet Provider Entity Configuration` and :ref:`relying-party-entity-configuration:Entity Configuration of Relying Parties` sections.
 
-**Steps 3-5 (Nonce Retrieval)**: The Mobile Application Instance requests a one-time ``nonce`` from the **Nonce Endpoint** of the Application Provider Backend (see :ref:`sec_ws_nonce_endpoint` or :ref:`sec_rpi_nonce_endpoint` ). This ``nonce`` MUST be unpredictable to serve as the main defense against replay attacks. 
+**Steps 3-5 (Nonce Retrieval)**: The Mobile Application Instance requests a one-time ``nonce`` from the **Nonce Endpoint** of the Application Provider Backend (see :ref:`wallet-provider-endpoint:Wallet Solution Nonce Endpoint` or :ref:`sec_rpi_nonce_endpoint` ). This ``nonce`` MUST be unpredictable to serve as the main defense against replay attacks. 
 
-Upon a successful request, the Application Provider generates and returns the ``nonce`` value to the Mobile Application Instance, as part of the :ref:`Mobile Application Nonce Response`. The Application Provider MUST ensure that it is single-use and valid only within a specific time frame.
+Upon a successful request, the Application Provider generates and returns the ``nonce`` value to the Mobile Application Instance, as part of the :ref:`mobile-application-instance:Mobile Application Nonce Response`. The Application Provider MUST ensure that it is single-use and valid only within a specific time frame.
 
 **Step 6**: The Mobile Application Instance, through the operating system, creates a pair of Cryptographic Hardware Keys and stores the corresponding Cryptographic Hardware Key Tag in local storage once the following requirements are met:
 
@@ -71,7 +71,7 @@ If any errors occur in the Key Attestation API process, such as device integrity
 * Incorporates information pertaining to the device's security.
 * Uses an OEM private key to sign the Key Attestation, therefore verifiable with the related OEM certificate, confirming that the Cryptographic Hardware Keys are securely managed by the operating system.
 
-**Step 9 (Mobile Application Instance Initialization Request)**: The Mobile Application Instance sends a :ref:`Mobile Application Instance Initialization Request` to the Application Provider, to initialize the Mobile Application Instance, identified by the Cryptographic Hardware Key public key. The request body includes the following claims: the ``nonce``, Key Attestation (``key_attestation``), and Cryptographic Hardware Key Tag (``hardware_key_tag``).
+**Step 9 (Mobile Application Instance Initialization Request)**: The Mobile Application Instance sends a :ref:`mobile-application-instance:Mobile Application Instance Initialization Request` to the Application Provider, to initialize the Mobile Application Instance, identified by the Cryptographic Hardware Key public key. The request body includes the following claims: the ``nonce``, Key Attestation (``key_attestation``), and Cryptographic Hardware Key Tag (``hardware_key_tag``).
 
 .. note::
   It is not necessary to send the Application Instance Hardware public key because it is already included in the ``key_attestation``.
@@ -84,7 +84,7 @@ If any errors occur in the Key Attestation API process, such as device integrity
   3. It MUST verify that the device in use has no security flaws and reflects the minimum security requirements defined by the Application Provider.
   4. If these checks are passed, it MUST register the Mobile Application Instance, keeping the Cryptographic Hardware Key Tag (``hardware_key_tag``), the Public Hardware Key (``hardware_key_pub``) and possibly other useful information related to the device.
 
-Upon successful initialization of the Mobile Application Instance, the Application Provider responds with a confirmation of success (:ref:`Mobile Application Instance Initialization Response`).
+Upon successful initialization of the Mobile Application Instance, the Application Provider responds with a confirmation of success (:ref:`mobile-application-instance:Mobile Application Instance Initialization Response`).
 
 .. note::
 
@@ -277,9 +277,9 @@ The following table lists HTTP Status Codes and related error codes that are sup
 Mobile Application Key Binding
 =====================================
 
-The Key Binding flow enables the Mobile Application Instance to bind a newly created pair of keys to the Mobile Application Instance, by relying on a proof of possession of the Cryptographic Hardware Keys generated during the :ref:`Mobile Application Instance Initialization` phase. Before completing the process, the Application Provider also needs to verify the integrity of the Mobile Application Instance.
+The Key Binding flow enables the Mobile Application Instance to bind a newly created pair of keys to the Mobile Application Instance, by relying on a proof of possession of the Cryptographic Hardware Keys generated during the :ref:`mobile-application-instance:Mobile Application Instance Initialization` phase. Before completing the process, the Application Provider also needs to verify the integrity of the Mobile Application Instance.
 
-Although the exact flow differs depending on the context (see the :ref:`Mobile Relying Party Instance Registration` and :ref:`Wallet Attestation Issuance` sections), the Mobile Application Integrity Request and Error Response are consistent.
+Although the exact flow differs depending on the context (see the :ref:`relying-party-instance:Mobile Relying Party Instance Registration` and :ref:`wallet-attestation-issuance:Wallet Attestation Issuance` sections), the Mobile Application Integrity Request and Error Response are consistent.
 
 
 Mobile Application Key Binding Request
@@ -314,7 +314,7 @@ In particular, the Key Binding Request JWT includes the following HTTP header pa
       - **Description**
       - **Reference**
     * - **alg**
-      - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms listed in the :ref:`Cryptographic Algorithms` and MUST NOT be set to ``none`` or any symmetric algorithm (MAC) identifier.
+      - A digital signature algorithm identifier such as per IANA "JSON Web Signature and Encryption Algorithms" registry. It MUST be one of the supported algorithms listed in the :ref:`algorithms:cryptographic algorithms` and MUST NOT be set to ``none`` or any symmetric algorithm (MAC) identifier.
       - [:rfc:`7516#section-4.1.1`]
     * - **kid**
       - Thumbprint of the Mobile Application Instance's JWK contained in the ``cnf`` claim.
@@ -391,7 +391,7 @@ Below is a non-normative example of a Key Binding Request JWT.
 Mobile Application Key Binding Response
 ----------------------------------------------------
 
-The Key Binding Response strictly depends on the context of the request; further details are provided in the :ref:`Relying Party Key Binding Response` and :ref:`Wallet Attestation Issuance Response` sections.
+The Key Binding Response strictly depends on the context of the request; further details are provided in the :ref:`relying-party-endpoint:Relying Party Key Binding Response` and :ref:`wallet-provider-endpoint:Wallet Attestation Issuance Response` sections.
 
 
 Mobile Application Key Binding Error Response

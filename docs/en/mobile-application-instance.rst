@@ -2,13 +2,13 @@
 
 
 Mobile Application Instance
-+++++++++++++++++++++++++++++
+===========================
 
 The Wallet and Mobile Relying Party Instances share significant similarities, with particular respect to some aspects related to initialization and integrity validation. To eliminate redundancy, this section will use the term **Mobile Application Instance** to collectively refer to both. Within this framework, the **Application Provider** assumes the responsibilities of either the Wallet Provider or the Relying Party Backend, depending on the context.
 
 
 Mobile Application Instance Initialization
-================================================
+------------------------------------------
 
 The Initialization flow enables the Mobile Application Instance to register a long-lived key pair, securely stored in an appropriate secure storage within the device, with the Application Provider. This process occurs only after the Application Provider verifies the security and integrity assertion issued by the OS manufacturer.
 
@@ -92,7 +92,7 @@ Upon successful initialization of the Mobile Application Instance, the Applicati
   **Threat Model**: while the initialization endpoint does not necessitate authenticating the client, it is safeguarded through the use of `key_attestation`. Proper validation of this attestation permits the initialization of authentic and unaltered app instances. Any other claims submitted will not undergo validation, leading the endpoint to respond with an error. Additionally, the inclusion of a nonce helps prevent replay attacks. The authenticity of both the nonce and the ``hardware_key_tag`` is ensured by the signature found within the ``key_attestation``.
 
 Mobile Application Nonce Request
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Nonce Request uses the HTTP GET method.
 
@@ -104,7 +104,7 @@ Below is a non-normative example of a Nonce Request.
     Host: application-provider.example.com
 
 Mobile Application Nonce Response
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Upon a successful request, the Application Provider returns an HTTP Response with a ``200 OK`` status code, with ``Content-Type`` set to ``application/json``.
 
@@ -122,7 +122,7 @@ Below is a non-normative example of a Nonce Response.
     }
 
 Mobile Application Nonce Error Response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""""""""""""""""
 
 If any errors occur, the Application Provider returns an error response. The response uses ``application/json`` as the ``Content-Type`` and includes the following parameters:
 
@@ -158,7 +158,7 @@ The following table lists HTTP Status Codes and related error codes that are sup
       - The request cannot be fulfilled because the Nonce Endpoint is temporarily unavailable (e.g., due to maintenance or overload).
 
 Mobile Application Instance Initialization Request
---------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Instance Initialization Request uses the HTTP POST method with ``Content-Type`` set to ``application/json``.
 
@@ -198,7 +198,7 @@ Below is a non-normative example of an Instance Initialization Request.
 
 
 Mobile Application Instance Initialization Response
----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If an Instance Initialization Request is successfully validated, the Application Provider provides an HTTP Response with status code ``204 No Content``.
 
@@ -210,7 +210,7 @@ Below is a non-normative example of an Instance Initialization Response.
 
 
 Mobile Application Instance Initialization Error Response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 If any errors occur, the Application Provider returns an error response. The response uses ``application/json`` as the ``Content-Type`` and includes the following parameters:
 
@@ -263,7 +263,7 @@ The following table lists HTTP Status Codes and related error codes that are sup
 
 
 Mobile Application Key Binding
-=====================================
+------------------------------
 
 The Key Binding flow enables the Mobile Application Instance to bind a newly created pair of keys to the Mobile Application Instance, by relying on a proof of possession of the Cryptographic Hardware Keys generated during the :ref:`mobile-application-instance:Mobile Application Instance Initialization` phase. Before completing the process, the Application Provider also needs to verify the integrity of the Mobile Application Instance.
 
@@ -271,7 +271,7 @@ Although the exact flow differs depending on the context (see the :ref:`relying-
 
 
 Mobile Application Key Binding Request
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Key Binding Request uses the HTTP POST method with ``Content-Type`` set to ``application/json``.
 
@@ -375,13 +375,13 @@ Below is a non-normative example of a Key Binding Request JWT.
 
 
 Mobile Application Key Binding Response
-----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Key Binding Response strictly depends on the context of the request; further details are provided in the :ref:`relying-party-endpoint:Relying Party Key Binding Response` and :ref:`wallet-provider-endpoint:Wallet Attestation Issuance Response` sections.
 
 
 Mobile Application Key Binding Error Response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""""""""""""""""""""""
 
 If any errors occur, the Application Provider returns an error response. The response uses ``application/json`` as the ``Content-Type`` and includes the following parameters:
 

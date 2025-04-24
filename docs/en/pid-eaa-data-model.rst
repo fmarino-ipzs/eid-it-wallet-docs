@@ -3,7 +3,7 @@
 
 
 PID/(Q)EAA Data Model
-+++++++++++++++++++++
+=====================
 
 The Digital Credential Data Model structures Digital Credentials for secure, interoperable use. Key elements include:
 
@@ -26,7 +26,7 @@ The (Q)EAAs are issued by (Q)EAA Issuers to a Wallet Instance and MUST be provid
 The PID/(Q)EAA data format and the mechanism through which a digital credential is issued to the Wallet Instance and presented to a Relying Party are described in the following sections.
 
 SD-JWT-VC Credential Format
-===========================
+---------------------------
 
 The PID/(Q)EAA is issued in the form of a Digital Credential. The Digital Credential format is `SD-JWT`_ as specified in `SD-JWT-VC`_.
 
@@ -63,7 +63,7 @@ See `SD-JWT-VC`_ and `SD-JWT`_ for additional details.
 
 
 PID/(Q)EAA SD-JWT Parameters
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The JOSE header contains the following mandatory parameters:
 
@@ -183,7 +183,7 @@ If the ``status`` parameter is set to ``status_assertation``, it is a JSON Objec
 
 
 Digital Credential Metadata Type
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Metadata type document MUST be a JSON object and contains the following parameters.
 
@@ -269,7 +269,7 @@ A non-normative Digital Credential metadata type is provided below.
   :language: JSON
 
 PID Claims
-----------
+^^^^^^^^^^
 
 Depending on the Digital Credential type **vct**, additional claims data MAY be added. The PID supports the following data:
 
@@ -304,7 +304,7 @@ Depending on the Digital Credential type **vct**, additional claims data MAY be 
 
 
 PID Non-Normative Examples
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the following, the non-normative example of the payload of a PID represented in JSON format.
 
@@ -453,7 +453,7 @@ The combined format for the PID issuance is given by:
 
 
 (Q)EAA non-normative Examples
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Below is a non-normative example of (Q)EAA in JSON.
 
@@ -576,7 +576,7 @@ The combined format for the (Q)EAA issuance is represented below:
   VfYWxsb3dhbmNlIiwgdHJ1ZV0~
 
 mdoc-CBOR Credential Format
-====================================
+---------------------------
 
 The mdoc data model is based on the ISO/IEC 18013-5 standard.
 The mdoc data elements MUST be encoded in CBOR as defined in :rfc:`8949`.
@@ -606,7 +606,8 @@ An mdoc-CBOR Digital Credential MUST be compliant with the following structure:
 The structure of an mdoc-CBOR Credential is further elaborated in the following sections.
 
 Attribute Namespaces
---------------------------------
+^^^^^^^^^^^^^^^^^^^^
+
 The **nameSpaces** contains one or more *nameSpace* entries, each identified by a name. Within each **nameSpace**, it includes one or more *IssuerSignedItemBytes*, each encoded as a CBOR byte string with Tag 24 (#6.24(bstr .cbor)), which appears as 24(<<... >>) in diagnostic notation. It represents the disclosure information for each digest within the `Mobile Security Object` and MUST contain the following attributes:
 
 .. list-table::
@@ -630,7 +631,8 @@ The **nameSpaces** contains one or more *nameSpace* entries, each identified by 
       - [ISO 18013-5#8.3.2.1.2.3]
 
 Attributes
---------------------------------
+^^^^^^^^^^
+
 The following **elementIdentifiers** MUST be included in a Digital Credential encoded in mdoc-CBOR within the respective *nameSpace*, unless otherwise specified:
 
 .. list-table::
@@ -664,7 +666,7 @@ The following **elementIdentifiers** MUST be included in a Digital Credential en
   User-specific attributes for mdoc Digital Credentials such as those used in mDL or PID are also included by referencing the appropriate `elementIdentifiers` defined in ISO/IEC 18013-5 or the `EIDAS-ARF`_ specification.
 
 Mobile Security Object
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 The **issuerAuth** represents the `Mobile Security Object` which is a `COSE Sign1 Document` defined in :rfc:`9052`. It has the following data structure:
 
@@ -759,7 +761,7 @@ The `MobileSecurityObject` MUST have the following attributes, unless otherwise 
   The private key related to the public key stored in the `deviceKey` map is used to sign the `DeviceSignedItems` and to prove the possession of the Digital Credential during the presentation phase (see the presentation phase with mdoc-CBOR).
 
 mdoc-CBOR Examples
-----------------------
+^^^^^^^^^^^^^^^^^^
 A non-normative example of an mDL encoded in CBOR is shown below in binary encoding.
 
 .. literalinclude:: ../../examples/mDL-cbor-encoded-example.txt
@@ -771,7 +773,8 @@ The Diagnostic Notation of the CBOR-encoded mDL is given below.
   :language: text
 
 CBOR Acronyms
---------------------------------
+^^^^^^^^^^^^^
+
 .. list-table::
    :widths: 20 80
    :header-rows: 1
@@ -794,7 +797,8 @@ CBOR Acronyms
      - Tagged Date (for example, Tag `0` is used to indicate a date/time string in RFC 3339 format)
 
 Cross-Format Credential Parameters Mapping
-======================================================
+------------------------------------------
+
 The following table provides a comparative mapping between the data structures of SD-JWT-VC and mdoc-CBOR Digital Credentials.
 It outlines the key data elements and parameters used in each format, highlighting both commonalities and differences.
 In particular, it shows how core concepts - such as Credential Issuer information, validity, cryptographic binding, and disclosures - are represented in these Credential formats.

@@ -3,7 +3,7 @@
 
 
 Security and Privacy Considerations
-+++++++++++++++++++++++++++++++++++
+===================================
 
 This section provides an informal security analysis of the IT-Wallet specification by analyzing the compliance with the security and privacy requirements identified in [`OpenID4VC-SecTrust`_].
 
@@ -40,7 +40,7 @@ Security Requirements
 ---------------------
 
 SR-CF-10 and SR-E-10
-""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -53,7 +53,7 @@ The IT-Wallet specification supports both SD-JWT-VC and mdoc-CBOR Credential for
 - For mdoc-CBOR, the Issuer's signature is contained in the *Mobile Security Object* (MSO) and must be validated using the Issuer's public key through a trusted certificate chain contained in the **x5chain** header parameter.
 
 SR-CF-20
-""""""""
+^^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -63,7 +63,7 @@ SR-CF-20
 The cryptographic signature included in the Credential format ensures that any tampering with the Credential will result in a failed verification.
 
 SR-CF-21
-""""""""
+^^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -75,7 +75,7 @@ Both SD-JWT and mdoc-CBOR support cryptographic Holder binding by defining how a
 Currently, for the remote flow, IT-Wallet supports only SD-JWT presentations. In this scenario, the KB-JWT (Key-Bound JWT) parameter is utilized to demonstrate that the Holder possesses the private key associated with the Credential. The Holder signs the KB-JWT using a **nonce** and a Verifier identifier, using the **aud** parameter, as a challenge.
 
 SR-E-20
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -86,7 +86,7 @@ The IT Wallet Trust Framework ensures that each entity (e.g., an Issuer) is uniq
 keys and metadata, as distributed via a verifiable attestation, such as the OpenID Federation Entity Configuration verified within a Trust Chain.
 
 SR-E-30
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -96,7 +96,7 @@ SR-E-30
 Issuers are registered by a Trust Anchor or its Intermediate. To verify the trust of an Issuer, a Verifier must verify that the Trust Chain related to the Issuer is valid and still active. This validation process ensures that only trusted entities are permitted to participate in the system, preventing the introduction of untrustworthy actors.
 
 SR-E-40
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -106,7 +106,7 @@ SR-E-40
 If an Issuer's Entity Statement is revoked or unavailable, means that Issuer is no longer considered valid within the federation. This ensures that Verifiers have real-time access to the status of trusted entities and can revoke trust if necessary. However, Verifiers must actively check the Issuer's status by querying federation endpoints (i.e., the fetch endpoint for obtaining the Subordinate Statement).
 
 SR-I-10
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -116,7 +116,7 @@ SR-I-10
 The issuance process utilizes OAuth 2.0-based flows, specifically the Authorization Code Flow, to securely authenticate the User. Moreover, the User authentication is performed using CieID scheme with high LoA or the PID.
 
 SR-I-20
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -126,7 +126,7 @@ SR-I-20
 When verified data is expected, the Issuer obtains the correct and up-to-date claims from the relevant Authentic Sources, ensuring their accuracy at the time of issuance.
 
 SR-I-30
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -136,7 +136,7 @@ SR-I-30
 The Issuer is the entity responsible for revoking a Credential. The specification describes several use cases that may trigger a revocation process and details the revocation flow in which the Issuer revokes Credentials at the User's request (through the Wallet Instance) after verifying possession of the Credentials.
 
 SR-I-40
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -150,7 +150,7 @@ The issuance process securely binds the Credential to the User as follows (see :
 * Credential Issuance (Steps 18-21): The Credential request is verified using proof of possession, which is cryptographically bound to the User. The use of the same key in the DPoP ensures that the key material is controlled by the Wallet Instance, and not by a third party.
 
 SR-I-50
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -168,17 +168,17 @@ Afterward, all cryptographic keys generated and used in the process come from th
   There is currently an open issue on this aspect (https://github.com/openid/OpenID4VCI/issues/355) in the OpenID4VCI spec.
 
 SR-P-20
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
    * - |check-icon|
      - The protocol must ensure that no third party can interfere with the issuance process such that the Issuer issues Credentials for the third party to the User.
 
-This requirement is addressed by secure identification of the Issuer. The "iss" parameter in the authorization response assures the Wallet that the response is coming from the expected Issuer and the cryptographic verification of the received tokens ensures that they were issued by the legitimate Issuer. In addition, the use of PKCE avoids injection of the code from another session to the User session.
+This requirement is addressed by secure identification of the Issuer. The ^iss^ parameter in the authorization response assures the Wallet that the response is coming from the expected Issuer and the cryptographic verification of the received tokens ensures that they were issued by the legitimate Issuer. In addition, the use of PKCE avoids injection of the code from another session to the User session.
 
 SR-P-30
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -188,7 +188,7 @@ SR-P-30
 The presentation process occurs through different flows, including remote and proximity. In the case of the remote flow, a combination of signed Request Objects, **nonce** usage, Trust Chain validation, Wallet Attestation, and Holder binding ensures that no third party can interfere with or modify the information transmitted between the Wallet and the Verifier. These mechanisms align with Security Requirement P-30, protecting the interaction from tampering or injection attacks.
 
 SR-P-40
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -214,7 +214,7 @@ thus reducing the opportunity for a successful attack.
   - One-Time QR Codes: One-Time QR codes restrict the possibility of attacks when the same QR code is sent to multiple victims.
 
 SR-P-41
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -228,7 +228,7 @@ Regarding the **nonce** claim, the Verifier MUST check that the **nonce** value 
 Regarding the **aud** value, the Verifier must check that the audience of the presentation matches the Verifier's identifier.
 
 SR-P-50
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -249,7 +249,7 @@ as shown for example in this `Certification Report <https://www.tuv-nederland.nl
    In the EUDI Wallet context, the local internal WSCD and other WSCD deployments are still under certification according to `CEN_ETSI_Workshop <https://docbox.etsi.org/ESI/Open/workshops/202409_CEN_ETSI_Workshop/DAY3-8%20Certification%20for%20EU%20Digital%20Identity%20Wallets/DAY3-8-26%20ETSI_CEN_WS_WSCA%20Jan%20Kjaersgaard.pdf>`_.
 
 SR-V-10
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -259,13 +259,13 @@ SR-V-10
 Verifier checks the Wallet Attestation during exchanges (sent with the authorization response), ensuring that it meets the security criteria required by the Verifier and is under the sole responsability of its issuer, the trusted Wallet Provider.
 
 .. note::
-  Currently, no explicit security and privacy measures related to this requirement are specified in [`OpenID4VC-SecTrust`_] and it is not clearly defined what "stored in a secure Wallet" means. Without this detail, this requirement is considered only partially satisfied. Indeed, the Wallet Attestation guarantees
+  Currently, no explicit security and privacy measures related to this requirement are specified in [`OpenID4VC-SecTrust`_] and it is not clearly defined what ^stored in a secure Wallet^ means. Without this detail, this requirement is considered only partially satisfied. Indeed, the Wallet Attestation guarantees
   that the Wallet Instance is operating on a secure, trusted device and adheres to the strict security policies set by the Wallet Provider. However, the attestation does not directly guarantee that each
   Credential within the Wallet is stored securely; it verifies the overall security of the Wallet environment, within which the Credentials reside. Therefore, while the attestation supports the Verifier's
   confidence that the Credential comes from a secure source, it is ultimately a broad assurance of the Wallet's security, rather than a specific validation of individual Credential storage.
 
 SR-V-20
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -278,7 +278,7 @@ By checking the trust of the Issuer, the Verifier ensures that the Credential wa
   Currently, no explicit security and privacy measures related to this requirement are specified in [`OpenID4VC-SecTrust`_], configuring this item as something that requires further developments and clarifications.
 
 SR-W-20
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -291,7 +291,7 @@ The Issuer's information is displayed to the User during the issuance process an
 In addition to the Issuer's information, the Digital Credential Metadata Type also contains information on the Authentic Source.
 
 SR-W-30
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -304,7 +304,7 @@ Privacy Requirements
 --------------------
 
 PR-CF-30
-""""""""
+^^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -314,7 +314,7 @@ PR-CF-30
 Both SD-JWT and mdoc-CBOR provide selective disclosure capability, allowing Holders to reveal only specific fields to the Verifier.
 
 PR-CF-40
-""""""""
+^^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -327,7 +327,7 @@ While selective disclosure is a strong tool for preventing correlation, full unl
   Batch issuance, using different key binding keys and salts for each Credential, can mitigate Verifier/Verifier and presentation unlinkability risks.
 
 PR-E-60
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -339,7 +339,7 @@ In addition, privacy is protected also during the check of the Credential's stat
 that while the Verifier checks the Credential's validity, the Issuer does not learn where or when the Credential is being used.
 
 PR-E-70
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -355,7 +355,7 @@ The following mechanisms may be implemented to reduce the correlation:
  OpenID Federation Trust Marks allow the definition of custom policies suitable to the satisfaction of this requirement.
 
 PR-W-40
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -365,7 +365,7 @@ PR-W-40
 After establishing trust with the Verifier, the Wallet asks for the User's consent and provides the User the opportunity to review and select the data to be presented to the Verifier.
 
 PR-W-60
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -375,7 +375,7 @@ PR-W-60
 Same as for SR-P-80.
 
 PR-W-70
-"""""""
+^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -388,7 +388,7 @@ Security and Privacy Requirements
 ---------------------------------
 
 SPR-E-50
-""""""""
+^^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -403,7 +403,7 @@ The revocation of a Federation Entity (i.e., Issuer, Verifier, Wallet Provider) 
   In addition, [`OID-FED`_] supports a historical key endpoint to retrieve the list of expired and revoked keys, with the motivation of the revocation.
 
 SPR-P-10
-""""""""
+^^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -420,7 +420,7 @@ To mitigate this threat, the IT-Wallet specification requires the following secu
 - *PKCE*: Avoids injection of a legit authorization **code** in another session.
 
 SPR-P-60
-""""""""
+^^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -445,7 +445,7 @@ When the Verifier receives the redirect, it can extract the response code and ch
 Response. (See :ref:`remote-flow:Redirect URI`).
 
 SPR-P-70
-""""""""
+^^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -470,7 +470,7 @@ To mitigate these threats, the IT-Wallet specification requires the following se
   Currently, no explicit security and privacy measures related to this requirement are specified in [`OpenID4VC-SecTrust`_], it remains a work in progress.
 
 SPR-P-80
-""""""""
+^^^^^^^^
 .. list-table::
    :widths: 8 92
 
@@ -481,7 +481,7 @@ The exchange protocol does not require any interactions between Verifiers and Is
 ensure that while the Verifier checks the Credential's validity, the Issuer does not learn where or when the Credential is being used.
 
 SPR-W-50
-""""""""
+^^^^^^^^
 .. list-table::
    :widths: 8 92
 

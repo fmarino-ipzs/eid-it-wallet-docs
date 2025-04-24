@@ -2,7 +2,7 @@
 
 
 PID/(Q)EAA Issuance
-+++++++++++++++++++
+===================
 
 This section describes the PID and (Q)EAAs issuance flow with a high level of security.
 The relevant entities and interfaces involved in the issuance flow are:

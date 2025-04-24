@@ -2,7 +2,7 @@
 
 
 Digital Credentials Catalogue
-+++++++++++++++++++++++++++++++++++++++++++
+=============================
 
 The Digital Credentials Catalogue is the registry of all available Digital Credentials recognized within the IT-Wallet ecosystem. It is published by the Trust Anchor and publicly available by all Entities through a specialized Federation endpoint. It acts as a single reference point for all actors involved in the process of issuing, verifying and using Digital Credentials.
 

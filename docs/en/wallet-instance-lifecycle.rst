@@ -9,7 +9,6 @@ The Wallet Provider is in charge of the implementation and provision of Wallet I
 In this section, state machines are presented to explain the Wallet Instance and Digital Credential states and their transitions and relations.
 
 .. note::
-
   PID is a specialized Digital Credential type that has impacts on the Wallet Instance's lifecycle. The revocation of the PID MAY also have potential impacts on (Q)EAAs, if they were issued using the presentation of the PID.
   When the distinction between PID and (Q)EAA is not needed, the term Digital Credential is used.
 
@@ -26,7 +25,6 @@ Each state represents a specific functional status and determines the actions th
     Wallet Instance Lifecycle.
 
 .. note::
-
   The Wallet Provider MUST ensure the security and reliability of the Wallet Instances. To achieve this, the Wallet Provider MUST periodically check the Wallet Instances security and compliance status.
 
 Transition to Installed
@@ -44,7 +42,6 @@ When the state is **Installed**, the Wallet Instance MUST interact only with the
 * illegal activities reported by Judicial or Supervisory Bodies.
 
 .. note::
-
   While for the ARF the revocation of the Wallet Instance is accomplished by revoking the Wallet Attestation (see Topic 9 and Topic 38 in Annex 2),
   in this specification the revocation is managed differently. Being the Wallet Attestation short-lived, it does not have a status management mechanism.
   For this reason, the Wallet Instance revocation transition is accomplished by deleting the Wallet Cryptographic Hardware Key from the WSCD of the Wallet
@@ -60,7 +57,6 @@ This association allows the User to directly request Wallet Instance revocation 
 revoke the Wallet Instance associated with that User.
 
 .. note::
-
   As a result of the User account creation, an authentication mechanism MUST be set for the User to interact with the Wallet Provider portal.
   This specification mandates the use of at least a second-factor for User authentication.
 
@@ -85,7 +81,6 @@ A transition to the Valid state occurs only when the Wallet Instance obtains a v
 new (Q)EAAs (**(Q)EAA ISS/PRE**), and present the PID (**PID PRE**). Please refer to :ref:`pid-eaa-issuance:PID/(Q)EAA Issuance` and :ref:`pid-eaa-presentation:PID/(Q)EAA Presentation`.
 
 .. note::
-
   Users can have only one Wallet Instance in **Valid** state for the same Wallet Solution. Thus, when a User installs and obtains a PID on a new Wallet
   Instance of the same Wallet Solution from the same Wallet Provider, the PID in the previous Wallet Instance MUST be revoked and the Wallet Instance became
   **Operational**.

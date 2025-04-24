@@ -12,7 +12,6 @@ The **Backup and Restore** functionality becomes relevant when the User wants to
 - The User performs a factory reset on the current phone and needs to set up the Wallet Solution again.
 
 .. note::
-
   For Wallet Solutions based on the IT Wallet technical specifications, the migration to a different Wallet Solution (known as data portability) can be supported following the backup and restore functionality described in this section.
 
 
@@ -35,15 +34,12 @@ Below, the description of the steps of :numref:`fig_Backup_flow`:
 The User MUST securely store the key phrase chosen from those proposed by the system (e.g., in a password manager or a physical safe) as they are critical for restoring the backup.
 
 .. note::
-
   As highlighted in the ARF, encryption is necessary because the backup file is considered sensitive. Even if an attacker only knows the Issuer identifiers, they can infer the different types of Digital Credentials, which constitutes a violation of User privacy.
 
 .. note::
-
   To extract the key from the list of selected words a key derivation function MUST be applied. Password-Based-Key-Derivation Function 2 (PBKDF2) is among the mostly used ones based on `RFC 2898`_ and it is recommended by the `NIST 800-132 <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf>`_. There are other relevant techniques that are available and used widely, such as Bcrypt, Scrypt, and Argon2. More details on this approach can be found `here <https://cryptobook.nakov.com/mac-and-key-derivation/kdf-deriving-key-from-password>`_.
 
 .. note::
-
   The work factor for PBKDF2 is implemented through an iteration count, which should set differently based on the internal hashing algorithm used. The recommended value for ``SHA-256`` hashing algorithim is 600000 iterations as stated in the `OWASP Password Storage Cheatsheet <https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#pbkdf2>`_.
 
 **Step 4**: The Wallet Instance performs the operations below to create the backup JWT entry for the backup file.
@@ -54,7 +50,6 @@ The User MUST securely store the key phrase chosen from those proposed by the sy
 - Encrypt the backup file using the provided key phrase.
 
 .. note::
-
   The Backup JWT MAY contain transaction history for each Credential entry within the ``credentials_backup`` claim.
 
 **Step 5**: The User will be prompted to choose a storage option for securely storing the backup file. Options may include native storage or external storage solutions, such as cloud storage, USB devices, e-mail delivery or any other.
@@ -141,5 +136,4 @@ To check the authenticity of the file, the Wallet Instance MUST verify the backu
 - Using the Issuer identifier the Wallet Instance obtains the metadata of the Credential Issuer and makes a re-issuance request to the Credential Issuer by providing the new cryptographic binding with the Credential.
 
 .. note::
-
   The Wallet Instance MUST not check the expiration of the Wallet Attestation as its main purpose is to enable the Wallet Instance to verify the authenticity of the backup file by ensuring it has been created and signed by a Wallet Instance of a specific Wallet Provider.

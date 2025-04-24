@@ -12,10 +12,9 @@ This section provides an informal security analysis of the IT-Wallet specificati
   As [`OpenID4VC-SecTrust`_] is still a work in progress, the security and privacy considerations described may change in the future.
 
 .. note::
-
-    The focus of the analysis is the compliance of the design choices in the IT-Wallet specification with respect to the OpenID4VC protocols.
-    It is currently out-of-scope *(i)* the analysis of the design of the proximity flow based on ISO 18013-5, and *(ii)* the analysis of the implementation;
-    as a consequence 7 requirements specifically related to the implementation are not considered (e.g., SV-00: The Verifier must implement the protocol securely and correctly).
+  The focus of the analysis is the compliance of the design choices in the IT-Wallet specification with respect to the OpenID4VC protocols.
+  It is currently out-of-scope *(i)* the analysis of the design of the proximity flow based on ISO 18013-5, and *(ii)* the analysis of the implementation;
+  as a consequence 7 requirements specifically related to the implementation are not considered (e.g., SV-00: The Verifier must implement the protocol securely and correctly).
 
 As in [`OpenID4VC-SecTrust`_], all requirements are numbered for reference. Together with the respective component that needs to implement the requirement:
 
@@ -255,15 +254,15 @@ SR-V-10
    :widths: 8 92
 
    * - |partially-check-icon|
-     - (conditional w.r.t  I-50+V-20) The Verifier must ensure that the Credential is stored in a secure Wallet.
+     - (conditional w.r.t I-50+V-20) The Verifier must ensure that the Credential is stored in a secure Wallet.
 
 Verifier checks the Wallet Attestation during exchanges (sent with the authorization response), ensuring that it meets the security criteria required by the Verifier and is under the sole responsability of its issuer, the trusted Wallet Provider.
 
 .. note::
- Currently, no explicit security and privacy measures related to this requirement are specified in [`OpenID4VC-SecTrust`_] and it is not clearly defined what "stored in a secure Wallet" means. Without this detail, this requirement is considered only partially satisfied. Indeed, the Wallet Attestation guarantees
- that the Wallet Instance is operating on a secure, trusted device and adheres to the strict security policies set by the Wallet Provider. However, the attestation does not directly guarantee that each
- Credential within the Wallet is stored securely; it verifies the overall security of the Wallet environment, within which the Credentials reside. Therefore, while the attestation supports the Verifier's
- confidence that the Credential comes from a secure source, it is ultimately a broad assurance of the Wallet's security, rather than a specific validation of individual Credential storage.
+  Currently, no explicit security and privacy measures related to this requirement are specified in [`OpenID4VC-SecTrust`_] and it is not clearly defined what "stored in a secure Wallet" means. Without this detail, this requirement is considered only partially satisfied. Indeed, the Wallet Attestation guarantees
+  that the Wallet Instance is operating on a secure, trusted device and adheres to the strict security policies set by the Wallet Provider. However, the attestation does not directly guarantee that each
+  Credential within the Wallet is stored securely; it verifies the overall security of the Wallet environment, within which the Credentials reside. Therefore, while the attestation supports the Verifier's
+  confidence that the Credential comes from a secure source, it is ultimately a broad assurance of the Wallet's security, rather than a specific validation of individual Credential storage.
 
 SR-V-20
 ~~~~~~~
@@ -271,7 +270,7 @@ SR-V-20
    :widths: 8 92
 
    * - |check-icon|
-     - (conditional w.r.t.  I-10) The Verifier must ensure that the Credential was issued by an Issuer that only issues Credentials to trustworthy Wallets.
+     - (conditional w.r.t. I-10) The Verifier must ensure that the Credential was issued by an Issuer that only issues Credentials to trustworthy Wallets.
 
 By checking the trust of the Issuer, the Verifier ensures that the Credential was issued by a trusted Issuer committed to issuing Credentials only to secure Wallets (as for SR-I-50).
 
@@ -418,7 +417,7 @@ To mitigate this threat, the IT-Wallet specification requires the following secu
 - *DPoP*: Ensures that the Holder of the access token possesses the private key associated with it, preventing attackers from reusing intercepted tokens.
 - *Holder binding*: Ties the Credential to a specific Holder, ensuring that only the legitimate Holder can use a Credential to authenticate with the Issuer.
 - *redirect_uri validation*: This validation ensures that the authorization response is sent to the correct and authorized endpoint, thereby preventing unauthorized interception by malicious actors. Ensuring the integrity of the **redirect_uri** is critical to avoid any manipulation or misdirection of the URI.
-- *PKCE*:  Avoids injection of a legit authorization **code** in another session.
+- *PKCE*: Avoids injection of a legit authorization **code** in another session.
 
 SPR-P-60
 ~~~~~~~~
@@ -461,7 +460,7 @@ To mitigate these threats, the IT-Wallet specification requires the following se
 - *DPoP*: Ensures that the Holder of the access token possesses the private key associated with it, preventing attackers from reusing intercepted tokens.
 - *Holder binding*: Ties the Credential to a specific Holder, ensuring that only the legitimate Holder can use a Credential to authenticate with the Issuer.
 - *redirect_uri validation*: This validation ensures that the authorization response is sent to the correct and authorized endpoint, thereby preventing unauthorized interception by malicious actors. Ensuring the integrity of the **redirect_uri** is critical to avoid any manipulation or misdirection of the URI.
-- *PKCE*:  Avoids injection of a legit authorization **code** in another session.
+- *PKCE*: Avoids injection of a legit authorization **code** in another session.
 
 .. tip::
   A further security enhancement that could be applied to add an extra layer of protection for sensitive User information is the encryption of Credential responses.

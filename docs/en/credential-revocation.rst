@@ -26,13 +26,11 @@ A Digital Credential in all states can be deleted (**PID/(Q)EAA DEL**) and this 
     Digital Credential Lifecycle.
 
 .. note::
-
   Users MAY present a Digital Credential in any state, it is up to the Relying Party's policy to accept a not Valid Digital Credential.
   An example of this scenario is when a Relying Party needs to verify that the User is not a minor. In this case, even if the User presents an
   **Issued/Expired/Revoked** or **Suspended** Digital Credential, the age claim is still reliable.
 
 .. note::
-
   While **Issued**, **Valid**, **Expired**, **Revoked** are explicitly mentioned in the ARF (see Figure 5 of ARF v1.4),
   **Suspended** is implicitly present in `EIDAS-ARF`_. This specification explicitly considers it.
 
@@ -85,8 +83,7 @@ In the case of PID only, the following cases are in addition to those listed abo
   * as a result of obtaining a new PID on a new Wallet Instance from the same Wallet Provider that has provided the Wallet Instance containing a PID previously issued.
 
 .. note::
-
- A (Q)EAA Provider MAY revoke a (Q)EAA in case of PID revocation.
+  A (Q)EAA Provider MAY revoke a (Q)EAA in case of PID revocation.
 
 When a Digital Credential is **Revoked** it cannot transition back to **Valid**, the Wallet Instance SHOULD notify the User the Digital Credential
 has been revoked and the User MAY delete it (**PID/(Q)EAA DEL**). This ends its lifecycle.
@@ -178,7 +175,6 @@ This section describes the main flows for managing Digital Credential Status Upd
 
 .. note::
   Detailed Status Update Flows for Identity Providers, legal authorities, and the Supervisory Body will be covered in future versions of the technical specification.
-
 
 Status Update related to the User
 """""""""""""""""""""""""""""""""
@@ -362,7 +358,8 @@ Below a non-normative example representing a Status Assertion Request array with
 	{
 		"status_assertion_requests" : [
       $status_assertion_request,
-      $status_assertion_request, ...
+      $status_assertion_request,
+      ...
     ]
 	}
 
@@ -476,7 +473,8 @@ A non-normative example of a HTTP Status Assertion Response is given below.
     {
       "status_assertion_responses": [
         $status_assertion_response,
-        $status_assertion_response, ...
+        $status_assertion_response,
+        ...
       ]
     }
 
@@ -660,12 +658,10 @@ Status Lists Creation
   - create the bite array ``[0, 0, 0, 0, 0, 0, 0, 0; 0, 1, 0, 0, 0, 0, 0, 0; 0, 0, 1, 0, 0, 0, 0, 1]`` which in exadecimal notation generates the byte array ``[0x00, 0x40, 0x21]``.
   - compress the array using DEFLATE.
 
- .. note::
-
+.. note::
   When the Credental Issuer choses the number of bits for conveying statuses of the Digital Credentials it issues, it MAY add other states besides those described above. The addition of many different states for the lifecycle of a Digital Credential has however to be carefully pondered for it discloses information to Relying Parties.
 
- .. note::
-
+.. note::
   The main privacy consideration for a Status List is to prevent the Issuer from tracking the usage of the Digital Credential when the status is being checked. If a Credential Issuer offers status information by referencing a specific token, this would enable the Credential Issuer to create a profile for the issued token by correlating the date and identity of Relying Parties, that are requesting the status. Implementations MUST therefore integrate the status information of many Digital Credentials into the same list. As a result, the Issuer does not learn for which Digital Credential the Relying Party is requesting the Status List. The privacy of the Holder is protected by the anonymity within the set of Digital Credential in the Status List, this limits the possibilities of tracking by the Issuer.
   This herd privacy effect depends on the number of entities within the Status List. A larger amount of Digial Credentials referenced therein results in better privacy but also impacts the performance as more data has to be transferred to read the Status List. Depending on the Status List parameters (e.g. the amounts of bits designating the Credential values), Credential Issuers have to strike an appropriate balance between privacy and performance.
 
@@ -719,8 +715,7 @@ Status List Token
     - REQUIRED. JSON Object that contains a Status List.
     - `TOKEN-STATUS-LIST`_
 
- .. note::
-
+.. note::
   It is RECOMMENDED that the Credential Issuer sets the ``exp`` claim so that the Status List Token is short-lived. Typically, this involves the ``exp`` claim not to exeed the ``iat`` claim by more than 24 hours.
 
  A JSON-encoded Status List has the following structure:

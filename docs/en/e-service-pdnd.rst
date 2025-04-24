@@ -62,7 +62,6 @@ This specification is based on the following set of requirements:
     - R3, R4
 
 .. note::
-
     In these specifications, the ``REST_JWS_2021_POP`` security pattern is implemented by default in accordance with :rfc:`9449`. If DPoP is not supported by the PDND Infrastructure, the proof of possession is attested by the ``TrackingEvidence`` JWT (as detailed below). However, while the ``TrackingEvidence`` is defined in ``AUDIT_REST_02`` to provide additional tracked data, in this context, it acts as proof of possession of the Voucher. Such implementation choices will be referred to as ``POP_DPoP`` and ``POP_TPoP``, respectively.
 
 In addition, this specification defines and applies a custom security pattern:
@@ -101,17 +100,15 @@ The following security patterns defined in `PDND`_ and `MODI`_ MUST NOT be used 
       - **[REST_JWS_2021_Bearer]** JWS Bearer Voucher Issuing Profile (*Annex 3 - Standards and technical details used for Voucher Authorization* [`PDND`_]).
 
 .. note::
-
-    In case of ``POP_TPoP`` implementation, the Voucher is issued as a Bearer token. However, since it is accompanied by a proof of possession, it still complies with the ``REST_JWS_2021_POP`` security pattern rather than ``REST_JWS_2021_Bearer``.
+  In case of ``POP_TPoP`` implementation, the Voucher is issued as a Bearer token. However, since it is accompanied by a proof of possession, it still complies with the ``REST_JWS_2021_POP`` security pattern rather than ``REST_JWS_2021_Bearer``.
 
 PDND Voucher Issuance
 ----------------------
 
 The PDND infrastructure defines two different types of Vouchers:
 
-    - **For e-Service**: allow Consumers to request data from an e-Service.
-
-    - **For Interoperability API**: allow Participants to request data from the Interoperability API, exposed by the PDND Infrastructure.
+  - **For e-Service**: allow Consumers to request data from an e-Service.
+  - **For Interoperability API**: allow Participants to request data from the Interoperability API, exposed by the PDND Infrastructure.
 
 The two flows are described below.
 
@@ -180,14 +177,12 @@ PDND Voucher for e-Services Flow
     }
 
 .. note::
-
-    Steps 1-2 are required only when complying with the ``AUDIT_REST_02`` security pattern or the ``POP_TPoP`` implementation.
+  Steps 1-2 are required only when complying with the ``AUDIT_REST_02`` security pattern or the ``POP_TPoP`` implementation.
 
 **Step 3 (DPoP Key Pair and Proof)**: The Consumer MUST create a new key pair for the DPoP and a fresh DPoP proof JWT following the instruction provided in the Section 4 of :rfc:`9449` for the token request to the PDND Authorization Server.
 
 .. note::
-
-    Step 3 is required only when complying with the ``POP_DPoP`` implementation.
+  Step 3 is required only when complying with the ``POP_DPoP`` implementation.
 
 **Step 4 (Voucher Request)**: The Consumer creates a Voucher Request and sends it to the PDND Authorization Server.
 
@@ -236,12 +231,10 @@ PDND Voucher for e-Services Flow
     }
 
 .. note::
-
-    The ``purposeId`` claim in the ``client_assertion`` payload is required only when requesting a Voucher for e-Service.
+  The ``purposeId`` claim in the ``client_assertion`` payload is required only when requesting a Voucher for e-Service.
 
 .. note::
-
-    The ``digest`` claim in the ``client_assertion`` payload is required only when complying with the ``AUDIT_REST_02`` security pattern or the ``POP_TPoP`` implementation.
+  The ``digest`` claim in the ``client_assertion`` payload is required only when complying with the ``AUDIT_REST_02`` security pattern or the ``POP_TPoP`` implementation.
 
 Upon the receipt of the Voucher Request, the PDND Authorization Server MUST perform the following checks on the Voucher Request body parameters:
 
@@ -270,11 +263,9 @@ The PDND Authorization Server MUST also validate the ``client_assertion`` JWT as
       - The ``purposeId`` claim MUST identify a purpose registered in the PDND Infrastructure and associated to the Client.
 
 .. note::
-
   The PDND Authorization Server does not need to perform any checks on the ``digest`` claim.
 
 .. note::
-
   Verification of the ``exp``, ``nbf``, ``iat``, and ``jti`` claims, as detailed above, MUST be performed for all JWTs described within this section. These checks will not be explicitly mentioned in subsequent references.
 
 **Step 6 (Voucher Issuance)**: In case of successful checks, the PDND Authorization Server issues a Voucher, which is included in the Voucher Response to the Consumer.
@@ -327,7 +318,6 @@ The PDND Authorization Server MUST also validate the ``client_assertion`` JWT as
     }
 
 .. note::
-
   The ``digest`` claim in the ``access_token`` payload is required only when complying with the ``AUDIT_REST_02`` security pattern or the ``POP_TPoP`` implementation. If present, it corresponds to the value of the ``digest`` claim contained in the ``client_assertion``.
 
 PDND Voucher for Interoperability API
@@ -859,7 +849,6 @@ Participants' Key Retrieval Flow
 
 
 .. note::
-
   The Interoperability API includes an event notification endpoint that alerts subscribed Participants about changes within the PDND Infrastructure. Among these notifications, the ``/events/keys`` endpoint provides updates on modifications to cryptographic material, such as additions or deletions of keys. By leveraging this mechanism, Participants can implement a periodic polling strategy to retrieve all changed keys and update their local cache. This eliminates the need to request each key individually during the workflow.
 
 PDND Interoperability API Endpoint
@@ -960,7 +949,6 @@ The **Provider** MUST comply with the following prerequisites:
   - Has registered a key pair associated with the key ring.
 
 .. note::
-
   The Provider's key ring is the counterpart to the Client on the Consumer's side. It stores cryptographic material, allowing Consumers to verify the integrity of responses from Providers.
 
 
@@ -1006,13 +994,11 @@ e-Service Usage Flow
     }
 
 .. note::
-
   Step 1 is required to comply with the ``INTEGRITY_REST_02`` security pattern.
 
 **Step 2 (DPoP Proof for e-Service Endpoint)**: The Consumer MUST create a fresh DPoP Proof JWT following the instruction provided in the Section 4 of [:rfc:`9449`] for the token presentation to the e-Service Endpoint.
 
 .. note::
-
   Step 2 is required only when complying with the ``POP_DPoP`` implementation.
 
 **Step 3 (e-Service Request):** The Consumer sends an e-Service Request to the Provider, including the Voucher.
@@ -1038,8 +1024,7 @@ e-Service Usage Flow
 The Provider MUST validate the DPoP proof [:rfc:`9449`].
 
 .. note::
-
-    DPoP proof validation is required only when complying with the ``POP_DPoP`` implementation.
+  DPoP proof validation is required only when complying with the ``POP_DPoP`` implementation.
 
 The Provider MUST validate the Voucher as follows:
 
@@ -1060,7 +1045,6 @@ The Provider MUST validate the Voucher as follows:
       - In case of ``POP_DPoP`` implementation, the ``cnf.jkt`` claim MUST correspond to the SHA-256 Thumbprint of the DPoP public key in the ``jwk`` claim in the DPoP proof.
 
 .. note::
-
   If the Provider requires additional context about the request, it can interact with the PDND Interoperability API by passing the value of the ``purposeId`` as a parameter.
 
 The Provider MUST validate the ``TrackingEvidence`` JWT as follows:
@@ -1082,7 +1066,6 @@ The Provider MUST validate the ``TrackingEvidence`` JWT as follows:
 In addition, the Provider MUST ensure that the hash of the ``TrackingEvidence`` JWT matches the value of the ``digest.value`` claim contained in the ``access_token`` payload.
 
 .. note::
-
   The validation of the ``TrackingEvidence`` JWT is required only when complying with the ``AUDIT_REST_02`` security pattern or the ``POP_TPoP`` implementation.
 
 The Provider MUST validate the ``Signature`` JWT as follows:

@@ -41,7 +41,7 @@ The *oauth_authorization_server* metadata MUST contain the following parameters.
   * - **token_endpoint**
     - URL of the authorization server's token endpoint. See :rfc:`8414#section-2`.
   * - **client_registration_types_supported**
-    - Array specifying the registration types supported. The authorization server MUST support *automatic*. See  `OID-FED`_ Section 5.1.3.
+    - Array specifying the registration types supported. The authorization server MUST support *automatic*. See `OID-FED`_ Section 5.1.3.
   * - **code_challenge_methods_supported**
     - JSON array containing a list of Proof Key for Code Exchange (PKCE) :rfc:`7636` code challenge methods supported by the authorization server. The authorization server MUST support *S256*.
   * - **acr_values_supported**
@@ -106,7 +106,7 @@ The *openid_credential_issuer* metadata MUST contain the following claims.
     - JSON object that outlines the details of the Credential supported by the PID/(Q)EAA Provider. It includes a list of name/value pairs, where each name uniquely identifies a specific supported Credential. This identifier is utilized to inform the Wallet Instance which Credential can be provided by the PID/(Q)EAA Provider. The associated value within the object MUST contain metadata specific to that Credential, as defined following. See `OpenID4VCI`_ Sections 11.2.3 and A.3.2.
 
         - **format**: String identifying the format of this Credential. The PID/(Q)EAA MUST support the value string "*dc+sd-jwt*" in case of SD-JWT VC (See `OpenID4VCI`_ Section A.3.1.) and "*mso_mdoc*" in case of mdoc (see `OpenID4VCI`_ Section A.2.1.).
-        - **scope**: JSON String identifying the supported *scope* value. The Wallet Instance MUST use this value in the Pushed Authorization Request. Scope values MUST be the entire set or a subset of the *scope* values in the *scopes_supported* parameter of the Authorization Server. [See `OpenID4VCI`_ Section  11.2.3].
+        - **scope**: JSON String identifying the supported *scope* value. The Wallet Instance MUST use this value in the Pushed Authorization Request. Scope values MUST be the entire set or a subset of the *scope* values in the *scopes_supported* parameter of the Authorization Server. [See `OpenID4VCI`_ Section 11.2.3].
         - **cryptographic_binding_methods_supported**: JSON Array of case sensitive strings that identify the representation of the cryptographic key material that the issued Credential is bound to. The PID/(Q)EAA Provider MUST support the value "*jwk*" for "dc+sd-jwt" format and "*cose_key*" for "mso_mdoc".
         - **credential_signing_alg_values_supported**: JSON Array of case sensitive strings that identify the algorithms that the PID/(Q)EAA Provider MUST support to sign the issued Credential. See Section :ref:`algorithms:cryptographic algorithms` for more details.
         - **proof_types_supported**: JSON object which provides detailed information about the key proof(s) supported by the PID/(Q)EAA Provider. It consists of a list of name/value pairs, where each name uniquely identifies a supported proof type. The PID/(Q)EAA Provider MUST support at least "*jwt*" as defined in `OpenID4VCI`_ Section 8.2. The value associated with each name/value pair is a JSON object containing metadata related to the key proof. The PID/(Q)EAA Provider MUST support at least the parameter **proof_signing_alg_values_supported** which MUST be a JSON Array of case sensitive strings that identify the supported algorithms (see Section :ref:`algorithms:cryptographic algorithms` for more details about the supported algorithms).
@@ -132,11 +132,11 @@ The *openid_credential_issuer* metadata MUST contain the following claims.
         - *it_wallet*: Italian EUDI Wallet trust framework supported.
         - *eudi_wallet*: Member State EUDI Wallet trust framework supported.
   * - **evidence_supported**
-    -  JSON array containing all types of identity evidence supported by the Credential Issuer. See `OIDC-IDA`_ Section 8. The supported value is ``vouch``.
+    - JSON array containing all types of identity evidence supported by the Credential Issuer. See `OIDC-IDA`_ Section 8. The supported value is ``vouch``.
   * - **status_assertion_endpoint**
-    -  URL of the Status Assertion Endpoint. See `OAUTH-STATUS-ASSERTION`_ Section 11.1.
+    - URL of the Status Assertion Endpoint. See `OAUTH-STATUS-ASSERTION`_ Section 11.1.
   * - **credential_hash_alg_supported**
-    -  The supported algorithm used by the Wallet Instance to hash the Digital Credential for which the Status Assertion is requested. It is RECOMMENDED to use *sha-256*. See `OAUTH-STATUS-ASSERTION`_ Section 11.1.
+    - The supported algorithm used by the Wallet Instance to hash the Digital Credential for which the Status Assertion is requested. It is RECOMMENDED to use *sha-256*. See `OAUTH-STATUS-ASSERTION`_ Section 11.1.
 
 
 Example of a (Q)EAA Provider Entity Configuration

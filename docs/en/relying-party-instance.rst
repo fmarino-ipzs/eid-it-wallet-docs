@@ -16,7 +16,6 @@ There are two primary types of Relying Party Instances, each serving different o
   Mobile and Embedded Relying Party Instances acting as public clients are not considered within these specifications.
 
 .. note::
-
   Unlike the Web Relying Party Instance, a Mobile and Embedded Relying Party Instance requires proper lifecycle management and special registration procedures managed through the Relying Party Backend.
 
 Further technical and operational details are discussed in the following sections.
@@ -99,11 +98,9 @@ Mobile Relying Party Instance Functionalities
 A Mobile Relying Party Instance MUST support three fundamental functionalities: **Registration**, **Access Certificate Reissuance**, and **Revocation**. Each functionality is described in detail in the following sections.
 
 .. note::
-
   Throughout this section, the services used to attest genuineness of the Relying Party Instance and the device in which it is installed are referred to as **Key Attestation API**. The Key Attestation API is considered in an abstract fashion and it is assumed to be a service provided by a trusted third party (i.e., the OS Provider's API) which is able to perform integrity checks on the Wallet Instance as well as on the device where it is installed.
 
 .. note::
-
   The details provided below are non-normative and are intended to clarify the functionalities of the Mobile Relying Party Instance. The actual implementation may vary based on the specific use case and requirements of the Relying Party.
 
 
@@ -116,7 +113,6 @@ This process allows for the registration of a Relying Party Instance with the Re
 2. **Access Certificate Issuance**: The Relying Party Instance requests an Access Certificate from the Relying Party Backend. Before interacting with the Relying Party Instance Access Certificate Authority for the issuance of the Access Certificate, the Relying Party Backend validates the Relying Party Instance's integrity and security by leveraging the long-lived, attested keys generated in the previous subphase. The flow is displayed in :numref:`fig_RelyingParty_Instance_Mobile_Registration_AccessCertificateIssuance`, while a step-by-step description is provided below.
 
 .. note::
-
   Access Certificates MAY be issued as short-lived (typically valid within 24 hours) or long-lived.
 
 .. _fig_RelyingParty_Instance_Mobile_Registration_AccessCertificateIssuance:

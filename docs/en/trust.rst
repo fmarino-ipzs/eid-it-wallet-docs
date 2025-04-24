@@ -357,8 +357,7 @@ giving the references of the metadata protocol for each of these.
 
 
 .. note::
-
-    The entries that don't have any reference to a known draft or standard are intended to be defined in this technical reference.
+  The entries that don't have any reference to a known draft or standard are intended to be defined in this technical reference.
 
 .. list-table::
    :widths: 20 20 20 60
@@ -395,19 +394,19 @@ giving the references of the metadata protocol for each of these.
 
 
 .. note::
-    Wallet Provider metadata is defined in the section below.
+  Wallet Provider metadata is defined in the section below.
 
-    `Wallet Solution section <wallet-solution.html>`_.
+  `Wallet Solution section <wallet-solution.html>`_.
 
 
 .. note::
-    In instances where a PID/EAA Provider implements both the Credential Issuer and the Authorization Server,
-    it MUST incorporate both
-    ``oauth_authorization_server`` and ``openid_credential_issuer`` within its metadata types.
-    Other implementations may divide the Credential Issuer from the Authorization Server, when this happens the Credential Issuer metadata MUST contain the `authorization_servers` parameters, including the Authorization Server unique identifier.
-    Furthermore, should there be a necessity for User Authentication by the Credential Issuer,
-    it could be necessary to include the relevant metadata type, either ``openid_relying_party``
-    or ``openid_credential_verifier``.
+  In instances where a PID/EAA Provider implements both the Credential Issuer and the Authorization Server,
+  it MUST incorporate both
+  ``oauth_authorization_server`` and ``openid_credential_issuer`` within its metadata types.
+  Other implementations may divide the Credential Issuer from the Authorization Server, when this happens the Credential Issuer metadata MUST contain the `authorization_servers` parameters, including the Authorization Server unique identifier.
+  Furthermore, should there be a necessity for User Authentication by the Credential Issuer,
+  it could be necessary to include the relevant metadata type, either ``openid_relying_party``
+  or ``openid_credential_verifier``.
 
 
 Metadata of federation_entity Leaves
@@ -447,7 +446,7 @@ The metadata policy, when applied, makes one or more changes to the final metada
 Trust Anchors and Intermediates MUST expose the Federation Fetch endpoint, where the Subordinate Statements are requested to validate the Leaf's Entity Configuration signature.
 
 .. note::
-    The Federation Fetch endpoint MAY also publish X.509 certificates for each of the public keys of the Subordinate. Making the distribution of the issued X.509 certificates via a RESTful service.
+  The Federation Fetch endpoint MAY also publish X.509 certificates for each of the public keys of the Subordinate. Making the distribution of the issued X.509 certificates via a RESTful service.
 
 Below there is a non-normative example of an Subordinate Statement issued by an Registration Body (such as the Trust Anchor or its Intermediate) in relation to one of its Subordinates.
 
@@ -504,7 +503,6 @@ Below there is a non-normative example of an Subordinate Statement issued by an 
 
 
 .. note::
-
   **Subordinate Statement Signature**
 
   The same considerations and requirements made for the Entity Configuration
@@ -564,16 +562,16 @@ Each of these can be verified using the Subordinate Statement issued by a superi
 Each Subordinate Statement is verifiable over time and MUST have an expiration date. The revocation of each statement is verifiable in real time and online (only for remote flows) through the federation endpoints.
 
 .. note::
-    The revocation of an Entity is made with the unavailability of the Subordinate Statement related to it. If the Trust Anchor or its Intermediate doesn't publish a valid Subordinate Statement, or if it publishes an expired/invalid Subordinate Statement, the subject of the Subordinate Statement MUST be intended as not valid or revoked.
+  The revocation of an Entity is made with the unavailability of the Subordinate Statement related to it. If the Trust Anchor or its Intermediate doesn't publish a valid Subordinate Statement, or if it publishes an expired/invalid Subordinate Statement, the subject of the Subordinate Statement MUST be intended as not valid or revoked.
 
 The concatenation of the statements, through the combination of these signing mechanisms and the binding of claims and public keys, forms the Trust Chain.
 
 The Trust Chains can also be verified offline, using one of the Trust Anchor's public keys.
 
 .. note::
-    Since the Wallet Instance is not a Federation Entity, the Trust Evaluation Mechanism related to it **requires the presentation of the Wallet Attestation during the credential issuance and presentation phases**.
+  Since the Wallet Instance is not a Federation Entity, the Trust Evaluation Mechanism related to it **requires the presentation of the Wallet Attestation during the credential issuance and presentation phases**.
 
-    The Wallet Attestation conveys all the required information pertaining to the instance, such as its public key and any other technical or administrative information, without any User's personal data.
+  The Wallet Attestation conveys all the required information pertaining to the instance, such as its public key and any other technical or administrative information, without any User's personal data.
 
 
 Establishing Trust with Credential Issuers
@@ -663,8 +661,7 @@ Below is a non-normative example of a Trust Chain, composed by a JSON Array cont
 
 
 .. note::
-
-    The entire Trust Chain is verifiable by only possessing the Trust Anchor's public keys.
+  The entire Trust Chain is verifiable by only possessing the Trust Anchor's public keys.
 
 There are events where keys are unavailable to verify the entire trust chain:
 

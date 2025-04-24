@@ -103,7 +103,6 @@ Below is a non-normative example using the diagnostic notation of a CBOR-encoded
 **Final Consideration**: The presentation flow focused on the technical data exchange in proximity settings. It is crucial to recognise that supervised proximity flows involving a human verifier play a vital role in many use cases (e.g., age verification at a store, identity check by law enforcement). The human element adds a layer of identity verification through visual inspection and comparison, contributing to User Binding and overall authentication assurance aspects not fully captured in a purely technical presentation flow.
 
 .. note::
-
   During proximity presentation the Wallet Instance might not be able to fetch a fresh Wallet Attestation, in this case, the Wallet Instance SHOULD send the latest version of the Wallet Attestation. It is left up to the Relying Party to determine whether a presentation with a valid but expired Wallet Attestation is valid or not.
 
 Device Engagement
@@ -279,6 +278,5 @@ When a session is terminated, the Wallet Instance and the Relying Party Instance
 - closure of the communication channel used for data retrieval.
 
 .. note::
-
-   See :ref:`pid-eaa-data-model:mdoc-CBOR Credential Format` for the meaning of CBOR type acronyms.
+  See :ref:`pid-eaa-data-model:mdoc-CBOR Credential Format` for the meaning of CBOR type acronyms.
 

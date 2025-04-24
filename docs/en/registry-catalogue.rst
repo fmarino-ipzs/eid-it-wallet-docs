@@ -155,7 +155,7 @@ Digital Credentials Catalogue contents is secured in a JWS that contains the fol
      - REQUIRED. Unique identifier of the public key.
      - [:rfc:`7515` Section 4.1.4].
    * - **x5c**
-     - OPTIONAL. Contains the X.509 public key Certificate or Certificate chain [:rfc:`5280`] corresponding to the key used to digitally sign the JWS. When the header parameter `kid` value is present, it MUST refer to the same leaf's cryptographic public key  used with the X.509 Certificate.
+     - OPTIONAL. Contains the X.509 public key Certificate or Certificate chain [:rfc:`5280`] corresponding to the key used to digitally sign the JWS. When the header parameter `kid` value is present, it MUST refer to the same leaf's cryptographic public key used with the X.509 Certificate.
      - [:rfc:`7515` Section 4.1.6.].
    * - **cty**
      - REQUIRED. It MUST be set to ``application/json``.
@@ -322,7 +322,8 @@ The Digital Credentials Catalogue Request MUST be an HTTP GET using the applicat
     Host: www.trust-registry.eid-wallet.example.it
     Content-Type: application/jose
 
-.. note:: As a future enhancement, the Trust Anchor MAY implement a dynamic endpoint that enables filtering credentials by type, while offering pagination capabilities, to support more efficient and flexible browsing of the Digital Credentials Catalogue.
+.. note::
+  As a future enhancement, the Trust Anchor MAY implement a dynamic endpoint that enables filtering credentials by type, while offering pagination capabilities, to support more efficient and flexible browsing of the Digital Credentials Catalogue.
 
 
 Digital Credentials Catalogue Response

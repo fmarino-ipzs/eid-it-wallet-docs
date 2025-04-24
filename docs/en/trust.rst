@@ -680,14 +680,14 @@ The offline flows do not allow for real-time evaluation of an Entity's status, s
 
 
 Offline Wallet Trust Attestation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""""""""""""
 
 Given that the Wallet Instance cannot publish its metadata online at the *.well-known/openid-federation* endpoint,
 it MUST obtain a Wallet Attestation issued by its Wallet Provider. The Wallet Attestation MUST contain all the relevant information regarding the security capabilities of the Wallet Instance and its protocol related configuration. It SHOULD contain the Trust Chain related to its issuer (Wallet Provider).
 
 
 Offline Relying Party Metadata
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""""""""""
 
 Since the Federation Entity Discovery is only applicable in online scenarios, it is possible to include the Trust Chain in the presentation requests that the Relying Party may issue for a Wallet Instance.
 
@@ -708,7 +708,7 @@ The Trust Chain fast renewal process is initiated by fetching the leaf's Entity 
 
 
 Non-repudiability of the Long Lived Attestations
---------------------------------------------------
+------------------------------------------------
 
 The Trust Anchor and its Intermediate MUST expose the Federation Historical Keys endpoint, where are published all the public part of the Federation Entity Keys that are no longer used, whether expired or revoked.
 

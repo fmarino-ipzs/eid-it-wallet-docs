@@ -27,7 +27,7 @@ The following diagram depicts the Relying Party Solution High Level Architecture
   Relying Party Solution High Level Architecture
 
 Relying Party Solution Requirements
-===================================
+-----------------------------------
 
 This section lists the requirements to be met by Relying Parties and Relying Party Solutions.
 

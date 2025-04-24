@@ -58,7 +58,7 @@ The User MUST securely store the key phrase chosen from those proposed by the sy
 
 A non-normative example of the backup JWT is as the following:
 
- .. code-block::
+.. code-block::
 
   {
     "alg": "ES256",

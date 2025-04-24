@@ -30,15 +30,15 @@ Visual Identity
 The IT-Wallet System has its own Visual Identity. All actors within the ecosystem MUST ensure that their Visual Identity and that of their Technical Solutions are distinct yet compatible and cohesive with the Visual Identity of IT-Wallet System. Specifically, all Primary Actors MAY use the Official Resources related to the Visual Identity of the IT-Wallet System. Their use MUST be exclusively aimed at representing the participation in the IT-Wallet System and not at replacing the Visual Identity of their own Technical Solutions.
 
 Logo
-====
+^^^^
 
 The Logo is the official graphic element that ensures immediate recognition of the IT-Wallet System and promotes its reliability.
 
 The following requirements apply to its use in both physical and digital contexts (e.g., websites, apps, documents, printed materials, videos, etc.):
 
-- the Logo MAY be used by anyone referring to the IT-Wallet System;
+- The Logo MAY be used by anyone referring to the IT-Wallet System;
 
-- the Logo MUST be used to represent the IT-Wallet System or the participation to the IT-Wallet System and MUST NOT be used to identify a specific Technical Solution;
+- The Logo MUST be used to represent the IT-Wallet System or the participation to the IT-Wallet System and MUST NOT be used to identify a specific Technical Solution;
 
 - The Logo MUST be used exactly as provided in the official resources and MUST comply with the usage specifications outlined in the Official Resources;
 
@@ -55,7 +55,7 @@ The following requirements apply to its use in both physical and digital context
 - The Logo MAY be displayed alongside other actors' logos, trademarks, or symbols, in accordance with the coexistence specifications regarding proportions and visibility, as defined in the Official Resources.
 
 Trust Mark
-==========
+^^^^^^^^^^
 
 The Trust Mark is the official graphic element that guarantees the belonging of Primary Actors and their respective Technical Solutions to the IT-Wallet System.
 The following requirements apply to its use in both physical and digital contexts (e.g., websites, apps, documents, printed materials, videos, etc.):
@@ -77,7 +77,7 @@ The following requirements apply to its use in both physical and digital context
 - The Trust Mark MAY be displayed alongside other actors' logos, trademarks, or symbols, in accordance with the coexistence specifications regarding proportions and visibility, as defined in the Official Resources.
 
 Components
-==========
+^^^^^^^^^^
 
 Components are the elements of the IT-Wallet System that enable the User to interact with several Technical Solutions via their Wallet Instance.
 
@@ -90,7 +90,7 @@ The Official Resources provide both complex components, such as templates to sup
 - Primary Actors MUST keep components up to date, in line with the latest available version.
 
 Authentication Button
-=====================
+^^^^^^^^^^^^^^^^^^^^^
 
 The Authentication Button is a type of Engagement Button.
 Verifiers MUST make the Authentication Button available within the Discovery Page of their Technical Solutions to allow the User to get authenticated into their services through the Wallet Instance.
@@ -106,10 +106,10 @@ For further details on the use of the Authentication Button, please refer to the
 
 The Authentication Button has the following requirements:
 
-- the Authentication Button MUST be used exactly as outlined in the Official Resources;
+- The Authentication Button MUST be used exactly as outlined in the Official Resources;
 
-- the Authentication Button MUST be visually distinguishable from other Authentication Buttons or action buttons;
+- The Authentication Button MUST be visually distinguishable from other Authentication Buttons or action buttons;
 
-- the Authentication Button MUST be used only in the shapes, sizes, and proportions defined by the Official Resources and MUST NOT be altered, distorted, or hidden;
+- The Authentication Button MUST be used only in the shapes, sizes, and proportions defined by the Official Resources and MUST NOT be altered, distorted, or hidden;
 
-- the Authentication Button MUST be responsive to all screen resolutions and MUST meet minimum usability and accessibility requirements.
+- The Authentication Button MUST be responsive to all screen resolutions and MUST meet minimum usability and accessibility requirements.

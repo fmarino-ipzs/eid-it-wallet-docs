@@ -101,7 +101,7 @@ Below is a non-normative example of a Wallet Instance Revocation Response.
 
 
 Revocation Check Mechanisms
-...........................
+"""""""""""""""""""""""""""
 
 The verification of the Wallet Instance validity MUST be performed:
 

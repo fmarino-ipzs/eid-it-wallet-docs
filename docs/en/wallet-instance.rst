@@ -2,7 +2,7 @@
 
 
 Wallet Instance
-===============
+---------------
 
 The Wallet Instance establishes a strong and reliable mechanism for the User to engage in various digital transactions in a secure and privacy-preserving manner.
 

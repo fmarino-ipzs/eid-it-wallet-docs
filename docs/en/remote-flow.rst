@@ -130,76 +130,76 @@ The details of each step shown in the previous picture are described below.
       "wallet_nonce": "qPmxiNFCR3QTm19POc8u"
     }
 
-  - When the Wallet Instance capabilities discovery is not supported by Relying Party, the Wallet Instance requests the signed Request Object using the HTTP method GET.
+- When the Wallet Instance capabilities discovery is not supported by Relying Party, the Wallet Instance requests the signed Request Object using the HTTP method GET.
 
 **Step 14 (Request URI Response)**: The Relying Party issues the Request Object signing it using one of its cryptographic private keys, where their public parts have been published within its Entity Configuration (`metadata.openid_credential_verifier.jwks`). The Wallet Instance obtains the signed Request Object.
 
-  Below is a non-normative example of the Redirect URI Response:
+Below is a non-normative example of the Redirect URI Response:
 
-  .. code-block:: http
+.. code-block:: http
 
-    HTTP/1.1 200 OK
-    Content-Type: application/oauth-authz-req+jwt
+  HTTP/1.1 200 OK
+  Content-Type: application/oauth-authz-req+jwt
 
-    eyJhbGciOiJFUzI1NiIs...9t2LQ
+  eyJhbGciOiJFUzI1NiIs...9t2LQ
 
-  A non-normative example of a Request Object in the form of decoded header and payload is shown below:
+A non-normative example of a Request Object in the form of decoded header and payload is shown below:
 
-  .. code-block:: json
+.. code-block:: json
 
-    {
-      "alg": "ES256",
-      "typ": "oauth-authz-req+jwt",
-      "kid": "9tjiCaivhWLVUJ3AxwGGz_9",
-      "trust_chain": [
-        "MIICajCCAdOgAwIBAgIC...awz",
-        "MIICajCCAdOgAwIBAgIC...2w3",
-        "MIICajCCAdOgAwIBAgIC...sf2"
-      ]
-    }
+  {
+    "alg": "ES256",
+    "typ": "oauth-authz-req+jwt",
+    "kid": "9tjiCaivhWLVUJ3AxwGGz_9",
+    "trust_chain": [
+      "MIICajCCAdOgAwIBAgIC...awz",
+      "MIICajCCAdOgAwIBAgIC...2w3",
+      "MIICajCCAdOgAwIBAgIC...sf2"
+    ]
+  }
 
-  .. code-block:: json
+.. code-block:: json
 
-    {
-      "client_id": "https://relying-party.example.org",
-      "response_mode": "direct_post.jwt",
-      "response_type": "vp_token",
-      "dcql_query": {
-        "credentials": [
-          {
-            "id": "personal id data",
-            "format": "dc+sd-jwt",
-            "meta": {
-              "vct_values": [ "https://trust-registry.eid-wallet.example.it/credentials/v1.0/personidentificationdata" ]
-            },
-            "claims": [
-              {"path": ["given_name"]},
-              {"path": ["family_name"]},
-              {"path": ["personal_administrative_number"]}
-            ]
+  {
+    "client_id": "https://relying-party.example.org",
+    "response_mode": "direct_post.jwt",
+    "response_type": "vp_token",
+    "dcql_query": {
+      "credentials": [
+        {
+          "id": "personal id data",
+          "format": "dc+sd-jwt",
+          "meta": {
+            "vct_values": [ "https://trust-registry.eid-wallet.example.it/credentials/v1.0/personidentificationdata" ]
           },
-          {
-            "id": "wallet attestation",
-            "format": "dc+sd-jwt",
-            "meta": {
-              "vct_values": ["https://itwallet.registry.example.it/WalletAttestation"]
-            },
-            "claims": [
-              {"path": ["wallet_link"]},
-              {"path": ["wallet_name"]}
-            ]
-          }
-        ]
-      },
-      "response_uri": "https://relying-party.example.org/response_uri",
-      "nonce": "2c128e4d-fc91-4cd3-86b8-18bdea0988cb",
-      "wallet_nonce": "qPmxiNFCR3QTm19POc8u",
-      "state": "3be39b69-6ac1-41aa-921b-3e6c07ddcb03",
-      "iss": "https://relying-party.example.org",
-      "iat": 1672418465,
-      "exp": 1672422065,
-      "request_uri_method": "post"
-    }
+          "claims": [
+            {"path": ["given_name"]},
+            {"path": ["family_name"]},
+            {"path": ["personal_administrative_number"]}
+          ]
+        },
+        {
+          "id": "wallet attestation",
+          "format": "dc+sd-jwt",
+          "meta": {
+            "vct_values": ["https://itwallet.registry.example.it/WalletAttestation"]
+          },
+          "claims": [
+            {"path": ["wallet_link"]},
+            {"path": ["wallet_name"]}
+          ]
+        }
+      ]
+    },
+    "response_uri": "https://relying-party.example.org/response_uri",
+    "nonce": "2c128e4d-fc91-4cd3-86b8-18bdea0988cb",
+    "wallet_nonce": "qPmxiNFCR3QTm19POc8u",
+    "state": "3be39b69-6ac1-41aa-921b-3e6c07ddcb03",
+    "iss": "https://relying-party.example.org",
+    "iat": 1672418465,
+    "exp": 1672422065,
+    "request_uri_method": "post"
+  }
 
 **Steps 15-17 (WI Checks)**: The Wallet Instance verifies the Request Object, which is in the form of a signed JWT. It then processes the Relying Party metadata and applies the relevant policies to determine which Digital Credentials and User data the Relying Party is authorized to request.
 

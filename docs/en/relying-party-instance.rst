@@ -2,7 +2,7 @@
 
 
 Relying Party Instance
-=========================
+----------------------
 
 The Relying Party Instance (RPI) is a mobile or embedded application designed to request, receive, and process Digital Credentials from Wallet Instances in a trusted manner. Each RPI ensures the integrity, confidentiality and authenticity of Credential exchanges, enabling secure interactions between Users and Relying Parties.
 

@@ -1115,7 +1115,6 @@ If any errors occur during the validation of the Token Request, the Authorizatio
 
 Below is a non-normative example of an error response.
 
-
 .. code:: http
 
   HTTP/1.1 401 Unauthorized
@@ -1595,8 +1594,6 @@ The Notification Request MUST be an HTTP POST using the *application/json* media
   * - **event_description**
     - OPTIONAL. Human-readable ASCII [USASCII] text providing additional information, used to inform about the event that occurred. Values for the event_description parameter MUST NOT include characters outside the set *%x20-21 / %x23-5B / %x5D-7E*.
     - Section 10.1 of [`OpenID4VCI`_].
-
-
 
 Notification Response
 ^^^^^^^^^^^^^^^^^^^^^

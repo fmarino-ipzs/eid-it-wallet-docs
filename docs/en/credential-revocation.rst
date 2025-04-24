@@ -414,20 +414,20 @@ Below, is given a non-normative example of a single *Status Assertion Request ob
 
 .. code-block::
 
-    {
-      "alg": "ES256",
-      "typ": "status-assertion-request+jwt",
-    }
-    .
-    {
-      "iss": "0b434530-e151-4c40-98b7-74c75a5ef760",
-      "aud": "https://pid-provider.example.org/status",
-      "iat": 1698744039,
-      "exp": 1698744139,
-      "jti": "6f204f7e-e453-4dfd-814e-9d155319408c",
-      "credential_hash": $Issuer-Signed-JWT-Hash,
-      "credential_hash_alg": "sha-256"
-    }
+  {
+    "alg": "ES256",
+    "typ": "status-assertion-request+jwt",
+  }
+  .
+  {
+    "iss": "0b434530-e151-4c40-98b7-74c75a5ef760",
+    "aud": "https://pid-provider.example.org/status",
+    "iat": 1698744039,
+    "exp": 1698744139,
+    "jti": "6f204f7e-e453-4dfd-814e-9d155319408c",
+    "credential_hash": $Issuer-Signed-JWT-Hash,
+    "credential_hash_alg": "sha-256"
+  }
 
 HTTP Status Assertion Response
 ..............................
@@ -495,44 +495,44 @@ The Status Assertion MUST contain the parameters and claims defined below
     - [:rfc:`7515`], [:rfc:`7517`], `OAUTH-STATUS-ASSERTION`_.
 
 .. list-table::
-    :widths: 20 60 20
-    :header-rows: 1
+  :widths: 20 60 20
+  :header-rows: 1
 
-    * - **Payload**
-      - **Description**
-      - **Reference**
-    * - **iss**
-      - It MUST be set to the identifier of the Credential Issuer.
-      - :rfc:`9126` and :rfc:`7519`.
-    * - **iat**
-      - UNIX Timestamp with the time of JWT issuance.
-      - :rfc:`9126` and :rfc:`7519`.
-    * - **exp**
-      - UNIX Timestamp with the expiry time of the JWT. It MUST be greater than the value set for `iat`.
-      - :rfc:`9126` and :rfc:`7519`.
-    * - **credential_hash**
-      - Hash value of the Credential the Status Assertion is bound to.
-      - `OAUTH-STATUS-ASSERTION`_.
-    * - **credential_hash_alg**
-      - The Algorithm used for hashing the Credential to which the Status Assertion is bound. The value SHOULD be set to ``sha-256``.
-      - `OAUTH-STATUS-ASSERTION`_.
-    * - **credential_status_type** [#]_
-      - Numerical value indicating the validity of the Credential linked to the Status Assertion describing its state, mode, condition or stage. All values taken from IANA "OAuth Status Types" registry for Status List values (see Section 7 of `TOKEN-STATUS-LIST`_) MAY be supported. Values from ``0x00`` to ``0x02`` MUST be supported with the following meaning:
+  * - **Payload**
+    - **Description**
+    - **Reference**
+  * - **iss**
+    - It MUST be set to the identifier of the Credential Issuer.
+    - :rfc:`9126` and :rfc:`7519`.
+  * - **iat**
+    - UNIX Timestamp with the time of JWT issuance.
+    - :rfc:`9126` and :rfc:`7519`.
+  * - **exp**
+    - UNIX Timestamp with the expiry time of the JWT. It MUST be greater than the value set for `iat`.
+    - :rfc:`9126` and :rfc:`7519`.
+  * - **credential_hash**
+    - Hash value of the Credential the Status Assertion is bound to.
+    - `OAUTH-STATUS-ASSERTION`_.
+  * - **credential_hash_alg**
+    - The Algorithm used for hashing the Credential to which the Status Assertion is bound. The value SHOULD be set to ``sha-256``.
+    - `OAUTH-STATUS-ASSERTION`_.
+  * - **credential_status_type** [#]_
+    - Numerical value indicating the validity of the Credential linked to the Status Assertion describing its state, mode, condition or stage. All values taken from IANA "OAuth Status Types" registry for Status List values (see Section 7 of `TOKEN-STATUS-LIST`_) MAY be supported. Values from ``0x00`` to ``0x02`` MUST be supported with the following meaning:
 
-        - ``0x00 - VALID``: The status of the Digital Credential is valid, correct or legal.
-        - ``0x01 - INVALID``: The status of the Digital Credential is revoked, annulled, taken back, recalled or cancelled. This state is irreversible.
-        - ``0x02 - SUSPENDED``: The status of the Digital Credential is temporarily invalid, hanging, debarred from privilege. This state is reversible.
+      - ``0x00 - VALID``: The status of the Digital Credential is valid, correct or legal.
+      - ``0x01 - INVALID``: The status of the Digital Credential is revoked, annulled, taken back, recalled or cancelled. This state is irreversible.
+      - ``0x02 - SUSPENDED``: The status of the Digital Credential is temporarily invalid, hanging, debarred from privilege. This state is reversible.
 
-      - This Specification, `TOKEN-STATUS-LIST`_ .
-    * - **credential_status_detail**
-      - REQUIRED only if **credential_status_type** is not set to `0x00`. Object containing detailed information about the status of the Credential. It contains:
+    - This Specification, `TOKEN-STATUS-LIST`_ .
+  * - **credential_status_detail**
+    - REQUIRED only if **credential_status_type** is not set to `0x00`. Object containing detailed information about the status of the Credential. It contains:
 
-          - **state**: (REQUIRED). String value of the Credential status. It is used to convey a more granular representation of a Digital Credential status, for example "revoked", "annulled", "debarred", etc. or in case of application specific Credential states. The Credential Issuer MUST provide a list of status supported for the issued Credential in the Credential Issuer Metadata.
-          - **description**: (REQUIRED). String containing the description of the Credential status.
-      - `OAUTH-STATUS-ASSERTION`_.
-    * - **cnf**
-      - JSON object containing confirmation methods. The sub-member contained within `cnf` member, such as `jwk` for JWT, MUST match with the one provided within the related Digital Credential. Other confirmation methods can be utilized when the referenced Digital Credential supports them, in accordance with the relevant standards.
-      - Section 3.1 of :rfc:`7800` and Section 3.1 of :rfc:`8747`.
+        - **state**: (REQUIRED). String value of the Credential status. It is used to convey a more granular representation of a Digital Credential status, for example "revoked", "annulled", "debarred", etc. or in case of application specific Credential states. The Credential Issuer MUST provide a list of status supported for the issued Credential in the Credential Issuer Metadata.
+        - **description**: (REQUIRED). String containing the description of the Credential status.
+    - `OAUTH-STATUS-ASSERTION`_.
+  * - **cnf**
+    - JSON object containing confirmation methods. The sub-member contained within `cnf` member, such as `jwk` for JWT, MUST match with the one provided within the related Digital Credential. Other confirmation methods can be utilized when the referenced Digital Credential supports them, in accordance with the relevant standards.
+    - Section 3.1 of :rfc:`7800` and Section 3.1 of :rfc:`8747`.
 
 .. warning::
   .. [#] This specification uses ``credential_status_type`` instead of ``credential_status_validity`` currently supported in `OAUTH-STATUS-ASSERTION`_ as the value is semantically a status type and not a boolean.
@@ -739,24 +739,24 @@ Status List Token
 
  The following is an example of Status List Token before applying signature and encoding:
 
- .. code::
+.. code::
 
-    {
-      "alg": "ES256",
-      "kid": "$KID",
-      "typ": "statuslist+jwt"
-    }
-    .
-    {
-      "exp": 2291720170,
-      "iat": 1686920170,
-      "status_list": {
-        "bits": 1,
-        "lst": "eNrbuRgAAhcBXQ"
-      },
-      "sub": "https://example-issuer.com/statuslists/",
-      "ttl": 43200
-    }
+  {
+    "alg": "ES256",
+    "kid": "$KID",
+    "typ": "statuslist+jwt"
+  }
+  .
+  {
+    "exp": 2291720170,
+    "iat": 1686920170,
+    "status_list": {
+      "bits": 1,
+      "lst": "eNrbuRgAAhcBXQ"
+    },
+    "sub": "https://example-issuer.com/statuslists/",
+    "ttl": 43200
+  }
  
  
 Handling Credential Status with Status List Token
@@ -790,12 +790,12 @@ Checking Credentials Statuses
 The fetching, processing and verifying of a Status List Token may be done by either the Wallet Instance or a Relying Party. Below it is described for the Relying Party, however, the same rules would also apply to the Wallet Instance.
 
 .. _fig_entity-relation-credential-revocation-SL:
- .. figure:: ../../images/High-Level-Flow-Status-List.svg
-    :figwidth: 100%
-    :align: center
-    :target: https:https://www.plantuml.com/plantuml/svg/TOv1IyD048Nl-oiUYyUQ7z23L4Im9uiDU50fOpk7XSqapioIl--IQ27GdERmllU-sPcJUkboeEAzbEwRDGoadivf8774TygP7Nkff9mvWWnZMZ9FoXSMJvInDoki4vL261Fk7v2sEBmUMnoTl1WUpRYMUy5BsnxmnZ-5pV4fY3OH9_edJZg75h75HoM0ktdbEl9NtqnXqpJrVeKGghYQnwfUizhGY_6QTaujhcjdukhTtCIULNjT_hPZkPGk_m80
+.. figure:: ../../images/High-Level-Flow-Status-List.svg
+  :figwidth: 100%
+  :align: center
+  :target: https:https://www.plantuml.com/plantuml/svg/TOv1IyD048Nl-oiUYyUQ7z23L4Im9uiDU50fOpk7XSqapioIl--IQ27GdERmllU-sPcJUkboeEAzbEwRDGoadivf8774TygP7Nkff9mvWWnZMZ9FoXSMJvInDoki4vL261Fk7v2sEBmUMnoTl1WUpRYMUy5BsnxmnZ-5pV4fY3OH9_edJZg75h75HoM0ktdbEl9NtqnXqpJrVeKGghYQnwfUizhGY_6QTaujhcjdukhTtCIULNjT_hPZkPGk_m80
 
-    Status List Flow
+  Status List Flow
 
 HTTP Status Lists Request
 .........................
@@ -806,7 +806,7 @@ HTTP Status Lists Request
 
  The following is a non-normative example of a request for a Status List Token:
 
- .. code::
+.. code::
 
   GET /statuslists HTTP/1.1
   Host: example-issuer.com
@@ -824,7 +824,7 @@ HTTP Status Lists Response
 
  The following is a non-normative example of a response for a Status List Token with type ``application/statuslist+jwt``:
 
- .. code::
+.. code::
 
   HTTP/1.1 200 OK
   Content-Type: application/statuslist+jwt

@@ -890,7 +890,7 @@ This section provides the set of test cases for verifying conformance of a Crede
 
 
 Remote Credential Presentation Test Matrix
-..........................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This section defines the test cases about the remote presentation flow.
 
@@ -1212,7 +1212,7 @@ This section defines the test cases about the remote presentation flow.
 
 
 Proximity Credential Presentation Test Matrix
-.............................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This section defines the general test cases about the proximity presentation flow.
 

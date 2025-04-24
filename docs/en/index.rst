@@ -16,6 +16,8 @@ Index of content
   defined-terms.rst
   ssi-introduction.rst
   design.rst
+  brand-identity.rst
+  functionalities.rst
   trust.rst
   wallet-solution.rst
   issuer-solution.rst

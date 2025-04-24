@@ -2,7 +2,7 @@
 
 
 Entity Configuration of PID/(Q)EAA Providers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""""""""""""""""""""""""
 
 The PID/(Q)EAA Providers, as Federation Entity, are required to adhere to the guidelines outlined in Section :ref:`trust:Configuration of the Federation`. Specifically, they MUST provide a well-known endpoint that hosts their Entity Configuration.
 The Entity Configuration of PID/(Q)EAA Providers MUST contain the parameters defined in the Sections :ref:`trust:Entity Configuration Leaves and Intermediates` and :ref:`trust:Entity Configurations Common Parameters`.
@@ -22,7 +22,7 @@ The *openid_credential_verifier* metadata MUST contain the parameters as defined
 
 
 Metadata for oauth_authorization_server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.......................................
 
 The *oauth_authorization_server* metadata MUST contain the following parameters.
 
@@ -70,7 +70,7 @@ The *oauth_authorization_server* metadata MUST contain the following parameters.
     - JSON Web Key Set containing the cryptographic keys for the authorization server. See `OID-FED`_ Section 5.2.1 and `JWK`_.
 
 Metadata for openid_credential_issuer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.....................................
 
 The *openid_credential_issuer* metadata MUST contain the following claims.
 
@@ -140,7 +140,7 @@ The *openid_credential_issuer* metadata MUST contain the following claims.
 
 
 Example of a (Q)EAA Provider Entity Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.................................................
 
 Below is a non-normative example of an Entity Configuration of a (Q)EAA Provider containing a metadata for
 

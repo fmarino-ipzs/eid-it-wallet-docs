@@ -22,12 +22,12 @@ Further technical and operational details are discussed in the following section
 
 
 Mobile Relying Party Instance
---------------------------------
+-----------------------------
 
 A Mobile Relying Party Instance's lifecycle includes four main states: **Installed**, **Unverified**, **Verified**, and **Uninstalled**, supporting functionalities such as registration, Access Certificate reissuance, and revocation.
 
 Mobile Relying Party Instance Lifecycle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In this section, state machines are presented to explain the Mobile Relying Party Instance states, as well as their transitions and relations.
 
@@ -44,7 +44,7 @@ As shown in :numref:`fig_RelyingParty_Instance_Mobile_Lifecycle`, the Mobile Rel
 
 
 Transition to Installed
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""
 
 The state machine begins with the Relying Party Instance installation (**RPI INST** transition), where Users download and install a Relying Party Instance using the official app store of their device's operating system, leading to the **Installed** state.
 
@@ -65,7 +65,7 @@ Revocation can occur in the following cases:
 In addition, each Relying Party SHOULD set an amount of time (grace period) during which the Relying Party Instance can request presentations of Digital Credentials by authenticating itself towards a Wallet Instance using an expired Access Certificate. After this period, the Relying Party Instance MUST be de-registered (**RPI DEREG** transition) and go back to the **Installed** state. This transition implies that the Hardware Cryptographic Keys MUST be deleted.
 
 Transition to Verified
-^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 
 The Relying Party Instance needs to obtain a proper Access Certificate, which will be used to authenticate itself towards Wallet Instances. This Certificate is obtained by interacting with the Relying Party Backend, which in turns communicates with the Relying Party Instance Access Certificate Authority. Specifically, the registration transition (**RPI REG**) consists of the following subphases, leading to the **Verified** state:
 
@@ -78,7 +78,7 @@ While in this state, the Relying Party Instance can request the presentation of 
 
 
 Transition to Unverified
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 
 The expiration of the Access Certificate (**CERT EXP** transition) leads to the **Unverified** state.
 
@@ -87,12 +87,13 @@ While in this state, the Relying Party Instance can still request the presentati
 
 
 Transition to Uninstalled
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
+
 Across the **Installed**, **Verified** and **Unverified** states, the Relying Party Instance can be removed entirely through the Relying Party Instance uninstall (**RPI UNINST**) transition, leading to the **Uninstalled** state. If a Relying Party Instance is **Uninstalled**, it ends its lifecycle.
 
 
 Mobile Relying Party Instance Functionalities
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A Mobile Relying Party Instance MUST support three fundamental functionalities: **Registration**, **Access Certificate Reissuance**, and **Revocation**. Each functionality is described in detail in the following sections.
 
@@ -104,7 +105,7 @@ A Mobile Relying Party Instance MUST support three fundamental functionalities: 
 
 
 Mobile Relying Party Instance Registration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""
 
 This process allows for the registration of a Relying Party Instance with the Relying Party Backend, and the issuance of an Access Certificate that will be used for authentication purposes towards Wallet Instances during presentation flows. The process consists of two subphases:
 
@@ -184,13 +185,13 @@ Below is a non-normative example of the ``client_data`` JSON object.
 
 
 Mobile Relying Party Instance Access Certificate Reissuance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 The issuance of a new Access Certificate follows the same flow described in the :ref:`relying-party-instance:Mobile Relying Party Instance Registration` section for **Access Certificate Issuance**. Those certificates MAY be issued as short-lived (typically valid within 24 hours) or long-lived.
 
 
 Mobile Relying Party Instance Revocation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""
 
 Relying Parties MUST periodically verify the Relying Party Instance's authenticity and security.
 When security issues are detected, Relying Parties MUST revoke the Relying Party Instance, revoking its X.509 Access Certificate (in case of long-lived certificates), and in any case, Relying Parties MUST NOT allow the re-issue of certificates.
@@ -200,19 +201,19 @@ Long-lived X.509 Certificates follows the requirements about their lifecycle, de
 
 
 Web Relying Party Instance
---------------------------------
+--------------------------
 
 Web Instances operates server-side security controls that safely store secrets and cryptographic keys in a controlled environment. Web Instances MUST be registered with the Trust Anchor or Intermediary Entities, according to :ref:`trust:The Infrastructure of Trust`.
 
 
 Web Relying Party Instance Functionalities
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A Web Relying Party Instance MUST support two fundamental functionalities: **Registration** and **Revocation**. Each functionality is described in the following sections.
 
 
 Web Relying Party Instance Registration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""
 
 Web Relying Party Instances, as confidential clients, are registered directly with the Trust Anchor or an Intermediary Entity. The registration involves:
 
@@ -223,7 +224,7 @@ Web Relying Party Instances, as confidential clients, are registered directly wi
 
 
 Web Relying Party Instance Revocation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""
 
 When a Web Relying Party Instance needs to be revoked:
 

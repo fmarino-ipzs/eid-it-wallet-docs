@@ -240,10 +240,9 @@ Below is a non-normative example of an error response:
      "error_description": "User is not authorized to retrieve Wallet Instances."
    }
 
-.. _sec_ws_wallet_instance_revocation_request:
 
 Wallet Instance Revocation Request
-"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""
 
 To revoke an active Wallet Instance, a revocation request MUST be sent using the HTTP PATCH method with Content-Type set to ``application/json``. The request body MUST contain a ``status`` parameter set to ``REVOKED``.
 
@@ -251,11 +250,8 @@ To revoke an active Wallet Instance, a revocation request MUST be sent using the
 
   While PATCH is the recommended method, the revocation request MAY also be sent using the POST method, depending on implementation preferences.
 
-
-.. _sec_ws_wallet_instance_revocation_response:
-
 Wallet Instance Revocation Response
-"""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""
 
 If a Wallet Instance Revocation Request is successfully processed, the Wallet Provider provides an HTTP Response with a 204 (No Content) status code.
 
@@ -361,9 +357,6 @@ Wallet Attestation Issuance Request
 Further details on the Wallet Attestation Issuance Request are provided in the :ref:`mobile-application-instance:Mobile Application Key Binding Request` section.
 
 The ``typ`` header of the Integrity Request JWT assumes the value ``wp-war+jwt``.
-
-
-.. _wallet_attestation_issuance_response:
 
 Wallet Attestation Issuance Response
 """""""""""""""""""""""""""""""""""""

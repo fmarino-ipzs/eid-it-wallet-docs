@@ -67,7 +67,7 @@ PID/(Q)EAA SD-JWT Parameters
 
 The JOSE header contains the following mandatory parameters:
 
-.. _pid_jose_header:
+.. _table_pid_jose_header:
 
 .. list-table::
   :widths: 20 60 20
@@ -270,8 +270,6 @@ A non-normative Digital Credential metadata type is provided below.
 
 .. literalinclude:: ../../examples/vc-metadata-type.json
   :language: JSON
-
-.. _sec-pid-user-claims:
 
 PID Claims
 ----------
@@ -587,10 +585,10 @@ The mdoc data model is based on the ISO/IEC 18013-5 standard.
 The mdoc data elements MUST be encoded in CBOR as defined in :rfc:`8949`.
 
 This data model structures mdoc Digital Credentials into distinct components: namespaces (**nameSpaces**), and cryptographic proof (**issuerAuth**).
-Namespaces categorize and structure data elements (or attributes, see :ref:`Attribute_Namespaces`). While the cryptographic proof ensures integrity and authenticity through the Mobile Security Object (MSO).
+Namespaces categorize and structure data elements (or attributes, see :ref:`pid-eaa-data-model:Attribute Namespaces`). While the cryptographic proof ensures integrity and authenticity through the Mobile Security Object (MSO).
 
 The MSO securely stores cryptographic digests of attributes within the `nameSpaces`. This allows Relying Parties to validate disclosed attributes against corresponding **digestID** values without revealing the entire Credential.
-See :ref:`Mobile_Security_Object` for details.
+See :ref:`pid-eaa-data-model:Mobile Security Object` for details.
 
 An mdoc-CBOR Digital Credential MUST be compliant with the following structure:
 
@@ -609,8 +607,6 @@ An mdoc-CBOR Digital Credential MUST be compliant with the following structure:
       - [ISO 18013-5#9.1.2.4]
 
 The structure of an mdoc-CBOR Credential is further elaborated in the following sections.
-
-.. _Attribute_Namespaces:
 
 Attribute Namespaces
 --------------------------------
@@ -669,8 +665,6 @@ The following **elementIdentifiers** MUST be included in a Digital Credential en
 .. note::
       Digital Credential User-specific attributes are defined in the Catalogue of Digital Credentials.
       User-specific attributes for mdoc Digital Credentials such as those used in mDL or PID are also included by referencing the appropriate `elementIdentifiers` defined in ISO/IEC 18013-5 or the `EIDAS-ARF`_ specification.
-
-.. _Mobile_Security_Object:
 
 Mobile Security Object
 --------------------------

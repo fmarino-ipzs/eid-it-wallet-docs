@@ -1335,17 +1335,4 @@ This section defines the general test cases about the proximity presentation flo
      - System is resistant to replay attacks.
 
 
-.. .. _Trust Model: trust.html
-.. _Wallet Attestation Issuance: wallet-solution.html#wallet-attestation-issuance
-.. _Wallet Instance Initialization and Registration: wallet-solution.html#wallet-instance-initialization-and-registration
-.. _Transition to Operational: wallet-solution.html#transition-to-operational
-.. _Trusty: https://source.android.com/docs/security/features/trusty
-.. _Secure Enclave: https://support.apple.com/en-gb/guide/security/sec59b0b31ff/web
-.. _Wallet Provider metadata: wallet-solution.html#wallet-provider-metadata
-.. _Wallet Attestation Issuance endpoint: wallet-solution.html#wallet-attestation-issuance-endpoint
-.. _Federation endpoint: wallet-solution.html#federation-endpoint
-.. _Wallet Instance Functionalities: wallet-solution.html#wallet-instance-functionalities
-.. _Error Handling for Wallet Instance Management: wallet-solution.html#error-handling-for-wallet-instance-management
-.. _Error Handling for Wallet Attestation Issuance: wallet-solution.html#error-handling-for-wallet-attestation-issuance
-.. _Error Handling for Nonce Generation: wallet-solution.html#error-handling-for-nonce-generation
 

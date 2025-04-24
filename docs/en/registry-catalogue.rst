@@ -27,7 +27,7 @@ The main Entities involved in the Digital Credential Catalogue are:
   - **Authentic Sources**: The Entities that hold the original data that is attested in the Digital Credentials. They provide support to Issuers in registering the Digital Credentials in the Catalogue.
 
 
-.. _catalogue.svg:
+.. _fig_catalogue.svg:
 .. figure:: ../../images/catalogue.svg
     :figwidth: 100%
     :align: center

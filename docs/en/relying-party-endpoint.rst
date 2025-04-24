@@ -2,40 +2,38 @@
 
 
 Relying Party Endpoints
-=========================
+=======================
 
 The Relying Party MUST expose a trust endpoint adhering to the OpenID Federation 1.0 Wallet Architecture specification, facilitating the Relying Party's identity and metadata distribution. In addition, in case the Relying Party supports proximity presentation, it MUST expose a set of endpoints for handling the lifecycle of Relying Party Instances (e.g., by providing nonce generation, hardware key registration, integrity validation, and Access Certificate issuance); their specific implementation details are left to the Relying Party's discretion.
 
 
 Relying Party Federation Endpoint
------------------------------------
+---------------------------------
 
 .. include:: relying-party-entity-configuration.rst
 
-.. _sec_rpi_nonce_endpoint:
-
 Relying Party Nonce Endpoint
-----------------------------------
+----------------------------
 
 The Relying Party Nonce Endpoint allows the Relying Party Instance to request a cryptographic ``nonce`` from the Relying Party Backend. The ``nonce`` serves as an unpredictable, single-use challenge to ensure freshness and prevent replay attacks.
 
 Further details on the Nonce Request and Response are provided in the :ref:`mobile-application-instance:Mobile Application Nonce Request` and :ref:`mobile-application-instance:Mobile Application Nonce Request` Sections, respectively.
 
 Relying Party Instance Initialization Endpoint
----------------------------------------------------
+----------------------------------------------
 
 The Relying Party Instance Initialization Endpoint allows for the initialization of Relying Party Instances, consisting in the registration of a pair of long-lived, securely stored Cryptographic Hardware Keys.
 
-Further details on the Relying Party Instance Initialization Request and Response are provided in the :ref:`sec_mir_init_request` and :ref:`sec_mir_init_response` Sections, respectively.
+Further details on the Relying Party Instance Initialization Request and Response are provided in the :ref:`mobile-application-instance:Mobile Application Instance Initialization Request` and :ref:`mobile-application-instance:Mobile Application Instance Initialization Response` Sections, respectively.
 
 Relying Party Key Binding Endpoint
-----------------------------------------------
+----------------------------------
 
 The Relying Party Key Binding Endpoint enables Relying Party Instances to bind the newly created pair of keys, which will be associated with an Access Certificate, to the Relying Party Instance, by relying on a proof of possession of the Cryptographic Hardware Keys generated during the :ref:`mobile-application-instance:Mobile Application Instance Initialization` phase. Before completing the process, the Relying Party Backend also needs to verify the integrity of the Relying Party Instance.
 
 
 Relying Party Key Binding Request
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Further details on the Relying Party Key Binding Request are provided in the :ref:`mobile-application-instance:Mobile Application Key Binding Request` section.
 
@@ -44,7 +42,7 @@ The ``typ`` header of the Integrity Request JWT assumes the value ``rp-kb+jwt``.
 
 
 Relying Party Key Binding Response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Upon a successful request, the Relying Party Backend provides an HTTP Response with a ``204 No Content`` status code.
 

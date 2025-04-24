@@ -161,8 +161,6 @@ In case of Issuer Initiated flow, in addition to the Federation Check defined ab
   * MUST use the ``OAuth-Client-Attestation`` and ``OAuth-Client-Attestation-PoP`` parameters according to OAuth 2.0 Attestation-based Client Authentication [`OAUTH-ATTESTATION-CLIENT-AUTH`_], since in this flow the Pushed Authorization Endpoint is a protected endpoint.
   * specifies the types of the requested credentials using the ``authorization_details`` [RAR :rfc:`9396`] parameter and or scope parameter.
 
-.. _par_request_reqs:
-
 The PID/(Q)EAA Provider performs the following checks upon the receipt of the PAR request:
 
     1. It MUST validate the signature of the Request Object using the algorithm specified in the ``alg`` header parameter (:rfc:`9126`, :rfc:`9101`) and the public key retrieved from the Wallet Attestation (``cnf.jwk``) referenced in the Request Object, using the ``kid`` JWT header parameter.
@@ -237,8 +235,6 @@ The PID/(Q)EAA Provider returns the issued ``request_uri`` to the Wallet Instanc
 .. literalinclude:: ../../examples/par-response.json
   :language: JSON
 
-.. _iss_authz_request_reqs:
-
 **Steps 4-5 (Authorization Request)**: The Wallet Instance sends an authorization request to the PID/(Q)EAA Provider Authorization Endpoint. Since parts of this Authorization Request content, e.g., the ``code_challenge`` parameter value, are unique to a particular Authorization Request, the Wallet Instance MUST use a ``request_uri`` value once (:rfc:`9126`); The PID/(Q)EAA Provider performs the following checks upon the receipt of the Authorization Request:
 
     1. It MUST treat ``request_uri`` values as one-time use and MUST reject an expired request. However, it MAY allow for duplicate requests due to a User reloading/refreshing their user-agent (derived from :rfc:`9126`).
@@ -275,8 +271,6 @@ The PID/(Q)EAA Provider returns the issued ``request_uri`` to the Wallet Instanc
     Location: https://start.wallet.example.org?code=SplxlOBeZQQYbYS6WxSbIA&state=fyZiOL9Lf2CeKuNT2JzxiLRDink0uPcd&iss=https%3A%2F%2Feaa-provider.example.org
 
 **Steps 8-9 (DPoP Proof for Token Endpoint)**: The Wallet Instance MUST create a new key pair for the DPoP and a fresh DPoP Proof JWT following the instruction provided in the Section 4 of (:rfc:`9449`) for the token request to the PID/(Q)EAA Provider. The DPoP Proof JWT is signed using the private key for DPoP created by Wallet Instance for this scope. DPoP binds the Access Token, and optionally the Refresh Token, to a certain Wallet Instance (:rfc:`9449`) and mitigates the misuse of leaked or stolen tokens at the Credential Endpoint.
-
-.. _iss_token_request_reqs:
 
 **Step 10 (Token Request):** The Wallet Instance sends a token request to the PID/(Q)EAA Provider Token Endpoint with a *DPoP Proof JWT* and the parameters: ``code``, ``code_verifier``, and OAuth 2.0 Attestation based Client Authentication (``OAuth-Client-Attestation`` and ``OAuth-Client-Attestation-PoP``).
 
@@ -356,11 +350,9 @@ Below is a non-normative example of a Nonce Response:
 
 **Steps 14-15 (DPoP Proof for Credential Endpoint)**: The Wallet Instance for requesting the Digital Credential creates a proof of possession with ``c_nonce`` obtained in **Step 13** and using the private key used for the DPoP, signing a DPoP Proof JWT according to (:rfc:`9449`) Section 4. The ``jwk`` value in the ``proof`` parameter MUST be equal to the public key referenced in the DPoP.
 
-.. _iss_cred_request_reqs:
-
 **Step 16 (Credential Request)**: The Wallet Instance sends a request for the Digital Credential to the PID/(Q)EAA Credential endpoint. This request MUST include the Access Token, DPoP Proof JWT, credential type, proof (which demonstrates possession of the key). The proof parameter MUST be an object that contains evidence of possession of the cryptographic key material to which the issued PID/(Q)EAA Digital Credential will be bound. To verify the proof, the PID/(Q)EAA Provider conducts the following checks at the Credential endpoint:
 
- 1. the JWT proof MUST include all required claims as specified in the table of Section :ref:`Token Request <sec_token_request>`;
+ 1. the JWT proof MUST include all required claims as specified in the table of Section :ref:`pid-eaa-issuance:Token Request`;
  2. The key proof MUST be explicitly typed using header parameters as defined for the respective proof type;
  3. The header parameter alg MUST indicate a registered asymmetric digital signature algorithm, and MUST NOT be set to `none`;
  4. The signature on the key proof MUST be verified using the public key specified in the header parameter;
@@ -485,7 +477,7 @@ An Access Token obtained as a result of a Refresh Token flow MUST be limited to:
   - the Notification endpoint, to notify the deletion of a Digital Credential to the Credential Issuer;
   - the Credential endpoint, to refresh a Digital Credential that is already present in the Wallet Instance (also called Digital Credential re-issuance, see section :ref:`pid-eaa-issuance:Re-Issuance Flow`).
 
-To mitigate the impact of a stolen Refresh Token, the Refresh Tokens MUST be DPoP. These aspects are detailed and discussed in Section :ref:`Security Considerations <sec_pei_security_considerations_1>`.
+To mitigate the impact of a stolen Refresh Token, the Refresh Tokens MUST be DPoP. These aspects are detailed and discussed in Section :ref:`pid-eaa-issuance:Security Considerations`.
 
 Figure below shows how to obtain a new DPoP Access Token and a new DPoP Refresh Token to the Token Endpoint.
 
@@ -540,8 +532,6 @@ A non-normative example of a successful response is shown below.
   }
 
 If the Refresh Token is expired or invalid, the PID/(Q)EAA Provider MUST issue an error, using the error type member set to ``invalid_grant``. Therefore, to obtain the Digital Credential an issuance flow authenticating the User is required, as defined in Section :ref:`pid-eaa-issuance:Low-Level Issuance Flow`.
-
-.. _sec_pei_security_considerations_1: 
 
 Security Considerations
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -610,10 +600,8 @@ The following diagram describes the Digital Credential re-issuance flow.
   If instead, either the Digital Credential status is set to ``UPDATE``(using OAuth Status List revocation) or ``credential_status_detail.state`` set to ``UPDATE`` (using OAuth Status List revocation) the ``credential_status_detail.state`` is set to ``UPDATE``, only the Credential metadata parameters have changed. In this case, the Wallet Instance SHOULD store the new Digital Credential without requiring explicit user authorization and consent.
 
 
-.. _sec_pei_security_considerations_2: 
-
 Re-Issuance Flow: Security Considerations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To ensure the integrity and security of the re-issuance process, the following security considerations apply.
 
@@ -624,11 +612,11 @@ To ensure the integrity and security of the re-issuance process, the following s
 
 
 Credential Offer Endpoint
--------------------------------------
+-------------------------
 The Credential Offer endpoint of a Wallet is used by PID/(Q)EAA Issuer to interact with the User to initiate a Credential Issuance. The custom URL scheme ``openid-credential-offer://`` MUST be used.
 
 Credential Offer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 The Credential Offer made by PID/(Q)EAA Issuer consists of a single URI query parameter ``credential_offer``. The Credential Offer URL MAY be included in a QR Code or in an html page with an href button and MUST contain the following mandatory parameters:
 
 .. _table_credential_offer_claim:
@@ -823,8 +811,6 @@ The body of the Wallet Attestation proof of possession JWT, contained in the HTT
       - Unique identifier for the DPoP proof JWT. The value SHOULD be set using a *UUID v4* value according to [:rfc:`4122`].
       - [:rfc:`7519`. Section 4.1.7].
 
-.. _sec_par:
-
 Pushed Authorization Request (PAR) Response
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -905,10 +891,9 @@ Authorization endpoint
 The authorization endpoint is used to interact with the PID/(Q)EAA Issuer and obtain an authorization grant.
 The authorization server MUST first verify the identity of the User that own the credential.
 
-.. _sec_pei_authorization_request:
 
 Authorization Request
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 The Authorization request is issued by the Web Browser in use by the Wallet Instance, the HTTP methods **POST** or **GET** are used. When the method **POST** is used, the parameters MUST be sent using the *Form Serialization*. When the method **GET** is used, the parameters MUST be sent using the *Query String Serialization*. For more details see Section 13 of [`OIDC`_].
 
@@ -927,8 +912,6 @@ The mandatory parameters in the HTTP authentication request are specified in the
     * - **request_uri**
       - It MUST be set to the same value as obtained by PAR Response. See :ref:`Table of the HTTP PAR Response parameters <table_http_response_claim>`.
       - [:rfc:`9126`].
-
-.. _sec_pei_authorization_response:
 
 Authorization Response
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -1018,10 +1001,9 @@ Token endpoint
 The token endpoint is used by the Wallet Instance to obtain an Access Token by presenting an authorization grant, as
 defined in :rfc:`6749`. The Token Endpoint is a protected endpoint with a client authentication based on the model defined in OAuth 2.0 Attestation-based Client Authentication [`OAUTH-ATTESTATION-CLIENT-AUTH`_ ].
 
-.. _sec_token_request:
 
 Token Request
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 The request to the PID/(Q)EAA Token endpoint MUST be an HTTP request with method POST, with the body message encoded in ``application/x-www-form-urlencoded`` format. The Wallet Instance sends the Token endpoint request with ``OAuth-Client-Attestation`` and ``OAuth-Client-Attestation-PoP`` as header parameters according to `OAUTH-ATTESTATION-CLIENT-AUTH`_.
 
@@ -1305,26 +1287,19 @@ The **DPoP JWT** MUST contain the following JOSE header parameters and claims.
     - It MUST contain a **jkt** claim being JWK SHA-256 Thumbprint Confirmation Method. The value of the *jkt* member MUST be the base64url encoding (as defined in [:rfc:`7515`]) of the JWK SHA-256 Thumbprint of the DPoP public key (in JWK format) to which the Access Token is bound.
     - [:rfc:`9449`. Section 6.1] and [:rfc:`7638`].
 
-
-.. _sec_pei_nonce_endpoint:
-
 Nonce Endpoint
 --------------
 
 The Nonce Endpoint provides a ``c_nonce`` value useful to create a proof of possession of key material for the request to the Credential Endpoint, as defined in Section 7 of `OpenID4VCI`_.
 
-.. _sec_pei_nonce_request:
-
 Nonce Request
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 The request for a nonce MUST be an HTTP POST without a body addressed to the PID/(Q)EAA Issuer Nonce Endpoint mapped in the Credential Issuer Metadata.
 
 
-.. _sec_pei_nonce_response:
-
 Nonce Response
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 Nonce Response to the Wallet Instance MUST be sent using `application/json` media type. In case of Nonce Request successful, the PID/(Q)EAA Provider MUST return HTTP response with a *200 (OK)* status code.
 

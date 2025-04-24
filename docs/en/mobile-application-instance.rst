@@ -35,7 +35,7 @@ The flow is displayed in :ref:`fig_MobileApplication_Instance_Initialization_Flo
 
     **Federation Check**: The Mobile Application Instance needs to check if the Application Provider is part of the Federation, obtaining its protocol-specific Metadata. Non-normative examples of a response from the :ref:`wallet-provider-endpoint:Federation endpoint` with the **Entity Configuration** and the **Metadata** of the Application Provider are presented within the :ref:`wallet-provider-endpoint:Wallet Provider Entity Configuration` and :ref:`relying-party-entity-configuration:Entity Configuration of Relying Parties` sections.
 
-**Steps 3-5 (Nonce Retrieval)**: The Mobile Application Instance requests a one-time ``nonce`` from the **Nonce Endpoint** of the Application Provider Backend (see :ref:`wallet-provider-endpoint:Wallet Solution Nonce Endpoint` or :ref:`sec_rpi_nonce_endpoint` ). This ``nonce`` MUST be unpredictable to serve as the main defense against replay attacks. 
+**Steps 3-5 (Nonce Retrieval)**: The Mobile Application Instance requests a one-time ``nonce`` from the **Nonce Endpoint** of the Application Provider Backend (see :ref:`wallet-provider-endpoint:Wallet Solution Nonce Endpoint` or :ref:`relying-party-endpoint:Relying Party Nonce Endpoint` ). This ``nonce`` MUST be unpredictable to serve as the main defense against replay attacks. 
 
 Upon a successful request, the Application Provider generates and returns the ``nonce`` value to the Mobile Application Instance, as part of the :ref:`mobile-application-instance:Mobile Application Nonce Response`. The Application Provider MUST ensure that it is single-use and valid only within a specific time frame.
 
@@ -95,10 +95,8 @@ Upon successful initialization of the Mobile Application Instance, the Applicati
 
 .. note:: **Threat Model**: while the initialization endpoint does not necessitate authenticating the client, it is safeguarded through the use of `key_attestation`. Proper validation of this attestation permits the initialization of authentic and unaltered app instances. Any other claims submitted will not undergo validation, leading the endpoint to respond with an error. Additionally, the inclusion of a nonce helps prevent replay attacks. The authenticity of both the nonce and the ``hardware_key_tag`` is ensured by the signature found within the ``key_attestation``.
 
-.. _sec_mir_nonce_request:
-
 Mobile Application Nonce Request
--------------------------------------
+---------------------------------
 
 The Nonce Request uses the HTTP GET method.
 
@@ -109,11 +107,8 @@ Below is a non-normative example of a Nonce Request.
     GET /nonce HTTP/1.1
     Host: application-provider.example.com
 
-.. _sec_mir_nonce_response:
-
-
 Mobile Application Nonce Response
---------------------------------------
+---------------------------------
 
 Upon a successful request, the Application Provider returns an HTTP Response with a ``200 OK`` status code, with ``Content-Type`` set to ``application/json``.
 
@@ -130,9 +125,8 @@ Below is a non-normative example of a Nonce Response.
       "nonce": "d2JhY2NhbG91cmVqdWFuZGFt"
     }
 
-
 Mobile Application Nonce Error Response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If any errors occur, the Application Provider returns an error response. The response uses ``application/json`` as the ``Content-Type`` and includes the following parameters:
 
@@ -167,10 +161,8 @@ The following table lists HTTP Status Codes and related error codes that are sup
       - ``temporarily_unavailable``
       - The request cannot be fulfilled because the Nonce Endpoint is temporarily unavailable (e.g., due to maintenance or overload).
 
-.. _sec_mir_init_request:
-
 Mobile Application Instance Initialization Request
----------------------------------------------------------
+--------------------------------------------------
 
 The Instance Initialization Request uses the HTTP POST method with ``Content-Type`` set to ``application/json``.
 
@@ -208,10 +200,9 @@ Below is a non-normative example of an Instance Initialization Request.
       "hardware_key_tag": "WQhyDymFKsP95iFqpzdEDWW4l7aVna2Fn4JCeWHYtbU="
     }
 
-.. _sec_mir_init_response:
 
 Mobile Application Instance Initialization Response
----------------------------------------------------------
+---------------------------------------------------
 
 If an Instance Initialization Request is successfully validated, the Application Provider provides an HTTP Response with status code ``204 No Content``.
 
@@ -223,7 +214,7 @@ Below is a non-normative example of an Instance Initialization Response.
 
 
 Mobile Application Instance Initialization Error Response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If any errors occur, the Application Provider returns an error response. The response uses ``application/json`` as the ``Content-Type`` and includes the following parameters:
 
@@ -304,9 +295,7 @@ Below is a non-normative example of a Key Binding Request.
 
 In particular, the Key Binding Request JWT includes the following HTTP header parameters:
 
-
-.. _tbl_key_binding_request_claim:
-
+.. _table_key_binding_request_claim:
 .. list-table::
     :widths: 20 60 20
     :header-rows: 1

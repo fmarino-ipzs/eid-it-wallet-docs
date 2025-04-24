@@ -65,8 +65,6 @@ Below the table with the summary of the Federation Entity roles, mapped on the c
      - Leaf
      -
 
-.. _sec_t_general_properties:
-
 General Properties
 ------------------
 
@@ -746,7 +744,7 @@ OpenID Federation and X.509 based PKI share several things in common, as listed 
 Federation Trust Anchor and X.509 CA
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the context of OpenID Federation, the Trust Anchor plays a role similar to that of a Certificate Authority (CA) in X.509-based Public Key Infrastructures (PKIs). Both serve as foundational elements of trust within their respective systems. In this document, the term "Trust Anchor" is often used to encompass both concepts. The trust infrastructure described here aligns the OpenID Federation Trust Anchor with the X.509 PKI Certificate Authority, making therefore them a single unique entity supporting both `RFC5280`_ and OpenID Federation 1.0.
+In the context of OpenID Federation, the Trust Anchor plays a role similar to that of a Certificate Authority (CA) in X.509-based Public Key Infrastructures (PKIs). Both serve as foundational elements of trust within their respective systems. In this document, the term "Trust Anchor" is often used to encompass both concepts. The trust infrastructure described here aligns the OpenID Federation Trust Anchor with the X.509 PKI Certificate Authority, making therefore them a single unique entity supporting both `RFC 5280`_ and OpenID Federation 1.0.
 
 X.509 Certificates Issuance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -20,7 +20,7 @@ Wallet Solution Nonce Endpoint
 
 This is a RESTful API endpoint that allows the Wallet Instance to request a cryptographic nonce from the Wallet Provider. The nonce serves as an unpredictable, single-use challenge to ensure freshness and prevent replay attacks.
 
-See :ref:`pid-eaa-issuance:Nonce Request` and :ref:`pid-eaa-issuance:Nonce Response` for details on the Nonce Request and Nonce Response.
+See :ref:`credential-issuance:Nonce Request` and :ref:`credential-issuance:Nonce Response` for details on the Nonce Request and Nonce Response.
 
 Wallet Instance Management Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -191,7 +191,7 @@ The ``typ`` header of the Integrity Request JWT assumes the value ``wp-war+jwt``
 Wallet Attestation Issuance Response
 """""""""""""""""""""""""""""""""""""
 
-If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a status code of ``200 OK`` and Content-Type ``application/json``. The returned JSON Object MUST possess the ``wallet_attestations`` parameter whose value is an array of JSON Objects (see :ref:`wallet-attestation-issuance:Wallet Attestation Issuance`) containing the Wallet Attestations in JWT, SD-JWT and mdoc format signed by the Wallet Provider. The JWT formatted Wallet Attestation is to be used for the Issuance phase, as an OAuth Client Attestation, and will be sent to the Credential Issuer as discussed in :ref:`pid-eaa-issuance:PID/(Q)EAA Issuance`. The SD-JWT and mdoc formatted Wallet Attestation will instead be used during presentation respectively in the remote (:ref:`remote-flow:Remote Flow`) and proximity (:ref:`proximity-flow:Proximity Flow`) flows.
+If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a status code of ``200 OK`` and Content-Type ``application/json``. The returned JSON Object MUST possess the ``wallet_attestations`` parameter whose value is an array of JSON Objects (see :ref:`wallet-attestation-issuance:Wallet Attestation Issuance`) containing the Wallet Attestations in JWT, SD-JWT and mdoc format signed by the Wallet Provider. The JWT formatted Wallet Attestation is to be used for the Issuance phase, as an OAuth Client Attestation, and will be sent to the Credential Issuer as discussed in :ref:`credential-issuance:PID/(Q)EAA Issuance`. The SD-JWT and mdoc formatted Wallet Attestation will instead be used during presentation respectively in the remote (:ref:`remote-flow:Remote Flow`) and proximity (:ref:`proximity-flow:Proximity Flow`) flows.
 
 
 The JSON Object returned in the response has the following claim:
@@ -479,7 +479,7 @@ This description further specializes the guidelines given in ref:`pid-eaa-data-m
 
 - Have the domestic namespace ``org.iso.18013.5.1.it``;
 - Have **docType** set to ``org.iso.18013.5.1.it.WalletAttestation``; and
-- Have **issuerAuth** as described in :ref:`pid-eaa-data-model:Mobile security Object`.
+- Have **issuerAuth** as described in :ref:`credential-data-model:Mobile security Object`.
 
 The ``nameSpaces`` for the domestic nameSpace Json Objects are defined as follows:
 

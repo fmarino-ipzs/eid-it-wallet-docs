@@ -164,7 +164,7 @@ The Instance Initialization Request uses the HTTP POST method with ``Content-Typ
 
 The Instance Initialization Request body contains the following claims:
 
-.. _table_http_request_claim:
+
 .. list-table::
     :widths: 20 60 20
     :header-rows: 1

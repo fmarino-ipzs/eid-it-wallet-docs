@@ -20,12 +20,12 @@ Index of content
   functionalities.rst
   trust.rst
   wallet-solution.rst
-  issuer-solution.rst
+  credential-issuer-solution.rst
   relying-party-solution.rst
   authentic-sources.rst
-  pid-eaa-data-model.rst
-  pid-eaa-issuance.rst
-  pid-eaa-presentation.rst
+  credential-data-model.rst
+  credential-issuance.rst
+  credential-presentation.rst
   credential-revocation.rst
   backup-restore.rst
   registry-catalogue.rst

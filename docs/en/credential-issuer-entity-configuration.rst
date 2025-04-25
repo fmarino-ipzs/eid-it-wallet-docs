@@ -116,8 +116,8 @@ The *openid_credential_issuer* metadata MUST contain the following claims.
                 - **name**: String value of a display name for the Credential.
                 - **locale**: String value that identifies the language of this object represented as a language tag taken from values defined in *BCP47* :rfc:`5646`. There MUST be only one object for each language identifier.
 
-        - **vct**: REQUIRED only if ``format`` is set to "*dc+sd-jwt*". As defined in [:ref:`pid-eaa-data-model:SD-JWT-VC Credential Format`].
-        - **doctype**: REQUIRED only if ``format`` is set to "*mso_mdoc*". As defined in [:ref:`pid-eaa-data-model:mDoc-CBOR Credential Format`].
+        - **vct**: REQUIRED only if ``format`` is set to "*dc+sd-jwt*". As defined in [:ref:`credential-data-model:SD-JWT-VC Credential Format`].
+        - **doctype**: REQUIRED only if ``format`` is set to "*mso_mdoc*". As defined in [:ref:`credential-data-model:mDoc-CBOR Credential Format`].
         - **claims**: Array of JSON object each describing how a certain claim related to the Credential MUST be displayed to the User. This Array lists the claims in the order they MUST be displayed by the Wallet. To provide detailed information about the claim, the innermost value MUST contain at least the following parameters. See `OpenID4VCI`_ Section A.3.2.
 
             - **path**: It contains the pointer that specifies the path to a specific claim within the Credential as defined in Appendix C of `OpenID4VCI`_.

@@ -12,6 +12,6 @@ The ``/.well-known/openid-federation`` endpoint serves as the discovery mechanis
   :maxdepth: 1
 
   wallet-provider-entity-configuration.rst
-  pid-eaa-entity-configuration.rst
+  credential-issuer-entity-configuration.rst
   relying-party-entity-configuration.rst
 

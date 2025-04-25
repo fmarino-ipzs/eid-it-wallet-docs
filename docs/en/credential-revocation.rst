@@ -42,7 +42,7 @@ Credential Transition to Issued
 
 For the state machine to start, the Wallet Instance MUST be in either the **Operational** or **Valid** state, enabling Digital Credentials to be issued to it.
 The state machine begins with the **Issued** state, when an issuance process is triggered and, as a result, a Digital Credential is issued to the
-Wallet Instance (**PID/(Q)EAA ISS**). Please refer to :ref:`pid-eaa-issuance:PID/(Q)EAA Issuance`.
+Wallet Instance (**PID/(Q)EAA ISS**). Please refer to :ref:`credential-issuance:PID/(Q)EAA Issuance`.
 
 Credential Transition to Valid
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -205,7 +205,7 @@ The User's death triggers a change in the validity status of the User's identifi
 Status Update by Wallet Instance
 """"""""""""""""""""""""""""""""
 
-When the User deletes a Digital Credential from the Wallet Instance, the Wallet Instance MUST notify this event to the Credential Issuer and the Credential Issuer MUST revoke the Digital Credential. To notify this event, the Wallet Instance MUST use the *Notification Endpoint* described in Section :ref:`pid-eaa-issuance:Notification Endpoint` using the parameter ``event`` set with the value ``credential_deleted``.
+When the User deletes a Digital Credential from the Wallet Instance, the Wallet Instance MUST notify this event to the Credential Issuer and the Credential Issuer MUST revoke the Digital Credential. To notify this event, the Wallet Instance MUST use the *Notification Endpoint* described in Section :ref:`credential-issuance:Notification Endpoint` using the parameter ``event`` set with the value ``credential_deleted``.
 
 When the revoked Credential is the PID, the Credential Issuer MUST send a notification of this event to the User within 24 hours.
 For any other Credential different from the PID, the Credential Issuer SHOULD send a notification of this event to the User. The notification to the User might be implemented in several ways, such as using a User's email address, telephone number, or any other verified and secure communication channel, and MUST include all the information about the Credential revocation status. The method used for the notification to the User is out of scope of the current technical implementation profile. When the revocation occurs, the Credential Issuer MUST update the status of the Digital Credential accordingly. When the Notification Response sent by the Credential Issuer is succesfully received by the Wallet Instance, the Wallet Instance MUST delete the Digital Credential.

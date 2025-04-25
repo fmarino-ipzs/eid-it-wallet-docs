@@ -142,7 +142,7 @@ The following diagram shows the *Issuance flow*.
 Once *User Request flow* is completed, the Wallet Instance processes the Metadata of the PID/(Q)EAA Provider as defined in Section :ref:`trust:Trust Evaluation Mechanism` .
 
 .. note::
-  **Federation Check:** The Wallet Instance must verify whether the PID/(Q)EAA Provider is a member of the Federation, obtaining its protocol specific Metadata. A non-normative example of a response from the endpoint **.well-known/openid-federation** with the **Entity Configuration** and the **Metadata** of the PID/(Q)EAA Provider is represented within the section :ref:`pid-eaa-entity-configuration:Entity Configuration of PID/(Q)EAA Providers`.
+  **Federation Check:** The Wallet Instance must verify whether the PID/(Q)EAA Provider is a member of the Federation, obtaining its protocol specific Metadata. A non-normative example of a response from the endpoint **.well-known/openid-federation** with the **Entity Configuration** and the **Metadata** of the PID/(Q)EAA Provider is represented within the section :ref:`credential-issuer-entity-configuration:Entity Configuration of PID/(Q)EAA Providers`.
 
 In case of Issuer Initiated flow, in addition to the Federation Check defined above, the Wallet Instance MUST execute the following checks on the Credential Offer parameters:
 
@@ -346,7 +346,7 @@ Below is a non-normative example of a Nonce Response:
 
 **Step 16 (Credential Request)**: The Wallet Instance sends a request for the Digital Credential to the PID/(Q)EAA Credential endpoint. This request MUST include the Access Token, DPoP Proof JWT, credential type, proof (which demonstrates possession of the key). The proof parameter MUST be an object that contains evidence of possession of the cryptographic key material to which the issued PID/(Q)EAA Digital Credential will be bound. To verify the proof, the PID/(Q)EAA Provider conducts the following checks at the Credential endpoint:
 
- 1. the JWT proof MUST include all required claims as specified in the table of Section :ref:`pid-eaa-issuance:Token Request`;
+ 1. the JWT proof MUST include all required claims as specified in the table of Section :ref:`credential-issuance:Token Request`;
  2. The key proof MUST be explicitly typed using header parameters as defined for the respective proof type;
  3. The header parameter alg MUST indicate a registered asymmetric digital signature algorithm, and MUST NOT be set to `none`;
  4. The signature on the key proof MUST be verified using the public key specified in the header parameter;
@@ -395,8 +395,8 @@ without encoding and signature. The JWT header:
 **Steps 17-21 (Credential Response)**: The PID/(Q)EAA Provider MUST validate the *DPoP JWT Proof* based on the steps defined in Section 4.3 of (:rfc:`9449`) and whether the *Access Token* is valid and suitable for the requested PID/(Q)EAA. The PID/(Q)EAA Provider MUST validate the proof of possession for the key material the new Credential SHALL be bound to, according to `OpenID4VCI`_ Section 8.2.2. If all checks succeed, the PID/(Q)EAA Provider creates a new Credential bound to the key material and provides it to the Wallet Instance. The Wallet Instance MUST perform the following checks before proceeding with the secure storage of the PID/(Q)EAA:
 
     1. It MUST check that the PID/(Q)EAA Credential Response contains all the mandatory parameters and values are validated according to :ref:`Table of the Credential response parameters <table_credential_response_claim>`.
-    2. It MUST check the PID/(Q)EAA integrity by verifying the signature using the algorithm specified in the ``alg`` header parameter of SD-JWT (:ref:`pid-eaa-data-model:PID/(Q)EAA Data Model`) and the public key that is identified using the ``kid`` header of the SD-JWT.
-    3. It MUST check that the received PID/(Q)EAA (in credential claim) matches the requested credential type and complies with the specific schema of that Credential defined in :ref:`pid-eaa-data-model:PID/(Q)EAA Data Model`.
+    2. It MUST check the PID/(Q)EAA integrity by verifying the signature using the algorithm specified in the ``alg`` header parameter of SD-JWT (:ref:`credential-data-model:PID/(Q)EAA Data Model`) and the public key that is identified using the ``kid`` header of the SD-JWT.
+    3. It MUST check that the received PID/(Q)EAA (in credential claim) matches the requested credential type and complies with the specific schema of that Credential defined in :ref:`credential-data-model:PID/(Q)EAA Data Model`.
     4. It MUST process and verify the PID/(Q)EAA in SD-JWT VC format (according to `SD-JWT`_ Section 5.) or mdoc-CBOR format.
     5. It MUST verify the Trust Chain in the header of SD-JWT VC to verify that the PID/(Q)EAA Provider is trusted.
 
@@ -428,7 +428,7 @@ Below is a non-normative example of a successful response containing a Credentia
 
 
 .. note::
-  If the requested Credential cannot be issued immediately and requires more time, the PID/(Q)EAA Provider SHOULD support the Deferred Flow (step 24) as specified in Section :ref:`pid-eaa-issuance:Deferred Endpoint`.
+  If the requested Credential cannot be issued immediately and requires more time, the PID/(Q)EAA Provider SHOULD support the Deferred Flow (step 24) as specified in Section :ref:`credential-issuance:Deferred Endpoint`.
 
 **Step 22 (Notification Request)**: According to Section 10.1 of [`OpenID4VCI`_], the Wallet sends an HTTP POST request to the Notification Endpoint using the *application/json* media type as in the following non-normative example.
 
@@ -466,9 +466,9 @@ An Access Token obtained as a result of a Refresh Token flow MUST be limited to:
 
   - the Deferred endpoint to obtain a new Digital Credential after time set in the parameter ``lead_time`` or when it is notified as ready to be issued;
   - the Notification endpoint, to notify the deletion of a Digital Credential to the Credential Issuer;
-  - the Credential endpoint, to refresh a Digital Credential that is already present in the Wallet Instance (also called Digital Credential re-issuance, see section :ref:`pid-eaa-issuance:Re-Issuance Flow`).
+  - the Credential endpoint, to refresh a Digital Credential that is already present in the Wallet Instance (also called Digital Credential re-issuance, see section :ref:`credential-issuance:Re-Issuance Flow`).
 
-To mitigate the impact of a stolen Refresh Token, the Refresh Tokens MUST be DPoP. These aspects are detailed and discussed in Section :ref:`pid-eaa-issuance:Security Considerations`.
+To mitigate the impact of a stolen Refresh Token, the Refresh Tokens MUST be DPoP. These aspects are detailed and discussed in Section :ref:`credential-issuance:Security Considerations`.
 
 Figure below shows how to obtain a new DPoP Access Token and a new DPoP Refresh Token to the Token Endpoint.
 
@@ -522,7 +522,7 @@ A non-normative example of a successful response is shown below.
       "expires_in": 3600,
   }
 
-If the Refresh Token is expired or invalid, the PID/(Q)EAA Provider MUST issue an error, using the error type member set to ``invalid_grant``. Therefore, to obtain the Digital Credential an issuance flow authenticating the User is required, as defined in Section :ref:`pid-eaa-issuance:Low-Level Issuance Flow`.
+If the Refresh Token is expired or invalid, the PID/(Q)EAA Provider MUST issue an error, using the error type member set to ``invalid_grant``. Therefore, to obtain the Digital Credential an issuance flow authenticating the User is required, as defined in Section :ref:`credential-issuance:Low-Level Issuance Flow`.
 
 Security Considerations
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -547,7 +547,7 @@ Re-Issuance Flow
 
 Re-issuance involves replacing Digital Credentials already stored in a Wallet Instance with new ones of the same document type. The new Digital Credentials MUST be issued by the same Credential Issuers that originally provided the existing ones to the same Wallet Instance.
 
-To facilitate this, particularly in scenarios where User authentication is not strictly required, a Refresh Token (RT) flow MAY be used (see Section :ref:`pid-eaa-issuance:Refresh Token Flow` for more details). An Access Token obtained as a result of a Refresh Token flow MUST NOT be used to issue a Digital Credential that is not present in the Wallet Instance (first-time-issuance). The Refresh Token mechanism enables automated Credential replacement, streamlining the process for both the Credential Issuer and the User.
+To facilitate this, particularly in scenarios where User authentication is not strictly required, a Refresh Token (RT) flow MAY be used (see Section :ref:`credential-issuance:Refresh Token Flow` for more details). An Access Token obtained as a result of a Refresh Token flow MUST NOT be used to issue a Digital Credential that is not present in the Wallet Instance (first-time-issuance). The Refresh Token mechanism enables automated Credential replacement, streamlining the process for both the Credential Issuer and the User.
 
 The re-issuance process outlined in this section is limited to the following scenarios:
 
@@ -581,8 +581,8 @@ The following diagram describes the Digital Credential re-issuance flow.
 
      the Wallet Instance MUST check if the related Access Tokens are still valid. If the Access Token is valid, then step 3 MAY be skipped.
 
-3. If the Access Token is expired and the Wallet Instance still has a valid Refresh Token, the Wallet Instance MUST obtain a new Access Token starting a Refresh Token Flow, according to Section :ref:`pid-eaa-issuance:Refresh Token Flow`. The Refresh Token Flow enables the Wallet Instance to obtain a new Refresh Token and a new DPoP Access Token to refresh the Digital Credential. If the Refresh Token is expired, a new Issuance Flow authenticating the User is required.
-4. The Wallet Instance MUST use a valid DPoP Access Token to retrieve the new Digital Credential requesting it to the Credential endpoint following the steps from 12 to 22 of Figure 9 in Section :ref:`pid-eaa-issuance:Low-Level Issuance Flow`. When the new Digital Credential is successfully stored in the secure storage, the Wallet Instance MUST delete the previous one.
+3. If the Access Token is expired and the Wallet Instance still has a valid Refresh Token, the Wallet Instance MUST obtain a new Access Token starting a Refresh Token Flow, according to Section :ref:`credential-issuance:Refresh Token Flow`. The Refresh Token Flow enables the Wallet Instance to obtain a new Refresh Token and a new DPoP Access Token to refresh the Digital Credential. If the Refresh Token is expired, a new Issuance Flow authenticating the User is required.
+4. The Wallet Instance MUST use a valid DPoP Access Token to retrieve the new Digital Credential requesting it to the Credential endpoint following the steps from 12 to 22 of Figure 9 in Section :ref:`credential-issuance:Low-Level Issuance Flow`. When the new Digital Credential is successfully stored in the secure storage, the Wallet Instance MUST delete the previous one.
 
 .. note::
   Regardless of the Digital Credental revocation mechanism supported, if either the Digital Credential status is set to ``ATTRIBUTE_UPDATE`` (using OAuth Status List revocation) or ``credential_status_detail.state`` is set to ``ATTRIBUTE_UPDATE`` (using OAuth Status List revocation) the User's attribute set, in the refreshed Digital Credential, doesn't match the one in the stored Digital Credential. In this case, the Wallet Instance MUST request the User's authorization to store the new refreshed Digital Credential. 
@@ -1412,10 +1412,10 @@ The Credential Response contains the following parameters:
     - REQUIRED if ``credentials`` is not present, otherwise it MUST NOT be present. The amount of time (in seconds) required before making a Deferred Credential Request.
     - This Specification.
   * - **notification_id**
-    - OPTIONAL. String identifying an issued Credential that the Wallet includes in the Notification Request as defined in Section :ref:`pid-eaa-issuance:Notification Request`. It MUST NOT be present if the ``credentials`` parameter is not present.
+    - OPTIONAL. String identifying an issued Credential that the Wallet includes in the Notification Request as defined in Section :ref:`credential-issuance:Notification Request`. It MUST NOT be present if the ``credentials`` parameter is not present.
     - Section 8.3 of [`OpenID4VCI`_].
   * - **transaction_id**
-    - REQUIRED if ``credentials`` is not present, otherwise it MUST NOT be present. String identifying a deferred issuance transaction that the Wallet includes in the subsequent Credential Request as defined in Section :ref:`pid-eaa-issuance:Deferred Endpoint`. It MUST be invalidated after the User obtains the Credential.
+    - REQUIRED if ``credentials`` is not present, otherwise it MUST NOT be present. String identifying a deferred issuance transaction that the Wallet includes in the subsequent Credential Request as defined in Section :ref:`credential-issuance:Deferred Endpoint`. It MUST be invalidated after the User obtains the Credential.
     - Section 8.3 of [`OpenID4VCI`_].
 
 In case of the Credential Request does not contain a valid Access Token, the Credential Endpoint returns an error response such as defined in Section 3 of [:rfc:`6750`].
@@ -1521,7 +1521,7 @@ Upon receipt of the notification (by the Wallet Instance and/or by the PID/(Q)EA
 
 The Wallet Instance MUST present to the Deferred Endpoint an Access Token that is valid for the issuance of the Digital Credential previously requested at the Credential Endpoint.
 
-If the ``lead_time`` parameter value results as less than the expiration time set for the Access Token, the Wallet Instance SHOULD use the Access Token. Otherwise, the Wallet Instance MAY obtain a new Access Token following the Refresh Token flow (see Section :ref:`pid-eaa-issuance:Refresh Token Flow` for more details). If the Refresh Token flow fails, the Wallet Instance needs to submit a new authentication request.
+If the ``lead_time`` parameter value results as less than the expiration time set for the Access Token, the Wallet Instance SHOULD use the Access Token. Otherwise, the Wallet Instance MAY obtain a new Access Token following the Refresh Token flow (see Section :ref:`credential-issuance:Refresh Token Flow` for more details). If the Refresh Token flow fails, the Wallet Instance needs to submit a new authentication request.
 
 The Deferred Credential Request MUST be an HTTP POST request. It MUST be sent using the ``application/json`` media type.
 The following parameter is used in the Deferred Credential Request:
@@ -1554,7 +1554,7 @@ The following is a non-normative example of a Deferred Credential Request:
 Deferred Response
 ^^^^^^^^^^^^^^^^^
 
-The Deferred Credential Response MUST be sent using the `application/json`` media type. If the Digital Credential is available, the Deferred Credential Response MUST use the ``credentials`` and ``notification_id`` parameters as defined in Section :ref:`pid-eaa-issuance:Credential Response`. If the Deferred Credential Request is invalid or the Digital Credential is not available, the Deferred Credential Error Response MUST be sent to the Wallet Instance according to Section 9.3 of `OpenID4VCI`_.
+The Deferred Credential Response MUST be sent using the `application/json`` media type. If the Digital Credential is available, the Deferred Credential Response MUST use the ``credentials`` and ``notification_id`` parameters as defined in Section :ref:`credential-issuance:Credential Response`. If the Deferred Credential Request is invalid or the Digital Credential is not available, the Deferred Credential Error Response MUST be sent to the Wallet Instance according to Section 9.3 of `OpenID4VCI`_.
 
 Notification endpoint
 ---------------------

@@ -582,10 +582,10 @@ The mdoc data model is based on the ISO/IEC 18013-5 standard.
 The mdoc data elements MUST be encoded in CBOR as defined in :rfc:`8949`.
 
 This data model structures mdoc Digital Credentials into distinct components: namespaces (**nameSpaces**), and cryptographic proof (**issuerAuth**).
-Namespaces categorize and structure data elements (or attributes, see :ref:`pid-eaa-data-model:Attribute Namespaces`). While the cryptographic proof ensures integrity and authenticity through the Mobile Security Object (MSO).
+Namespaces categorize and structure data elements (or attributes, see :ref:`credential-data-model:Attribute Namespaces`). While the cryptographic proof ensures integrity and authenticity through the Mobile Security Object (MSO).
 
 The MSO securely stores cryptographic digests of attributes within the `nameSpaces`. This allows Relying Parties to validate disclosed attributes against corresponding **digestID** values without revealing the entire Credential.
-See :ref:`pid-eaa-data-model:Mobile Security Object` for details.
+See :ref:`credential-data-model:Mobile Security Object` for details.
 
 An mdoc-CBOR Digital Credential MUST be compliant with the following structure:
 

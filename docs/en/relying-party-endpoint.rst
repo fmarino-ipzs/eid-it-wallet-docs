@@ -11,7 +11,8 @@ The Relying Party MUST expose a trust endpoint adhering to the OpenID Federation
 Relying Party Federation Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: relying-party-entity-configuration.rst
+The Relying Party MUST provide its Entity Configuration through the ``/.well-known/openid-federation`` endpoint, according to Section :ref:`trust:Entity Configuration`. Technical details are provided in Section :ref:`relying-party-entity-configuration:Entity Configuration of Relying Parties`.
+
 
 Relying Party Nonce Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

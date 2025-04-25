@@ -32,6 +32,7 @@ Index of content
   e-service-pdnd-catalogue.rst
   e-service-pdnd.rst
   mobile-application-instance.rst
+  entity-configurations.rst
   algorithms.rst
   security-privacy-considerations.rst
   log-retention-policy.rst

@@ -271,6 +271,8 @@ Entity Configuration and within the Subordinate Statement issued by a immediate 
 
 The Entity Configuration MAY also contain one or more Trust Marks.
 
+Technical details about Entity Configuration of Wallet Provider, Credential Issuer and Relying Party are given in Section :ref:`entity-configurations:Entity Configurations`.
+
 .. note::
   **Entity Configuration Signature**
 

@@ -20,7 +20,7 @@ Wallet Solution Nonce Endpoint
 
 This is a RESTful API endpoint that allows the Wallet Instance to request a cryptographic nonce from the Wallet Provider. The nonce serves as an unpredictable, single-use challenge to ensure freshness and prevent replay attacks.
 
-See :ref:`credential-issuance:Nonce Request` and :ref:`credential-issuance:Nonce Response` for details on the Nonce Request and Nonce Response.
+See :ref:`mobile-application-instance:Mobile Application Nonce Request` and :ref:`mobile-application-instance:Mobile Application Nonce Response` for details on the Nonce Request and Nonce Response.
 
 Wallet Instance Management Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

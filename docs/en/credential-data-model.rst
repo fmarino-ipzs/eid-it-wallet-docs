@@ -98,6 +98,7 @@ The JWT payload contains the following claims. Some of these claims can be discl
 
 .. _table_sd-jwt-vc_parameters:
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -143,13 +144,16 @@ The JWT payload contains the following claims. Some of these claims can be discl
           * ``trust_framework``: String identifying the trust framework used for User authentication. It MUST be set using one of the values described in the `trust_frameworks_supported` map provided within the Credential Issuer Metadata.
           * ``assurance_level``: String identifying the level of identity assurance guaranteed during the User authentication process.
           * ``evidence``: Each entry of the array MUST contain the following members:
-              - ``type``: It represents evidence type. It MUST be set to ``vouch``.
-              - ``time``: UNIX Timestamps with the time of the authentication or verification.
-              - ``attestation``: It MUST contain the following members:
-                  - ``type``: It MUST be set to ``digital_attestation``.
-                  - ``reference_number``: identifier of the authentication or verification response.
-                  - ``date_of_issuance``: date of issuance of the attestation.
-                  - ``voucher``: It MUST contains ``organization`` claim.
+
+            - ``type``: It represents evidence type. It MUST be set to ``vouch``.
+            - ``time``: UNIX Timestamps with the time of the authentication or verification.
+            - ``attestation``: It MUST contain the following members:
+
+                - ``type``: It MUST be set to ``digital_attestation``.
+                - ``reference_number``: identifier of the authentication or verification response.
+                - ``date_of_issuance``: date of issuance of the attestation.
+                - ``voucher``: It MUST contains ``organization`` claim.
+
       - `OIDC-IDA`_.
     * - **_sd**
       - [NSD]. REQUIRED. Array of strings, where each string represents a digest of a Disclosure.
@@ -188,6 +192,7 @@ Digital Credential Metadata Type
 The Metadata type document MUST be a JSON object and contains the following parameters.
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -220,11 +225,13 @@ The Metadata type document MUST be a JSON object and contains the following para
 
           * ``trust_framework``: MUST contain trust framework used for digital authentication towards Authentic Source system.
           * ``authentic_source``: MUST contain the following claims related to information about the Authentic Source:
+
                * ``organization_name`` name of the Authentic Source.
                * ``organization_code`` code identifier of the Authentic Source.
                * ``homepage_uri`` uri pointing to the Authentic Source's homepage.
                * ``contacts`` contact list for info and assistance.
                * ``logo_uri`` URI pointing to the logo image.
+
       - This specification
     * - **display**
       - REQUIRED. Array of objects, one for each language supported, containing display information for the Digital Credential type. It contains for each object the following properties:
@@ -233,21 +240,26 @@ The Metadata type document MUST be a JSON object and contains the following para
           * ``name``: human-readable label for the Digital Credential type. [REQUIRED].
           * ``description``: human-readable description for the Digital Credential type. [REQUIRED].
           * ``rendering``: object containing rendering methods supported by the Digital Credential type. [REQUIRED]. The rendering method `svg_template` MUST be supported.
-              The ``svg_templates`` array of objects contains for each SVG template supported the following properties:
-                  * ``uri``: URI pointing to the SVG template. [REQUIRED].
-                  * ``uri#integrity``: integrity metadata as defined in Section 3 of `W3C-SRI`_. [REQUIRED].
-                  * ``properties``: object containing SVG template properties. This property is REQUIRED if more than one SVG template is present. The object MUST contain at least one of the properties defined in `SD-JWT-VC`_ Section 8.1.2.1.
+            
+            The ``svg_templates`` array of objects contains for each SVG template supported the following properties:
 
-              If rendering method `simple` is also supported, the ``simple`` object contains the following properties:
-                  * ``logo``: object containing information about the logo to display. This property is REQUIRED. The object contains the following sub-values:
-                      * ``uri``: URI pointing to the logo image. [REQUIRED]
-                      * ``uri#integrity``: integrity metadata as defined in Section 3 of `W3C-SRI`_. [REQUIRED].
-                      * ``alt_text``: A string containing alternative text to display instead of the logo image. [OPTIONAL].
-                  * ``background_color``: RGB color value as defined in `W3C.CSS-COLOR`_ for the background of the Digital Credential. [OPTIONAL].
-                  * ``text_color``: RGB color value as defined in `W3C.CSS-COLOR`_ for the text of the Digital Credential. [OPTIONAL].
+                * ``uri``: URI pointing to the SVG template. [REQUIRED].
+                * ``uri#integrity``: integrity metadata as defined in Section 3 of `W3C-SRI`_. [REQUIRED].
+                * ``properties``: object containing SVG template properties. This property is REQUIRED if more than one SVG template is present. The object MUST contain at least one of the properties defined in `SD-JWT-VC`_ Section 8.1.2.1.
+
+            If rendering method `simple` is also supported, the ``simple`` object contains the following properties:
+
+                * ``logo``: object containing information about the logo to display. This property is REQUIRED. The object contains the following sub-values:
+
+                    * ``uri``: URI pointing to the logo image. [REQUIRED]
+                    * ``uri#integrity``: integrity metadata as defined in Section 3 of `W3C-SRI`_. [REQUIRED].
+                    * ``alt_text``: A string containing alternative text to display instead of the logo image. [OPTIONAL].
+
+                * ``background_color``: RGB color value as defined in `W3C.CSS-COLOR`_ for the background of the Digital Credential. [OPTIONAL].
+                * ``text_color``: RGB color value as defined in `W3C.CSS-COLOR`_ for the text of the Digital Credential. [OPTIONAL].
 
           .. note::
-            The use of the SVG template is recommended for all applications that support it.
+            The use of the SVG template is RECOMMENDED for all applications that support it.
 
       - [`SD-JWT-VC`_] Section 8.
     * - **claims**

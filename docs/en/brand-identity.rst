@@ -21,7 +21,7 @@ Naming
 
 - The hyphen (“-”) between "IT" and "Wallet" MUST be used without any spacing;
 
-- The correct pronunciation of "IT" MUST be followed, with the two letters "I" and "T" pronounced separately. In Italian, the correct pronunciation is /i ti/, not /it/, while in English, it is /ˌaɪ ˈtiː/, not /ɪt/, /aɪt/, or /ɪti/.
+- The correct pronunciation of "IT" MUST be followed, with the two letters "I" and "T" pronounced separately. In Italian, the correct pronunciation is /i ti/, not /it/, while in English, it is /ai ti/, not /it/, /ait/, or /iti/.
 
 
 Visual Identity

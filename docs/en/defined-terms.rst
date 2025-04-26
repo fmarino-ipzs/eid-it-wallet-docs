@@ -289,6 +289,7 @@ Below is the description of acronyms and definitions which are useful for furthe
 Below are the main defined terms and definitions related to User Experience aspects:
 
 .. list-table::
+  :widths: 20 80 20
   :header-rows: 1
 
   * - Name
@@ -296,49 +297,49 @@ Below are the main defined terms and definitions related to User Experience aspe
     - Notes
   * - Authentication Button
     - The Engagement Button that enables the User to access the Authentication process and use the services provided by Verifiers.
-    -
+    - 
   * - Brand Identity
     - Collection of visual, verbal, and strategic elements that a service, a product or an entity uses to present itself to the User and to distinguish itself from others.
-    -
+    - 
   * - Catalog
     - Section of the Wallet Instance that displays the list of all the available Digital Credentials that can be obtained through the IT-Wallet Instance, and from which it is possible to start the issuing process.
-    -
+    - 
   * - Call To Action
     - A clear and direct suggestion that encourages users to take a specific action. It can be a button, a link, or another element guiding the user toward a particular goal.
-    -
+    - 
   * - Detailed View
     - Extended display mode of the Digital Credentials, showing all the Attributes included.
-    -
+    - 
   * - Discovery Page
     - It's the page of the Touchpoint of the Relying Party where the User lands to access their authenticated area, and it has the goal to show the User all the Authentication methods available.
-    -
+    - 
   * - Engagement Button
     - Interactive element of the Interface that allows the User to trigger a process (e.g. to Authenticate, to request the issuance of a Digital Credential, etc.).
-    -
+    - 
   * - Interaction Model
     - A set of characteristics that define how the User interacts with the Interface of one or multiple Touchpoints in order to complete a task or operation and achieve a specific goal.
-    -
+    - 
   * - Interface
     - The set of graphic, typographical and interactive elements through which the User interacts with the Touchpoint(s) responsible for the delivery of a product or service, in compliance with [GL_DESIGN].
-    -
+    - 
   * - Preview View
     - Compact visualization mode of the Digital Credential that allows it to be recognized and distinguished in a list of Electronic Attestations thanks to the presence of minimum data or elements.
-    -
+    - 
   * - Service Model
     - Set of interactions between actors and touchpoints necessary for service delivery and fruition.
-    -
+    - 
   * - Touchpoint
     - Point of contact (digital and not) between the User and the product or service.
-    -
+    - 
   * - Trust Mark
     - A graphic element that gives evidence of the participation of the Primary Actors in the IT-Wallet System and thus guarantees adherence to its standards.
-    -
+    - 
   * - User Experience
     - The set of people's perceptions and reactions resulting from the use and/or expectation of use of a product, system or service.
     - Aligned with ISO 9241-210:2010
   * - Visual Identity
     - Coherent set of graphic and typographic elements that visually represent a product or service and make it distinguishable and recognizable.
-    -
+    - 
 
 Acronyms
 --------

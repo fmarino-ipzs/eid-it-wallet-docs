@@ -71,6 +71,7 @@ General Properties
 The architecture of the trust infrastructure is built upon the following core principles:
 
 .. list-table::
+   :widths: 20 20 80
    :header-rows: 1
 
    * - Identifier
@@ -111,6 +112,7 @@ Trust Infrastructure Requirements
 This section includes the requirements necessary for the successful implementation and operation of the infrastructure of trust.
 
 .. list-table:: Functional Requirements
+   :widths: 20 80
    :header-rows: 1
 
    * - ID

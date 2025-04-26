@@ -376,6 +376,7 @@ Activation of the Wallet Instance Errors
 ----------------------------------------
 
 .. list-table::
+  :widths: 80 20
   :header-rows: 1
 
   * - Error type
@@ -393,6 +394,7 @@ Issuance of Electronic Attestations of Attributes Errors
 --------------------------------------------------------
 
 .. list-table::
+  :widths: 80 20
   :header-rows: 1
 
   * - Error type
@@ -408,6 +410,7 @@ Presentation of Electronic Attestations Errors
 ----------------------------------------------
 
 .. list-table::
+  :widths: 80 20
   :header-rows: 1
 
   * - Error type
@@ -421,6 +424,7 @@ Management of Electronic Attestations Errors
 ------------------------------------------**
 
 .. list-table::
+  :widths: 80 20
   :header-rows: 1
 
   * - Error type
@@ -434,6 +438,7 @@ Deactivation of the Wallet Instance Errors
 ------------------------------------------
 
 .. list-table::
+  :widths: 80 20
   :header-rows: 1
 
   * - Error type

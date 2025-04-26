@@ -1,9 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
-.. "included" file, so we start with '-' title level
 
 Entity Configurations
--------------------------
+=======================
 
 The ``/.well-known/openid-federation`` endpoint serves as the discovery mechanism for trust establishment by retrieving the Entity Configuration as detailed in the following sections.
 

@@ -1,9 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
-.. "included" file, so we start with '"' title level
 
 Entity Configuration of Relying Parties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------
 
 According to Section :ref:`trust:Configuration of the Federation`, as a Federation Entity, the Relying Party is required to maintain a well-known endpoint that hosts its Entity Configuration.
 The Entity Configuration of Relying Parties MUST contain the parameters defined in the Sections :ref:`trust:Entity Configuration Leaves and Intermediates` and :ref:`trust:Entity Configurations Common Parameters`.
@@ -16,7 +15,7 @@ The Relying Parties MUST provide the following metadata types:
 The *federation_entity* metadata MUST contain the claims as defined in Section :ref:`trust:Metadata of federation_entity Leaves`.
 
 Metadata for openid_credential_verifier
-"""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The *openid_credential_verifier* metadata MUST contain the following parameters.
 
@@ -54,7 +53,7 @@ The *openid_credential_verifier* metadata MUST contain the following parameters.
   The parameters **response_uris** and **erasure_endpoint** are introduced in this specification.
 
 Example of a Relying Party Entity Configuration
-"""""""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Below a non-normative example of the request made by the Wallet Instance to the *openid-federation* well-known endpoint to obtain the Relying Party Entity Configuration:
 

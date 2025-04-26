@@ -1,10 +1,7 @@
 .. include:: ../common/common_definitions.rst
 
-.. "included" file, so we start with '-' title level
-
-
 Wallet Provider Entity Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------
 
 An HTTP GET request to the Federation endpoint allows the retrieval of the Wallet Provider Entity Configuration.
 
@@ -13,7 +10,7 @@ The returned Entity Configuration of the Wallet Provider MUST contain the attrib
 The Wallet Provider Entity Configuration is a signed JWT containing the public keys and supported algorithms of the Wallet Provider. It is structured in accordance with the `OID-FED`_ and the :ref:`trust:The Infrastructure of Trust` outlined in this specification.
 
 Wallet Provider Entity Configuration JWT Header
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
     :widths: 20 60 20
@@ -33,7 +30,7 @@ Wallet Provider Entity Configuration JWT Header
       - `OID-FED`_.
 
 Wallet Provider Entity Configuration JWT Payload
-"""""""""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
     :widths: 20 60 20
@@ -65,7 +62,7 @@ Wallet Provider Entity Configuration JWT Payload
       - `OID-FED`_.
 
 wallet_provider metadata
-"""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The metadata JSON Object whose key is ``wallet_provider`` contains the following parameters. The public keys found in this object are exclusively used for signing and/or encryption operations required to this Entity when acting as a Wallet Provider (e.g., sign the Wallet Attestations to the Wallet Instance).
 
@@ -90,7 +87,7 @@ The metadata JSON Object whose key is ``wallet_provider`` contains the following
       - This specification.
 
 federation_entity metadata
-"""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
     :widths: 20 60 20

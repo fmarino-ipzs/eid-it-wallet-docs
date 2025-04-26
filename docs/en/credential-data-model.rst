@@ -806,6 +806,7 @@ In particular, it shows how core concepts - such as Credential Issuer informatio
 For SD-JWT-VC, parameters are marked with `(hdr)` if they are located in the JOSE header, and `(pld)` if they appear in the payload of the JWT. In mdoc-CBOR, these parameters are identified within the issuerAuth or nameSpaces structures.
 
 .. list-table::
+   :widths: 20 40 40
    :header-rows: 1
 
    * - **Information Related To**
@@ -824,19 +825,19 @@ For SD-JWT-VC, parameters are marked with `(hdr)` if they are located in the JOS
        | vctm.data_source (hdr)
        | vctm.display (hdr)
        | vctm.claims (hdr)
-     - | –
-       | –
-       | –
-       | –
-       | –
-       | –
-       | –
+     - | -
+       | -
+       | -
+       | -
+       | -
+       | -
+       | -
        | nameSpaces
    * - Issuer
      - | iss (pld)
        | issuing_authority (pld)
        | issuing_country (pld)
-     - | –
+     - | -
        | nameSpaces.elementIdentifier.issuing_authority
        | nameSpaces.elementIdentifier.issuing_country
    * - Subject
@@ -852,7 +853,7 @@ For SD-JWT-VC, parameters are marked with `(hdr)` if they are located in the JOS
    * - Status mechanism
      - | status_assertation (pld)
        | status_list (pld)
-     - | –
+     - | -
        | issuerAuth.status_list
    * - Signature
      - | alg (hdr)
@@ -862,7 +863,7 @@ For SD-JWT-VC, parameters are marked with `(hdr)` if they are located in the JOS
    * - Trust anchors
      - | trust_chain (OID-FED) (hdr)
        | x5c (hdr)
-     - | –
+     - | -
        | issuerAuth.33 (x5chain)
    * - Cryptographic binding
      - cnf.jwk (pld)
@@ -877,11 +878,11 @@ For SD-JWT-VC, parameters are marked with `(hdr)` if they are located in the JOS
        | vctm.extends#integrity (hdr)
        | vctm.schema_uri#integrity (hdr)
      - |
-       | –
+       | -
        |
    * - Digital Credential format
      - typ (hdr)
-     - –
+     - -
    * - Digital Credential auditability
      - verification (pld)
      - nameSpaces.elementIdentifier.verification

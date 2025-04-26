@@ -316,6 +316,7 @@ If both the Relying Party and the Wallet Instance support the ``request_uri_meth
 The request and its parameters are defined in Section number 5 (Authorization Request) of `OpenID4VP`_. Below are the normative details and references about the parameters to be used by the Wallet Instance in the request.
 
 .. list-table:: Request URI Endpoint Parameters
+   :widths: 20 80
    :header-rows: 1
 
    * - Parameter
@@ -327,6 +328,7 @@ The request and its parameters are defined in Section number 5 (Authorization Re
 
 
 .. list-table:: Wallet Metadata Parameters
+   :widths: 20 80
    :header-rows: 1
 
    * - Parameter

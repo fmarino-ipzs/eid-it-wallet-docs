@@ -28,6 +28,7 @@ The terms *User*, *Trust Service*, *Trust Model*, *Trusted List*, *Trust Framewo
 Below is the description of acronyms and definitions which are useful for further insights into topics that complement the IT-Wallet System and the interacting components.
 
 .. list-table::
+  :widths: 20 80 20
   :header-rows: 1
 
   * - Name

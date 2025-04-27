@@ -268,7 +268,7 @@ The Status Assertions have the following features:
   - MUST have a validity period not greater than 24 hours.
 
 .. note::
-  .. [#] This specification only support JWT format and the Status Assertion uses ``credential_status_type`` claim instead of ``credential_status_validity``.
+  This specification only support JWT format and the Status Assertion uses ``credential_status_type`` claim instead of ``credential_status_validity``.
 
 The following sections describe how the Digital Credential validation mechanism works through its key phases.
 

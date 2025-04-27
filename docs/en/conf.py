@@ -13,8 +13,6 @@ settings_file_name = 'eid-wallet-it-docs'
 version = settings_doc_version
 
 import sys, os
-from recommonmark.transform import AutoStructify
-from recommonmark.parser import CommonMarkParser
 
 # -- RTD configuration -------------------------------------------------
 
@@ -36,7 +34,7 @@ rtd_project = os.environ.get('READTHEDOCS_PROJECT', '')
 # -- General configuration -----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-#needs_sphinx = '1.0'
+needs_sphinx = '7.0'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
@@ -49,6 +47,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.redoc',
+    'myst_parser',  
 ]
 
 redoc = [
@@ -87,10 +86,6 @@ images_config = {
 templates_path = ['_templates']
 
 # The suffix of source filenames.
-source_parsers = {
-    '.md': CommonMarkParser,
-}
-
 source_suffix = ['.rst', '.md']
 
 # The encoding of source files.
@@ -133,14 +128,19 @@ exclude_patterns = ['.DS_Store', 'README', 'README.md', '.venv*', '.env*']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
-# -- AutoStructify --------------------------------------------------------
-def setup(app):
-    app.add_config_value('recommonmark_config', {
-        'auto_toc_tree_section': 'Contents',
-        'enable_eval_rst': True
-    }, True)
-    app.add_transform(AutoStructify)
+# -- myst-parser setup --------------------------------------------------------
+# Configurazione per myst_parser che sostituisce recommonmark
+myst_enable_extensions = [
+    "colon_fence",
+    "smartquotes",
+    "replacements",
+    "deflist",
+]
 
+# Configurazione simile ad AutoStructify di recommonmark
+myst_heading_anchors = 3
+myst_enable_auto_toc_tree = True
+myst_update_mathjax = False
 
 # -- Options for HTML output ----------------------------------------------
 html_theme = 'piccolo_theme'
@@ -331,4 +331,4 @@ numfig = True
 smartquotes = False
 
 autosectionlabel_prefix_document= True
-#suppress_warnings = ['autosectionlabel.*']
+

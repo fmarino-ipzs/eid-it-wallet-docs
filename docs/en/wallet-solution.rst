@@ -70,7 +70,8 @@ For more detailed information, please refer to :ref:`wallet-instance-registratio
 
 
 .. toctree::
-  :maxdepth: 1
+  :caption: Wallet Solution Table of Contents
+  :maxdepth: 2
 
   wallet-instance.rst
   wallet-provider-endpoint.rst

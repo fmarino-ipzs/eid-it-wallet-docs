@@ -11,6 +11,8 @@ This document provides the technical architecture, implementation framework and 
 
 .. toctree::
   :maxdepth: 3
+  :caption: Table of Contents
+  :numbered:
 
   introduction.rst
   defined-terms.rst

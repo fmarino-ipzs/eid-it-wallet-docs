@@ -138,7 +138,7 @@ The Credential Issuers MUST provide an Entity Configuration through the ``/.well
 Credential Issuer Component Endpoints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-These endpoints implement the protocols described in Section :ref:`credential-issuance-low-level:Low-Level Issuance Flow` for Digital Credential issuance operations.
+These endpoints implement the protocols described in Section :ref:`credential-issuance-endpoint:Credential Issuance Endpoints` for Digital Credential issuance operations.
 
 
 

@@ -1,5 +1,7 @@
 .. include:: ../common/common_definitions.rst
 
+Credential Issuance Endpoints
+==============================
 
 Credential Offer Endpoint
 -------------------------

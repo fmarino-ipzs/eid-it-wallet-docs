@@ -1,5 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
+Credential Issuance High-Level Flows
+=======================================
+
 High-Level PID flow
 -------------------
 

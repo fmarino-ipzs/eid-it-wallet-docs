@@ -1,5 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
+Credential Issuance Low-Level Flows
+====================================
+
 Low-Level Issuance Flow
 -----------------------
 

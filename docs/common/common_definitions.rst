@@ -1,7 +1,6 @@
 .. _ARF: https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework
 .. _attestKey: https://developer.apple.com/documentation/devicecheck/dcappattestservice/attestkey:clientdatahash:completionhandler
 .. _Device Check: https://developer.apple.com/documentation/devicecheck
-.. _Digital Credential Revocation and Suspension section: credential-revocation.html
 .. _EIDAS-ARF: https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework
 .. _EIDAS: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2014.257.01.0073.01.ENG
 .. _Error Handling for Nonce Generation: wallet-solution.html#error-handling-for-nonce-generation

@@ -81,7 +81,7 @@ Each time a release is created or edited, a preview is built based on the tag th
 
 ## How to contribute
 
-Don't hesitate to submit [Pull Requests or raise Issues](CONTRIBUTING.md) if you encounter any problems.
+Refer to [Contributing Section](contributing-readme.md) for an editorial guideline. Don't hesitate to submit [Pull Requests or raise Issues](CONTRIBUTING.md) if you encounter any problems.
 
 
 ## License

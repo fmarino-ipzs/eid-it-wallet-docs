@@ -8,6 +8,7 @@ The ``/.well-known/openid-federation`` endpoint serves as the discovery mechanis
 
 
 .. toctree::
+  :caption: Entity Configurations Table of Contents
   :maxdepth: 1
 
   wallet-provider-entity-configuration.rst

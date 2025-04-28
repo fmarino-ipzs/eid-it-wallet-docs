@@ -46,6 +46,7 @@ This section lists the requirements to be met by Relying Parties and Relying Par
 
 
 .. toctree::
+  :caption: Relying Party Solution Table of Contents
   :maxdepth: 3
 
   relying-party-instance.rst

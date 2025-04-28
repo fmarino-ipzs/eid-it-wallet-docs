@@ -14,6 +14,7 @@ serve to authenticate the Wallet Instance itself, ensuring its reliability when 
 
 
 .. toctree::
+  :caption: Wallet Instance Table of Contents
   :maxdepth: 3
 
   wallet-instance-lifecycle.rst

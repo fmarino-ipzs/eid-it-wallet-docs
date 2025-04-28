@@ -18,6 +18,7 @@ The relevant entities and interfaces involved in the issuance flow are:
 
 
 .. toctree::
+  :caption: Credential Issuance Table of Contents
   :maxdepth: 3
 
   credential-issuance-high-level.rst

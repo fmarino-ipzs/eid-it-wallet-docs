@@ -219,18 +219,6 @@ Below is the description of acronyms and definitions which are useful for furthe
   * - Certificate Signing Request (CSR)
     - Request sent to a Certificate Authority (CA) that contains the public key and identifying information of the entity requesting a digital certificate.
     -
-  * - Metadata
-    - Digital artifact that contains all the required information about an Organizational Entity, e.g., protocol related endpoints and the Organizational Entity's cryptographic public keys (for the complete list check requirement "Metadata Content").
-    -
-  * - Policy Language
-    - A formal language used to define security, privacy, and identity management policies that govern interactions and transactions within a Trust Framework. This language allows for the clear and unambiguous expression of rules and conditions, facilitating the automation of processes and interoperability among different systems and organizations.
-    -
-  * - Registration Process
-    - Process performed by a Registration Authority verifying necessary information to ensure Organizational Entity eligibility and compliance with the relevant rules and standards. The main goal of the Registration Process is for the Organizational Entity to receive one or more Trust Assertions to be used for the Trust Evaluation processes.
-    -
-  * - Accreditation Process
-    - Process performed by the National Accreditation Body to accreditate CABs. As a result of the Accreditation Process, a NAB issues an accreditation Certificate to a CAB.
-    -
   * - Trusted List
     - Repository of information about authoritative entities in a particular legal or contractual context which provides information about their current and historical status. It serves as the bedrock of trust, acting as federative sources that publish the crucial information about root entities within the ecosystem.
     -

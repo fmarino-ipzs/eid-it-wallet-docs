@@ -147,7 +147,7 @@ PDND Voucher for e-Services Flow
 
 **Steps 1-2 (Preparation of Tracked Data):** The Consumer prepares a JWT (``TrackingEvidence``) containing the tracked data that have to be sent to the Provider. Finally, it computes the SHA-256 hash of ``TrackingEvidence``.
 
-.. code-block::
+.. code-block:: Json
   :caption: Non-normative example of the ``TrackingEvidence`` header
   :name: code_VoucherIssuance_eService_Flow_TrackingEvidence_Header
 
@@ -158,7 +158,7 @@ PDND Voucher for e-Services Flow
   }
 
 
-.. code-block::
+.. code-block:: json
   :caption: Non-normative example of the ``TrackingEvidence`` payload
   :name: code_VoucherIssuance_eService_Flow_TrackingEvidence_Payload
 
@@ -200,7 +200,7 @@ PDND Voucher for e-Services Flow
     client_assertion=eyJhbGciOiJFUzI1NiIsImtpZCI6ImQ0YzNiMmExLTk4NzYtNTQzMi0xMGZlLWRjYmE5ODc2NTQzMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI4MjkxNGIzZi02MGIyLTQ1MjktYjRkNi0zZDRlNjdmMGE5MzMiLCJzdWIiOiI4MjkxNGIzZi02MGIyLTQ1MjktYjRkNi0zZDRlNjdmMGE5MzMiLCJhdWQiOiJpbnRlcm9wLnBhZ29wYS5pdC9hdXRob3JpemF0aW9uLXNlcnZlciIsImV4cCI6MTczMzA0MTQ0MCwiaWF0IjoxNzMzMDM3ODQwLCJqdGkiOiI3ZTlmM2E0ZC1jOWIyLTQyZjYtYTZkNC0zOGUxMmZiNmI4YWIiLCJwdXJwb3NlSWQiOiJkMmI5YTY1My1jNDk3LTQ1YzYtYjhmMS01YmRmMTI0YzlkM2EiLCJkaWdlc3QiOnsiYWxnIjoiU0hBMjU2IiwidmFsdWUiOiI5Yzc4OTRhMGE1YTkxMDU4MGI5NjdmMzg0Y2RmYmExN2IxYWI2Zjg2NjcwZTViMGRmMThhMGM0NTNiNWViMjE1In19.cl-wvwJF3WLgywoq9qULVKCajleqz0jpD82QTZZAxHSjoGeA7l7n0LNC8eDfIM4F-rzMU5qfC9eW6UDxMwJrdg
 
 
-.. code-block::
+.. code-block:: json
     :caption: Non-normative example of the ``client_assertion`` JOSE header
     :name: code_VoucherIssuance_eService_Flow_ClientAssertion_Header
 
@@ -211,7 +211,7 @@ PDND Voucher for e-Services Flow
     }
 
 
-.. code-block::
+.. code-block:: json
     :caption: Non-normative example of the ``client_assertion`` payload
     :name: code_VoucherIssuance_eService_Flow_ClientAssertion_Payload
 
@@ -283,7 +283,7 @@ The PDND Authorization Server MUST also validate the ``client_assertion`` JWT as
         "expires_in": 3600
     }
 
-.. code-block::
+.. code-block:: json
     :caption: Non-normative example of the ``access_token`` JOSE header
     :name: code_VoucherIssuance_eService_Flow_AccessToken_Header
 
@@ -293,7 +293,7 @@ The PDND Authorization Server MUST also validate the ``client_assertion`` JWT as
         "typ": "at+jwt"
     }
 
-.. code-block::
+.. code-block:: json
     :caption: Non-normative example of the ``access_token`` payload
     :name: code_VoucherIssuance_eService_Flow_AccessToken_Payload
 
@@ -357,7 +357,7 @@ Voucher for Interoperability API Flow
   client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&
   client_assertion=eyJhbGciOiJFUzI1NiIsImtpZCI6IjlhNGQ4ZTNmLThiN2QtNGM5OC05MjZmLTI3NDVjNmIxZjgzMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1YTNjN2YyOC05MWI5LTRjNGUtODlhOS02ZTJmODVkOTI2MmIiLCJzdWIiOiI1YTNjN2YyOC05MWI5LTRjNGUtODlhOS02ZTJmODVkOTI2MmIiLCJhdWQiOiJpbnRlcm9wLnBhZ29wYS5pdC9hdXRob3JpemF0aW9uLXNlcnZlciIsImV4cCI6MTczMzIzMzUwMCwiaWF0IjoxNzMzMjMyMzAwLCJqdGkiOiJkMmM5YTdiNC0zZTgxLTRkMjctYjZmNy01MWE4YzlmMGEzYzYifQ.YDX7ekvvY3gPHTfZeqa3IcurU7kNBZPy3OHAdljdXSFLoC5cVVyIzl43aMbwLouI43ylxWktaf0-pXabmye1qA
 
-.. code-block::
+.. code-block:: json
   :caption: Non-normative example of the ``client_assertion`` JOSE header
   :name: code_VoucherIssuance_InteroperabilityAPI_Flow_ClientAssertion_Header
 
@@ -367,7 +367,7 @@ Voucher for Interoperability API Flow
        "typ": "JWT"
   }
 
-.. code-block::
+.. code-block:: json
   :caption: Non-normative example of the ``client_assertion`` payload
   :name: code_VoucherIssuance_InteroperabilityAPI_Flow_ClientAssertion_Payload
 
@@ -418,7 +418,7 @@ The PDND Authorization Server MUST also validate the ``client_assertion`` JWT as
     "expires_in": 3600
   }
 
-.. code-block::
+.. code-block:: json
   :caption: Non-normative example of the ``access_token`` JOSE header
   :name: code_VoucherIssuance_InteroperabilityAPI_Flow_AccessToken_Header
 
@@ -428,7 +428,7 @@ The PDND Authorization Server MUST also validate the ``client_assertion`` JWT as
     "typ": "at+jwt"
   }
 
-.. code-block::
+.. code-block:: json
   :caption: Non-normative example of the ``access_token`` payload
   :name: code_VoucherIssuance_InteroperabilityAPI_Flow_AccessToken_Payload
 
@@ -962,7 +962,7 @@ e-Service Usage Flow
 
 **Step 1 (Signature Preparation):** The Consumer prepares a JWT (``Signature``) containing the signed headers of the message, to ensure integrity.
 
-.. code-block::
+.. code-block:: json
     :caption: Non-normative example of the ``Signature`` header
     :name: _code_Usage_Flow_Signature_Header
 
@@ -972,7 +972,7 @@ e-Service Usage Flow
         "typ": "JWT"
     }
 
-.. code-block::
+.. code-block:: json
     :caption: Non-normative example of the ``Signature`` payload
     :name: _code_Usage_Flow_Signature_Payload
 
@@ -1100,7 +1100,7 @@ If any of the previous checks fail, the Provider MUST reject the Request.
   eyJhbGciOiJFUzI1NiIsImtpZCI6IjI4MDJhNjktMTYwNC00MjYxLTkyNDYtMjE0NTNlMjA2NThlIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL2Vyb2dhdG9yZS5leGFtcGxlL2VudGUtZXhhbXBsZS92MSIsImF1ZCI6IjlhOGI3YzZkLWU1ZjQtZzNoMi1pMWowLWtsbW5vcHFyc3R1diIsImV4cCI6MTczMzQwMTc4NSwibmJmIjoxNzMzNDAxMzg3LCJpYXQiOjE3MzM0MDEyNTYsImp0aSI6Ijk5NzUzMmUtODcxYS00OTY5LTk5OTktMTIzNDU2Nzg5YWJjIiwicmVxdWVzdGVkRmllbGQxIjoidmFsdWUxIiwicmVxdWVzdGVkRmllbGQyIjoidmFsdWUyIiwicmVxdWVzdGVkRmllbGQzIjoidmFsdWUzIn0.OZSn693I-oCvvq3RnFW-9HeUWE7J1hri-lyae8CLt2JTbzKPCnWg7f6AmzR-euXYKdRWpofZkhpux7TlYG9RwA
 
 
-.. code-block::
+.. code-block:: json
   :caption: Non-normative example of the e-Service Response JWT header
   :name: _code_Usage_Flow_Response_JWT_Header
 
@@ -1110,7 +1110,7 @@ If any of the previous checks fail, the Provider MUST reject the Request.
     "typ": "JWT"
   }
 
-.. code-block::
+.. code-block:: json
   :caption: Non-normative example of the e-Service Response JWT payload
   :name: _code_Usage_Flow_Response_JWT_Payload
 

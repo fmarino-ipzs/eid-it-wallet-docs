@@ -412,22 +412,24 @@ The **Status Assertion Request object** MUST be a JWT that MUST contain the para
     - It MUST contain the Algorithm used for hashing the Digital Credential. The value SHOULD be set to `sha-256`.
     - `OAUTH-STATUS-ASSERTION`_.
 
-Below, is given a non-normative example of a single *Status Assertion Request object* with decoded JWT headers and payload and without signature for better readability:
+Below, is given a non-normative example of a single *Status Assertion Request object* with decoded JWT header and payload and without signature for better readability:
 
-.. code-block::
+.. code-block:: json
 
   {
     "alg": "ES256",
-    "typ": "status-assertion-request+jwt",
+    "typ": "status-assertion-request+jwt"
   }
-  .
+  
+.. code-block:: json
+
   {
     "iss": "0b434530-e151-4c40-98b7-74c75a5ef760",
     "aud": "https://pid-provider.example.org/status",
     "iat": 1698744039,
     "exp": 1698744139,
     "jti": "6f204f7e-e453-4dfd-814e-9d155319408c",
-    "credential_hash": $Issuer-Signed-JWT-Hash,
+    "credential_hash": "$Issuer-Signed-JWT-Hash",
     "credential_hash_alg": "sha-256"
   }
 

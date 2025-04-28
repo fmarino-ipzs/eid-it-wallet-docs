@@ -783,7 +783,7 @@ When a participant self-issues an X.509 Certificate, it adheres to the following
 Below a non-normative example of an X.509 Certificate Chain without intermediaries and in plain text, to facilitate the reading.
 
 
-.. code-block::
+.. code-block:: text
 
     Certificate:
     Data:
@@ -910,7 +910,7 @@ When the X.509 Certificate issuer is an Immediate superior, such as the Trust An
 
 Below a non-normative example, in plain text, examplify the content of a CRL.
 
-.. code-block::
+.. code-block:: text
 
     Certificate Revocation List (CRL):
     Version: 2 (0x1)

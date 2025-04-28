@@ -55,7 +55,7 @@ In case of multiple array elements, the Issuer may hide the value of the entire 
 
 The Disclosures are provided to the Holder together with the SD-JWT in the *Combined Format for Issuance* that is an ordered series of base64url-encoded values, each separated from the next by a single tilde ('~') character as follows:
 
-.. code-block::
+.. code-block:: text
 
   <Issuer-Signed-JWT>~<Disclosure 1>~<Disclosure 2>~...~<Disclosure N>
 
@@ -420,7 +420,7 @@ The disclosure list is presented below.
 
 The combined format for the PID issuance is given by:
 
-.. code-block::
+.. code-block:: text
 
   eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImRjK3NkLWp3dCIsICJraWQiOiAiZEI2N2dM
   N2NrM1RGaUlBZjdONl83U0h2cWswTURZTUVRY29HR2xrVUFBdyJ9.eyJfc2QiOiBbIjZ
@@ -552,7 +552,7 @@ In the following the disclosure list is given:
 
 The combined format for the (Q)EAA issuance is represented below:
 
-.. code-block::
+.. code-block:: text
 
   eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImRjK3NkLWp3dCIsICJraWQiOiAiZDEyNmE2
   YTg1NmY3NzI0NTYwNDg0ZmE5ZGM1OWQxOTUifQ.eyJfc2QiOiBbIkR4LTZoanZyY3hOe

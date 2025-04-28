@@ -210,7 +210,7 @@ The following table lists the HTTP Status Codes and related error codes that MUS
 
 The following is an example of an error response from Erasure Endpoint:
 
-.. code-block::
+.. code-block:: http
 
   HTTP/1.1 500 Internal Server Error
   Content-Type: application/json

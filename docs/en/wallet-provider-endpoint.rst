@@ -293,9 +293,9 @@ The body of the Wallet Attestation JWT contains the following claims:
       - REQUIRED. JSON String asserting the authentication level of the Wallet and the key as asserted in the cnf claim.
       - This specification.
 
-Below is a non-normative example of the SD-JWT Wallet Attestation without encoding and signature applied:
+Below is a non-normative example of the SD-JWT Wallet Attestation header and payload without encoding and signature applied:
 
-.. code-block::
+.. code-block:: json
 
   {
     "alg": "ES256",
@@ -305,9 +305,11 @@ Below is a non-normative example of the SD-JWT Wallet Attestation without encodi
       "eyJhbGciOiJFUz...jJLA",
       "eyJhbGciOiJFUz...H9gw",
     ],
-    "typ": "jwt",
+    "typ": "jwt"
   }
-  .
+  
+.. code-block:: json
+
   {
     "iss": "https://wallet-provider.example.org",
     "cnf":
@@ -437,9 +439,9 @@ Below are described examples of values for the disclosures:
 - Disclosure:n``WyIyR0xDNDJzS1F2ZUNmR2ZyeU5STjl3IiwgIndhbGxldF9uYW1lIiwgIldhbGxldF9Ib2JiaXRvbl92MSJd``
 - Contents: ``["2GLC42sKQveCfGfryNRN9w", "wallet_name", "Wallet_v1"]``
 
-Below is a non-normative example of the SD-JWT Wallet Attestation without encoding and signature applied:
+Below is a non-normative example of the SD-JWT Wallet Attestation header and payload without encoding and signature applied:
 
-.. code-block::
+.. code-block:: json
 
   {
     "alg": "ES256",
@@ -451,7 +453,9 @@ Below is a non-normative example of the SD-JWT Wallet Attestation without encodi
     ],
     "typ": "dc+sd-jwt"
   }
-  .
+  
+.. code-block:: json
+
   {
     "iss": "https://wallet-provider.example.org",
     "cnf": {
@@ -505,7 +509,7 @@ The ``nameSpaces`` for the domestic nameSpace Json Objects are defined as follow
 
 Below is a non-normative example of the mdoc Wallet Attestation in CBOR diagnostic notation:
 
-.. code-block::
+.. code-block:: text
 
   {
     "docType": "org.iso.18013.5.1.it.WalletAttestation",

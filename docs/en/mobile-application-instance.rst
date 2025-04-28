@@ -346,16 +346,18 @@ The Key Binding Request JWT includes the following body claims:
       - JSON object containing the public part of an asymmetric key pair owned by the Mobile Application Instance.
       - :rfc:`7800`.
 
-Below is a non-normative example of a Key Binding Request JWT.
+Below is a non-normative example of a Key Binding Request JWT header and payload.
 
-.. code-block::
+.. code-block:: json
 
     {
       "alg": "ES256",
       "kid": "hT3v7KQjFZy6GvDkYgOZ1u2F6T4Nz5bPjX8o1MZ3dJY",
       "typ": "..."
     }
-    .
+
+.. code-block:: json
+  
     {
       "iss": "https://application-provider.example.org/instance/hT3v7KQjFZy6GvDkYgOZ1u2F6T4Nz5bPjX8o1MZ3dJY",
       "sub": "https://application-provider.example.org/",

@@ -57,15 +57,17 @@ The User MUST securely store the key phrase chosen from those proposed by the sy
 
 **Step 6**: In the case where the User prefers the native storage, the backup file is stored on the User device.
 
-A non-normative example of the backup JWT is as the following:
+A non-normative example of the backup JWT header and payload is as the following:
 
-.. code-block::
+.. code-block:: json
 
   {
     "alg": "ES256",
-    "typ": "wallet-unit-credentials-backup+jwt",
+    "typ": "wallet-unit-credentials-backup+jwt"
   }
-  .
+  
+.. code-block:: json
+
   {
     "timestamp":"2024-12-13T16:35:06+01:00",
     "wallet_provider_id":"https://wallet-provider.example.org/",
@@ -74,7 +76,7 @@ A non-normative example of the backup JWT is as the following:
     "credentials_backup": {
         "https://issuer.example.org/v1.0/mdl": ["org.iso.18013-5.1.mDL"],
         "https://eaa-provider.example.org/": ["dc_sd_jwt_EuropeanDisabilityCard"]
-     },
+     }
   }
 
 The JOSE header of the backup JWT MUST contain the following REQUIRED parameters:

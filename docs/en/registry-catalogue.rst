@@ -278,7 +278,7 @@ The corresponding example of Digital Credentials Catalogue as decoded in JSON fo
 
   A non-normative example of a localisation bundle output is given below:
 
-    .. code-block::
+    .. code-block:: json
 
       {
         "driving_license.name": "Patente di Guida",
@@ -286,7 +286,7 @@ The corresponding example of Digital Credentials Catalogue as decoded in JSON fo
         "purpose.driving_authorization.name": "Abilitazione alla guida",
         "purpose.driving_authorization.description": "Verifica di Abilitazione alla guida",
         "claims.given_name.name": "Nome",
-        ...
+        "...": "..."
       }
 
   Localization bundles MUST be available at the URI specified in the **localization_info.bundles_base_uri** claim of the Digital Credentials Catalogue. Each locale bundle MUST be accessible following the naming pattern **{locale_code}.json**, where **{locale_code}** is replaced with the corresponding locale code from the **available_locales** array.

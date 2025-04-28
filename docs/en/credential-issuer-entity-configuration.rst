@@ -27,6 +27,7 @@ Metadata for oauth_authorization_server
 The *oauth_authorization_server* metadata MUST contain the following parameters.
 
 .. list-table::
+  :class: longtable
   :widths: 20 60
   :header-rows: 1
 
@@ -75,6 +76,7 @@ Metadata for openid_credential_issuer
 The *openid_credential_issuer* metadata MUST contain the following claims.
 
 .. list-table::
+  :class: longtable
   :widths: 20 60
   :header-rows: 1
 

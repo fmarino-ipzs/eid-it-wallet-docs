@@ -13,6 +13,7 @@ The Credential Offer made by PID/(Q)EAA Issuer consists of a single URI query pa
 
 .. _table_credential_offer_claim:
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -50,6 +51,7 @@ The HTTP POST method MUST use the parameters in the message body encoded in ``ap
 
 .. _table_http_request_claim:
 .. list-table:: PAR http request parameters
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -68,6 +70,7 @@ the request to the PID/(Q)EAA authorization endpoint MUST use the following HTTP
 
 .. _table_http_request_headers_claim:
 .. list-table:: http request header parameters
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -83,6 +86,7 @@ The JWT *Request Object* has the following JOSE header parameters:
 
 .. _table_request_object_claim:
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -104,6 +108,7 @@ The ``request`` JWT payload contained in the HTTP POST message is given with the
 
 .. _table_jwt_request:
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -166,6 +171,7 @@ The JOSE header of the Wallet Attestation proof of possession, contained in the 
 
 .. _table_jwt_pop:
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -179,6 +185,7 @@ The JOSE header of the Wallet Attestation proof of possession, contained in the 
 The body of the Wallet Attestation proof of possession JWT, contained in the HTTP Request headers, MUST contain:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -208,6 +215,7 @@ If the verification is successful, the PID/(Q)EAA Issuer MUST provide the respon
 
 .. _table_http_response_claim:
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -239,6 +247,7 @@ Below is a non-normative example of an error response.
 In the following table are listed HTTP Status Codes and related error codes that are supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 20 60
     :header-rows: 1
 
@@ -290,6 +299,7 @@ The Authorization request is issued by the Web Browser in use by the Wallet Inst
 The mandatory parameters in the HTTP authentication request are specified in the following table.
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -311,6 +321,7 @@ The authentication response is returned by the PID/(Q)EAA authorization endpoint
 If the authentication is successful the PID/(Q)EAA Issuer redirects the User by adding the following query parameters as required to the *redirect_uri*. The redirect URI MUST be an universal or app link registered with the local operating system, so this latter is able to provide the response to the Wallet Instance.
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -348,6 +359,7 @@ Below is a non-normative example of an error response.
 In case of Authorization Server redirects the User to the *redirect_uri* HTTP status code *302 (Found)* MUST be used. The following error codes are supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 20 60
     :header-rows: 1
 
@@ -370,6 +382,7 @@ In case of Authorization Server redirects the User to the *redirect_uri* HTTP st
 In case of Authorization Server doesn't redirect the User to the *redirect_uri* the following HTTP Status Codes are supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 80
     :header-rows: 1
 
@@ -407,6 +420,7 @@ The Authorization Server MUST validate the DPoP proof received at the Token endp
 The token request contains the following claims:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -438,6 +452,7 @@ A **DPoP Proof JWT** is included in the HTTP request using the ``DPoP`` header p
 The JOSE header of a **DPoP JWT** MUST contain at least the following parameters:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -458,6 +473,7 @@ The JOSE header of a **DPoP JWT** MUST contain at least the following parameters
 The payload of a **DPoP JWT Proof** MUST contain the following claims:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -484,6 +500,7 @@ Token Response
 If the Token Request is successfully validated, the Authorization Server provides an HTTP Token Response with a *200 (OK)* status code. The Token Response contains the following claims.
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -528,6 +545,7 @@ Below is a non-normative example of an error response.
 In the following table are listed HTTP Status Codes and related error codes that are supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 20 60
     :header-rows: 1
 
@@ -567,6 +585,7 @@ A DPoP-bound Access Token is provided by the PID/(Q)EAA Token endpoint as a resu
 The **DPoP JWT** contains the following JOSE header parameters and claims.
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -585,6 +604,7 @@ The **DPoP JWT** contains the following JOSE header parameters and claims.
 
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -624,6 +644,7 @@ A *DPoP-bound Refresh Token* is provided by the PID/(Q)EAA Token endpoint as a r
 The **DPoP JWT** MUST contain the following JOSE header parameters and claims.
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -642,6 +663,7 @@ The **DPoP JWT** MUST contain the following JOSE header parameters and claims.
 
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -727,6 +749,7 @@ The Credential endpoint MUST accept and validate the *DPoP proof* sent in the DP
 
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -753,6 +776,7 @@ The Credential endpoint MUST accept and validate the *DPoP proof* sent in the DP
 The JWT proof type MUST contain the following parameters for the JOSE header and the JWT body:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -770,6 +794,7 @@ The JWT proof type MUST contain the following parameters for the JOSE header and
     - [`OpenID4VCI`_], [:rfc:`7515`], [:rfc:`7517`].
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -799,6 +824,7 @@ The Credential Response contains the following parameters:
 
 .. _table_credential_response_claim:
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -840,6 +866,7 @@ Below is a non-normative example of an error response.
 In the following table are listed HTTP Status Codes and related error codes that are supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 20 60
     :header-rows: 1
 
@@ -974,6 +1001,7 @@ Notification Request
 The Notification Request MUST be an HTTP POST using the *application/json* media type with the following parameters.
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 25
   :header-rows: 1
 
@@ -1022,6 +1050,7 @@ Below is a non-normative example of an error response.
 In the following table are listed HTTP Status Codes and related error codes that are supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 20 60
     :header-rows: 1
 

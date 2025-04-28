@@ -277,6 +277,7 @@ Authorization Request
 The URL parameters contained in the Relying Party Authorization Request, which include the ``request_uri`` where the signed Request Object can be downloaded, are described in the table below.
 
 .. list-table::
+  :class: longtable
   :widths: 25 50
   :header-rows: 1
 
@@ -316,6 +317,7 @@ If both the Relying Party and the Wallet Instance support the ``request_uri_meth
 The request and its parameters are defined in Section number 5 (Authorization Request) of `OpenID4VP`_. Below are the normative details and references about the parameters to be used by the Wallet Instance in the request.
 
 .. list-table:: Request URI Endpoint Parameters
+   :class: longtable
    :widths: 20 80
    :header-rows: 1
 
@@ -328,6 +330,7 @@ The request and its parameters are defined in Section number 5 (Authorization Re
 
 
 .. list-table:: Wallet Metadata Parameters
+   :class: longtable
    :widths: 20 80
    :header-rows: 1
 
@@ -365,6 +368,7 @@ The Relying Party issues the signed Request Object using the content type set to
 The JWT header parameters are described below:
 
 .. list-table::
+  :class: longtable
   :widths: 25 50
   :header-rows: 1
 
@@ -383,6 +387,7 @@ The JWT header parameters are described below:
 The JWT payload parameters are described herein:
 
 .. list-table::
+  :class: longtable
   :widths: 25 50
   :header-rows: 1
 
@@ -435,6 +440,7 @@ When the Relying Party encounters errors while issuing the Request Object from t
 The following table lists the HTTP Status Codes and related error codes that MUST be supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 20 60
     :header-rows: 1
 
@@ -479,6 +485,7 @@ After obtaining the User authorization and consent for the presentation of the D
 Where the following parameters are used:
 
 .. list-table::
+  :class: longtable
   :widths: 25 50
   :header-rows: 1
 
@@ -509,6 +516,7 @@ To validate the signature on the Key Binding JWT, the Relying Party MUST use the
 When an SD-JWT is presented, its KB-JWT MUST contain the following parameters in the JWT header:
 
 .. list-table::
+  :class: longtable
   :widths: 25 50
   :header-rows: 1
 
@@ -522,6 +530,7 @@ When an SD-JWT is presented, its KB-JWT MUST contain the following parameters in
 When an SD-JWT is presented, the KB-JWT signature MUST be verified by the same public key included in the SD-JWT within the `cnf` parameter. The KB-JWT MUST contain the following parameters in the JWT payload:
 
 .. list-table::
+  :class: longtable
   :widths: 25 50
   :header-rows: 1
 
@@ -564,6 +573,7 @@ Below is a non-normative example of an Authorization Error Response.
 In the following table are listed error codes and descriptions that are supported for the Authorization Error Response:
 
 .. list-table::
+   :class: longtable
    :widths: 20 60
    :header-rows: 1
 
@@ -608,6 +618,7 @@ If any validation check, performed by the Relying Party on the Authorization Res
 The following table lists the HTTP Status Codes and related error codes that MUST be supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 20 60
     :header-rows: 1
 
@@ -700,6 +711,7 @@ If instead any validation check performed by the Relying Party fails, the QRCode
 The following table lists the HTTP Status Codes and related error codes that MUST be supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 20 60
     :header-rows: 1
 
@@ -730,6 +742,7 @@ When the user-agent is redirected to the Redirect URI provided by the Relying Pa
 The following table lists the HTTP Status Codes and related error codes that MUST be supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 20 60
     :header-rows: 1
 

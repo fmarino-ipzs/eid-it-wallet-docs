@@ -120,6 +120,7 @@ Common Error Responses
 The following errors apply to all Wallet Instance Management operations (Registration, Retrieval, and Revocation), and MUST be supported for the error response, unless otherwise specified:
 
 .. list-table::
+   :class: longtable
    :widths: 20 20 50
    :header-rows: 1
 
@@ -147,6 +148,7 @@ The errors in :ref:`mobile-application-instance:Mobile Application Instance Init
 The following errors MUST be supported for error responses related to **Wallet Instance Retrieval**:
 
 .. list-table::
+   :class: longtable
    :widths: 20 20 50
    :header-rows: 1
 
@@ -163,6 +165,7 @@ The following errors MUST be supported for error responses related to **Wallet I
 The following errors MUST be supported for error responses related to **Wallet Instance Revocation**:
 
 .. list-table::
+   :class: longtable
    :widths: 20 20 50
    :header-rows: 1
 
@@ -197,6 +200,7 @@ If the Wallet Attestation Issuance Request is successfully validated, the Wallet
 The JSON Object returned in the response has the following claim:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -210,6 +214,7 @@ The JSON Object returned in the response has the following claim:
 Each JSON Object contained in the ``wallet_attestations`` array MUST have the following form:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -237,6 +242,7 @@ Wallet Attestation JWT
 The JOSE header of the Wallet Attestation JWT contains the following parameters:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -262,6 +268,7 @@ The JOSE header of the Wallet Attestation JWT contains the following parameters:
 The body of the Wallet Attestation JWT contains the following claims:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -338,6 +345,7 @@ Wallet Attestation SD-JWT
 The JOSE header of the Wallet Attestation SD-JWT MUST contain the following parameters:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -363,6 +371,7 @@ The JOSE header of the Wallet Attestation SD-JWT MUST contain the following para
 The body of the Wallet Attestation SD-JWT contains the following claims:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -400,6 +409,7 @@ The body of the Wallet Attestation SD-JWT contains the following claims:
 The following disclosures MAY be present:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -488,6 +498,7 @@ This description further specializes the guidelines given in ref:`pid-eaa-data-m
 The ``nameSpaces`` for the domestic nameSpace Json Objects are defined as follows:
 
 .. list-table:: org.iso.18013.5.1.it
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 

@@ -28,6 +28,7 @@ The terms *User*, *Trust Service*, *Trust Model*, *Trusted List*, *Trust Framewo
 Below is the description of acronyms and definitions which are useful for further insights into topics that complement the IT-Wallet System and the interacting components.
 
 .. list-table::
+  :class: longtable
   :widths: 20 80 20
   :header-rows: 1
 
@@ -278,6 +279,7 @@ Below is the description of acronyms and definitions which are useful for furthe
 Below are the main defined terms and definitions related to User Experience aspects:
 
 .. list-table::
+  :class: longtable
   :widths: 20 80 20
   :header-rows: 1
 
@@ -336,6 +338,7 @@ Acronyms
 Below are the main acronyms used in the document:
 
 .. list-table::
+  :class: longtable
   :widths: 20 80
   :header-rows: 1
 

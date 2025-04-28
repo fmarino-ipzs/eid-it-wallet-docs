@@ -140,6 +140,7 @@ Below is a non-normative example of an Access Certificate Error Response.
 The following table lists HTTP Status Codes and related error codes that MUST be supported for the error response, unless otherwise specified:
 
 .. list-table::
+    :class: longtable
     :widths: 30 20 50
     :header-rows: 1
 
@@ -188,6 +189,7 @@ If instead the attributes deletion procedure fails due any circumstances, the Re
 The following table lists the HTTP Status Codes and related error codes that MUST be supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 20 20 60
     :header-rows: 1
 

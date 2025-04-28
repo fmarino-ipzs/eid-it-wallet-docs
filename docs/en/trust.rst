@@ -31,6 +31,7 @@ except for Wallet Instances which are End-User's personal devices authenticated 
 Below the table with the summary of the Federation Entity roles, mapped on the corresponding EUDI Wallet roles, as defined in the `EIDAS-ARF`_.
 
 .. list-table::
+   :class: longtable
    :widths: 20 20 60
    :header-rows: 1
 
@@ -71,6 +72,7 @@ General Properties
 The architecture of the trust infrastructure is built upon the following core principles:
 
 .. list-table::
+   :class: longtable
    :widths: 20 20 80
    :header-rows: 1
 
@@ -112,6 +114,7 @@ Trust Infrastructure Requirements
 This section includes the requirements necessary for the successful implementation and operation of the infrastructure of trust.
 
 .. list-table:: Functional Requirements
+   :class: longtable
    :widths: 20 80
    :header-rows: 1
 
@@ -167,6 +170,7 @@ publicly available. The table below summarises the endpoints and their scopes.
 All the endpoints listed below are defined in the `OID-FED`_ specs.
 
 .. list-table::
+   :class: longtable
    :widths: 20 20 20 20
    :header-rows: 1
 
@@ -287,6 +291,7 @@ The Entity Configurations of all the participants in the federation MUST have in
 
 
 .. list-table::
+   :class: longtable
    :widths: 20 60
    :header-rows: 1
 
@@ -315,6 +320,7 @@ Entity Configuration Trust Anchor
 The Trust Anchor Entity Configuration, in addition to the common parameters listed above, uses the following parameters:
 
 .. list-table::
+   :class: longtable
    :widths: 20 60 20
    :header-rows: 1
 
@@ -338,6 +344,7 @@ In addition to the previously defined claims, the Entity Configuration of the Le
 
 
 .. list-table::
+   :class: longtable
    :widths: 20 60 20
    :header-rows: 1
 
@@ -364,6 +371,7 @@ giving the references of the metadata protocol for each of these.
   The entries that don't have any reference to a known draft or standard are intended to be defined in this technical reference.
 
 .. list-table::
+   :class: longtable
    :widths: 20 20 20 60
    :header-rows: 1
 
@@ -420,6 +428,7 @@ The *federation_entity* metadata for Leaves MUST contain the following claims.
 
 
 .. list-table::
+  :class: longtable
   :widths: 20 60
   :header-rows: 1
 
@@ -519,6 +528,7 @@ Subordinate Statement
 The Subordinate Statement issued by Trust Anchors and Intermediates contains the following attributes:
 
 .. list-table::
+   :class: longtable
    :widths: 20 60 20
    :header-rows: 1
 

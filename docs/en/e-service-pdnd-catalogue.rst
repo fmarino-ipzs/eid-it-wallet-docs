@@ -24,6 +24,7 @@ Notify Available Credential
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
+  :class: longtable
   :widths: 20 80
   :stub-columns: 1
 
@@ -39,6 +40,7 @@ Notify Update Credential
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
+  :class: longtable
   :widths: 20 80
   :stub-columns: 1
 
@@ -57,6 +59,7 @@ Notify Wallet Instance Revocation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
+  :class: longtable
   :widths: 20 80
   :stub-columns: 1
   
@@ -72,6 +75,7 @@ Get Statistics
 ^^^^^^^^^^^^^^
 
 .. list-table::
+  :class: longtable
   :widths: 20 80
   :stub-columns: 1
 
@@ -94,6 +98,7 @@ Get Attribute Claims
 ^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
+  :class: longtable
   :widths: 20 80
   :stub-columns: 1
 
@@ -117,6 +122,7 @@ Notify User Death
 ^^^^^^^^^^^^^^^^^
 
 .. list-table::
+    :class: longtable
     :widths: 20 80
     :stub-columns: 1
 

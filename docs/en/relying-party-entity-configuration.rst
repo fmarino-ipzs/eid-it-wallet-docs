@@ -20,6 +20,7 @@ Metadata for openid_credential_verifier
 The *openid_credential_verifier* metadata MUST contain the following parameters.
 
 .. list-table::
+  :class: longtable
   :widths: 20 60
   :header-rows: 1
 

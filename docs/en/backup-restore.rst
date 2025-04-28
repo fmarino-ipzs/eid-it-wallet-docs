@@ -82,6 +82,7 @@ A non-normative example of the backup JWT header and payload is as the following
 The JOSE header of the backup JWT MUST contain the following REQUIRED parameters:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -98,6 +99,7 @@ The JOSE header of the backup JWT MUST contain the following REQUIRED parameters
 The body of backup JWT contains the following REQUIRED claims:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60
   :header-rows: 1
 

@@ -13,6 +13,7 @@ Wallet Provider Entity Configuration JWT Header
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -33,6 +34,7 @@ Wallet Provider Entity Configuration JWT Payload
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -67,6 +69,7 @@ wallet_provider metadata
 The metadata JSON Object whose key is ``wallet_provider`` contains the following parameters. The public keys found in this object are exclusively used for signing and/or encryption operations required to this Entity when acting as a Wallet Provider (e.g., sign the Wallet Attestations to the Wallet Instance).
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -90,6 +93,7 @@ federation_entity metadata
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 

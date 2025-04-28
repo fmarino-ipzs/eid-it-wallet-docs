@@ -144,6 +144,7 @@ Below is a non-normative example of a Nonce Error Response.
 The following table lists HTTP Status Codes and related error codes that are supported for the error response:
 
 .. list-table::
+    :class: longtable
     :widths: 30 20 50
     :header-rows: 1
 
@@ -166,6 +167,7 @@ The Instance Initialization Request body contains the following claims:
 
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -233,6 +235,7 @@ Below is a non-normative example of an Instance Initialization Error Response.
 The following table lists HTTP Status Codes and related error codes that are supported for the error response:
 
 .. list-table::
+   :class: longtable
    :widths: 20 20 50
    :header-rows: 1
 
@@ -293,6 +296,7 @@ In particular, the Key Binding Request JWT includes the following HTTP header pa
 
 .. _table_key_binding_request_claim:
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -312,6 +316,7 @@ In particular, the Key Binding Request JWT includes the following HTTP header pa
 The Key Binding Request JWT includes the following body claims:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -405,6 +410,7 @@ Below is a non-normative example of a Key Binding Error Response.
 The following table lists HTTP Status Codes and related error codes that are supported for the error response, unless otherwise specified:
 
 .. list-table::
+    :class: longtable
     :widths: 30 20 50
     :header-rows: 1
 

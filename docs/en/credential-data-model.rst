@@ -69,6 +69,7 @@ The JOSE header contains the following mandatory parameters:
 
 .. _table_pid_jose_header:
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -165,6 +166,7 @@ The JWT payload contains the following claims. Some of these claims can be discl
 If the ``status`` parameter is set to ``status_list``, it is a JSON Object containing the following sub-parameters:
 
 .. list-table::
+   :class: longtable
    :widths: 20 60 20
    :header-rows: 1
 
@@ -286,6 +288,7 @@ PID Claims
 Depending on the Digital Credential type **vct**, additional claims data MAY be added. The PID supports the following data:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -602,6 +605,7 @@ See :ref:`credential-data-model:Mobile Security Object` for details.
 An mdoc-CBOR Digital Credential MUST be compliant with the following structure:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -623,6 +627,7 @@ Attribute Namespaces
 The **nameSpaces** contains one or more *nameSpace* entries, each identified by a name. Within each **nameSpace**, it includes one or more *IssuerSignedItemBytes*, each encoded as a CBOR byte string with Tag 24 (#6.24(bstr .cbor)), which appears as 24(<<... >>) in diagnostic notation. It represents the disclosure information for each digest within the `Mobile Security Object` and MUST contain the following attributes:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -648,6 +653,7 @@ Attributes
 The following **elementIdentifiers** MUST be included in a Digital Credential encoded in mdoc-CBOR within the respective *nameSpace*, unless otherwise specified:
 
 .. list-table::
+   :class: longtable
    :widths: 20 60 20
    :header-rows: 1
 
@@ -690,6 +696,7 @@ The **issuerAuth** represents the `Mobile Security Object` which is a `COSE Sign
 The **protected header** MUST contain the following parameter encoded in CBOR format:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -706,6 +713,7 @@ The **protected header** MUST contain the following parameter encoded in CBOR fo
 The **unprotected header** MUST contain the following parameters, unless otherwise specified:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -727,6 +735,7 @@ The **payload** MUST contain the *MobileSecurityObject*, without the `content-ty
 The `MobileSecurityObject` MUST have the following attributes, unless otherwise specified:
 
 .. list-table::
+    :class: longtable
     :widths: 20 60 20
     :header-rows: 1
 
@@ -788,6 +797,7 @@ CBOR Acronyms
 ^^^^^^^^^^^^^
 
 .. list-table::
+   :class: longtable
    :widths: 20 80
    :header-rows: 1
 
@@ -818,6 +828,7 @@ In particular, it shows how core concepts - such as Credential Issuer informatio
 For SD-JWT-VC, parameters are marked with `(hdr)` if they are located in the JOSE header, and `(pld)` if they appear in the payload of the JWT. In mdoc-CBOR, these parameters are identified within the issuerAuth or nameSpaces structures.
 
 .. list-table::
+   :class: longtable
    :widths: 20 40 40
    :header-rows: 1
 

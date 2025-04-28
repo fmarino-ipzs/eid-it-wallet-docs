@@ -235,6 +235,7 @@ For the verification of the validity status of a long-lived Digital Credential t
 
 .. _table_revocation_mechanisms:
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -339,6 +340,7 @@ The requests to the *Status Assertion endpoint* MUST be HTTP with method POST, u
 
 .. _table_revocation_request_params:
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -369,6 +371,7 @@ The **Status Assertion Request object** MUST be a JWT that MUST contain the para
 
 .. _table_status_assertion_req_obj:
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -384,6 +387,7 @@ The **Status Assertion Request object** MUST be a JWT that MUST contain the para
 
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -443,6 +447,7 @@ If the HTTP Status Assertion Request fails (e.g. invalid request, server unavail
 In the following table are listed HTTP Status Codes that MUST be supported:
 
 .. list-table::
+  :class: longtable
   :widths: 20 20 60
   :header-rows: 1
 
@@ -485,6 +490,7 @@ A non-normative example of a HTTP Status Assertion Response is given below.
 The Status Assertion MUST contain the parameters and claims defined below
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -499,6 +505,7 @@ The Status Assertion MUST contain the parameters and claims defined below
     - [:rfc:`7515`], [:rfc:`7517`], `OAUTH-STATUS-ASSERTION`_.
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -580,6 +587,7 @@ Errors are meant to provide additional information about the failure so that the
 The `error` claim for the Status Assertion Error object MUST be set with one of the values defined in the table below, in addition to the values specified in :rfc:`6749#section-5.2`:
 
 .. list-table::
+    :class: longtable
     :widths: 20 80
     :header-rows: 1
 
@@ -677,6 +685,7 @@ Status List Token
  The Status List Token is available at the Status List Endpoint and contains the following parameters.
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -697,6 +706,7 @@ Status List Token
     - :rfc:`5280`
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -725,6 +735,7 @@ Status List Token
 A JSON-encoded Status List has the following structure:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -774,6 +785,7 @@ Handling Credential Status with Status List Token
  The value of the claim ``status_list`` MUST be itself a JSON Object with the following parameters
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -863,6 +875,7 @@ Upon receiving a Digital Credential, a Relying Party MUST first perform the vali
  In case any error occurs when the Status Token Endpoint generates the response, following HTTP Status Codes MUST be supported:
 
 .. list-table::
+  :class: longtable
   :widths: 20 80
   :header-rows: 1
 

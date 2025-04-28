@@ -44,6 +44,7 @@ This section provides the common set of test cases for Wallet Solutions, Relying
 
 
 .. list-table::
+  :class: longtable
   :widths: 15 15 35 35
   :header-rows: 1
 
@@ -120,6 +121,7 @@ This section provides the common set of test cases for Wallet Solutions, Relying
 
 
 .. list-table::
+  :class: longtable
   :widths: 15 15 35 35
   :header-rows: 1
 
@@ -174,6 +176,7 @@ The test plan is based on the mandatory requirements (MUST statements) extracted
 
 
 .. list-table::
+  :class: longtable
   :widths: 15 15 35 35
   :header-rows: 1
 
@@ -435,6 +438,7 @@ Tests related to both PID and (Q)EAA Providers are related to the issuance of cr
 
 
 .. list-table::
+  :class: longtable
   :widths: 15 15 35 35
   :header-rows: 1
 
@@ -898,6 +902,7 @@ This section defines the test cases about the remote presentation flow.
   References about official OpenID4VP test plans will update this section in future releases.
 
 .. list-table::
+  :class: longtable
   :widths: 15 15 35 35
   :header-rows: 1
 
@@ -1221,6 +1226,7 @@ This section defines the general test cases about the proximity presentation flo
 
 
 .. list-table::
+  :class: longtable
   :widths: 15 15 35 35
   :header-rows: 1
 

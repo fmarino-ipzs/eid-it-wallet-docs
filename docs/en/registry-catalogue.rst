@@ -37,6 +37,7 @@ The main Entities involved in the Digital Credential Catalogue are:
 The following table summarizes the main information that MUST be provided by the Digital Credential Catalogue:
 
 .. list-table:: Digital Credential Catalogue - Main information
+   :class: longtable
    :widths: 30 70
    :header-rows: 1
 
@@ -89,6 +90,7 @@ Digital Credentials Categories
 Digital Credentials recognized within the IT-Wallet ecosystem are hierarchically classified and standardized according to the following main domains and categories. Additional categories MAY be added as the IT-Wallet ecosystem grows.
 
 .. list-table:: Digital Credential Domains and Categories
+   :class: longtable
    :header-rows: 1
    :widths: 20 30 50
 
@@ -139,6 +141,7 @@ Digital Credentials Catalogue contents is secured in a JWS that contains the fol
 
 .. _table_catalogue_parameters:
 .. list-table::
+   :class: longtable
    :header-rows: 1
    :widths: 25 50 25
 
@@ -164,6 +167,7 @@ Digital Credentials Catalogue contents is secured in a JWS that contains the fol
 The JWS payload contains the following parameters:
 
 .. list-table:: First-level Fields of the Catalog
+   :class: longtable
    :header-rows: 1
    :widths: 30 70
 
@@ -185,6 +189,7 @@ The JWS payload contains the following parameters:
 Each element of the ``credentials`` array contains at least the following information:
 
 .. list-table:: First-level Fields of Each Credential Entry
+   :class: longtable
    :header-rows: 1
    :widths: 30 70
 

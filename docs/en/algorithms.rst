@@ -7,6 +7,7 @@ Cryptographic Algorithms
 The following algorithms MUST be supported:
 
 .. list-table::
+  :class: longtable
   :widths: 20 20 20 20
   :header-rows: 1
 
@@ -58,6 +59,7 @@ The following Elliptic Curves MUST be supported for the Elliptic Curve Digital S
 For Credential issued in mdoc format, the following algorithms MUST be supported:
 
 .. list-table::
+  :class: longtable
   :widths: 20 20 20 20
   :header-rows: 1
 
@@ -81,6 +83,7 @@ For Credential issued in mdoc format, the following algorithms MUST be supported
 The following algorithms are RECOMMENDED to be supported:
 
 .. list-table::
+  :class: longtable
   :widths: 20 20 20 20
   :header-rows: 1
 
@@ -116,6 +119,7 @@ The following algorithms are RECOMMENDED to be supported:
 The following algorithms MUST NOT be supported:
 
 .. list-table::
+  :class: longtable
   :widths: 20 20 20 20
   :header-rows: 1
 

@@ -111,6 +111,7 @@ Device Engagement
 The Device Engagement structure MUST be CBOR encoded and have at least the following components:
 
 .. list-table::
+   :class: longtable
    :widths: 30 70
    :header-rows: 1
 
@@ -152,6 +153,7 @@ The messages in the mdoc Request MUST be encoded using CBOR. The resulting CBOR 
 Each mdoc Request MUST be compliant with the following structure, and MUST include the following components, unless otherwise specified:
 
 .. list-table::
+   :class: longtable
    :widths: 30 70
    :header-rows: 1
 
@@ -192,6 +194,7 @@ Each mdoc Response MUST be compliant with the following structure, and MUST incl
 
 .. _table-mdoc-attributes:
 .. list-table::
+   :class: longtable
    :widths: 25 75
    :header-rows: 1
 
@@ -215,6 +218,7 @@ Each document in **documents** MUST be compliant with the following structure, a
 
 .. _table-mdoc-documents-attributes:
 .. list-table::
+   :class: longtable
    :widths: 30 70
    :header-rows: 1
 
@@ -238,6 +242,7 @@ Each document in **documents** MUST be compliant with the following structure, a
 A **deviceSigned** data structure MUST be compliant with the following structure, and MUST include the following components:
 
 .. list-table::
+   :class: longtable
    :widths: 25 75
    :header-rows: 1
 

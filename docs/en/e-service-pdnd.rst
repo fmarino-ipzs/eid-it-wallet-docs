@@ -22,6 +22,7 @@ Requirements and Security Patterns
 This specification is based on the following set of requirements:
 
 .. list-table::
+  :class: longtable
   :widths: 10 70 20
   :header-rows: 1
 
@@ -47,6 +48,7 @@ This specification is based on the following set of requirements:
 `PDND`_ and `MODI`_ define several security patterns designed to enhance specific security properties in interactions between Participants. This specification adopts the following applicable security patterns for the interaction between Participants:
 
 .. list-table::
+  :class: longtable
   :widths: 80 20
   :header-rows: 1
 
@@ -472,6 +474,7 @@ The Voucher Request MUST include the following HTTP header parameters (unless ot
 The Voucher Request MUST include the following body parameters:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -494,6 +497,7 @@ The Voucher Request MUST include the following body parameters:
 The ``client_assertion`` JWT MUST include the following JOSE header parameters:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -513,6 +517,7 @@ The ``client_assertion`` JWT MUST include the following JOSE header parameters:
 The ``client_assertion`` JWT MUST include the following payload claims (unless otherwise specified):
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -556,6 +561,7 @@ PDND Voucher Response
 The Voucher Response MUST include the following body parameters:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -578,6 +584,7 @@ The Voucher Response MUST include the following body parameters:
 The ``access_token`` JWT MUST include the following JOSE header parameters:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -597,6 +604,7 @@ The ``access_token`` JWT MUST include the following JOSE header parameters:
 The ``access_token`` JWT MUST include the following payload claims (unless otherwise specified):
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -659,6 +667,7 @@ If any errors occur during the validation of the Voucher Request, the PDND Autho
 The following table lists the HTTP Status Codes and related error codes that MUST be supported for the error response:
 
 .. list-table::
+  :class: longtable
   :widths: 20 20 60
   :header-rows: 1
 
@@ -777,6 +786,7 @@ If any errors occur during the retrieval of the keys, the .well-known Endpoint M
 The following table lists the HTTP Status Codes and related error codes that MUST be supported for the error response:
 
 .. list-table::
+  :class: longtable
   :widths: 20 20 60
   :header-rows: 1
 
@@ -908,6 +918,7 @@ For all other errors, the response MUST adhere to the error format defined in :r
 The following table lists the HTTP Status Codes and related error codes that MUST be supported for the error response:
 
 .. list-table::
+  :class: longtable
   :widths: 20 20 60
   :header-rows: 1
 
@@ -1153,6 +1164,7 @@ e-Service Request
 The e-Service Request MUST include the following HTTP header parameters (unless otherwise specified):
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -1178,6 +1190,7 @@ The e-Service Request MUST include the following HTTP header parameters (unless 
 The ``Signature`` JWT, contained in the ``Agid-JWT-Signature`` HTTP header, MUST include the following JOSE header parameters:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -1197,6 +1210,7 @@ The ``Signature`` JWT, contained in the ``Agid-JWT-Signature`` HTTP header, MUST
 The ``Signature`` JWT, contained in the ``Agid-JWT-Signature`` HTTP header, MUST include the following payload claims:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -1234,6 +1248,7 @@ The ``Signature`` JWT, contained in the ``Agid-JWT-Signature`` HTTP header, MUST
 If present, the ``TrackingEvidence`` JWT, contained in the ``Agid-JWT-TrackingEvidence`` HTTP header, MUST include the following JOSE header parameters:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -1253,6 +1268,7 @@ If present, the ``TrackingEvidence`` JWT, contained in the ``Agid-JWT-TrackingEv
 If present, the ``TrackingEvidence`` JWT, contained in the ``Agid-JWT-TrackingEvidence`` HTTP header, MUST include the following payload claims:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -1294,6 +1310,7 @@ The e-Service Response is a JWT serialized in ``application/jwt`` format.
 The e-Service Response JWT MUST include the following JOSE header parameters:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -1313,6 +1330,7 @@ The e-Service Response JWT MUST include the following JOSE header parameters:
 The e-Service Response JWT MUST include the following payload claims:
 
 .. list-table::
+  :class: longtable
   :widths: 20 60 20
   :header-rows: 1
 
@@ -1372,6 +1390,7 @@ For all other errors, the response MUST adhere to the error format defined in :r
 The following table lists the HTTP Status Codes and related error codes that MUST be supported for the error response:
 
 .. list-table::
+  :class: longtable
   :widths: 20 20 60
   :header-rows: 1
 

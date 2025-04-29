@@ -28,11 +28,11 @@ This guide provides guidelines for contributing to IT-Wallet System Technical Do
 
 ## General Formatting and Editorial Conventions
 
-- **Indentation**: Use spaces instead of tabs for indentation and consistent indentation (3 spaces for directives)
 - **Encoding**: Files should be saved with UTF-8 encoding
 - **Technical parameter names**, such as JSON fileds or HTTP parameters, must be enclosed in double backticks, i.e.: ``client_id``, ``redirect_uri``, ``authorization_details``.
-- **Example URLs** in non-normative examples MUST use not real domains (such as ``example.org``, ``wallet-provider.example.org``) and MUST NOT reference real production URLs
+- **Example URLs** in non-normative examples must use not real domains (such as ``example.org``, ``wallet-provider.example.org``) and must not reference real production URLs
 - **File and path names**, use lowercase, and be separated by hyphens: ``credential-issuance.rst``, ``credential-issuance-endpoint.rst``
+- **Titles**, use Title Case Style: Capitalize all major words in titles. Major words exclude articles (a, an, the), prepositions (on, in, of, etc.), coordinating conjunctions (and, or, but, etc.), and 'to'.
 
 ## File Organization
 
@@ -60,20 +60,23 @@ Parameters:
 Use the following characters for section levels, maintaining this hierarchy:
 
 ```
-Section       = equals signs (=)
-===============
-
-Subsection    = hyphens (-)
---------------
-
-Subsubsection = carets (^)
-^^^^^^^^^^^^^^^
-
-Paragraph     = double quotes (")
-"""""""""""""""
+Equal signs (=) for Sections
+============================
+ 
+Hyphens (-) for Subsections
+---------------------------
+ 
+Carets (^) for Subsubsections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+Double quotes (") for Paragraphs
+"""""""""""""""""""""""""""""""
+ 
+Dots (.) for Subparagraphs 
+..........................
 ```
 
-Section headers must have the same number of underline/overline characters as the length of the header text.
+Section headers must have the same number of underline/overline characters as at least the length of the header text.
 
 ## Cross-References
 
@@ -149,7 +152,7 @@ Use the `figure` directive for images, preferably in SVG format for diagrams:
   - `:align:` - REQUIRED (typically `center`)
   - Caption text - REQUIRED (appears below the figure)
   - `:target:` - REQUIRED for PlantUML diagrams (must link to the PlantUML source)
-  - Label (e.g., `.. _fig_reference_name:`) - Recommended for cross-referencing but optional
+  - Label (e.g., `.. _fig_reference_name:`) - Recommended for cross-referencing but optional. Use the prefix `_fig_` followed by the reference name
 
 When working with figures, understand the difference between these key attributes:
 
@@ -208,13 +211,13 @@ Parameters:
 
 ### Table Requirements
 
-- The `list-table` directive MUST be used for all tables (not grid tables or simple tables)
-- Each table SHOULD have a label for cross-referencing (e.g., `.. _table_name:`)
-- Each table MUST have a title
-- The following attributes are REQUIRED:
+- The `list-table` directive must be used for all tables (not grid tables or simple tables)
+- Each table should have a label for cross-referencing (e.g., `.. _table_name:`). Use the prefix `_table_` followed by the reference table name
+- Each table should have a title
+- The following attributes are required:
   - `:widths:` - relative widths of each column (must match the number of columns)
   - `:header-rows:` - number of header rows (usually 1)
-- Headers SHOULD be in bold format using double asterisks (`**Header Text**`)
+- Headers should be in bold format using double asterisks (`**Header Text**`)
 
 ### Row and Cell Formatting
 

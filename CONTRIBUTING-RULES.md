@@ -1,10 +1,10 @@
-# Contributing to Documentation
+# Contributing Rules
 
-This guide provides guidelines for contributing to IT-Wallet System Technical Documentation. Following these conventions ensures consistency across all documentation files.
+This guide provides guidelines for contributing to IT-Wallet Technical Documentation. Following these conventions ensures consistency across all documentation files.
 
 ## Table of Contents
 
-- [Contributing to Documentation](#contributing-to-documentation)
+- [Contributing Rules](#contributing-rules)
   - [Table of Contents](#table-of-contents)
   - [General Formatting and Editorial Conventions](#general-formatting-and-editorial-conventions)
   - [File Organization](#file-organization)

@@ -293,13 +293,3 @@ Use note and warning directives to highlight important information:
 
 Notes and warnings should be indented with 2 spaces.
 
-
-
-
-
-
-
-
-
-
-

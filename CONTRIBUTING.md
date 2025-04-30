@@ -1,4 +1,4 @@
-# Contributing to IT-Wallet Technical Documentation
+# Contributing to Technical Documentation
 
 🙇‍♀️ Thank you for contributing!
 
@@ -34,7 +34,7 @@ When submitting the pull request, please accompany it with a description of the 
 
 All contributions have to be reviewed by someone.
 
-It could be that your contribution can be merged immediately by a maintainer. However, usually, a new Pull Request needs some improvements before it can be merged. Other contributors (or helper robots) might have feedback. If this is the case the reviewing maintainer will help you improve your documentation.
+It could be that the contribution can be merged immediately by a maintainer. However, usually, a new Pull Request needs some improvements before it can be merged. Other contributors (or helper robots) might have feedback. If this is the case the reviewing maintainer will help you improve your documentation.
 
 If your documentation has passed human review, it is merged.
 

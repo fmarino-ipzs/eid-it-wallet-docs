@@ -4,7 +4,7 @@
 Credential Issuer Solution
 ==========================
 
-An Issuer, as an Organizational Entity participating in the IT-Wallet ecosystem, MUST provide technical Solutions (Issuer Solution) that combine software, hardware, services, settings, and configurations to issue Digital Credentials to User Wallet Instances in a secure and trusted manner.
+An Issuer, as an Organizational Entity participating in the IT-Wallet ecosystem, MUST provide Technical Solutions (Issuer Solution) that combine software, hardware, services, settings, and configurations to issue Digital Credentials to User Wallet Instances in a secure and trusted manner.
 
 The following diagram depicts the Issuer Solution High Level Architecture.
 
@@ -133,7 +133,7 @@ Exposed Endpoints
 Federation Endpoints
 ^^^^^^^^^^^^^^^^^^^^
 
-The Credential Issuers MUST provide an Entity Configuration through the ``/.well-known/openid-federation`` endpoint, according to Section :ref:`trust:Entity Configuration`. Technical details are provided in Section :ref:`credential-issuer-entity-configuration:Entity Configuration of PID/(Q)EAA Providers`.
+The Credential Issuers MUST provide an Entity Configuration through the ``/.well-known/openid-federation`` endpoint, according to Section :ref:`trust:Entity Configuration`. Technical details are provided in Section :ref:`credential-issuer-entity-configuration:Entity Configuration of Credential Issuers`.
 
 Credential Issuer Component Endpoints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,19 +1,19 @@
 .. include:: ../common/common_definitions.rst
 
 
-Entity Configuration of PID/(Q)EAA Providers
+Entity Configuration of Credential Issuers
 ----------------------------------------------
 
-The PID/(Q)EAA Providers, as Federation Entity, are required to adhere to the guidelines outlined in Section :ref:`trust:Configuration of the Federation`. Specifically, they MUST provide a well-known endpoint that hosts their Entity Configuration.
-The Entity Configuration of PID/(Q)EAA Providers MUST contain the parameters defined in the Sections :ref:`trust:Entity Configuration Leaves and Intermediates` and :ref:`trust:Entity Configurations Common Parameters`.
+The Credential Issuers, as Federation Entity, are required to adhere to the guidelines outlined in Section :ref:`trust:Configuration of the Federation`. Specifically, they MUST provide a well-known endpoint that hosts their Entity Configuration.
+The Entity Configuration of Credential Issuers MUST contain the parameters defined in the Sections :ref:`trust:Entity Configuration Leaves and Intermediates` and :ref:`trust:Entity Configurations Common Parameters`.
 
-The PID/(Q)EAA Providers MUST provide the following metadata types:
+The Credential Issuers MUST provide the following metadata types:
 
 - `federation_entity`
 - `oauth_authorization_server`
 - `openid_credential_issuer`
 
-In cases where the (Q)EAA Providers authenticate Users using their Wallet Instance, then the metadata for *openid_credential_verifier* MUST be provided in addition to the metadata above. In case a national eID scheme is used by the PID/(Q)EAA Providers for the User authentication, they MAY include a metadata for *openid_relying_party* within their Entity Configuration. The *openid_relying_party* metadata MUST be compliant with the current version of `SPID/CIE-OpenID-Connect-Specifications`_.
+In cases where the (Q)EAA Providers authenticate Users using their Wallet Instance, then the metadata for *openid_credential_verifier* MUST be provided in addition to the metadata above. In case a national eID scheme is used by the Credential Issuers for the User authentication, they MAY include a metadata for *openid_relying_party* within their Entity Configuration. The *openid_relying_party* metadata MUST be compliant with the current version of `SPID/CIE-OpenID-Connect-Specifications`_.
 
 
 The *federation_entity* metadata MUST contain the parameters as defined in Section :ref:`trust:Metadata of federation_entity Leaves`.
@@ -34,7 +34,7 @@ The *oauth_authorization_server* metadata MUST contain the following parameters.
   * - **Claim**
     - **Description**
   * - **issuer**
-    - It MUST contain an HTTPS URL that uniquely identifies the PID/(Q)EAA Provider.
+    - It MUST contain an HTTPS URL that uniquely identifies the Credential Issuer.
   * - **pushed_authorization_request_endpoint**
     - The URL of the pushed authorization request endpoint is where a Wallet Instance MUST submit an authorization request to obtain a *request_uri* value, which can then be used at the authorization endpoint. See :rfc:`9126#as_metadata`.
   * - **authorization_endpoint**
@@ -83,7 +83,7 @@ The *openid_credential_issuer* metadata MUST contain the following claims.
   * - **Claim**
     - **Description**
   * - **credential_issuer**
-    - The PID/(Q)EAA Provider identifier. It MUST be a case sensitive URL using HTTPS scheme as defined in `OpenID4VCI`_ Sections 11.2.1 and 11.2.3.
+    - The Credential Issuer identifier. It MUST be a case sensitive URL using HTTPS scheme as defined in `OpenID4VCI`_ Sections 11.2.1 and 11.2.3.
   * - **credential_endpoint**
     - URL of the credential endpoint. See `OpenID4VCI`_ Section 11.2.3.
   * - **nonce_endpoint**
@@ -97,21 +97,21 @@ The *openid_credential_issuer* metadata MUST contain the following claims.
   * - **notification_endpoint**
     - It MUST be an HTTPs URL indicating the notification endpoint. See Section 11.2.3 of [`OpenID4VCI`_].
   * - **authorization_servers**
-    - OPTIONAL. Array of strings, where each string is an identifier of the OAuth 2.0 Authorization Server (as defined in [:rfc:`8414`]) the PID/(Q)EAA Provider relies on for authorization. If this parameter is omitted, the entity providing the PID/(Q)EAA Provider is also acting as the Authorization Server.
+    - OPTIONAL. Array of strings, where each string is an identifier of the OAuth 2.0 Authorization Server (as defined in [:rfc:`8414`]) the Credential Issuer relies on for authorization. If this parameter is omitted, the entity providing the Credential Issuer is also acting as the Authorization Server.
   * - **display**
     - See `OpenID4VCI`_ Section 11.2.3. Array of objects containing display language properties. The parameters that MUST be included are:
 
-        - **name**: String value of a display name for the PID/(Q)EAA Provider.
+        - **name**: String value of a display name for the Credential Issuer.
         - **locale**: String value that identifies the language of this object represented as a language tag taken from values defined in *BCP47* :rfc:`5646`. There MUST be only one object for each language identifier.
 
   * - **credential_configurations_supported**
-    - JSON object that outlines the details of the Credential supported by the PID/(Q)EAA Provider. It includes a list of name/value pairs, where each name uniquely identifies a specific supported Credential. This identifier is utilized to inform the Wallet Instance which Credential can be provided by the PID/(Q)EAA Provider. The associated value within the object MUST contain metadata specific to that Credential, as defined following. See `OpenID4VCI`_ Sections 11.2.3 and A.3.2.
+    - JSON object that outlines the details of the Credential supported by the Credential Issuer. It includes a list of name/value pairs, where each name uniquely identifies a specific supported Credential. This identifier is utilized to inform the Wallet Instance which Credential can be provided by the Credential Issuer. The associated value within the object MUST contain metadata specific to that Credential, as defined following. See `OpenID4VCI`_ Sections 11.2.3 and A.3.2.
 
         - **format**: String identifying the format of this Credential. The PID/(Q)EAA MUST support the value string "*dc+sd-jwt*" in case of SD-JWT VC (See `OpenID4VCI`_ Section A.3.1.) and "*mso_mdoc*" in case of mdoc (see `OpenID4VCI`_ Section A.2.1.).
         - **scope**: JSON String identifying the supported *scope* value. The Wallet Instance MUST use this value in the Pushed Authorization Request. Scope values MUST be the entire set or a subset of the *scope* values in the *scopes_supported* parameter of the Authorization Server. [See `OpenID4VCI`_ Section 11.2.3].
-        - **cryptographic_binding_methods_supported**: JSON Array of case sensitive strings that identify the representation of the cryptographic key material that the issued Credential is bound to. The PID/(Q)EAA Provider MUST support the value "*jwk*" for "dc+sd-jwt" format and "*cose_key*" for "mso_mdoc".
-        - **credential_signing_alg_values_supported**: JSON Array of case sensitive strings that identify the algorithms that the PID/(Q)EAA Provider MUST support to sign the issued Credential. See Section :ref:`algorithms:cryptographic algorithms` for more details.
-        - **proof_types_supported**: JSON object which provides detailed information about the key proof(s) supported by the PID/(Q)EAA Provider. It consists of a list of name/value pairs, where each name uniquely identifies a supported proof type. The PID/(Q)EAA Provider MUST support at least "*jwt*" as defined in `OpenID4VCI`_ Section 8.2. The value associated with each name/value pair is a JSON object containing metadata related to the key proof. The PID/(Q)EAA Provider MUST support at least the parameter **proof_signing_alg_values_supported** which MUST be a JSON Array of case sensitive strings that identify the supported algorithms (see Section :ref:`algorithms:cryptographic algorithms` for more details about the supported algorithms).
+        - **cryptographic_binding_methods_supported**: JSON Array of case sensitive strings that identify the representation of the cryptographic key material that the issued Credential is bound to. The Credential Issuer MUST support the value "*jwk*" for "dc+sd-jwt" format and "*cose_key*" for "mso_mdoc".
+        - **credential_signing_alg_values_supported**: JSON Array of case sensitive strings that identify the algorithms that the Credential Issuer MUST support to sign the issued Credential. See Section :ref:`algorithms:cryptographic algorithms` for more details.
+        - **proof_types_supported**: JSON object which provides detailed information about the key proof(s) supported by the Credential Issuer. It consists of a list of name/value pairs, where each name uniquely identifies a supported proof type. The Credential Issuer MUST support at least "*jwt*" as defined in `OpenID4VCI`_ Section 8.2. The value associated with each name/value pair is a JSON object containing metadata related to the key proof. The Credential Issuer MUST support at least the parameter **proof_signing_alg_values_supported** which MUST be a JSON Array of case sensitive strings that identify the supported algorithms (see Section :ref:`algorithms:cryptographic algorithms` for more details about the supported algorithms).
         - **display**: Array of objects containing display language properties. The parameters that MUST be included are:
 
                 - **name**: String value of a display name for the Credential.

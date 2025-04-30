@@ -378,7 +378,7 @@ The test plan is based on the mandatory requirements (MUST statements) extracted
     - Verifiers and Issuers can validate signatures made with the corresponding private key.
   * - WS-049
     - Credential Presentation
-    - The Wallet MUST support selective disclosure of Credential attributes.
+    - The Wallet MUST support Selective Disclosure of Credential attributes.
     - Only selected fields are included in the presentation sent to the Verifier.
   * - WS-050
     - Credential Presentation
@@ -429,7 +429,7 @@ Credential Issuance Test Matrix
 ---------------------------------
 
 This section provides the set of test cases for verifying conformance of a Credential Issuance implementations to the technical rules defined in the IT-Wallet ecosystem.
-Tests related to both PID and (Q)EAA Providers are related to the issuance of credential of public interest, as published within the Credential Catalogue.
+Tests related to Credential Issuer are related to the issuance of Credential of Public Interest, as published within the Credential Catalogue.
 
 .. note::
   References about official OpenID4VCI test plans will update this section in future releases.
@@ -452,12 +452,12 @@ Tests related to both PID and (Q)EAA Providers are related to the issuance of cr
     - Wallet Instance is set up with a valid Wallet Attestation. Ensure the public key is valid and correctly bound to a secure element.
   * - ISS-002
     - Discovery
-    - PID/(Q)EAA Provider Discovery
+    - Credential Issuer Discovery
     - Wallet Instance successfully discovers trusted Digital Credential Issuers using the Credential Catalogue and their configuration compliance and policies with Federation API.
   * - ISS-003
     - Metadata
-    - PID/(Q)EAA Provider Metadata Retrieval
-    - Wallet Instance retrieves and validates PID/(Q)EAA Provider metadata. Metadata includes PID formats, supported algorithms, and interoperability parameters.
+    - Credential Issuer Metadata Retrieval
+    - Wallet Instance retrieves and validates Credential Issuer metadata. Metadata includes PID formats, supported algorithms, and interoperability parameters.
   * - ISS-004
     - Authorization, Authentication
     - PID/(Q)EAA Request using Authorization Code Flow
@@ -477,15 +477,15 @@ Tests related to both PID and (Q)EAA Providers are related to the issuance of cr
   * - ISS-008
     - Security
     - Pushed Authorization Request (PAR) Validation
-    - PID/(Q)EAA Provider validates the PAR request successfully.
+    - Credential Issuer validates the PAR request successfully.
   * - ISS-009
     - Security
     - Token Request Validation
-    - PID/(Q)EAA Provider validates the token request and issues tokens. Validate the DPoP proof and ensure the authorization code is valid and not reused.
+    - Credential Issuer validates the token request and issues tokens. Validate the DPoP proof and ensure the authorization code is valid and not reused.
   * - ISS-010
     - Security
     - Credential Request Validation
-    - PID/(Q)EAA Provider validates the Credentials request and issues Credentials. Validate the proof of possession and ensure the credential type matches the request.
+    - Credential Issuer validates the Credentials request and issues Credentials. Validate the proof of possession and ensure the credential type matches the request.
   * - ISS-011
     - Deferred Issuance
     - Deferred Issuance Flow
@@ -509,7 +509,7 @@ Tests related to both PID and (Q)EAA Providers are related to the issuance of cr
   * - ISS-016
     - Security
     - Validate `aud` Claim in Request Object
-    - Ensure the `aud` claim in the Request Object is equal to the identifier of the PID/(Q)EAA Provider.
+    - Ensure the `aud` claim in the Request Object is equal to the identifier of the Credential Issuer.
   * - ISS-017
     - Security
     - Reject PAR Request with `request_uri`
@@ -545,7 +545,7 @@ Tests related to both PID and (Q)EAA Providers are related to the issuance of cr
   * - ISS-025
     - Security
     - Validate `iss` Parameter in Authorization Response
-    - Ensure the `iss` parameter matches the intended PID/(Q)EAA Provider.
+    - Ensure the `iss` parameter matches the intended Credential Issuer.
   * - ISS-026
     - Security
     - Validate DPoP Proof for Token Endpoint
@@ -605,7 +605,7 @@ Tests related to both PID and (Q)EAA Providers are related to the issuance of cr
   * - ISS-040
     - Security
     - Validate Trust Chain in Credential
-    - Ensure the Trust Chain in the Credential header verifies the PID/(Q)EAA Provider's trust at time of issuance.
+    - Ensure the Trust Chain in the Credential header verifies the Credential Issuer's trust at time of issuance.
   * - ISS-041
     - Security
     - Validate Deferred Issuance Parameters
@@ -757,7 +757,7 @@ Tests related to both PID and (Q)EAA Providers are related to the issuance of cr
   * - ISS-078
     - Error Handling
     - Validate Error Handling in User Notification
-    - Ensure errors in the User Notification process are handled correctly and reported.
+    - Ensure errors in the User Notification Process are handled correctly and reported.
   * - ISS-079
     - Error Handling
     - Validate Error Handling in User Attribute Set Update
@@ -833,7 +833,7 @@ Tests related to both PID and (Q)EAA Providers are related to the issuance of cr
   * - ISS-097
     - Error Handling
     - Validate Error Handling in Credential Offer Notification
-    - Ensure errors in the Credential Offer Notification process are handled correctly and reported.
+    - Ensure errors in the Credential Offer Notification Process are handled correctly and reported.
   * - ISS-098
     - Error Handling
     - Validate Error Handling in Credential Offer Communication

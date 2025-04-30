@@ -32,7 +32,7 @@ Notify Available Credential
     - This service informs Users when a specific credential has become
       available to be entered into the Wallet
   * - **Provider**
-    - PID/(Q)EAA Provider
+    - Credential Issuer
   * - **Consumer**
     - Authentic Source
 
@@ -50,7 +50,7 @@ Notify Update Credential
       with which a digital document issued by the Credential Issuer is
       associated.
   * - **Provider**
-    - PID/(Q)EAA Provider
+    - Credential Issuer
   * - **Consumer**
     - Authentic Source
 
@@ -66,7 +66,7 @@ Notify Wallet Instance Revocation
   * - **Description**
     - This service revokes all Digital Credentials associated with a specific User.
   * - **Provider**
-    - PID/(Q)EAA Provider
+    - Credential Issuer
   * - **Consumer**
     - Wallet Provider
 
@@ -82,7 +82,7 @@ Get Statistics
   * - **Description**
     - This service returns statistical data on issued Digital Credentials.
   * - **Provider**
-    - PID/(Q)EAA Provider
+    - Credential Issuer
   * - **Consumer**
     - Authorized Third Party
 
@@ -107,7 +107,7 @@ Get Attribute Claims
   * - **Provider**
     - Authentic Source
   * - **Consumer**
-    - PID/(Q)EAA Provider
+    - Credential Issuer
 
 Wallet Provider Catalogue
 -------------------------

@@ -309,9 +309,9 @@ PR-CF-30
    :widths: 8 92
 
    * - |check-icon|
-     - The Credential Format must ensure that there is a robust mechanism to ensure that data that is not to be released to a Verifier cannot be extracted by the Verifier (selective disclosure).
+     - The Credential Format must ensure that there is a robust mechanism to ensure that data that is not to be released to a Verifier cannot be extracted by the Verifier (Selective Disclosure).
 
-Both SD-JWT and mdoc-CBOR provide selective disclosure capability, allowing Holders to reveal only specific fields to the Verifier.
+Both SD-JWT and mdoc-CBOR provide Selective Disclosure capability, allowing Holders to reveal only specific fields to the Verifier.
 
 PR-CF-40
 ^^^^^^^^
@@ -321,7 +321,7 @@ PR-CF-40
    * - |partially-check-icon|
      - The Credential Format must support correlation protection.
 
-While selective disclosure is a strong tool for preventing correlation, full unlinkability is not guaranteed in all cases. Issues like Verifier collusion or Issuer tracking can arise.
+While Selective Disclosure is a strong tool for preventing correlation, full unlinkability is not guaranteed in all cases. Issues like Verifier collusion or Issuer tracking can arise.
 
 .. tip::
   Batch issuance, using different key binding keys and salts for each Credential, can mitigate Verifier/Verifier and presentation unlinkability risks.
@@ -349,7 +349,7 @@ PR-E-70
 The following mechanisms may be implemented to reduce the correlation:
 
 - *Verifier-Verifier*: evaluation mechanisms to ensure that a Verifier requests only the information it is authorized to obtain from the Wallet. This approach minimizes data exchange and helps prevent User profiling through potential collusion between Verifiers.
-- *Issuer-Verifier*: The Issuer does not require the authentication of the Verifier during the trust evaluation. In principle, the Issuer does not know which Verifiers the User is accessing and will avoid User activity profiling based on the Verifier's access.
+- *Issuer-Verifier*: The Issuer does not require the authentication of the Verifier during the Trust Evaluation. In principle, the Issuer does not know which Verifiers the User is accessing and will avoid User activity profiling based on the Verifier's access.
 
 .. tip::
  OpenID Federation Trust Marks allow the definition of custom policies suitable to the satisfaction of this requirement.

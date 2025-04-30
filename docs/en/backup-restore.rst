@@ -12,7 +12,7 @@ The **Backup and Restore** functionality becomes relevant when the User wants to
 - The User performs a factory reset on the current phone and needs to set up the Wallet Solution again.
 
 .. note::
-  For Wallet Solutions based on the IT Wallet technical specifications, the migration to a different Wallet Solution (known as data portability) can be supported following the backup and restore functionality described in this section.
+  For Wallet Solutions based on the IT Wallet Technical Specifications, the migration to a different Wallet Solution (known as data portability) can be supported following the backup and restore functionality described in this section.
 
 
 Backup Flow
@@ -139,7 +139,7 @@ To check the authenticity of the file, the Wallet Instance MUST verify the backu
 **Steps 7-8**: The Wallet Instance for each HW binding credentials entry in the payload of the backup JWT performs the following steps:
 
 - It extracts the Credential Issuer identifier and the ``credential_configuration_id`` from the entry. The former is used to identify the Issuer and obtains its metadata, while the latter will be used to signal the Credential type to the Credential Issuer.
-- Using the Issuer identifier the Wallet Instance obtains the metadata of the Credential Issuer and makes a re-issuance request to the Credential Issuer by providing the new cryptographic binding with the Credential.
+- Using the Issuer identifier the Wallet Instance obtains the metadata of the Credential Issuer and makes a re-issuance request to the Credential Issuer by providing the new Cryptographic Binding with the Credential.
 
 .. note::
   The Wallet Instance MUST not check the expiration of the Wallet Attestation as its main purpose is to enable the Wallet Instance to verify the authenticity of the backup file by ensuring it has been created and signed by a Wallet Instance of a specific Wallet Provider.

@@ -48,7 +48,7 @@ The following table summarizes the main information that MUST be provided by the
 
        - **Credential Unique identifier**: A unique identifier string of each Digital Credential.
        - **User authentication methods**: User authentication mechanisms used to request the Digital Credential, if required by Issuers or Authentic Sources.
-       - **Minimum Level of Assurance**: The minimum level of assurance required for the Digital Credential's reliability. It MUST take into account the level of assurance of User authentication, when applicable, and Wallet Instance.
+       - **Minimum Level of Assurance**: The minimum Level of Assurance required for the Digital Credential's reliability. It MUST take into account the Level of Assurance of User authentication, when applicable, and Wallet Instance.
        - **Additional display characteristics**: Visual and formatting specifications, such as a background reference image, logo, etc.
    * - Digital Credential Issuers
      - Details about the organization authorized to issue the Digital Credential, such as:
@@ -237,7 +237,7 @@ Each element of the ``credentials`` array contains at least the following inform
      - REQUIRED. Digital Credential authentication requirements
 
        * **user_auth_required**: REQUIRED. Flag indicating if User authentication is required during the issuance of the Digital Credential.
-       * **min_loa**: REQUIRED. Minimum level of assurance required for Digital Credential authentication. It MUST include the level of assurance of the User authentication and the Wallet Instance requesting the Digital Credential.
+       * **min_loa**: REQUIRED. Minimum Level of Assurance required for Digital Credential authentication. It MUST include the Level of Assurance of the User authentication and the Wallet Instance requesting the Digital Credential.
        * **supported_eid_schemes**: REQUIRED if ``user_auth_required`` is ``true``. Supported digital identity authentication schemes.
    * - **purposes**
      - REQUIRED. Array of usage purposes for which the Digital Credential can be used, defining specific usage contexts and required claims for each purpose, such as:
@@ -304,7 +304,7 @@ The corresponding example of Digital Credentials Catalogue as decoded in JSON fo
 Claims Taxonomy
 ^^^^^^^^^^^^^^^^
 
-The Digital Credential Catalogue, MUST include also a reference URI to Claim Taxonomy providing, in a single resource, the semantic information of all registered and available claims within the IT-Wallet ecosystem. It MUST be Credential format neutral and has the aim of facilitating Digital Credentials integrations in the IT-Wallet technical solutions.
+The Digital Credential Catalogue, MUST include also a reference URI to Claim Taxonomy providing, in a single resource, the semantic information of all registered and available claims within the IT-Wallet ecosystem. It MUST be Credential format neutral and has the aim of facilitating Digital Credentials integrations in the IT-Wallet Technical Solutions.
 
 A non-normative example of the Claim Taxonomy is given below.
 

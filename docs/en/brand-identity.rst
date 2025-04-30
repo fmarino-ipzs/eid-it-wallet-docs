@@ -65,7 +65,7 @@ The following requirements apply to its use in both physical and digital context
 
 - The Trust Mark MUST be used exclusively to certify the participation in the IT-Wallet System and MUST NOT be used for any other purpose;
 
-- The Trust Mark MUST only be displayed by Technical Solutions that have successfully completed the certification process;
+- The Trust Mark MUST only be displayed by Technical Solutions that have successfully completed the Certification Process;
 
 - The Trust Mark MUST be used exactly as provided in the Official Resources and MUST comply with the usage specifications outlined in the Official Resources to ensure proper visibility throughout all the stages of the User Experience;
 

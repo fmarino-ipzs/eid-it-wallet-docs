@@ -219,7 +219,7 @@ Digital Credential Issuance Proposals for Future Milestones
     * - ISO/IEC 23220-3
       - Cards and security devices for personal identification - Building blocks for identity management via mobile devices - Part 3: Protocols and services for installation and issuing phase
     * - DTS/ESI-0019472-2
-      - Electronic Signatures and Trust Infrastructures (ESI); Profiles for Electronic Attestations of Attributes Part 2: Profiles for Relying party interface to EUDI Wallet
+      - Electronic Signatures and Trust Infrastructures (ESI); Profiles for Electronic Attestations of Attributes Part 2: Profiles for Relying Party interface to EUDI Wallet
     * - DTS/ESI-0019472-1
       - Electronic Signatures and Trust Infrastructures (ESI); Profiles for Electronic Attestations of Attributes; Part 1: General requirements Profiles for EAA - General requirements 
 

@@ -8,7 +8,7 @@ PID/(Q)EAA Data Model
 The Digital Credential Data Model structures Digital Credentials for secure, interoperable use. Key elements include:
 
     - Credential Subject: The individual or entity receiving the Credential.
-    - Issuer: The PID/(Q)EAA Provider issuing and signing the Credential.
+    - Issuer: The Credential Issuer issuing and signing the Credential.
     - Metadata: Details about the Credential, like type and validity.
     - Claims: Information about the subject, such as identity or qualifications.
     - Proof: Cryptographic verification of authenticity and legitimate ownership.
@@ -107,7 +107,7 @@ The JWT payload contains the following claims. Some of these claims can be discl
       - **Description**
       - **Reference**
     * - **iss**
-      - [NSD]. REQUIRED. URL string representing the PID/(Q)EAA Issuer unique identifier.
+      - [NSD]. REQUIRED. URL string representing the Credential Issuer unique identifier.
       - `[RFC7519, Section 4.1.1] <https://www.iana.org/go/rfc7519>`_.
     * - **sub**
       - [NSD]. REQUIRED. The identifier of the subject of the Digital Credential, the User, MUST be opaque and MUST NOT correspond to any anagraphic data or be derived from the User's anagraphic data via pseudonymization. Additionally, it is required that two different Credentials issued MUST NOT use the same ``sub`` value.
@@ -125,7 +125,7 @@ The JWT payload contains the following claims. Some of these claims can be discl
       - [NSD]. REQUIRED. Name of the administrative authority that has issued the PID/(Q)EAA.
       - Commission Implementing Regulation `EU_2024/2977`_.
     * - **issuing_country**
-      - [NSD]. REQUIRED. Alpha-2 country code, as specified in ISO 3166-1, of the country or territory of the PID/(Q)EAA Issuer.
+      - [NSD]. REQUIRED. Alpha-2 country code, as specified in ISO 3166-1, of the country or territory of the Credential Issuer.
       - Commission Implementing Regulation `EU_2024/2977`_.
     * - **status**
       - [NSD]. REQUIRED only if the Digital Credential is long-lived. JSON object containing the information on how to read the status of the Verifiable Credential. It MUST contain either the JSON member *status_assertion* or *status_list*.
@@ -134,7 +134,7 @@ The JWT payload contains the following claims. Some of these claims can be discl
       - [NSD]. REQUIRED. JSON object containing the proof-of-possession key materials. By including a **cnf** (confirmation) claim in a JWT, the Issuer of the JWT declares that the Holder is in control of the private key related to the public one defined in the **cnf** parameter. The recipient MUST cryptographically verify that the Holder is in control of that key.
       - `[RFC7800, Section 3.1] <https://www.iana.org/go/rfc7800>`_ and Section 3.2.2.2 `SD-JWT-VC`_.
     * - **vct**
-      - [NSD]. REQUIRED. Credential type value MUST be an HTTPS URL String and it MUST be set using one of the values obtained from the PID/(Q)EAA Issuer metadata. It is the identifier of the SD-JWT VC type and it MUST be set with a collision-resistant value as defined in Section 2 of :rfc:`7515`. It MUST contain also the number of version of the Credential type (for instance: ``https://trust-registry.eid-wallet.example.it/credentials/v1.0/personidentificationdata``).
+      - [NSD]. REQUIRED. Credential type value MUST be an HTTPS URL String and it MUST be set using one of the values obtained from the Credential Issuer metadata. It is the identifier of the SD-JWT VC type and it MUST be set with a collision-resistant value as defined in Section 2 of :rfc:`7515`. It MUST contain also the number of version of the Credential type (for instance: ``https://trust-registry.eid-wallet.example.it/credentials/v1.0/personidentificationdata``).
       - Section 3.2.2.2 `SD-JWT-VC`_.
     * - **vct#integrity**
       - [NSD]. REQUIRED. The value MUST be an "integrity metadata" string as defined in Section 3 of [`W3C-SRI`_]. *SHA-256*, *SHA-384* and *SHA-512* MUST be supported as cryptographic hash functions. *MD5* and *SHA-1* MUST NOT be used. This claim MUST be verified according to Section 3.3.5 of [`W3C-SRI`_].
@@ -823,7 +823,7 @@ Cross-Format Credential Parameters Mapping
 
 The following table provides a comparative mapping between the data structures of SD-JWT-VC and mdoc-CBOR Digital Credentials.
 It outlines the key data elements and parameters used in each format, highlighting both commonalities and differences.
-In particular, it shows how core concepts - such as Credential Issuer information, validity, cryptographic binding, and disclosures - are represented in these Credential formats.
+In particular, it shows how core concepts - such as Credential Issuer information, validity, Cryptographic Binding, and disclosures - are represented in these Credential formats.
 
 For SD-JWT-VC, parameters are marked with `(hdr)` if they are located in the JOSE header, and `(pld)` if they appear in the payload of the JWT. In mdoc-CBOR, these parameters are identified within the issuerAuth or nameSpaces structures.
 
@@ -888,10 +888,10 @@ For SD-JWT-VC, parameters are marked with `(hdr)` if they are located in the JOS
        | x5c (hdr)
      - | -
        | issuerAuth.33 (x5chain)
-   * - Cryptographic binding
+   * - Cryptographic Binding
      - cnf.jwk (pld)
      - issuerAuth.deviceKeyInfo.deviceKey
-   * - Selective disclosure
+   * - Selective Disclosure
      - | _sd_alg (pld)
        | _sd (pld)
      - | issuerAuth.digestAlgorithm
@@ -919,7 +919,7 @@ For SD-JWT-VC, parameters are marked with `(hdr)` if they are located in the JOS
 
 .. note::
   - In the mdoc-CBOR format, the version of the Digital Credential is not explicitly defined; it is only available for the IssuerAuth. In contrast, the SD-JWT format includes version information via the `vct` URL.
-  - `Disclosures`, `_sd`, and `_sd_alg` enable selective disclosure of SD-JWT claims. The `_sd` and `_sd_alg` parameters are part of the SD-JWT payload, while `Disclosures` are sent separately in a Combined Format along with the SD-JWT.
+  - `Disclosures`, `_sd`, and `_sd_alg` enable Selective Disclosure of SD-JWT claims. The `_sd` and `_sd_alg` parameters are part of the SD-JWT payload, while `Disclosures` are sent separately in a Combined Format along with the SD-JWT.
   - The `vctm.claims` parameter in SD-JWT and the `nameSpaces` structure in mdoc-CBOR are functionally equivalent, as both define the claim names and their structure. SD-JWT `Disclosures` for disclosed attributes directly correspond to `nameSpaces`, including attribute names, values, and salt values.
   - A domestic namespace accommodates attributes such as `verification` and `sub`, which are not defined in the standard ISO elementIdentifiers for mdoc-CBOR Digital Credentials.
 

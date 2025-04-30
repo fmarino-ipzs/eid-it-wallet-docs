@@ -29,7 +29,7 @@ It primarily certifies the **authenticity**, **integrity**, **security**, **priv
 The requirements for the Wallet Attestation are defined below:
 
 - The Wallet Attestation MUST provide all the relevant information to attest to the **integrity** and **security** of the device where the Wallet Instance is installed.
-- The Wallet Attestation MUST be signed by the Wallet Provider that has authority over and is the owner of the Wallet Solution, as specified by the overseeing registration authority. This ensures that the Wallet Attestation uniquely links the Wallet Provider to this particular Wallet Instance.
+- The Wallet Attestation MUST be signed by the Wallet Provider that has authority over and is the owner of the Wallet Solution, as specified by the overseeing Registration Authority. This ensures that the Wallet Attestation uniquely links the Wallet Provider to this particular Wallet Instance.
 - The Wallet Provider MUST ensure the integrity, authenticity, and genuineness of the Wallet Instance, preventing any attempts at manipulation or falsification by unauthorized third parties. The Wallet Provider MUST also verify the Wallet Instance using the available OS Provider's API and MUST do so using the most secure flow allowed by the OS Provider's API. Examples include *Play Integrity API* for Android and *App Attest* for iOS.
 - The Wallet Provider MUST possess a revocation mechanism for the Wallet Instance, allowing the Wallet Provider to terminate service for a specific Instance at any time.
 - The Wallet Attestation MUST be securely bound to the Wallet Instance's ephemeral public key.

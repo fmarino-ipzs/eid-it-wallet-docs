@@ -15,7 +15,7 @@ Below are several methods available for contributing to this project:
 - **Developers Italia Slack channel**. Slack is a messaging application designed for businesses, connecting people to the information they need. *Developers Italia* is an open community based on contributions and participation from public administrations, developers, technicians, students, and citizens. *Developers Italia* has initiated a Slack channel that [everyone can join for free](https://slack.developers.italia.it/), where you can learn about all their activities and partake in discussions.
 
 Acknowledgements
-----------------
++++++++++++++++++++++++++++
 
 We would like to thank the following individuals for their comments,
 concerns, ideas, contributions, some of which substantial, to this

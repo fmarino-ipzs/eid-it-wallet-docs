@@ -42,9 +42,7 @@ A preview of the latest editor's copy build, corresponding to the branch `versio
 
 Released versions can be navigated by adding the tag in the webpath leaded by a _v_, as follows:
 
- - **(STABLE VERSION) [https://italia.github.io/eid-wallet-it-docs/v1.0.0/en/](https://italia.github.io/eid-wallet-it-docs/v1.0.0/en/)**
-
-  
+ - [https://italia.github.io/eid-wallet-it-docs/v1.0.0/en/](https://italia.github.io/eid-wallet-it-docs/v1.0.0/en/)
  - [https://italia.github.io/eid-wallet-it-docs/v0.9.3/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.3/en/)
  - [https://italia.github.io/eid-wallet-it-docs/v0.9.2/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.2/en/)
  - [https://italia.github.io/eid-wallet-it-docs/v0.9.1/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.1/en/)

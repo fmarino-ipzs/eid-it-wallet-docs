@@ -143,4 +143,3 @@ To check the authenticity of the file, the Wallet Instance MUST verify the backu
 
 .. note::
   The Wallet Instance MUST not check the expiration of the Wallet Attestation as its main purpose is to enable the Wallet Instance to verify the authenticity of the backup file by ensuring it has been created and signed by a Wallet Instance of a specific Wallet Provider.
-  

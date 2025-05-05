@@ -29,264 +29,308 @@ The terms *User*, *Trust Service*, *Trust Model*, *Trusted List*, *Trust Framewo
 
 Below is the description of acronyms and definitions which are useful for further insights into topics that complement the IT-Wallet System and the interacting components.
 
+.. _defined-terms:
+
+Defined Terms and Acronyms
+==========================
+
+This section aligns the IT-Wallet System's terminology with the definitions provided in ARF 1.10 (see `ARF Annex 1 <https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-1/annex-1-definitions.md>`_).  
+For each term, the IT-Wallet definition is compared and mapped to the ARF definition, with notes on any differences or clarifications.
+
 .. list-table::
    :header-rows: 1
+   :widths: 20 40 40
 
-   * - Name
-     - Description
-     - Notes
+   * - Term / Acronym
+     - IT-Wallet Definition
+     - ARF 1.10 Definition / Alignment
+
    * - Accreditation Process
-     - Process performed by the National Accreditation Body to accreditate CABs. As a result of the Accreditation Process, a NAB issues an accreditation certificate to a CAB.
-     -
-   * - Attributes
-     - A set of characteristics, qualities, rights, or permissions of a natural or legal person, or of an object, or even a single piece of such information.
-     -
+     - Process performed by the National Accreditation Body to accredit CABs, resulting in an accreditation certificate.
+     - Identical to ARF 1.10.
+
+   * - Attribute
+     - A set of characteristics, qualities, rights, or permissions of a person or object, or a single piece of such information.
+     - Aligned with ARF 1.10.
+
    * - Authentication
-     -  An electronic process that enables the confirmation of the Electronic Identification of a natural or legal person, or the origin and integrity of data in electronic form (in the context of the Guidelines, for example, Attributes).
-     -
+     - Electronic process confirming the identity of a person or the origin/integrity of data.
+     - Aligned with ARF 1.10.
+
    * - Authentic Source
-     - Public entity or private entity responsible for the repository or system, considered a primary source for Attributes or for Personal Identification Data, and whose authenticity is recognized in accordance with Union or national law, including administrative practice.
-     -
+     - Public or private entity responsible for a repository/system considered a primary source for Attributes or PID.
+     - Aligned with ARF 1.10.
+
    * - Certification Process
-     - Process performed by Conformity Assessment Bodies to certify the Wallet Solution. The Certification Process aims to periodically assess technical Wallet Solutions (e.g. performing vulnerability assessment and risk analysis). As a result of the Certification Process a certification is provided to the Wallet Solution.
-     -
+     - Process by Conformity Assessment Bodies to certify the Wallet Solution, including periodic technical assessments.
+     - Aligned with ARF 1.10.
+
    * - Conformity Assessment Body (CAB)
-     - A conformity assessment body as defined in Article 2, point 13, of Regulation (EC) No 765/2008, which is accredited in accordance with that Regulation as competent to carry out conformity assessment of a qualified trust service provider and the qualified trust services it provides, or as competent to carry out certification of Wallet Solutions or electronic identification means.
-     - Aligned with ARF v1.4.
+     - Accredited body competent to assess/certify Wallet Solutions or trust service providers.
+     - Aligned with ARF 1.10.
+
    * - Credential Issuer
-     - An Organizational Entity providing Digital Credentials to Users. It may be PID Provider or (Q)EAA Providers.
-     - | Revised from ARF v1.4.
-       |
-       | *Differences:*  (i) merged the PID Providers and (Q)EEA Providers definitions using the general term Digital Credential, (ii) renamed “Member Stare or other legal entity” in “Organizational Entity” ARF alternative terms: PID Providers, (Q)EEA Providers, Attestation Provider.
-       | *Alternative terms:* Verifiable Credential Issuer, Electronic Attestation Provider.
+     - Organizational Entity providing Digital Credentials to Users (may be PID Provider or (Q)EAA Provider).
+     - ARF 1.10 uses similar terms; IT-Wallet merges PID and (Q)EAA Providers under this term.
+
    * - Credential Status Assertion
-     - Signed document serving as proof of a Digital Credential's current validity status.
-     -
+     - Signed document proving a Digital Credential's current validity status.
+     - Aligned with ARF 1.10.
+
    * - Critical Assets
-     - They are assets within or in relation to a Wallet Unit (for example cryptographic keys) of such importance that their incapacitation or destruction would have a very serious, debilitating effect on the ability to rely on the Wallet Unit.
-     - | Revised from Implementing Act.
-       |
-       | *Differences:*  editorial.
+     - Assets (e.g., cryptographic keys) whose loss would seriously impact the Wallet Unit.
+     - Aligned with ARF 1.10.
+
    * - Cryptographic Hardware Key Tag
-     - A unique identifier created by the operating system for the Cryptographic Hardware Keys, utilized to gain access to the private key stored in the hardware.
-     -
+     - Unique identifier for Cryptographic Hardware Keys, used to access the private key in hardware.
+     - Aligned with ARF 1.10.
+
    * - Cryptographic Hardware Keys
-     - During the app initialization, the Wallet Instance generates a pair of keys, one public and one private, which remain valid for the entire duration of the Wallet Instance's life. Functioning as a Master Key for the personal device, these Cryptographic Hardware Keys are confined to the OS domain and are not designed for signing arbitrary payloads. Their primary role is to provide a unique identification for each Wallet Instance.
-     -
+     - Key pair generated by the Wallet Instance, valid for its lifetime, used for identification.
+     - Aligned with ARF 1.10.
+
    * - Device Integrity Service
-     - A service provided by device manufacturers that verifies the integrity and authenticity of the app instance (Wallet Instance), as well as certifying the secure storage of private keys generated by the device within its dedicated hardware. It's important to note that the terminology used to describe this service varies among manufacturers.
-     -
+     - Service by device manufacturers to verify app integrity and secure key storage.
+     - Aligned with ARF 1.10.
+
    * - Digital Credential
-     - A signed set of Attributes encapsulated in a specific data format, such as mDoc-CBOR format specified in [ISO 18013-5] or the SD-JWT VC format specified in [SD-JWT-VC]. This may be a Personal Identification Data (PID), (Qualified) Electronic Attestation of Attribute ((Q)EAA).
-     - | Revised from ARF v1.4.
-       |
-       | *Differences:*  The definition from ARF restricts the data format to mDoc-CBOR and SD-JWT VC. A Digital Credential definition should be neutral on the format.
-       | *Alternative terms:* Electronic Attestation, Attestation, Verifiable Credential, Digital Attestation.
+     - Signed set of Attributes in a specific format (e.g., mDoc-CBOR, SD-JWT VC), may be PID or (Q)EAA.
+     - ARF 1.10 restricts to mDoc-CBOR and SD-JWT VC; IT-Wallet notes the definition should be format-neutral.
+
    * - Federation Authority
-     - A public governance entity that issues guidelines and technical rules and administers - directly or through its intermediary - Trusted Lists, services, and accreditation processes, the status of participants, and their eligibility evaluation. It also performs oversight functions.
-     -
+     - Public governance entity issuing guidelines, rules, and managing trust lists and participant status.
+     - Aligned with ARF 1.10.
+
    * - Holder
-     - Natural or Legal person that receives Digital Credentials from the Credential Issuers, manages the Digital Credentials within the Wallet Instance, and presents them to Verifiers. The Holder is the User in control of the Wallet.
-     -
+     - Person or entity that receives, manages, and presents Digital Credentials via the Wallet Instance.
+     - Aligned with ARF 1.10.
+
    * - Holder Key Binding
-     - Ability of the Holder to prove legitimate possession of the private part, related to the public part attested by a Trusted Third Party.
-     -
+     - Ability of the Holder to prove possession of the private key attested by a Trusted Third Party.
+     - Aligned with ARF 1.10.
+
    * - Identity and Access Management (IAM)
-     - Identity and access management, or IAM, is a framework of business processes, policies and technologies that facilitates the management of digital identities. With an IAM framework in place, IT security teams can control user access to critical information within their organizations.
-     -
+     - Framework for managing digital identities and access to information.
+     - Aligned with ARF 1.10.
+
    * - IT-Wallet System
-     - Set of Technical Solutions that implement the "Italian Digital Wallet System" pursuant to Article 64-quater of [CAD].
-     -
+     - Set of Technical Solutions implementing the Italian Digital Wallet System.
+     - Not present in ARF 1.10; specific to IT-Wallet.
+
    * - IT-Wallet System Register
-     - Register containing the list of public entities and private entities that are registered in the IT-Wallet System.
-     -
+     - Register of entities participating in the IT-Wallet System.
+     - Not present in ARF 1.10; specific to IT-Wallet.
+
    * - Key Attestation
-     - An attestation from the device's OEM that enhances your confidence in the keys used in your Wallet Instance being securely stored within the device's hardware-backed keystore. Its content is therefore defined by the operating system manufacturer. For Google Android, the term Key Attestation refers to the Strongbox Key Attestation feature. For Apple iOS, the reference is to the `Device Check`_ service, specifically the `attestKey`_ feature.
-     -
-   * - Level of Assurance
-     - The degree of confidence in the vetting process used to establish the identity of the User and the degree of confidence that the User who presents the credential is the same User to whom the Digital Credential was issued.
-     -
+     - Attestation from device OEM about secure key storage in hardware-backed keystore.
+     - Aligned with ARF 1.10.
+
+   * - Level of Assurance (LoA)
+     - Degree of confidence in identity vetting and credential presentation.
+     - Aligned with ARF 1.10.
+
    * - Metadata
-     - Digital artifact that contains all the required information about an Organizational Entity, e.g., protocol related endpoints and the Organizational Entity’s cryptographic public keys (for the complete list check requirement “Metadata Content”).
-     -
+     - Digital artifact with information about an Organizational Entity (endpoints, public keys, etc.).
+     - Aligned with ARF 1.10.
+
    * - National Accreditation Bodies (NAB)
-     - A body that performs accreditation with authority derived from a Member State under Regulation (EC) No 765/2008.
-     - | Alignes with ARF v1.4.
-       |
-       | *Alternative terms:*  Accreditation Authority.
+     - Body performing accreditation under authority from a Member State.
+     - Aligned with ARF 1.10.
+
    * - National Identity Provider
-     - It represents preexisting identity systems based on SAML2 or OpenID Connect Core 1.0, already in production in each Member State (eg: the Italian SPID and CIE id schemes notified eIDAS with *LoA* **High**, see `SPID/CIE-OpenID-Connect-Specifications`_).
-     -
+     - Preexisting identity systems (e.g., SPID, CIE) notified to eIDAS.
+     - Aligned with ARF 1.10.
+
    * - Notification Process
-     - Process defining how information is transferred to the European Commission and the inclusion of an entity in the Trusted List.
-     -
+     - Process for transferring information to the EC and inclusion in the Trusted List.
+     - Aligned with ARF 1.10.
+
    * - Organizational Entity
-     - A legal person (only considering organizations and public entities, not natural/physical persons) recognized through a unique identifier to operate a certain role within the IT-Wallet ecosystem.
-     - | In this category the following entity roles are included: Wallet Provider, Credential Issuer, Relying Party, QTSP In general, any kind of Entity that must be registered through a national registration mechanism.
-       |
-       | *Alternative terms:* legal person (only considering organizations and public entities, not natural/physical persons).
+     - Legal person (organization or public entity) recognized to operate a role in the IT-Wallet ecosystem.
+     - Aligned with ARF 1.10.
+
    * - PID Provider
-     - A Credential Issuer responsible for issuing and revoking Person Identification Data (PID) to Users, ensuring that the PID of a User is cryptographically bound to a Wallet Unit.
-     - | Revised from ARF v1.4 and Implementing Act.
-       |
-       | *Differences:* editorial (renamed “Member Stare or other legal entity” and "natural or legal person", respectively).
+     - Credential Issuer responsible for issuing/revoking PID, ensuring cryptographic binding to Wallet Unit.
+     - Aligned with ARF 1.10.
+
    * - Policy Language
-     - A formal language used to define security, privacy, and identity management policies that govern interactions and transactions within a Trust Framework. This language allows for the clear and unambiguous expression of rules and conditions, facilitating the automation of processes and interoperability among different systems and organizations.
-     -
+     - Formal language for defining security, privacy, and identity management policies.
+     - Aligned with ARF 1.10.
+
    * - Primary Actors
-     - The set of public entities and private entities that implement the Technical Solutions for the functioning of the IT-Wallet System.
-     -
+     - Entities implementing Technical Solutions for the IT-Wallet System.
+     - Not present in ARF 1.10; specific to IT-Wallet.
+
    * - Pseudonym
-     - Pseudonyms are alternative identifier used to represent an entity (such as a person or organization) without revealing their true identity. It provides a layer of privacy and anonymity while still allowing for consistent authentication and authorization within a system.
-     -
+     - Alternative identifier for privacy/anonymity, allowing authentication/authorization.
+     - Aligned with ARF 1.10.
+
    * - Qualified Electronic Attestation of Attributes (QEAA)
-     - A digitally verifiable attestation in electronic form, issued by a QTSP, that substantiates a person's possession of attributes.
-     - *Alternative term:* Electronic Attestation of Attributes
+     - Digitally verifiable attestation issued by a QTSP, substantiating possession of attributes.
+     - Aligned with ARF 1.10.
+
    * - Qualified Electronic Attestation of Attributes Provider
-     - Organizational Entity which serves as Credential issuer providing Qualified Electronic Attestations of Attributes (QEAAs).
-     - *Alternative term:* Electronic Attestation of Attributes Provider
+     - Entity providing QEAAs.
+     - Aligned with ARF 1.10.
+
    * - Qualified Electronic Signature Provider
-     - The Electronic Trust Service Provider responsible for the issuing of Qualified Electronic Signature certificates to the User.
-     -
+     - Trust Service Provider issuing Qualified Electronic Signature certificates.
+     - Aligned with ARF 1.10.
+
    * - Registration Authority
-     - A party responsible for registering all the Organizational Entities by issuing a Trust Assertion
-     - *Alternative term:* Registrar.
+     - Party responsible for registering Organizational Entities by issuing Trust Assertions.
+     - Aligned with ARF 1.10.
+
    * - Registration Process
-     - Process performed by a Registration Authority verifying necessary information to ensure Organizational Entity eligibility and compliance with the relevant rules and standards. The main goal of the Registration Process is for the Organizational Entity to receive one or more Trust Assertions to be used for the Trust Evaluation processes.
-     -
+     - Process for verifying eligibility and compliance of Organizational Entities.
+     - Aligned with ARF 1.10.
+
    * - Relying Party
-     - An Organizational Entity that relies upon an electronic identification or a Trust Service originating from a Wallet Instance.
-     - | Revised from ARF v1.4.
-       |
-       | *Differences:* renamed “natural or legal person” in “Organizational Entity”.
+     - Entity relying on electronic identification or Trust Service from a Wallet Instance.
+     - Aligned with ARF 1.10.
+
    * - Relying Party Solution
-     - A comprehensive product that may include software, hardware, cloud services, and configurations. It facilitates Credential presentations in various contexts - online, offline, proximity, or remote - through the use of remote web services or specialized applications, such as Credential Verifier mobile apps and or embedded technologies.
-     -
+     - Product (software/hardware/cloud) enabling credential presentations in various contexts.
+     - Aligned with ARF 1.10.
+
    * - Relying Party Backend
-     - Remote infrastructure with server-side components, generally RESTful, including a predefined set of web endpoints, managed by a Relying Party Solution provider.
-     -
+     - Remote infrastructure with server-side components managed by a Relying Party Solution provider.
+     - Aligned with ARF 1.10.
+
    * - Relying Party Instance
-     - A Relying Party Instance in the context of a mobile application or a standalone embedded device refers to a specific deployment of the application or device. These instances depend on an User Authentication through a Wallet Instance to confirm User identities before granting access to their functionalities. Each version or environment where the application or device is running, be it a particular release of a mobile app installed on a User's smartphone or a specific embedded device in use, constitutes a separate instance. In case of proximity supervised scenarios, it belongs to and is controlled by a Verifier.
-     - | Revised from ARF v1.4.
-       |
-       | *Differences:* added a sentence on proximity supervised scenarios.
-       |
-       | *Alternative terms:* Verifier App.
+     - Specific deployment of a Relying Party application or device.
+     - Aligned with ARF 1.10.
+
    * - Selective Disclosure
-     - Functionality enabling the User to submit a subset of Digital Credentials Data
-     -
+     - Functionality enabling the User to submit a subset of Digital Credentials Data.
+     - Aligned with ARF 1.10.
+
    * - Self-Sovereign Identity (SSI)
-     - Is an approach to digital identity that gives individuals control over the information they use to prove who they are to websites, services, and applications across the web.
-     -
+     - Approach giving individuals control over their digital identity information.
+     - Aligned with ARF 1.10.
+
    * - Supervision Process
-     - Process performed by a Supervisory Body to review and ensure proper functioning of the Wallet Provider and other relevant actors.
-     -
+     - Process by a Supervisory Body to review and ensure proper functioning of the Wallet Provider and others.
+     - Aligned with ARF 1.10.
+
    * - Technical Solutions
-     - Set of hardware and software systems and services implemented by the Wallet Solution Providers, the PID Provider, Qualified Electronic Attestation of Attributes Provider, Verifiers and Aggregators.
-     -
+     - Hardware/software systems and services implemented by Wallet Solution Providers, PID Provider, etc.
+     - Aligned with ARF 1.10.
+
    * - Technical Specifications
-     - The specifications that provide the technical architecture, implementation framework and design requirements for the User Experience adopted by the IT-Wallet System Technical Solutions.
-     -
+     - Specifications providing technical architecture, implementation framework, and design requirements.
+     - Aligned with ARF 1.10.
+
    * - Trust
-     - Trust, within the technical field, is the confidence in the security, reliability, and integrity of entities (such as systems, organizations, or individuals) and their actions, ensuring that they will operate as expected in a secure and predictable manner. It is often established through empirical proof, such as past performance, security certifications, or transparent operational practices, which demonstrate a track record of adherence to security standards and ethical conduct.
-     -
+     - Confidence in the security, reliability, and integrity of entities and their actions.
+     - Aligned with ARF 1.10.
+
    * - Trust Assertion
-     - Cryptographically verifiable artifact that proves the compliance of an Organizational Entity with known rules and requirements defined within the Trust Model.
-     - *Alternative terms:* Verifiable Attestation, Access Certificate.
+     - Cryptographically verifiable artifact proving compliance with rules and requirements.
+     - Aligned with ARF 1.10.
+
    * - Trust Attestation
-     - Electronic attestation of an entity's compliance with the national regulatory framework, which is cryptographically verifiable and cannot be repudiated over time by the entity that issued it. A Trust Attestation is always related to a particular Trust Framework.
-     -
+     - Electronic attestation of compliance with the regulatory framework, cryptographically verifiable.
+     - Aligned with ARF 1.10.
+
    * - Trust Evaluation
-     - The process of verifying the trustworthiness of registered Organizational Entities, in accordance with pre-established rules. For example, involving the retrieval and validation of entity configurations and trust chains.
-     - *Alternative terms:* Trust Discovery, Trust Establishment.
+     - Process of verifying trustworthiness of registered Organizational Entities.
+     - Aligned with ARF 1.10.
+
    * - Trust Framework
-     - A legally enforceable set of operational and technical rules and agreements that govern a multi-party system designed for conducting specific types of transactions among a community of participants and bound by a common set of requirements.
-     -
+     - Legally enforceable set of rules and agreements for a multi-party system.
+     - Aligned with ARF 1.10.
+
    * - Trust Layer
-     - Architectural component that enables IT-Wallet System participants to establish trust, in terms of reliability and compliance of all participants with the regulatory framework governing the digital identity system.
-     -
+     - Architectural component enabling participants to establish trust.
+     - Aligned with ARF 1.10.
+
    * - Trust Model
-     - Collection of rules that ensure the legitimacy of the components and the entities involved in the IT-Wallet ecosystem.
-     -
+     - Collection of rules ensuring legitimacy of components/entities in the IT-Wallet ecosystem.
+     - Aligned with ARF 1.10.
+
    * - Trust Relationship
-     - Positive outcome of Trust Evaluation, which produces a reliable relationship between Organizational Entities, where one Organizational Entity trusts the other to securely handle data, execute transactions, or perform actions on its behalf.
-     -
+     - Reliable relationship between Organizational Entities after Trust Evaluation.
+     - Aligned with ARF 1.10.
+
    * - Access Certificate
-     - A Certificate for electronic seals or signatures authenticating and validating the (Wallet-) Relying Party, issued by a provider of wallet-relying party Access Certificates.
-     -
+     - Certificate authenticating and validating the (Wallet-) Relying Party.
+     - Aligned with ARF 1.10.
+
    * - Registration Certificate
-     - A data object that indicates the attributes the Relying Party has registered to intend to request from Users.
-     -
+     - Data object indicating the attributes the Relying Party has registered to request from Users.
+     - Aligned with ARF 1.10.
+
    * - Certificate Signing Request (CSR)
-     - Request sent to a Certificate Authority (CA) that contains the public key and identifying information of the entity requesting a digital certificate.
-     -
+     - Request sent to a CA containing the public key and identifying information for a digital certificate.
+     - Aligned with ARF 1.10.
+
    * - Metadata
-     - Digital artifact that contains all the required information about an Organizational Entity, e.g., protocol related endpoints and the Organizational Entity’s cryptographic public keys (for the complete list check requirement "Metadata Content").
-     -
+     - Digital artifact with information about an Organizational Entity (endpoints, public keys, etc.).
+     - Aligned with ARF 1.10.
+
    * - Policy Language
-     - A formal language used to define security, privacy, and identity management policies that govern interactions and transactions within a Trust Framework. This language allows for the clear and unambiguous expression of rules and conditions, facilitating the automation of processes and interoperability among different systems and organizations.
-     -
+     - Formal language for defining security, privacy, and identity management policies.
+     - Aligned with ARF 1.10.
+
    * - Registration Process
-     - Process performed by a Registration Authority verifying necessary information to ensure Organizational Entity eligibility and compliance with the relevant rules and standards. The main goal of the Registration Process is for the Organizational Entity to receive one or more Trust Assertions to be used for the Trust Evaluation processes.
-     -
+     - Process for verifying eligibility and compliance of Organizational Entities.
+     - Aligned with ARF 1.10.
+
    * - Accreditation Process
-     - Process performed by the National Accreditation Body to accreditate CABs. As a result of the Accreditation Process, a NAB issues an accreditation Certificate to a CAB.
-     -
+     - Process performed by the National Accreditation Body to accredit CABs.
+     - Aligned with ARF 1.10.
+
    * - Trusted List
-     - Repository of information about authoritative entities in a particular legal or contractual context which provides information about their current and historical status. It serves as the bedrock of trust, acting as federative sources that publish the crucial information about root entities within the ecosystem.
-     -
+     - Repository of information about authoritative entities and their status.
+     - Aligned with ARF 1.10.
+
    * - User
-     - A natural or legal person, or a natural person representing another natural person or a legal person, that uses a trust services or electronic identification means.
-     - | Aligned with ARF v1.4.
+     - Natural or legal person using trust services or electronic identification means.
+     - Aligned with ARF 1.10.
+
    * - User Attribute
-     - A characteristic, quality, right or permission of a natural or legal person or of an object.
-     - | Aligned with ARF v1.4.
-       |
-       | *Alternative terms:* Attribute, User Claim.
+     - Characteristic, quality, right, or permission of a person or object.
+     - Aligned with ARF 1.10.
+
    * - Verifier
-     - Also known as Credential Verifier. It is a natural person or a legal person using an Relying Party Instance.
-     -
+     - Also known as Credential Verifier; a person or entity using a Relying Party Instance.
+     - Aligned with ARF 1.10.
+
    * - Wallet Instance
-     - It is an application installed and configured on a User's device belonging to and which is controlled by a User, as part of the Wallet Unit. The Wallet Instance provides graphical interfaces for User interaction with the Wallet Unit.
-     - | Revised from Implementing Act.
-       |
-       | *Differences:* editorial.
-       |
-       | *Alternative terms:* Wallet
+     - Application installed on a User's device, part of the Wallet Unit, providing user interfaces.
+     - Aligned with ARF 1.10.
+
    * - Wallet Provider
-     - An Organizational Entity, responsible for the management and provisioning of a Wallet Solution.
-     - | Revised from ARF v1.4 and Implementing Act.
-       | *Differences:* editorial (use of Organizational Entity instead of public or private organisation and natural or legal person, respectively).
-       |
-       | *Alternative terms:* Wallet Solution Provider
+     - Organizational Entity responsible for management and provisioning of a Wallet Solution.
+     - Aligned with ARF 1.10.
+
    * - Wallet Provider Backend
-     - Is the technical infrastructure and server-side components, including a set of endpoints, managed by a Wallet Provider.
-     -
+     - Technical infrastructure and server-side components managed by a Wallet Provider.
+     - Aligned with ARF 1.10.
+
    * - Wallet Secure Cryptographic Application (WSCA)
-     - An application that manages Critical Assets utilizing the cryptographic functions provided by the
-     - | The type of WSCAs depends on the type of WSCD. For example, it might be an eUICC or JavaCard applet for a local UICC or an external JavaCard-based smart card solution, while in a local Android hardware-backed Keystore solution, native trusted applications may function as the WSCA.
-       |
-       | Revised from Implementing Act.
-       |
-       | *Differences:* editorial.
+     - Application managing Critical Assets using cryptographic functions provided by the WSCD.
+     - Aligned with ARF 1.10.
+
    * - Wallet Secure Cryptographic Device (WSCD)
-     - It is a tamper-resistant device that provides an environment that is linked to and used by the WSCA to protect Critical Assets and provide cryptographic functions for the secure execution of critical operations.
-     - | Example of WSCD type are: remote solutions (e.g., HSMs), local external solutions (e.g., smart cards), local device-integrated solutions (e.g., UICC or native cryptographic hardware, such as the iOS Secure Enclave, Android Hardware Backed Keystore or StrongBox), and hybrid solutions that combine two or more of these types.
-       |
-       | Aligned with Implementing Act.
+     - Tamper-resistant device providing an environment for the WSCA to protect Critical Assets.
+     - Aligned with ARF 1.10.
+
    * - Wallet Solution
-     - Set of Technical Solutions necessary for the proper functioning of IT-Wallet Instances, implemented in accordance with Article 64-quater of the CAD.
-       The IT-Wallet Solution MAY be referred to as Public IT-Wallet Solution for the IT-Wallet Solution referred to in Article 64-quater, paragraph 2, of [CAD] or Private IT-Wallet Solutions for the IT-Wallet Solutions made available by private entities.
-     - |
+     - Set of Technical Solutions for the proper functioning of IT-Wallet Instances.
+     - Aligned with ARF 1.10.
+
    * - Wallet Unit
-     - Unique configuration of a Wallet Solution that includes Wallet Instances, WSCAs, and WSCDs provided by a Wallet Provider to an individual Wallet User. For device-based WSCD implementations like TEEs, the Wallet Provider may not supply the WSCD itself.
-     - | A Wallet Unit should be understood as a specific setup of the Wallet Solution for an individual User. It should include the application installed on a Wallet User's device or environment that the Wallet User interacts with directly (the Wallet Instance) and the necessary security features to protect the user's data and transactions. These security features should involve special software or hardware to encrypt and safeguard sensitive information.
-       |
-       | Revised from Implementing Act.
-       | *Differences:* added sentence that specify that a Wallet Provider may not supply the WSCD.
+     - Unique configuration of a Wallet Solution for an individual User, including security features.
+     - Aligned with ARF 1.10.
+
    * - Wallet Unit Attestation
-     - It is a data object issued by a Wallet Provider that describes the components of the Wallet Unit. It allows authentication and validation of those components and is cryptographically bound to Wallet Secure Cryptographic Devices.
-     - *Alternative terms:* Wallet Attestation or Wallet Instance Attestation.
+     - Data object issued by a Wallet Provider describing the components of the Wallet Unit.
+     - Aligned with ARF 1.10.
+
+.. note::
+   For any term not present in ARF 1.10, the IT-Wallet definition is provided as authoritative for the Italian context.
 
 
 Below are the main defined terms and definitions related to User Experience aspects:

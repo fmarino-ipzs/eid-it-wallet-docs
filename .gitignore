@@ -13,6 +13,7 @@ Thumbs.db
 *.swp
 html
 env
+venv
 build
 latex
 env-preview

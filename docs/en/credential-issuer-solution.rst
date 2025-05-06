@@ -57,12 +57,12 @@ Issuers MAY provide additional services to the User through the Frontend Compone
 Credential Issuer Component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Following the `OpenID4VCI`_ specification and the implementation profile in Section :ref:`credential-issuance:PID/(Q)EAA Issuance`, this component MUST:
+Following the `OpenID4VCI`_ specification and the implementation profile in Section :ref:`credential-issuance:Digital Credential Issuance`, this component MUST:
 
    - Issue Digital Credentials to Wallet Instances.
    - Process Digital Credential requests.
    - Obtain User data from Authentic Sources.
-   - Generate properly formatted and signed Digital Credentials in supported formats (SD-JWT-VC, mDoc-CBOR). See Section :ref:`credential-data-model:PID/(Q)EAA Data Model` for more details.
+   - Generate properly formatted and signed Digital Credentials in supported formats (SD-JWT-VC, mDoc-CBOR). See Section :ref:`credential-data-model:Digital Credential Data Model` for more details.
    - Implement the Digital Credential issuance protocols and flows.
 
 Authorization Server
@@ -80,7 +80,7 @@ Relying Party Component
 When User authentication is required, this component MUST authenticate Users:
 
    - For PID issuance, via national Digital Identity Providers using OIDC or SAML2.
-   - For (Q)EAA issuance, requesting, obtaining and validating PIDs from User Wallet Instances using `OpenID4VP`_ in accordance with Section :ref:`credential-presentation:PID/(Q)EAA Presentation`.
+   - For (Q)EAA issuance, requesting, obtaining and validating PIDs from User Wallet Instances using `OpenID4VP`_ in accordance with Section :ref:`credential-presentation:Digital Credential Presentation`.
 
 API Interface
 ^^^^^^^^^^^^^
@@ -102,7 +102,7 @@ This component MUST handle:
 
    - Status management (maintaining and updating validity).
    - Revocation processes (implementing mechanisms to revoke or suspend Digital Credentials), according to Section :ref:`credential-revocation:Digital Credential Lifecycle`.
-   - Renewal workflows (managing Digital Credential renewal processes), according to the mechanisms defined in Section :ref:`credential-issuance:PID/(Q)EAA Issuance`.
+   - Renewal workflows (managing Digital Credential renewal processes), according to the mechanisms defined in Section :ref:`credential-issuance:Digital Credential Issuance`.
 
 Trust & Security Component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -125,7 +125,7 @@ The Digital Credential Issuer Solution supports these interaction patterns:
    4. **Relying Party to Identity Providers**: Authentication interactions with national eID systems or PID verification.
    5. **API Interface to Authentic Sources**: Secure API calls to retrieve verified User data.
 
-All interactions must follow the security considerations in Section :ref:`credential-issuance:PID/(Q)EAA Issuance`, including proper handling of tokens, proofs, and cryptographic materials.
+All interactions must follow the security considerations in Section :ref:`credential-issuance:Digital Credential Issuance`, including proper handling of tokens, proofs, and cryptographic materials.
 
 Exposed Endpoints
 -----------------

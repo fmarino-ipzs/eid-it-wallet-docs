@@ -2,8 +2,8 @@
 .. include:: ../common/common_definitions.rst
 
 
-PID/(Q)EAA Data Model
-=====================
+Digital Credential Data Model
+==============================
 
 The Digital Credential Data Model structures Digital Credentials for secure, interoperable use. Key elements include:
 
@@ -23,7 +23,7 @@ The User attributes provided within the Italian PID are the ones listed below:
 
 The (Q)EAAs are issued by (Q)EAA Issuers to a Wallet Instance and MUST be provided in SD-JWT-VC or mdoc-CBOR data format.
 
-The PID/(Q)EAA data format and the mechanism through which a digital credential is issued to the Wallet Instance and presented to a Relying Party are described in the following sections.
+The Digital Credential data format and the mechanism through which a Digital Credential is issued to the Wallet Instance and presented to a Relying Party are described in the following sections.
 
 SD-JWT-VC Credential Format
 ---------------------------
@@ -62,7 +62,7 @@ The Disclosures are provided to the Holder together with the SD-JWT in the *Comb
 See `SD-JWT-VC`_ and `SD-JWT`_ for additional details.
 
 
-PID/(Q)EAA SD-JWT Parameters
+Credential SD-JWT Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The JOSE header contains the following mandatory parameters:
@@ -122,7 +122,7 @@ The JWT payload contains the following claims. Some of these claims can be discl
       - [NSD]. OPTIONAL. UNIX Timestamp with the start time of validity of the JWT, coded as NumericDate as indicated in :rfc:`7519`.
       - `[RFC7519, Section 4.1.4] <https://www.iana.org/go/rfc7519>`_.
     * - **issuing_authority**
-      - [NSD]. REQUIRED. Name of the administrative authority that has issued the PID/(Q)EAA.
+      - [NSD]. REQUIRED. Name of the administrative authority that has issued the Credential.
       - Commission Implementing Regulation `EU_2024/2977`_.
     * - **issuing_country**
       - [NSD]. REQUIRED. Alpha-2 country code, as specified in ISO 3166-1, of the country or territory of the Credential Issuer.

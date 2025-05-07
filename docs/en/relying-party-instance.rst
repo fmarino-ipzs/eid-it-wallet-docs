@@ -33,12 +33,18 @@ Mobile Relying Party Instance Lifecycle
 In this section, state machines are presented to explain the Mobile Relying Party Instance states, as well as their transitions and relations.
 
 .. _fig_RelyingParty_Instance_Mobile_Lifecycle:
-.. figure:: ../../images/RelyingParty_Instance_Mobile_Lifecycle.svg
-    :figwidth: 100%
-    :align: center
-    :target: https://www.plantuml.com/plantuml/svg/XP5TQy8m58RlyoiEUhC9ObTqZ295jyRH6-bIbS7OHMTEPo3ze4qttAzVx48Z7M9lsfuylE_3oQ9MIQMQJ9A3u0YObUe87Ejz9KebYfmG3IY4CDTlAP73SBLQpXp7p0Sxh4Gga0yWgO5XmeymTDs7HzSrn3R_CWWCK_quJdSWR6XmFvrDPuIyZTvXp8llVEpRJWzO54AuZZUactMKZJ7STjqdA_5vK1fjzVuWHfz9-tirnr0IK_NVYT6T0MpyV5_8el8-P8D-50QJcvTRkbn2nEXyqXxvlMQx8G-UADi0VOs87LurF4URqegqMOo6SNoEz0elsuuwNSjVsaD0JmkrWXhKaBvCNL2B7_JkN7y-ENtvP84vRpBv2m00
+.. plantuml:: plantuml/rp-mobile-instance-lifecycle.puml
+    :width: 99%
+    :alt: The figure illustrates the Lifecycle of the Mobile Relying Party Instance.
+    :caption: `Lifecycle of the Mobile Relying Party Instance. <https://www.plantuml.com/plantuml/svg/XP7VQ_em5CNVyrTSzENx5SIkw1X5Ycx6KTYaYpyOZ3reSwk1c4gRRdH__M8DZJZ4FlMU--avXzjHeTUvBlSINaIAIPL8X2m5lKDupJR2J0nb9TGMOiDL42dpWKgGx0H7mFt1Q1oB91S7BJ95Y5bhF65I8eVsT3eUU9xLMolCHIgGjs1T6Eirhw3j-m-Flc-9fVgo2BHJytXUin3ET7BV7_G7X7nqFg7Bis_L3Lrc02oE89hD5wJH6ihQE6uvkoHpiTrfWzRrJX2ZpwGUR_fOIcAg_tPYT6K1PpzCCfdbmKQM6CRHfFVlxJyTZo5cTDYhL-55ihjG04-KBO2-nyI9DnkUe-N15Qcz68tcytFa8l1wsqvJr_7NxZ2XnuEwWWOqaFcP9g0GFnZS-U6mTtmBoGWLB_Vo5m00>`_
 
-    Lifecycle of the Mobile Relying Party Instance
+
+.. .. figure:: ../../images/RelyingParty_Instance_Mobile_Lifecycle.svg
+..     :figwidth: 100%
+..     :align: center
+..     :target: https://www.plantuml.com/plantuml/svg/XP5TQy8m58RlyoiEUhC9ObTqZ295jyRH6-bIbS7OHMTEPo3ze4qttAzVx48Z7M9lsfuylE_3oQ9MIQMQJ9A3u0YObUe87Ejz9KebYfmG3IY4CDTlAP73SBLQpXp7p0Sxh4Gga0yWgO5XmeymTDs7HzSrn3R_CWWCK_quJdSWR6XmFvrDPuIyZTvXp8llVEpRJWzO54AuZZUactMKZJ7STjqdA_5vK1fjzVuWHfz9-tirnr0IK_NVYT6T0MpyV5_8el8-P8D-50QJcvTRkbn2nEXyqXxvlMQx8G-UADi0VOs87LurF4URqegqMOo6SNoEz0elsuuwNSjVsaD0JmkrWXhKaBvCNL2B7_JkN7y-ENtvP84vRpBv2m00
+
+..     Lifecycle of the Mobile Relying Party Instance
 
 As shown in :numref:`fig_RelyingParty_Instance_Mobile_Lifecycle`, the Mobile Relying Party Instance has four distinct states: **Installed**, **Unverified**, **Verified**, and **Uninstalled**. Each state represents a specific functional status and determines the actions that can be performed.
 
@@ -117,10 +123,16 @@ This process allows for the registration of a Relying Party Instance with the Re
   Access Certificates MAY be issued as short-lived (typically valid within 24 hours) or long-lived.
 
 .. _fig_RelyingParty_Instance_Mobile_Registration_AccessCertificateIssuance:
-.. figure:: ../../images/RelyingParty_Instance_Mobile_Registration_AccessCertificateIssuance.svg
-    :figwidth: 100%
-    :align: center
-    :target: https://www.plantuml.com/plantuml/svg/ZPF1ZjCm48RlUOgHEG0Il40FQBFL0XL2MhNbjb8rSQQDrTGszgIGjsSIBDnK5jh3HbdFzu__-JDzY8o1XqjVuS3E3fU6GjMPbk3e73VkTrMzVHR2QEFHSgnGimkWVaGA2Z3244NWCm7gksjCJx2bVZJs19DwX8sDZ5RJh47lOQdvHYFKp2GG6sUXVjx4loXoX3VH1sbr2aHsgLjUyeZwJBQTXOq-Bz6odnTRQqqnmfg4FHgDJ50FtBbWU9mxQPGCTljwkuVrqtQ_-RnPr_kdIeRu-4aUArXtfCzWZh0EesTt2kWxe-4hXlON1W8PBiBqWbSqFJOzLJVgBsGf89CWS9OOF9e0xvIIzuCV6gK-GFedcAjIxvDMvbj9nZy7YYo0TLEuQleyvefCy_poDuFvaapEnMGX7xQqQ52mAR3k3La-jCYe5A1jNwns5p_S5myTnawQfYx8SLK4ikc94LoUsTeqEkRLo2QpeEYoI_4VeZbPv278V4Lqshr7OzjfELAWjncNowMOqoP4SBQiof7VrQDtDj8hqb-iwKu6k-a_BOsEuMv5qjdIST5o8bDHOq6hiQeqpiNvzgoHqtyNuloBEkXiTVdHD2wY-B-W4CQENQ1No0Ik7iYsmwN_0m00
+.. plantuml:: plantuml/rp-mobile-instance-access-certificate-issuance.puml
+    :width: 99%
+    :alt: The figure illustrates the Flow of the Mobile Relying Party Instance Access Certificate Issuance.
+    :caption: `Flow of the Mobile Relying Party Instance Access Certificate Issuance. <https://www.plantuml.com/plantuml/svg/ZLF1ZjCm4BtdAqRc04Zm0tj0cwqMg13IgYstbQg9CssifhQnnuN-FPCGS59PgpqqIltUctdpFBcFZ87JkOVlhZ4zmORwgx57U9BZAwoju5OJr5fJZB2YmEPWD3B1EiOqO1KcTZQT6mfLPrg2WtFSkDzLzNOeOhJnQ3bMgDa5K3yY1GKO8KKH-Cm0zQA5KOFUmrBpZQvGCvEGs3WBzTCw_gKYHtWJVP1Inq1abxfbamVK9xBjA6pqgKnT-dcsXKpgn9qBXgzZ9OsImNPNRtQmUjpirf_NgthtMCaG7p_9umvM7UaJc0EimjMpEmRqdT7m5KFx2mE131TXUC4BcXwRdggP-WjP2iWa53X931vDW7TAoVlUfqQf3p3z2UQYrFj9A_FTISO_4qKMWdL3k6gu7dD1fd5--Ot4t2GpHt2oa0zRcXSesHIoxWrPthV8g1IWRP-jTcUVRi5zXx5JwbyLv7XN96JJ0qVeyipMXj4nhqOscGL5bzqK_pwQeqLEGUOhKeVTUp2s7PPZ2dIUSHaknpnkGWHdoweS-GqUlREHNfF-V4stCjYi_h0qEeQR5PdEbewBbYVc16eiQ3LMbSOH7BjdZPp-RuZZ5xNNsUhoqZJEedXHK0vZooxGAsH2hkx9jkdS_m40>`_
+
+
+.. .. figure:: ../../images/RelyingParty_Instance_Mobile_Registration_AccessCertificateIssuance.svg
+..     :figwidth: 100%
+..     :align: center
+..     :target: https://www.plantuml.com/plantuml/svg/ZPF1ZjCm48RlUOgHEG0Il40FQBFL0XL2MhNbjb8rSQQDrTGszgIGjsSIBDnK5jh3HbdFzu__-JDzY8o1XqjVuS3E3fU6GjMPbk3e73VkTrMzVHR2QEFHSgnGimkWVaGA2Z3244NWCm7gksjCJx2bVZJs19DwX8sDZ5RJh47lOQdvHYFKp2GG6sUXVjx4loXoX3VH1sbr2aHsgLjUyeZwJBQTXOq-Bz6odnTRQqqnmfg4FHgDJ50FtBbWU9mxQPGCTljwkuVrqtQ_-RnPr_kdIeRu-4aUArXtfCzWZh0EesTt2kWxe-4hXlON1W8PBiBqWbSqFJOzLJVgBsGf89CWS9OOF9e0xvIIzuCV6gK-GFedcAjIxvDMvbj9nZy7YYo0TLEuQleyvefCy_poDuFvaapEnMGX7xQqQ52mAR3k3La-jCYe5A1jNwns5p_S5myTnawQfYx8SLK4ikc94LoUsTeqEkRLo2QpeEYoI_4VeZbPv278V4Lqshr7OzjfELAWjncNowMOqoP4SBQiof7VrQDtDj8hqb-iwKu6k-a_BOsEuMv5qjdIST5o8bDHOq6hiQeqpiNvzgoHqtyNuloBEkXiTVdHD2wY-B-W4CQENQ1No0Ik7iYsmwN_0m00
 
     Flow of the Mobile Relying Party Instance Access Certificate Issuance
 

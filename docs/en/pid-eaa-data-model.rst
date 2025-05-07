@@ -298,7 +298,7 @@ Depending on the Digital Credential type **vct**, additional claims data MAY be 
     * - **birth_place**
       - [SD]. REQUIRED. Place of Birth. (*String*)
       - Commission Implementing Regulation `EU_2024/2977`_
-    * - **nationality**
+    * - **nationalities**
       - [SD]. REQUIRED. One or more alpha-2 country codes as specified in ISO 3166-1. (*Array of strings*)
       - Commission Implementing Regulation `EU_2024/2977`_
     * - **personal_administrative_number**
@@ -404,7 +404,7 @@ The disclosure list is presented below.
 -  Contents: ``["lklxF5jMYlGTPUovMNIvCA", "tax_id_code",``
    ``"TINIT-XXXXXXXXXXXXXXXX"]``
 
-**Array Entry** of ``nationality``:
+**Array Entry** of ``nationalities``:
 
 - SHA-256 Hash: ``yKeP1CWTQK8Sd9BeNvFhkLXgEu/1G3QQz4CWSlqEOFw``
 - Disclosure: ``WyJQYzMzSk0yTGNoY1VfbEhnZ3ZfdWZRIiwgIklUIl0``
@@ -430,33 +430,33 @@ The combined format for the PID issuance is given by:
   pZ3JhZmljbyBlIFplY2NhIGRlbGxvIFN0YXRvIiwKICAiaXNzdWluZ19jb3VudHJ5Ijo
   gIklUIiwKICAic3RhdHVzIjogewogICAgInN0YXR1c19hc3NlcnRpb24iOiB7CiAgICA
   gICJjcmVkZW50aWFsX2hhc2hfYWxnIjogInNoYS0yNTYiCiAgICB9CiAgfSwKICAibmF
-  0aW9uYWxpdHkiOiBbCgl7CiAgICAgICIuLi4iOiAieUtlUDFDV1RRSzhTZDlCZU52Rmh
-  rTFhnRXUvMUczUVF6NENXU2xxRU9GdyIKICAgIH0KICBdLAogICJ2Y3QiOiAiaHR0cHM
-  6Ly90cnVzdC1yZWdpc3RyeS5laWQtd2FsbGV0LmV4YW1wbGUuaXQvY3JlZGVudGlhbHM
-  vdjEuMC9wZXJzb25pZGVudGlmaWNhdGlvbmRhdGEiLAogICJ2Y3QjaW50ZWdyaXR5Ijo
-  gImM1ZjczZTI1MGZlODY5ZjI0ZDE1MTE4YWNjZTI4NmM5YmI1NmI2M2E0NDNkYzg1YWY
-  2NTNjZDczZjYwNzhiMWYiLAogICJfc2RfYWxnIjogInNoYS0yNTYiLAogICJjbmYiOiB
-  7CiAgICAiandrIjogewogICAgICAia3R5IjogIkVDIiwKICAgICAgImNydiI6ICJQLTI
-  1NiIsCiAgICAgICJ4IjogIlRDQUVSMTladnUzT0hGNGo0VzR2ZlNWb0hJUDFJTGlsRGx
-  zN3ZDZUdlbWMiLAogICAgICAieSI6ICJaeGppV1diWk1RR0hWV0tWUTRoYlNJaXJzVmZ
-  1ZWNDRTZ0NGpUOUYySFpRIgogICAgfQogIH0KfQ.ISeLw-Tqpmcos9ms7KQTfUhSm4sr
-  AtGOMNQe3M-toaYhCcT4JnvZANmtBb8rOXdJ60oTtya4krCOjFNirEg3-g~WyIyR0xDN
-  DJzS1F2ZUNmR2ZyeU5STjl3IiwgImlhdCIsIDE2ODMwMDAwMDBd~WyJlbHVWNU9nM2dT
-  TklJOEVZbnN4QV9BIiwgInZlcmlmaWNhdGlvbiIsIHsidHJ1c3RfZnJhbWV3b3JrIjog
-  Iml0X2NpZSIsICJhc3N1cmFuY2VfbGV2ZWwiOiAiaGlnaCIsICJldmlkZW5jZSI6IHsi
-  dHlwZSI6ICJ2b3VjaCIsICJ0aW1lIjogIjIwMjAtMDMtMTlUMTI6NDJaIiwgImF0dGVz
-  dGF0aW9uIjogeyJ0eXBlIjogImRpZ2l0YWxfYXR0ZXN0YXRpb24iLCAicmVmZXJlbmNl
-  X251bWJlciI6ICI2NDg1LTE2MTktMzk3Ni02NjcxIiwgImRhdGVfb2ZfaXNzdWFuY2Ui
-  OiAiMjAyMC0wMy0xOVQxMjo0M1oiLCAidm91Y2hlciI6IHsib3JnYW5pemF0aW9uIjog
-  Ik1pbmlzdGVybyBkZWxsJ0ludGVybm8ifX19fV0~WyI2SWo3dE0tYTVpVlBHYm9TNXRt
-  dlZBIiwgImdpdmVuX25hbWUiLCAiTWFyaW8iXQ~WyJlSThaV205UW5LUHBOUGVOZW5IZ
-  GhRIiwgImZhbWlseV9uYW1lIiwgIlJvc3NpIl0~WyJRZ19PNjR6cUF4ZTQxMmExMDhpc
-  m9BIiwgImJpcnRoX2RhdGUiLCAiMTk4MC0wMS0xMCJd~WyJBSngtMDk1VlBycFR0TjRR
-  TU9xUk9BIiwgImJpcnRoX3BsYWNlIiwgIlJvbWEiXQ~WyJQYzMzSk0yTGNoY1VfbEhnZ
-  3ZfdWZRIiwgIklUIl0~WyJHMDJOU3JRZmpGWFE3SW8wOXN5YWpBIiwgInBlcnNvbmFsX
-  2FkbWluaXN0cmF0aXZlX251bWJlciIsICJYWDAwMDAwWFgiXQ~WyJsa2x4RjVqTVlsR1
-  RQVW92TU5JdkNBIiwgInRheF9pZF9jb2RlIiwgIlRJTklULVhYWFhYWFhYWFhYWFhYWF
-  giXQ~
+  0aW9uYWxpdGllcyI6IFsKCXsKICAgICAgIi4uLiI6ICJ5S2VQMUNXVFFLOFNkOUJlTnZ
+  GaGtMWGdFdS8xRzNRUXo0Q1dTbHFFT0Z3IgogICAgfQogIF0sCiAgInZjdCI6ICJodHR
+  wczovL3RydXN0LXJlZ2lzdHJ5LmVpZC13YWxsZXQuZXhhbXBsZS5pdC9jcmVkZW50aWF
+  scy92MS4wL3BlcnNvbmlkZW50aWZpY2F0aW9uZGF0YSIsCiAgInZjdCNpbnRlZ3JpdHk
+  iOiAiYzVmNzNlMjUwZmU4NjlmMjRkMTUxMThhY2NlMjg2YzliYjU2YjYzYTQ0M2RjODV
+  hZjY1M2NkNzNmNjA3OGIxZiIsCiAgIl9zZF9hbGciOiAic2hhLTI1NiIsCiAgImNuZiI
+  6IHsKICAgICJqd2siOiB7CiAgICAgICJrdHkiOiAiRUMiLAogICAgICAiY3J2IjogIlA
+  tMjU2IiwKICAgICAgIngiOiAiVENBRVIxOVp2dTNPSEY0ajRXNHZmU1ZvSElQMUlMaWx
+  EbHM3dkNlR2VtYyIsCiAgICAgICJ5IjogIlp4amlXV2JaTVFHSFZXS1ZRNGhiU0lpcnN
+  WZnVlY0NFNnQ0alQ5RjJIWlEiCiAgICB9CiAgfQp9.ISeLw-Tqpmcos9ms7KQTfUhSm4
+  srAtGOMNQe3M-toaYhCcT4JnvZANmtBb8rOXdJ60oTtya4krCOjFNirEg3-g~WyIyR0x
+  DNDJzS1F2ZUNmR2ZyeU5STjl3IiwgImlhdCIsIDE2ODMwMDAwMDBd~WyJlbHVWNU9nM2
+  dTTklJOEVZbnN4QV9BIiwgInZlcmlmaWNhdGlvbiIsIHsidHJ1c3RfZnJhbWV3b3JrIj
+  ogIml0X2NpZSIsICJhc3N1cmFuY2VfbGV2ZWwiOiAiaGlnaCIsICJldmlkZW5jZSI6IH
+  sidHlwZSI6ICJ2b3VjaCIsICJ0aW1lIjogIjIwMjAtMDMtMTlUMTI6NDJaIiwgImF0dG
+  VzdGF0aW9uIjogeyJ0eXBlIjogImRpZ2l0YWxfYXR0ZXN0YXRpb24iLCAicmVmZXJlbm
+  NlX251bWJlciI6ICI2NDg1LTE2MTktMzk3Ni02NjcxIiwgImRhdGVfb2ZfaXNzdWFuY2
+  UiOiAiMjAyMC0wMy0xOVQxMjo0M1oiLCAidm91Y2hlciI6IHsib3JnYW5pemF0aW9uIj
+  ogIk1pbmlzdGVybyBkZWxsJ0ludGVybm8ifX19fV0~WyI2SWo3dE0tYTVpVlBHYm9TNX
+  RtdlZBIiwgImdpdmVuX25hbWUiLCAiTWFyaW8iXQ~WyJlSThaV205UW5LUHBOUGVOZW5
+  IZGhRIiwgImZhbWlseV9uYW1lIiwgIlJvc3NpIl0~WyJRZ19PNjR6cUF4ZTQxMmExMDh
+  pcm9BIiwgImJpcnRoX2RhdGUiLCAiMTk4MC0wMS0xMCJd~WyJBSngtMDk1VlBycFR0Tj
+  RRTU9xUk9BIiwgImJpcnRoX3BsYWNlIiwgIlJvbWEiXQ~WyJQYzMzSk0yTGNoY1VfbEh
+  nZ3ZfdWZRIiwgIklUIl0~WyJHMDJOU3JRZmpGWFE3SW8wOXN5YWpBIiwgInBlcnNvbmF
+  sX2FkbWluaXN0cmF0aXZlX251bWJlciIsICJYWDAwMDAwWFgiXQ~WyJsa2x4RjVqTVls
+  R1RQVW92TU5JdkNBIiwgInRheF9pZF9jb2RlIiwgIlRJTklULVhYWFhYWFhYWFhYWFhY
+  WFgiXQ~
 
 (Q)EAA non-normative Examples
 -----------------------------

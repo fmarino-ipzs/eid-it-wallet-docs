@@ -50,6 +50,12 @@ jobs:
       - name: Install deps
         run: |-
           python -m pip install -r requirements-dev.txt
+      
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
       - name: Build branch
         run: |-

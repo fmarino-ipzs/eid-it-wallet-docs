@@ -28,9 +28,9 @@ This project adheres to the [*Semantic
 Versioning*](https://semver.org/) model.
 
 Furthermore, this project uses the git *branches* and *tags* in the following way:
-* the branch `versione-corrente` contains the last stable version of the standard;
+* the branch `versione-corrente` contains the last stable version of the documentation;
 * The [release page](https://github.com/italia/eid-wallet-it-docs/releases) of
-  GitHub contains all the released versions of the specifications. For the sake of coherence, the *releases* are made according to the tag names.
+  this project contains all the released versions of the specifications. For the sake of coherence, the *releases* are made according to the tag names.
 
 Each time a release is created or edited, a preview is built based on the tag the release refers to. 
 A preview of the latest editor's copy build, corresponding to the branch `versione-corrente` can be navigated using the following link:
@@ -42,9 +42,7 @@ A preview of the latest editor's copy build, corresponding to the branch `versio
 
 Released versions can be navigated by adding the tag in the webpath leaded by a _v_, as follows:
 
- - **(STABLE VERSION) [https://italia.github.io/eid-wallet-it-docs/v1.0.0/en/](https://italia.github.io/eid-wallet-it-docs/v1.0.0/en/)**
-
-  
+ - [https://italia.github.io/eid-wallet-it-docs/v1.0.0/en/](https://italia.github.io/eid-wallet-it-docs/v1.0.0/en/)
  - [https://italia.github.io/eid-wallet-it-docs/v0.9.3/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.3/en/)
  - [https://italia.github.io/eid-wallet-it-docs/v0.9.2/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.2/en/)
  - [https://italia.github.io/eid-wallet-it-docs/v0.9.1/en/](https://italia.github.io/eid-wallet-it-docs/v0.9.1/en/)

@@ -48,7 +48,7 @@ The requirements for the Wallet Attestation are defined below:
     Wallet Solution Schema
 
 .. note::
-  Throughout this section, the services used to attest genuineness of the Wallet Instance and the device in which it is installed are referred to as **Key Attestation API**. The Key Attestation API is considered in an abstract fashion and it is assumed to be a service provided by a trusted third party (i.e., the OS Provider's API) which is able to perform integrity checks on the Wallet Instance as well as on the device where it is installed.
+  Throughout this section, the services used to attest genuineness of the Wallet Instance and the device in which it is installed are referred to as **Device Integrity Service API**. The Device Integrity Service API is considered in an abstract fashion and it is assumed to be a service provided by a trusted third party (i.e., the OS Provider's API) which is able to perform integrity checks on the Wallet Instance as well as on the device where it is installed.
 
 WSCD Requirements
 ^^^^^^^^^^^^^^^^^
@@ -75,6 +75,3 @@ For more detailed information, please refer to :ref:`wallet-instance-registratio
 
   wallet-instance.rst
   wallet-provider-endpoint.rst
-
-
-

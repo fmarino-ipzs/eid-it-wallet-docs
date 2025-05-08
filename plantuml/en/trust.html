@@ -176,13 +176,16 @@
 <p>This section outlines the implementation of the Trust Model in an infrastructure that complies with OpenID Federation 1.0 <a class="reference external" href="https://openid.net/specs/openid-federation-1_0-41.html">OID-FED</a>. This infrastructure involves a RESTful API for distributing metadata, metadata policies, trust marks, cryptographic public keys and X.509 certificates, and the revocation status of the participants, also called Federation Entities.</p>
 <p>The Infrastructure of trust facilitates the application of a trust assessment mechanism among the parties defined in the <a class="reference external" href="https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework">EIDAS-ARF</a>.</p>
 <figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="_images/trust-roles.svg"><img alt="federation portrait" src="_images/trust-roles.svg" style="width: 100%;" /></a>
+<p class="plantuml">
+<object data="_images/plantuml-e67b2336345eb96963de7ade0f4f48540a4bc15b.svg" type="image/svg+xml" style="width:99%">
+<a href="_images/plantuml-e67b2336345eb96963de7ade0f4f48540a4bc15b.png"><img src="_images/plantuml-e67b2336345eb96963de7ade0f4f48540a4bc15b.png" alt="The figure illustrates the trust roles." style="width: 99.0%"/></a>
+
+</object></p>
 <figcaption>
-<p><span class="caption-number">Fig. 9.1 </span><span class="caption-text">The roles within the Federation, where the Trust Anchor oversees its subordinates,
-which include one or more Intermediates and Leaves. In this
-representation, both the Trust Anchor and the Intermediates assume the role of Registration Authority.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 9.1 </span><span class="caption-text"><a class="reference external" href="https://www.plantuml.com/plantuml/png/XT1VIyD0303mz_iKSJuFiOpXWuoDJc7Wmn31HybwSHwxvaekvnZYTtTjjUrWpBVy-LsuP1uLHLFfpPNZmYTBS9zFRlB9MnvOqJ79p9YuSroXO0aRB7PR2Obj7dmGK46EnnQn3jH29EnRiF775yO85OgyzGIZ5qbHOS75Hv0HO0H5k5vE7-uUinEtOYKfoJfKQfnZlUtaFp0xE_A9y3qsnDVHSLfDbjCB9klC1TJTwW_3bm4O-5p84gj33wiO4xMB5wxxvOb-HUz9OItXqzbVkw_EssVo1yTRMAFeeP7IoszZ2WVZL8rde6ZsLHitbpGoo3BJ7cJORzSVchhSJwjBVMRcn3QL_WS0">The roles within the Federation, where the Trust Anchor oversees its subordinates, which include one or more Intermediates and Leaves.</a></span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
+<p>In this representation, both the Trust Anchor and the Intermediates assume the role of Registration Authority.</p>
 <section id="federation-roles">
 <h2><span class="section-number">9.1. </span>Federation Roles<a class="headerlink" href="#federation-roles" title="Link to this heading">¶</a></h2>
 <p>All the participants are Federation Entities that MUST be registered by a Registration Body,
@@ -552,12 +555,12 @@ metadata (&lt;<strong>entity_type</strong>&gt;). the metadata types are defined 
 <tr class="row-even"><td><p><strong>trust_mark_issuers</strong></p></td>
 <td><p>JSON Array that defines which Federation authorities are considered trustworthy
 for issuing specific Trust Marks, assigned with their unique identifiers.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_red_letter-x.svg"><img alt="uncheck-icon" src="_images/Eo_circle_red_letter-x.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_red_letter-x.png"><img alt="uncheck-icon" src="_images/Eo_circle_red_letter-x.png" style="width: 25px;" /></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>trust_mark_owners</strong></p></td>
 <td><p>JSON Array that lists which entities are considered to be the owners of
 specific Trust Marks.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_red_letter-x.svg"><img alt="uncheck-icon" src="_images/Eo_circle_red_letter-x.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_red_letter-x.png"><img alt="uncheck-icon" src="_images/Eo_circle_red_letter-x.png" style="width: 25px;" /></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -581,11 +584,11 @@ specific Trust Marks.</p></td>
 <tr class="row-even"><td><p><strong>authority_hints</strong></p></td>
 <td><p>Array of URLs (String). It contains a list of URLs of the immediate superior entities, such as the Trust Anchor or
 an Intermediate, that issues an Subordinate Statement related to this subject.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.svg"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.png"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.png" style="width: 25px;" /></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>trust_marks</strong></p></td>
 <td><p>A JSON Array containing the Trust Marks.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_red_letter-x.svg"><img alt="uncheck-icon" src="_images/Eo_circle_red_letter-x.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_red_letter-x.png"><img alt="uncheck-icon" src="_images/Eo_circle_red_letter-x.png" style="width: 25px;" /></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -782,35 +785,35 @@ and in relation to the signature mechanisms MUST be applied for the Subordinate 
 <tbody>
 <tr class="row-even"><td><p><strong>iss</strong></p></td>
 <td><p>See <a class="reference external" href="https://openid.net/specs/openid-federation-1_0-41.html">OID-FED</a> Section 3 for further details.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.svg"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.png"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.png" style="width: 25px;" /></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>sub</strong></p></td>
 <td><p>See <a class="reference external" href="https://openid.net/specs/openid-federation-1_0-41.html">OID-FED</a> Section 3 for further details.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.svg"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.png"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.png" style="width: 25px;" /></a></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>iat</strong></p></td>
 <td><p>See <a class="reference external" href="https://openid.net/specs/openid-federation-1_0-41.html">OID-FED</a> Section 3 for further details.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.svg"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.png"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.png" style="width: 25px;" /></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>exp</strong></p></td>
 <td><p>See <a class="reference external" href="https://openid.net/specs/openid-federation-1_0-41.html">OID-FED</a> Section 3 for further details.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.svg"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.png"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.png" style="width: 25px;" /></a></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>jwks</strong></p></td>
 <td><p>Federation JWKS of the <em>sub</em> entity. See <a class="reference external" href="https://openid.net/specs/openid-federation-1_0-41.html">OID-FED</a> Section 3 for further details.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.svg"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.png"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.png" style="width: 25px;" /></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>metadata_policy</strong></p></td>
 <td><p>JSON Object that describes the Metadata policy. Each key of the JSON Object represents an identifier of the metadata type and each value MUST be a JSON Object that represents the metadata policy according to that metadata type. Please refer to the <a class="reference external" href="https://openid.net/specs/openid-federation-1_0-41.html">OID-FED</a> specifications, Section 6.1, for the implementation details.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_red_letter-x.svg"><img alt="uncheck-icon" src="_images/Eo_circle_red_letter-x.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_red_letter-x.png"><img alt="uncheck-icon" src="_images/Eo_circle_red_letter-x.png" style="width: 25px;" /></a></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>trust_marks</strong></p></td>
 <td><p>JSON Array containing the Trust Marks issued by itself for the subordinate subject.</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_red_letter-x.svg"><img alt="uncheck-icon" src="_images/Eo_circle_red_letter-x.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_red_letter-x.png"><img alt="uncheck-icon" src="_images/Eo_circle_red_letter-x.png" style="width: 25px;" /></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>constraints</strong></p></td>
 <td><p>It MAY contain the <strong>allowed_leaf_entity_types</strong>, that restricts what types of metadata the subject is allowed to publish. It MAY contain the maximum number of Intermediates allowed between a itself and the Leaf (<strong>max_path_length</strong>)</p></td>
-<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.svg"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.svg" style="width: 25px;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/Eo_circle_green_checkmark.png"><img alt="check-icon" src="_images/Eo_circle_green_checkmark.png" style="width: 25px;" /></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1256,7 +1259,7 @@ Signature:
 
 
     <div class="footer" role="contentinfo">
-      Last updated on 07/05/2025.
+      Last updated on 08/05/2025.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.5.
     </div>
 

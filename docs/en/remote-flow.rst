@@ -74,9 +74,17 @@ The details of each step shown in the previous picture are described below.
 
   Below is represented a non-normative example of a QR Code issued by the Relying Party.
 
-.. figure:: ../../images/verifier_qr_code.svg
-  :figwidth: 50%
-  :align: center
+.. only:: format_html
+
+  .. figure:: ./images/svg/verifier_qr_code.svg
+    :figwidth: 50%
+    :align: center
+
+.. only:: format_latex
+
+  .. figure:: ./images/pdf/verifier_qr_code.pdf
+    :width: 50%
+    :align: center
 
 
   Below is represented a non-normative example of the QR Code raw payload:

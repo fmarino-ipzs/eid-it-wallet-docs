@@ -2,6 +2,7 @@
 .. include:: ../common/symbols.rst
 
 
+
 The Infrastructure of Trust
 ===========================
 
@@ -9,13 +10,12 @@ This section outlines the implementation of the Trust Model in an infrastructure
 
 The Infrastructure of trust facilitates the application of a trust assessment mechanism among the parties defined in the `EIDAS-ARF`_.
 
-.. figure:: ../../images/trust-roles.svg
-  :alt: federation portrait
-  :width: 100%
+.. plantuml:: plantuml/trust-roles.puml
+   :width: 99%
+   :alt: The figure illustrates the trust roles.
+   :caption: `The roles within the Federation, where the Trust Anchor oversees its subordinates, which include one or more Intermediates and Leaves. <https://www.plantuml.com/plantuml/png/XT1VIyD0303mz_iKSJuFiOpXWuoDJc7Wmn31HybwSHwxvaekvnZYTtTjjUrWpBVy-LsuP1uLHLFfpPNZmYTBS9zFRlB9MnvOqJ79p9YuSroXO0aRB7PR2Obj7dmGK46EnnQn3jH29EnRiF775yO85OgyzGIZ5qbHOS75Hv0HO0H5k5vE7-uUinEtOYKfoJfKQfnZlUtaFp0xE_A9y3qsnDVHSLfDbjCB9klC1TJTwW_3bm4O-5p84gj33wiO4xMB5wxxvOb-HUz9OItXqzbVkw_EssVo1yTRMAFeeP7IoszZ2WVZL8rde6ZsLHitbpGoo3BJ7cJORzSVchhSJwjBVMRcn3QL_WS0>`_
 
-  The roles within the Federation, where the Trust Anchor oversees its subordinates,
-  which include one or more Intermediates and Leaves. In this
-  representation, both the Trust Anchor and the Intermediates assume the role of Registration Authority.
+In this representation, both the Trust Anchor and the Intermediates assume the role of Registration Authority.
 
 Federation Roles
 ----------------

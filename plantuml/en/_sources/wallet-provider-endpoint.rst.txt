@@ -194,7 +194,7 @@ The ``typ`` header of the Integrity Request JWT assumes the value ``wp-war+jwt``
 Wallet Attestation Issuance Response
 """""""""""""""""""""""""""""""""""""
 
-If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a status code of ``200 OK`` and Content-Type ``application/json``. The returned JSON Object MUST possess the ``wallet_attestations`` parameter whose value is an array of JSON Objects (see :ref:`wallet-attestation-issuance:Wallet Attestation Issuance`) containing the Wallet Attestations in JWT, SD-JWT and mdoc format signed by the Wallet Provider. The JWT formatted Wallet Attestation is to be used for the Issuance phase, as an OAuth Client Attestation, and will be sent to the Credential Issuer as discussed in :ref:`credential-issuance:PID/(Q)EAA Issuance`. The SD-JWT and mdoc formatted Wallet Attestation will instead be used during presentation respectively in the remote (:ref:`remote-flow:Remote Flow`) and proximity (:ref:`proximity-flow:Proximity Flow`) flows.
+If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a status code of ``200 OK`` and Content-Type ``application/json``. The returned JSON Object MUST possess the ``wallet_attestations`` parameter whose value is an array of JSON Objects (see :ref:`wallet-attestation-issuance:Wallet Attestation Issuance`) containing the Wallet Attestations in JWT, SD-JWT and mdoc format signed by the Wallet Provider. The JWT formatted Wallet Attestation is to be used for the Issuance phase, as an OAuth Client Attestation, and will be sent to the Credential Issuer as discussed in :ref:`credential-issuance:Digital Credential Issuance`. The SD-JWT and mdoc formatted Wallet Attestation will instead be used during presentation respectively in the remote (:ref:`remote-flow:Remote Flow`) and proximity (:ref:`proximity-flow:Proximity Flow`) flows.
 
 
 The JSON Object returned in the response has the following claim:
@@ -394,10 +394,10 @@ The body of the Wallet Attestation SD-JWT contains the following claims:
       - REQUIRED. Credential type value MUST be an HTTPS URL String and it MUST be set to ``wallet.atestation.example/v1.0``.
       - Section 3.2.2.2 `SD-JWT-VC`_.
     * - **_sd**
-      - REQUIRED. String containing the hash algorithm used by the Wallet Provider to generate the digests.
+      - REQUIRED. JSON array containing a list of all disclusure's digests.
       - `SD-JWT`_.
     * - **sd_alg**
-      - REQUIRED. JSON array containing a list of the signing algorithms (alg values) supported.
+      - REQUIRED. String containing the hash algorithm used by the Wallet Provider to generate the disclusure's digests.
       - `SD-JWT`_.
     * - **sub**
       - REQUIRED. Identifier of the Wallet Instance which is the thumbprint of the Wallet Attestation JWK.

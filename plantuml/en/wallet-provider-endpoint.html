@@ -147,9 +147,9 @@
 <li class="toctree-l1"><a class="reference internal" href="credential-issuer-solution.html">11. Credential Issuer Solution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relying-party-solution.html">12. Relying Party Solution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authentic-sources.html">13. Authentic Sources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="credential-data-model.html">14. PID/(Q)EAA Data Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="credential-issuance.html">15. PID/(Q)EAA Issuance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="credential-presentation.html">16. PID/(Q)EAA Presentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credential-data-model.html">14. Digital Credential Data Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credential-issuance.html">15. Digital Credential Issuance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credential-presentation.html">16. Digital Credential Presentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credential-revocation.html">17. Digital Credential Lifecycle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backup-restore.html">18. Backup and Restore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="registry-catalogue.html">19. Digital Credentials Catalogue</a></li>
@@ -360,7 +360,7 @@ When retrieving all Wallet Instances, the response MUST return an array containi
 </section>
 <section id="wallet-attestation-issuance-response">
 <h3><span class="section-number">10.1.2.2.4.2. </span>Wallet Attestation Issuance Response<a class="headerlink" href="#wallet-attestation-issuance-response" title="Link to this heading">¶</a></h3>
-<p>If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a status code of <code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">OK</span></code> and Content-Type <code class="docutils literal notranslate"><span class="pre">application/json</span></code>. The returned JSON Object MUST possess the <code class="docutils literal notranslate"><span class="pre">wallet_attestations</span></code> parameter whose value is an array of JSON Objects (see <a class="reference internal" href="wallet-attestation-issuance.html#id1"><span class="std std-ref">Wallet Attestation Issuance</span></a>) containing the Wallet Attestations in JWT, SD-JWT and mdoc format signed by the Wallet Provider. The JWT formatted Wallet Attestation is to be used for the Issuance phase, as an OAuth Client Attestation, and will be sent to the Credential Issuer as discussed in <a class="reference internal" href="credential-issuance.html#pid-q-eaa-issuance"><span class="std std-ref">PID/(Q)EAA Issuance</span></a>. The SD-JWT and mdoc formatted Wallet Attestation will instead be used during presentation respectively in the remote (<a class="reference internal" href="remote-flow.html#remote-flow"><span class="std std-ref">Remote Flow</span></a>) and proximity (<a class="reference internal" href="proximity-flow.html#proximity-flow"><span class="std std-ref">Proximity Flow</span></a>) flows.</p>
+<p>If the Wallet Attestation Issuance Request is successfully validated, the Wallet Provider returns an HTTP response with a status code of <code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">OK</span></code> and Content-Type <code class="docutils literal notranslate"><span class="pre">application/json</span></code>. The returned JSON Object MUST possess the <code class="docutils literal notranslate"><span class="pre">wallet_attestations</span></code> parameter whose value is an array of JSON Objects (see <a class="reference internal" href="wallet-attestation-issuance.html#id1"><span class="std std-ref">Wallet Attestation Issuance</span></a>) containing the Wallet Attestations in JWT, SD-JWT and mdoc format signed by the Wallet Provider. The JWT formatted Wallet Attestation is to be used for the Issuance phase, as an OAuth Client Attestation, and will be sent to the Credential Issuer as discussed in <a class="reference internal" href="credential-issuance.html#digital-credential-issuance"><span class="std std-ref">Digital Credential Issuance</span></a>. The SD-JWT and mdoc formatted Wallet Attestation will instead be used during presentation respectively in the remote (<a class="reference internal" href="remote-flow.html#remote-flow"><span class="std std-ref">Remote Flow</span></a>) and proximity (<a class="reference internal" href="proximity-flow.html#proximity-flow"><span class="std std-ref">Proximity Flow</span></a>) flows.</p>
 <p>The JSON Object returned in the response has the following claim:</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -608,11 +608,11 @@ When retrieving all Wallet Instances, the response MUST return an array containi
 <td><p>Section 3.2.2.2 <a class="reference external" href="https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/06/">SD-JWT-VC</a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>_sd</strong></p></td>
-<td><p>REQUIRED. String containing the hash algorithm used by the Wallet Provider to generate the digests.</p></td>
+<td><p>REQUIRED. JSON array containing a list of all disclusure's digests.</p></td>
 <td><p><a class="reference external" href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-selective-disclosure-jwt-14">SD-JWT</a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>sd_alg</strong></p></td>
-<td><p>REQUIRED. JSON array containing a list of the signing algorithms (alg values) supported.</p></td>
+<td><p>REQUIRED. String containing the hash algorithm used by the Wallet Provider to generate the disclusure's digests.</p></td>
 <td><p><a class="reference external" href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-selective-disclosure-jwt-14">SD-JWT</a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>sub</strong></p></td>
@@ -882,7 +882,7 @@ When retrieving all Wallet Instances, the response MUST return an array containi
 
 
     <div class="footer" role="contentinfo">
-      Last updated on 08/05/2025.
+      Last updated on 09/05/2025.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.5.
     </div>
 

@@ -1,8 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
 
-PID/(Q)EAA Presentation
-=======================
+Digital Credential Presentation
+================================
 
 This section describes how a Relying Party Instance requests to a Wallet Instance the presentation of the PID/EAAs.
 

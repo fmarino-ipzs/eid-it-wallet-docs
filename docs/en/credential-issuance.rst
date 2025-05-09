@@ -1,8 +1,8 @@
 .. include:: ../common/common_definitions.rst
 
 
-PID/(Q)EAA Issuance
-===================
+Digital Credential Issuance
+============================
 
 This section describes the PID and (Q)EAAs issuance flow with a high level of security.
 The relevant entities and interfaces involved in the issuance flow are:

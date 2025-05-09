@@ -48,7 +48,7 @@ Credential Transition to Issued
 
 For the state machine to start, the Wallet Instance MUST be in either the **Operational** or **Valid** state, enabling Digital Credentials to be issued to it.
 The state machine begins with the **Issued** state, when an issuance process is triggered and, as a result, a Digital Credential is issued to the
-Wallet Instance (**PID/(Q)EAA ISS**). Please refer to :ref:`credential-issuance:PID/(Q)EAA Issuance`.
+Wallet Instance (**PID/(Q)EAA ISS**). Please refer to :ref:`credential-issuance:Digital Credential Issuance`.
 
 Credential Transition to Valid
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

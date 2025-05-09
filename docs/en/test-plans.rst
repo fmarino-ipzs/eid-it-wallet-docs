@@ -460,16 +460,16 @@ Tests related to Credential Issuer are related to the issuance of Credential of 
     - Wallet Instance retrieves and validates Credential Issuer metadata. Metadata includes PID formats, supported algorithms, and interoperability parameters.
   * - ISS-004
     - Authorization, Authentication
-    - PID/(Q)EAA Request using Authorization Code Flow
-    - Wallet Instance successfully requests PID/(Q)EAA using Authorization Code Flow. Validate PKCE use with a code verifier of 43-128 characters.
+    - Credential Request using Authorization Code Flow
+    - Wallet Instance successfully requests Credential using Authorization Code Flow. Validate PKCE use with a code verifier of 43-128 characters.
   * - ISS-005
     - Authentication
     - User Authentication with PID Provider
     - User is authenticated with LoA 3 (High) by the PID Provider. Validate the use of the digital identity scheme CieID and ensure that User consent is obtained.
   * - ISS-006
     - Issuance
-    - PID/(Q)EAA Issuance
-    - PID/(Q)EAA is issued and bound to the Wallet Instance's key material. Validate the binding process and ensure the integrity and the compliance to data model of the issued PID/(Q)EAA.
+    - Credential Issuance
+    - Credential is issued and bound to the Wallet Instance's key material. Validate the binding process and ensure the integrity and the compliance to data model of the issued Credential.
   * - ISS-007
     - Authentication
     - User Authentication with (Q)EAA Provider

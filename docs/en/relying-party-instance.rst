@@ -105,7 +105,7 @@ Mobile Relying Party Instance Functionalities
 A Mobile Relying Party Instance MUST support three fundamental functionalities: **Registration**, **Access Certificate Reissuance**, and **Revocation**. Each functionality is described in detail in the following sections.
 
 .. note::
-  Throughout this section, the services used to attest genuineness of the Relying Party Instance and the device in which it is installed are referred to as **Key Attestation API**. The Key Attestation API is considered in an abstract fashion and it is assumed to be a service provided by a trusted third party (i.e., the OS Provider's API) which is able to perform integrity checks on the Wallet Instance as well as on the device where it is installed.
+  Throughout this section, the services used to attest genuineness of the Relying Party Instance and the device in which it is installed are referred to as **Device Integrity Service**. The Device Integrity Service is considered in an abstract fashion and it is assumed to be a service provided by a trusted third party (i.e., the OS Provider's API) which is able to perform integrity checks on the Wallet Instance as well as on the device where it is installed.
 
 .. note::
   The details provided below are non-normative and are intended to clarify the functionalities of the Mobile Relying Party Instance. The actual implementation may vary based on the specific use case and requirements of the Relying Party.
@@ -126,7 +126,7 @@ This process allows for the registration of a Relying Party Instance with the Re
 .. plantuml:: plantuml/rp-mobile-instance-access-certificate-issuance.puml
     :width: 99%
     :alt: The figure illustrates the Flow of the Mobile Relying Party Instance Access Certificate Issuance.
-    :caption: `Flow of the Mobile Relying Party Instance Access Certificate Issuance. <https://www.plantuml.com/plantuml/svg/ZLF1ZjCm4BtdAqRc04Zm0tj0cwqMg13IgYstbQg9CssifhQnnuN-FPCGS59PgpqqIltUctdpFBcFZ87JkOVlhZ4zmORwgx57U9BZAwoju5OJr5fJZB2YmEPWD3B1EiOqO1KcTZQT6mfLPrg2WtFSkDzLzNOeOhJnQ3bMgDa5K3yY1GKO8KKH-Cm0zQA5KOFUmrBpZQvGCvEGs3WBzTCw_gKYHtWJVP1Inq1abxfbamVK9xBjA6pqgKnT-dcsXKpgn9qBXgzZ9OsImNPNRtQmUjpirf_NgthtMCaG7p_9umvM7UaJc0EimjMpEmRqdT7m5KFx2mE131TXUC4BcXwRdggP-WjP2iWa53X931vDW7TAoVlUfqQf3p3z2UQYrFj9A_FTISO_4qKMWdL3k6gu7dD1fd5--Ot4t2GpHt2oa0zRcXSesHIoxWrPthV8g1IWRP-jTcUVRi5zXx5JwbyLv7XN96JJ0qVeyipMXj4nhqOscGL5bzqK_pwQeqLEGUOhKeVTUp2s7PPZ2dIUSHaknpnkGWHdoweS-GqUlREHNfF-V4stCjYi_h0qEeQR5PdEbewBbYVc16eiQ3LMbSOH7BjdZPp-RuZZ5xNNsUhoqZJEedXHK0vZooxGAsH2hkx9jkdS_m40>`_
+    :caption: `Flow of the Mobile Relying Party Instance Access Certificate Issuance. <https://www.plantuml.com/plantuml/svg/ZLF1ZjD03BtdAwpX04Zm0psWBMM1QeMqQijjfSYPkCsewSmmdXJozpXX89tL2EsXKMg_Ppy_EtSSCSJXqbSuH6U7IqEXwanBS7GkDkvNLRr-58JHngEDNA6EBe3wpXGK8CF0Gl0B0jGtrvYUO4VzQEm99lO8MokDhAQPWzv3plb4LwD9K95EmGX-Js6Eh1-tVoWO6Lwn3rBo58Xipi-RVKHz9jlEn4QVoz1SrvDTQqtCi2717et6ACs7sBb9pbn9etYnFwnt1zZSxmxRpzlD-d1VoJ3lFyXZ1PkEz1dC4JPXzD6T0lhEQFYAeVs9WU21HeRf1QzeUcnwgcxONyXIm4W2WJEDuD44UAEKlDT-Q9Hw1-bFC5UbtYQkpBSIhtyCn540raqcgsbDvegHvldbDmEN9WjoJYO9Ix2bh411fe1rRyZ6kiM8IW7QzibgT_73ysJT8NTID5N1oAiYO14zOGGkpqMQ-NiRDJ9FIt8s5vf89QLTMa7DvcGn3a5cB48VIAx7s7Owa6JghS_bTCdgT0qCpfPPDxRdUVREChrW0zcfxcMmc_hJuMWEpyuanNB5HSa9cP8Q2zpfSz0u9-Vk2qUY_nhY_5NLUf6QBqrZPiN_2GKpzj45UW5DmDKTsNQuzBy1>`_
 
 
 .. .. figure:: ../../images/RelyingParty_Instance_Mobile_Registration_AccessCertificateIssuance.svg
@@ -164,13 +164,13 @@ Below is a non-normative example of the ``client_data`` JSON object.
 
 **Steps 7-8:** The Mobile Relying Party Instance:
 
-  1. Requests the Key Attestation APIs to create a ``key_attestation`` value linked to the ``client_data_hash``.
-  2. Receives a signed ``key_attestation`` value from the Key Attestation APIs, authenticated by the OEM.
+  1. Requests the Device Integrity Service to create a ``integrity_assertion`` value linked to the ``client_data_hash``.
+  2. Receives a signed ``integrity_assertion`` value from the Device Integrity Service, authenticated by the OEM.
 
 **Steps 9-11:** The Mobile Relying Party Instance:
 
   1. Generates an ``hardware_signature`` value by signing the ``client_data_hash`` with the Hardware Cryptographic private key, serving as a proof of possession for the Cryptographic Hardware Keys.
-  2. Generates the :ref:`relying-party-endpoint:Relying Party Key Binding Request` in the form of a JWT. This JWT includes ``key_attestation``, ``hardware_signature``, ``nonce``, ``hardware_key_tag``, and ``cnf`` (representing ``key_pub``); it is signed using ``key_priv``.
+  2. Generates the :ref:`relying-party-endpoint:Relying Party Key Binding Request` in the form of a JWT. This JWT includes ``integrity_assertion``, ``hardware_signature``, ``nonce``, ``hardware_key_tag``, and ``cnf`` (representing ``key_pub``); it is signed using ``key_priv``.
   3. Sends the signed :ref:`relying-party-endpoint:Relying Party Key Binding Request` JWT as an ``assertion`` parameter in the body of an HTTP request to the :ref:`relying-party-endpoint:Relying Party Key Binding Endpoint`.
 
 **Step 12:** The Relying Party Backend evaluates the Key Binding Request and performs the following checks:
@@ -180,7 +180,7 @@ Below is a non-normative example of the ``client_data`` JSON object.
   3. The ``nonce`` value has been generated by the Relying Party Backend and not previously used.
   4. The Relying Party Instance has valid Cryptographic Hardware Keys registered.
   5. The ``client_data`` can be reconstructed using ``nonce`` and ``cnf`` (representing ``key_pub``). The ``hardware_signature`` parameter value is then validated using the registered Cryptographic Hardware Key's public key associated with the Relying Party Instance.
-  6. The ``key_attestation`` can be validated according to the device manufacturer's guidelines. The specific checks performed by the Relying Party Backend are detailed in the operating system manufacturer's documentation.
+  6. The ``integrity_assertion`` can be validated according to the device manufacturer's guidelines. The specific checks performed by the Relying Party Backend are detailed in the operating system manufacturer's documentation.
   7. The device in use is free of known security flaws and meets the minimum security requirements defined by the Relying Party.
   8. The URL in the ``iss`` parameter matches the Relying Party's URL identifier.
 

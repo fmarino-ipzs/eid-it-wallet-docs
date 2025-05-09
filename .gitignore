@@ -19,7 +19,7 @@ latex
 env-preview
 .venv
 .vscode
-*.py
+#*.py
 *.cfg
 *.tmpl
 *.exe

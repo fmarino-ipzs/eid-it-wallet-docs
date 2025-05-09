@@ -5,7 +5,7 @@ hide footbox
 
 actor "User" as user
 participant "Wallet Instance" as app 
-participant "Key Attestation APIs" as aats #springgreen
+participant "Device Integrity Service APIs" as aats #springgreen
 participant "Wallet Provider backend" as bck
 
 
@@ -36,9 +36,9 @@ app->app: Generate ""client_data_hash"" as SHA256(""nonce"", ""ephemeral_key_pub
 app->app: Generate Cryptographic Hardware Key PoP\n""hardware_signature"" = sign((""client_data_hash"", ""hardware_key_tag""), ""hardware_key_priv"")
 
 app->aats: ""client_data_hash""
-aats-->app: ""key_attestation""
+aats-->app: ""integrity_assertion""
 
-app->app: Generate Wallet Attestation Request with ""key_attestation"", ""hardware_signature"", ""nonce"",\n""hardware_key_tag"", ""ephemeral_key_pub"" signed with ephemeral ""ephemeral_key_priv""
+app->app: Generate Wallet Attestation Request with ""integrity_assertion"", ""hardware_signature"", ""nonce"",\n""hardware_key_tag"", ""ephemeral_key_pub"" signed with ephemeral ""ephemeral_key_priv""
 app->bck: Send Wallet Attestation Request
 activate bck
 rnote over bck,bck #LIGHTGREEN
@@ -46,7 +46,7 @@ Check if Wallet Instance is initialized and valid
 using ""hardware_key_tag""
 endrnote
 bck->bck: Validate ""nonce""
-bck->bck: Validate ""key_attestation""
+bck->bck: Validate ""integrity_assertion""
 bck->bck: Validate ""hardware_signature""
 bck->bck: Validate ""ephemeral_key_pub"" PoP
 bck->bck: Create Wallet Attestation

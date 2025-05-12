@@ -13,12 +13,13 @@ Thumbs.db
 *.swp
 html
 env
+venv
 build
 latex
 env-preview
 .venv
 .vscode
-*.py
+#*.py
 *.cfg
 *.tmpl
 *.exe

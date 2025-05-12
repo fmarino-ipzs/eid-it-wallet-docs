@@ -13,6 +13,8 @@ settings_file_name = 'eid-wallet-it-docs'
 version = settings_doc_version
 
 import sys, os
+from pathlib import Path
+confdir = Path(__file__).resolve().parent
 
 # -- RTD configuration -------------------------------------------------
 
@@ -48,6 +50,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.redoc',
     'myst_parser',  
+    'sphinxcontrib.plantuml'
 ]
 
 redoc = [
@@ -76,6 +79,13 @@ redoc_uri = 'https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js'
 rst_epilog = """
 .. _blank: target="_blank"
 """
+
+plantuml_jar = confdir.parent.parent / "utils/plantuml/plantuml-1.2025.2.jar"
+plantuml = f'java -jar {str(plantuml_jar)}'
+plantuml_output_format = 'svg'
+plantuml_latex_output_format = 'pdf'
+plantuml_server = ''
+#plantuml_cache_path = './cache'
 
 images_config = {
     "default_image_width": "99%",
@@ -273,7 +283,7 @@ latex_elements = {
 # (source start file, target name, title,
 # author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', settings_file_name + '.tex', settings_project_name, "This document was prepared by a team of contributors", 'manual'),
+  ('index', settings_file_name + '.tex', f"{settings_project_name} - {version}", settings_editor_name, 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

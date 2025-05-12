@@ -1,0 +1,22 @@
+@startuml Wallet Solution Schema
+actor "User" as user 
+actor "Wallet Provider" as wallet_provider 
+actor "Device OEM" as oem 
+
+component "Wallet Solution" as wallet_solution #violet
+component "Wallet Instance" as wallet_instance #yellow
+component "Wallet Backend" as wallet_backend 
+component "Device Integrity Service" as integrity_api  #red
+
+wallet_instance -right-> integrity_api: Use
+wallet_backend -right-> integrity_api: Use
+
+wallet_backend -right-> wallet_solution: Is part of
+wallet_backend -right-> wallet_instance: Provides Wallet Attestation
+
+
+user --> wallet_instance: control / activate
+wallet_instance --> wallet_solution: Is an instance of
+wallet_provider --> wallet_solution: Provide
+oem --> integrity_api: Provide
+@enduml

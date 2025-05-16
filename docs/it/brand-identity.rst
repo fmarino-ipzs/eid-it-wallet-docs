@@ -132,3 +132,5 @@ Il Pulsante di Autenticazione è caratterizzato dai seguenti requisiti:
 - il Pulsante di Autenticazione DEVE essere utilizzato esclusivamente nelle forme, dimensioni e proporzioni stabilite dalle Risorse Ufficiali e NON DEVE essere alterato, distorto o nascosto; 
 
 - il Pulsante di Autenticazione DEVE adattarsi a tutte le risoluzioni di schermo e DEVE garantire requisiti minimi di usabilità e accessibilità. 
+
+

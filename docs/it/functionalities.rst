@@ -509,3 +509,5 @@ Di seguito, le indicazioni proposte per l’implementazione di tali tipologie di
 **Raccolta di feedback relazionale** 
 
 - **Net Promoter Score (NPS)**: per misurare la fedeltà dell'Utente e la probabilità di raccomandazione ad Utenti terzi, si PUÒ richiedere di esprimere una valutazione una o due volte l'anno attraverso lo stesso canale di erogazione del servizio (e.g. l’Istanza IT-Wallet) o canali esterni, quali e-mail o SMS, e comunque in linea con la strategia di raccolta feedback adottata.
+
+

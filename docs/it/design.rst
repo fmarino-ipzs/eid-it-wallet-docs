@@ -14,4 +14,6 @@ Per garantire un’elevata qualità del servizio dal punto di vista dell’Esper
 
 - **Accessibilità**: le Soluzioni Tecniche DEVONO essere progettate e mantenute per garantire elevati standard di accessibilità, allo scopo di garantire accesso al servizio indipendentemente da capacità o competenze tecnologiche individuali o da vincoli esterni e di contesto. Gli enti pubblici DEVONO aderire alle [REF_ACCESSIBILITY], mentre gli enti privati DEVONO rispettare quanto previsto dalla normativa vigente; 
 
-- **Coerenza**: le Soluzioni Tecniche DEVONO essere progettate e mantenute in coerenza con la Brand Identity del Sistema IT-Wallet e i requisiti funzionali relativi all’Esperienza Utente descritti in queste specifiche, per promuovere la riconoscibilità dei componenti, garantire la coerenza complessiva del sistema e minimizzare il carico cognitivo per l’Utente. 
+- **Coerenza**: le Soluzioni Tecniche DEVONO essere progettate e mantenute in coerenza con la Brand Identity del Sistema IT-Wallet e i requisiti funzionali relativi all’Esperienza Utente descritti in queste specifiche, per promuovere la riconoscibilità dei componenti, garantire la coerenza complessiva del sistema e minimizzare il carico cognitivo per l’Utente.
+
+

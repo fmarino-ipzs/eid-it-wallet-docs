@@ -77,7 +77,7 @@ In the event of communication issues between the systems of the Electronic Attes
 
 If the User encounters incorrect data in an already obtained or in-progress Electronic Attestation of Attributes, the Wallet Provider SHOULD guarantee the User appropriate assistance via their Wallet Instance. For more information, please refer to the :ref:`functionalities:User Assistance` section.
 
-In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the `Error Management`_ section.
+In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the :ref:`Error Management` section.
 
 If an Authentic Source (or an Electronic Attestation of Attributes Provider, should it coincide with the Authentic Source) intends to implement an Engagement Button to initiate the request process from their Touchpoint, they MUST ensure compliance with the graphical appearance and implementation requirements for the Engagement Button, as outlined in the :ref:`brand-identity:IT-Wallet System Brand Identity` section.
 
@@ -92,8 +92,7 @@ The Electronic Attestations obtained within the Wallet Instance SHOULD be displa
 - The layout of elements in the Preview View of the Electronic Attestation MUST be optimized for scalability and usability, especially when multiple Electronic Attestations are displayed on the same screen;
 - The Electronic Attestation MAY adopt a card format, in line with approaches already used by other Wallets in the market, to mirror the appearance of a corresponding physical document. When applicable, the digital nature of the document MAY be indicated, such as by labeling it as a "digital version" in the layout;
 - The Electronic Attestation MUST display the same information in the Detail View as shown in the Preview View and MAY include additional details;
-- The Electronic Attestation MUST include Action Buttons in the Detail View to allow for management, as outlined in the `Management of Electronic Attestations`_ section.
-
+- The Electronic Attestation MUST include Action Buttons in the Detail View to allow for management, as outlined in the :ref:`Management of Electronic Attestations` section.
 
 Presentation of Electronic Attestations
 ---------------------------------------
@@ -105,7 +104,7 @@ The presentation process allows the User to access a service or demonstrate owne
 - **Remote Presentation**: the User presents the PID and/or EAA data through the Wallet Instance, to a Relying Party configured for online verification, for instance, to Authenticate and access the services offered.
 
 Proximity Presentation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Proximity presentation allows the User to present the PID and/or EAA data via their Wallet Instance, using one of two methods:
 
@@ -138,14 +137,13 @@ In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee 
 In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the `Error Management`_ section.
 
 Remote Presentation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 Remote presentation allows the User to present the PID and/or EAA data by interacting with a Relying Party's Touchpoint through a designated Engagement Button.
 
 This presentation can occur in two different modes, depending on the type of device used to access the service:
 
 - **Same-device mode**: when the User accesses an online digital service using the same device on which the Wallet Instance is installed;
-
 - **Cross-device mode**: when the User accesses a digital service using a different device from the one where the Wallet Instance is installed.
 
 Below are the functional and the User Experience requirements that the Wallet Provider MUST guarantee via their Wallet Solution.
@@ -171,9 +169,7 @@ In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee 
 - The User receives confirmation of the successful presentation within the Wallet Instance;
 - The User returns to the Relying Party's Touchpoint and views confirmation of the completed presentation.
 
-
 In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the `Error Management`_ section.
-
 
 Authentication
 """"""""""""""
@@ -311,7 +307,6 @@ Revocation is the procedure that turns an Electronic Attestation from a valid st
 	- The minimum security and/ or reliability requirements for one or more involved parties are no longer met.
 	- The User's device no longer meets the minimum security requirements (rooted or jailbroken).
 
-
 History of Electronic Attestations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -320,7 +315,6 @@ To ensure the principles of visibility and transparency, the Wallet Provider MUS
 - The Wallet Instance MUST show the User see which Relying Party they have interacted with and which Electronic Attestations have been presented and verified;
 - The Wallet Instance MUST allow the User to easily request the Relying Party to delete their information related to previous presentations.
 
-
 Backup and Restore of Electronic Attestation of Attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -328,7 +322,6 @@ With the aim of ensuring the principle of data portability, the Wallet Solution 
 
 - Request the backup and storage of Electronic Attestations of Attributes obtained through their Wallet Instance;
 - Request the restore of their Electronic Attestations of Attributes on another Wallet Instance.
-
 
 Deactivation of the Wallet Instance
 -----------------------------------
@@ -364,7 +357,6 @@ Below are the functional and User Experience requirements that the Wallet Provid
 Once the Wallet Instance is reactivated, Electronic Attestations of Attributes can be re-obtained by starting the issuance or restore process again. For more details, please refer to sections `Issuance of Electronic Attestations of Attributes`_ and `Backup and Restore of Electronic Attestation of Attributes`_.
 
 In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For more details, please refer to the `Error Management`_ section.
-
 
 Error Management
 ----------------
@@ -433,7 +425,7 @@ Presentation of Electronic Attestations Errors
     - Wallet Provider, Relying Party
 
 Management of Electronic Attestations Errors
-----------------------------------------------
+--------------------------------------------
 
 .. list-table::
   :widths: 80 20

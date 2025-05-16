@@ -1,55 +1,49 @@
 .. include:: ../common/common_definitions.rst
 
-==============================================
-IT-Wallet implementation profile
-==============================================
 
-[TODO INTRO]
+Documentazione Tecnica del Sistema IT-Wallet - |version|
+========================================================
 
-Introduzione
+Questo documento fornisce l'architettura tecnica, il framework di implementazione e i requisiti di progettazione da adottare per le Soluzioni Tecniche del Sistema IT-Wallet.
 
-cos'è eIDAS
+.. Indice dei contenuti
+.. -------------------
 
-cos'è IT-Wallet
-
-scopo delle regole tecniche
-
-
-In this documentation you can find the technical specification 
-for implementing the following components:
-
- - Entities of the ecosystem according to `EIDAS-ARF`_.
- - Infrastructure of trust attesting realiability and eligibility of the participants.
- - PID and EAAs data schemes and attribute sets.
- - PID/EAA in MDL CBOR format.
- - PID/EAA in `SD-JWT`_ format.
- - Wallet Solution general architecture.
- - Wallet Instance Attestation data model in `JWS`_ format.
- - Issuance of PID/EAA according to `OpenID4VCI`_.
- - Presentation of PID/EAA according to `OpenID4VP`_.
- - Presentation of pseudonyms according to `SIOPv2`_.
- - PID/EAA backup and restore mechanisms.
- - PID/EAA revocation lists.
+.. toctree::
+  :maxdepth: 3
+  :caption: Indice dei Contenuti
+  :numbered:
 
 
-Index of content
-----------------
+  design.rst
+  brand-identity.rst
+  functionalities.rst
 
-.. toctree:: 
-   :maxdepth: 2
-   
-   ssi-introduction.rst
-   defined-terms.rst
-   trust.rst
-   pid-eaa-data.rst
-   pid-eaa-mdoc-cbor.rst
-   pid-eaa-sd-jwt.rst
-   wallet-solution.rst
-   wallet-instance-attestation.rst
-   issuance.rst
-   relying-party-solution.rst
-   pseudonyms.rst
-   backup-restore.rst
-   revocation-lists.rst
-   contribute.rst
-   standards.rst
+.. introduction.rst
+.. defined-terms.rst
+.. ssi-introduction.rst
+.. design.rst
+.. brand-identity.rst
+.. functionalities.rst
+.. trust.rst
+.. wallet-solution.rst
+.. credential-issuer-solution.rst
+.. relying-party-solution.rst
+.. authentic-sources.rst
+.. credential-data-model.rst
+.. credential-issuance.rst
+.. credential-presentation.rst
+.. credential-revocation.rst
+.. backup-restore.rst
+.. registry-catalogue.rst
+.. e-service-pdnd-catalogue.rst
+.. e-service-pdnd.rst
+.. mobile-application-instance.rst
+.. entity-configurations.rst
+.. algorithms.rst
+.. security-privacy-considerations.rst
+.. log-retention-policy.rst
+.. standards.rst
+.. test-plans.rst
+.. contribute.rst
+.. open-source.rst

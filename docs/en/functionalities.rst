@@ -77,7 +77,7 @@ In the event of communication issues between the systems of the Electronic Attes
 
 If the User encounters incorrect data in an already obtained or in-progress Electronic Attestation of Attributes, the Wallet Provider SHOULD guarantee the User appropriate assistance via their Wallet Instance. For more information, please refer to the :ref:`functionalities:User Assistance` section.
 
-In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the :ref:`Error Management` section.
+In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the :ref:`functionalities:Error Management` section.
 
 If an Authentic Source (or an Electronic Attestation of Attributes Provider, should it coincide with the Authentic Source) intends to implement an Engagement Button to initiate the request process from their Touchpoint, they MUST ensure compliance with the graphical appearance and implementation requirements for the Engagement Button, as outlined in the :ref:`brand-identity:IT-Wallet System Brand Identity` section.
 
@@ -92,7 +92,7 @@ The Electronic Attestations obtained within the Wallet Instance SHOULD be displa
 - The layout of elements in the Preview View of the Electronic Attestation MUST be optimized for scalability and usability, especially when multiple Electronic Attestations are displayed on the same screen;
 - The Electronic Attestation MAY adopt a card format, in line with approaches already used by other Wallets in the market, to mirror the appearance of a corresponding physical document. When applicable, the digital nature of the document MAY be indicated, such as by labeling it as a "digital version" in the layout;
 - The Electronic Attestation MUST display the same information in the Detail View as shown in the Preview View and MAY include additional details;
-- The Electronic Attestation MUST include Action Buttons in the Detail View to allow for management, as outlined in the :ref:`Management of Electronic Attestations` section.
+- The Electronic Attestation MUST include Action Buttons in the Detail View to allow for management, as outlined in the :ref:`functionalities:Management of Electronic Attestations` section.
 
 Presentation of Electronic Attestations
 ---------------------------------------
@@ -257,7 +257,7 @@ Relying Parties SHOULD implement the thank you page provided in the Official Res
 
 **Error page**
 
-The error page is displayed when an issue occurs during the Authentication process. Its purpose is to inform the User about the nature of the error (e.g., technical issue, network issues, Wallet Instance malfunction, denied data sharing, etc.) and to present the available next steps. For further details, refer to the `Error Management`_ section.
+The error page is displayed when an issue occurs during the Authentication process. Its purpose is to inform the User about the nature of the error (e.g., technical issue, network issues, Wallet Instance malfunction, denied data sharing, etc.) and to present the available next steps. For further details, refer to the :ref:`functionalities:Error Management` section.
 
 Relying Parties SHOULD implement the error page provided in the Official Resources. In any case:
 

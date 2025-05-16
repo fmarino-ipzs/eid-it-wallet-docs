@@ -76,7 +76,8 @@ pandoc -o eid-it-wallet-docs.odt index.html
 
 ## How to contribute
 
-If you encounter problems or errors, if you’d like to comment or suggest an edit, don’t hesitate to contribute by submitting a [Pull Requests or raise Issues](CONTRIBUTING.md), or exploring existing issues.
+
+Refer to [Contributing Rules Section](CONTRIBUTING-RULES.md) for an editorial guideline. Don't hesitate to submit [Pull Requests or raise Issues](CONTRIBUTING.md) if you encounter any problems.
 
 
 ## Authors

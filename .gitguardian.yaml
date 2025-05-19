@@ -2,5 +2,11 @@ version: 2
 
 secret:
   ignored-paths:
-    - docs/it/oas3/*
-    - docs/en/oas3/*
+    - docs/it/oas3/OAS3-PDND-AS.yaml
+    - docs/it/oas3/OAS3-PDND-Issuer.yaml
+    - docs/it/oas3/OAS3-PDND-WP.yaml
+    - docs/en/oas3/OAS3-PDND-AS.yaml
+    - docs/en/oas3/OAS3-PDND-Issuer.yaml
+    - docs/en/oas3/OAS3-PDND-WP.yaml
+
+    

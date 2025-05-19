@@ -50,7 +50,7 @@ This workflow builds and deploys HTML documentation to GitHub Pages.
 **Features**:
 - Builds both Italian and English documentation;
 - Creates different deployment paths for branch pushes, PRs, and releases;
-- Cleans documetation for closed PRs;
+- Removes documentation for closed PRs;
 - Auto-generates an index page listing all available documentation versions.
 
 **Usage**:
@@ -67,7 +67,7 @@ This workflow allows repository maintainers to generate documentation previews f
 **Features**:
 - Builds both Italian and English documentation;
 - Creates different deployment paths for branch pushes, PRs, and releases;
-- Cleans documetation for closed PRs;
+- Removes documentation for closed PRs;
 - Auto-generates an index page listing all available documentation versions.
 
 **Usage**:

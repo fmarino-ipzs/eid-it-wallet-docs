@@ -124,13 +124,8 @@ The EAAs obtained within the Wallet Instance SHOULD be displayed in a list withi
 
 The Electronic Attestation of Attributes Provider: 
 
-- The Electronic Attestation MUST be displayed correctly across all devices, ensuring a consistent experience on screens of varying sizes;
-- The name of the Electronic Attestation MUST be clearly visible and always displayed in both the Detail View and the Preview View;
-- The Electronic Attestation, both in the Preview View and the Detailed View, MUST display its status if different from valid and MAY display it if valid. The Preview View MAY also include additional attributes to enhance the User Experience and management; for example, it MAY display the name or logo of the Electronic Attestation of Attributes Provider or the PID Provider;
-- The layout of elements in the Preview View of the Electronic Attestation MUST be optimized for scalability and usability, especially when multiple Electronic Attestations are displayed on the same screen;
-- The Electronic Attestation MAY adopt a card format, in line with approaches already used by other Wallets in the market, to mirror the appearance of a corresponding physical document. When applicable, the digital nature of the document MAY be indicated, such as by labeling it as a "digital version" in the layout;
-- The Electronic Attestation MUST display the same information in the Detail View as shown in the Preview View and MAY include additional details;
-- The Electronic Attestation MUST include Action Buttons in the Detail View to allow for management, as outlined in the `Management of Electronic Attestations`_ section.
+- MUST define a name/ naming convention to refer to the EAAs issued, to guarantee consistency across all Wallet Solutions; the EAA name MUST be comprehensible and user-friendly avoiding technical terms or acronyms whenever possible; 
+- MUST define a clear set of specifications for the EAA to ensure consistent identification and representation of the EAA across different Wallet Solutions, in terms of format, structure, and appearance standards (e.g. color, background image, etc.). 
 
 
 Presentation of Electronic Attestations

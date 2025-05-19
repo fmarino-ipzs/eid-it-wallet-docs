@@ -1,0 +1,158 @@
+name: gh-pages
+
+on:
+  push:
+    branches:
+      - 'versione-corrente'
+    paths:
+      - 'docs/**' # trigger only if there are changes in docs path
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    paths:
+      - 'docs/**' # trigger only if there are changes in docs path
+  release:
+    types:
+      - published
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  DEFAULT_BRANCH: versione-corrente
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Run job ONLY if:
+    # 1. It's a push to a branch (e.g. versione-corrente)
+    # 2. It's a PR from the same repository (not from a fork)
+    # 3. It's a release or a manual workflow_dispatch
+    if: |
+      github.event_name == 'push' ||
+      github.event_name == 'release' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Install Python 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          architecture: "x64"
+
+      # Install Java
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Install Graphviz required for plantuml
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+
+      # Install python dependancies 
+      - name: Install Python Dependencies
+        run: |-
+          python -m pip install -r requirements-dev.txt
+
+      - name: Generate deployment paths
+        id: deployment
+        run: |
+          # Debug information
+          echo "GitHub ref: $GITHUB_REF"
+          echo "GitHub head ref: $GITHUB_HEAD_REF"
+          echo "GitHub ref type: $GITHUB_REF_TYPE"
+          echo "Event name: ${{ github.event_name }}"
+
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "path=prs/pr${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+            echo "prinfo="
+          elif [[ "${{ github.event_name }}" == "release" ]]; then
+            TAG="${{ github.event.release.tag_name }}"
+            echo "path=releases/${TAG}" >> $GITHUB_OUTPUT
+          else 
+            # this is the case where we have a push on vdefault branch
+            echo "path=$DEFAULT_BRANCH" >> $GITHUB_OUTPUT
+          fi
+
+      # Run Sphinx build for HTML output
+      - name: Build Documentation HTML
+        run: |-
+          # Create output directories
+          mkdir -p "html/${{ steps.deployment.outputs.path }}/it"
+          mkdir -p "html/${{ steps.deployment.outputs.path }}/en"
+
+          echo "Building html/${{ steps.deployment.outputs.path }}/it"
+          echo "Building html/${{ steps.deployment.outputs.path }}/en"
+
+          sphinx-build -b html docs/it/ html/${{ steps.deployment.outputs.path }}/it
+          sphinx-build -b html docs/en/ html/${{ steps.deployment.outputs.path }}/en
+
+      # This section copies required scripts and templates for the index page generation
+      - name: Copy python scripts for deploy
+        run: |
+          mkdir -p html/scripts/ && cp -r .github/scripts/* html/scripts/
+          mkdir -p html/templates/ && cp -r .github/templates/* html/templates/
+          mkdir -p html/static/ && cp -r .github/static/* html/static/
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: html
+          keep_history: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  generate-index:
+      needs: build  # This ensures this job runs only after build and deploy jobs are succesfully completed
+      runs-on: ubuntu-latest
+      steps:
+        # Check out the gh-pages branch
+        - name: Checkout gh-pages branch
+          uses: actions/checkout@v3
+          with:
+            ref: gh-pages  # Checkout the gh-pages branch
+                
+        # Install Python
+        - uses: actions/setup-python@v4
+          with:
+            python-version: "3.10"
+            
+        # Install python dependancies 
+        - name: Install deps
+          run: |-
+            python -m pip install Jinja2==3.1.6
+
+        # Run the Python script
+        - name: Run the Python script for cleanup and index generation
+          env:
+            GH_TOKEN: ${{ github.token }}
+          run: |
+            # Run the Python scripts 
+            python ./scripts/cleanup_old_prs.py
+            python ./scripts/generate_index.py
+            
+        # Commit and push back to gh-pages
+        - name: Commit and push 
+          run: |
+            git config --global user.name 'GitHub Actions'
+            git config --global user.email 'actions@github.com'
+            git add .
+            git commit -m "Auto-generate index.html" || echo "No changes to commit"
+            git push

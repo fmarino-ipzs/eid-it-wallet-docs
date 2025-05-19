@@ -16,7 +16,7 @@ Per indicazioni e strumenti a supporto, fare riferimento alle Risorse Ufficiali.
 Naming 
 ------
 
-“Sistema IT-Wallet" (IT-Wallet System in inglese) o “IT-Wallet" in forma contratta è il nome ufficiale che DEVE essere utilizzato in contesti scritti o verbali, fisici o digitali. Di seguito i relativi requisiti per la corretta scrittura e pronuncia: 
+"Sistema IT-Wallet" (IT-Wallet System in inglese) o "IT-Wallet" in forma contratta è il nome ufficiale che DEVE essere utilizzato in contesti scritti o verbali, fisici o digitali. Di seguito i relativi requisiti per la corretta scrittura e pronuncia: 
 
 - si DEVE rispettare l’uso delle maiuscole nel termine “IT” e nelle iniziali di “Wallet” e “Sistema”; 
 

@@ -56,7 +56,7 @@ Below are the requirements for displaying and using the PID that each Wallet Pro
 - The PID MUST be named as defined by the PID Provider;  
 - The PID MUST display its status if different from valid to provide transparency on its lifecycle and MAY display it if valid. Specific details about the PID status, if invalid, MAY be provided (e.g., the reason why the PID is revoked); 
 - The PID MUST include Action Buttons to enable lifecycle management and allow the User to revoke the PID, thus the entire Wallet Instance with all EAAs issued, or to update the PID at any time (see :ref:`functionalities:Management of Electronic Attestations`); 
-- The PID MUST be an interactive element, for the User to be authenticated by a Relying Party in a digital context (see :ref:`functionalities:Authentication`), to access services in proximity contexts, and to request the issuance of additional EAAs (see :ref:`functionalities:Issuance of Electronic Attestation of Attributes`);  
+- The PID MUST be an interactive element, for the User to be authenticated by a Relying Party in a digital context (see :ref:`functionalities:Authentication`), to access services in proximity contexts, and to request the issuance of additional EAAs (see :ref:`functionalities:Issuance of Electronic Attestations of Attributes`);  
 - The PID MUST display a method of assistance by the PID Provider (see :ref:`functionalities:User Assistance`); 
 - The PID representation MUST adhere to a defined set of specifications provided by the PID Provider to ensure recognizability, consistency and homogeneity among different Wallet Solutions. 
 
@@ -112,7 +112,7 @@ The EAAs obtained within the Wallet Instance SHOULD be displayed in a list withi
 - The name of the EAA MUST be clearly visible and always displayed in both the Detail View and the Preview View;
 - The EAA, both in the Preview View and the Detailed View, MUST display its status if different from valid to provide transparency on its lifecycle and MAY display it if valid. The Preview View MAY also include additional Attributes to enhance the User Experience and management; for example, it MAY display the name or logo of the Electronic Attestation of Attributes Provider or the PID Provider. The Detailed View MAY provide specific details about the state if invalid (e.g., the reason why the EAA is revoked);
 - The EAA MUST include Action Buttons in the Detail View to enable lifecycle management and allow the User to revoke or to update a EAA at any time (see :ref:`functionalities:Management of Electronic Attestations`); 
-- The EAA MUST be an interactive element, for the User to access services provided by Relying Parties in digital and proximity contexts (see :ref:`functionalities:Presentation of Electronic Attestation`); 
+- The EAA MUST be an interactive element, for the User to access services provided by Relying Parties in digital and proximity contexts (see :ref:`functionalities:Presentation of Electronic Attestations`); 
 - The EAA MAY be displayed in a card format in their Preview View, in line with approaches already used by other digital wallets in the market, to mirror the appearance of a corresponding physical document. When applicable, the digital nature of the document MAY be indicated, such as by labeling it as a "digital version" in the layout; 
 - The EAA MUST display the same information in the Detail View as shown in the Preview View and MAY include additional details; 
 - The EAA MUST display a method of assistance (see :ref:`functionalities:User Assistance`); 

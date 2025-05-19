@@ -46,6 +46,24 @@ Il Fornitore di Soluzione IT-Wallet DEVE permettere all’Utente in ogni momento
 
 In caso di errori nell’utilizzo della Istanza IT-Wallet, il Fornitore di Soluzione IT-Wallet DEVE garantire all’Utente la visualizzazione di messaggi coerenti che lo informino e guidino alla loro risoluzione. Per approfondimenti si rimanda alla sezione :ref:`functionalities:Gestione degli errori`.
 
+Focus sul PID – Dati di Identificazione della Persona
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Il PID (Person Identification Data) si riferisce a un set minimo verificato di informazioni sull'identità dell'Utente (vedere :ref:`credential-data-model:Digital Credential Data Model`) emesso come risultato del processo di attivazione e reso disponibile nell'Istanza Wallet.
+Di seguito sono riportati i requisiti per la visualizzazione e l'utilizzo del PID a cui ogni Fornitore Wallet DEVE aderire, al fine di fornire un'esperienza di consultazione e utilizzo coerente e accessibile:
+
+- Il PID DEVE essere visualizzato correttamente su tutti i dispositivi, garantendo un'esperienza coerente su schermi di dimensioni diverse;
+- Il PID DEVE essere denominato come definito dal Fornitore PID;
+- Il PID DEVE visualizzare il suo stato se diverso da valido per fornire trasparenza sul suo ciclo di vita e PUÒ visualizzarlo se valido. Dettagli specifici sullo stato del PID, se non valido, POSSONO essere forniti (ad esempio, il motivo per cui il PID è stato revocato);
+- Il PID DEVE includere Pulsanti di Ingaggio per consentire la gestione del ciclo di vita e permettere all'Utente di revocare il PID, quindi l'intera Istanza Wallet con tutte le EAA emesse, o di aggiornare il PID in qualsiasi momento (vedere :ref:`functionalities:Gestione degli Attestati Elettronici`);
+- Il PID DEVE essere un elemento interattivo, affinché l'Utente possa essere autenticato da un Relying Party in un contesto digitale (vedere :ref:`functionalities:Autenticazione`), per accedere ai servizi in contesti di prossimità e per richiedere l'emissione di ulteriori EAA (vedere :ref:`functionalities:Ottenimento degli Attestati Elettronici di Attributi`);
+- Il PID DEVE visualizzare un metodo di assistenza da parte del Fornitore PID (vedere :ref:`functionalities:Assistenza Utente`);
+- La rappresentazione del PID DEVE aderire a un insieme definito di specifiche fornite dal Fornitore PID per garantire riconoscibilità, coerenza e omogeneità tra diverse Soluzioni Wallet.
+
+Il Fornitore PID DEVE:
+
+- Implementare un nome/convenzione di denominazione per riferirsi al PID, per garantire coerenza tra tutte le Soluzioni Wallet;
+- Definire un insieme chiaro di specifiche per il PID per garantire l'identificazione e la rappresentazione coerenti del PID tra diverse Soluzioni Wallet, in termini di format, struttura e standard di aspetto (ad esempio nome, colore, immagine di sfondo, ecc.).
+
 Ottenimento degli Attestati Elettronici di Attributi 
 ----------------------------------------------------
 
@@ -81,18 +99,30 @@ In caso di errori nell’utilizzo della Istanza IT-Wallet, il Fornitore di Soluz
 
 Qualora un Titolare di Fonte Autentica (o un Fornitore di Attestati Elettronici di Attributi qualora coincida con il Titolare di Fonte Autentica) intendesse implementare un Pulsante di Ingaggio per permettere l’avvio del processo di ottenimento da un proprio Touchpoint, questo DEVE garantire il rispetto dei requisiti relativi all’aspetto grafico e alle modalità di implementazione del Pulsante di Ingaggio, descritti nella sezione :ref:`brand-identity:Brand Identity del Sistema IT-Wallet`. 
 
-Layout degli Attestati Elettronici 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Focus sulle Attestazioni Elettroniche di Attributi
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Le Attestazioni Elettroniche di Attributi (EAA) ottenute all'interno dell'Istanza Wallet DOVREBBERO essere visualizzate in un elenco all'interno di una Vista Anteprima. In questo caso, ogni EAA DEVE garantire un elevato livello di riconoscibilità e accessibilità [REF_ACCESSIBILITY] delle informazioni contenute. Di seguito sono riportati i requisiti per la visualizzazione dell'EAA a cui ogni Fornitore Wallet DEVE aderire per fornire un'esperienza di consultazione e utilizzo coerente e accessibile:
 
-Gli Attestati Elettronici ottenuti in un’Istanza IT-Wallet DOVREBBERO essere visualizzati in lista all’interno di una Vista di Anteprima. In tal caso, gli Attestati Elettronici DEVONO garantire un alto livello di riconoscibilità e accessibilità [RIF_ACCESSIBILITÀ] delle informazioni contenute. Di seguito i requisiti relativi alle modalità di visualizzazione di un Attestato Elettronico che ogni Fornitore di Soluzione IT-Wallet DEVE rispettare per garantire un’esperienza di consultazione e fruizione coerente e accessibile: 
- 
-- l’Attestato Elettronico DEVE essere visualizzato correttamente su qualsiasi dispositivo, garantendo un'esperienza uniforme su schermi di diverse dimensioni; 
-- il nome dell’Attestato Elettronico DEVE essere chiaramente indicato e sempre visibile sia nella Vista di Dettaglio che nella Vista di Anteprima; 
-- l’Attestato Elettronico, sia nella Vista di Anteprima che nella Vista di Dettaglio, DEVE mostrare lo stato se diverso da valido e PUÒ mostrarlo se valido. La Vista di Anteprima PUÒ includere alcuni Attributi per migliorarne l’esperienza di utilizzo e di gestione; PUÒ, ad esempio, includere il nome o il logo del Fornitore di Attestati Elettronici di Attributi o del Fornitore di Dati di Identificazione Personale; 
-- il layout degli elementi nella Vista di Anteprima dell’Attestato Elettronico DEVE essere ottimizzato considerando il principio di scalabilità e usabilità, soprattutto in presenza di più Attestati Elettronici nella stessa schermata; 
-- l’Attestato Elettronico PUÒ assumere un formato a card, in linea con gli approcci già adottati da altri Wallet sul mercato, per richiamare l'aspetto di un eventuale documento fisico corrispondente. Quando possibile, PUÒ essere dichiarata la natura digitale del documento, ad esempio riportando nel layout la dicitura “versione digitale”; 
-- l’Attestato Elettronico DEVE includere nella Vista di Dettaglio gli stessi dati mostrati nella Vista di Anteprima e PUÒ includerne altri; 
-- l’Attestato Elettronico DEVE prevedere nella Vista di Dettaglio la presenza di Pulsanti di Azione per garantirne la gestione, come descritto nella sezione :ref:`functionalities:Gestione degli Attestati Elettronici`. 
+- L'EAA DEVE essere visualizzata correttamente su tutti i dispositivi, garantendo un'esperienza coerente su schermi di dimensioni diverse;
+- Il nome dell'EAA DEVE essere chiaramente visibile e sempre visualizzato sia nella Vista Dettagliata che nella Vista Anteprima;
+- L'EAA, sia nella Vista Anteprima che nella Vista Dettagliata, DEVE visualizzare il suo stato se diverso da valido per fornire trasparenza sul suo ciclo di vita e PUÒ visualizzarlo se valido. La Vista Anteprima PUÒ anche includere Attributi aggiuntivi per migliorare l'Esperienza Utente e la gestione; ad esempio, PUÒ visualizzare il nome o il logo del Fornitore di Attestazioni Elettroniche di Attributi o del Fornitore PID. La Vista Dettagliata PUÒ fornire dettagli specifici sullo stato se non valido (ad esempio, il motivo per cui l'EAA è revocata);
+- L'EAA DEVE includere Pulsanti d'Azione nella Vista Dettagliata per consentire la gestione del ciclo di vita e permettere all'Utente di revocare o aggiornare un'EAA in qualsiasi momento (vedere :ref:`functionalities:Gestione degli Attestati Elettronici`);
+- L'EAA DEVE essere un elemento interattivo, affinché l'Utente possa accedere ai servizi forniti dai Relying Party in contesti digitali e di prossimità (vedere :ref:`functionalities:Presentazione degli Attestati Elettronici`);
+- L'EAA PUÒ essere visualizzata in formato tessera nella sua Vista Anteprima, in linea con gli approcci già utilizzati da altri portafogli digitali nel mercato, per rispecchiare l'aspetto di un documento fisico corrispondente. Quando applicabile, la natura digitale del documento PUÒ essere indicata, ad esempio etichettandolo come "versione digitale" nel layout;
+- L'EAA DEVE visualizzare le stesse informazioni nella Vista Dettagliata come mostrato nella Vista Anteprima e PUÒ includere dettagli aggiuntivi;
+- L'EAA DEVE visualizzare un metodo di assistenza (vedere :ref:`functionalities:Assistenza Utente`);
+- Il layout dell'EAA nella Vista Anteprima DEVE essere ottimizzato per scalabilità e usabilità, specialmente quando più EAA vengono visualizzate sulla stessa schermata;
+- La rappresentazione dell'EAA DEVE aderire a un insieme definito di specifiche fornite dal Fornitore di Attestazioni Elettroniche di Attributi per garantire riconoscibilità, coerenza e omogeneità tra diverse Soluzioni Wallet.
+
+Il Fornitore di Attestazioni Elettroniche di Attributi:
+
+- L’Attestato Elettronico DEVE essere visualizzato correttamente su qualsiasi dispositivo, garantendo un'esperienza uniforme su schermi di diverse dimensioni; 
+- Il nome dell’Attestato Elettronico DEVE essere chiaramente indicato e sempre visibile sia nella Vista di Dettaglio che nella Vista di Anteprima; 
+- L’Attestato Elettronico, sia nella Vista di Anteprima che nella Vista di Dettaglio, DEVE mostrare lo stato se diverso da valido e PUÒ mostrarlo se valido. La Vista di Anteprima PUÒ includere alcuni Attributi per migliorarne l’esperienza di utilizzo e di gestione; PUÒ, ad esempio, includere il nome o il logo del Fornitore di Attestati Elettronici di Attributi o del Fornitore di Dati di Identificazione Personale; 
+- Il layout degli elementi nella Vista di Anteprima dell’Attestato Elettronico DEVE essere ottimizzato considerando il principio di scalabilità e usabilità, soprattutto in presenza di più Attestati Elettronici nella stessa schermata; 
+- L’Attestato Elettronico PUÒ assumere un formato a card, in linea con gli approcci già adottati da altri Wallet sul mercato, per richiamare l'aspetto di un eventuale documento fisico corrispondente. Quando possibile, PUÒ essere dichiarata la natura digitale del documento, ad esempio riportando nel layout la dicitura “versione digitale”; 
+- L’Attestato Elettronico DEVE includere nella Vista di Dettaglio gli stessi dati mostrati nella Vista di Anteprima e PUÒ includerne altri; 
+- L’Attestato Elettronico DEVE prevedere nella Vista di Dettaglio la presenza di Pulsanti di Azione per garantirne la gestione, come descritto nella sezione :ref:`functionalities:Gestione degli Attestati Elettronici`. 
 
 Presentazione degli Attestati Elettronici 
 -----------------------------------------
@@ -117,22 +147,22 @@ Di seguito i requisiti funzionali a supporto dell’Esperienza Utente relativi a
 **Modalità supervisionata** 
 
 - L’Utente accede alla propria Istanza IT-Wallet utilizzando la modalità di sblocco precedentemente impostata; 
-- l'Utente accede alla funzionalità dedicata alla generazione del QR Code; 
-- l'Utente mostra il QR Code generato al soggetto che opera per conto del Verificatore di Attestati Elettronici, il quale provvede a scansionarlo tramite apposita app o sistema di verifica; 
-- l’Utente prende visione dei dati del PID e/o degli Attributi richiesti per la presentazione, del nome del Verificatore di Attestati Elettronici che li richiede e delle relative eventuali informative. L’Utente sceglie se presentare o meno eventuali dati del PID o Attributi non obbligatori ai fini della presentazione (Divulgazione Selettiva). L’Utente dà il proprio consenso per poter proseguire oppure annulla l’operazione; 
-- l’Utente autorizza l’operazione utilizzando la modalità di sblocco precedentemente impostata; 
-- l’Utente visualizza l’esito positivo della presentazione avvenuta. 
+- L'Utente accede alla funzionalità dedicata alla generazione del QR Code; 
+- L'Utente mostra il QR Code generato al soggetto che opera per conto del Verificatore di Attestati Elettronici, il quale provvede a scansionarlo tramite apposita app o sistema di verifica; 
+- L’Utente prende visione dei dati del PID e/o degli Attributi richiesti per la presentazione, del nome del Verificatore di Attestati Elettronici che li richiede e delle relative eventuali informative. L’Utente sceglie se presentare o meno eventuali dati del PID o Attributi non obbligatori ai fini della presentazione (Divulgazione Selettiva). L’Utente dà il proprio consenso per poter proseguire oppure annulla l’operazione; 
+- L’Utente autorizza l’operazione utilizzando la modalità di sblocco precedentemente impostata; 
+- L’Utente visualizza l’esito positivo della presentazione avvenuta. 
 
 In caso di errori nell’utilizzo dell’Istanza IT-Wallet, il Fornitore di Soluzione IT-Wallet DEVE garantire all’Utente la visualizzazione di messaggi coerenti che lo informino e guidino alla loro risoluzione. Per approfondimenti si rimanda alla sezione :ref:`functionalities:Gestione degli errori`. 
 
 **Modalità non supervisionata** 
 
 - L’Utente accede alla propria Istanza IT-Wallet utilizzando la modalità di sblocco precedentemente impostata; 
-- l'Utente accede alla funzionalità dedicata alla generazione del QR Code; 
-- l'Utente mostra il QR Code generato al dispositivo preposto (ad esempio un tornello) del Verificatore di Attestati Elettronici per permetterne la scansione;  
-- l’Utente prende visione dei dati del PID e/o gli Attributi richiesti per la presentazione, del nome del Verificatore di Attestati Elettronici che li richiede e delle relative eventuali informative. L’Utente sceglie se presentare o meno eventuali dati del PID o degli Attributi non obbligatori ai fini della presentazione (Divulgazione Selettiva). L’Utente dà il proprio consenso per poter proseguire oppure annulla l’operazione; 
-- l’Utente autorizza l’operazione utilizzando la modalità di sblocco precedentemente impostata; 
-- l’Utente visualizza l’esito positivo della presentazione avvenuta. 
+- L'Utente accede alla funzionalità dedicata alla generazione del QR Code; 
+- L'Utente mostra il QR Code generato al dispositivo preposto (ad esempio un tornello) del Verificatore di Attestati Elettronici per permetterne la scansione;  
+- L’Utente prende visione dei dati del PID e/o gli Attributi richiesti per la presentazione, del nome del Verificatore di Attestati Elettronici che li richiede e delle relative eventuali informative. L’Utente sceglie se presentare o meno eventuali dati del PID o degli Attributi non obbligatori ai fini della presentazione (Divulgazione Selettiva). L’Utente dà il proprio consenso per poter proseguire oppure annulla l’operazione; 
+- L’Utente autorizza l’operazione utilizzando la modalità di sblocco precedentemente impostata; 
+- L’Utente visualizza l’esito positivo della presentazione avvenuta. 
 
 In caso di errori nell’utilizzo dell’Istanza IT-Wallet, il Fornitore di Soluzione IT-Wallet DEVE garantire all’Utente la visualizzazione di messaggi coerenti che lo informino e guidino alla loro risoluzione. Per approfondimenti si rimanda alla sezione :ref:`functionalities:Gestione degli errori`. 
 

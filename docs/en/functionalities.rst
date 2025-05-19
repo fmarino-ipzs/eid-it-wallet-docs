@@ -57,14 +57,16 @@ Below are the requirements for displaying and using the PID that each Wallet Pro
 - The PID MUST display its status if different from valid to provide transparency on its lifecycle and MAY display it if valid. Specific details about the PID status, if invalid, MAY be provided (e.g., the reason why the PID is revoked); 
 - The PID MUST include Action Buttons to enable lifecycle management and allow the User to revoke the PID, thus the entire Wallet Instance with all EAAs issued, or to update the PID at any time (see :ref:`functionalities:Management of Electronic Attestations`); 
 - The PID MUST be an interactive element, for the User to be authenticated by a Relying Party in a digital context (see :ref:`functionalities:Authentication`), to access services in proximity contexts, and to request the issuance of additional EAAs (see :ref:`functionalities:Issuance of Electronic Attestation of Attributes`);  
-- The PID MUST display a method of assistance by the PID Provider (see :ref:`functionalities:User Assistance`); 
+- The PID MUST display a method of assistance by the PID Provider (see :ref:`functionalities:User Assistance`);
+- The PID MUST be recognizable by the User and distinguishable from other EAAs; 
+- The PID MUST be named with the naming convention that will be defined in this document’s future version, avoiding custom or technical terms such as “Person Identification Data” or its acronym “PID”; 
 - The PID representation MUST adhere to a defined set of specifications provided by the PID Provider to ensure recognizability, consistency and homogeneity among different Wallet Solutions. 
 
 
 The PID Provider MUST: 
 
 - Implement a name/naming convention to refer to the PID, to guarantee consistency across all Wallet Solutions;
-- Define a clear set of specifications for the PID to ensure consistent identification and representation of the PID across different Wallet Solutions, in terms of format, structure and appearance standards (e.g. name, color, background image, etc.). 
+- Define a clear set of specifications for the PID to ensure consistent identification and representation of the PID across different Wallet Solutions, in terms of format, structure and appearance standards (e.g. color, background image, etc.). 
 
 
 Issuance of Electronic Attestations of Attributes

@@ -38,7 +38,7 @@ A preview of the latest editor's copy build, corresponding to the branch `versio
  - [Editor's Copy](https://italia.github.io/eid-wallet-it-docs/versione-corrente/en/)
 
 
-### Preview of released versions
+### Releases
 
 Released versions can be navigated by adding the tag in the webpath leaded by a _v_, as follows:
 

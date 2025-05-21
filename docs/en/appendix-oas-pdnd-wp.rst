@@ -1,6 +1,6 @@
 .. only:: latex
 
-    Appendix A - Wallet Provider PDND e-services 
+    Appendix C - Wallet Provider PDND e-services 
     ---------------------------------------------
 
     Below is the complete Open API Specification for the Wallet Provider PDND e-services:

@@ -267,17 +267,16 @@ htmlhelp_basename = settings_basename + 'doc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
-
+# In conf.py
+latex_engine = 'lualatex'
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-'papersize': 'a4paper',
-
-# The font size ('10pt', '11pt' or '12pt').
-'pointsize': '10pt',
-
-'sphinxsetup': 'verbatimforcewraps=true',
-# Additional stuff for the LaTeX preamble.
-#'preamble': '',
+    'papersize': 'a4paper',
+    'pointsize': '11pt',
+    'sphinxsetup': 'verbatimforcewraps=true,verbatimwithframe=false',
+    #'preamble': '',
+    'extrapackages': r'''
+        \usepackage{graphicx}
+    ''',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -299,7 +298,7 @@ latex_use_parts = True
 latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
-latex_show_urls = "inline"
+#latex_show_urls = "inline"
 
 # Documents to append as an appendix to all manuals.
 #latex_appendices = []

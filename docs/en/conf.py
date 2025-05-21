@@ -273,7 +273,15 @@ latex_elements = {
     'papersize': 'a4paper',
     'pointsize': '11pt',
     'sphinxsetup': 'verbatimforcewraps=true,verbatimwithframe=false',
-    #'preamble': '',
+    'preamble': r'''
+        \usepackage{luatex85}
+        \usepackage{polyglossia}
+        \setmainlanguage{english} % O la lingua del tuo documento
+        % -- Aggiunte per Overfull/Underfull --
+        \tolerance=5000
+        \emergencystretch=3em
+        % ------------------------------------
+    ''',
     'extrapackages': r'''
         \usepackage{graphicx}
     ''',

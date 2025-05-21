@@ -217,10 +217,12 @@ htmlhelp_basename = settings_basename + 'doc'
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'a4paper',
+'papersize': 'a4paper',
 
 # The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
+'pointsize': '10pt',
+
+'sphinxsetup': 'verbatimforcewraps=true',
 
 # Additional stuff for the LaTeX preamble.
 #'preamble': '',
@@ -230,7 +232,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', settings_file_name + '.tex', settings_project_name, 'manual'),
+  ('index', settings_file_name + '.tex', settings_project_name,  settings_editor_name, 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -239,13 +241,13 @@ latex_documents = [
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-#latex_use_parts = False
+latex_use_parts = True
 
 # If true, show page references after internal links.
-#latex_show_pagerefs = False
+latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
-#latex_show_urls = False
+latex_show_urls = "inline"
 
 # Documents to append as an appendix to all manuals.
 #latex_appendices = []

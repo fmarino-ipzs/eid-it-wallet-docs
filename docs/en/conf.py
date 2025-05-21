@@ -274,6 +274,8 @@ latex_elements = {
     'pointsize': '11pt',
     'sphinxsetup': 'verbatimforcewraps=true,verbatimwithframe=false',
     'preamble': r'''
+        \usepackage{luatex85}
+        \usepackage{polyglossia}
         \setmainlanguage{english} % O la lingua del tuo documento
         % -- Aggiunte per Overfull/Underfull --
         \tolerance=5000

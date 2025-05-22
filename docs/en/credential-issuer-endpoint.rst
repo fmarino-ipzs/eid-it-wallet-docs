@@ -1,15 +1,26 @@
 .. include:: ../common/common_definitions.rst
 
+.. "included" file, so we start with '-' title level
 
 .. role:: raw-html(raw)
   :format: html
 
 
-e-Service PDND Catalogue
-==========================
+Credential Issuer Endpoints
+---------------------------
 
-Credential Issuer Catalogue
------------------------------
+Federation Endpoints
+^^^^^^^^^^^^^^^^^^^^
+
+The Credential Issuers MUST provide an Entity Configuration through the ``/.well-known/openid-federation`` endpoint, according to Section :ref:`trust:Entity Configuration`. Technical details are provided in Section :ref:`credential-issuer-entity-configuration:Credential Issuer Entity Configuration`.
+
+Credential Issuance Endpoints
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: credential-issuance-endpoint.rst
+
+e-Service PDND Credential Issuer Catalogue
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Credential Issuers MUST provide the following e-services through PDND to:
 
@@ -21,7 +32,7 @@ Credential Issuers MUST provide the following e-services through PDND to:
   A complete OpenAPI Specification is available :raw-html:`<a href="OAS3-PDND-Issuer.html" target="_blank">here</a>`.
 
 Notify Available Credential
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 
 .. list-table::
   :class: longtable
@@ -37,7 +48,7 @@ Notify Available Credential
     - Authentic Source
 
 Notify Update Credential
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 
 .. list-table::
   :class: longtable
@@ -56,7 +67,7 @@ Notify Update Credential
 
 
 Notify Wallet Instance Revocation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 
 .. list-table::
   :class: longtable
@@ -72,7 +83,7 @@ Notify Wallet Instance Revocation
 
 
 Get Statistics
-^^^^^^^^^^^^^^
+""""""""""""""
 
 .. list-table::
   :class: longtable
@@ -85,51 +96,4 @@ Get Statistics
     - Credential Issuer
   * - **Consumer**
     - Authorized Third Party
-
-Authentic Source Catalogue
-----------------------------
-
-Public Authentic Sources MUST provide the following e-service through PDND to provide the Credential Issuer with User's attributes required to the issuance of a Digital Credential.
-
-.. note::
-  A complete OpenAPI Specification is available :raw-html:`<a href="OAS3-PDND-AS.html" target="_blank">here</a>`.
-
-Get Attribute Claims
-^^^^^^^^^^^^^^^^^^^^
-
-.. list-table::
-  :class: longtable
-  :widths: 20 80
-  :stub-columns: 1
-
-  * - **Description**
-    - This service provides the Credential Issuer with all attribute claims necessary for the issuance of a Digital Credential.
-  * - **Provider**
-    - Authentic Source
-  * - **Consumer**
-    - Credential Issuer
-
-Wallet Provider Catalogue
--------------------------
-
-User's death leads to the revocation of the Wallet Instances of the User and the deletion of the User account at the Wallet Provider. For this reason, the Wallet Provider provides the following e-service through PDND.
-A PID Provider that has been notified by the Authentic Source of the PID of the User's death MUST send a notification to Wallet Providers using this endpoint.
-
-.. note::
-  A complete OpenAPI Specification is available :raw-html:`<a href="OAS3-PDND-WP.html" target="_blank">here</a>`.
-
-Notify User Death
-^^^^^^^^^^^^^^^^^
-
-.. list-table::
-    :class: longtable
-    :widths: 20 80
-    :stub-columns: 1
-
-    * - **Description**
-      - This service is used to notify the Wallet Provider of the need to revoke the Wallet Instance and delete the User's account due to the User's death.
-    * - **Provider**
-      - Wallet Provider
-    * - **Consumer**
-      - PID Provider
 

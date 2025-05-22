@@ -363,7 +363,7 @@ latex_elements = {
 
 # Additional latex conf
 latex_show_pagerefs = True
-latex_show_urls = 'inline'
+latex_show_urls = 'no'
 latex_use_parts = True
 latex_domain_indices = True
 latex_use_modindex = True

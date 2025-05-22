@@ -87,19 +87,19 @@ jobs:
 
           # Build 
           echo "=== First LaTeX run ==="
-          lualatex -interaction=nonstopmode -file-line-error "$SETTINGS_FILE_NAME.tex" || true
+          lualatex -interaction=nonstopmode -file-line-error "$SETTINGS_FILE_NAME.tex" 2>&1 | grep -E "Warning|Error" # || true
           
-          echo "=== Processing auxiliary files ==="
-          if [ -s "$SETTINGS_FILE_NAME.idx" ]; then
+          #echo "=== Processing auxiliary files ==="
+          #if [ -s "$SETTINGS_FILE_NAME.idx" ]; then
             echo "Processing index..."
             makeindex "$SETTINGS_FILE_NAME.idx" || true
-          fi
+          #fi
           
           echo "=== Second LaTeX run ==="
-          lualatex -interaction=nonstopmode -file-line-error "$SETTINGS_FILE_NAME.tex" || true
+          lualatex -interaction=nonstopmode -file-line-error "$SETTINGS_FILE_NAME.tex" 2>&1 | grep -E "Warning|Error" # || true
           
           echo "=== Final LaTeX run ==="
-          lualatex -interaction=nonstopmode -file-line-error "$SETTINGS_FILE_NAME.tex"
+          lualatex -interaction=nonstopmode -file-line-error "$SETTINGS_FILE_NAME.tex" 2>&1 | grep -E "Warning|Error" #
 
           echo "=== Build completed ==="
           ls -la "$SETTINGS_FILE_NAME.pdf" || echo "PDF not generated!"

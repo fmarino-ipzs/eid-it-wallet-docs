@@ -35,8 +35,6 @@ jobs:
           sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended 
           # languages pkg
           sudo apt-get install -y texlive-lang-italian texlive-lang-english
-          # build latex tool 
-          #sudo apt-get install -y latexmk 
           # graphix nd images pkg
           sudo apt-get install -y texlive-pictures texlive-font-utils graphviz
           # utils for imgs (svg, pdf, ..)

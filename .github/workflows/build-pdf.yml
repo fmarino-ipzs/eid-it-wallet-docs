@@ -73,13 +73,13 @@ jobs:
         run: |
           sphinx-build -b latex docs/en/ build/latex/en
           cd build/latex/en
-          latexmk -lualatex -interaction=nonstopmode $SETTINGS_FILE_NAME.tex
+          latexmk -lualatex -interaction=nonstopmode -f $SETTINGS_FILE_NAME.tex
 
       - name: Generate LaTeX files and build it version
         run: |
           sphinx-build -b latex docs/it/ build/latex/it
           cd build/latex/it
-          latexmk -lualatex -interaction=nonstopmode $SETTINGS_FILE_NAME.tex
+          latexmk -lualatex -interaction=nonstopmode -f $SETTINGS_FILE_NAME.tex
 
       - name: Create PDF directory
         run: |

@@ -267,18 +267,10 @@ htmlhelp_basename = settings_basename + 'doc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
-
-# Configurazione LaTeX migliorata per conf.py
-
-# Configurazione LaTeX minimalista per evitare conflitti
-
-# Configurazione LaTeX ultra-sicura - evita tutti i potenziali conflitti
-
 latex_engine = 'lualatex'
 latex_elements = {
     'papersize': 'a4paper',
     'pointsize': '11pt',
-    # Configurazione sphinx minima senza colori problematici
     'sphinxsetup': r'''
         verbatimforcewraps=true,
         verbatimwithframe=false,
@@ -290,14 +282,14 @@ latex_elements = {
         \usepackage{polyglossia}
         \setmainlanguage{english}
         
-        % -- Fix per fancyhdr warning --
+        % -- Fix for fancyhdr warning --
         \setlength{\headheight}{14pt}
         \addtolength{\topmargin}{-2pt}
         
-        % -- Geometry già caricato da Sphinx --
+        % -- Geometry settings (note that sphinx already include Geomerty pkg) --
         \geometry{margin=2.5cm,top=3cm,bottom=3cm}
         
-        % -- Gestione overfull/underfull --
+        % -- handling overfull/underfull --
         \tolerance=9999
         \emergencystretch=3em
         \hbadness=10000
@@ -305,27 +297,27 @@ latex_elements = {
         \hfuzz=2pt
         \vfuzz=2pt
         
-        % -- Prevenire dimensioni troppo grandi --
+        % -- prevent too big dim  --
         \maxdimen=16383.99999pt
         
-        % -- Gestione migliore delle interruzioni di pagina --
+        % -- improvment space interruption --
         \widowpenalty=10000
         \clubpenalty=10000
         \brokenpenalty=10000
         
-        % -- Spaziatura migliorata --
+        % -- Spacing --
         \linespread{1.2}
         
-        % -- Header e footer --
+        % -- Header and footer --
         \renewcommand{\headrulewidth}{0.4pt}
         \renewcommand{\footrulewidth}{0.4pt}
         
-        % -- Fix per nomi file con caratteri speciali --
+        % -- Handling special characters --
         \makeatletter
-        % Salva i comandi originali
+        % temporally save the original command
         \let\original@includegraphics\includegraphics
         
-        % Ridefinisci includegraphics per gestire caratteri speciali
+        %  includegraphics is redefined for special characters 
         \renewcommand{\includegraphics}[2][]{%
             \begingroup
             \catcode`\-=12\relax
@@ -334,7 +326,7 @@ latex_elements = {
             \endgroup
         }
         
-        % Gestione sphinx specifici se esistono
+        % improvements for images
         \@ifundefined{sphinxincludegraphics}{}{%
             \let\original@sphinxincludegraphics\sphinxincludegraphics
             \renewcommand{\sphinxincludegraphics}[2][]{%
@@ -347,20 +339,20 @@ latex_elements = {
         }
         \makeatother
         
-        % -- Miglioramenti per verbatim lunghi (senza colori) --
+        % -- Improvment for long verbatim  --
         \makeatletter
         \def\sphinx@verbatim@space{\leavevmode\kern.5\fontdimen2\font}
         \makeatother
     ''',
     'extrapackages': r'''
-        % Nessun pacchetto extra per massima compatibilità
+        % No extra pks is required 
     ''',
     'passoptionstopackages': r'''
-        % Opzioni minimali per xcolor se necessario
+        % Minimal options for xcolor if required
         \PassOptionsToPackage{table}{xcolor}
     ''',
     'fontpkg': r'''
-        % Font setup per LuaLaTeX
+        % Font setup for LuaLaTeX
         \usepackage{fontspec}
         \defaultfontfeatures{Ligatures=TeX}
         \setmainfont{Latin Modern Roman}
@@ -369,63 +361,22 @@ latex_elements = {
     ''',
 }
 
-# Configurazioni LaTeX conservative
+# Additional latex conf
 latex_show_pagerefs = True
-latex_show_urls = 'footnote'
+latex_show_urls = 'inline'
 latex_use_parts = True
 latex_domain_indices = True
 latex_use_modindex = True
-
-# Gestione tabelle senza colori speciali
 latex_table_style = ['booktabs']
 
-
-
-# latex_engine = 'lualatex'
-# latex_elements = {
-#     'papersize': 'a4paper',
-#     'pointsize': '11pt',
-#     'sphinxsetup': 'verbatimforcewraps=true,verbatimwithframe=false',
-#     'preamble': r'''
-#         \usepackage{luatex85}
-#         \usepackage{polyglossia}
-#         \setmainlanguage{english} % O la lingua del tuo documento
-#         % -- Aggiunte per Overfull/Underfull --
-#         \tolerance=5000
-#         \emergencystretch=3em
-#         % ------------------------------------
-#     ''',
-#     'extrapackages': r'''
-#         \usepackage{graphicx}
-#     ''',
-# }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 # author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', settings_file_name + '.tex', settings_project_name, settings_editor_name, 'manual'),
+  ('index', settings_file_name + '.tex', settings_project_name, " ", 'manual'),
 ]
 
-# The name of an image file (relative to this directory) to place at the top of
-# the title page.
-#latex_logo = "images/..."
-
-# For "manual" documents, if this is true, then toplevel headings are parts,
-# not chapters.
-#latex_use_parts = True
-
-# If true, show page references after internal links.
-#latex_show_pagerefs = True
-
-# If true, show URL addresses after external links.
-#latex_show_urls = "inline"
-
-# Documents to append as an appendix to all manuals.
-#latex_appendices = []
-
-# If false, no module index is generated.
-#latex_domain_indices = True
 
 # -- Options for manual page output ---------------------------------------
 

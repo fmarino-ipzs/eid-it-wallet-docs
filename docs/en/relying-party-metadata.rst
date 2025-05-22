@@ -38,3 +38,4 @@ The *openid_credential_verifier* metadata MUST contain the following parameters.
 
 .. note::
   The parameters **response_uris** and **erasure_endpoint** are introduced in this specification.
+

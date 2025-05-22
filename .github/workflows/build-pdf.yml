@@ -76,14 +76,14 @@ jobs:
           cd build/latex/en
 
           # Force create all potentially missing files (MiKTeX-like behavior)
-          echo "Creating all auxiliary files..."
-          touch "$SETTINGS_FILE_NAME.aux"
-          touch "$SETTINGS_FILE_NAME.idx" 
-          touch "$SETTINGS_FILE_NAME.ind"
-          touch "$SETTINGS_FILE_NAME.toc"
-          touch "$SETTINGS_FILE_NAME.out"
-          touch "$SETTINGS_FILE_NAME.glo"
-          touch "$SETTINGS_FILE_NAME.gls"
+          #echo "Creating all auxiliary files..."
+          #touch "$SETTINGS_FILE_NAME.aux"
+          #touch "$SETTINGS_FILE_NAME.idx" 
+          #touch "$SETTINGS_FILE_NAME.ind"
+          #touch "$SETTINGS_FILE_NAME.toc"
+          #touch "$SETTINGS_FILE_NAME.out"
+          #touch "$SETTINGS_FILE_NAME.glo"
+          #touch "$SETTINGS_FILE_NAME.gls"
 
           # Build 
           echo "=== First LaTeX run ==="

@@ -71,15 +71,46 @@ jobs:
 
       - name: Generate LaTeX files and build en version
         run: |
+          echo "Building English version..."
           sphinx-build -b latex docs/en/ build/latex/en
           cd build/latex/en
-          latexmk -lualatex -interaction=nonstopmode -f $SETTINGS_FILE_NAME.tex
 
-      - name: Generate LaTeX files and build it version
-        run: |
-          sphinx-build -b latex docs/it/ build/latex/it
-          cd build/latex/it
-          latexmk -lualatex -interaction=nonstopmode -f $SETTINGS_FILE_NAME.tex
+          # Force create all potentially missing files (MiKTeX-like behavior)
+          echo "Creating all auxiliary files..."
+          touch "$SETTINGS_FILE_NAME.aux"
+          touch "$SETTINGS_FILE_NAME.idx" 
+          touch "$SETTINGS_FILE_NAME.ind"
+          touch "$SETTINGS_FILE_NAME.toc"
+          touch "$SETTINGS_FILE_NAME.out"
+          touch "$SETTINGS_FILE_NAME.glo"
+          touch "$SETTINGS_FILE_NAME.gls"
+
+          # Build 
+          echo "=== First LaTeX run ==="
+          lualatex -interaction=nonstopmode -file-line-error "$SETTINGS_FILE_NAME.tex" || true
+          
+          echo "=== Processing auxiliary files ==="
+          if [ -s "$SETTINGS_FILE_NAME.idx" ]; then
+            echo "Processing index..."
+            makeindex "$SETTINGS_FILE_NAME.idx" || true
+          fi
+          
+          echo "=== Second LaTeX run ==="
+          lualatex -interaction=nonstopmode -file-line-error "$SETTINGS_FILE_NAME.tex" || true
+          
+          echo "=== Final LaTeX run ==="
+          lualatex -interaction=nonstopmode -file-line-error "$SETTINGS_FILE_NAME.tex"
+
+          echo "=== Build completed ==="
+          ls -la "$SETTINGS_FILE_NAME.pdf" || echo "PDF not generated!"
+
+          # latexmk -lualatex -interaction=nonstopmode -f $SETTINGS_FILE_NAME.tex
+
+      # - name: Generate LaTeX files and build it version
+      #   run: |
+      #     sphinx-build -b latex docs/it/ build/latex/it
+      #     cd build/latex/it
+      #     latexmk -lualatex -interaction=nonstopmode -f $SETTINGS_FILE_NAME.tex
 
       - name: Create PDF directory
         run: |
@@ -87,7 +118,7 @@ jobs:
           
           TIMESTAMP=$(date +%Y%m%d-%H%M%S)
           
-          cp build/latex/it/$SETTINGS_FILE_NAME.pdf pdf_output/$SETTINGS_FILE_NAME-it-${TIMESTAMP}.pdf
+          # cp build/latex/it/$SETTINGS_FILE_NAME.pdf pdf_output/$SETTINGS_FILE_NAME-it-${TIMESTAMP}.pdf
           cp build/latex/en/$SETTINGS_FILE_NAME.pdf pdf_output/$SETTINGS_FILE_NAME-en-${TIMESTAMP}.pdf
 
       - name: Upload PDFs as artifact

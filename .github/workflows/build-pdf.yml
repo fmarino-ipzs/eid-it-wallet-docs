@@ -36,7 +36,7 @@ jobs:
           # languages pkg
           sudo apt-get install -y texlive-lang-italian texlive-lang-english
           # build latex tool 
-          sudo apt-get install -y latexmk 
+          #sudo apt-get install -y latexmk 
           # graphix nd images pkg
           sudo apt-get install -y texlive-pictures texlive-font-utils graphviz
           # utils for imgs (svg, pdf, ..)

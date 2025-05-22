@@ -267,25 +267,138 @@ htmlhelp_basename = settings_basename + 'doc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
-# In conf.py
+
+# Configurazione LaTeX migliorata per conf.py
+
+# Configurazione LaTeX minimalista per evitare conflitti
+
+# Configurazione LaTeX ultra-sicura - evita tutti i potenziali conflitti
+
 latex_engine = 'lualatex'
 latex_elements = {
     'papersize': 'a4paper',
     'pointsize': '11pt',
-    'sphinxsetup': 'verbatimforcewraps=true,verbatimwithframe=false',
+    # Configurazione sphinx minima senza colori problematici
+    'sphinxsetup': r'''
+        verbatimforcewraps=true,
+        verbatimwithframe=false,
+        verbatimwrapslines=true,
+        verbatimhintsturnover=false
+    ''',
     'preamble': r'''
         \usepackage{luatex85}
         \usepackage{polyglossia}
-        \setmainlanguage{english} % O la lingua del tuo documento
-        % -- Aggiunte per Overfull/Underfull --
-        \tolerance=5000
+        \setmainlanguage{english}
+        
+        % -- Fix per fancyhdr warning --
+        \setlength{\headheight}{14pt}
+        \addtolength{\topmargin}{-2pt}
+        
+        % -- Geometry già caricato da Sphinx --
+        \geometry{margin=2.5cm,top=3cm,bottom=3cm}
+        
+        % -- Gestione overfull/underfull --
+        \tolerance=9999
         \emergencystretch=3em
-        % ------------------------------------
+        \hbadness=10000
+        \vbadness=10000
+        \hfuzz=2pt
+        \vfuzz=2pt
+        
+        % -- Prevenire dimensioni troppo grandi --
+        \maxdimen=16383.99999pt
+        
+        % -- Gestione migliore delle interruzioni di pagina --
+        \widowpenalty=10000
+        \clubpenalty=10000
+        \brokenpenalty=10000
+        
+        % -- Spaziatura migliorata --
+        \linespread{1.2}
+        
+        % -- Header e footer --
+        \renewcommand{\headrulewidth}{0.4pt}
+        \renewcommand{\footrulewidth}{0.4pt}
+        
+        % -- Fix per nomi file con caratteri speciali --
+        \makeatletter
+        % Salva i comandi originali
+        \let\original@includegraphics\includegraphics
+        
+        % Ridefinisci includegraphics per gestire caratteri speciali
+        \renewcommand{\includegraphics}[2][]{%
+            \begingroup
+            \catcode`\-=12\relax
+            \catcode`\_=12\relax
+            \original@includegraphics[#1]{#2}%
+            \endgroup
+        }
+        
+        % Gestione sphinx specifici se esistono
+        \@ifundefined{sphinxincludegraphics}{}{%
+            \let\original@sphinxincludegraphics\sphinxincludegraphics
+            \renewcommand{\sphinxincludegraphics}[2][]{%
+                \begingroup
+                \catcode`\-=12\relax
+                \catcode`\_=12\relax
+                \original@sphinxincludegraphics[#1]{#2}%
+                \endgroup
+            }%
+        }
+        \makeatother
+        
+        % -- Miglioramenti per verbatim lunghi (senza colori) --
+        \makeatletter
+        \def\sphinx@verbatim@space{\leavevmode\kern.5\fontdimen2\font}
+        \makeatother
     ''',
     'extrapackages': r'''
-        \usepackage{graphicx}
+        % Nessun pacchetto extra per massima compatibilità
+    ''',
+    'passoptionstopackages': r'''
+        % Opzioni minimali per xcolor se necessario
+        \PassOptionsToPackage{table}{xcolor}
+    ''',
+    'fontpkg': r'''
+        % Font setup per LuaLaTeX
+        \usepackage{fontspec}
+        \defaultfontfeatures{Ligatures=TeX}
+        \setmainfont{Latin Modern Roman}
+        \setsansfont{Latin Modern Sans}
+        \setmonofont{Latin Modern Mono}
     ''',
 }
+
+# Configurazioni LaTeX conservative
+latex_show_pagerefs = True
+latex_show_urls = 'footnote'
+latex_use_parts = True
+latex_domain_indices = True
+latex_use_modindex = True
+
+# Gestione tabelle senza colori speciali
+latex_table_style = ['booktabs']
+
+
+
+# latex_engine = 'lualatex'
+# latex_elements = {
+#     'papersize': 'a4paper',
+#     'pointsize': '11pt',
+#     'sphinxsetup': 'verbatimforcewraps=true,verbatimwithframe=false',
+#     'preamble': r'''
+#         \usepackage{luatex85}
+#         \usepackage{polyglossia}
+#         \setmainlanguage{english} % O la lingua del tuo documento
+#         % -- Aggiunte per Overfull/Underfull --
+#         \tolerance=5000
+#         \emergencystretch=3em
+#         % ------------------------------------
+#     ''',
+#     'extrapackages': r'''
+#         \usepackage{graphicx}
+#     ''',
+# }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
@@ -300,10 +413,10 @@ latex_documents = [
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-latex_use_parts = True
+#latex_use_parts = True
 
 # If true, show page references after internal links.
-latex_show_pagerefs = True
+#latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
 #latex_show_urls = "inline"

@@ -31,7 +31,22 @@ jobs:
       - name: Install LaTeX and dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-lang-italian texlive-lang-english latexmk texlive-pictures texlive-font-utils ghostscript poppler-utils imagemagick netpbm texlive-base texlive-binaries graphviz texlive-luatex
+          # Common pkg
+          sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended 
+          # languages pkg
+          sudo apt-get install -y texlive-lang-italian texlive-lang-english
+          # build latex tool 
+          sudo apt-get install -y latexmk 
+          # graphix nd images pkg
+          sudo apt-get install -y texlive-pictures texlive-font-utils graphviz
+          # utils for imgs (svg, pdf, ..)
+          sudo apt-get install -y ghostscript poppler-utils imagemagick netpbm
+          # Core pkg
+          sudo apt-get install -y texlive-base texlive-binaries
+          # LuaLaTeX engine
+          sudo apt-get install -y texlive-luatex
+          # Additional pkg (fonts, tables, formatting, etc.)
+          sudo apt-get install -y texlive-fonts-extra texlive-science texlive-publishers texlive-formats-extra texlive-latex-extra
 
       - name: Install Python dependencies
         run: |

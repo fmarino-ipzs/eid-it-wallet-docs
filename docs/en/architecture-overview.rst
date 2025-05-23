@@ -25,7 +25,7 @@ The architecture enables four fundamental interaction processes:
 
   1. **Entity Onboarding and Federation**: This process ensures that only qualified and compliant Entities are registered within the IT-Wallet Federation. As a result of the registration process the Trust Registry is updated enabling all participants monitoring their ongoing federation status. This process may involve technical and security assessment and compliance checks to the requirements of the IT-Wallet ecosystem.
 
-  2. **Credential Issuance**: Digital Credential Providers establish secure connections with Authentic Sources to request verified user attributes through standardized APIs exposed via the National Digital Data Platform. This interaction ensures that Digital Credentials are based on authoritative, up-to-date information from official registries and databases while maintaining proper authorization and audit trails.
+  2. **Credential Issuance**: Credential Issuers establish secure connections with Authentic Sources to request verified user attributes through standardized APIs exposed via the National Digital Data Platform. This interaction ensures that Digital Credentials are based on authoritative, up-to-date information from official registries and databases while maintaining proper authorization and audit trails.
 
   3. **Credential Storage and Management**: IT-Wallet Solutions receive issued Digital Credentials from authorized providers and manage them securely on user devices. This relationship enables users to obtain verified Digital Credentials from multiple sources while maintaining full control over them.
 
@@ -34,7 +34,7 @@ The architecture enables four fundamental interaction processes:
 The Trust Infrastructure manages the onboarding/revocation status of new Entities (with their technical solutions) and provides available Digital Credentials and schemas. It enables all ecosystem participants to discover authorized Entities and verify their current federation status.
 
 The trust infrastructure provides automatic trust chain validation, distributed trust anchoring, standardized metadata exchange protocols, and Federation API services that enable seamless federation operations while maintaining cryptographic verification of all participant relationships.
-This approach ensures that users can trust the credentials they receive, service providers can trust the credentials they verify, and all participants can trust that their counterparts have been properly vetted and remain in good standing within the federation.
+This approach ensures that users can trust the credentials they receive, Relying Parties can trust the credentials they verify, and all participants can trust that their counterparts have been properly vetted and remain in good standing within the federation.
 
 
 .. toctree::

@@ -46,7 +46,7 @@ Di seguito i requisiti generali per il suo utilizzo, validi sia in riferimento a
 
 - il Logo DEVE essere quello presente all’interno delle Risorse Ufficiali e DEVE seguire le relative specifiche di utilizzo disponibili nelle Risorse Ufficiali; 
 
-- il Logo DEVE essere utilizzato in formato ``application/svg +xml``; 
+- il Logo DEVE essere utilizzato in formato ``application/svg+xml``; 
 
 - il Logo NON DEVE essere alterato, distorto, modificato o sostituito da loghi non ufficiali; 
 

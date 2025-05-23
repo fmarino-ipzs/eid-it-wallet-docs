@@ -19,20 +19,16 @@ Directive (EU) 2019/882 of the European Parliament and of the Council of 17 Apri
 
 Design Guidelines for websites and digital services provided by public administrations, pursuant to Article 53, paragraph 1-ter of Legislative Decree No. 82 of March 7, 2005, as amended.
 
-
-Defined Terms and Acronyms
-==========================
-
-The terms *User*, *Trust Service*, *Trust Model*, *Trusted List*, *Trust Framework*, *Attribute*, *Electronic Attestations of Attributes Provider* or *Trust Service Provider (TSP)*, *Person Identification Data (PID)*, *Revocation List*, *Qualified Electronic Attestations of Attributes Provider* or *Qualified Trust Service Provider (QTSP)*, *Electronic Attestation of Attributes (EAA)*, are defined in the `EIDAS-ARF`_.
-
-Below is the description of acronyms and definitions which are useful for further insights into topics that complement the IT-Wallet System and the interacting components.
-
 .. _defined-terms:
 
 Defined Terms and Acronyms
 ==========================
 
 This section aligns the IT-Wallet System's terminology with the definitions provided in ARF 1.10 (see `ARF Annex 1 <https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-1/annex-1-definitions.md>`_). For each term, the IT-Wallet definition is compared and mapped to the ARF definition, with notes on any differences or clarifications.
+
+The terms *User*, *Trust Service*, *Trust Model*, *Trusted List*, *Trust Framework*, *Attribute*, *Electronic Attestations of Attributes Provider* or *Trust Service Provider (TSP)*, *Person Identification Data (PID)*, *Revocation List*, *Qualified Electronic Attestations of Attributes Provider* or *Qualified Trust Service Provider (QTSP)*, *Electronic Attestation of Attributes (EAA)*, are defined in the `EIDAS-ARF`_.
+
+Below is the description of acronyms and definitions which are useful for further insights into topics that complement the IT-Wallet System and the interacting components.
 
 .. glossary::
     :sorted:
@@ -65,7 +61,6 @@ This section aligns the IT-Wallet System's terminology with the definitions prov
 
     **Credential Issuer**
     **Issuer**
-    **Attestation Provider**
       Organizational Entity providing Digital Credentials to Users (may be PID Provider or (Q)EAA Provider).
       ARF 1.10 uses similar terms; IT-Wallet merges PID and (Q)EAA Providers under this term.
 
@@ -104,7 +99,6 @@ This section aligns the IT-Wallet System's terminology with the definitions prov
       Aligned with ARF 1.10.
 
     **Holder Key Binding**
-    **Cryptographic Binding**
       Ability of the Holder to prove possession of the private key attested by a Trusted Third Party.
       Aligned with ARF 1.10.
 
@@ -125,8 +119,8 @@ This section aligns the IT-Wallet System's terminology with the definitions prov
       Aligned with ARF 1.10.
 
     **Level of Assurance**
-     - Degree of confidence in identity vetting and credential presentation.
-     - Aligned with ARF 1.10.
+      Degree of confidence in identity vetting and credential presentation.
+      Aligned with ARF 1.10.
 
     **Metadata**
       Digital artifact with information about an Organizational Entity (endpoints, public keys, etc.).
@@ -137,7 +131,7 @@ This section aligns the IT-Wallet System's terminology with the definitions prov
       Aligned with ARF 1.10.
 
     **National Identity Provider**
-      Preexisting identity systems (e.g., SPID, CIE) notified to eIDAS.
+      Preexisting identity systems (e.g. CIE) notified to eIDAS.
       Aligned with ARF 1.10.
 
     **Notification Process**
@@ -189,11 +183,12 @@ This section aligns the IT-Wallet System's terminology with the definitions prov
       Aligned with ARF 1.10.
 
     **Qualified Electronic Attestation of Attributes Provider**
-      Entity providing QEAAs.
+      Organizational Entity providing QEAAs.
       Aligned with ARF 1.10.
 
     **Electronic Attestation of Attributes Provider**
-      Entity providing EAAs.
+    **Electionic Attestation Provider**
+      Organizational Entity providing EAAs.
       Aligned with ARF 1.10.
 
     **Qualified Electronic Signature Provider**
@@ -295,7 +290,8 @@ This section aligns the IT-Wallet System's terminology with the definitions prov
       Aligned with ARF 1.10.
 
     **Verifier**
-      Also known as Credential Verifier; a person or entity using a Relying Party Instance.
+    **Credential Verifier**
+      A person or entity using a Relying Party Instance.
       Aligned with ARF 1.10.
 
     **Wallet Instance**
@@ -334,10 +330,12 @@ This section aligns the IT-Wallet System's terminology with the definitions prov
 
     **Digital Credential Catalogue**
       Electronic catalog containing information about the formats and schemes of Digital Credentials, the data contained and the Authentic Sources. The Catalog contains additional information that allows for the establishment of the authenticity and reliability of the information contained therein.
+      Not present in ARF 1.10; specific to IT-Wallet.
 
     **Intermediate Entity**
-    **Intermediate**
+    **Intermediary**
       Intermediate Entity as defined in `OID-FED`_ Section 1.2, for example in IT-Wallet it could be a Relying Party intermediary that offers and manages, on behalf of Relying Party, the Technical Solutions for the remote or proximity verification of Electronic Attestations.
+      Not present in ARF 1.10; specific to IT-Wallet.
 
 .. note::
    For any term not present in ARF 1.10, the IT-Wallet definition is provided as authoritative for the Italian context.
@@ -408,23 +406,33 @@ Below are the main acronyms used in the document:
   * - **AAL**
     - Authenticator Assurance Level as defined in `<https://csrc.nist.gov/glossary/term/authenticator_assurance_level>`_
   * - **ANPR**
-    - Italian National Registry of the Resident Population
+    - Anagrafe Nazionale della Popolazione Residente (Italian National Registry of the Resident Population)
   * - **API**
     - Application Programming Interface
+  * - **CAB**
+    - Conformity Assessment Body
   * - **CIE**
-    - National Electronic Identity Card
+    - Carta di Identità Elettronica (National Electronic Identity Card)
+  * - **EAA**
+    - Electronic Attestation of Attributes
   * - **IAM**
     - Identity and Access Management
   * - **LoA**
     - Level of Assurance
+  * - **NAB**
+    - National Accreditation Body 
   * - **OID4VP**
     - OpenID for Verifiable Presentation
+  * - **PDND**
+    - Piattaforma Digitale Nazionale Dati (National Digital Data Platform)
   * - **PID**
     - Person Identification Data
   * - **PII**
     - Personally Identifiable Information
-  * - **SPID**
-    - Italian Public Digital Identity System
+  * - **QEAA**
+    - Qualified Electronic Attestation of Attributes
+  * - **Pub-EAA**
+    - Public Electronic Attestation of Attributes
   * - **SSI**
     - Self Sovereign Identity
   * - **VC**

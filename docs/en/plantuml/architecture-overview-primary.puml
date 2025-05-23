@@ -1,4 +1,4 @@
-@startuml IT-Wallet_System_Architecture
+@startuml IT-Wallet_System_Architecture_Primary
 !include <C4/C4_Component>
 HIDE_STEREOTYPE()
 ' skinparam linetype ortho
@@ -20,28 +20,14 @@ AddElementTag("primary", $bgColor="#1168bd", $fontColor="white", $borderColor="#
 AddElementTag("tech", $bgColor="#6cb33f", $fontColor="white", $borderColor="#4a8329")
 AddElementTag("governance", $bgColor="#8A398F", $fontColor="white", $borderColor="#55235A")
 
-title IT-Wallet System Architecture
+title IT-Wallet System Architecture - Primary Actors
 
-' Governance Actors
-Boundary(governance, "IT-Wallet System Governance Actors") {
-    Person(acn, "National Cybersecurity Authority (ACN)", "National authority that evaluates CAB reports and issues compliance attestations. Ensures cybersecurity of the IT-Wallet ecosystem and verifies adherence to national and European security standards.", $tags="governance",$sprite="institution")
-
-    Person(ab, "National Accreditation Body", "National accreditation organization that certifies the technical competence of CABs to assess IT-Wallet solutions.", $tags="governance",$sprite="institution")
-
-    Person(sb, "IT-Wallet Supervisory Body", "Supervisory body responsible for onboarding Entities into the IT-Wallet federation and continuous monitoring of their activities. It manages participant lifecycle and ensures compliance with governance rules.", $tags="governance",$sprite="institution")
-
-    System(cabs, "Conformity Assessment Bodies (CAB)", "Accredited conformity assessment bodies that perform technical, administrative and security assessments on IT-Wallet solutions. They verify adherence to technical standards and security requirements.", $tags="governance", $sprite="certificate")
-    
-    Lay_U(ab,cabs)
-    Lay_U(cabs,acn)
-    Lay_U(acn,sb)
-}
 
 ' Primary Actors
 Boundary(primary, "Primary System Actors") {
     Boundary(authentic_sources, "Authentic Sources", "Authoritative sources of User's digital data and attributes"){
 
-        Component(as_api, "e-services API", "RESTful Services", "Web services exposed through PDND for accessing authentic source data. It implements standardized protocols for interoperability and secure communications with authentication, authorization and audit trails.", $tags="primary", $sprite="exchange_alt")
+        Component(as_api, "e-services API", "RESTful Services", "Web services exposed for accessing authentic source data. It implements standardized protocols for interoperability and secure communications with authentication, authorization and audit trails.", $tags="primary", $sprite="exchange_alt")
 
         Component(as_db, "Authentic Source Database", "Database", "Secure repository storing user's digital attributes from authoritative sources (registries, professional registers). Implements granular access controls and operation logging to ensure data integrity and traceability.", $tags="tech", $sprite="database")
 
@@ -76,17 +62,6 @@ Boundary(primary, "Primary System Actors") {
     Lay_U(rp_provider,ta_services)
 }
 
-' External Actors
-Boundary(external, "External actors to IT-Wallet system", ""){
-    Person(cie,"National Identity Provider", "National digital identity provider based on CIE (Electronic Identity Card).Provides strong authentication services and certified identity attributes for obtaining a PID and activating IT-Wallet Instance." ,$tags="external", $sprite="id_card")
-    
-    Component(pdnd,"National Digital Data Platform (PDND)","National infrastructure for public data interoperability. Provides standardized APIs for accessing PA services, manages authentication and authorization between entities, implements security patterns and shared data governance.", $tags="external",$sprite="exchange_alt")
-
-    Component(auth_third_parties, "Authorized Third Parties", "Judicial or Supervisory Bodies and Legal Authorities", "Law enforcement agencies, judicial authorities, regulatory bodies authorized by law to access specific IT-Wallet data for legal proceedings,investigations or regulatory compliance.", $tags="external", $sprite="institution")
-
-    Lay_U(cie,pdnd)
-    Lay_U(pdnd,auth_third_parties)
-}
 
 ' Key relationships for architecture understanding
 Rel(dc_solution, as_api, "Requests attributes")
@@ -94,7 +69,6 @@ Rel(ws, dc_solution, "Receives credentials")
 Rel(ws, rp_solution, "Presents credentials")
 
 
-Lay_D(governance,primary)
-Lay_D(primary,external)
+
 
 @enduml

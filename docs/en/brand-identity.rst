@@ -2,7 +2,7 @@
 
 .. "included" file, so we start with '-' title level
 
-IT-Wallet System Brand Identity
+Brand Identity
 -------------------------------
 
 

@@ -246,7 +246,7 @@ Nel caso in cui invece l’Utente stia navigando la pagina del Verificatore di A
 
 **QR code page (*solo per modalità cross-dispositivo*)** 
 
-La QR code page è la pagina su cui atterra l’Utente che ha scelto l’Autenticazione tramite il Sistema IT-Wallet in un flusso cross-dispositivo, e ha lo scopo di invitare l’Utente a scannerizzare, con la propria Istanza IT-Wallet, il codice QR generato. 
+La QR code page è la pagina su cui atterra l’Utente che ha scelto l’Autenticazione tramite il Sistema IT-Wallet in un flusso cross-device, e ha lo scopo di invitare l’Utente a scannerizzare, con la propria Istanza IT-Wallet, il codice QR generato. 
 
 Il Verificatore di Attestati Elettronici DOVREBBE implementare la QR code page resa disponibile nelle Risorse Ufficiali. In ogni caso: 
 

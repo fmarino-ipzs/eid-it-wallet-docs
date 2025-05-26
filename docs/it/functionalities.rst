@@ -216,8 +216,8 @@ Qualora i Verificatori di Attestati Elettronici non intendano utilizzare tali ri
 I Verificatori di Attestati Elettronici, in ogni caso, DEVONO abilitare il processo di Autenticazione rendendo disponibili le seguenti pagine: 
 
 - **Discovery Page**: ha l’obiettivo di mostrare all’Utente tutti i metodi di Autenticazione disponibili; 
-- **QR code page** (*solo per modalità cross-dispositivo*): ha lo scopo di invitare l’Utente a inquadrare il codice QR;  
-- **waiting page** (*solo per modalità cross-dispositivo*): ha lo scopo di invitare l’Utente a continuare il processo di Autenticazione sulla propria Istanza IT-Wallet; 
+- **QR code page** (*solo per modalità cross-device*): ha lo scopo di invitare l’Utente a inquadrare il codice QR;  
+- **waiting page** (*solo per modalità cross-device*): ha lo scopo di invitare l’Utente a continuare il processo di Autenticazione sulla propria Istanza IT-Wallet; 
 - **thank you page**: ha lo scopo di comunicare all’Utente l'avvenuta Autenticazione; 
 - **error page**: ha lo scopo di comunicare all’Utente eventuali errori legati al flusso di Autenticazione. 
 

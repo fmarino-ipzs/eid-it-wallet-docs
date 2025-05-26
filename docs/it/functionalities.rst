@@ -259,7 +259,15 @@ Il Verificatore di Attestati Elettronici DOVREBBE implementare la QR code page r
 Per garantire la leggibilità del codice QR: 
 
 - si DEVENO rispettare le dimensioni minime raccomandate per garantire una scansione efficace. Una misura di 150x150 pixel è generalmente adeguata, ma per codici con alta densità di dati (e.g. URL lunghi o numerosi caratteri), è consigliabile aumentarla a 300x300 pixel o più; 
-- si DEVE mantenere un contrasto adeguato tra il codice QR e lo sfondo (la condizione ideale prevede uno sfondo bianco con un codice QR nero); 
+Inoltre, nei rispetto di [RIF_ACCESSIBILITÁ], relativamente al codice QR, il Verificatore di Attestati Elettronici: 
+
+- DEVE rispettare le dimensioni minime raccomandate per garantire una scansione efficace. Una misura di 150x150 pixel è generalmente adeguata, ma per codici con alta densità di dati (e.g. URL lunghi o numerosi caratteri), è consigliabile aumentarla a 300x300 pixel o più; 
+- DEVE garantire un contrasto minimo tra il codice QR e lo sfondo (la condizione ideale prevede uno sfondo bianco con un codice QR nero); 
+- DEVE evitare inversioni di colore tra sfondo e codice QR; 
+- DEVE limitare la presenza a un solo codice QR per pagina; 
+- DEVE garantire nitidezza e alta qualità; 
+- DEVE garantire il formato SVG; 
+- DEVE garantire che non venga parzialmente nascosto da testo o altri elementi.
 - si DEVONO evitare inversioni di colore tra sfondo e codice QR; 
 - si DEVE limitare la presenza a un solo codice QR per pagina; 
 - il codice QR DEVE essere nitido e di alta qualità;

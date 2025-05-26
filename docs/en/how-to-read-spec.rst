@@ -133,7 +133,7 @@ Regardless of your primary role, certain sections contain information relevant t
     All implementers must implement their solutions according to Section :ref:`security-privacy-considerations:Security and Privacy Considerations` and Section :ref:`log-retention-policy:General Log Retention Policies`.
 
 **Standards and References:**
-    Section :ref:`defined-terms-and-references:Defined Terms and References` provides essential normative references, defined terms, and technical standards that establish the foundation for interoperable implementations across all ecosystem participants.
+    Section :ref:`defined-terms-and-references:Defined Terms and References` provides normative references, defined terms, and technical standards to enable secure and proper interoperability among all participants.
 
 **Testing and Validation:**
     Section :ref:`test-plans:Test Plans` provides a comprehensive test matrix for validating implementations across different roles and interaction flows, ensuring compliance with specification requirements and interoperability standards.

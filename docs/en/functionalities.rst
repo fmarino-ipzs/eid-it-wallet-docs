@@ -53,7 +53,7 @@ The PID (Person Identification Data) refers to verified minimum set of informati
 Below are the requirements for displaying and using the PID that each Wallet Provider MUST adhere to, in order to provide a consistent and accessible consultation and usage experience: 
 
 - The PID MUST be displayed correctly across all devices, ensuring a consistent experience on screens of varying sizes; 
-- The PID MUST be named as defined by the PID Provider;  
+- The PID MUST be named as defined by the PID Provider;
 - The PID MUST display its status if different from valid to provide transparency on its lifecycle and MAY display it if valid. Specific details about the PID status, if invalid, MAY be provided (e.g., the reason why the PID is revoked); 
 - The PID MUST include Action Buttons to enable lifecycle management and allow the User to revoke the PID, thus the entire Wallet Instance with all EAAs issued, or to update the PID at any time (see :ref:`functionalities:Management of Electronic Attestations`); 
 - The PID MUST be an interactive element, for the User to be authenticated by a Relying Party in a digital context (see :ref:`functionalities:Authentication`), to access services in proximity contexts, and to request the issuance of additional EAAs (see :ref:`functionalities:Issuance of Electronic Attestations of Attributes`);  
@@ -78,7 +78,7 @@ Depending on the User's specific needs, the type of Electronic Attestation of At
 
 - **from a Touchpoint of the Authentic Source** (or the Electronic Attestation of Attributes Provider if it coincides with the Authentic Source): the User interacts with the digital service of the Authentic Source, allowing them to get a specific Electronic Attestation of Attributes in their Wallet Instance via an Engagement Button.
 
-Although the initiation methods for requesting the issuance may differ, the request flows share a similar structure and process. Below are the functional and the User Experience requirements of the issuance of an Electronic Attestation of Attributes from the Catalog that the Wallet Provider MUST guarantee via their Wallet Solution:
+Although the methods for initiating the request are different, the issuance flows share a similar structure and process. Below are illustrated the User Experience requirements for the issuance of an Electronic Attribute Attestation from the Catalog that the Wallet Solution Provider MUST guarantee through their own Wallet Solution:
 
 - The User accesses their Wallet Instance using the unlock method previously set;
 - The User selects the Electronic Attestation of Attributes they wish to request from the available options in the Catalog;

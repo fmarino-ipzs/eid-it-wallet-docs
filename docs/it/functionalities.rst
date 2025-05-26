@@ -78,7 +78,7 @@ A seconda delle specifiche esigenze dell’Utente, della tipologia di Attestato 
 
 - **da un Touchpoint del Titolare di Fonte Autentica** (o del Fornitore di Attestati Elettronici di Attributi qualora coincida con il Titolare di Fonte Autentica): l’Utente interagisce col servizio digitale del Titolare di Fonte Autentica che gli permette di ottenere nella sua Istanza IT-Wallet uno specifico Attestato Elettronico di Attributi tramite un Pulsante di Ingaggio.  
 
-Nonostante le modalità di avvio della richiesta siano diverse, i flussi di ottenimento condividono una struttura e un processo simili. Di seguito, sono illustrati i requisiti funzionali a supporto dell’Esperienza Utente del flusso di ottenimento di un Attestato Elettronico di Attributi dal Catalogo che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet: 
+Nonostante le modalità di avvio della richiesta siano diverse, i flussi di ottenimento condividono una struttura e un processo simili. Di seguito, sono illustrati i requisiti dell’Esperienza Utente del flusso di ottenimento di un Attestato Elettronico di Attributi dal Catalogo che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet: 
 
 - l’Utente accede alla propria Istanza IT-Wallet utilizzando la modalità di sblocco precedentemente impostata; 
 - l’Utente seleziona l’Attestato Elettronico di Attributi che intende aggiungere alla sua Istanza IT-Wallet scegliendo tra quelli disponibili nel Catalogo; 

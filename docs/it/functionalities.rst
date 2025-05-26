@@ -74,7 +74,7 @@ Ad attivazione conclusa, l'Utente PUÒ ottenere uno o più Attestati Elettronici
 
 A seconda delle specifiche esigenze dell’Utente, della tipologia di Attestato Elettronico di Attributi e delle disponibilità offerte dal Fornitore di Soluzione IT-Wallet, dal Fornitore di Attestati Elettronici di Attributi e dal Titolare di Fonte Autentica, l’ottenimento degli Attestati Elettronici di Attributi può avvenire attraverso due modalità: 
 
-- **dal Catalogo dell’Istanza IT-Wallet**: l’Utente esplora l’elenco degli Attestati Elettronici di Attributi messi a disposizione dalla Soluzione IT-Wallet, seleziona quello di suo interesse e avvia la procedura di richiesta che si conclude con l’ottenimento dell’Attestato Elettronico di Attributi nell’Istanza IT-Wallet; 
+- **dal Catalogo dell’Istanza IT-Wallet**: l’Utente esplora l’elenco degli Attestati Elettronici di Attributi messi a disposizione dalla Soluzione IT-Wallet, seleziona quello di suo interesse e avvia la procedura di richiesta che si conclude con l’ottenimento dell’Attestato Elettronico di Attributi nell’Istanza IT-Wallet (vedi :ref:`Digital Credentials Catalogue <registry-catalogue.rst>`); 
 
 - **da un Touchpoint del Titolare di Fonte Autentica** (o del Fornitore di Attestati Elettronici di Attributi qualora coincida con il Titolare di Fonte Autentica): l’Utente interagisce col servizio digitale del Titolare di Fonte Autentica che gli permette di ottenere nella sua Istanza IT-Wallet uno specifico Attestato Elettronico di Attributi tramite un Pulsante di Ingaggio (vedi :ref:`Credential Offer Endpoint <credential-issuance-endpoint.rst>`).  
 

@@ -237,7 +237,7 @@ Alternatively, the Relying Party MAY maintain its own Discovery Page but MUST in
 The Relying Party implementing the page:
 
 - MUST display all available Digital Identity Authentication methods, including the IT-Wallet System Authentication through the Authentication Button;
-- MAY also include other available Authentication methods;
+- MAY also present alternative Authentication methods, if available; 
 - SHOULD provide essential supporting information to help the User make an informed and conscious choice.
 
 If the User accesses the Discovery Page from a different Touchpoint than the one where the Wallet Instance is activated (cross-device), selecting IT-Wallet System Authentication MUST redirect the User to the QR code page.

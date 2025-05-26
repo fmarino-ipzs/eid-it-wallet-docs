@@ -47,7 +47,7 @@ Before diving into role-specific sections, all readers should be familiar with t
 Wallet Provider
 ^^^^^^^^^^^^^^^^^^^^
 
-Readers implementing or operating a **Wallet Provider** Solution should focus on understanding how to securely manage Digital Credentials and facilitate user interactions with other ecosystem participants.
+Readers implementing or operating a **Wallet Provider** Solution should focus on understanding how to securely manage Digital Credentials and facilitate User interactions with other ecosystem participants.
 
 **Essential sections:**
 

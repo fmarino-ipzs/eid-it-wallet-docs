@@ -172,12 +172,12 @@ La presentazione da remoto consente all'Utente di esibire il PID e/o un set di A
 
 Tale presentazione può avvenire in due diverse modalità, sulla base del tipo di dispositivo utilizzato per accedere al servizio di interesse: 
 
-- **Stesso dispositivo**: nel caso in cui l'Utente voglia accedere a un servizio digitale online utilizzando lo stesso dispositivo su cui ha installato l'Istanza IT-Wallet; 
+- **Same-device**: nel caso in cui l'Utente voglia accedere a un servizio digitale online utilizzando lo stesso dispositivo su cui ha installato l'Istanza IT-Wallet; 
 - **Cross-device**: nel caso in cui l'Utente voglia accedere a un servizio digitale utilizzando un dispositivo differente rispetto a quello in cui ha installato l'Istanza IT-Wallet. 
 
 Di seguito i requisiti dell'Esperienza Utente relativi a entrambe le modalità che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet. 
 
-**Stesso dispositivo** 
+**Same-device** 
 
 - L'Utente clicca sul Pulsante di Ingaggio reso disponibile nel Touchpoint del Verificatore di attestati elettronici; 
 - L'Utente accede alla propria Istanza IT-Wallet utilizzando la modalità di sblocco precedentemente impostata; 
@@ -205,7 +205,7 @@ Autenticazione
 
 L'Autenticazione è un caso d'uso specifico della presentazione remota e consente all'Utente di accedere in modo sicuro ai servizi resi disponibili da Verificatori di Attestati Elettronici pubblici e privati, presentando il PID ed eventualmente un set di Attributi contenuti negli Attestati Elettronici di Attributi ottenuti. Questo garantisce all'Utente il pieno controllo sui propri dati e la possibilità di condividere anche i soli dati strettamente necessari alla verifica da parte del Verificatore di Attestati Elettronici. 
 
-Il processo di Autenticazione può avvenire in entrambe le modalità Stesso dispositivo e cross-device descritte sopra. Per quanto riguarda i requisiti funzionali a supporto dell'Esperienza Utente, si DEVONO rispettare gli stessi requisiti previsti per la presentazione in remoto nelle due modalità (stesso dispositivo e cross-dispositivo).
+Il processo di Autenticazione può avvenire in entrambe le modalità same-device e cross-device descritte sopra. Per quanto riguarda i requisiti funzionali a supporto dell'Esperienza Utente, si DEVONO rispettare gli stessi requisiti previsti per la presentazione in remoto nelle due modalità (same-device e cross-device).
 
 Infatti, a livello di Esperienza Utente, il processo di Autenticazione si distingue da un generico flusso di presentazione principalmente per le modalità di avvio del processo, in questo caso reso possibile a partire da uno specifico pulsante, il Pulsante di Autenticazione. 
 
@@ -244,11 +244,11 @@ Nel caso l'Utente stia navigando la pagina del Verificatore di Attestati Elettro
 
 Nel caso in cui invece l'Utente stia navigando la pagina del Verificatore di Attestati Elettronici dallo stesso Touchpoint su cui ha attivato l'Istanza IT-Wallet (modalità same-device) tale pagina DEVE condurre l'Utente all'apertura della propria Istanza IT-Wallet. 
 
-**QR code page (*solo per modalità cross-dispositivo*)** 
+**QR code page (*solo per modalità cross-device*)** 
 
 La QR code page è la pagina su cui atterra l'Utente che ha scelto l'Autenticazione tramite il Sistema IT-Wallet in un flusso cross-device, e ha lo scopo di invitare l'Utente a scannerizzare, con la propria Istanza IT-Wallet, il codice QR generato. 
 
-Il Verificatore di Attestati Elettronici DOVREBBE implementare la QR code page resa disponibile nelle Risorse Ufficiali. Il Verificatore di Attestati Elettronici che implementa la pagina:
+Il Verificatore di Attestati Elettronici DOVREBBE implementare la QR code page (flusso cross-device) resa disponibile nelle Risorse Ufficiali. Il Verificatore di Attestati Elettronici che implementa la pagina:
 
 - DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo; 
 - DEVE esporre il codice QR e un testo sintetico e chiaro che inviti l'Utente a scannerizzarlo con la propria Istanza IT-Wallet; 
@@ -266,7 +266,7 @@ Inoltre, nei rispetto di [RIF_ACCESSIBILITÁ], relativamente al codice QR, il Ve
 - DEVE garantire il formato SVG; 
 - DEVE garantire che non venga parzialmente nascosto da testo o altri elementi.
 
-**Waiting page (*solo per modalità cross-dispositivo*)** 
+**Waiting page (*solo per modalità cross-device*)** 
 
 La waiting page è la pagina che invita l'Utente a proseguire il processo di Autenticazione sulla propria Istanza IT-Wallet, a valle della scansione del codice QR. 
 

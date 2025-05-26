@@ -270,7 +270,7 @@ Per garantire la leggibilità del codice QR:
 
 La waiting page è la pagina che invita l’Utente a proseguire il processo di Autenticazione sulla propria Istanza IT-Wallet, a valle della scansione del codice QR. 
 
-Il Verificatore di Attestati Elettronici DOVREBBE implementare la waiting page (cross-dispositivo) resa disponibile nelle Risorse Ufficiali. In ogni caso: 
+Il Verificatore di Attestati Elettronici DOVREBBE implementare la waiting page (cross-device) resa disponibile nelle Risorse Ufficiali. In ogni caso: 
 
 - la pagina DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo e un’icona o altro elemento grafico che aiuti a veicolare il messaggio della pagina; 
 - la pagina DEVE prevedere un testo sintetico e chiaro che lo inviti a proseguire sulla sua Istanza IT-Wallet. 

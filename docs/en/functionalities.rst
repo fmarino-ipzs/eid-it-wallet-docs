@@ -74,9 +74,9 @@ Once activation is complete, the User MAY obtain one or more Electronic Attestat
 
 Depending on the User's specific needs, the type of Electronic Attestation of Attributes, and the offerings available from the Wallet Provider, the Electronic Attestation of Attributes Provider, and the Authentic Source, the request of Electronic Attestations of Attributes can occur in two ways:
 
-- **from the Wallet Instance Catalog**: the User explores the list of Electronic Attestations of Attributes provided by the Wallet Solution, selects the one of interest, and initiates the request process, concluding with the issuance of the Electronic Attestation of Attributes in the Wallet Instance (see :ref:`Digital Credentials Catalogue <registry-catalogue.rst>`); .
+- **from the Wallet Instance Catalog**: the User explores the list of Electronic Attestations of Attributes provided by the Wallet Solution, selects the one of interest, and initiates the request process, concluding with the issuance of the Electronic Attestation of Attributes in the Wallet Instance (see :ref:`registry-catalogue:Digital Credentials Catalogue`); .
 
-- **from a Touchpoint of the Authentic Source** (or the Electronic Attestation of Attributes Provider if it coincides with the Authentic Source): the User interacts with the digital service of the Authentic Source, allowing them to get a specific Electronic Attestation of Attributes in their Wallet Instance via an Engagement Button (see :ref:`Credential Offer Endpoint <credential-issuance-endpoint.rst>`).
+- **from a Touchpoint of the Authentic Source** (or the Electronic Attestation of Attributes Provider if it coincides with the Authentic Source): the User interacts with the digital service of the Authentic Source, allowing them to get a specific Electronic Attestation of Attributes in their Wallet Instance via an Engagement Button (see :ref:`registry-catalogue:Digital Credentials Catalogue`).
 
 Although the methods for initiating the request are different, the issuance flows share a similar structure and process. Below are illustrated the User Experience requirements for the issuance of an Electronic Attribute Attestation from the Catalog that the Wallet Solution Provider MUST guarantee through their own Wallet Solution:
 
@@ -256,14 +256,15 @@ Relying Parties SHOULD implement the QR code page (cross-device) provided in the
 - MUST include a Call To Action allowing the User to generate a new QR code in case of timeout;
 - MUST include a Call To Action allowing the User to cancel the operation and return to the Discovery Page.
 
-To ensure QR code readability:
+Furthermore, in compliance with [REF_ACCESSIBILITY], regarding the QR code, the Relying Parties:
 
-- Minimum recommended dimensions MUST be respected to ensure successful scanning. A size of 150×150 pixels is generally sufficient; for high-density codes (e.g., long URLs or many characters), 300×300 pixels or larger is recommended;
-- Adequate contrast MUST be maintained between the QR code and the background (ideal: black code on a white background);
-- Color inversion between the QR code and the background MUST be avoided;
-- Only one QR code SHOULD be displayed per page;
-- The QR code MUST be sharp and high-quality (SVG format is recommended);
-- No text or other visual elements SHOULD overlap or obscure the QR code.
+- MUST respect the minimum recommended dimensions to ensure effective scanning. A size of 150x150 pixels is generally adequate, but for codes with high data density (e.g. long URLs or numerous characters), it is advisable to increase it to 300x300 pixels or more;
+- MUST ensure minimum contrast between the QR code and the background (the ideal condition provides for a white background with a black QR code);
+- MUST avoid color inversions between background and QR code;
+- MUST limit the presence to only one QR code per page;
+- MUST ensure sharpness and high quality;
+- MUST ensure SVG format;
+- MUST ensure that it is not partially hidden by text or other elements.
 
 **Waiting page (cross-device only)**
 
@@ -455,7 +456,6 @@ Presentation of Electronic Attestations Errors
 
 Management of Electronic Attestations Errors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 .. list-table::
   :widths: 80 20

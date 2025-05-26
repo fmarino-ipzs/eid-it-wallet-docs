@@ -1,5 +1,6 @@
 .. include:: ../common/common_definitions.rst
 
+.. "included" file, so we start with '-' title level
 
 Brand Identity del Sistema IT-Wallet 
 ====================================
@@ -12,9 +13,8 @@ Questa sezione illustra i requisiti minimi che gli Attori Primari devono rispett
 
 Per indicazioni e strumenti a supporto, fare riferimento alle Risorse Ufficiali. 
 
-
 Naming 
-------
+^^^^^^
 
 "Sistema IT-Wallet" (IT-Wallet System in inglese) o "IT-Wallet" in forma contratta è il nome ufficiale che DEVE essere utilizzato in contesti scritti o verbali, fisici o digitali. Di seguito i relativi requisiti per la corretta scrittura e pronuncia: 
 
@@ -26,15 +26,12 @@ Naming
  
 
 Identità Visiva
----------------
+^^^^^^^^^^^^^^^
 
-Il Sistema IT-Wallet ha una propria Identità Visiva. I partecipanti dell’ecosistema DEVONO applicarla in modo che si distingua e allo stesso tempo dialoghi e coesista con l'Identità Visiva propria e delle proprie Soluzioni Tecniche.  
- 
-In particolare, tutti gli Attori Primari DEVONO utilizzare le Risorse Ufficiali relative all’Identità Visiva del Sistema IT-Wallet. Il loro utilizzo ha lo scopo di rappresentare la partecipazione al Sistema IT-Wallet senza sostituire l’Identità Visiva della propria Soluzione Tecnica. 
+Il Sistema IT-Wallet ha una propria Identità Visiva. I partecipanti dell’ecosistema DEVONO applicarla in modo che si distingua e allo stesso tempo dialoghi e coesista con l'Identità Visiva propria e delle proprie Soluzioni Tecniche. In particolare, tutti gli Attori Primari DEVONO utilizzare le Risorse Ufficiali relative all’Identità Visiva del Sistema IT-Wallet. Il loro utilizzo ha lo scopo di rappresentare la partecipazione al Sistema IT-Wallet senza sostituire l’Identità Visiva della propria Soluzione Tecnica. 
 
- 
 Logo 
-^^^^
+""""
 
 Il Logo è l'elemento grafico ufficiale che permette l’immediata riconoscibilità del Sistema IT-Wallet. 
 
@@ -59,7 +56,7 @@ Di seguito i requisiti generali per il suo utilizzo, validi sia in riferimento a
 - il Logo PUÒ essere associato a loghi, marchi o simboli di altri attori del sistema in accordo con le specifiche di coesistenza, in termini di proporzioni e visibilità, stabilite nelle Risorse Ufficiali. 
 
 Trust Mark 
-^^^^^^^^^^
+""""""""""
 
 Il Trust Mark è l'elemento grafico ufficiale che dà prova agli Utenti dell’appartenenza al Sistema IT-Wallet degli attori del Sistema IT-Wallet e delle relative Soluzioni Tecniche con cui interagisce.  
 
@@ -82,7 +79,7 @@ Di seguito i requisiti generali per il suo utilizzo, validi sia in riferimento a
 - il Trust Mark PUÒ essere associato a loghi, marchi o simboli di altri attori del sistema in accordo con le specifiche di coesistenza, in termini di proporzioni e visibilità, stabilite nelle Risorse Ufficiali. 
 
 Componenti 
-^^^^^^^^^^
+""""""""""
 
 Sono definiti componenti gli elementi del Sistema IT-Wallet che abilitano l’Utente a interagire con le diverse Soluzioni Tecniche tramite la propria Istanza IT-Wallet.  
 
@@ -97,10 +94,9 @@ Di seguito i requisiti generali:
 - gli Attori Primari DEVONO garantire il costante aggiornamento dei componenti, in linea con l’ultima versione resa disponibile. 
 
 Pulsante di Autenticazione 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 
 Il Pulsante di Autenticazione è un esempio di Pulsante di Ingaggio. 
-
 I Verificatori di Attestati Elettronici DEVONO rendere disponibile il Pulsante di Autenticazione all’interno della Discovery Page delle proprie Soluzioni Tecniche per permettere all’Utente di Autenticarsi ai propri servizi tramite un’Istanza IT-Wallet.  
 
 Le modalità di integrazione del Pulsante di Autenticazione nella Discovery Page possono essere molteplici a seconda del layout della pagina stessa. Di seguito alcuni esempi illustrativi e non esaustivi di Discovery Page, rispettivamente con struttura a griglia, a tab e in lista. 

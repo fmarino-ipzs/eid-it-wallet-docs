@@ -74,9 +74,9 @@ Ad attivazione conclusa, l'Utente PUÒ ottenere uno o più Attestati Elettronici
 
 A seconda delle specifiche esigenze dell’Utente, della tipologia di Attestato Elettronico di Attributi e delle disponibilità offerte dal Fornitore di Soluzione IT-Wallet, dal Fornitore di Attestati Elettronici di Attributi e dal Titolare di Fonte Autentica, l’ottenimento degli Attestati Elettronici di Attributi può avvenire attraverso due modalità: 
 
-- **dal Catalogo dell’Istanza IT-Wallet**: l’Utente esplora l’elenco degli Attestati Elettronici di Attributi messi a disposizione dalla Soluzione IT-Wallet, seleziona quello di suo interesse e avvia la procedura di richiesta che si conclude con l’ottenimento dell’Attestato Elettronico di Attributi nell’Istanza IT-Wallet (vedi :ref:`Digital Credentials Catalogue <registry-catalogue.rst>`); 
+- **dal Catalogo dell’Istanza IT-Wallet**: l’Utente esplora l’elenco degli Attestati Elettronici di Attributi messi a disposizione dalla Soluzione IT-Wallet, seleziona quello di suo interesse e avvia la procedura di richiesta che si conclude con l’ottenimento dell’Attestato Elettronico di Attributi nell’Istanza IT-Wallet (vedi :ref:`registry-catalogue:Digital Credentials Catalogue`); 
 
-- **da un Touchpoint del Titolare di Fonte Autentica** (o del Fornitore di Attestati Elettronici di Attributi qualora coincida con il Titolare di Fonte Autentica): l’Utente interagisce col servizio digitale del Titolare di Fonte Autentica che gli permette di ottenere nella sua Istanza IT-Wallet uno specifico Attestato Elettronico di Attributi tramite un Pulsante di Ingaggio (vedi :ref:`Credential Offer Endpoint <credential-issuance-endpoint.rst>`).  
+- **da un Touchpoint del Titolare di Fonte Autentica** (o del Fornitore di Attestati Elettronici di Attributi qualora coincida con il Titolare di Fonte Autentica): l’Utente interagisce col servizio digitale del Titolare di Fonte Autentica che gli permette di ottenere nella sua Istanza IT-Wallet uno specifico Attestato Elettronico di Attributi tramite un Pulsante di Ingaggio (vedi :ref:`registry-catalogue:Digital Credentials Catalogue`).  
 
 Nonostante le modalità di avvio della richiesta siano diverse, i flussi di ottenimento condividono una struttura e un processo simili. Di seguito, sono illustrati i requisiti dell’Esperienza Utente del flusso di ottenimento di un Attestato Elettronico di Attributi dal Catalogo che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet: 
 
@@ -234,9 +234,8 @@ Per garantire l’Autenticazione tramite il Sistema IT-Wallet, il Verificatore d
 
 In alternativa, il Verificatore di Attestati Elettronici PUÒ mantenere la propria Discovery Page, ma DEVE in ogni caso integrare il Pulsante di Autenticazione, come da indicazioni presenti nella sezione :ref:`brand-identity:Pulsante di Autenticazione`.
 
-In ogni caso: 
-
 In ogni caso, nella pagina, il Verificatore di Attestati Elettronici:
+
 - DEVE garantire la presenza di tutte le modalità di Autenticazione attraverso l’identità digitale tra cui la modalità di Autenticazione del Sistema IT-Wallet, quindi tramite il Pulsante di Autenticazione; 
 - PUÒ presentare anche modalità di Autenticazione alternative, se disponibili; 
 - DOVREBBE garantire informazioni minime a supporto, per permettere all’Utente di compiere una scelta consapevole e informata. 
@@ -249,18 +248,16 @@ Nel caso in cui invece l’Utente stia navigando la pagina del Verificatore di A
 
 La QR code page è la pagina su cui atterra l’Utente che ha scelto l’Autenticazione tramite il Sistema IT-Wallet in un flusso cross-device, e ha lo scopo di invitare l’Utente a scannerizzare, con la propria Istanza IT-Wallet, il codice QR generato. 
 
-Il Verificatore di Attestati Elettronici DOVREBBE implementare la QR code page resa disponibile nelle Risorse Ufficiali. In ogni caso: 
+Il Verificatore di Attestati Elettronici DOVREBBE implementare la QR code page resa disponibile nelle Risorse Ufficiali. Il Verificatore di Attestati Elettronici che implementa la pagina:
 
-- la pagina DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo; 
-- la pagina DEVE esporre il codice QR e un testo sintetico e chiaro che inviti l'Utente a scannerizzarlo con la propria Istanza IT-Wallet; 
-- la pagina DEVE includere un testo sintetico e chiaro che permetta all’Utente di conoscere la validità temporale del codice QR;  
-- la pagina DEVE includere una Call to Action che, in caso di timeout, permetta all’Utente di generare un nuovo codice QR; 
-- la pagina DEVE includere una Call to Action che permetta all’Utente di annullare l’operazione e tornare alla Discovery Page. 
+- DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo; 
+- DEVE esporre il codice QR e un testo sintetico e chiaro che inviti l'Utente a scannerizzarlo con la propria Istanza IT-Wallet; 
+- DEVE includere un testo sintetico e chiaro che permetta all’Utente di conoscere la validità temporale del codice QR;  
+- DEVE includere una Call to Action che, in caso di timeout, permetta all’Utente di generare un nuovo codice QR; 
+- DEVE includere una Call to Action che permetta all’Utente di annullare l’operazione e tornare alla Discovery Page. 
 
-Per garantire la leggibilità del codice QR: 
-
-- si DEVONO rispettare le dimensioni minime raccomandate per garantire una scansione efficace. Una misura di 150x150 pixel è generalmente adeguata, ma per codici con alta densità di dati (e.g. URL lunghi o numerosi caratteri), è consigliabile aumentarla a 300x300 pixel o più; 
 Inoltre, nei rispetto di [RIF_ACCESSIBILITÁ], relativamente al codice QR, il Verificatore di Attestati Elettronici: 
+
 - DEVE rispettare le dimensioni minime raccomandate per garantire una scansione efficace. Una misura di 150x150 pixel è generalmente adeguata, ma per codici con alta densità di dati (e.g. URL lunghi o numerosi caratteri), è consigliabile aumentarla a 300x300 pixel o più; 
 - DEVE garantire un contrasto minimo tra il codice QR e lo sfondo (la condizione ideale prevede uno sfondo bianco con un codice QR nero); 
 - DEVE evitare inversioni di colore tra sfondo e codice QR; 
@@ -273,30 +270,30 @@ Inoltre, nei rispetto di [RIF_ACCESSIBILITÁ], relativamente al codice QR, il Ve
 
 La waiting page è la pagina che invita l’Utente a proseguire il processo di Autenticazione sulla propria Istanza IT-Wallet, a valle della scansione del codice QR. 
 
-Il Verificatore di Attestati Elettronici DOVREBBE implementare la waiting page (cross-device) resa disponibile nelle Risorse Ufficiali. In ogni caso: 
+Il Verificatore di Attestati Elettronici DOVREBBE implementare la waiting page (cross-device) resa disponibile nelle Risorse Ufficiali. Il Verificatore di Attestati Elettronici che implementa la pagina: 
 
-- la pagina DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo e un’icona o altro elemento grafico che aiuti a veicolare il messaggio della pagina; 
-- la pagina DEVE prevedere un testo sintetico e chiaro che lo inviti a proseguire sulla sua Istanza IT-Wallet. 
+- DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo e un’icona o altro elemento grafico che aiuti a veicolare il messaggio della pagina; 
+- DEVE prevedere un testo sintetico e chiaro che lo inviti a proseguire sulla sua Istanza IT-Wallet. 
 
 **Thank you page** 
 
 La thank you page è la pagina sui cui l’Utente atterra una volta concluso il processo di Autenticazione attraverso la propria Istanza IT-Wallet e ha l’obiettivo di invitare l’Utente a proseguire nell’area riservata.  
 
-Il Verificatore di Attestati Elettronici DOVREBBE implementare la thank you page resa disponibile nelle Risorse Ufficiali. In ogni caso: 
+Il Verificatore di Attestati Elettronici DOVREBBE implementare la thank you page resa disponibile nelle Risorse Ufficiali. Il Verificatore di Attestati Elettronici che implementa la pagina: 
 
-- la pagina DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo e un’icona o altro elemento grafico che aiuti a veicolare il messaggio della pagina; 
-- la pagina DEVE prevedere un testo sintetico e chiaro che spieghi all’Utente che il processo di Autenticazione si è concluso con successo; 
-- la pagina DEVE prevedere una Call to Action che inviti l’Utente a proseguire nell’area riservata del Verificatore di Attestati Elettronici. 
+- DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo e un’icona o altro elemento grafico che aiuti a veicolare il messaggio della pagina; 
+- DEVE prevedere un testo sintetico e chiaro che spieghi all’Utente che il processo di Autenticazione si è concluso con successo; 
+- DEVE prevedere una Call to Action che inviti l’Utente a proseguire nell’area riservata del Verificatore di Attestati Elettronici. 
 
 **Error page** 
 
 La pagina di errore rappresenta quella tipologia di pagina su cui l'Utente atterra in caso di errori nel corso del flusso di Autenticazione, e ha lo scopo di comunicare all'Utente la natura di tali errori (es. errore tecnico, assenza di rete, malfunzionamento dell’Istanza IT-Wallet, consenso alla presentazione dei dati negato etc.) e di presentare le azioni che l’Utente può intraprendere. Per approfondimenti sulle casistiche di errore si rimanda alla sezione :ref:`functionalities:Gestione degli errori`. 
  
-Il Verificatore di Attestati Elettronici DOVREBBE implementare la error page resa disponibile nelle Risorse Ufficiali. In ogni caso: 
+Il Verificatore di Attestati Elettronici DOVREBBE implementare la error page resa disponibile nelle Risorse Ufficiali. Il Verificatore di Attestati Elettronici che implementa la pagina: 
 
-- la pagina DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo e un’icona o altro elemento grafico che aiuti a veicolare la natura dell'errore; 
-- la pagina DEVE prevedere un testo sintetico e chiaro che spieghi all’Utente la natura dell’errore, il codice errore e una sua spiegazione semplice; 
-- la pagina DEVE prevedere una o più Call to Action che invitino l’Utente a intraprendere le azioni previste (es. riprova, contatta l'assistenza, etc.). 
+- DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo e un’icona o altro elemento grafico che aiuti a veicolare la natura dell'errore; 
+- DEVE prevedere un testo sintetico e chiaro che spieghi all’Utente la natura dell’errore, il codice errore e una sua spiegazione semplice; 
+- DEVE prevedere una o più Call to Action che invitino l’Utente a intraprendere le azioni previste (es. riprova, contatta l'assistenza, etc.). 
 
 Gestione degli Attestati Elettronici
 ------------------------------------
@@ -523,7 +520,6 @@ La raccolta dei feedback degli Utenti permette di monitorare l’Esperienza Uten
 Tale sistema di feedback POTREBBE essere alimentato da due diverse tipologie di raccolta feedback: 
 
 - **feedback transazionali** (Customer Effort Score, Customer Satisfaction): raccolta contestuale ad azioni specifiche, come l’aggiunta di un Attestato Elettronico o il completamento di un’operazione di presentazione e verifica;  
-
 - **feedback relazionali** (Net Promoter Score): raccolta non contestuale ad azioni specifiche, per la misurazione della percezione generale dell'Utente, in termini di soddisfazione, fedeltà e possibile raccomandazione ad Utenti terzi. 
 
 Di seguito, le indicazioni proposte per l’implementazione di tali tipologie di feedback: 
@@ -542,5 +538,3 @@ Di seguito, le indicazioni proposte per l’implementazione di tali tipologie di
 **Raccolta di feedback relazionale** 
 
 - **Net Promoter Score (NPS)**: per misurare la fedeltà dell'Utente e la probabilità di raccomandazione ad Utenti terzi, si PUÒ richiedere di esprimere una valutazione una o due volte l'anno attraverso lo stesso canale di erogazione del servizio (e.g. l’Istanza IT-Wallet) o canali esterni, quali e-mail o SMS, e comunque in linea con la strategia di raccolta feedback adottata.
-
-

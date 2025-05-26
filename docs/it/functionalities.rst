@@ -262,7 +262,8 @@ Per garantire la leggibilità del codice QR:
 - si DEVE mantenere un contrasto adeguato tra il codice QR e lo sfondo (la condizione ideale prevede uno sfondo bianco con un codice QR nero); 
 - si DEVONO evitare inversioni di colore tra sfondo e codice QR; 
 - si DEVE limitare la presenza a un solo codice QR per pagina; 
-- il codice QR DEVE essere nitido e di alta qualità (si consiglia il formato SVG); 
+- il codice QR DEVE essere nitido e di alta qualità;
+- il codice QR DEVE essere in formato SVG; 
 - non gli si DEVE sovrapporre testo o altri elementi che lo possano nascondere parzialmente. 
 
 **Waiting page (*solo per modalità cross-dispositivo*)** 

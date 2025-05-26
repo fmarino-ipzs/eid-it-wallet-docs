@@ -175,7 +175,7 @@ This presentation can occur in two different modes, depending on the type of dev
 - **Same-device mode**: when the User accesses an online digital service using the same device on which the Wallet Instance is installed;
 - **Cross-device mode**: when the User accesses a digital service using a different device from the one where the Wallet Instance is installed.
 
-Below are the functional and the User Experience requirements that the Wallet Provider MUST guarantee via their Wallet Solution.
+Below are the User Experience requirements related to both methods that the Wallet Provider MUST guarantee via their Wallet Solution.
 
 **Same-Device Mode**
 

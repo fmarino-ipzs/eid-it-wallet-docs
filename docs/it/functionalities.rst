@@ -31,7 +31,7 @@ Attivazione dell’Istanza IT-Wallet
 
 L'attivazione è il passaggio necessario per abilitare l'Utente all'utilizzo delle funzionalità della Soluzione IT-Wallet per l’ottenimento, la presentazione e la gestione dei propri Attestati Elettronici in modo sicuro. Il processo di attivazione consiste in un’operazione di Autenticazione dell'Utente sull’Istanza IT-Wallet tramite la propria identità digitale che consente la generazione del PID.  
 
-Di seguito i requisiti funzionali e di Esperienza Utente che il Wallet Provider DEVE garantire attraverso la propria Soluzione IT-Wallet: 
+Di seguito i requisiti di Esperienza Utente che il Wallet Provider DEVE garantire attraverso la propria Soluzione IT-Wallet: 
 
 - l'Utente scarica la Soluzione IT-Wallet sul suo dispositivo così da generare la propria Istanza IT-Wallet; 
 - l'Utente imposta un metodo di sblocco per la sua Istanza IT-Wallet se non è già stato impostato in precedenza nell’app. In aggiunta al PIN, l’Utente può decidere di usare il metodo di sblocco usato per il dispositivo e gestito a livello di sistema operativo (e.g. autenticazione biometrica) come alternativa al PIN. L’Utente utilizza il metodo di sblocco ogni qual volta è richiesta un’autorizzazione a garanzia della sicurezza e della protezione delle proprie informazioni; 

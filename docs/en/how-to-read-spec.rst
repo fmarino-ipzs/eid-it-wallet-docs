@@ -136,7 +136,7 @@ Regardless of your primary role, certain sections contain information relevant t
     Section :ref:`defined-terms-and-references:Defined Terms and References` provides normative references, defined terms, and technical standards to enable secure and proper interoperability among all participants.
 
 **Testing and Validation:**
-    Section :ref:`test-plans:Test Plans` provides a comprehensive test matrix for validating implementations across different roles and interaction flows, ensuring compliance with specification requirements and interoperability standards.
+    Section :ref:`test-plans:Test Plans` provides a comprehensive test matrix for validating implementations across different roles and interaction flows.
 
 Implementation Approach
 -----------------------

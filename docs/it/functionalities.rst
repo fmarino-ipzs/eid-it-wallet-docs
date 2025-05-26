@@ -175,7 +175,7 @@ Tale presentazione può avvenire in due diverse modalità, sulla base del tipo d
 - **Stesso dispositivo**: nel caso in cui l’Utente voglia accedere a un servizio digitale online utilizzando lo stesso dispositivo su cui ha installato l’Istanza IT-Wallet; 
 - **Cross-device**: nel caso in cui l'Utente voglia accedere a un servizio digitale utilizzando un dispositivo differente rispetto a quello in cui ha installato l’Istanza IT-Wallet. 
 
-Di seguito i requisiti funzionali a supporto dell’Esperienza Utente relativi a entrambe le modalità che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet. 
+Di seguito i requisiti dell’Esperienza Utente relativi a entrambe le modalità che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet. 
 
 **Stesso dispositivo** 
 

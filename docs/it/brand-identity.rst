@@ -84,7 +84,7 @@ Di seguito i requisiti generali per il suo utilizzo, validi sia in riferimento a
 Componenti 
 ^^^^^^^^^^
 
-I componenti rappresentano quegli elementi del Sistema IT-Wallet che abilitano l’Utente a interagire con le diverse Soluzioni Tecniche tramite la propria Istanza IT-Wallet.  
+Sono definiti componenti gli elementi del Sistema IT-Wallet che abilitano l’Utente a interagire con le diverse Soluzioni Tecniche tramite la propria Istanza IT-Wallet.  
 
 Le Risorse Ufficiali mettono a disposizione sia componenti complessi, ovvero template relativi a interi flussi, sia componenti atomici, ovvero singoli elementi da integrare all’interno di interfacce preesistenti (e.g. i Pulsanti di Ingaggio). 
 

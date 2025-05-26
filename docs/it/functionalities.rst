@@ -305,7 +305,7 @@ Il Fornitore di Soluzione IT-Wallet, attraverso la propria Soluzione IT-Wallet, 
 In questa sezione sono illustrate tre diverse categorie di requisiti per la gestione del ciclo di vita di ogni Attestato Elettronico e nello specifico per la gestione: 
 
 - **del suo stato**: per consentire all’Utente di appurare la condizione di validità o invalidità di un Attestato Elettronico; 
-- **dei suoi utilizzi**: per consentire all’Utente di visualizzare e gestire lo storico delle transazioni effettuate con un Attestato Elettronico; 
+- **dei suoi utilizzi**: per consentire all’Utente di visualizzare e gestire lo storico delle transazioni effettuate utilizzando un Attestato Elettronico; 
 - **dei suoi dati**: per consentire all’Utente di archiviare e ripristinare ogni Attestato Elettronico di Attributi in linea col principio di *data portability*. 
 
 Di seguito i principali aspetti che impattano e determinano l’Esperienza Utente nell’ambito della gestione degli Attestati Elettronici per mezzo di un’Istanza IT-Wallet e i requisiti funzionali riferiti a ciascuna categoria. 

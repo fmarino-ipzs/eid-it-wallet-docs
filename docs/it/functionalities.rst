@@ -188,7 +188,7 @@ Di seguito i requisiti funzionali a supporto dell’Esperienza Utente relativi a
 
 In caso di errori nell’utilizzo dell’Istanza IT-Wallet, il Fornitore di Soluzione IT-Wallet DEVE garantire all’Utente la visualizzazione di messaggi coerenti che lo informino e guidino alla loro risoluzione. Per approfondimenti si rimanda alla sezione :ref:`functionalities:Gestione degli errori`. 
 
-**Cross-dispositivo** 
+**Cross-device** 
 
 - L’Utente clicca il Pulsante di Ingaggio reso disponibile nel Touchpoint del Verificatore di Attestati Elettronici che l’Utente sta navigando da un dispositivo diverso da quello su cui è installata l’Istanza IT-Wallet; 
 - L’Utente accede all’Istanza IT-Wallet che desidera utilizzare dal dispositivo su cui è installata utilizzando la modalità di sblocco precedentemente impostata; 

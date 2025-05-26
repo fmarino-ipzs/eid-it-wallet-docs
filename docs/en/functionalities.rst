@@ -141,7 +141,7 @@ Proximity presentation allows the User to present the PID and/or EAA data via th
 
 - **Unsupervised mode**: the User presents the PID and/or EAA data through the Wallet Instance to a designated device (e.g., turnstile, ATM).
 
-Below are the functional and the User Experience requirements that the Wallet Provider MUST guarantee via their Wallet Solution.
+Below are the User Experience requirements related to both methods that the Wallet Provider MUST guarantee via their Wallet Solution.
 
 **Supervised Mode**
 

@@ -234,11 +234,11 @@ To enable authentication via the IT-Wallet System, the Relying Party MAY replace
 
 Alternatively, the Relying Party MAY maintain its own Discovery Page but MUST integrate the Authentication Button as specified in the :ref:`brand-identity:Authentication Button` section.
 
-In all cases:
+The Relying Party implementing the page:
 
-- the page MUST display all available Digital Identity Authentication methods, including the IT-Wallet System Authentication through the Authentication Button;
-- the page MAY also include other available Authentication methods;
-- the page SHOULD provide essential supporting information to help the User make an informed and conscious choice.
+- MUST display all available Digital Identity Authentication methods, including the IT-Wallet System Authentication through the Authentication Button;
+- MAY also include other available Authentication methods;
+- SHOULD provide essential supporting information to help the User make an informed and conscious choice.
 
 If the User accesses the Discovery Page from a different Touchpoint than the one where the Wallet Instance is activated (cross-device), selecting IT-Wallet System Authentication MUST redirect the User to the QR code page.
 
@@ -248,13 +248,13 @@ If the User accesses the Discovery Page from the same Touchpoint where the Walle
 
 The QR code page is presented to the User who selects IT-Wallet System Authentication within a cross-device process. Its purpose is to prompt the User to scan the generated QR code using their Wallet Instance.
 
-Relying Parties SHOULD implement the QR code page (cross-device) provided in the Official Resources. In any case:
+Relying Parties SHOULD implement the QR code page (cross-device) provided in the Official Resources. The Relying Party implementing the page:
 
-- The page MUST include the Visual Identity elements of the IT-Wallet System, including the logo;
-- The page MUST display the QR code along with a clear and concise message instructing the User to scan it using their Wallet Instance;
-- The page MUST indicate the validity period of the QR code with a short and clear message;
-- The page MUST include a Call To Action allowing the User to generate a new QR code in case of timeout;
-- The page MUST include a Call To Action allowing the User to cancel the operation and return to the Discovery Page.
+- MUST include the Visual Identity elements of the IT-Wallet System, including the logo;
+- MUST display the QR code along with a clear and concise message instructing the User to scan it using their Wallet Instance;
+- MUST indicate the validity period of the QR code with a short and clear message;
+- MUST include a Call To Action allowing the User to generate a new QR code in case of timeout;
+- MUST include a Call To Action allowing the User to cancel the operation and return to the Discovery Page.
 
 To ensure QR code readability:
 
@@ -269,30 +269,30 @@ To ensure QR code readability:
 
 The waiting page is shown after the QR code has been scanned and prompts the User to continue the Authentication process within their Wallet Instance.
 
-Relying Parties SHOULD implement the waiting page (cross-device) provided in the Official Resources. In any case:
+Relying Parties SHOULD implement the waiting page (cross-device) provided in the Official Resources. The Relying Party implementing the page:
 
-- The page MUST include visual identity elements of the IT-Wallet System, including the logo and an icon or graphical element that reinforces the page message;
-- The page MUST include a clear and concise message instructing the User to continue the process on their Wallet Instance.
+- MUST include visual identity elements of the IT-Wallet System, including the logo and an icon or graphical element that reinforces the page message;
+- MUST include a clear and concise message instructing the User to continue the process on their Wallet Instance.
 
 **Thank you page**
 
 The thank you page is displayed after the User completes the Authentication process via their Wallet Instance. Its purpose is to prompt the User to proceed to the authenticated area of the Relying Party's Touchpoint.
 
-Relying Parties SHOULD implement the thank you page provided in the Official Resources. In any case:
+Relying Parties SHOULD implement the thank you page provided in the Official Resources. The Relying Party implementing the page:
 
-- The page MUST include the visual identity elements of the IT-Wallet System, including the logo and an icon or graphical element that reinforces the page message;
-- The page MUST provide a clear and concise message confirming that the authentication process was successfully completed;
-- The page MUST include a Call To Action prompting the User to proceed to the Touchpoint authenticated area.
+- MUST include the visual identity elements of the IT-Wallet System, including the logo and an icon or graphical element that reinforces the page message;
+- MUST provide a clear and concise message confirming that the authentication process was successfully completed;
+- MUST include a Call To Action prompting the User to proceed to the Touchpoint authenticated area.
 
 **Error page**
 
 The error page is displayed when an issue occurs during the Authentication process. Its purpose is to inform the User about the nature of the error (e.g., technical issue, network issues, Wallet Instance malfunction, denied data sharing, etc.) and to present the available next steps. For further details, refer to the :ref:`functionalities:Error Management` section.
 
-Relying Parties SHOULD implement the error page provided in the Official Resources. In any case:
+Relying Parties SHOULD implement the error page provided in the Official Resources. The Relying Party implementing the page:
 
-- The page MUST include the visual identity elements of the IT-Wallet System, including the logo and an icon or graphical element that conveys the type of error;
-- The page MUST include a clear and concise message explaining the nature of the error, the error code, and a simple description;
-- The page MUST include one or more Call To Action guiding the User toward the appropriate next step (e.g., retry, contact support, etc.).
+- MUST include the visual identity elements of the IT-Wallet System, including the logo and an icon or graphical element that conveys the type of error;
+- MUST include a clear and concise message explaining the nature of the error, the error code, and a simple description;
+- MUST include one or more Call To Action guiding the User toward the appropriate next step (e.g., retry, contact support, etc.).
 
 Management of Electronic Attestations
 -------------------------------------

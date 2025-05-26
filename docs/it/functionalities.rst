@@ -221,7 +221,7 @@ I Verificatori di Attestati Elettronici, in ogni caso, DEVONO abilitare il proce
 - **thank you page**: ha lo scopo di comunicare all’Utente l'avvenuta Autenticazione; 
 - **error page**: ha lo scopo di comunicare all’Utente eventuali errori legati al flusso di Autenticazione. 
 
-Tali pagine DEVONO prevedere elementi trasversali ricorrenti, in continuità con l’Identità Visiva del Touchpoint del Verificatore di Attestati Elettronici, in particolare: 
+Tali pagine DEVONO prevedere i seguenti elementi trasversali ricorrenti, in continuità con l’Identità Visiva del Touchpoint del Verificatore di Attestati Elettronici:
 
 - un **header e/o un subheader**, che permette all'Utente di tornare alla pagina precedente; 
 - un **footer** che include l’informativa privacy, le note legali e la Dichiarazione di Accessibilità, ove previsto da normativa. 

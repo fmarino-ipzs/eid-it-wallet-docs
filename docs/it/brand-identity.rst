@@ -4,7 +4,7 @@
 Brand Identity del Sistema IT-Wallet 
 ====================================
 
-La Brand Identity del Sistema IT-Wallet definisce la personalità del sistema e si declina in una serie di elementi codificati che la contraddistinguono, tra cui il naming e gli elementi propri dell’Identità Visiva. Questa contribuisce a rafforzare e promuovere il Modello della Fiducia che sta alla base dell’intero ecosistema ovvero il modello che legittima la partecipazione degli attori al Sistema IT-Wallet e ne determina la sicurezza e l'integrità dei processi. 
+La Brand Identity del Sistema IT-Wallet definisce la personalità del sistema e si declina in una serie di elementi codificati che la contraddistinguono, tra cui il naming e gli elementi propri dell’Identità Visiva. Questa consolida l'implementazione del Modello della Fiducia.
 
 È quindi importante che la consapevolezza dell’Utente e la sua fiducia nell’ecosistema siano favoriti dalla presenza di elementi grafici, da integrare nelle Soluzioni Tecniche e nei diversi Touchpoint. 
 

@@ -141,7 +141,7 @@ La presentazione in prossimità consente all'Utente di esibire il PID e/o un set
 
 - **Modalità non supervisionata**: l’Utente, tramite l’Istanza IT-Wallet, presenta il PID e/o un set di Attributi contenuti in uno o più Attestati Elettronici a un dispositivo preposto (e.g. tornello, ATM, etc.). 
 
-Di seguito i requisiti funzionali a supporto dell’Esperienza Utente relativi a entrambe le modalità che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet. 
+Di seguito i requisiti dell’Esperienza Utente relativi a entrambe le modalità che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet. 
 
 **Modalità supervisionata** 
 

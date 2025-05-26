@@ -53,7 +53,6 @@
 .. _OpenID4VCI: https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-15.html
 .. _OpenID4VP: https://openid.net/specs/openid-4-verifiable-presentations-1_0-23.html
 .. _PDND: https://www.agid.gov.it/sites/agid/files/2024-06/Linee_guida_infrastruttura_interoperabilita_pdnd.pdf
-.. _PresentationExch: https://identity.foundation/presentation-exchange/spec/v2.0.0
 .. _RFC 2898: http://tools.ietf.org/html/rfc2898.html
 .. _RFC 9449: https://datatracker.ietf.org/doc/html/draft-ietf-oauth-dpop
 .. _RFC 5280: https://datatracker.ietf.org/doc/html/rfc5280

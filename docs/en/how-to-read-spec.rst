@@ -23,7 +23,7 @@ The specification is organized into the following major sections:
 **Section** :ref:`digital-credential-management:Digital Credential Management`: 
   Covers Digital Credential data models and formats, lifecycle management, validity verification, and the Credentials catalogue structure.
 
-**Section** :ref:`digital-credential-flows:Digital Credential Flows`: **Digital Credential Flows** (Section 6)
+**Section** :ref:`digital-credential-flows:Digital Credential Flows`:
   Detailed implementation guidance for Digital Credential issuance and presentation workflows, including both remote and proximity interaction flows.
 
 **Section** :ref:`endpoints:Endpoints`: 
@@ -42,7 +42,7 @@ The specification is organized into the following major sections:
 Reading Paths by Role
 ---------------------
 
-Before diving into role-specific sections, all readers should be familiar with the foundational concepts outlined in Sections :ref:`introduction:Introduction`, :ref:`architecture-overview:Architecture Overview`, and :ref:`trust:The Infrastructure of Trust` , which establish the common vocabulary, design principles, and trust infrastructure that provide the underlying framework for the entire ecosystem.
+Before diving into role-specific sections, all readers should be familiar with the foundational concepts outlined in Sections :ref:`introduction:Introduction`, :ref:`architecture-overview:Architecture Overview`, and :ref:`trust:The Infrastructure of Trust`, which establish the common vocabulary, design principles, and trust infrastructure that provide the underlying framework for the entire ecosystem.
 
 Wallet Provider
 ^^^^^^^^^^^^^^^^^^^^
@@ -92,18 +92,18 @@ For readers who are interested in implementing a **Credential Issuer** Solution,
 Authentic Source
 ^^^^^^^^^^^^^^^^^^^^
 
-If the reader wants to operate an **Authentic Source**, the focus should be on secure data provision and integration with credential issuers.
+If the reader wants to operate an **Authentic Source**, the focus should be on secure data provision and integration with Credential Issuers.
 
 **Essential sections:**
 
-* **Section** :ref:`authentic-sources:Authentic Sources`: Requirements and integration patterns with credential issuers.
+* **Section** :ref:`authentic-sources:Authentic Sources`: Requirements and integration patterns with Credential Issuers.
 * **Section** :ref:`authentic-source-endpoint:Authentic Source Endpoints`: API specifications and catalogue integration.
 * **Section** :ref:`algorithms:Cryptographic Algorithms`: Data integrity, authentication, and security requirements.
 * **Section** :ref:`e-service-pdnd:e-Service PDND`: PDND integration and interoperability requirements.
 
 **Secondary sections:**
 
-* **Section** :ref:`credential-issuer-solution:Credential Issuer Solution`: Understanding Credential Issuers main componetns and integration processes.
+* **Section** :ref:`credential-issuer-solution:Credential Issuer Solution`: Understanding Credential Issuers main components and integration processes.
 * **Section** :ref:`digital-credential-management:Digital Credential Management`: Understanding how authoritative data and attributes becomes Digital Credentials, and how their lifecycle is managed.
 
 Relying Party
@@ -122,7 +122,7 @@ Readers interested in implementing or operating a **Relying Party** Solution to 
 **Secondary sections:**
 
 * **Section** :ref:`wallet-solution:Wallet Solution`: Understanding Wallet Instance interactions and presentation protocols
-* **Section** :ref:`mobile-application-instance:Mobile Application Instance`: Mobile-specific implementation patterns
+* **Section** :ref:`mobile-application-instance:Mobile Application Instance`: Mobile-specific implementation patterns.
 
 Cross-Cutting Topics
 ----------------------
@@ -150,7 +150,7 @@ The following phased reading approach is suggested:
 
 .. note::
 
-    For implementers working on solutions that span multiple roles (e.g., a combined Issuer Relying Party Solutions), it is recommeneded reviewing the essential sections for all relevant roles before proceeding to implementation. It is important to take particular note of Entity Configuration requirements and federation flows that apply to multiple roles.
+    For implementers working on solutions that span multiple roles (e.g., a combined Issuer Relying Party Solutions), it is recommended reviewing the essential sections for all relevant roles before proceeding to implementation. It is important to take particular note of Entity Configuration requirements and federation flows that apply to multiple roles.
 
 
 

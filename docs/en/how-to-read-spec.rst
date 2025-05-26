@@ -87,7 +87,7 @@ For readers who are interested in implementing a **Credential Issuer** Solution,
 
 .. note::
 
-    If the Credential Issuer must authenticate the User, Section :ref:`credential-presentation:Digital Credential Presentation` is essential. If the Authentic Source providing User's attributes belongs to the public sector, Section :ref:`e-service-pdnd:e-Service PDND` is also essential.  
+    If the Credential Issuer authenticates the User it must comply with Section :ref:`credential-presentation:Digital Credential Presentation`. If the Authentic Source providing User's attributes belongs to the public sector it must comply with Section :ref:`e-service-pdnd:e-Service PDND`.  
 
 Authentic Source
 ^^^^^^^^^^^^^^^^^^^^

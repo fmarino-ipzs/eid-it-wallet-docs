@@ -495,7 +495,7 @@ For effective error management and the resolution of any other issues, Primary A
 
 - **Efficient communication**: to allow the User to track the updated status of their request throughout all stages of processing, with clear, continuous, and coordinated communication.
 
-To implement these best practices, the Wallet Provider SHOULD establish a hierarchical assistance model:
+To apply these best practices, the involved actors SHOULD implement the following hierarchical support levels:
 
 	1. **Level I | Self-management**: the Wallet Provider SHOULD allow the User to access to a Frequently Asked Questions (FAQ) section within their Wallet Instance to clarify doubts and resolve certain issues independently. Each actor SHOULD create specific FAQs and corresponding answers regarding the data and functionalities they provide to the Wallet Provider or in their Touchpoints. For certain error cases, the Wallet Provider SHOULD provide another actor's direct channel of support to facilitate timely management and avoid opening an assistance request within the Wallet Instance.
 
@@ -503,7 +503,7 @@ To implement these best practices, the Wallet Provider SHOULD establish a hierar
 
 	3. **Level III | Forwarding the request to the responsible actor**: if Level II is insufficient, the Wallet Provider SHOULD ensure that the request is forwarded to the responsible actor (Electronic Attestations of Attributes Provider, PID Provider, or Authentic Source), who ensures the availability of dedicated back-office channels to resolve the issue and communicate the outcome to the User.
 
-Here are the functional and User Experience requirements that the Wallet Provider MUST guarantee via their Wallet Solution:
+Below are the User Experience requirements that the Wallet Solution Provider MUST guarantee through their own Wallet Solution:
 
 - The User accesses to assistance options at any point during the User Experience, with a clear indication of how to access them;
 - The User opens an assistance request through their Wallet Instance or other Touchpoints provided by the Wallet Provider;

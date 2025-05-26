@@ -495,7 +495,7 @@ Per un’efficace gestione degli errori e di eventuali altre problematiche, gli 
 
 - **Comunicazione efficiente**: garantire all’Utente la possibilità di monitorare lo stato aggiornato della propria richiesta durante tutte le fasi di lavorazione, attraverso una comunicazione chiara, continua e coordinata.  
 
-Per applicare queste buone pratiche, gli attori coinvolti DOVREBBERO attuare i seguenti requisiti in modo da strutturare un modello di assistenza a livelli gerarchici: 
+Per applicare queste buone pratiche, gli attori coinvolti DOVREBBERO implementare i seguenti livelli di assistenza gerarchici: 
 
 	1. **I Livello – Gestione autonoma**: il Fornitore di Soluzione IT-Wallet DOVREBBE permettere all’Utente di disporre di una sezione di domande frequenti (FAQ) all’interno della propria Istanza IT-Wallet per chiarire dubbi e risolvere in autonomia alcune problematiche. Ogni attore DOVREBBE formulare delle domande frequenti e relative risposte specifiche rispetto a dati e funzionalità messe a disposizione al Fornitore di Soluzione IT-Wallet o nei propri Touchpoint. Per alcune casistiche di errore, il Fornitore di Soluzione IT-Wallet DOVREBBE rendere direttamente disponibile il canale di assistenza di un altro attore, per facilitare una gestione tempestiva ed evitare l’apertura di una richiesta di assistenza nell’Istanza IT-Wallet. 
 

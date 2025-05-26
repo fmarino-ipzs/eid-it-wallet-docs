@@ -203,9 +203,9 @@ In caso di errori nell’utilizzo dell’Istanza IT-Wallet, il Fornitore di Solu
 Autenticazione 
 """"""""""""""
 
-L'Autenticazione è un caso d’uso specifico della presentazione remota e consente all’Utente di accedere in modo sicuro ai servizi resi disponibili da Verificatori di Attestati Elettronici pubblici e privati, presentando il PID ed eventualmente un set di Attributi contenuti negli Attestati Elettronici di Attributi ottenuti. Questo garantisce all’Utente il pieno controllo sui propri dati e la possibilità di condividere anche i soli dati strettamente necessari alla verifica da parte del Verificatore di Attestati Elettronici garantendo a quest’ultimo l’affidabilità, l’autenticità e la validità dei dati presentati. 
+L'Autenticazione è un caso d’uso specifico della presentazione remota e consente all’Utente di accedere in modo sicuro ai servizi resi disponibili da Verificatori di Attestati Elettronici pubblici e privati, presentando il PID ed eventualmente un set di Attributi contenuti negli Attestati Elettronici di Attributi ottenuti. Questo garantisce all’Utente il pieno controllo sui propri dati e la possibilità di condividere anche i soli dati strettamente necessari alla verifica da parte del Verificatore di Attestati Elettronici. 
 
-Il processo di Autenticazione può avvenire in entrambe le modalità stesso dispositivo e cross-dispositivo descritte sopra. Per quanto riguarda i requisiti funzionali a supporto dell’Esperienza Utente, si DEVONO rispettare gli stessi requisiti previsti per la presentazione in remoto nelle due modalità (stesso dispositivo e cross-dispositivo). 
+Il processo di Autenticazione può avvenire in entrambe le modalità Stesso dispositivo e cross-device descritte sopra. Per quanto riguarda i requisiti funzionali a supporto dell’Esperienza Utente, si DEVONO rispettare gli stessi requisiti previsti per la presentazione in remoto nelle due modalità (stesso dispositivo e cross-dispositivo).
 
 Infatti, a livello di Esperienza Utente, il processo di Autenticazione si distingue da un generico flusso di presentazione principalmente per le modalità di avvio del processo, in questo caso reso possibile a partire da uno specifico pulsante, il Pulsante di Autenticazione. 
 

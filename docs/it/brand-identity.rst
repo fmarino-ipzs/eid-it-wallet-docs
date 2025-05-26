@@ -36,7 +36,7 @@ In particolare, tutti gli Attori Primari DEVONO utilizzare le Risorse Ufficiali 
 Logo 
 ^^^^
 
-Il Logo è l'elemento grafico ufficiale che permette l’immediata riconoscibilità del Sistema IT-Wallet e ne promuove l’affidabilità. 
+Il Logo è l'elemento grafico ufficiale che permette l’immediata riconoscibilità del Sistema IT-Wallet. 
 
 Di seguito i requisiti generali per il suo utilizzo, validi sia in riferimento a contesti di utilizzo fisici che digitali (e.g. siti web, applicazioni, documenti cartacei, materiali informativi stampati o video, etc.): 
 

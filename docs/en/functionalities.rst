@@ -501,7 +501,7 @@ To implement these best practices, the Wallet Provider SHOULD establish a hierar
 
 	2. **Level II | Requesting assistance** from the Wallet Provider: if Level I is insufficient, the Wallet Provider MUST give the User the possibility to open one or more assistance requests. These requests SHOULD be managed through the Wallet Instance or other Wallet Provider Touchpoints. The Wallet Provider MUST diagnose and resolve the issue if it falls under their responsibility.
 
-	3. **Level III | Forwarding the request to the responsible actor**: if Level II is insufficient, the Wallet Provider SHOULD ensure that the request is forwarded to the responsible actor (Electronic Attestations of Attributes Provider, PID Provider, or Authentic Source), who MUST ensure the availability of dedicated back-office channels to resolve the issue and communicate the outcome to the User.
+	3. **Level III | Forwarding the request to the responsible actor**: if Level II is insufficient, the Wallet Provider SHOULD ensure that the request is forwarded to the responsible actor (Electronic Attestations of Attributes Provider, PID Provider, or Authentic Source), who ensures the availability of dedicated back-office channels to resolve the issue and communicate the outcome to the User.
 
 Here are the functional and User Experience requirements that the Wallet Provider MUST guarantee via their Wallet Solution:
 

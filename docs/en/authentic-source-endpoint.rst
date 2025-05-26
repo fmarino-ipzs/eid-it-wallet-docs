@@ -12,8 +12,15 @@ e-Service PDND Authentic Source Catalogue
 
 Public Authentic Sources MUST provide the following e-service through PDND to provide the Credential Issuer with User's attributes required to the issuance of a Digital Credential.
 
-.. note::
-  A complete OpenAPI Specification is available :raw-html:`<a href="OAS3-PDND-AS.html" target="_blank">here</a>`.
+.. only:: html
+
+  .. note::
+    A complete OpenAPI Specification is available :raw-html:`<a href="OAS3-PDND-AS.html" target="_blank">here</a>`.
+
+.. only:: latex
+
+  .. note::
+    A complete OpenAPI Specification is available :ref:`appendix-oas-pdnd-as:Authentic Source PDND OpenAPI Specification`.
 
 Get Attribute Claims
 """"""""""""""""""""

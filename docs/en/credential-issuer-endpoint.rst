@@ -28,8 +28,15 @@ Credential Issuers MUST provide the following e-services through PDND to:
   - revoke Digital Credentials issued to a revoked Wallet Instance
   - provide statistics about issued Credentials
 
-.. note::
-  A complete OpenAPI Specification is available :raw-html:`<a href="OAS3-PDND-Issuer.html" target="_blank">here</a>`.
+.. only:: html
+
+  .. note::
+    A complete OpenAPI Specification is available :raw-html:`<a href="OAS3-PDND-Issuer.html" target="_blank">here</a>`.
+
+.. only:: latex
+
+  .. note::
+    A complete OpenAPI Specification is available :ref:`appendix-oas-pdnd-issuer:Credential Issuer PDND OpenAPI Specification`.
 
 Notify Available Credential
 """""""""""""""""""""""""""

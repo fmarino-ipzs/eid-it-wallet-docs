@@ -30,7 +30,7 @@ Identità Visiva
 
 Il Sistema IT-Wallet ha una propria Identità Visiva. I partecipanti dell’ecosistema DEVONO applicarla in modo che si distingua e allo stesso tempo dialoghi e coesista con l'Identità Visiva propria e delle proprie Soluzioni Tecniche.  
  
-In particolare, tutti gli Attori Primari POSSONO utilizzare le Risorse Ufficiali relative all’Identità Visiva del Sistema IT-Wallet. Il loro utilizzo DEVE avere come unico scopo quello di rappresentare la partecipazione al Sistema IT-Wallet e non di sostituire dell’Identità Visiva della propria Soluzione Tecnica. 
+In particolare, tutti gli Attori Primari DEVONO utilizzare le Risorse Ufficiali relative all’Identità Visiva del Sistema IT-Wallet. Il loro utilizzo ha lo scopo di rappresentare la partecipazione al Sistema IT-Wallet senza sostituire l’Identità Visiva della propria Soluzione Tecnica. 
 
  
 Logo 

@@ -173,7 +173,7 @@ La presentazione da remoto consente all'Utente di esibire il PID e/o un set di A
 Tale presentazione può avvenire in due diverse modalità, sulla base del tipo di dispositivo utilizzato per accedere al servizio di interesse: 
 
 - **Stesso dispositivo**: nel caso in cui l’Utente voglia accedere a un servizio digitale online utilizzando lo stesso dispositivo su cui ha installato l’Istanza IT-Wallet; 
-- **Cross-dispositivo**: nel caso in cui l'Utente voglia accedere a un servizio digitale utilizzando un dispositivo differente rispetto a quello in cui ha installato l’Istanza IT-Wallet. 
+- **Cross-device**: nel caso in cui l'Utente voglia accedere a un servizio digitale utilizzando un dispositivo differente rispetto a quello in cui ha installato l’Istanza IT-Wallet. 
 
 Di seguito i requisiti funzionali a supporto dell’Esperienza Utente relativi a entrambe le modalità che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet. 
 

@@ -35,7 +35,7 @@ Specifically, all Primary Actors MUST use the Official Resources related to the 
 Logo
 ^^^^
 
-The Logo is the official graphic element that ensures immediate recognition of the IT-Wallet System and promotes its reliability.
+The Logo is the official graphic element that ensures immediate recognition of the IT-Wallet System.
 
 The following requirements apply to its use in both physical and digital contexts (e.g., websites, apps, documents, printed materials, videos, etc.):
 

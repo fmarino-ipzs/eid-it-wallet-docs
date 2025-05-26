@@ -500,7 +500,7 @@ Per applicare queste buone pratiche, gli attori coinvolti DOVREBBERO attuare i s
 
 	2. **II Livello – Richiesta di assistenza al Fornitore di Soluzione IT-Wallet**: se il I livello non fosse sufficiente, il Fornitore di Soluzione IT-Wallet DEVE permettere all’Utente di aprire una o più richieste di assistenza.  Tali richieste DOVREBBERO essere gestite tramite l’Istanza IT-Wallet o altri Touchpoint del Fornitore di Soluzione IT-Wallet. Il Fornitore di Soluzione IT-Wallet DEVE effettuare una diagnosi e procedere alla risoluzione della problematica, se di sua competenza. 
 
-	3. **III Livello – Inoltro della richiesta all’attore responsabile della problematica**: se il II livello non fosse sufficiente, il Fornitore di Soluzione IT-Wallet DOVREBBE garantire che la richiesta sia inoltrata all’attore responsabile (Fornitore di Attestati Elettronici di Attributi, Fornitore di Dati di Identificazione Personale e Titolare di Fonte Autentica) che DEVE farsi carico della risoluzione della problematica e comunicare l’esito all’Utente. 
+	3. **III Livello – Inoltro della richiesta all’attore responsabile della problematica**: se il II livello non fosse sufficiente, il Fornitore di Soluzione IT-Wallet DOVREBBE garantire che la richiesta sia inoltrata all’attore responsabile (Fornitore di Attestati Elettronici di Attributi, Fornitore di Dati di Identificazione Personale e Titolare di Fonte Autentica) che si fa carico della risoluzione della problematica e comunicare l’esito all’Utente. 
 
 Di seguito i requisiti funzionali a supporto dell’Esperienza Utente relativi all’Assistenza che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet: 
 

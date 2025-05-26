@@ -28,7 +28,7 @@ Naming
 Visual Identity
 ---------------
 
-The IT-Wallet System has its own Visual Identity. All actors within the ecosystem MUST ensure that their Visual Identity and that of their Technical Solutions are distinct yet compatible and cohesive with the Visual Identity of IT-Wallet System. 
+The IT-Wallet System has its own Visual Identity. Ecosystem participants MUST apply it in such a way that it stands out while at the same time dialogues and coexists with their own Visual Identity and that of their own Technical Solutions.
 
 Specifically, all Primary Actors MAY use the Official Resources related to the Visual Identity of the IT-Wallet System. Their use MUST be exclusively aimed at representing the participation in the IT-Wallet System and not at replacing the Visual Identity of their own Technical Solutions.
 

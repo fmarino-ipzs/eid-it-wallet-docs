@@ -209,9 +209,9 @@ The Authentication process can be carried out using both the same-device and cro
 
 From a User Experience perspective, the Authentication process differs from the Presentation process only in how it is initiated, which is through a dedicated :ref:`brand-identity:Authentication Button`.
 
-To ensure a consistent and seamless Authentication process across all Relying Parties, each Relying Party MUST follow the visual and User Experience requirements outlined below and SHOULD use the open-source assets available in the Official Resources.
+To ensure a consistent and seamless Authentication process across all Relying Parties, each Relying Party MUST follow the visual and User Experience requirements outlined below, together with compliance with [REF_ACCESSIBILITY] and, in the case of public entities, with [GL_DESIGN]
 
-Relying Parties that choose not to adopt these resources MAY implement custom Technical Solutions supporting the Authentication process. However, these MUST comply with the requirements specified below, adhere to [REF_ACCESSIBILITY], and, for public entities, follow the [GL_DESIGN].
+Relying Parties SHOULD use the open source Official Resources. Id a Relying Party does not intend to use such open source resources, MAY independently develop the Technical Solutions enabling the Authentication flow.
 
 Relying Parties MUST implement and provide the following pages as part of the Authentication process:
 

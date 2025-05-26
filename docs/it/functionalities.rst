@@ -209,9 +209,9 @@ Il processo di Autenticazione può avvenire in entrambe le modalità Stesso disp
 
 Infatti, a livello di Esperienza Utente, il processo di Autenticazione si distingue da un generico flusso di presentazione principalmente per le modalità di avvio del processo, in questo caso reso possibile a partire da uno specifico pulsante, il Pulsante di Autenticazione. 
 
-Al fine di garantire un processo di Autenticazione adeguato e coerente tra tutti i Verificatori di Attestati Elettronici, ciascun Verificatore di Attestati Elettronici DEVE rispettare i requisiti relativi all’aspetto grafico e all’Esperienza Utente descritti di seguito e DOVREBBE utilizzare le Risorse Ufficiali open source. 
+Al fine di garantire un processo di Autenticazione adeguato e coerente tra tutti i Verificatori di Attestati Elettronici, ciascun Verificatore di Attestati Elettronici DEVE rispettare i requisiti relativi all’aspetto grafico e all’Esperienza Utente descritti di seguito, unitamente al rispetto di [RIF_ACCESSIBILITÀ] e, nel caso di enti pubblici, delle [LG_DESIGN].
 
-Qualora i Verificatori di Attestati Elettronici non intendano utilizzare tali risorse open source, POSSONO sviluppare in autonomia le Soluzioni Tecniche abilitanti il flusso di Autenticazione ma DEVONO rispettare i requisiti sotto dettagliati, unitamente al rispetto di [RIF_ACCESSIBILITÀ] e, nel caso di enti pubblici, delle [LG_DESIGN].   
+I Verificatori di Attestati Elettronici DOVREBBERO utilizzare le Risorse Ufficiali open source. Qualora non intendano utilizzare tali risorse open source, i Verificatori di Attestati Elettronici POSSONO sviluppare in autonomia le Soluzioni Tecniche abilitanti il flusso di Autenticazione.
  
 I Verificatori di Attestati Elettronici, in ogni caso, DEVONO abilitare il processo di Autenticazione rendendo disponibili le seguenti pagine: 
 

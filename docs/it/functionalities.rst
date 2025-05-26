@@ -236,9 +236,10 @@ In alternativa, il Verificatore di Attestati Elettronici PUÒ mantenere la propr
 
 In ogni caso: 
 
-- la pagina DEVE presentare tutte le modalità di Autenticazione attraverso l’identità digitale tra cui la modalità di Autenticazione del Sistema IT-Wallet, quindi tramite il Pulsante di Autenticazione; 
-- la pagina PUÒ presentare anche modalità di Autenticazione alternative, se disponibili; 
-- la pagina DOVREBBE garantire informazioni minime a supporto, per permettere all’Utente di compiere una scelta consapevole e informata. 
+In ogni caso, nella pagina, il Verificatore di Attestati Elettronici:
+- DEVE garantire la presenza di tutte le modalità di Autenticazione attraverso l’identità digitale tra cui la modalità di Autenticazione del Sistema IT-Wallet, quindi tramite il Pulsante di Autenticazione; 
+- PUÒ presentare anche modalità di Autenticazione alternative, se disponibili; 
+- DOVREBBE garantire informazioni minime a supporto, per permettere all’Utente di compiere una scelta consapevole e informata. 
 
 Nel caso l’Utente stia navigando la pagina del Verificatore di Attestati Elettronici da un Touchpoint diverso da quello su cui ha attivato l’Istanza IT-Wallet (modalità cross-device), la scelta di Autenticazione tramite il Sistema IT-Wallet DEVE condurre l’Utente alla QR code page. 
 

@@ -76,7 +76,7 @@ A seconda delle specifiche esigenze dell’Utente, della tipologia di Attestato 
 
 - **dal Catalogo dell’Istanza IT-Wallet**: l’Utente esplora l’elenco degli Attestati Elettronici di Attributi messi a disposizione dalla Soluzione IT-Wallet, seleziona quello di suo interesse e avvia la procedura di richiesta che si conclude con l’ottenimento dell’Attestato Elettronico di Attributi nell’Istanza IT-Wallet; 
 
-- **da un Touchpoint del Titolare di Fonte Autentica** (o del Fornitore di Attestati Elettronici di Attributi qualora coincida con il Titolare di Fonte Autentica): l’Utente interagisce col servizio digitale del Titolare di Fonte Autentica che gli permette di ottenere nella sua Istanza IT-Wallet uno specifico Attestato Elettronico di Attributi tramite un Pulsante di Ingaggio.  
+- **da un Touchpoint del Titolare di Fonte Autentica** (o del Fornitore di Attestati Elettronici di Attributi qualora coincida con il Titolare di Fonte Autentica): l’Utente interagisce col servizio digitale del Titolare di Fonte Autentica che gli permette di ottenere nella sua Istanza IT-Wallet uno specifico Attestato Elettronico di Attributi tramite un Pulsante di Ingaggio (vedi :ref:`Credential Offer Endpoint <credential-issuance-endpoint.rst>`).  
 
 Nonostante le modalità di avvio della richiesta siano diverse, i flussi di ottenimento condividono una struttura e un processo simili. Di seguito, sono illustrati i requisiti dell’Esperienza Utente del flusso di ottenimento di un Attestato Elettronico di Attributi dal Catalogo che il Fornitore di Soluzione IT-Wallet DEVE garantire attraverso la propria Soluzione IT-Wallet: 
 
@@ -242,7 +242,7 @@ In ogni caso:
 
 Nel caso l’Utente stia navigando la pagina del Verificatore di Attestati Elettronici da un Touchpoint diverso da quello su cui ha attivato l’Istanza IT-Wallet (modalità cross-device), la scelta di Autenticazione tramite il Sistema IT-Wallet DEVE condurre l’Utente alla QR code page. 
 
-Nel caso in cui invece l’Utente stia navigando la pagina del Verificatore di Attestati Elettronici dallo stesso Touchpoint su cui ha attivato l’Istanza IT-Wallet (modalità stesso dispositivo) tale pagina DEVE condurre l’Utente all’apertura della propria Istanza IT-Wallet. 
+Nel caso in cui invece l’Utente stia navigando la pagina del Verificatore di Attestati Elettronici dallo stesso Touchpoint su cui ha attivato l’Istanza IT-Wallet (modalità same-device) tale pagina DEVE condurre l’Utente all’apertura della propria Istanza IT-Wallet. 
 
 **QR code page (*solo per modalità cross-dispositivo*)** 
 

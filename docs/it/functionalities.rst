@@ -240,7 +240,7 @@ In ogni caso:
 - la pagina PUÒ presentare anche modalità di Autenticazione alternative, se disponibili; 
 - la pagina DOVREBBE garantire informazioni minime a supporto, per permettere all’Utente di compiere una scelta consapevole e informata. 
 
-Nel caso l’Utente stia navigando la pagina del Verificatore di Attestati Elettronici da un Touchpoint diverso da quello su cui ha attivato l’Istanza IT-Wallet (modalità cross-dispositivo), la scelta di Autenticazione tramite il Sistema IT-Wallet DEVE condurre l’Utente alla QR code page. 
+Nel caso l’Utente stia navigando la pagina del Verificatore di Attestati Elettronici da un Touchpoint diverso da quello su cui ha attivato l’Istanza IT-Wallet (modalità cross-device), la scelta di Autenticazione tramite il Sistema IT-Wallet DEVE condurre l’Utente alla QR code page. 
 
 Nel caso in cui invece l’Utente stia navigando la pagina del Verificatore di Attestati Elettronici dallo stesso Touchpoint su cui ha attivato l’Istanza IT-Wallet (modalità stesso dispositivo) tale pagina DEVE condurre l’Utente all’apertura della propria Istanza IT-Wallet. 
 

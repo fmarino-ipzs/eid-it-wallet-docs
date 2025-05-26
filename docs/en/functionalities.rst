@@ -31,7 +31,7 @@ Activation of the Wallet Instance
 
 Activation enables the User to access the Wallet Solution's functionalities for securely obtaining, presenting, and managing their Electronic Attestations. The activation process involves User Authentication with the Wallet Instance using their digital identity, which enables the generation of the PID.
 
-Below are the functional and the User Experience requirements that the Wallet Provider MUST guarantee via their Wallet Solution:
+Below are the User Experience requirements that the Wallet Provider MUST guarantee via their Wallet Solution:
 
 - The User downloads the Wallet Solution onto their device to generate their Wallet Instance;
 - The User sets an unlock PIN for their Wallet Instance if one has not been previously set in the app. In addition to the PIN, the User can decide to use their own unlock mechanism used within the device and managed at the operating system level (e.g., biometric authentication) as an alternative to the PIN. The User uses the unlock method whenever an authorization is required to ensure security and protect their information;

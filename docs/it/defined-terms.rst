@@ -38,7 +38,7 @@ Di seguito le descrizioni di acronimi e definizioni, correlati al presente docum
       Conforme con ARF 1.10.
 
     **Autenticazione**
-      Processo elettronico che consente di confermare l’Identificazione di una persona fisica o giuridica, oppure l’origine/integrità dei dati.
+      Processo elettronico che consente di confermare l'Identificazione di una persona fisica o giuridica, oppure l'origine/integrità dei dati.
       Conforme con ARF 1.10.
 
     **Fonte Autentica**
@@ -176,7 +176,7 @@ Di seguito le descrizioni di acronimi e definizioni, correlati al presente docum
 
     **Attestato Elettronico di Interesse Pubblico**
     **Credenziale Elettronica di Interesse Pubblico**
-      Attestato Elettronico di Attributi che contiene Attributi destinati ad attestare il rilascio, da parte dello Stato o di altre pubbliche amministrazioni, di autorizzazioni, certificazioni, abilitazioni, documenti di identità e riconoscimento, ricevute di introiti, ovvero ad assumere un valore fiduciario e di tutela della fede pubblica in seguito alla loro emissione o alle scritturazioni su di essi effettuate e, in generale, quando sono considerati carte valori ai sensi dell’articolo 2, comma 10-bis, della legge 13 luglio 1966, n. 559.
+      Attestato Elettronico di Attributi che contiene Attributi destinati ad attestare il rilascio, da parte dello Stato o di altre pubbliche amministrazioni, di autorizzazioni, certificazioni, abilitazioni, documenti di identità e riconoscimento, ricevute di introiti, ovvero ad assumere un valore fiduciario e di tutela della fede pubblica in seguito alla loro emissione o alle scritturazioni su di essi effettuate e, in generale, quando sono considerati carte valori ai sensi dell'articolo 2, comma 10-bis, della legge 13 luglio 1966, n. 559.
       Non presente in ARF 1.10; specifico di IT-Wallet.
       
     **Attestato Elettronico di Dati di Identificazione Personale**  

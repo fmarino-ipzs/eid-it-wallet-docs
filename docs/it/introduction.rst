@@ -16,7 +16,5 @@ Normative Language and Conventions
 
 [Lorem Ipsum]
 
-
-.. include:: design.rst
-.. include:: brand-identity.rst  
+.. include:: how-to-read-spec.rst
 

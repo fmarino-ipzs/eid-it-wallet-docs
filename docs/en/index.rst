@@ -15,6 +15,7 @@ This document provides the technical architecture, implementation framework and 
   :numbered:
 
   introduction.rst
+  design.rst
   architecture-overview.rst
   trust.rst
   entities.rst

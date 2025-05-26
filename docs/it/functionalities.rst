@@ -397,7 +397,7 @@ Il Sistema IT-Wallet prevede l’interazione di una molteplicità di servizi ero
 
 Una comunicazione efficace in caso di errore determina un vantaggio anche per gli attori coinvolti, in quanto concorre alla riduzione delle richieste di assistenza e, quindi, alla minimizzazione dell’impatto sui sistemi.  
 
-Di seguito vengono presentati i requisiti e le principali buone pratiche di gestione dell’errore, riferite alle modalità di interazione tra l’Utente e la propria Istanza IT-Wallet. Tutti gli Attori Primari coinvolti nell'erogazione del servizio DEVONO inviare all’Utente, tramite l’Istanza IT-Wallet, input puntuali e granulari, ciascuno per i propri ambiti di competenza. Ciascun attore coinvolto DEVE, quindi, definire una lista di errori così da garantire al Fornitore di Soluzione IT-Wallet di approntare un modello efficace per la loro gestione all’interno della Soluzione IT-Wallet basato sulle seguenti dimensioni e variabili: 
+Di seguito vengono presentati i requisiti e le principali buone pratiche di gestione dell’errore, riferite alle modalità di interazione tra l’Utente e la propria Istanza IT-Wallet. Ciascun Attore Primario deve implementare una corretta gestione degli errori, in conformità alle attuali regole tecniche, al fine di comunicarli, direttamente o indirettamente, all’Utente e tramite l’Istanza IT-Wallet. Gli errori possono essere declinati, sulla base della loro natura, come segue: 
 
 - **la fase dell'Esperienza Utente** in cui l’errore può verificarsi: attivazione o disattivazione dell’Istanza IT-Wallet, ottenimento, presentazione o gestione degli Attestati Elettronici; 
 - **la tipologia di errore**: di sistema, di comunicazione tra attori, etc.; 

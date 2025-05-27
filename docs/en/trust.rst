@@ -802,120 +802,189 @@ When a participant self-issues an X.509 Certificate, it adheres to the following
      - ``DNS=example.net``
      - ``DNS=*.example.org``
 
-Below a non-normative example of an X.509 Certificate Chain without intermediaries and in plain text, to facilitate the reading.
+Below a non-normative example in plain text (OpenSSL format) of an X.509 Certificate Chain with an intermediary, starting from the leaf certificate.
 
 
 .. code-block:: text
 
     Certificate:
-    Data:
-        Version: 3 (0x2)
-        Serial Number: 1 (0x1)
-    Signature Algorithm: sha256WithRSAEncryption
-        Issuer: CN=trust-anchor.example.com, O=Example Trust Anchor, C=IT
-        Validity
-            Not Before: Sep 1 00:00:00 2023 GMT
-            Not After : Sep 1 00:00:00 2033 GMT
-        Subject: CN=trust-anchor.example.com, O=Example Trust Anchor, C=IT
-        Subject Public Key Info:
-            Public Key Algorithm: rsaEncryption
-                Public-Key: (4096 bit)
-                Modulus:
-                    00:af:82:3b:...
-                Exponent: 65537 (0x10001)
-        X509v3 extensions:
-            X509v3 Basic Constraints:
-                CA:TRUE
-            X509v3 Key Usage:
-                Certificate Sign, CRL Sign
-            X509v3 Subject Key Identifier:
-                12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef
-            X509v3 Authority Key Identifier:
-                keyid:12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef
-            X509v3 CRL Distribution Points:
-                Full Name:
-                  URI:https://trust-anchors.example.com/crl/ca.crl
-
-    Signature Algorithm: sha256WithRSAEncryption
-         5c:4f:3b:...
-
-
+        Data:
+            Version: 3 (0x2)
+            Serial Number: 608272730246993755169238192525892220352984983786 (0x6a8be47f69567ad86d9f286a009f8ba9e71f28ea)
+        Signature Algorithm: sha256
+            Issuer: commonName=https://intermediate.example.net, organizationName=Example INT, countryName=IT
+            Validity
+                Not Before: May 26 15:30:02 2025 GMT
+                Not After : May 27 15:30:02 2026 GMT
+            Subject: commonName=CN=leaf.example.com, O=Example Leaf, C=IT, organizationName=Example Leaf, countryName=IT
+            Subject Public Key Info:
+                Public Key Algorithm: (unknown)
+            X509v3 extensions:
+                X509v3 Basic Constraints:
+                    CA:TRUE, pathlen:0
+                X509v3 Subject Alternative Name:
+                    DNS:leaf.example.org
+                    URI:leaf.example.org
+                X509v3 Key Usage:
+                    Digital Signature, Key Encipherment, Certificate Sign, CRL Sign
+                X509v3 CRL Distribution Points:
+                    Full Name:
+                      URI:https://leaf.example.com/crl/leaf.example.com.crl
+                X509v3 Name Constraints:
+                    Permitted:
+                      URI.1=https://leaf.example.com
+                      DNS.2=leaf.example.com
+                    Excluded:
+                      DNS.1=localhost
+                      DNS.2=localhost.localdomain
+                      DNS.3=127.0.0.1
+                      DNS.4=example.com
+                      DNS.5=example.org
+                      DNS.6=example.net
+    
+        Signature Algorithm: sha256
+         30:46:02:21:00:e8:99:36:e9:4d:3c:35:57:61:37:87
+         9a:45:bb:e6:68:13:b7:99:94:9c:82:91:69:33:a5:1e
+         10:8a:58:03:e0:02:21:00:8d:7b:51:28:b5:85:5d:15
+         78:76:18:e0:22:bb:f1:dc:2e:16:e4:f0:c2:17:ee:58
+         94:9c:2e:a5:51:e7:5c:6b
+    
+    -----BEGIN CERTIFICATE-----
+    MIIC6zCCApCgAwIBAgIUaovkf2lWethtnyhqAJ+LqecfKOowCgYIKoZIzj0EAwIw
+    TjEpMCcGA1UEAwwgaHR0cHM6Ly9pbnRlcm1lZGlhdGUuZXhhbXBsZS5uZXQxFDAS
+    BgNVBAoMC0V4YW1wbGUgSU5UMQswCQYDVQQGEwJJVDAeFw0yNTA1MjYxNTMwMDJa
+    Fw0yNjA1MjcxNTMwMDJaMFgxMjAwBgNVBAMMKUNOPWxlYWYuZXhhbXBsZS5jb20s
+    IE89RXhhbXBsZSBMZWFmLCBDPUlUMRUwEwYDVQQKDAxFeGFtcGxlIExlYWYxCzAJ
+    BgNVBAYTAklUMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9FVR+VHqHu8EGgm5
+    RFiQDyLMB9UIZ24Wt7gmJDzMwu3vKMlbkTLNk3nRd/jQpv77wW9Djp5fkVmzAkMD
+    KJuppqOCAUAwggE8MBIGA1UdEwEB/wQIMAYBAf8CAQAwLQYDVR0RBCYwJIIQbGVh
+    Zi5leGFtcGxlLm9yZ4YQbGVhZi5leGFtcGxlLm9yZzAOBgNVHQ8BAf8EBAMCAaYw
+    QgYDVR0fBDswOTA3oDWgM4YxaHR0cHM6Ly9sZWFmLmV4YW1wbGUuY29tL2NybC9s
+    ZWFmLmV4YW1wbGUuY29tLmNybDCBogYDVR0eAQH/BIGXMIGUoDAwGoYYaHR0cHM6
+    Ly9sZWFmLmV4YW1wbGUuY29tMBKCEGxlYWYuZXhhbXBsZS5jb22hYDALgglsb2Nh
+    bGhvc3QwF4IVbG9jYWxob3N0LmxvY2FsZG9tYWluMAuCCTEyNy4wLjAuMTANggtl
+    eGFtcGxlLmNvbTANggtleGFtcGxlLm9yZzANggtleGFtcGxlLm5ldDAKBggqhkjO
+    PQQDAgNJADBGAiEA6Jk26U08NVdhN4eaRbvmaBO3mZScgpFpM6UeEIpYA+ACIQCN
+    e1EotYVdFXh2GOAiu/HcLhbk8MIX7liUnC6lUedcaw==
+    -----END CERTIFICATE-----
+    
     Certificate:
-    Data:
-        Version: 3 (0x2)
-        Serial Number: 1234567890 (0x499602d2)
-    Signature Algorithm: sha256WithRSAEncryption
-        Issuer: CN=trust-anchor.example.com, O=Example Trust Anchor, C=IT
-        Validity
-            Not Before: Sep 1 00:00:00 2023 GMT
-            Not After : Sep 1 00:00:00 2024 GMT
-        Subject: CN=leaf.example.org, O=Leaf, C=IT
-        Subject Public Key Info:
-            Public Key Algorithm: rsaEncryption
-                Public-Key: (2048 bit)
-                Modulus:
-                    00:af:82:3b:...
-                Exponent: 65537 (0x10001)
-        X509v3 extensions:
-            X509v3 Basic Constraints:
-                CA:TRUE, pathlen:1
-            X509v3 Key Usage:
-                Digital Signature, Key Encipherment
-            X509v3 Subject Alternative Name:
-                URI:https://leaf.example.com
-            X509v3 Name Constraints:
-                Permitted:
-                  URI.1=https://leaf.example.com
-                  DNS.1=leaf.example.com
-                Excluded:
-                  DNS=localhost
-                  DNS=localhost.localdomain
-                  DNS=127.0.0.1
-                  DNS=example.com
-                  DNS=example.org
-                  DNS=example.net
-                  DNS=*.example.org
-            X509v3 CRL Distribution Points:
-                Full Name:
-                  URI:https://trust-ancor.example.com/crl/leaf.example.org.crl
-
-    Signature Algorithm: sha256WithRSAEncryption
-         5c:4f:3b:...
-
-
+        Data:
+            Version: 3 (0x2)
+            Serial Number: 166609465481942199701516106011740225358723958170 (0x1d2f06ddab3a673943e507ae5988e1e4a406459a)
+        Signature Algorithm: sha256
+            Issuer: commonName=CN=ca.example.com, O=Example CA, C=IT, organizationName=Example CA, countryName=IT
+            Validity
+                Not Before: May 26 15:30:02 2025 GMT
+                Not After : May 27 15:30:02 2026 GMT
+            Subject: commonName=https://intermediate.example.net, organizationName=Example INT, countryName=IT
+            Subject Public Key Info:
+                Public Key Algorithm: (unknown)
+            X509v3 extensions:
+                X509v3 Basic Constraints:
+                    CA:TRUE, pathlen:1
+                X509v3 Key Usage:
+                    Digital Signature, Key Encipherment, Certificate Sign, CRL Sign
+                X509v3 CRL Distribution Points:
+                    Full Name:
+                      URI:https://intermediate.example.net/crl/intermediate.example.net.crl
+                X509v3 Name Constraints:
+                    Permitted:
+                      URI.1=https://intermediate.example.net
+                      DNS.2=intermediate.example.net
+                    Excluded:
+                      DNS.1=localhost
+                      DNS.2=localhost.localdomain
+                      DNS.3=127.0.0.1
+                      DNS.4=example.com
+                      DNS.5=example.org
+                      DNS.6=example.net
+    
+        Signature Algorithm: sha256
+         30:45:02:21:00:bf:68:99:e4:79:12:6d:76:91:f2:c3
+         d3:b6:ca:71:5a:4b:2a:4e:18:0a:dd:ea:45:b0:ea:49
+         62:5b:d4:c8:4a:02:20:23:44:86:7b:23:4f:b6:be:b4
+         7f:cd:95:83:77:92:db:f5:a1:56:82:08:1a:7d:d0:02
+         67:b6:af:74:91:ef:1f
+    
+    -----BEGIN CERTIFICATE-----
+    MIIC1TCCAnugAwIBAgIUHS8G3as6ZzlD5QeuWYjh5KQGRZowCgYIKoZIzj0EAwIw
+    UjEuMCwGA1UEAwwlQ049Y2EuZXhhbXBsZS5jb20sIE89RXhhbXBsZSBDQSwgQz1J
+    VDETMBEGA1UECgwKRXhhbXBsZSBDQTELMAkGA1UEBhMCSVQwHhcNMjUwNTI2MTUz
+    MDAyWhcNMjYwNTI3MTUzMDAyWjBOMSkwJwYDVQQDDCBodHRwczovL2ludGVybWVk
+    aWF0ZS5leGFtcGxlLm5ldDEUMBIGA1UECgwLRXhhbXBsZSBJTlQxCzAJBgNVBAYT
+    AklUMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwEU7hPwB7P6WE2VuBAi0zwhn
+    fRmKvysWr4IILTqA7A4HHqoSGK1JEluOoDCpKL3MdM16X75tGI9kwYIJgjcw5KOC
+    ATEwggEtMBIGA1UdEwEB/wQIMAYBAf8CAQEwDgYDVR0PAQH/BAQDAgGmMFIGA1Ud
+    HwRLMEkwR6BFoEOGQWh0dHBzOi8vaW50ZXJtZWRpYXRlLmV4YW1wbGUubmV0L2Ny
+    bC9pbnRlcm1lZGlhdGUuZXhhbXBsZS5uZXQuY3JsMIGyBgNVHR4BAf8EgacwgaSg
+    QDAihiBodHRwczovL2ludGVybWVkaWF0ZS5leGFtcGxlLm5ldDAaghhpbnRlcm1l
+    ZGlhdGUuZXhhbXBsZS5uZXShYDALgglsb2NhbGhvc3QwF4IVbG9jYWxob3N0Lmxv
+    Y2FsZG9tYWluMAuCCTEyNy4wLjAuMTANggtleGFtcGxlLmNvbTANggtleGFtcGxl
+    Lm9yZzANggtleGFtcGxlLm5ldDAKBggqhkjOPQQDAgNIADBFAiEAv2iZ5HkSbXaR
+    8sPTtspxWksqThgK3epFsOpJYlvUyEoCICNEhnsjT7a+tH/NlYN3ktv1oVaCCBp9
+    0AJntq90ke8f
+    -----END CERTIFICATE-----
+    
     Certificate:
-    Data:
-        Version: 3 (0x2)
-        Serial Number: 987654321 (0x3ade68b1)
-    Signature Algorithm: sha256WithRSAEncryption
-        Issuer: CN=https://leaf.example.org, O=Leaf, C=IT
-        Validity
-            Not Before: Sep 1 00:00:00 2023 GMT
-            Not After : Sep 1 00:00:00 2024 GMT
-        Subject: CN=https://leaf.example.org, O=Leaf, C=IT
-        Subject Public Key Info:
-            Public Key Algorithm: rsaEncryption
-                Public-Key: (2048 bit)
-                Modulus:
-                    00:af:82:3b:...
-                Exponent: 65537 (0x10001)
-        X509v3 extensions:
-            X509v3 Basic Constraints:
-                CA:FALSE
-            X509v3 Key Usage:
-                Digital Signature, Key Encipherment
-            X509v3 Subject Alternative Name:
-                URI:https://leaf.example.org
-            X509v3 Name Constraints:
-                Permitted:
-                  URI.1=https://leaf.example.com
-                  DNS.1=leaf.example.com
-            X509v3 CRL Distribution Points:
-                Full Name:
-                  URI:https://leaf.example.org/crl/self.crl
+        Data:
+            Version: 3 (0x2)
+            Serial Number: 342257486529888684799109295840076139464867004184 (0x3bf35b42db365d2741af24d73f5fbfda0c493f18)
+        Signature Algorithm: sha256
+            Issuer: commonName=CN=ca.example.com, O=Example CA, C=IT, organizationName=Example CA, countryName=IT
+            Validity
+                Not Before: May 26 15:30:02 2025 GMT
+                Not After : May 27 15:30:02 2026 GMT
+            Subject: commonName=CN=ca.example.com, O=Example CA, C=IT, organizationName=Example CA, countryName=IT
+            Subject Public Key Info:
+                Public Key Algorithm: (unknown)
+            X509v3 extensions:
+                X509v3 Basic Constraints:
+                    CA:TRUE, pathlen:2
+                X509v3 Subject Alternative Name:
+                    DNS:ca.example.com
+                X509v3 Key Usage:
+                    Digital Signature, Key Encipherment, Certificate Sign, CRL Sign
+                X509v3 CRL Distribution Points:
+                    Full Name:
+                      URI:https://ca.example.com/crl/ca.example.com.crl
+                X509v3 Name Constraints:
+                    Permitted:
+                      URI.1=https://ca.example.com
+                      DNS.2=ca.example.com
+                    Excluded:
+                      DNS.1=localhost
+                      DNS.2=localhost.localdomain
+                      DNS.3=127.0.0.1
+                      DNS.4=example.com
+                      DNS.5=example.org
+                      DNS.6=example.net
+    
+        Signature Algorithm: sha256
+         30:44:02:20:13:09:99:fa:30:ea:5a:97:9f:89:ff:dc
+         4d:5d:a0:15:70:3d:5f:6c:77:14:b9:a5:2a:18:34:cf
+         31:35:96:da:02:20:62:8e:85:1c:d6:a0:04:e5:44:f2
+         27:56:a7:d2:ca:3a:2e:dd:53:d3:39:1e:d7:22:45:ea
+         b0:ba:cd:9d:a1:18
+    
+    -----BEGIN CERTIFICATE-----
+    MIICyzCCAnKgAwIBAgIUO/NbQts2XSdBryTXP1+/2gxJPxgwCgYIKoZIzj0EAwIw
+    UjEuMCwGA1UEAwwlQ049Y2EuZXhhbXBsZS5jb20sIE89RXhhbXBsZSBDQSwgQz1J
+    VDETMBEGA1UECgwKRXhhbXBsZSBDQTELMAkGA1UEBhMCSVQwHhcNMjUwNTI2MTUz
+    MDAyWhcNMjYwNTI3MTUzMDAyWjBSMS4wLAYDVQQDDCVDTj1jYS5leGFtcGxlLmNv
+    bSwgTz1FeGFtcGxlIENBLCBDPUlUMRMwEQYDVQQKDApFeGFtcGxlIENBMQswCQYD
+    VQQGEwJJVDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABAZR6TY0PDNDSug886Bg
+    WuB5dj7EA1+ovLUA/lc5pvN2xKtoY0+7XkH6FFtZMoBXdsxFf6RM89XDM9mufLNF
+    bCijggEkMIIBIDASBgNVHRMBAf8ECDAGAQH/AgECMBkGA1UdEQQSMBCCDmNhLmV4
+    YW1wbGUuY29tMA4GA1UdDwEB/wQEAwIBpjA+BgNVHR8ENzA1MDOgMaAvhi1odHRw
+    czovL2NhLmV4YW1wbGUuY29tL2NybC9jYS5leGFtcGxlLmNvbS5jcmwwgZ4GA1Ud
+    HgEB/wSBkzCBkKAsMBiGFmh0dHBzOi8vY2EuZXhhbXBsZS5jb20wEIIOY2EuZXhh
+    bXBsZS5jb22hYDALgglsb2NhbGhvc3QwF4IVbG9jYWxob3N0LmxvY2FsZG9tYWlu
+    MAuCCTEyNy4wLjAuMTANggtleGFtcGxlLmNvbTANggtleGFtcGxlLm9yZzANggtl
+    eGFtcGxlLm5ldDAKBggqhkjOPQQDAgNHADBEAiATCZn6MOpal5+J/9xNXaAVcD1f
+    bHcUuaUqGDTPMTWW2gIgYo6FHNagBOVE8idWp9LKOi7dU9M5HtciReqwus2doRg=
+    -----END CERTIFICATE-----
 
-    Signature Algorithm: sha256WithRSAEncryption
-         7d:6e:5f:...
 
 
 Federation participants can ensure that their certificates are consistent, enabling interoperability and security across the federation. This approach, enabling X.509 certificate issuance delegation, introduces innovative practices for certificate management using the underlying Trust Relationships established within the OpenID Federation.

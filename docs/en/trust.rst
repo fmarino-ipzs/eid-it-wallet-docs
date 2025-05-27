@@ -810,7 +810,7 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
     Certificate:
         Data:
             Version: 3 (0x2)
-            Serial Number: 608272730246993755169238192525892220352984983786 (0x6a8be47f69567ad86d9f286a009f8ba9e71f28ea)
+            Serial Number: 397755750054563149085811195816364992003765111158 (0x45abfc14fd94cf199958cb7902c26e649fe70976)
         Signature Algorithm: sha256
             Issuer: commonName=https://intermediate.example.net, organizationName=Example INT, countryName=IT
             Validity
@@ -818,7 +818,11 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                 Not After : May 27 15:30:02 2026 GMT
             Subject: commonName=CN=leaf.example.com, O=Example Leaf, C=IT, organizationName=Example Leaf, countryName=IT
             Subject Public Key Info:
-                Public Key Algorithm: (unknown)
+                Public Key Algorithm: id-ecPublicKey (EC)
+                    Public-Key: (256 bit)
+                    Curve: secp256r1
+                    X: 57001993775601218875763511862023462520415739753614377133024681491403286198246
+                    Y: 97976491537203151608498706457248143514060017039214813111267294479310061119000
             X509v3 extensions:
                 X509v3 Basic Constraints:
                     CA:TRUE, pathlen:0
@@ -843,35 +847,35 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                       DNS.6=example.net
     
         Signature Algorithm: sha256
-         30:46:02:21:00:e8:99:36:e9:4d:3c:35:57:61:37:87
-         9a:45:bb:e6:68:13:b7:99:94:9c:82:91:69:33:a5:1e
-         10:8a:58:03:e0:02:21:00:8d:7b:51:28:b5:85:5d:15
-         78:76:18:e0:22:bb:f1:dc:2e:16:e4:f0:c2:17:ee:58
-         94:9c:2e:a5:51:e7:5c:6b
+         30:46:02:21:00:b9:b6:b3:75:f1:6d:1f:a7:a7:30:c9
+         bc:28:be:d6:1d:2a:71:af:3b:82:5a:e1:90:53:7a:c3
+         ec:34:63:57:30:02:21:00:f6:f7:4b:9f:c8:08:36:fc
+         a4:84:16:32:48:ee:59:ce:e1:54:a9:2e:65:5b:0e:26
+         36:f0:b2:6d:28:96:09:37
     
     -----BEGIN CERTIFICATE-----
-    MIIC6zCCApCgAwIBAgIUaovkf2lWethtnyhqAJ+LqecfKOowCgYIKoZIzj0EAwIw
+    MIIC6zCCApCgAwIBAgIURav8FP2UzxmZWMt5AsJuZJ/nCXYwCgYIKoZIzj0EAwIw
     TjEpMCcGA1UEAwwgaHR0cHM6Ly9pbnRlcm1lZGlhdGUuZXhhbXBsZS5uZXQxFDAS
     BgNVBAoMC0V4YW1wbGUgSU5UMQswCQYDVQQGEwJJVDAeFw0yNTA1MjYxNTMwMDJa
     Fw0yNjA1MjcxNTMwMDJaMFgxMjAwBgNVBAMMKUNOPWxlYWYuZXhhbXBsZS5jb20s
     IE89RXhhbXBsZSBMZWFmLCBDPUlUMRUwEwYDVQQKDAxFeGFtcGxlIExlYWYxCzAJ
-    BgNVBAYTAklUMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9FVR+VHqHu8EGgm5
-    RFiQDyLMB9UIZ24Wt7gmJDzMwu3vKMlbkTLNk3nRd/jQpv77wW9Djp5fkVmzAkMD
-    KJuppqOCAUAwggE8MBIGA1UdEwEB/wQIMAYBAf8CAQAwLQYDVR0RBCYwJIIQbGVh
+    BgNVBAYTAklUMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfgX8MyOZiOpZL4UM
+    hv7QCNWPgCCf64bJ6IDsUTXbN+bYnLqiU1/G8w+ZNkendoTGQ44HVX6XFR/dZbY2
+    Z5EmGKOCAUAwggE8MBIGA1UdEwEB/wQIMAYBAf8CAQAwLQYDVR0RBCYwJIIQbGVh
     Zi5leGFtcGxlLm9yZ4YQbGVhZi5leGFtcGxlLm9yZzAOBgNVHQ8BAf8EBAMCAaYw
     QgYDVR0fBDswOTA3oDWgM4YxaHR0cHM6Ly9sZWFmLmV4YW1wbGUuY29tL2NybC9s
     ZWFmLmV4YW1wbGUuY29tLmNybDCBogYDVR0eAQH/BIGXMIGUoDAwGoYYaHR0cHM6
     Ly9sZWFmLmV4YW1wbGUuY29tMBKCEGxlYWYuZXhhbXBsZS5jb22hYDALgglsb2Nh
     bGhvc3QwF4IVbG9jYWxob3N0LmxvY2FsZG9tYWluMAuCCTEyNy4wLjAuMTANggtl
     eGFtcGxlLmNvbTANggtleGFtcGxlLm9yZzANggtleGFtcGxlLm5ldDAKBggqhkjO
-    PQQDAgNJADBGAiEA6Jk26U08NVdhN4eaRbvmaBO3mZScgpFpM6UeEIpYA+ACIQCN
-    e1EotYVdFXh2GOAiu/HcLhbk8MIX7liUnC6lUedcaw==
+    PQQDAgNJADBGAiEAubazdfFtH6enMMm8KL7WHSpxrzuCWuGQU3rD7DRjVzACIQD2
+    90ufyAg2/KSEFjJI7lnO4VSpLmVbDiY28LJtKJYJNw==
     -----END CERTIFICATE-----
     
     Certificate:
         Data:
             Version: 3 (0x2)
-            Serial Number: 166609465481942199701516106011740225358723958170 (0x1d2f06ddab3a673943e507ae5988e1e4a406459a)
+            Serial Number: 127015391374619447593146117604691507951361222710 (0x163f912f92246206bf544deb70c3eace114e6836)
         Signature Algorithm: sha256
             Issuer: commonName=CN=ca.example.com, O=Example CA, C=IT, organizationName=Example CA, countryName=IT
             Validity
@@ -879,7 +883,11 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                 Not After : May 27 15:30:02 2026 GMT
             Subject: commonName=https://intermediate.example.net, organizationName=Example INT, countryName=IT
             Subject Public Key Info:
-                Public Key Algorithm: (unknown)
+                Public Key Algorithm: id-ecPublicKey (EC)
+                    Public-Key: (256 bit)
+                    Curve: secp256r1
+                    X: 44712352894425285951075803914267030245816186141647312088808675719835416357747
+                    Y: 83268974504224800588255653074967749092278369708460180197183711995036458528853
             X509v3 extensions:
                 X509v3 Basic Constraints:
                     CA:TRUE, pathlen:1
@@ -901,35 +909,35 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                       DNS.6=example.net
     
         Signature Algorithm: sha256
-         30:45:02:21:00:bf:68:99:e4:79:12:6d:76:91:f2:c3
-         d3:b6:ca:71:5a:4b:2a:4e:18:0a:dd:ea:45:b0:ea:49
-         62:5b:d4:c8:4a:02:20:23:44:86:7b:23:4f:b6:be:b4
-         7f:cd:95:83:77:92:db:f5:a1:56:82:08:1a:7d:d0:02
-         67:b6:af:74:91:ef:1f
+         30:45:02:20:17:27:3f:e6:2d:c6:f7:4f:de:3c:1d:ce
+         22:90:d6:76:52:bf:3e:36:b4:ef:2a:ae:9d:13:35:3d
+         60:83:36:96:02:21:00:cd:9f:e9:f0:65:1b:54:5c:f9
+         dd:f4:ec:65:74:59:58:38:8a:30:3c:ed:ed:08:4a:12
+         cb:82:64:f0:14:d6:ad
     
     -----BEGIN CERTIFICATE-----
-    MIIC1TCCAnugAwIBAgIUHS8G3as6ZzlD5QeuWYjh5KQGRZowCgYIKoZIzj0EAwIw
+    MIIC1TCCAnugAwIBAgIUFj+RL5IkYga/VE3rcMPqzhFOaDYwCgYIKoZIzj0EAwIw
     UjEuMCwGA1UEAwwlQ049Y2EuZXhhbXBsZS5jb20sIE89RXhhbXBsZSBDQSwgQz1J
     VDETMBEGA1UECgwKRXhhbXBsZSBDQTELMAkGA1UEBhMCSVQwHhcNMjUwNTI2MTUz
     MDAyWhcNMjYwNTI3MTUzMDAyWjBOMSkwJwYDVQQDDCBodHRwczovL2ludGVybWVk
     aWF0ZS5leGFtcGxlLm5ldDEUMBIGA1UECgwLRXhhbXBsZSBJTlQxCzAJBgNVBAYT
-    AklUMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwEU7hPwB7P6WE2VuBAi0zwhn
-    fRmKvysWr4IILTqA7A4HHqoSGK1JEluOoDCpKL3MdM16X75tGI9kwYIJgjcw5KOC
+    AklUMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYtpLf61Vo3N4exxjQup+bDiN
+    QfjWmG8u5Ax0/OBNa3O4GJHD7M/iMisSVLdk3GKCATye1POAkNh8AdaQq4+wVaOC
     ATEwggEtMBIGA1UdEwEB/wQIMAYBAf8CAQEwDgYDVR0PAQH/BAQDAgGmMFIGA1Ud
     HwRLMEkwR6BFoEOGQWh0dHBzOi8vaW50ZXJtZWRpYXRlLmV4YW1wbGUubmV0L2Ny
     bC9pbnRlcm1lZGlhdGUuZXhhbXBsZS5uZXQuY3JsMIGyBgNVHR4BAf8EgacwgaSg
     QDAihiBodHRwczovL2ludGVybWVkaWF0ZS5leGFtcGxlLm5ldDAaghhpbnRlcm1l
     ZGlhdGUuZXhhbXBsZS5uZXShYDALgglsb2NhbGhvc3QwF4IVbG9jYWxob3N0Lmxv
     Y2FsZG9tYWluMAuCCTEyNy4wLjAuMTANggtleGFtcGxlLmNvbTANggtleGFtcGxl
-    Lm9yZzANggtleGFtcGxlLm5ldDAKBggqhkjOPQQDAgNIADBFAiEAv2iZ5HkSbXaR
-    8sPTtspxWksqThgK3epFsOpJYlvUyEoCICNEhnsjT7a+tH/NlYN3ktv1oVaCCBp9
-    0AJntq90ke8f
+    Lm9yZzANggtleGFtcGxlLm5ldDAKBggqhkjOPQQDAgNIADBFAiAXJz/mLcb3T948
+    Hc4ikNZ2Ur8+NrTvKq6dEzU9YIM2lgIhAM2f6fBlG1Rc+d307GV0WVg4ijA87e0I
+    ShLLgmTwFNat
     -----END CERTIFICATE-----
     
     Certificate:
         Data:
             Version: 3 (0x2)
-            Serial Number: 342257486529888684799109295840076139464867004184 (0x3bf35b42db365d2741af24d73f5fbfda0c493f18)
+            Serial Number: 452980749148206345586951733554639962254487392255 (0x4f585bfb232d59217abfa2057dc59946b5e90fff)
         Signature Algorithm: sha256
             Issuer: commonName=CN=ca.example.com, O=Example CA, C=IT, organizationName=Example CA, countryName=IT
             Validity
@@ -937,7 +945,11 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                 Not After : May 27 15:30:02 2026 GMT
             Subject: commonName=CN=ca.example.com, O=Example CA, C=IT, organizationName=Example CA, countryName=IT
             Subject Public Key Info:
-                Public Key Algorithm: (unknown)
+                Public Key Algorithm: id-ecPublicKey (EC)
+                    Public-Key: (256 bit)
+                    Curve: secp256r1
+                    X: 43579141728397669940566243379506025512719876549515886649419429163987168126704
+                    Y: 70610508709931797167198225385392925991185949914995640155472490331947935358876
             X509v3 extensions:
                 X509v3 Basic Constraints:
                     CA:TRUE, pathlen:2
@@ -961,66 +973,31 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                       DNS.6=example.net
     
         Signature Algorithm: sha256
-         30:44:02:20:13:09:99:fa:30:ea:5a:97:9f:89:ff:dc
-         4d:5d:a0:15:70:3d:5f:6c:77:14:b9:a5:2a:18:34:cf
-         31:35:96:da:02:20:62:8e:85:1c:d6:a0:04:e5:44:f2
-         27:56:a7:d2:ca:3a:2e:dd:53:d3:39:1e:d7:22:45:ea
-         b0:ba:cd:9d:a1:18
+         30:46:02:21:00:9c:7b:4f:e9:2f:4b:03:c7:88:ba:31
+         95:7c:e0:34:6d:a2:a4:70:e2:a4:c9:93:9c:ce:1f:51
+         a4:a4:cc:7b:94:02:21:00:ba:55:bd:7a:ec:59:1a:68
+         2c:dc:76:d6:6b:f4:c0:98:12:87:a2:02:aa:2c:bd:75
+         d4:97:e9:9c:33:29:4b:26
     
     -----BEGIN CERTIFICATE-----
-    MIICyzCCAnKgAwIBAgIUO/NbQts2XSdBryTXP1+/2gxJPxgwCgYIKoZIzj0EAwIw
+    MIICzTCCAnKgAwIBAgIUT1hb+yMtWSF6v6IFfcWZRrXpD/8wCgYIKoZIzj0EAwIw
     UjEuMCwGA1UEAwwlQ049Y2EuZXhhbXBsZS5jb20sIE89RXhhbXBsZSBDQSwgQz1J
     VDETMBEGA1UECgwKRXhhbXBsZSBDQTELMAkGA1UEBhMCSVQwHhcNMjUwNTI2MTUz
     MDAyWhcNMjYwNTI3MTUzMDAyWjBSMS4wLAYDVQQDDCVDTj1jYS5leGFtcGxlLmNv
     bSwgTz1FeGFtcGxlIENBLCBDPUlUMRMwEQYDVQQKDApFeGFtcGxlIENBMQswCQYD
-    VQQGEwJJVDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABAZR6TY0PDNDSug886Bg
-    WuB5dj7EA1+ovLUA/lc5pvN2xKtoY0+7XkH6FFtZMoBXdsxFf6RM89XDM9mufLNF
-    bCijggEkMIIBIDASBgNVHRMBAf8ECDAGAQH/AgECMBkGA1UdEQQSMBCCDmNhLmV4
+    VQQGEwJJVDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABGBY641oEV4gpTw7ESxX
+    piZPTGBlTNheTRZVfYDn1+bwnBwhtBm4PvD0ltZ6dFq7ZTWQ0jMtlVw6FEhdoC32
+    X5yjggEkMIIBIDASBgNVHRMBAf8ECDAGAQH/AgECMBkGA1UdEQQSMBCCDmNhLmV4
     YW1wbGUuY29tMA4GA1UdDwEB/wQEAwIBpjA+BgNVHR8ENzA1MDOgMaAvhi1odHRw
     czovL2NhLmV4YW1wbGUuY29tL2NybC9jYS5leGFtcGxlLmNvbS5jcmwwgZ4GA1Ud
     HgEB/wSBkzCBkKAsMBiGFmh0dHBzOi8vY2EuZXhhbXBsZS5jb20wEIIOY2EuZXhh
     bXBsZS5jb22hYDALgglsb2NhbGhvc3QwF4IVbG9jYWxob3N0LmxvY2FsZG9tYWlu
     MAuCCTEyNy4wLjAuMTANggtleGFtcGxlLmNvbTANggtleGFtcGxlLm9yZzANggtl
-    eGFtcGxlLm5ldDAKBggqhkjOPQQDAgNHADBEAiATCZn6MOpal5+J/9xNXaAVcD1f
-    bHcUuaUqGDTPMTWW2gIgYo6FHNagBOVE8idWp9LKOi7dU9M5HtciReqwus2doRg=
+    eGFtcGxlLm5ldDAKBggqhkjOPQQDAgNJADBGAiEAnHtP6S9LA8eIujGVfOA0baKk
+    cOKkyZOczh9RpKTMe5QCIQC6Vb167FkaaCzcdtZr9MCYEoeiAqosvXXUl+mcMylL
+    Jg==
     -----END CERTIFICATE-----
 
-
-
-Federation participants can ensure that their certificates are consistent, enabling interoperability and security across the federation. This approach, enabling X.509 certificate issuance delegation, introduces innovative practices for certificate management using the underlying Trust Relationships established within the OpenID Federation.
-
-
-X.509 Certificate Revocation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-An X.509 Certificate can be revoked by its Issuer.
-Revocation lists, and or any other revocation check mechanisms, are required only for X.509 Certificate with expiration time superior to 24 hours, otherwise they are not required.
-
-When the X.509 Certificate issuer is the Leaf and therefore the X.509 Certificate is about itself, if the certificate expiration time is superior than 24 hours from the ``X509_NOT_VALID_BEFORE`` time, it MUST implement a CRL about the issued certificate and keep it updated.
-When the X.509 Certificate issuer is an Immediate superior, such as the Trust Anchor or a Intermediate, and it revokes the certificate about the Leaf, therefore the X.509 Certificate about one of the Leaves Federation Entity Key. This action invalidates the entire Trust Chain associated with that Leaf's cryptographic public key, effectively removing its ability to issue further X.509 Certificates about itself. This hierarchical revocation mechanism ensures that any compromise or misbehavior by a Leaf entity can be swiftly addressed.
-
-Below a non-normative example, in plain text, examplify the content of a CRL.
-
-.. code-block:: text
-
-    Certificate Revocation List (CRL):
-    Version: 2 (0x1)
-    Signature Algorithm: sha256WithRSAEncryption
-    Issuer: CN=https://leaf.example.org, O=Leaf, C=IT
-    Last Update: Sep 1 00:00:00 2023 GMT
-    Next Update: Sep 8 00:00:00 2023 GMT
-    Revoked Certificates:
-        Serial Number: 987654320
-            Revocation Date: Aug 25 12:00:00 2023 GMT
-            CRL Entry Extensions:
-                Reason Code: Key Compromise
-        Serial Number: 987654321
-            Revocation Date: Aug 30 15:00:00 2023 GMT
-            CRL Entry Extensions:
-                Reason Code: Cessation of Operation
-    Signature Algorithm: sha256WithRSAEncryption
-    Signature:
-        5c:4f:3b:...
 
 Using the underlying layer established with OpenID Federation 1.0, all X.509 certificates are issued in a properly decentralized manner using the delegation pattern.
 

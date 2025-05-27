@@ -1,6 +1,9 @@
 from cryptography import x509
 from cryptography.hazmat.primitives import serialization
 from cryptography.x509.oid import ExtensionOID
+
+from cryptography.hazmat.primitives.asymmetric import rsa, ec
+
 import binascii
 import textwrap
 
@@ -44,11 +47,9 @@ def format_name_constraints(nc):
     return "\n".join(lines) if lines else "                (none)"
 
 def format_pubkey(pubkey):
-    if hasattr(pubkey, "key_size"):
+    if isinstance(pubkey, rsa.RSAPublicKey):
+        key_type = "RSA"
         key_size = pubkey.key_size
-    else:
-        key_size = "unknown"
-    if pubkey.__class__.__name__ == "RSAPublicKey":
         numbers = pubkey.public_numbers()
         modulus = numbers.n
         exponent = numbers.e
@@ -60,26 +61,29 @@ def format_pubkey(pubkey):
             for line in mod_lines
         ]
         return (
-            f"            Public Key Algorithm: rsaEncryption\n"
+            f"            Public Key Algorithm: rsaEncryption ({key_type})\n"
             f"                Public-Key: ({key_size} bit)\n"
             f"                Modulus:\n" +
             "\n".join(mod_lines) + "\n"
             f"                Exponent: {exponent} (0x{exponent:x})"
         )
-    elif pubkey.__class__.__name__ == "EllipticCurvePublicKey":
+    elif isinstance(pubkey, ec.EllipticCurvePublicKey):
+        key_type = "EC"
+        key_size = pubkey.key_size
         numbers = pubkey.public_numbers()
         curve = pubkey.curve.name
         x = numbers.x
         y = numbers.y
         return (
-            f"            Public Key Algorithm: id-ecPublicKey\n"
+            f"            Public Key Algorithm: id-ecPublicKey ({key_type})\n"
             f"                Public-Key: ({key_size} bit)\n"
             f"                Curve: {curve}\n"
             f"                X: {x}\n"
             f"                Y: {y}"
         )
     else:
-        return "            Public Key Algorithm: (unknown)"
+        key_type = type(pubkey).__name__
+        return f"            Public Key Algorithm: (unknown: {key_type})"
 
 def format_basic_constraints(bc):
     s = f"                CA:{'TRUE' if bc.ca else 'FALSE'}"

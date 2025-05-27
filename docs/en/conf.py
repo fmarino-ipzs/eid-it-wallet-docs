@@ -13,6 +13,9 @@ settings_file_name = 'eid-wallet-it-docs'
 version = settings_doc_version
 
 import sys, os
+import shlex
+import subprocess
+
 from pathlib import Path
 confdir = Path(__file__).resolve().parent
 
@@ -49,7 +52,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.redoc',
-    'myst_parser',  
+    'myst_parser',
     'sphinxcontrib.plantuml'
 ]
 
@@ -81,7 +84,7 @@ rst_epilog = """
 """
 
 plantuml_jar = confdir.parent.parent / "utils/plantuml/plantuml-1.2025.2.jar"
-plantuml = f'java -jar {str(plantuml_jar)}'
+plantuml = f'java -Djava.awt.headless=true -jar {shlex.quote(str(plantuml_jar))}'
 plantuml_output_format = 'svg'
 plantuml_latex_output_format = 'pdf'
 plantuml_server = ''
@@ -317,7 +320,7 @@ latex_elements = {
         % temporally save the original command
         \let\original@includegraphics\includegraphics
         
-        %  includegraphics is redefined for special characters
+        %  includegraphics is redefined for special characters 
         \renewcommand{\includegraphics}[2][]{%
             \begingroup
             \catcode`\-=12\relax
@@ -345,7 +348,7 @@ latex_elements = {
         \makeatother
     ''',
     'extrapackages': r'''
-        % No extra pks is required
+        % No extra pks is required 
     ''',
     'passoptionstopackages': r'''
         % Minimal options for xcolor if required
@@ -360,7 +363,7 @@ latex_elements = {
         \setmonofont{Latin Modern Mono}
     ''',
 }
- 
+
 # Additional latex conf
 latex_show_pagerefs = True
 latex_show_urls = 'no'
@@ -368,16 +371,16 @@ latex_use_parts = True
 latex_domain_indices = True
 latex_use_modindex = True
 latex_table_style = ['booktabs']
- 
- 
+
+
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 # author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', settings_file_name + '.tex', settings_project_name, " ", 'manual'),
 ]
- 
- 
+
+
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples

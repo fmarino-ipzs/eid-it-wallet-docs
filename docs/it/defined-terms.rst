@@ -2,7 +2,7 @@
 
 
 Riferimenti Normativi
-======================
+=====================
 
 [CAD]
 
@@ -17,7 +17,7 @@ Linee guida per l'accessibilità degli strumenti informatici ai sensi dell'artic
 Linee guida per la progettazione dei siti web e dei servizi digitali forniti dalle pubbliche amministrazioni, ai sensi dell'articolo 53, comma 1-ter, del decreto legislativo del 7 marzo 2005, n. 82, e successive modificazioni.
 
 Definizioni e Acronimi
-==========================
+=======================
 
 Questa sezione mira ad uniformare la terminologia del Sistema IT-Wallet alle definizioni fornite in ARF 1.10 (vedere `ARF Annex 1 <https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/annexes/annex-1/annex-1-definitions.md>`_). Per ciascun termine, la definizione di IT-Wallet è stata confrontata e mappata con quella di ARF, includendo note su eventuali differenze o chiarimenti.
 
@@ -389,17 +389,17 @@ Di seguito sono riportati i principali termini e definizioni relativi agli aspet
     **Identità Visiva**
       Insieme coerente di elementi grafici e tipografici che rappresentano visivamente un prodotto o un servizio e lo rendono distinguibile e riconoscibile.
 
-Acronyms
+Acronimi
 --------
 
-Below are the main acronyms used in the document:
+Di seguito gli acronimi usati più di frequente nel documento:
 
 .. list-table::
   :class: longtable
   :widths: 20 80
   :header-rows: 1
 
-  * - **Acronym**
+  * - **Acronimo**
     - **Description**
   * - **AAL**
     - Authenticator Assurance Level come definito `<https://csrc.nist.gov/glossary/term/authenticator_assurance_level>`_ (Livello di Garanzia dell'Autenticatore)

@@ -454,3 +454,6 @@ Conformemente agli RFC 2119 e 8174 le seguenti parole chiave solamente quando ap
   - NON DOVREBBE/NON DOVREBBERO/NON RACCOMANDATO: indicano un requisito che non è consigliato/raccomandato, ovvero si devono tenere in considerazione tutte le implicazioni derivanti dalla eventuale scelta di applicare comunque il requisito.
   - OBBLIGATORIO: necessario
   - OPZIONALE: facoltativo
+
+
+

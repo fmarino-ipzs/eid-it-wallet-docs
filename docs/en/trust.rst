@@ -810,19 +810,19 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
     Certificate:
         Data:
             Version: 3 (0x2)
-            Serial Number: 397755750054563149085811195816364992003765111158 (0x45abfc14fd94cf199958cb7902c26e649fe70976)
+            Serial Number: 631900975802917176051117802358049194750736752223 (0x6eaf6b7456ab3c0a4b38f02bb6073db7ce925e5f)
         Signature Algorithm: sha256
             Issuer: commonName=https://intermediate.example.net, organizationName=Example INT, countryName=IT
             Validity
-                Not Before: May 26 15:30:02 2025 GMT
-                Not After : May 27 15:30:02 2026 GMT
+                Not Before: May 27 09:13:33 2025 GMT
+                Not After : May 28 09:13:33 2026 GMT
             Subject: commonName=CN=leaf.example.com, O=Example Leaf, C=IT, organizationName=Example Leaf, countryName=IT
             Subject Public Key Info:
                 Public Key Algorithm: id-ecPublicKey (EC)
                     Public-Key: (256 bit)
                     Curve: secp256r1
-                    X: 57001993775601218875763511862023462520415739753614377133024681491403286198246
-                    Y: 97976491537203151608498706457248143514060017039214813111267294479310061119000
+                    X: 69976109031737194756970051761651042204906873292535726068007861307666294009468
+                    Y: 30041520431409736411496718565679258429461229569083348196905050642324938424017
             X509v3 extensions:
                 X509v3 Basic Constraints:
                     CA:TRUE, pathlen:0
@@ -847,47 +847,47 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                       DNS.6=example.net
     
         Signature Algorithm: sha256
-         30:46:02:21:00:b9:b6:b3:75:f1:6d:1f:a7:a7:30:c9
-         bc:28:be:d6:1d:2a:71:af:3b:82:5a:e1:90:53:7a:c3
-         ec:34:63:57:30:02:21:00:f6:f7:4b:9f:c8:08:36:fc
-         a4:84:16:32:48:ee:59:ce:e1:54:a9:2e:65:5b:0e:26
-         36:f0:b2:6d:28:96:09:37
+         30:45:02:21:00:ee:0c:24:4c:ea:57:db:f8:54:68:77
+         92:bd:d7:e3:3d:ec:80:4e:84:b4:36:70:f3:00:0b:f0
+         cf:bf:07:c1:4a:02:20:70:1e:12:e4:c4:97:ba:95:36
+         e8:20:82:d6:f1:7f:4d:0d:41:4a:51:0a:c5:b2:5d:62
+         33:45:c5:b0:dc:28:0a
     
     -----BEGIN CERTIFICATE-----
-    MIIC6zCCApCgAwIBAgIURav8FP2UzxmZWMt5AsJuZJ/nCXYwCgYIKoZIzj0EAwIw
+    MIIC6jCCApCgAwIBAgIUbq9rdFarPApLOPArtgc9t86SXl8wCgYIKoZIzj0EAwIw
     TjEpMCcGA1UEAwwgaHR0cHM6Ly9pbnRlcm1lZGlhdGUuZXhhbXBsZS5uZXQxFDAS
-    BgNVBAoMC0V4YW1wbGUgSU5UMQswCQYDVQQGEwJJVDAeFw0yNTA1MjYxNTMwMDJa
-    Fw0yNjA1MjcxNTMwMDJaMFgxMjAwBgNVBAMMKUNOPWxlYWYuZXhhbXBsZS5jb20s
+    BgNVBAoMC0V4YW1wbGUgSU5UMQswCQYDVQQGEwJJVDAeFw0yNTA1MjcwOTEzMzNa
+    Fw0yNjA1MjgwOTEzMzNaMFgxMjAwBgNVBAMMKUNOPWxlYWYuZXhhbXBsZS5jb20s
     IE89RXhhbXBsZSBMZWFmLCBDPUlUMRUwEwYDVQQKDAxFeGFtcGxlIExlYWYxCzAJ
-    BgNVBAYTAklUMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfgX8MyOZiOpZL4UM
-    hv7QCNWPgCCf64bJ6IDsUTXbN+bYnLqiU1/G8w+ZNkendoTGQ44HVX6XFR/dZbY2
-    Z5EmGKOCAUAwggE8MBIGA1UdEwEB/wQIMAYBAf8CAQAwLQYDVR0RBCYwJIIQbGVh
+    BgNVBAYTAklUMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEmrUS/DeI3q5nTl0y
+    U5nmAydnP8U4VQxoLb5EVXgCbnxCauXjmhQKpwjlACbOXY7iCBgdqq+1g8OWqMg2
+    o5H+0aOCAUAwggE8MBIGA1UdEwEB/wQIMAYBAf8CAQAwLQYDVR0RBCYwJIIQbGVh
     Zi5leGFtcGxlLm9yZ4YQbGVhZi5leGFtcGxlLm9yZzAOBgNVHQ8BAf8EBAMCAaYw
     QgYDVR0fBDswOTA3oDWgM4YxaHR0cHM6Ly9sZWFmLmV4YW1wbGUuY29tL2NybC9s
     ZWFmLmV4YW1wbGUuY29tLmNybDCBogYDVR0eAQH/BIGXMIGUoDAwGoYYaHR0cHM6
     Ly9sZWFmLmV4YW1wbGUuY29tMBKCEGxlYWYuZXhhbXBsZS5jb22hYDALgglsb2Nh
     bGhvc3QwF4IVbG9jYWxob3N0LmxvY2FsZG9tYWluMAuCCTEyNy4wLjAuMTANggtl
     eGFtcGxlLmNvbTANggtleGFtcGxlLm9yZzANggtleGFtcGxlLm5ldDAKBggqhkjO
-    PQQDAgNJADBGAiEAubazdfFtH6enMMm8KL7WHSpxrzuCWuGQU3rD7DRjVzACIQD2
-    90ufyAg2/KSEFjJI7lnO4VSpLmVbDiY28LJtKJYJNw==
+    PQQDAgNIADBFAiEA7gwkTOpX2/hUaHeSvdfjPeyAToS0NnDzAAvwz78HwUoCIHAe
+    EuTEl7qVNugggtbxf00NQUpRCsWyXWIzRcWw3CgK
     -----END CERTIFICATE-----
     
     Certificate:
         Data:
             Version: 3 (0x2)
-            Serial Number: 127015391374619447593146117604691507951361222710 (0x163f912f92246206bf544deb70c3eace114e6836)
+            Serial Number: 396534572491127113022787686743653095280228078403 (0x457539a6ac314749fa5ec658f76ed225fd769343)
         Signature Algorithm: sha256
             Issuer: commonName=CN=ca.example.com, O=Example CA, C=IT, organizationName=Example CA, countryName=IT
             Validity
-                Not Before: May 26 15:30:02 2025 GMT
-                Not After : May 27 15:30:02 2026 GMT
+                Not Before: May 27 09:13:33 2025 GMT
+                Not After : May 28 09:13:33 2026 GMT
             Subject: commonName=https://intermediate.example.net, organizationName=Example INT, countryName=IT
             Subject Public Key Info:
                 Public Key Algorithm: id-ecPublicKey (EC)
                     Public-Key: (256 bit)
                     Curve: secp256r1
-                    X: 44712352894425285951075803914267030245816186141647312088808675719835416357747
-                    Y: 83268974504224800588255653074967749092278369708460180197183711995036458528853
+                    X: 25156074883156693989891139993064608529947553342874167037412394938695986639833
+                    Y: 37747901399770759266458300753958501018530290808445029579181649667235295170256
             X509v3 extensions:
                 X509v3 Basic Constraints:
                     CA:TRUE, pathlen:1
@@ -897,9 +897,6 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                     Full Name:
                       URI:https://intermediate.example.net/crl/intermediate.example.net.crl
                 X509v3 Name Constraints:
-                    Permitted:
-                      URI.1=https://intermediate.example.net
-                      DNS.2=intermediate.example.net
                     Excluded:
                       DNS.1=localhost
                       DNS.2=localhost.localdomain
@@ -909,47 +906,45 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                       DNS.6=example.net
     
         Signature Algorithm: sha256
-         30:45:02:20:17:27:3f:e6:2d:c6:f7:4f:de:3c:1d:ce
-         22:90:d6:76:52:bf:3e:36:b4:ef:2a:ae:9d:13:35:3d
-         60:83:36:96:02:21:00:cd:9f:e9:f0:65:1b:54:5c:f9
-         dd:f4:ec:65:74:59:58:38:8a:30:3c:ed:ed:08:4a:12
-         cb:82:64:f0:14:d6:ad
+         30:46:02:21:00:cb:1d:01:ee:1b:bf:a1:4d:36:42:d2
+         0a:7e:80:37:44:e6:e0:ae:6c:70:58:ea:4c:60:00:af
+         53:3b:11:f6:66:02:21:00:c6:08:73:d8:45:7e:e8:e9
+         5e:be:5b:68:9e:12:e9:a2:8e:95:31:01:1d:9e:99:04
+         17:d3:f3:54:71:1b:9f:ac
     
     -----BEGIN CERTIFICATE-----
-    MIIC1TCCAnugAwIBAgIUFj+RL5IkYga/VE3rcMPqzhFOaDYwCgYIKoZIzj0EAwIw
+    MIICjzCCAjSgAwIBAgIURXU5pqwxR0n6XsZY927SJf12k0MwCgYIKoZIzj0EAwIw
     UjEuMCwGA1UEAwwlQ049Y2EuZXhhbXBsZS5jb20sIE89RXhhbXBsZSBDQSwgQz1J
-    VDETMBEGA1UECgwKRXhhbXBsZSBDQTELMAkGA1UEBhMCSVQwHhcNMjUwNTI2MTUz
-    MDAyWhcNMjYwNTI3MTUzMDAyWjBOMSkwJwYDVQQDDCBodHRwczovL2ludGVybWVk
+    VDETMBEGA1UECgwKRXhhbXBsZSBDQTELMAkGA1UEBhMCSVQwHhcNMjUwNTI3MDkx
+    MzMzWhcNMjYwNTI4MDkxMzMzWjBOMSkwJwYDVQQDDCBodHRwczovL2ludGVybWVk
     aWF0ZS5leGFtcGxlLm5ldDEUMBIGA1UECgwLRXhhbXBsZSBJTlQxCzAJBgNVBAYT
-    AklUMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYtpLf61Vo3N4exxjQup+bDiN
-    QfjWmG8u5Ax0/OBNa3O4GJHD7M/iMisSVLdk3GKCATye1POAkNh8AdaQq4+wVaOC
-    ATEwggEtMBIGA1UdEwEB/wQIMAYBAf8CAQEwDgYDVR0PAQH/BAQDAgGmMFIGA1Ud
-    HwRLMEkwR6BFoEOGQWh0dHBzOi8vaW50ZXJtZWRpYXRlLmV4YW1wbGUubmV0L2Ny
-    bC9pbnRlcm1lZGlhdGUuZXhhbXBsZS5uZXQuY3JsMIGyBgNVHR4BAf8EgacwgaSg
-    QDAihiBodHRwczovL2ludGVybWVkaWF0ZS5leGFtcGxlLm5ldDAaghhpbnRlcm1l
-    ZGlhdGUuZXhhbXBsZS5uZXShYDALgglsb2NhbGhvc3QwF4IVbG9jYWxob3N0Lmxv
-    Y2FsZG9tYWluMAuCCTEyNy4wLjAuMTANggtleGFtcGxlLmNvbTANggtleGFtcGxl
-    Lm9yZzANggtleGFtcGxlLm5ldDAKBggqhkjOPQQDAgNIADBFAiAXJz/mLcb3T948
-    Hc4ikNZ2Ur8+NrTvKq6dEzU9YIM2lgIhAM2f6fBlG1Rc+d307GV0WVg4ijA87e0I
-    ShLLgmTwFNat
+    AklUMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEN53VdNZrwDIEoleHOjbgNAA9
+    Ab6PeLajowvmkPNm89lTdI4YecjNJYS35wyhMEt+opXZukysBjRRO84M8I6O0KOB
+    6zCB6DASBgNVHRMBAf8ECDAGAQH/AgEBMA4GA1UdDwEB/wQEAwIBpjBSBgNVHR8E
+    SzBJMEegRaBDhkFodHRwczovL2ludGVybWVkaWF0ZS5leGFtcGxlLm5ldC9jcmwv
+    aW50ZXJtZWRpYXRlLmV4YW1wbGUubmV0LmNybDBuBgNVHR4BAf8EZDBioWAwC4IJ
+    bG9jYWxob3N0MBeCFWxvY2FsaG9zdC5sb2NhbGRvbWFpbjALggkxMjcuMC4wLjEw
+    DYILZXhhbXBsZS5jb20wDYILZXhhbXBsZS5vcmcwDYILZXhhbXBsZS5uZXQwCgYI
+    KoZIzj0EAwIDSQAwRgIhAMsdAe4bv6FNNkLSCn6AN0Tm4K5scFjqTGAAr1M7EfZm
+    AiEAxghz2EV+6OlevltonhLpoo6VMQEdnpkEF9PzVHEbn6w=
     -----END CERTIFICATE-----
     
     Certificate:
         Data:
             Version: 3 (0x2)
-            Serial Number: 452980749148206345586951733554639962254487392255 (0x4f585bfb232d59217abfa2057dc59946b5e90fff)
+            Serial Number: 284423255585370380375410701638165198317432410917 (0x31d1fad9752ce503dbbacd0bf76abc930d651325)
         Signature Algorithm: sha256
             Issuer: commonName=CN=ca.example.com, O=Example CA, C=IT, organizationName=Example CA, countryName=IT
             Validity
-                Not Before: May 26 15:30:02 2025 GMT
-                Not After : May 27 15:30:02 2026 GMT
+                Not Before: May 27 09:13:33 2025 GMT
+                Not After : May 28 09:13:33 2026 GMT
             Subject: commonName=CN=ca.example.com, O=Example CA, C=IT, organizationName=Example CA, countryName=IT
             Subject Public Key Info:
                 Public Key Algorithm: id-ecPublicKey (EC)
                     Public-Key: (256 bit)
                     Curve: secp256r1
-                    X: 43579141728397669940566243379506025512719876549515886649419429163987168126704
-                    Y: 70610508709931797167198225385392925991185949914995640155472490331947935358876
+                    X: 7607860515366991947250115130866123391572079251785604713950047686319787674406
+                    Y: 74493290682810963932331564302963289249956540428755890573822716633130571216251
             X509v3 extensions:
                 X509v3 Basic Constraints:
                     CA:TRUE, pathlen:2
@@ -961,9 +956,6 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                     Full Name:
                       URI:https://ca.example.com/crl/ca.example.com.crl
                 X509v3 Name Constraints:
-                    Permitted:
-                      URI.1=https://ca.example.com
-                      DNS.2=ca.example.com
                     Excluded:
                       DNS.1=localhost
                       DNS.2=localhost.localdomain
@@ -973,29 +965,27 @@ Below a non-normative example in plain text (OpenSSL format) of an X.509 Certifi
                       DNS.6=example.net
     
         Signature Algorithm: sha256
-         30:46:02:21:00:9c:7b:4f:e9:2f:4b:03:c7:88:ba:31
-         95:7c:e0:34:6d:a2:a4:70:e2:a4:c9:93:9c:ce:1f:51
-         a4:a4:cc:7b:94:02:21:00:ba:55:bd:7a:ec:59:1a:68
-         2c:dc:76:d6:6b:f4:c0:98:12:87:a2:02:aa:2c:bd:75
-         d4:97:e9:9c:33:29:4b:26
+         30:46:02:21:00:b9:6c:2c:6f:9a:18:b8:04:d6:39:d3
+         50:dd:e6:a6:ce:9b:f0:d8:64:48:7b:4b:33:2e:fe:d9
+         3d:13:81:4c:d4:02:21:00:ab:10:9d:f1:0f:64:d8:dc
+         76:53:d1:e3:32:b1:65:b7:97:83:d7:69:0f:5a:da:9b
+         1e:a4:a9:a3:88:98:6b:5f
     
     -----BEGIN CERTIFICATE-----
-    MIICzTCCAnKgAwIBAgIUT1hb+yMtWSF6v6IFfcWZRrXpD/8wCgYIKoZIzj0EAwIw
+    MIICmjCCAj+gAwIBAgIUMdH62XUs5QPbus0L92q8kw1lEyUwCgYIKoZIzj0EAwIw
     UjEuMCwGA1UEAwwlQ049Y2EuZXhhbXBsZS5jb20sIE89RXhhbXBsZSBDQSwgQz1J
-    VDETMBEGA1UECgwKRXhhbXBsZSBDQTELMAkGA1UEBhMCSVQwHhcNMjUwNTI2MTUz
-    MDAyWhcNMjYwNTI3MTUzMDAyWjBSMS4wLAYDVQQDDCVDTj1jYS5leGFtcGxlLmNv
+    VDETMBEGA1UECgwKRXhhbXBsZSBDQTELMAkGA1UEBhMCSVQwHhcNMjUwNTI3MDkx
+    MzMzWhcNMjYwNTI4MDkxMzMzWjBSMS4wLAYDVQQDDCVDTj1jYS5leGFtcGxlLmNv
     bSwgTz1FeGFtcGxlIENBLCBDPUlUMRMwEQYDVQQKDApFeGFtcGxlIENBMQswCQYD
-    VQQGEwJJVDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABGBY641oEV4gpTw7ESxX
-    piZPTGBlTNheTRZVfYDn1+bwnBwhtBm4PvD0ltZ6dFq7ZTWQ0jMtlVw6FEhdoC32
-    X5yjggEkMIIBIDASBgNVHRMBAf8ECDAGAQH/AgECMBkGA1UdEQQSMBCCDmNhLmV4
-    YW1wbGUuY29tMA4GA1UdDwEB/wQEAwIBpjA+BgNVHR8ENzA1MDOgMaAvhi1odHRw
-    czovL2NhLmV4YW1wbGUuY29tL2NybC9jYS5leGFtcGxlLmNvbS5jcmwwgZ4GA1Ud
-    HgEB/wSBkzCBkKAsMBiGFmh0dHBzOi8vY2EuZXhhbXBsZS5jb20wEIIOY2EuZXhh
-    bXBsZS5jb22hYDALgglsb2NhbGhvc3QwF4IVbG9jYWxob3N0LmxvY2FsZG9tYWlu
-    MAuCCTEyNy4wLjAuMTANggtleGFtcGxlLmNvbTANggtleGFtcGxlLm9yZzANggtl
-    eGFtcGxlLm5ldDAKBggqhkjOPQQDAgNJADBGAiEAnHtP6S9LA8eIujGVfOA0baKk
-    cOKkyZOczh9RpKTMe5QCIQC6Vb167FkaaCzcdtZr9MCYEoeiAqosvXXUl+mcMylL
-    Jg==
+    VQQGEwJJVDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBDR5X4r9VUDnU5X2rIf
+    xDo7DFNodgP2AD4jzqrETwsmpLG1V9s1bu+zyFrnGVvKmoqR0kOeZ1/vyN5vhMcx
+    NXujgfIwge8wEgYDVR0TAQH/BAgwBgEB/wIBAjAZBgNVHREEEjAQgg5jYS5leGFt
+    cGxlLmNvbTAOBgNVHQ8BAf8EBAMCAaYwPgYDVR0fBDcwNTAzoDGgL4YtaHR0cHM6
+    Ly9jYS5leGFtcGxlLmNvbS9jcmwvY2EuZXhhbXBsZS5jb20uY3JsMG4GA1UdHgEB
+    /wRkMGKhYDALgglsb2NhbGhvc3QwF4IVbG9jYWxob3N0LmxvY2FsZG9tYWluMAuC
+    CTEyNy4wLjAuMTANggtleGFtcGxlLmNvbTANggtleGFtcGxlLm9yZzANggtleGFt
+    cGxlLm5ldDAKBggqhkjOPQQDAgNJADBGAiEAuWwsb5oYuATWOdNQ3eamzpvw2GRI
+    e0szLv7ZPROBTNQCIQCrEJ3xD2TY3HZT0eMysWW3l4PXaQ9a2psepKmjiJhrXw==
     -----END CERTIFICATE-----
 
 

@@ -283,6 +283,7 @@ Di seguito le descrizioni di acronimi e definizioni, correlati al presente docum
       Conforme con ARF 1.10.
 
     **Verificatore di Attestati Elettronici**
+    **Verificatore di Credenziali**
       Una persona o entità che utilizza un'istanza di Relying Party.
       Non presente in ARF 1.10; specifico di IT-Wallet.
 

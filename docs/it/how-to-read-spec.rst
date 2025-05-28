@@ -118,7 +118,7 @@ I lettori interessati all'implementazione o alla gestione di una Soluzione di **
 
 **Sezioni essenziali:**
 
-* **Sezione** :ref:`relying-party-solution:Soluzione di Relying Party`: Requisiti completi di implementazione del verificatore e Configurazione dell'Entità.
+* **Sezione** :ref:`relying-party-solution:Soluzione di Relying Party`: Requisiti completi di implementazione del Verificatore di Credenziali.
 * **Sezione** :ref:`digital-credential-management:Gestione delle Credenziali Digitali`: Comprensione dei formati delle Credenziali Elettroniche e verifica della validità.
 * **Sezione** :ref:`credential-presentation:Presentazione della Credenziale Digitale`: Implementazione del flusso di presentazione sia per scenari remoti che di prossimità.
 * **Sezione** :ref:`relying-party-endpoint:Endpoint della Relying Party`: Specifiche API relative alla federazione e alla verifica.
@@ -155,4 +155,4 @@ Si suggerisce il seguente approccio di lettura in fasi:
 
 .. note::
 
-    Per gli implementatori che lavorano su soluzioni che coprono più ruoli (ad esempio, una combinazione di Soluzioni di Fornitore di Credenziale e Relying Party), si raccomanda di rivedere le sezioni per tutti i ruoli pertinenti prima di procedere con gli sviluppi. È importante prestare particolare attenzione ai requisiti di Configurazione dell'Entità e ai flussi di federazione che si applicano a più ruoli.
+    Per gli implementatori che lavorano su soluzioni che coprono più ruoli (ad esempio, una combinazione di Soluzioni di Fornitore di Credenziale e Relying Party), si raccomanda di rivedere le sezioni per tutti i ruoli pertinenti prima di procedere con gli sviluppi. È importante prestare particolare attenzione ai requisiti di Entity Configuration e ai flussi di federazione che si applicano a più ruoli.

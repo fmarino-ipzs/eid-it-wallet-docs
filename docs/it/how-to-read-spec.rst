@@ -66,7 +66,7 @@ I lettori che implementano o gestiscono una Soluzione di **Fornitore di Wallet**
 
 **Sezioni secondarie:**
 
-* **Sezione** :ref:`credential-issuer-solution:Soluzione del Fornitore di Credenziale`: Comprensione delle interazioni e dei requisiti del fornitore di credenziali.
+* **Sezione** :ref:`credential-issuer-solution:Soluzione del Fornitore di Credenziale`: Comprensione delle interazioni e dei requisiti del fornitore di Credenziali.
 * **Sezione** :ref:`relying-party-solution:Soluzione di Relying Party`: Comprensione delle interazioni con le Relying Party e dei protocolli di presentazione.
 
 

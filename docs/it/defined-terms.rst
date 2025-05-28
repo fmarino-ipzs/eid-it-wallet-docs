@@ -58,13 +58,12 @@ Di seguito le descrizioni di acronimi e definizioni, correlati al presente docum
       Soggetto pubblico o privato che fornisce Credenziali Digitali agli Utenti (può essere un fornitore di PID oppure un fornitore di (Q)EAA).
       ARF 1.10 utilizza definizioni similari; IT-Wallet aggrega sotto questo termine sia il fornitore di PID che di (Q)EAA .
 
-    **Credential Status Assertion**
     **Status Assertion**
       Documento firmato attestante lo stato di validità attuale di una Credenziale Digitale.
       Non presente in ARF 1.10; specifico di IT-Wallet.
 
     **Asset Critici**
-      Asset (ad esempio, le chiavi crittografiche) la cui perdita avrebbe gravi ripercussioni sulla Unità di Wallet.
+      Asset (ad esempio, le chiavi crittografiche) la cui perdita avrebbe gravi ripercussioni sulla Istanza del Wallet.
       Conforme con ARF 1.10.
 
     **Cryptographic Hardware Key Tag**
@@ -92,6 +91,7 @@ Di seguito le descrizioni di acronimi e definizioni, correlati al presente docum
 
     **Titolare**
     **Holder**
+    **Utente**
       Persona fisica o giuridica che riceve, gestisce e presenta Credenziali Digitali tramite l'Istanza del Wallet.
       Non presente in ARF 1.10; specifico di IT-Wallet.
 
@@ -100,7 +100,7 @@ Di seguito le descrizioni di acronimi e definizioni, correlati al presente docum
       Capacità del Titolare di dimostrare il possesso della chiave privata attestata da una terza parte di fiducia.
       Non presente in ARF 1.10.
 
-    **Identity and Access Management (IAM)**
+    **Identity and Access Management**
       Framework per la gestione delle identità digitali e dell'accesso alle informazioni.
       Non presente in ARF 1.10.
 
@@ -146,7 +146,7 @@ Di seguito le descrizioni di acronimi e definizioni, correlati al presente docum
 
     **Fornitore di Attestati Elettronici di Dati di Identificazione Personale**
     **PID Provider**
-      Fornitore di Credenziale responsabile dell'emissione/revoca del PID, garantendo l'associazione crittografica con l'Unità di Wallet.
+      Fornitore di Credenziale responsabile dell'emissione/revoca del PID, garantendo l'associazione crittografica con l'Istanza del Wallet.
       Conforme con ARF 1.10.
 
     **Policy Language**
@@ -266,6 +266,7 @@ Di seguito le descrizioni di acronimi e definizioni, correlati al presente docum
       Insieme di regole che garantiscono la legittimità dei componenti/entità nell'ecosistema IT-Wallet.
       Non presente in ARF 1.10.
 
+    **Relazione di Fiducia**
     **Trust Relationship**
       Affidabilità tra Entità Organizzative verificata in seguito alla Trust Evaluation.
       Non presente in ARF 1.10.
@@ -286,17 +287,13 @@ Di seguito le descrizioni di acronimi e definizioni, correlati al presente docum
       Archivio di informazioni sugli enti eutoritativi e sul loro stato.
       Conforme con ARF 1.10.
 
-    **Utente**
-      Persona fisica o giuridica che utilizza servizi fiduciari o mezzi di identificazione elettronica.
-      Conforme con ARF 1.10.
-
     **Verificatore di Attestati Elettronici**
     **Verificatore di Credenziale**
       Una persona o entità che utilizza un'istanza di Relying Party.
       Non presente in ARF 1.10; specifico di IT-Wallet.
 
     **Istanza del Wallet**
-      Applicazione installata sul dispositivo di un Utente, parte di un'Unità di Wallet, che fornisce interfacce utente.
+      Applicazione installata sul dispositivo di un Utente, parte di un'Istanza del Wallet, che fornisce interfacce utente.
       Conforme con ARF 1.10.
 
     **Fornitore di Wallet**
@@ -318,12 +315,8 @@ Di seguito le descrizioni di acronimi e definizioni, correlati al presente docum
       Insieme di Soluzioni Tecniche al fine di garantire il corretto funzionamento delle istanze di IT-Wallet.
       Conforme con ARF 1.10.
 
-    **Unità di Wallet**
-      Configurazione unica di una Soluzione Wallet per un singolo Utente, incluse tutte le funzionalità di sicurezza.
-      Conforme con ARF 1.10.
-
-    **Attestato di Unità di Wallet**
-      Oggetto emesso da un Fornitore di Wallet che descrive le caretteristiche e i componenti della Unità di Wallet.
+    **Attestato di Istanza del Wallet**
+      Oggetto emesso da un Fornitore di Wallet che descrive le caretteristiche e i componenti della Istanza del Wallet.
       Conforme con ARF 1.10.
 
     **Catalogo degli Attestati Elettronici**
@@ -362,7 +355,7 @@ Di seguito sono riportati i principali termini e definizioni relativi agli aspet
       È la pagina che rappresenta il Touchpoint con la Relying Party dove l'Utente atterra per accedere alla propria area autenticata e ha lo scopo di mostrare all'Utente tutti i metodi di Autenticazione disponibili.
   
     **Engagement Button**
-      Elemento interattivo dell'interfaccia che consente all'Utente di avviare un processo (ad esempio per autenticarsi, per richiedere il rilascio di una credenziale digitale, ecc.).
+      Elemento interattivo dell'interfaccia che consente all'Utente di avviare un processo (ad esempio per autenticarsi, per richiedere il rilascio di una Credenziale digitale, ecc.).
   
     **Modello di Interazione**
       Insieme di caratteristiche che definiscono le modalità con cui l'Utente interagisce con l'Interfaccia di uno o più Touchpoint per completare un'attività o un'operazione e conseguire un determinato scopo.

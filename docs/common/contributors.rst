@@ -3,6 +3,7 @@
 - Andrea Moro
 - Andrea Prosseda
 - Chris Phillips
+- Chiara Leonardi
 - Elisa Nicolussi Paolaz
 - Emanuele De Cupis
 - Emiliano Vernini
@@ -33,6 +34,7 @@
 - Roland Hedberg
 - Salvatore Laiso
 - Salvatore Manfredi
+- Stefania Guerra
 - Stefano Alifuoco
 - Takahiko Kawasaki
 - Thomas Chiozzi

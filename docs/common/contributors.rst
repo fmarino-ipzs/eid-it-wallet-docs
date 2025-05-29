@@ -32,6 +32,7 @@
 - Peter Altmann
 - Riccardo Iaconelli
 - Roland Hedberg
+- Rosalia Galeano
 - Salvatore Laiso
 - Salvatore Manfredi
 - Stefania Guerra

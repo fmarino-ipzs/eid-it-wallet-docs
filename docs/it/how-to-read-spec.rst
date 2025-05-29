@@ -28,7 +28,7 @@ La specifica è organizzata nelle seguenti sezioni principali:
 **Sezione** :ref:`digital-credential-management:Gestione delle Credenziali Digitali`: 
   Copre i modelli di dati e i formati delle Credenziali Elettroniche, la gestione del ciclo di vita, la verifica della validità e la struttura del catalogo delle Credenziali.
 
-**Sezione** :ref:`digital-credential-flows:Flussi delle Credenziali Elettroniche`:
+**Sezione** :ref:`digital-credential-flows:Flussi relativi agli Attestati Elettronici`:
   Guida dettagliata all'implementazione per i flussi di emissione e presentazione delle Credenziali Elettroniche, inclusi i flussi di interazione remota e di prossimità.
 
 **Sezione** :ref:`endpoints:Endpoints`: 
@@ -58,7 +58,7 @@ I lettori che implementano o gestiscono una Soluzione di **Fornitore di Wallet**
 
 * **Sezione** :ref:`wallet-solution:Soluzione Wallet`: Requisiti completi di implementazione del Wallet, componenti e processi di interazione.
 * **Sezione** :ref:`digital-credential-management:Gestione delle Credenziali Digitali`: Modelli di dati, formati e gestione del ciclo di vita delle Credenziali Elettroniche.
-* **Sezione** :ref:`digital-credential-flows:Flussi delle Credenziali Elettroniche`: Flussi di emissione e presentazione per le Credenziali Elettroniche.
+* **Sezione** :ref:`digital-credential-flows:Flussi relativi agli Attestati Elettronici`: Flussi di emissione e presentazione per le Credenziali Elettroniche.
 * **Sezione** :ref:`wallet-provider-endpoint:Endpoint del Fornitore di Wallet`: Specifiche API per la federazione e specifiche per IT-Wallet.
 * **Sezione** :ref:`algorithms:Algoritmi Crittografici`: Requisiti di implementazione per sicurezza e crittografia.
 * **Sezione** :ref:`mobile-application-instance:Istanza dell'Applicazione Mobile`: Modelli di implementazione specifici per dispositivi mobili.

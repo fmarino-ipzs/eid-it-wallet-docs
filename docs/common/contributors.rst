@@ -1,0 +1,42 @@
+- Alen Horvat
+- Amir Sharif
+- Andrea Moro
+- Andrea Prosseda
+- Chris Phillips
+- Elisa Nicolussi Paolaz
+- Emanuele De Cupis
+- Emiliano Vernini
+- Francesco Grauso
+- Francesco Marino
+- Francesco Ventola
+- Gabriella Cefalù
+- Giada Sciarretta
+- Giuseppe De Marco
+- Klaas Wierenga
+- Kristina Yasuda
+- Leif Johansson
+- Lorenzo Cerini
+- Marco Basili
+- Marco Pernpruner
+- Mart Aarma
+- Marta Sciunnach
+- Matteo Fortini
+- Michele Silletti
+- Nicola Saitto
+- Niels van Dijk
+- Oliver Terbu
+- Paul Bastien
+- Pasquale Cerqua
+- Pasquale De Rose
+- Peter Altmann
+- Riccardo Iaconelli
+- Roland Hedberg
+- Salvatore Laiso
+- Salvatore Manfredi
+- Stefano Alifuoco
+- Takahiko Kawasaki
+- Thomas Chiozzi
+- Torsten Lodderstedt
+- Valerio Bozzolan
+- Vladimir Duzhinov
+- Zahra Ebadi Ansaroudi

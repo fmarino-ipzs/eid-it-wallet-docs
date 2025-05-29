@@ -27,7 +27,7 @@ Le sezioni a seguire si focalizzano sulle macro-fasi di utilizzo e post-utilizzo
 Le Risorse Ufficiali descrivono le modalità di interazione Utente-Istanza del Wallet e le buone pratiche di progettazione al fine di promuovere coerenza tra le diverse Soluzioni Wallet, in termini di modalità di fruizione delle funzionalità. 
 
 Attivazione dell'Istanza del Wallet 
-----------------------------------
+-----------------------------------
 
 L'attivazione è il passaggio necessario per abilitare l'Utente all'utilizzo delle funzionalità della Soluzione Wallet per l'ottenimento, la presentazione e la gestione dei propri Attestati Elettronici in modo sicuro. Il processo di attivazione consiste in un'operazione di Autenticazione dell'Utente sull'Istanza del Wallet tramite la propria identità digitale che consente la generazione del PID.  
 
@@ -354,7 +354,7 @@ Con l'obiettivo di garantire il principio di data portability, la Soluzione Wall
 - richiedere il ripristino dei propri Attestati Elettronici di Attributi su un'altra Istanza del Wallet. 
 
 Disattivazione dell'Istanza del Wallet 
--------------------------------------
+--------------------------------------
 
 La disattivazione dell'Istanza del Wallet è la funzionalità che rende l'Istanza del Wallet disattiva e quindi non più operativa. La disattivazione dell'Istanza del Wallet può essere scatenata da attori differenti a seconda delle circostanze, in particolare: 
 
@@ -407,7 +407,7 @@ Di seguito vengono presentati i requisiti e le principali buone pratiche di gest
 Di seguito, una lista non esaustiva delle principali casistiche di errore, con riferimento all'attore responsabile della loro gestione, per ciascuna fase dell'Esperienza Utente.  
 
 Errori di Attivazione dell'Istanza del Wallet 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
 .. list-table::
    :widths: 80 20
@@ -469,7 +469,7 @@ Errori di gestione degli Attestati Elettronici
      - PID Provider 
 
 Errori di disattivazione dell'Istanza del Wallet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 80 20

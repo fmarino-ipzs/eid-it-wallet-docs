@@ -36,7 +36,7 @@ I Credential Issuer DEVONO fornire i seguenti e-service attraverso PDND per:
 .. only:: latex
 
   .. note::
-    La specifica OpenAPI completa è disponibile :ref:`appendix-oas-pdnd-issuer:Credential Issuer PDND OpenAPI Specification`.
+    La specifica OpenAPI completa è disponibile :ref:`appendix-oas-pdnd-issuer:Specifica OpenAPI del Credential Issuer PDND`.
 
 Notify Available Credential
 """"""""""""""""""""""""""""""""

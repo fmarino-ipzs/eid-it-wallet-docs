@@ -13,6 +13,9 @@ settings_file_name = 'eid-wallet-it-docs'
 version = settings_doc_version
 
 import sys, os
+import shlex
+import subprocess
+
 from pathlib import Path
 confdir = Path(__file__).resolve().parent
 
@@ -49,7 +52,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.redoc',
-    'myst_parser',  
+    'myst_parser',
     'sphinxcontrib.plantuml'
 ]
 
@@ -81,7 +84,8 @@ rst_epilog = """
 """
 
 plantuml_jar = confdir.parent.parent / "utils/plantuml/plantuml-1.2025.2.jar"
-plantuml = f'java -jar {str(plantuml_jar)}'
+#plantuml = f'java -Djava.awt.headless=true -jar {shlex.quote(str(plantuml_jar))}'
+plantuml = f'java -Djava.awt.headless=true -jar {str(plantuml_jar)}'
 plantuml_output_format = 'svg'
 plantuml_latex_output_format = 'pdf'
 plantuml_server = ''

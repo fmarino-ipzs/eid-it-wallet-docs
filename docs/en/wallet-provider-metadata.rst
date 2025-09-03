@@ -25,36 +25,6 @@ The metadata JSON Object whose key is ``wallet_provider`` contains the following
     * - ``signed_jwks_uri``
       - CONDITIONAL. URL referencing a signed JWT having the Entity's JWK Set document for that Entity Type as its payload. This URL MUST use the https scheme. The JWT MUST be signed using a Federation Entity Key. A successful response from the URL MUST use the HTTP status code 200 with the Content Type ``application/jwk-set+jwt``. It MUST be present if ``jwks`` and ``jwks_uri`` are absent.
       - `OID-FED`_.
-    * - ``aal_values_supported``
-      - OPTIONAL. List of supported values for the certifiable security context. These values specify the security level of the app, according to the levels: low, medium, or high. Authenticator Assurance Level values supported.
-      - This specification.
-
-federation_entity metadata
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. list-table::
-    :class: longtable
-    :widths: 20 60 20
-    :header-rows: 1
-
-    * - **Key**
-      - **Value**
-      - **Reference**
-    * - ``organization_name``
-      - OPTIONAL. A human-readable name representing the organization owning the Wallet Provider.
-      - `OID-FED`_.
-    * - ``homepage_uri``
-      - OPTIONAL. URL of a Web page for the organization owning the Wallet Provider.
-      - `OID-FED`_.
-    * - ``tos_uri``
-      - OPTIONAL. URL that contains the Wallet Provider's terms of service.
-      - `OID-FED`_.
-    * - ``policy_uri``
-      - OPTIONAL. URL of the documentation of conditions and policies relevant to the Wallet Provider.
-      - `OID-FED`_.
-    * - ``logo_uri``
-      - OPTIONAL. String. A URL that points to the logo of the Wallet Provider. The file containing the logo SHOULD be published in a format that can be viewed via the web.
-      - `OID-FED`_.
 
 Below is a non-normative example of the Entity Configuration for a Wallet Provider.
 

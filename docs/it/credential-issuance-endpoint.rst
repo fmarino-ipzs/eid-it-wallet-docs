@@ -130,7 +130,7 @@ Il payload del JWT ``request`` contenuto nel messaggio HTTP POST contiene i segu
       - DEVE essere valorizzato con ``code``.
       - :rfc:`6749`
     * - **response_mode**
-      - DEVE essere una stringa che indica il "*response_mode*", come specificato in [`OAUTH-MULT-RESP-TYPE`_]. DEVE essere valorizzato con uno dei valori supportati (*response_modes_supported*) forniti nei Metadata del Credential Issuer. Tale claim informa il Credential Issuer sul meccanismo da utilizzare per la restituizione dei parametri da parte dell' Authorization Endpoint. In caso di *HTTP 302 Redirect Response* il valore DEVE essere *query*. In questa modalità, i parametri dell'Authorization Response sono codificati nella stringa di query aggiunta al ``redirect_uri`` durante il redirect all'Istanza del Wallet. In caso di *HTTP POST Response* il valore DEVE essere *form_post.jwt* secondo [`JARM`_]. In questa modalità, i parametri dell'Authorization Response sono riportati in un JWT codificato in un form HTML che viene inviato automaticamente nell'user-agent, e quindi viene trasmesso tramite il metodo HTTP POST all'Istanza del Wallet, con i parametri risultanti codificati nel body utilizzando il formato *application/x-www-form-urlencoded*. L'attributo *action* del form DEVE contenere il  *Redirection URI* dell'Istanza del Wallet. L'attributo *method* del form DEVE essere POST.
+      - DEVE essere una stringa che indica il "*response_mode*", come specificato in [`OAUTH-MULT-RESP-TYPE`_]. DEVE essere valorizzato con uno dei valori supportati (*response_modes_supported*) forniti nei Metadata del Credential Issuer. Tale claim informa il Credential Issuer sul meccanismo da utilizzare per la restituizione dei parametri da parte dell' Authorization Endpoint. In caso di *HTTP 302 Redirect Response* il valore DEVE essere *query*. In questa modalità, i parametri dell'Authorization Response sono codificati nella stringa di query aggiunta al ``redirect_uri`` durante il redirect all'Istanza del Wallet. In caso di *HTTP POST Response* il valore DEVE essere *form_post.jwt* secondo [`JARM`_]. In questa modalità, i parametri dell'Authorization Response sono riportati in un JWT codificato in un form HTML che viene inviato automaticamente nell'user-agent, e quindi viene trasmesso tramite il metodo HTTP POST all'Istanza del Wallet, con i parametri risultanti codificati nel body utilizzando il formato *application/x-www-form-urlencoded*. L'attributo *action* del form DEVE contenere il *Redirection URI* dell'Istanza del Wallet. L'attributo *method* del form DEVE essere POST.
       - Vedi [`OAUTH-MULT-RESP-TYPE`_] e [`JARM`_].
     * - **client_id**
       - DEVE essere valorizzato come indicato nella :ref:`Tabella dei parametri HTTP <table_http_request_claim>`.
@@ -442,7 +442,7 @@ La token request contiene i seguenti claim:
       - OBBLIGATORIO solo se il *grant type* è ``refresh_token``. Il Refresh Token precedentemente emesso all'Istanza del Wallet. NON DEVE essere presente se il *grant type* è ``authorization_code``.
       - [:rfc:`6749`].
     * - **scope**
-      - OPZIONALE solo se il *grant type* è ``refresh_token``. Lo scope richiesto NON DEVE includere alcun valore di scope non originariamente concesso dall'Utente, e se omesso è da intendersi  uguale allo scope originariamente concesso dall'Utente. NON DEVE essere presente se il *grant type* è ``authorization_code``.
+      - OPZIONALE solo se il *grant type* è ``refresh_token``. Lo scope richiesto NON DEVE includere alcun valore di scope non originariamente concesso dall'Utente, e se omesso è da intendersi uguale allo scope originariamente concesso dall'Utente. NON DEVE essere presente se il *grant type* è ``authorization_code``.
       - [:rfc:`6749`].
 
 
@@ -496,7 +496,7 @@ Il payload del **JWT DPoP Proof** DEVE contenere i seguenti claim:
 Token Response
 .................
 
-Se la Token Request viene validata con successo, l'Authorization Server fornisce una Token Response con *status code HTTP 200 (OK)*. La Token Response  contiene i seguenti claim.
+Se la Token Request viene validata con successo, l'Authorization Server fornisce una Token Response con *status code HTTP 200 (OK)*. La Token Response contiene i seguenti claim.
 
 .. list-table::
     :class: longtable
@@ -767,6 +767,12 @@ Il Credential Endpoint DEVE accettare e convalidare il *DPoP proof* inviato nel 
       - **proof_type**: stringa JSON che denota il tipo di prova in termini di formato. DEVE essere `jwt`.
       - **jwt**: il JWT utilizzato come prova di possesso.
     - [`OpenID4VCI`_].
+  * - **proofs**
+    - OBBLIGATORIO se il parametro ``proof`` è assente. Oggetto che fornisce una o più prove di possesso del materiale crittografico a cui saranno vincolate le Istanze di Credenziali emesse. L'oggetto ``proofs`` DEVE contenere i seguenti claim obbligatori:
+
+      - **proof_type**: stringa JSON che denota il tipo di prova in termini di formato. Il suo valore DEVE essere configurato con `jwt`.
+      - **jwt**: un array di JWT, in cui ogni elemento all'interno dell'array viene utilizzato come prova di possesso.
+    - [`OpenID4VCI`_].
   * - **transaction_id**
     - OBBLIGATORIO solo in caso di Deferred Flow. Stringa che identifica una transazione di emissione posticipata. NON DEVE essere presente nel flusso di emissione immediato.
     - Sezione 9.1 di [`OpenID4VCI`_].
@@ -807,7 +813,7 @@ Il *proof type* del JWT DEVE contenere i seguenti parametri per l'header JOSE e 
     - DEVE essere valorizzato con l'identificativo del Credential Issuer.
     - [`OpenID4VCI`_].
   * - **iat**
-    - Timestamp UNIX con data e orario  di emissione del JWT, codificato come NumericDate come indicato nel :rfc:`7519`.
+    - Timestamp UNIX con data e orario di emissione del JWT, codificato come NumericDate come indicato nel :rfc:`7519`.
     - [`OpenID4VCI`_], [:rfc:`7519`. Sezione 4.1.6].
   * - **nonce**
     - Il tipo di valore di questo claim DEVE essere una stringa, dove il valore è un **c_nonce** fornito dal Credential Issuer tramite la Nonce Response.
@@ -831,7 +837,8 @@ La Credential Response contiene i seguenti parametri:
     - **Descrizione**
     - **Riferimento**
   * - **credentials**
-    - OBBLIGATORIO se ``lead_time`` e ``transaction_id`` non sono presenti, altrimenti NON DEVE essere presente. Contiene i seguenti parametri:
+    - OBBLIGATORIO se ``lead_time`` e ``transaction_id`` non sono presenti, altrimenti NON DEVE essere presente. Array di una o più Credenziali emesse. Il numero di elementi nell'array delle Credenziali corrisponde al numero di chiavi che l'Istanza del Wallet ha fornito tramite il parametro ``proof`` o ``proofs`` nella Credential Request. L'array DEVE contenere oggetti JSON, dove ogni oggetto DEVE avere il claim ``credential``. Il valore del claim ``credential`` DEVE essere configurato con una stringa contenente la Credenziale codificata, come descritto di seguito:
+
 
           - **credential**: OBBLIGATORIO. Stringa contenente un Attestato Elettronico emesso. Se l'identificativo del formato richiesto è ``dc+sd-jwt`` allora il parametro ``credential`` NON DEVE essere ricodificato. Se l'identificativo di formato richiesto è ``mso_mdoc`` allora il parametro ``credential`` DEVE essere una rappresentazione codificata in base64url della struttura IssuerSigned codificata in CBOR, come definito in [ISO 18013-5]. Questa struttura DOVREBBE contenere tutti i Namespaces e IssuerSignedItems inclusi negli AuthorizedNamespaces del MobileSecurityObject.
     - Sezione 8.3, Allegato A2.4 e Allegato A3.4 di [`OpenID4VCI`_].
@@ -883,10 +890,10 @@ Nella seguente tabella sono elencati i *Status Code HTTP* e i relativi codici di
       - Il Credential Issuer non può soddisfare la richiesta perché il Formato dell'Attestato Elettronico richiesto non è supportato. Sezione 8.3.1 di [`OpenID4VCI`_].
     * - *400 Bad Request* [OBBLIGATORIO]
       - ``invalid_proof``
-      - Il Credential Issuer non può soddisfare la richiesta perché il parametro ``proof`` nella Credential Request non è valido o è assente. Sezione 8.3.1 di [`OpenID4VCI`_].
+      - Il Credential Issuer non può soddisfare la richiesta perché il parametro ``proof``o ``proofs`` nella Credential Request non è valido o è assente oppure non contiene il valore del ``c_nonce``. Sezione 8.3.1 di [`OpenID4VCI`_].
     * - *400 Bad Request* [OBBLIGATORIO]
       - ``invalid_nonce``
-      - Il Credential Issuer non può soddisfare la richiesta perché il parametro ``proof`` nella Credential Request utilizza un nonce non valido. Sezione 8.3.1 di [`OpenID4VCI`_].
+      - Il Credential Issuer non può soddisfare la richiesta perché il parametro ``proof`` o ``proofs`` nella Credential Request utilizza un nonce non valido. Sezione 8.3.1 di [`OpenID4VCI`_].
     * - *400 Bad Request* [OBBLIGATORIO]
       - ``invalid_encryption_parameters``
       - Il Credential Issuer non può soddisfare la richiesta perché i parametri di crittografia nella Credential Request non sono validi o mancanti. Sezione 8.3.1 di [`OpenID4VCI`_].

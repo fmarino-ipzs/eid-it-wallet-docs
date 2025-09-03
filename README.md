@@ -19,7 +19,7 @@ This repository hosts the IT-Wallet Technical Specifications: the technical arch
 
 For more information on the IT-Wallet System please refer to the [official page]([url](https://innovazione.gov.it/progetti/sistema-it-wallet/)).
 
-The repository is structured as sphinx project tree. **The first stable release is v1.0**; other contents in the repository may be considered experimental.
+The repository is structured as sphinx project tree. **The first stable release is v1.0**; older releases are considered experimental.
 
 
 ## Versioning and preview
@@ -35,13 +35,29 @@ Furthermore, this project uses the git *branches* and *tags* in the following wa
 Each time a release is created or edited, a preview is built based on the tag the release refers to. 
 A preview of the latest editor's copy build, corresponding to the branch `versione-corrente` can be navigated using the following link:
 
+English version:
+
  - [Editor's Copy](https://italia.github.io/eid-wallet-it-docs/versione-corrente/en/)
 
+Versione Italiana:
+
+ - [Ultima versione in corso di sviluppo](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/)
 
 ### Releases
 
 Released versions can be navigated by adding the tag in the webpath leaded by a _v_, as follows:
 
+Italian:
+
+ - [https://italia.github.io/eid-wallet-it-docs/releases/1.1.0/it/](https://italia.github.io/eid-wallet-it-docs/releases/1.1.0/it/)
+ - [https://italia.github.io/eid-wallet-it-docs/releases/1.0.2/it/](https://italia.github.io/eid-wallet-it-docs/releases/1.0.2/it/)
+ - [https://italia.github.io/eid-wallet-it-docs/releases/1.0.1/it/](https://italia.github.io/eid-wallet-it-docs/releases/1.0.1/it/)
+
+English:
+
+ - [https://italia.github.io/eid-wallet-it-docs/releases/1.1.0/en/](https://italia.github.io/eid-wallet-it-docs/releases/1.1.0/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/releases/1.0.2/en/](https://italia.github.io/eid-wallet-it-docs/releases/1.0.2/en/)
+ - [https://italia.github.io/eid-wallet-it-docs/releases/1.0.1/en/](https://italia.github.io/eid-wallet-it-docs/releases/1.0.1/en/)
  - [https://italia.github.io/eid-wallet-it-docs/releases/v1.0.0/en/](https://italia.github.io/eid-wallet-it-docs/releases/v1.0.0/en/)
  - [https://italia.github.io/eid-wallet-it-docs/releases/v0.9.3/en/](https://italia.github.io/eid-wallet-it-docs/releases/v0.9.3/en/)
  - [https://italia.github.io/eid-wallet-it-docs/releases/v0.9.2/en/](https://italia.github.io/eid-wallet-it-docs/releases/v0.9.2/en/)

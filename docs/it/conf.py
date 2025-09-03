@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 # -- PROJECT Variables ----------------------------------------------------
 settings_project_name = "IT-Wallet Technical Documentation"
 # settings_copyright_copyleft = 'Dipartimento per la Trasformazione Digitale'
 settings_editor_name = 'Dipartimento per la Trasformazione Digitale'
-settings_doc_version = '1.0.0'
+settings_doc_version = '1.1.0'
 settings_doc_release = "versione-corrente"
 settings_basename = 'eid-wallet-it-docs'
 settings_file_name = 'eid-wallet-it-docs'
@@ -201,7 +200,7 @@ html_css_files = [
 
 # The name for this set of Sphinx documents. If None, it defaults to
 # "<project> v<release> documentation".
-html_title = f"{settings_project_name} - {version}"
+html_title = f"{settings_project_name}"
 
 # A shorter title for the navigation bar. Default is the same as html_title.
 # html_short_title = "IT-Wallet"

@@ -104,6 +104,11 @@ le condizioni che hanno portato alla sua sospensione vengono risolte, o passa a 
   * Guidata dal caso d'uso, basata sullo stato di validità degli attributi contenuti nell'Attestato Elettronico di Attributi (Q)EAA. In questo caso, una Fonte Autentica DEVE notificare al Fornitore di Attestati Elettronici qualsiasi cambiamento nello stato degli attributi attestati dall'Attestato Elettronico di Attributi (Q)EAA.
   * Esplicitamente richiesta dall'Utente.
 
+Ciclo di vita delle credenziali digitali ottenute in batch
+----------------------------------------------------------
+
+Ciascuna delle Credenziali Digitali emesse in batch, entra immediatamente nel proprio stato relativo al ciclo di vita. Tutte le transizioni di stato (Emessa → Valida → Scaduta/Sospesa/Revocata) avvengono a livello di singola Credenziale, utilizzando i parametri individuali della Credenziale (ad esempio, date di validità, status assertion).
+
 Gestione del Ciclo di Vita degli Attestati Elettronici
 ------------------------------------------------------
 
@@ -243,6 +248,41 @@ Le Fonti Autentiche DEVONO utilizzare questo servizio di notifica nei seguenti c
 
   - Il valore di uno o più Attributi contenuti nel database della Fonte Autentica è cambiato.
   - Lo stato di validità degli Attributi è aggiornato (revoca o sospensione).
+
+Nel seguente diagramma è illustrato il processo di Alto Livello relativo all'aggiornamento dello stato da parte delle Fonti Autentiche.
+
+.. only:: format_html
+
+  .. figure:: ./images/svg/status-update-as.svg
+    :alt: Processo di aggiornamento dello stato da parte delle Fonti Autentiche
+    :width: 100%
+
+    Processo di aggiornamento dello stato da parte delle Fonti Autentiche
+
+.. only:: format_latex
+
+  .. figure:: ./images/pdf/status-update-as.pdf
+    :alt: Processo di aggiornamento dello stato da parte delle Fonti Autentiche
+    :width: 100%
+
+Il processo inizia nel momento in cui si verifica una variazione sui dati o sulla loro validità nel database della Fonte Autentica. Le modifiche possono essere indotte anche da enti terzi diversi dalla Fonte Autentica, ad esempio in caso di attività illegali notificate dagli Organi di Polizia.
+
+Una volta che avviene un cambiamento nei dati o nella loro validità, la Fonte Autentica DEVE notificare il Fornitore di Attestati Elettronici che ha ricevuto i dati originali utilizzando il servizio ":ref:`credential-issuer-endpoint:Notify Update Credential`" esposto su PDND.
+
+Il Fornitore di Attestati Elettronici, una volta ricevuta la notifica, DEVE provvedere all'aggiornamento dello stato della Credenziale secondo la modalità definite per il meccanismo di validità utilizzato. Il Fornitore di Attestati Elettronici PUÒ inviare una notifica all'Utente utilizzando un eventuale canale di comunicazione precedentemente registrato.
+
+L'istanza del Wallet, a seguito dei controlli periodici che effettua sullo stato di validità delle Credenziali Digitali in essa memorizzate, riceve lo stato aggiornato. Nel caso in cui lo Stato della Credenziale Digitale venga modificato in INVALID il Fornitore di Attestati Elettronici DEVE informarne l'Utente. Nel caso in cui lo stato della Credenziale Digitale venga modificato in UPDATE (equivalentemente 0x03) o ATTRIBUTE_UPDATE (equivalentemente 0x04), il Wallet PUO' procedere alla riemissione della Credenziale Digitale come descritto in :ref:`credential-issuance-low-level:Re-Issuance Flow`.
+
+Gestione del ciclo di vita delle Credenziali in batch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Quando più Credenziali Digitali vengono emesse insieme in un singolo batch, il loro ciclo di vita rimane completamente granulare:
+
+* **Trigger raggruppati, aggiornamenti indipendenti**: una singola richiesta di aggiornamento dello stato del batch che fa riferimento al ``notification_id`` del batch e inviata da qualsiasi entità autorizzata (ad esempio, l'Istanza del Wallet tramite il Notification Endpoint con ``event=credential_deleted``, un Wallet Provider tramite PDND) viene gestita come N modifiche di stato separate. Il Credential Issuer aggiorna lo stato di ciascuna Credenziale singolarmente (ad esempio, impostando il bit della status-list su ``INVALID`` o ``SUSPENDED``).
+* **Revoca a livello di batch**: la stessa richiesta di aggiornamento del batch funge anche da richiesta di revoca totale. Il Credential Issuer contrassegna ogni credenziale nel batch come revocata ed emette una singola notifica per l'intero batch.
+
+.. note::
+  Poiché l'interfaccia utente del Wallet in genere visualizza un batch come una singola Credenziale (ad esempio, con 3 utilizzi rimanenti), un'eliminazione da parte dell'utente rimuove anche l'intero batch. Non è possibile eliminare o revocare una sola credenziale; qualsiasi richiesta di eliminazione che utilizzi il ``notification_id`` del batch si applica a tutte le credenziali presenti in quel batch.
 
 
 Meccanismi di Verifica della Validità
@@ -524,13 +564,13 @@ La Status Assertion DEVE contenere i parametri e i claim definiti di seguito
     - Un identificatore di algoritmo di firma digitale come per il registro IANA "JSON Web Signature and Encryption Algorithms". DEVE essere uno degli algoritmi supportati nella Sezione :ref:`Cryptographic Algorithms <algorithms:Algoritmi Crittografici>` e NON DEVE essere impostato su ``none`` o su un identificatore di algoritmo simmetrico (MAC).
     - [:rfc:`7515`], [:rfc:`7517`].
   * - **typ**
-    - DEVE  corrispondere a `status-assertion+jwt`.
+    - DEVE corrispondere a `status-assertion+jwt`.
     - [:rfc:`7515`], [:rfc:`7517`], `OAUTH-STATUS-ASSERTION`_.
   * - **kid**
     - Identificatore univoco del JWK del Fornitore di Attestati Elettronici. È RICHIESTO quando ``x5c`` non viene utilizzato.
     - [:rfc:`7515`], `OAUTH-STATUS-ASSERTION`_.
   * - **x5c**
-    -  Catena di certificati X.509 relativa al Fornitore di Attestati Elettronici. È RICHIESTO quando ``kid`` non viene utilizzato.
+    - Catena di certificati X.509 relativa al Fornitore di Attestati Elettronici. È RICHIESTO quando ``kid`` non viene utilizzato.
     - [:rfc:`7515`], `OAUTH-STATUS-ASSERTION`_.
 
 .. list-table::
@@ -848,7 +888,7 @@ Gestione dello Stato degli Attestati Elettronici con Token di Status List
 I Fornitori di Attestati Elettronici, una volta che un Attestato Elettronico è stato generato, DEVONO:
 
   - Memorizzarlo localmente con il set minimo di dati necessari per gestire il suo ciclo di vita, incluso lo stato di validità di quell'Attestato Elettronico;
-  - Includere un claim ``status_list`` all'interno dell'Oggetto JSON ``status`` claim  dell'Attestato Elettronico.
+  - Includere un claim ``status_list`` all'interno dell'Oggetto JSON ``status`` claim dell'Attestato Elettronico.
 
 Il valore del claim ``status_list`` DEVE essere a sua volta un Oggetto JSON con i seguenti parametri
 

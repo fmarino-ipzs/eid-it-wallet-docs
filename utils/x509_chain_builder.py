@@ -4,11 +4,31 @@ from cryptography.x509.oid import ExtensionOID
 
 from cryptography.hazmat.primitives.asymmetric import rsa, ec
 
+from pyeudiw.tests.x509.test_x509 import gen_chain
+
 import binascii
 import textwrap
 
+
+# The NameOID.ORGANIZATION_IDENTIFIER.name is set to "Unknown OID" because the ORGANIZATION_IDENTIFIER OID is not a standard, widely recognized OID that the cryptography library has a predefined name for.
+UNSTANDARD_OID_NAMES = {
+    "2.5.4.97": "organizationIdentifier",
+    # Add other custom OIDs as needed
+}
+
 def format_name(name):
-    return ", ".join(f"{attr.oid._name}={attr.value}" for attr in name)
+    formatted_attrs = []
+    for attr in name:
+        # Check if the OID has a meaningful name (not "Unknown OID")
+        if hasattr(attr.oid, '_name') and attr.oid._name and attr.oid._name != "Unknown OID":
+            formatted_attrs.append(f"{attr.oid._name}={attr.value}")
+        else:
+            # Use the dotted string representation
+            if attr.oid.dotted_string in UNSTANDARD_OID_NAMES:
+                formatted_attrs.append(f"{UNSTANDARD_OID_NAMES[attr.oid.dotted_string]}={attr.value}")
+            else:
+                formatted_attrs.append(f"{attr.oid.dotted_string}={attr.value}")
+    return ", ".join(formatted_attrs)
 
 def format_serial(serial):
     return f"{serial} (0x{serial:x})"
@@ -167,8 +187,8 @@ def format_certificate(cert):
     lines.append(f"    Signature Algorithm: {cert.signature_hash_algorithm.name if cert.signature_hash_algorithm else 'unknown'}")
     lines.append(f"        Issuer: {format_name(cert.issuer)}")
     lines.append(f"        Validity")
-    lines.append(f"            Not Before: {format_time(cert.not_valid_before)}")
-    lines.append(f"            Not After : {format_time(cert.not_valid_after)}")
+    lines.append(f"            Not Before: {format_time(cert.not_valid_before_utc)}")
+    lines.append(f"            Not After : {format_time(cert.not_valid_after_utc)}")
     lines.append(f"        Subject: {format_name(cert.subject)}")
     lines.append(f"        Subject Public Key Info:")
     lines.append(format_pubkey(cert.public_key()))
@@ -208,7 +228,7 @@ def format_certificate(cert):
     return "\n".join(lines)
 
 # Example usage:
-der_certs = gen_chain() # from pyeudiw.tests.x509.test_x509 import gen_chain
+der_certs = gen_chain()
 
 for der in der_certs:
     cert = x509.load_der_x509_certificate(der)

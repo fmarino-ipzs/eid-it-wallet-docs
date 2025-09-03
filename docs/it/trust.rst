@@ -26,7 +26,7 @@ ad eccezione delle Istanze del Wallet che sono dispositivi personali dell'Utente
 .. note::
   L'Istanza del Wallet, come dispositivo personale, è considerata affidabile attraverso un attestato verificabile emesso e firmato da una terza parte fidata.
 
-  Questo è chiamato *Wallet Attestation* ed è documentato nella sezione dedicata :ref:`wallet-attestation-issuance:Emissione dell'Attestato di Wallet`.
+  Questo è chiamato *Wallet Attestation* ed è documentato nella sezione dedicata :ref:`wallet-attestation-issuance:Emissione della Wallet Attestation`.
 
 Di seguito la tabella con il riepilogo dei ruoli delle Entità di Federazione, mappati sui corrispondenti ruoli del Wallet EUDI, come definiti nell'`EIDAS-ARF`_.
 
@@ -436,17 +436,19 @@ I metadati *federation_entity* per le Foglie DEVONO contenere i seguenti claim.
   * - **Claim**
     - **Descrizione**
   * - **organization_name**
-    - Vedi `OID-FED`_ Draft 41 Sezione 5.2.2
+    - Vedi `OID-FED`_ Sezione 5.2.2
   * - **homepage_uri**
-    - Vedi `OID-FED`_ Draft 41 Sezione 5.2.2
+    - Vedi `OID-FED`_ Sezione 5.2.2
   * - **policy_uri**
-    - Vedi `OID-FED`_ Draft 41 Sezione 5.2.2
+    - Vedi `OID-FED`_ Sezione 5.2.2
   * - **logo_uri**
-    - URL del logo dell'entità; DEVE essere in formato SVG. Vedi `OID-FED`_ Draft 36 Sezione 5.2.2
+    - URL del logo dell'entità; DEVE essere in formato SVG. Vedi `OID-FED`_ Sezione 5.2.2
   * - **contacts**
-    - Indirizzo email certificato istituzionale (PEC) dell'entità. Vedi `OID-FED`_ Draft 36 Sezione 5.2.2
+    - Indirizzo email certificato istituzionale (PEC) dell'entità. Vedi `OID-FED`_ Sezione 5.2.2
   * - **federation_resolve_endpoint**
-    - Vedi `OID-FED`_ Draft 41 Sezione 5.1.1
+    - OPZIONALE. Vedi `OID-FED`_ Sezione 5.1.1
+  * - **tos_uri**
+    - OPZIONALE. URL che contiene i termini di servizio del Fornitore di Wallet. Vedi `OID-FED`_.
 
 
 Subordinate Statements
@@ -709,7 +711,7 @@ Attestazione della Fiducia del Wallet Offline
 """""""""""""""""""""""""""""""""""""""""""""
 
 Dato che l'Istanza del Wallet non può pubblicare i suoi metadati online all'endpoint *.well-known/openid-federation*,
-DEVE ottenere un Wallet Attestation emesso dal suo Fornitore di Wallet. Il Wallet Attestation DEVE contenere tutte le informazioni rilevanti riguardanti le capacità di sicurezza dell'Istanza del Wallet e la sua configurazione relativa al protocollo. DOVREBBE contenere la Trust Chain relativa al suo emittente (Fornitore di Wallet).
+DEVE ottenere una Wallet Attestation emesso dal suo Fornitore di Wallet. Il Wallet Attestation DEVE contenere tutte le informazioni rilevanti riguardanti le capacità di sicurezza dell'Istanza del Wallet e la sua configurazione relativa al protocollo. DOVREBBE contenere la Trust Chain relativa al suo emittente (Fornitore di Wallet).
 
 
 Metadati Offline della Relying Party
@@ -784,17 +786,25 @@ I vincoli di denominazione sono applicati dai Superiori Immediati all'interno de
 
 Quando un partecipante auto-emette un Certificato X.509, aderisce ai seguenti requisiti:
 
-1. **Nome del Soggetto**: Il nome del soggetto del Certificato X.509 DEVE corrispondere all'identità del partecipante. In particolare, il campo ``Common Name (CN)`` dovrebbe contenere il nome DNS dell'identificatore unico dell'Entità di Federazione, che è incluso nel valore **sub** (soggetto) nella sua Entity Configuration di federazione, rimuovendo ``https://`` e qualsiasi percorso web.
-2. **Nome Alternativo del Soggetto (SAN)**: Il Certificato X.509 DEVE includere un ``SAN URI`` che corrisponde al valore **sub** della sua Entity Configuration di federazione.
-3. **Nome DNS**: Il Certificato X.509 DEVE includere un Nome DNS nel SAN che corrisponde al nome DNS contenuto nel valore **sub** della sua Entity Configuration, rimuovendo ``https://`` e qualsiasi percorso web.
-4. **Lista di Revoca dei Certificati (CRL)**: Se i Certificati X.509 emessi hanno un tempo di scadenza superiore a 24 ore, l'Emittente X.509 DEVE pubblicare una CRL per i Certificati X.509 emessi. Questa lista DEVE essere accessibile e regolarmente aggiornata per garantire che qualsiasi Certificato X.509 compromesso o non valido sia prontamente revocato con la motivazione della revoca, se presente.
-5. **Vincoli di Base**: Il Certificato X.509 DEVE includere un'estensione ``Basic Constraints`` con ``CA:TRUE`` e una lunghezza massima del percorso di 1 se l'emittente del certificato è un Intermediario di Federazione, se è una Foglia, la lunghezza massima del percorso DEVE essere impostata a 0. Ciò indica che il Subordinato a cui si riferisce il certificato può emettere Certificati X.509 solo con una profondità di catena limitata.
-6. **Vincoli di Nome**: Il Certificato X.509 DEVE includere ``Name Constraints`` per specificare domini e URI consentiti ed esclusi. Ad esempio:
+1. **Subject Name**: Il subject name del Certificato X.509 DEVE corrispondere all’identità del partecipante. Il subject name degli Intermediari e delle Foglie DEVE includere i seguenti attributi:
 
-   - Consentiti:
+   - ``Common Name (CN)``: DOVREBBE contenere l’identificatore univoco DNS dell’Entità della Federazione, che è incluso nel valore ``sub`` (subject) nella sua Entity Configuration di federazione, rimuovendo ``https://`` e qualsiasi percorso web.
+   - ``Organization Name (O)``: DEVE contenere la denominazione legale dell’organizzazione.
+   - ``Country Name (C)``: DEVE contenere il codice paese ISO a due lettere.
+   - ``Email Address``: DEVE contenere l’indirizzo email di contatto dell’organizzazione.
+   - ``organizationIdentifier``: DEVE contenere il numero di registrazione che identifica univocamente l'organizzazione all'interno del sistema di registrazione, utilizzando il valore OID ``2.5.4.97`` come definito in ``ITU-T X.500``.
+
+2. **Subject Alternative Name (SAN)**: Il Certificato X.509 DEVE includere un ``SAN URI`` che DEVE corrispondere ai valori ``sub`` e ``iss`` della sua Entity Configuration di federazione.
+3. **DNS Name**: Il Certificato X.509 DEVE includere un DNS Name nel SAN che corrisponda al nome DNS contenuto nei valori ``sub`` e ``iss`` della sua Entity Configuration, rimuovendo ``https://`` e qualsiasi percorso web.
+4. **Lista di Revoca dei Certificati (CRL)**: Se i Certificati X.509 emessi hanno un tempo di scadenza superiore a 24 ore, l'Emittente X.509 DEVE pubblicare una CRL per i Certificati X.509 emessi. Questa lista DEVE essere accessibile e regolarmente aggiornata per garantire che qualsiasi Certificato X.509 compromesso o non valido sia prontamente revocato con la motivazione della revoca, se presente.
+5. **Basic Constraints**: Il Certificato X.509 DEVE includere un’estensione ``Basic Constraints`` configurata con ``CA:TRUE`` e una lunghezza massima del percorso pari a 1 se l’emittente del certificato è un Intermediario della Federazione. Se si tratta di una Foglia, la lunghezza massima del percorso DEVE essere impostata a 0. Questo indica che il Soggetto subordinato a cui si riferisce il certificato può emettere solo Certificati X.509 relativi a sé stesso. L’estensione ``BasicConstraints`` DEVE essere impostata come ``critical``.
+6. **Key Usage**: ``Digital Signature``, ``Key Encipherment``, ``Certificate Sign``, ``CRL Sign`` DEVONO essere inclusi. L’estensione ``KeyUsage`` DEVE essere impostata come ``critical``.
+7. **Name Constraints**: Il Certificato X.509 DEVE includere ``Name Constraints`` per specificare i domini e gli URI permessi ed esclusi. Ad esempio:
+
+   - Permitted:
      - ``URI.1=https://leaf.example.com``
      - ``DNS.1=leaf.example.com``
-   - Esclusi:
+   - Excluded:
      - ``DNS=localhost``
      - ``DNS=localhost.localdomain``
      - ``DNS=127.0.0.1``
@@ -802,6 +812,9 @@ Quando un partecipante auto-emette un Certificato X.509, aderisce ai seguenti re
      - ``DNS=example.org``
      - ``DNS=example.net``
      - ``DNS=*.example.org``
+
+8. **AuthorityKeyIdentifier**: Il Certificato X.509 DEVE includere un'estensione ``AuthorityKeyIdentifier``. Il campo ``keyIdentifier`` dell’estensione ``AuthorityKeyIdentifier`` DEVE essere presente e DEVE essere identico al campo ``SubjectKeyIdentifier`` del certificato dell’emittente. Questo consolida la costruzione e la validazione della catena di certificati.
+
 
 Di seguito è riportato un esempio non normativo, in formato testo semplice (formato OpenSSL), di una catena di certificati X.509 con una CA intermedia, a partire dal certificato Leaf.
 
@@ -827,7 +840,7 @@ Di seguito un esempio non normativo, in testo semplice, che esemplifica il conte
     Certificate Revocation List (CRL):
     Version: 2 (0x1)
     Signature Algorithm: sha256WithRSAEncryption
-    Issuer: CN=https://leaf.example.org, O=Leaf, C=IT
+    Issuer: CN=leaf.example.org, O=Leaf, C=IT
     Last Update: Sep 1 00:00:00 2023 GMT
     Next Update: Sep 8 00:00:00 2023 GMT
     Revoked Certificates:
@@ -842,8 +855,6 @@ Di seguito un esempio non normativo, in testo semplice, che esemplifica il conte
     Signature Algorithm: sha256WithRSAEncryption
     Signature:
         5c:4f:3b:...
-
-Utilizzando il livello sottostante stabilito con OpenID Federation 1.0, tutti i certificati X.509 sono emessi in modo adeguatamente decentralizzato utilizzando il pattern di delega.
 
 
 Note sulla Privacy

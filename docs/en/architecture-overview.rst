@@ -9,8 +9,6 @@ The IT-Wallet ecosystem is built on a multi-layered architecture, where governan
 
 The following diagrams depict the IT-Wallet architecture overview.
 
-
-
 .. plantuml:: plantuml/architecture-overview-governance.puml
     :width: 99%
     :alt: The image illustrates the IT-Wallet architecture overvew - governance.
@@ -22,9 +20,9 @@ The governance level requires all participants in the ecosystem to comply with s
 .. plantuml:: plantuml/architecture-overview-primary.puml
     :width: 99%
     :alt: The image illustrates the IT-Wallet architecture overvew - primary.
-    :caption: `IT-Wallet architecture overview - Primary Actors. <https://www.plantuml.com/plantuml/svg/dPP_Rzky4SV_zwku-HdG18YJFK-I1ocm5lKITpNMBORjh2WmGA2fiqoK8ZNov5Gj-jwdaoYPJjpCUFINVJgUoC_tVl2T9-6ep3LCbwDFGckaP55vmZmPExbHX99AXydCgLouQl0dPQGkKuI_tbvTt5ubjpOlh453RmSVfdUJPB6Sp2Vtoy-poSdfu1NuByeKmeaSj398LO5W7MtiuEFuy_t3ClauURzCvjE_VrWsxi6wl9ybT_UV_jNOxd2j3C9YDfyk9uje0rGM8dMN5zBckJLl3xnPMqCZyOZUvZYwlf3eIAsL58H7UAU2n4fuF2QmpVmHRYfDf73f4PxuLMw4oJ0HcevmVsJT_g_ZXJAU59Mac5PDzhRqP7FmL6dqWt6QJZJcQ6WfifCXVYLqHkZX6VnvbTrQRTsRuI-lcuTj73bO7pbD6Z_hKdJ1cZciXgTFmnPj7kr7_VNNtszMwL5HV_dBwkhcvkfvO4AvsO_wkrnTNgwFYtebRYv_U_qyQcQtJC58t8zzCxvyVVF-kDZNrxzTNe_hs0DIf75NQD0M6iI51YC8fGPZITRv0IlrnFGtMvgq_dyIQ9x1C7Y4aC5nU0hV1r0__G9HqWODAPbuMpg9lbuwxcomQ6t3OBHEaI2rHGZEODVmuD6zyf2gJ97Gm5K2mgGWY9nQbOJrLxyF1X2UlZ-S29-8GjMXSUJHRHN76y-c_B7vPB5SbneMmSwsJxY2tW-_5jPZ2clhGCZQufN9e3zCs5-pcNEO4gYyQ4Nqu4dmqLFr3LCed2KhhVPD96K8dItGYPNIYghc71uboy1DfJHA2guM3u-ADjttWl4CHCleM_EtXL2cYe2SKDgVSoQGoFoREEbz_PlmpJ2kS4wDWxpIrG5vu2uq9gOK_rwqEtTOir9aNGMUh6DGvPvcaLImTZO7SL3h4uUPyhKd-ZC6jsRgrWWDxGjq_hI6lIETEM5ABJg5G5f3Zbap6SRSSj8sotXJP06DBrqhMoD6ve8AZ51Ya2K2oKKUK-nwT4nmZZgvwxAjXTYXOVUmktf5jw3vyMFG_tm5OwqoqwRBLgNeF5W3j47m8aVGk4MzNrPj0quwVqxVKE5MbysfPrqeLehhCbBSa506tScZVxwmyV-dhKdW1PV4k2XsbWRLOsqLHQ7xNEsJdodlciswD98Q0HKfzEUmt605kJ0YmoxhEM7uhrt3NKYMMuSfnnBQdpsh03JfYEm8JGfefAkAlX9AZw70ra8YbrkVVgg9HzstUQU7QgKNkONBWiKwHVHJ6PFVRHYctfSl8kUbFf0-k7HV1pOorBXFBL5kk4zew0A5vjBwdhMdv5MCnU7MVk4_1_06HJQrdyQUbbUP4JmP6Bz9Gvqq_DkkzAnzlmWpt44YcliiNH6pdAEkUBSpuKZXIo1TqODylkwdsVnlT6gjq3NjQm_VbjzKFo45Wg0eLrh91adXr5OGzkCYwahxxRy96f9tDmlEeCbSMrCjDah2LcYLXWHdlOA_tA3yudSVbDLeLOrIP86EJMM-ABwGo2GueLpf2QPcxOGdLqhMlcyVhGBV3umB4abt_jhdtgmidpgatNjCG_lzZs7kSGBltlry_h8YTXVIu2DC33LzX1FISdECMqqVah--gm1gZkPGjvrgeufOAn-jYzM9hkqHvrO8pY-f2j4gJQM7t1hLZhrQYSFpDrOYF8U0ycQJC0JvYhKxtpmOXxrSiULE-J1VK-YMGovKKogCWM59GKBRZ3kjs0gbnKhZuPuRDQM5t60k_Exc4Sye1iAXbOk8CURpBdlu1k0btsYhdRIyAd37549d3YpZUlb3KpXEoYSyXmz5lGvzZwYhYpR6Hr4b3zqKZnhyQVGsxlln1DvtUpQSNN7GBUvyqRvF1p-QA_W_iDhFtFOo6b_TIyCwa31S98EQmFvuwI_0S_nlYPxytfsvyUSRGBo6VIMgBNgGVHh4pljjT-RGew6dployGvEMkVuV>`_
+    :caption: `IT-Wallet architecture overview - Primary Actors. <https://www.plantuml.com/plantuml/svg/dLTxR-Eu4V_VdsBgEs0J8CuZJWxPHVTmkSIB1ktYqjZNQu42neWSoSHIf41IITHYltj9Yh8bn-irQY21HCw3_FtcCVh5EZIkBkNeJq8nMNE2FzzTdTrTBUzqMMb5olqy-il3_MmvNyoUPhyj_lKuEpeUsIz2LMYm12aKkQOYqCQjzEWTt5Fkbs3--FImcCrxPbrT8JVJCwRBKgkVT-paMha9lf3L9KskpnWP9tB1qD41qXmTPcZf4CEwi0U82RvaQFW1alJALgWAMg9q1uY_e9HqY62fCo6_UwCpeQmJhdOYmEefkAkjqoLOrqYoerlEPv9AKcw1nT6ONXqPXN9y0ZzcnPsMsdmS__0-_i9Qi9nMNrR2KPJJXfD9guMXPdoyRROoeaJJ3ArUNFnqa_63hFvmdbtTt5ozDUo8hOPMVsBPT9eVPlKARwQNxzzQBVHpG44n6jg-kPs-l_bqcEthwylfzQstxI6VAOcc8E02Yv0MByAjm5R8X2fwsUB9utu5fkUzHKuvrj9zyWxduZy45vUzJTQb8Vnt1Fxtc2nSNiVNpzwhKE7jwq19EHIAp9RITA0q7IfbkbRSKxYbSttUr_5lVHqqHhyaXSLAi2-Ah8NB-BwvpyL0fyJNpruA2ugxb-TzB4mu1DCcdFsYls5NoFLBE52Eqj9ev8IJ10-BoHyncs3UM4Sbt1eMs6AkDWGJU6p34cwPqyQEHgDVqosFKi2UmBYJwIn4qV5nkjOxUF9NlFW02rDR1mygDsYTgQC7Rry_2qu6K76uhTsAb1CCvhesZ6mqiFReq3lRQsNi1SR7tc_whMkmrrrQCi_26_KolwbCeudq1B-VoEjYIFz_gpyeWtcIZERyNrZhj45lT6VA2IV8diA30r5MRNvOoDVse3BQQQQbz-fvS8A92eE8TUXg6xt_y_Jw_3tqYhNr52iieh7JyScF3WlxiLyWh7zsz77CTE5ntdNR0DBIK26iYnHjQ7vAY-E4vN2bUuOIHKo1SCrxKGY74kuCyK0FIWiC_OftVz9RXJbRKOb-3JsHslZev50bQjgxFf5iWib7D14uxpDThojJtTswTjIxdrTUtW-OtBhdE0b_ZV-7mODTR2rj6rl-jiDuIuIdHz0v_6x9lBE0pXcHrOxixjX2kyHAU5MQhAFazl4XuZcRB_9QzYDg64tqMcbB779j09bViJ4ermTh3mi1ZUqeimx3rNY2ESLPjEIv8wChCfW9ALmJiRV4Ggw4yQ5MWiNujB7GTlxIueQ_-1gLiUR2WJCeP8-rNK7Px-MUZvrmyMm7-d3VKUut-y_pzk26F5J2QTE0zVy3JdLB46y3j4SKv4QNtJKSEl5Ca7Y7enGlWa9I6fq7qBNo-kq66NliiTu0NHXKjSIEeDWTZ9PjHEkgItMV3aKubDD0ojQcPIroKPYE16UGKMBb_ud-56ijXXqoGJeTRZi3klfx-Q6Vg0_MrcJyzLDHU50Xc1YTR2VeC8SuMtRfx6bvQwyjlz3FaTH7WwhLCevOErLXddQZaR3eJp58cuM7A8IjXCvGYlLMzgGjcj-eL-z0YfnOmoIT-aPB3Qmy6vBMeMD5eJ3qafRLI5hYDMR8Th3kJ88rVMdotLEEsX5sAHBmoonj-8jkSR8FrHVnLZw8VuvpBznMLUyDgqgc38VERtm8-XoqwkeTfm2wJu5GHP2vL2G6eP5msa6avsGN0v4dxp8fLeQitucdYVqpzJoRobHCSVyEEjzbxUHDoIB59qvFoDicnKnJTQKht2fLn1o_HrmPeTh3cwdwAJ20P2zJfkh7_r1l6Fo9hhFG9lv1HkI2JAo2WwX_3ZlDjxepEgZgpBETi1RFw6ZTT7h5RTX4eb71tamk4KvT6AnMtkGpIi4JweQUTP9dAs9VxCOXQoPPC-4KCgitqEo5d-dYcnLi-g6hLjsqjpEZEdPsP5I7uDh0tjIgreg3yV9NP5z8yK5fYdDW0sw5BeOvMUYxx8Luqyr3W9mBrxQTZXSuejFYD81QQaURadG2cNTQLs4df0KT0nU6c9FUfzwkuTxL4zdA-nIPf1WiiHt5rhIYDh-wTcH8Ycv6q7dOtpxvNhvQpDUCVGrVSd-b9fXjCtibgZPUiVzPuOaX4oClVDs5nlRxi46aBXV8ITk1ZfVDIgnyFPNXHY_P-ZO6osz6vB_NP0JPjoMj6zOtPn4xrDUxd1tYPHXPVHyUmhzXesiN9pMFKGjWdCT2T4eGIf41IkF9o4ild_fZyRRRuoJIeHg7X-FHBwHuNSh_0G00>`_
 
-The primary operational layer implements the core Digital Credential lifecycle through coordinated interactions among specialized technical solutions, so that all credential operations maintain security and privacy standards while enabling seamless user experiences.
+The primary operational layer implements the core Digital Credential lifecycle through coordinated interactions among specialized technical solutions, so that all Credential operations maintain security and privacy standards while enabling seamless user experiences.
 
 .. plantuml:: plantuml/architecture-overview-external.puml
     :width: 99%
@@ -33,21 +31,22 @@ The primary operational layer implements the core Digital Credential lifecycle t
 
 External systems provide services that connect the IT-Wallet ecosystem to the national digital infrastructure, enabling interoperability with existing government services and data sources.
 
-The architecture enables the following interaction processes:
+These three architectural layers work together to enable secure Digital Credential operations. The federated nature of this architecture require systematic onboarding processes to establish trust relationships between participants and standardise Credential semantics through the centralised Claims Registry and Taxonomy components, as detailed in :ref:`registry:Registry Infrastructure`.
 
-  1. **Entity Onboarding and Federation**: Only qualified and compliant Entities are registered in the IT-Wallet Federation. The Trust Registry is updated during registration, allowing participants to monitor federation status. This process includes administrative, technical and security assessments.
+The architecture enables the following core interaction processes:
 
-  2. **Credential Issuance**: Credential Issuers connect to Authentic Sources via standardized APIs (on the National Digital Data Platform if the Authentic Source belongs to the Public sector) to request verified User attributes. Digital Credentials are based on authoritative, current data with proper authorization and audit trails.
+  1. **Entity Onboarding and Federation**: Only qualified entities can participate in the federation through systematic onboarding that ensures compliance and establishes cryptographic trust relationships. The onboarding system includes a **Claims Registry** and **Taxonomy** that standardize semantic definitions for all Credentials, enabling interoperability and governance. Entity authorization follows policy-based approach that grants specific operational scopes based on organizational characteristics and regulatory compliance. See Section :ref:`onboarding-high-level:Onboarding System` and :ref:`registry:Registry Infrastructure`.
 
-  3. **Credential Storage and Management**: IT-Wallet Solutions receive and manage Digital Credentials on User devices, allowing Users to control and use credentials from multiple Issuers.
+  2. **Credential Discovery and Catalog Management**: The ecosystem supports dual Credential discovery mechanisms - public discovery through the :ref:`registry:Digital Credentials Catalog` for general-purpose Credentials, and private discovery via direct Credential Offers for specific use cases. The catalog is automatically populated based on Supervisory Body policies from registered Claims Registry and Taxonomy definitions.
 
-  4. **Credential Presentation and Verification**: Users present Digital Credentials to Relying Parties for verification. Verification systems check claims through cryptographic methods and status checks for both public and private sector use.
+  3. **Credential Issuance**: Credential Issuers coordinate with Authentic Sources via standardised APIs to request verified User attributes, creating Digital Credentials based on authoritative data. Issuance can proceed for both Credentials discovered within the Credential Catalog and Credential provided through Credential offer flows.
 
-The Trust Infrastructure manages onboarding and revocation of Entities, provides credential schemas, and lets participants discover and verify authorized entities and their status. It supports automatic trust chain validation, distributed trust anchoring, standardized metadata exchange, and Federation API services for secure, seamless federation operations.
+  4. **Credential Storage and Management**: IT-Wallet Solutions receive and manage Digital Credentials on User devices, enabling secure Credential lifecycle management.
+
+  5. **Credential Presentation and Verification**: Users present Digital Credentials to Relying Parties, which verify claims through cryptographic validation and status verification. Relying Parties operate within authorized scopes that define which Credential types and purposes they can request, with validation against the :ref:`registry:Claims Registry` for schema verification.
 
 
-
-  
+ 
 
 
 

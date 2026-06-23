@@ -74,7 +74,7 @@ Following the `OpenID4VCI`_ specification and the implementation profile in Sect
 Authorization Server
 ^^^^^^^^^^^^^^^^^^^^
 
-This OAuth2-based component MUST:
+This OAuth 2.0 based component MUST:
 
    - Handle authentication and authorization flows.
    - Manage access/refresh tokens and authorization codes.
@@ -99,7 +99,7 @@ This component MUST establish secure connections with Authentic Sources to:
    - Provide cryptographic evidence of User authentication when required.
 
 .. note::
-   For public Authentic Sources, a Credential Issuer MUST use PDND according to rules in Sections :ref:`e-service-pdnd:e-Service PDND`, :ref:`credential-revocation:Status Update by Authentic Sources`, and :ref:`authentic-source-endpoint:e-Service PDND Authentic Source Catalogue`.
+   For public Authentic Sources, a Credential Issuer MUST use PDND according to rules in Sections :ref:`e-service-pdnd:e-Service PDND`, :ref:`credential-revocation:Status Update by Authentic Sources`, and :ref:`authentic-source-endpoint:e-Service PDND Authentic Source Catalog`.
 
 Credential Lifecycle Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

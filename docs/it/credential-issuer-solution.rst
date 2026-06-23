@@ -74,7 +74,7 @@ Sulla base della specifica `OpenID4VCI`_ e del profilo implementativo fornito ne
 Authorization Server
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Questo componente basato su OAuth2 DEVE:
+Questo componente basato su OAuth 2.0 DEVE:
 
    - Gestire i flussi di autenticazione e autorizzazione.
    - Gestire gli Access Token, Refresh e Authorization Code.
@@ -86,7 +86,7 @@ Componente Relying Party
 Questo componente DEVE autenticare gli Utenti, se richiesto:
 
    - Per l'emissione di PID, tramite l'infrastruttura nazionale di Identità Digitale.
-   - Per l'emissione di (Q)EAA, richiedendo, ottenendo e validando i PID dalle Istanze del Wallet dell'Utente utilizzando `OpenID4VP`_ in conformità con la Sezione :ref:`credential-presentation:Presentazione della Credenziale Digitale`.
+   - Per l'emissione di (Q)EAA, richiedendo, ottenendo e validando i PID dalle Istanze del Wallet dell'Utente utilizzando `OpenID4VP`_ in conformità con la Sezione :ref:`credential-presentation:Presentazione dell'Attestato Elettronico`.
 
 Interfaccia API
 ^^^^^^^^^^^^^^^
@@ -133,5 +133,8 @@ La Soluzione del Fornitore degli Attestati Elettronici supporta questi modelli d
 
 Tutte le interazioni devono seguire le considerazioni di sicurezza nella Sezione :ref:`credential-issuance:Emissione di Attestati Elettronici`, inclusa la corretta gestione di token e materiali crittografici.
 
+
 .. include:: credential-issuer-entity-configuration.rst
 .. include:: credential-issuer-metadata.rst
+
+

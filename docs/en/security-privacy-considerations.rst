@@ -47,7 +47,7 @@ SR-CF-10 and SR-E-10
    * - |check-icon|
      - For any presentation, the Credential format and Trust Framework must be designed in a secure way to determine the Issuer and to check that the original Credential was issued by this Issuer (e.g., by using a cryptographic signature).
 
-The IT-Wallet specification supports both SD-JWT-VC and mdoc-CBOR Credential formats. The authenticity and integrity of a Credential is checked by verifying the Issuer's signature.
+The IT-Wallet specification supports both SD-JWT VC and mdoc-CBOR Credential formats. The authenticity and integrity of a Credential is checked by verifying the Issuer's signature.
 
 - For SD-JWT, the verification is performed using the algorithm specified in the **alg** header parameter of SD-JWT and a verifiable reference to the public key that must be used for the signature verification. Using OpenID Federation, the verifiable reference to the public cryptographic material is the **kid** header of the SD-JWT, where the cryptographic material is obtained from the Trust Chain about the Credential Issuer, specified in **iss** claim.
 - For mdoc-CBOR, the Issuer's signature is contained in the *Mobile Security Object* (MSO) and must be validated using the Issuer's public key through a trusted certificate chain contained in the **x5chain** header parameter.
@@ -245,9 +245,6 @@ internal WSCD that uses hardware-based keys. However, the lack of a
 certification profile that certifies the local internal WSCD against highly capable attackers (the certification for current TEE solutions on the market reaches AVA_VAN.3 at most
 as shown for example in this `Certification Report <https://www.tuv-nederland.nl/assets/files/cerfiticaten/2021/08/nscib-cc-0244671-cr-1.0.pdf>`_ or `Global Platform site <https://globalplatform.org/specs-library/tee-protection-profile-v1-3/>`_ makes the requirement only partially satisfied.
 
-.. note::
-   In the EUDI Wallet context, the local internal WSCD and other WSCD deployments are still under certification according to `CEN_ETSI_Workshop <https://docbox.etsi.org/ESI/Open/workshops/202409_CEN_ETSI_Workshop/DAY3-8%20Certification%20for%20EU%20Digital%20Identity%20Wallets/DAY3-8-26%20ETSI_CEN_WS_WSCA%20Jan%20Kjaersgaard.pdf>`_.
-
 SR-V-10
 ^^^^^^^
 .. list-table::
@@ -288,7 +285,7 @@ SR-W-20
 The Wallet Instance discovers the trusted Issuers using trusted third party resources, such as the Federation API (e.g., using the Subordinate Listing Endpoint of the Trust Anchor and its Intermediates), inspecting the Issuer metadata and Trust Marks for filtering the PID Provider.
 
 The Issuer's information is displayed to the User during the issuance process and can be subsequently read by the User as it is inside the issued Credential.
-In addition to the Issuer's information, the Digital Credential Metadata Type also contains information on the Authentic Source.
+In addition to the Issuer's information, the Digital Credential Type Metadata also contains information on the Authentic Source.
 
 SR-W-30
 ^^^^^^^
@@ -335,8 +332,7 @@ PR-E-60
      - The Trust Framework must ensure that the Issuer cannot learn where the User uses the Credential.
 
 The Verifier performing the Trust Evaluation about the Issuer of a Credential must not release any information to the Credential Issuer about the Wallet Instance it is interacting with. Using [`OID-FED`_] the Issuer doesn't know who is the User presenting the Credential.
-In addition, privacy is protected also during the check of the Credential's status. By using Status Assertion [`OAUTH-STATUS-ASSERTION`_], the IT-Wallet specification ensures
-that while the Verifier checks the Credential's validity, the Issuer does not learn where or when the Credential is being used.
+In addition, privacy is protected also during the check of the Credential's status. By using Status List [`TOKEN-STATUS-LIST`_], the IT-Wallet specification ensures that while the Verifier checks the Credential's validity, the Issuer does not learn where or when the Credential is being used.
 
 PR-E-70
 ^^^^^^^
@@ -395,7 +391,7 @@ SPR-E-50
    * - |check-icon|
      - The Trust Framework must ensure that lifecycles of keys, certificates, and Credentials are designed such that the impact of a compromise is minimized.
 
-The Credential lifecycle includes a Credential revocation mechanism based on Status Assertion [`OAUTH-STATUS-ASSERTION`_] that ensures that Credentials are properly revoked when compromised or outdated.
+The Credential lifecycle includes a Credential revocation mechanism based on Status List [`TOKEN-STATUS-LIST`_] that ensures that Credentials are properly revoked when compromised or outdated.
 
 The revocation of a Federation Entity (i.e., Issuer, Verifier, Wallet Provider) is instead possible by not issuing the corresponding Subordinate Statement about that Entity and set a short expiration of the Trust Chain, thus preventing misuse during compromise.
 
@@ -477,7 +473,7 @@ SPR-P-80
    * - |check-icon|
      - The protocol must ensure that the Issuer cannot learn where the User uses the Credential.
 
-The exchange protocol does not require any interactions between Verifiers and Issuers. In addition, privacy-preserving Status Assertions, presented along with Credentials,
+The exchange protocol does not require any interactions between Verifiers and Issuers. In addition, privacy-preserving Status List mechanism
 ensure that while the Verifier checks the Credential's validity, the Issuer does not learn where or when the Credential is being used.
 
 SPR-W-50
